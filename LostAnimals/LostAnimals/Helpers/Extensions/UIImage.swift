@@ -1,9 +1,9 @@
 //
 //  UIImage.swift
-//  OptimusPlan
+//  LostAnimals
 //
-//  Created by David Alhambra on 13/10/20.
-//  Copyright © 2020 Rudo. All rights reserved.
+//  Created by Miguel Ferrer Fornali on 28/10/2021.
+//  Copyright © 2020 Miguel Ferrer Fornali. All rights reserved.
 //
 
 import UIKit

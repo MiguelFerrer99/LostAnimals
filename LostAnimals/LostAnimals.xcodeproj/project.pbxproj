@@ -109,7 +109,7 @@
 				CCB0203B26A6EE9D00214CB9 /* Common */,
 				CCB0203D26A6EEC700214CB9 /* Data */,
 				CCB0205126A6EF6500214CB9 /* DI */,
-				CCB0205426A6EF9200214CB9 /* Domain */,
+				41868B90272C030C00F389AB /* Domain */,
 				945B159825595DC9003A65E0 /* Helpers */,
 				CCB0201126A6EE3400214CB9 /* Presentation */,
 				3147D62E2419074F00E741D3 /* Resources */,
@@ -141,6 +141,42 @@
 				31981E48241919D300D25074 /* CustomTextField.xib */,
 			);
 			path = CustomTextField;
+			sourceTree = "<group>";
+		};
+		41868B90272C030C00F389AB /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				41868B91272C031500F389AB /* Entity */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		41868B91272C031500F389AB /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		41868B92272C052600F389AB /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		41868B93272C071700F389AB /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableCells;
+			sourceTree = "<group>";
+		};
+		41868B94272C072500F389AB /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		943CE5F92546DFBC00CA93AA /* Designables */ = {
@@ -191,7 +227,7 @@
 			children = (
 				CCB0201226A6EE3400214CB9 /* App */,
 				CCB0201526A6EE3400214CB9 /* CustomElements */,
-				CCB0201926A6EE3400214CB9 /* Modules */,
+				41868B94272C072500F389AB /* Modules */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -208,25 +244,11 @@
 		CCB0201526A6EE3400214CB9 /* CustomElements */ = {
 			isa = PBXGroup;
 			children = (
-				CCB0201626A6EE3400214CB9 /* TableCells */,
+				41868B93272C071700F389AB /* TableCells */,
 				943CE5F92546DFBC00CA93AA /* Designables */,
 				31981E46241919BD00D25074 /* Custom Views */,
 			);
 			path = CustomElements;
-			sourceTree = "<group>";
-		};
-		CCB0201626A6EE3400214CB9 /* TableCells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TableCells;
-			sourceTree = "<group>";
-		};
-		CCB0201926A6EE3400214CB9 /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Modules;
 			sourceTree = "<group>";
 		};
 		CCB0203B26A6EE9D00214CB9 /* Common */ = {
@@ -251,7 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				CCB0204326A6EF0B00214CB9 /* DTO */,
-				E3D14DC0242D05D800436D51 /* API */,
+				41868B92272C052600F389AB /* API */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -269,28 +291,6 @@
 				CCB0205226A6EF6500214CB9 /* Container.swift */,
 			);
 			path = DI;
-			sourceTree = "<group>";
-		};
-		CCB0205426A6EF9200214CB9 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				CCB0205526A6EF9200214CB9 /* Entity */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		CCB0205526A6EF9200214CB9 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
-		E3D14DC0242D05D800436D51 /* API */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = API;
 			sourceTree = "<group>";
 		};
 		E3D14DCB242D080B00436D51 /* Configuration */ = {
@@ -544,7 +544,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FTAKQJ3877;
-				INFOPLIST_FILE = "$(SRCROOT)/Template/Common/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/LostAnimals/Common/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -563,7 +563,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FTAKQJ3877;
-				INFOPLIST_FILE = "$(SRCROOT)/Template/Common/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/LostAnimals/Common/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

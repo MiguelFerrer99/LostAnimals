@@ -1,9 +1,9 @@
 //
 //  LocalizedKey.swift
-//  Template
+//  LostAnimals
 //
-//  Created by Frins on 9/2/21.
-//  Copyright © 2021 Rudo. All rights reserved.
+//  Created by Miguel Ferrer Fornali on 28/10/2021.
+//  Copyright © 2020 Miguel Ferrer Fornali. All rights reserved.
 //
 
 import UIKit

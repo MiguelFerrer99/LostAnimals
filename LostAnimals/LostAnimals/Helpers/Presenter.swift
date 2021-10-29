@@ -1,9 +1,9 @@
 //
 //  Presenter.swift
-//  Template
+//  LostAnimals
 //
-//  Created by Toni García Alhambra on 11/03/2020.
-//  Copyright © 2020 Rudo. All rights reserved.
+//  Created by Miguel Ferrer Fornali on 28/10/2021.
+//  Copyright © 2020 Miguel Ferrer Fornali. All rights reserved.
 //
 
 import UIKit

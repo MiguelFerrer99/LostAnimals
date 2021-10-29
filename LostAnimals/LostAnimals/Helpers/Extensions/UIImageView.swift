@@ -1,9 +1,9 @@
 //
 //  UIImageView.swift
-//  El Pibe
+//  LostAnimals
 //
-//  Created by Aharon on 17/5/21.
-//  Copyright © 2021 Rudo. All rights reserved.
+//  Created by Miguel Ferrer Fornali on 28/10/2021.
+//  Copyright © 2020 Miguel Ferrer Fornali. All rights reserved.
 //
 
 import UIKit
