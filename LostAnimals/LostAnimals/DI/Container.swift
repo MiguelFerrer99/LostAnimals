@@ -12,4 +12,8 @@ class Container {
 	static let shared = Container()
 }
 
-extension Container {}
+extension Container {
+  func onboardingBuilder() -> OnboardingBuilder {
+    return OnboardingBuilder()
+  }
+}

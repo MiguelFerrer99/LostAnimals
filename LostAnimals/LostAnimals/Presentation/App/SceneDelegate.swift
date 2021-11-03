@@ -20,10 +20,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     window = UIWindow(frame: windowScene.coordinateSpace.bounds)
     window?.windowScene = windowScene
     
-//    let login = Container.shared.loginBuilder().build()
-//    let navigation = UINavigationController(rootViewController: login)
-//    
-//    window?.rootViewController = navigation
+    let onboarding = Container.shared.onboardingBuilder().build()
+    
+    window?.rootViewController = onboarding
     window?.makeKeyAndVisible()
   }
   

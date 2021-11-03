@@ -12,6 +12,11 @@
 		31981E49241919D300D25074 /* CustomTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31981E48241919D300D25074 /* CustomTextField.xib */; };
 		31981E4B24191A4500D25074 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31981E4A24191A4500D25074 /* CustomTextField.swift */; };
 		31981E4D24191C2F00D25074 /* CustomTextField-Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31981E4C24191C2F00D25074 /* CustomTextField-Models.swift */; };
+		41D325D1273323F2008B4BDC /* OnboardingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41D325D0273323F2008B4BDC /* OnboardingViewController.storyboard */; };
+		41D325D327332408008B4BDC /* OnboardingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D325D227332408008B4BDC /* OnboardingRouter.swift */; };
+		41D325D527332427008B4BDC /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D325D427332427008B4BDC /* OnboardingViewController.swift */; };
+		41D325D727332439008B4BDC /* OnboardingBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D325D627332439008B4BDC /* OnboardingBuilder.swift */; };
+		41D325D927332447008B4BDC /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D325D827332447008B4BDC /* OnboardingViewModel.swift */; };
 		7725E68A26B2D68F00A05225 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7725E68926B2D68F00A05225 /* UIImageView.swift */; };
 		943CE5FD2546DFBC00CA93AA /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943CE5FA2546DFBC00CA93AA /* CustomView.swift */; };
 		943CE5FE2546DFBC00CA93AA /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943CE5FB2546DFBC00CA93AA /* CustomButton.swift */; };
@@ -47,6 +52,11 @@
 		31981E48241919D300D25074 /* CustomTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextField.xib; sourceTree = "<group>"; };
 		31981E4A24191A4500D25074 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		31981E4C24191C2F00D25074 /* CustomTextField-Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomTextField-Models.swift"; sourceTree = "<group>"; };
+		41D325D0273323F2008B4BDC /* OnboardingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingViewController.storyboard; sourceTree = "<group>"; };
+		41D325D227332408008B4BDC /* OnboardingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRouter.swift; sourceTree = "<group>"; };
+		41D325D427332427008B4BDC /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		41D325D627332439008B4BDC /* OnboardingBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingBuilder.swift; sourceTree = "<group>"; };
+		41D325D827332447008B4BDC /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		7725E68926B2D68F00A05225 /* UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		943CE5FA2546DFBC00CA93AA /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		943CE5FB2546DFBC00CA93AA /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -175,8 +185,21 @@
 		41868B94272C072500F389AB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				41D325CF273323A6008B4BDC /* Onboarding */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		41D325CF273323A6008B4BDC /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				41D325D0273323F2008B4BDC /* OnboardingViewController.storyboard */,
+				41D325D227332408008B4BDC /* OnboardingRouter.swift */,
+				41D325D427332427008B4BDC /* OnboardingViewController.swift */,
+				41D325D627332439008B4BDC /* OnboardingBuilder.swift */,
+				41D325D827332447008B4BDC /* OnboardingViewModel.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		943CE5F92546DFBC00CA93AA /* Designables */ = {
@@ -365,6 +388,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41D325D1273323F2008B4BDC /* OnboardingViewController.storyboard in Resources */,
 				31981E49241919D300D25074 /* CustomTextField.xib in Resources */,
 				3147D626241906FD00E741D3 /* LaunchScreen.storyboard in Resources */,
 				3147D623241906FD00E741D3 /* Assets.xcassets in Resources */,
@@ -391,10 +415,12 @@
 				CCB0207826A6F12000214CB9 /* Array.swift in Sources */,
 				945B15B325595DC9003A65E0 /* UIColor.swift in Sources */,
 				945B15AE25595DC9003A65E0 /* Dynamic.swift in Sources */,
+				41D325D527332427008B4BDC /* OnboardingViewController.swift in Sources */,
 				CCB0206726A6F04500214CB9 /* ViewController.swift in Sources */,
 				945B15B125595DC9003A65E0 /* ViewModel.swift in Sources */,
 				945B15B825595DC9003A65E0 /* UIImage.swift in Sources */,
 				A01CC49125D2FB3700404685 /* LocalizedKey.swift in Sources */,
+				41D325D327332408008B4BDC /* OnboardingRouter.swift in Sources */,
 				945B15B025595DC9003A65E0 /* CellsHelper.swift in Sources */,
 				945B15B925595DC9003A65E0 /* Presenter.swift in Sources */,
 				31981E4D24191C2F00D25074 /* CustomTextField-Models.swift in Sources */,
@@ -402,8 +428,10 @@
 				943CE5FE2546DFBC00CA93AA /* CustomButton.swift in Sources */,
 				945B15B525595DC9003A65E0 /* UITableViewCell.swift in Sources */,
 				CCB0207526A6F12000214CB9 /* Date.swift in Sources */,
+				41D325D927332447008B4BDC /* OnboardingViewModel.swift in Sources */,
 				945B15BB25595DC9003A65E0 /* Window.swift in Sources */,
 				CCB0205326A6EF6500214CB9 /* Container.swift in Sources */,
+				41D325D727332439008B4BDC /* OnboardingBuilder.swift in Sources */,
 				CCB0202A26A6EE3400214CB9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
