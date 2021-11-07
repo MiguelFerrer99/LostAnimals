@@ -13,7 +13,7 @@ class Container {
 }
 
 extension Container {
-  func onboardingBuilder() -> OnboardingBuilder {
-    return OnboardingBuilder()
+  func startupBuilder() -> StartupBuilder {
+    return StartupBuilder()
   }
 }

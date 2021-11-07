@@ -24,4 +24,14 @@ extension UIColor {
               blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
               alpha: alpha)
   }
+    
+  var customBlack: UIColor { return UIColor(named: "CustomBlack") ?? .black }
+  var customBlue: UIColor { return UIColor(named: "CustomBlue") ?? .blue }
+  var customGray: UIColor { return UIColor(named: "CustomGray") ?? .gray }
+  var customGreen: UIColor { return UIColor(named: "CustomGreen") ?? .green }
+  var customLightBlue: UIColor { return UIColor(named: "CustomLightBlue") ?? .blue }
+  var customLightGray: UIColor { return UIColor(named: "CustomLightGray") ?? .lightGray }
+  var customLightGreen: UIColor { return UIColor(named: "CustomLightGreen") ?? .green }
+  var customRed: UIColor { return UIColor(named: "CustomRed") ?? .red }
+  var customWhite: UIColor { return UIColor(named: "CustomWhite") ?? .white }
 }

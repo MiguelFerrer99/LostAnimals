@@ -34,6 +34,30 @@ import UIKit
     }
   }
   
+  @IBInspectable var shadowColor: UIColor = .clear {
+    willSet {
+      setBorderColor(newValue)
+    }
+  }
+  
+  @IBInspectable var shadowOffset: CGSize = .zero {
+    willSet {
+      setShadowOffset(newValue)
+    }
+  }
+  
+  @IBInspectable var shadowRadius: CGFloat = .zero {
+    willSet {
+      setShadowRadius(newValue)
+    }
+  }
+  
+  @IBInspectable var shadowOpacity: Float = .zero {
+    willSet {
+      setShadowOpacity(newValue)
+    }
+  }
+  
   // MARK: - Functions
   func round(_ round: Bool) {
     self.layer.cornerRadius = round ? self.frame.width / 2 : cornerRadius
@@ -50,5 +74,21 @@ import UIKit
   
   func setBorderColor(_ color: UIColor) {
     self.layer.borderColor = color.cgColor
+  }
+  
+  func setShadowColor(_ color: UIColor) {
+    self.layer.shadowColor = color.cgColor
+  }
+  
+  func setShadowOffset(_ cgSize: CGSize) {
+    self.layer.shadowOffset = cgSize
+  }
+  
+  func setShadowRadius(_ radius: CGFloat) {
+    self.layer.shadowRadius = radius
+  }
+  
+  func setShadowOpacity(_ opacity: Float) {
+    self.layer.shadowOpacity = opacity
   }
 }
