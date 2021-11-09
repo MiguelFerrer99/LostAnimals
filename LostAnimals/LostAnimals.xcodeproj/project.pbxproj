@@ -32,7 +32,6 @@
 		413987102737FA3500C243F4 /* StartupBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4139870C2737FA3500C243F4 /* StartupBuilder.swift */; };
 		413987112737FA3500C243F4 /* StartupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4139870D2737FA3500C243F4 /* StartupViewModel.swift */; };
 		413987152738052C00C243F4 /* StartupViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 413987142738052C00C243F4 /* StartupViewController.storyboard */; };
-		7725E68A26B2D68F00A05225 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7725E68926B2D68F00A05225 /* UIImageView.swift */; };
 		943CE5FD2546DFBC00CA93AA /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943CE5FA2546DFBC00CA93AA /* CustomView.swift */; };
 		943CE5FE2546DFBC00CA93AA /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943CE5FB2546DFBC00CA93AA /* CustomButton.swift */; };
 		943CE5FF2546DFBC00CA93AA /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943CE5FC2546DFBC00CA93AA /* CustomImageView.swift */; };
@@ -45,7 +44,6 @@
 		945B15B525595DC9003A65E0 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945B15A325595DC9003A65E0 /* UITableViewCell.swift */; };
 		945B15B825595DC9003A65E0 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945B15A625595DC9003A65E0 /* UIImage.swift */; };
 		945B15B925595DC9003A65E0 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945B15A725595DC9003A65E0 /* Presenter.swift */; };
-		945B15BA25595DC9003A65E0 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945B15A825595DC9003A65E0 /* Pagination.swift */; };
 		945B15BB25595DC9003A65E0 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945B15A925595DC9003A65E0 /* Window.swift */; };
 		945B15BD25595DC9003A65E0 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945B15AB25595DC9003A65E0 /* Cache.swift */; };
 		A01CC49125D2FB3700404685 /* LocalizedKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01CC49025D2FB3700404685 /* LocalizedKey.swift */; };
@@ -87,7 +85,6 @@
 		4139870C2737FA3500C243F4 /* StartupBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupBuilder.swift; sourceTree = "<group>"; };
 		4139870D2737FA3500C243F4 /* StartupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupViewModel.swift; sourceTree = "<group>"; };
 		413987142738052C00C243F4 /* StartupViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartupViewController.storyboard; sourceTree = "<group>"; };
-		7725E68926B2D68F00A05225 /* UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		943CE5FA2546DFBC00CA93AA /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		943CE5FB2546DFBC00CA93AA /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		943CE5FC2546DFBC00CA93AA /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
@@ -100,7 +97,6 @@
 		945B15A325595DC9003A65E0 /* UITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		945B15A625595DC9003A65E0 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		945B15A725595DC9003A65E0 /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
-		945B15A825595DC9003A65E0 /* Pagination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		945B15A925595DC9003A65E0 /* Window.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 		945B15AB25595DC9003A65E0 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		A01CC49025D2FB3700404685 /* LocalizedKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedKey.swift; sourceTree = "<group>"; };
@@ -274,7 +270,6 @@
 				945B159D25595DC9003A65E0 /* CellsHelper.swift */,
 				945B159E25595DC9003A65E0 /* ViewModel.swift */,
 				945B15A725595DC9003A65E0 /* Presenter.swift */,
-				945B15A825595DC9003A65E0 /* Pagination.swift */,
 				945B15A925595DC9003A65E0 /* Window.swift */,
 				945B15AB25595DC9003A65E0 /* Cache.swift */,
 				A01CC49025D2FB3700404685 /* LocalizedKey.swift */,
@@ -285,7 +280,6 @@
 		945B159F25595DC9003A65E0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				7725E68926B2D68F00A05225 /* UIImageView.swift */,
 				CCB0207426A6F12000214CB9 /* Array.swift */,
 				CCB0207126A6F12000214CB9 /* Date.swift */,
 				CCB0207226A6F12000214CB9 /* String.swift */,
@@ -470,13 +464,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCB0207626A6F12000214CB9 /* String.swift in Sources */,
-				945B15BA25595DC9003A65E0 /* Pagination.swift in Sources */,
 				943CE5FD2546DFBC00CA93AA /* CustomView.swift in Sources */,
 				945B15AC25595DC9003A65E0 /* TableParent.swift in Sources */,
 				4139870F2737FA3500C243F4 /* StartupViewController.swift in Sources */,
 				945B15BD25595DC9003A65E0 /* Cache.swift in Sources */,
 				31981E4B24191A4500D25074 /* CustomTextField.swift in Sources */,
-				7725E68A26B2D68F00A05225 /* UIImageView.swift in Sources */,
 				E3D14DCD242D081B00436D51 /* Constants.swift in Sources */,
 				943CE5FF2546DFBC00CA93AA /* CustomImageView.swift in Sources */,
 				4139870E2737FA3500C243F4 /* StartupRouter.swift in Sources */,
