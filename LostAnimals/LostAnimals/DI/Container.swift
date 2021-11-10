@@ -17,3 +17,9 @@ extension Container {
     return StartupBuilder()
   }
 }
+
+extension Container {
+  func scrollViewExampleBuilder() -> ScrollViewExampleBuilder {
+    return ScrollViewExampleBuilder()
+  }
+}

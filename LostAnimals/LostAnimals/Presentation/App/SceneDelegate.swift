@@ -20,8 +20,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     window = UIWindow(frame: windowScene.coordinateSpace.bounds)
     window?.windowScene = windowScene
     
-    let startup = Container.shared.startupBuilder().build()
-    let navigation = UINavigationController(rootViewController: startup)
+    let scrollViewExample = Container.shared.scrollViewExampleBuilder().build()
+    let navigation = UINavigationController(rootViewController: scrollViewExample)
+    
+//    let startup = Container.shared.startupBuilder().build()
+//    let navigation = UINavigationController(rootViewController: startup)
     
     window?.rootViewController = navigation
     window?.makeKeyAndVisible()

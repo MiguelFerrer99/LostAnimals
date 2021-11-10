@@ -32,6 +32,11 @@
 		413987102737FA3500C243F4 /* StartupBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4139870C2737FA3500C243F4 /* StartupBuilder.swift */; };
 		413987112737FA3500C243F4 /* StartupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4139870D2737FA3500C243F4 /* StartupViewModel.swift */; };
 		413987152738052C00C243F4 /* StartupViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 413987142738052C00C243F4 /* StartupViewController.storyboard */; };
+		41CE114D273BC05A00C493C8 /* ScrollViewExampleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CE1149273BC05A00C493C8 /* ScrollViewExampleRouter.swift */; };
+		41CE114E273BC05A00C493C8 /* ScrollViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CE114A273BC05A00C493C8 /* ScrollViewExampleViewController.swift */; };
+		41CE114F273BC05A00C493C8 /* ScrollViewExampleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CE114B273BC05A00C493C8 /* ScrollViewExampleBuilder.swift */; };
+		41CE1150273BC05A00C493C8 /* ScrollViewExampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CE114C273BC05A00C493C8 /* ScrollViewExampleViewModel.swift */; };
+		41CE1152273BC06800C493C8 /* ScrollViewExampleViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41CE1151273BC06800C493C8 /* ScrollViewExampleViewController.storyboard */; };
 		943CE5FD2546DFBC00CA93AA /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943CE5FA2546DFBC00CA93AA /* CustomView.swift */; };
 		943CE5FE2546DFBC00CA93AA /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943CE5FB2546DFBC00CA93AA /* CustomButton.swift */; };
 		943CE5FF2546DFBC00CA93AA /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943CE5FC2546DFBC00CA93AA /* CustomImageView.swift */; };
@@ -85,6 +90,11 @@
 		4139870C2737FA3500C243F4 /* StartupBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupBuilder.swift; sourceTree = "<group>"; };
 		4139870D2737FA3500C243F4 /* StartupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupViewModel.swift; sourceTree = "<group>"; };
 		413987142738052C00C243F4 /* StartupViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartupViewController.storyboard; sourceTree = "<group>"; };
+		41CE1149273BC05A00C493C8 /* ScrollViewExampleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewExampleRouter.swift; sourceTree = "<group>"; };
+		41CE114A273BC05A00C493C8 /* ScrollViewExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewExampleViewController.swift; sourceTree = "<group>"; };
+		41CE114B273BC05A00C493C8 /* ScrollViewExampleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewExampleBuilder.swift; sourceTree = "<group>"; };
+		41CE114C273BC05A00C493C8 /* ScrollViewExampleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewExampleViewModel.swift; sourceTree = "<group>"; };
+		41CE1151273BC06800C493C8 /* ScrollViewExampleViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ScrollViewExampleViewController.storyboard; sourceTree = "<group>"; };
 		943CE5FA2546DFBC00CA93AA /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		943CE5FB2546DFBC00CA93AA /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		943CE5FC2546DFBC00CA93AA /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
@@ -245,9 +255,22 @@
 		41868B94272C072500F389AB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				41CE1148273BC04300C493C8 /* ScrollViewExample */,
 				413987092737FA2600C243F4 /* Startup */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		41CE1148273BC04300C493C8 /* ScrollViewExample */ = {
+			isa = PBXGroup;
+			children = (
+				41CE1151273BC06800C493C8 /* ScrollViewExampleViewController.storyboard */,
+				41CE1149273BC05A00C493C8 /* ScrollViewExampleRouter.swift */,
+				41CE114A273BC05A00C493C8 /* ScrollViewExampleViewController.swift */,
+				41CE114B273BC05A00C493C8 /* ScrollViewExampleBuilder.swift */,
+				41CE114C273BC05A00C493C8 /* ScrollViewExampleViewModel.swift */,
+			);
+			path = ScrollViewExample;
 			sourceTree = "<group>";
 		};
 		943CE5F92546DFBC00CA93AA /* Designables */ = {
@@ -440,6 +463,7 @@
 				4104A8DE273848AC00F5946B /* Nunito-ExtraLightItalic.ttf in Resources */,
 				31981E49241919D300D25074 /* CustomTextField.xib in Resources */,
 				4104A8E4273848AC00F5946B /* Nunito-ExtraLight.ttf in Resources */,
+				41CE1152273BC06800C493C8 /* ScrollViewExampleViewController.storyboard in Resources */,
 				4104A8E6273848AC00F5946B /* Nunito-Italic.ttf in Resources */,
 				4104A8E8273848AC00F5946B /* Nunito-Bold.ttf in Resources */,
 				4104A8E3273848AC00F5946B /* Nunito-SemiBoldItalic.ttf in Resources */,
@@ -463,11 +487,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41CE1150273BC05A00C493C8 /* ScrollViewExampleViewModel.swift in Sources */,
 				CCB0207626A6F12000214CB9 /* String.swift in Sources */,
 				943CE5FD2546DFBC00CA93AA /* CustomView.swift in Sources */,
 				945B15AC25595DC9003A65E0 /* TableParent.swift in Sources */,
 				4139870F2737FA3500C243F4 /* StartupViewController.swift in Sources */,
 				945B15BD25595DC9003A65E0 /* Cache.swift in Sources */,
+				41CE114F273BC05A00C493C8 /* ScrollViewExampleBuilder.swift in Sources */,
 				31981E4B24191A4500D25074 /* CustomTextField.swift in Sources */,
 				E3D14DCD242D081B00436D51 /* Constants.swift in Sources */,
 				943CE5FF2546DFBC00CA93AA /* CustomImageView.swift in Sources */,
@@ -484,6 +510,7 @@
 				A01CC49125D2FB3700404685 /* LocalizedKey.swift in Sources */,
 				945B15B025595DC9003A65E0 /* CellsHelper.swift in Sources */,
 				945B15B925595DC9003A65E0 /* Presenter.swift in Sources */,
+				41CE114E273BC05A00C493C8 /* ScrollViewExampleViewController.swift in Sources */,
 				31981E4D24191C2F00D25074 /* CustomTextField-Models.swift in Sources */,
 				945B15B425595DC9003A65E0 /* Int.swift in Sources */,
 				943CE5FE2546DFBC00CA93AA /* CustomButton.swift in Sources */,
@@ -493,6 +520,7 @@
 				413987002737F6F200C243F4 /* UIFont.swift in Sources */,
 				CCB0205326A6EF6500214CB9 /* Container.swift in Sources */,
 				CCB0202A26A6EE3400214CB9 /* AppDelegate.swift in Sources */,
+				41CE114D273BC05A00C493C8 /* ScrollViewExampleRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
