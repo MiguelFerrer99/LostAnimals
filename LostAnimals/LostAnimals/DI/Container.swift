@@ -13,13 +13,15 @@ class Container {
 }
 
 extension Container {
-  func startupBuilder() -> StartupBuilder {
-    return StartupBuilder()
+  func loginBuilder() -> LoginBuilder {
+    return LoginBuilder()
   }
-}
-
-extension Container {
+  
   func scrollViewExampleBuilder() -> ScrollViewExampleBuilder {
     return ScrollViewExampleBuilder()
+  }
+  
+  func startupBuilder() -> StartupBuilder {
+    return StartupBuilder()
   }
 }

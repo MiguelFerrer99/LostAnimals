@@ -8,8 +8,15 @@
 
 import UIKit
 
+@objc protocol CustomTextFieldDelegate: AnyObject {
+  @objc optional func textFieldShouldReturn(_ customTextField: CustomTextField) -> Bool
+  @objc optional func textFieldDidEndEditing(_ customTextField: CustomTextField)
+  @objc optional func textFieldDidBeginEditing(_ customTextField: CustomTextField)
+  func textFieldDidChange(_ customTextField: CustomTextField)
+}
+
 @IBDesignable
-class CustomTextField: UIView {
+class CustomTextField: UIView, UITextFieldDelegate {
   // MARK: - IBInspectables
   @IBInspectable var capitalizeFirstLetter: Bool = false {
     willSet { textField.autocapitalizationType = newValue ? .words : .none }
@@ -18,51 +25,47 @@ class CustomTextField: UIView {
   @IBInspectable var hideContent: Bool = false {
     willSet {
       textField.isSecureTextEntry = newValue
-      hideContentButton.isHidden = !newValue
+      hideContentView.isHidden = !newValue
     }
   }
-
-  @IBInspectable var showLeftIcon: Bool = true {
-    willSet { iconImageView.isHidden = !newValue }
-  }
-
-  @IBInspectable var icon: UIImage = UIImage() {
-    willSet { iconImageView.image = newValue }
-  }
-
+  
   @IBInspectable var placeholder: String = "" {
-    willSet { textField.placeholder = newValue.localized }
-  }
-
-  @IBInspectable var borderColor: UIColor = UIColor(named: "color_Primary")! {
-    willSet { customView.layer.borderColor = newValue.cgColor }
-  }
-
-  @IBInspectable var borderSize: CGFloat = 0 {
-    willSet { customView.layer.borderWidth = newValue}
+    willSet {
+      textField.attributedPlaceholder = NSAttributedString(
+        string: newValue,
+        attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "CustomWhite")?.withAlphaComponent(0.5) ?? .white]
+      )
+      placeholderLabel.attributedText = textField.attributedPlaceholder
+    }
   }
 
   // MARK: - IBOutlets
   @IBOutlet var customView: UIView!
-
-  @IBOutlet weak var iconImageView: UIImageView!
+  @IBOutlet weak var addStackView: UIStackView!
   @IBOutlet weak var textField: UITextField!
+  @IBOutlet weak var placeholderLabel: UILabel!
+  @IBOutlet weak var topTextFieldConstraint: NSLayoutConstraint!
+  @IBOutlet weak var hideContentView: UIView!
   @IBOutlet weak var hideContentButton: UIButton!
+  @IBOutlet weak var statusView: UIView!
+  @IBOutlet weak var statusImageView: UIImageView!
   @IBOutlet weak var errorLabel: UILabel!
-
+  
   // MARK: - Properties
+  var delegate: CustomTextFieldDelegate?
   var errorsToCheck = [TextFieldError]()
 
   var hasError: Bool {
     for error in errorsToCheck {
       let hasError = error.checkCondition(value)
-
       errorLabel.text     = error.localizedDescription
       errorLabel.isHidden = !hasError
-
+      UIView.animate(withDuration: 0.2) {
+        self.statusView.isHidden = false
+        self.statusImageView.image = UIImage(named: hasError ? "TextfieldBad" : "TextfieldOk")
+      }
       if hasError { return false }
     }
-
     return false
   }
 
@@ -85,18 +88,17 @@ class CustomTextField: UIView {
   private func setup() {
     customView = loadViewFromNib()
     customView.frame = bounds
-
     customView.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth,
                                    UIView.AutoresizingMask.flexibleHeight]
-
+    addStackView.layer.cornerRadius = 10
     addSubview(customView)
+    textField.delegate = self
   }
 
   private func loadViewFromNib() -> UIView! {
     let bundle = Bundle(for: type(of: self))
     let nib = UINib(nibName: String(describing: type(of: self)), bundle: bundle)
     let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
-
     return view
   }
 
@@ -106,6 +108,30 @@ class CustomTextField: UIView {
 
   // MARK: - IBActions
   @IBAction func hideContentButtonPressed(_ sender: UIButton) {
+    hideContentButton.setImage(UIImage(systemName: textField.isSecureTextEntry ? "eye.slash.fill" : "eye.fill"), for: .normal)
     textField.isSecureTextEntry.toggle()
+  }
+  
+  // MARK: - UITextFieldDelegate
+  func textFieldShouldReturn(_ customTextField: UITextField) -> Bool {
+    return ((delegate?.textFieldShouldReturn?(self)) != nil)
+  }
+  
+  func textFieldDidBeginEditing(_ customTextField: UITextField) {
+    delegate?.textFieldDidBeginEditing?(self)
+  }
+
+  func textFieldDidEndEditing(_ customTextField: UITextField) {
+    delegate?.textFieldDidEndEditing?(self)
+  }
+  
+  @IBAction func textFieldDidChangeEditing(_ customTextField: UITextField) {
+    guard let text = customTextField.text else { return }
+    UIView.animate(withDuration: 0.2) {
+      self.placeholderLabel.alpha = text.isEmpty ? 0 : 1
+      self.topTextFieldConstraint.constant = text.isEmpty ? 0 : 15
+      self.layoutIfNeeded()
+    }
+    delegate?.textFieldDidChange(self)
   }
 }

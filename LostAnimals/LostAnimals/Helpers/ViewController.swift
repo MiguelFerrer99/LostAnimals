@@ -21,6 +21,30 @@ class ViewController: UIViewController {
     return false
   }
   
+  var navigationBarTitleColor: UIColor {
+    return .customBlack
+  }
+  
+  var navigationBarTintColor: UIColor {
+    return .customGreen
+  }
+  
+  var navigationTintColor: UIColor {
+    return .customBlack
+  }
+  
+  var navBarTitle: String {
+    return ""
+  }
+  
+  var navBarRightButtons: [UIBarButtonItem] {
+    return []
+  }
+  
+  var navBarLeftButtons: [UIBarButtonItem] {
+    return []
+  }
+  
   var dismissGestureEnabled: Bool = true {
     willSet {
       self.isModalInPresentation = !newValue
@@ -31,11 +55,23 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    let titleAttributes = [NSAttributedString.Key.font: UIFont(name: "OpenSans-SemiBold", size: 17) ?? UIFont.systemFont(ofSize: 17) ]
-    let largeTitleAttributes = [NSAttributedString.Key.font: UIFont(name: "OpenSans-SemiBold", size: 34) ?? UIFont.boldSystemFont(ofSize: 34)]
+    let titleAttributes = [NSAttributedString.Key.foregroundColor: navigationBarTitleColor, NSAttributedString.Key.font: UIFont.nunitoMediumBold]
+    let largeTitleAttributes = [NSAttributedString.Key.font: UIFont.nunitoBigBold]
     
+    UIBarButtonItem.appearance().setTitleTextAttributes(titleAttributes, for: .normal)
     UINavigationBar.appearance().titleTextAttributes = titleAttributes
     UINavigationBar.appearance().largeTitleTextAttributes = largeTitleAttributes
+    UINavigationBar.appearance().tintColor = navigationTintColor
+    UINavigationBar.appearance().barTintColor = navigationBarTintColor
+    navigationItem.title = navBarTitle
+    navigationItem.rightBarButtonItems = navBarRightButtons
+    navigationItem.leftBarButtonItems = navBarLeftButtons
+    navigationController?.navigationBar.alpha = 0
+    
+    navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+    navigationController?.navigationBar.isTranslucent = false
+    navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+    navigationController?.navigationBar.shadowImage = UIImage()
     
     NotificationCenter.default.addObserver(self, selector: #selector(didBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -45,11 +81,18 @@ class ViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
-    if useLargeTitle {
-      navigationController?.navigationBar.prefersLargeTitles = true
-    }
+    navigationController?.navigationBar.prefersLargeTitles = useLargeTitle
     
-    navigationController?.setNavigationBarHidden(hideNavigationBar, animated: false)
+    navigationController?.setNavigationBarHidden(hideNavigationBar, animated: true)
+    navigationItem.largeTitleDisplayMode = useLargeTitle ? .always : .never
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    
+    navigationController?.navigationBar.prefersLargeTitles = useLargeTitle
+    
+    navigationController?.setNavigationBarHidden(hideNavigationBar, animated: true)
     navigationItem.largeTitleDisplayMode = useLargeTitle ? .always : .never
   }
   
@@ -65,12 +108,27 @@ class ViewController: UIViewController {
   
   // MARK: - Functions
   @objc func didBecomeActive() {
-    navigationController?.setNavigationBarHidden(hideNavigationBar, animated: false)
+    navigationController?.setNavigationBarHidden(hideNavigationBar, animated: true)
     navigationItem.largeTitleDisplayMode = useLargeTitle ? .always : .never
   }
   
   @objc func keyboardWillShow(notification: NSNotification) {}
   @objc func keyboardWillHide(notification: NSNotification) {}
+  
+  func hideTabBar() {
+    var frame = self.tabBarController?.tabBar.frame
+    frame!.origin.y = self.view.frame.size.height + (frame?.size.height)!
+    
+    self.tabBarController?.tabBar.frame = frame!
+    self.tabBarController?.tabBar.isHidden = true
+  }
+  
+  func showTabBar() {
+    self.tabBarController?.tabBar.isHidden = false
+    var frame = self.tabBarController?.tabBar.frame
+    frame!.origin.y = self.view.frame.size.height - (frame?.size.height)!
+    self.tabBarController?.tabBar.frame = frame!
+  }
 }
 
 extension UIViewController {
@@ -105,5 +163,21 @@ extension UIViewController {
   func embeddedInNavigation() -> UINavigationController {
     let navigationVC = UINavigationController(rootViewController: self)
     return navigationVC
+  }
+  
+  func setShadowOn() {
+    self.navigationController?.navigationBar.layer.shadowColor = UIColor.darkGray.cgColor
+    self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+    self.navigationController?.navigationBar.layer.shadowRadius = 4.0
+    self.navigationController?.navigationBar.layer.shadowOpacity = 1.0
+    self.navigationController?.navigationBar.layer.masksToBounds = false
+  }
+  
+  func setShadowOff() {
+    self.navigationController?.navigationBar.layer.shadowColor = UIColor.white.cgColor
+    self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+    self.navigationController?.navigationBar.layer.shadowRadius = 0.0
+    self.navigationController?.navigationBar.layer.shadowOpacity = 0.0
+    self.navigationController?.navigationBar.layer.masksToBounds = true
   }
 }

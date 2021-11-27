@@ -9,6 +9,17 @@
 import UIKit
 
 extension UIColor {
+  
+  static let customBlack = UIColor(named: "CustomBlack") ?? .black
+  static let customBlue = UIColor(named: "CustomBlue") ?? .blue
+  static let customGray = UIColor(named: "CustomGray") ?? .gray
+  static let customGreen = UIColor(named: "CustomGreen") ?? .green
+  static let customLightBlue = UIColor(named: "CustomLightBlue") ?? .blue
+  static let customLightGray = UIColor(named: "CustomLightGray") ?? .lightGray
+  static let customLightGreen = UIColor(named: "CustomLightGreen") ?? .green
+  static let customRed = UIColor(named: "CustomRed") ?? .red
+  static let customWhite = UIColor(named: "CustomWhite") ?? .white
+  
   convenience init(hex: String, alpha: CGFloat = 1.0) {
     var hexFormatted: String = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
     
@@ -24,14 +35,4 @@ extension UIColor {
               blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
               alpha: alpha)
   }
-    
-  var customBlack: UIColor { return UIColor(named: "CustomBlack") ?? .black }
-  var customBlue: UIColor { return UIColor(named: "CustomBlue") ?? .blue }
-  var customGray: UIColor { return UIColor(named: "CustomGray") ?? .gray }
-  var customGreen: UIColor { return UIColor(named: "CustomGreen") ?? .green }
-  var customLightBlue: UIColor { return UIColor(named: "CustomLightBlue") ?? .blue }
-  var customLightGray: UIColor { return UIColor(named: "CustomLightGray") ?? .lightGray }
-  var customLightGreen: UIColor { return UIColor(named: "CustomLightGreen") ?? .green }
-  var customRed: UIColor { return UIColor(named: "CustomRed") ?? .red }
-  var customWhite: UIColor { return UIColor(named: "CustomWhite") ?? .white }
 }

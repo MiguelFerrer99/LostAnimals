@@ -28,4 +28,7 @@ extension StartupViewModel {
 
 // MARK: - Functions
 extension StartupViewModel {
+  func didPressLoginButton() {
+    self.router.goToLogin()
+  }
 }

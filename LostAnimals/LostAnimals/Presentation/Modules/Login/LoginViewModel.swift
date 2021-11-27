@@ -1,0 +1,46 @@
+//
+//  LoginViewModel.swift
+//  LostAnimals
+//
+//  Created by Miguel Ferrer Fornali on 22/11/21.
+//  Copyright © 2021 Rudo. All rights reserved.
+//
+
+import Foundation
+
+final class LoginViewModel {
+  
+  // MARK: - Properties
+  private let router: LoginRouter
+  var editedTextFields = [CustomTextField]()
+  
+  // MARK: - Dynamic properties
+  
+  // MARK: - Init
+  required init(router: LoginRouter) {
+    self.router = router
+  }
+  
+}
+
+// MARK: - Life cycle
+extension LoginViewModel {
+  func viewReady() {
+    // Called when view is loaded and ready
+  }
+  
+  func viewDidAppear() {
+    
+  }
+}
+
+// MARK: - Functions
+extension LoginViewModel {
+  func textFieldsHaveErrors() -> Bool {
+    var haveErrors = false
+    editedTextFields.forEach { editedTextField in
+      if editedTextField.hasError && !haveErrors { haveErrors = true }
+    }
+    return haveErrors
+  }
+}

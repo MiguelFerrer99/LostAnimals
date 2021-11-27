@@ -45,3 +45,11 @@ class TextFieldErrorEmptyValue: TextFieldError {
     }
   }
 }
+
+class TextFieldErrorPasswordFormat: TextFieldError {
+  init() {
+    super.init(localizedDescription: "Invalid password format") { (value) -> Bool in
+      return !value.isValidPassword()
+    }
+  }
+}

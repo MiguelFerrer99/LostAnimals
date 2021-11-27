@@ -196,6 +196,15 @@
             <point key="canvasLocation" x="5.5999999999999996" y="54.422788605697157"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="MyI-La-a1L">
+            <size key="intrinsicContentSize" width="72" height="36"/>
+        </designable>
+        <designable name="qrJ-U9-aUo">
+            <size key="intrinsicContentSize" width="56" height="36"/>
+        </designable>
+    </designables>
+    <color key="tintColor" name="CustomBlack"/>
     <resources>
         <image name="LostAnimals" width="453" height="412"/>
         <namedColor name="CustomBlack">

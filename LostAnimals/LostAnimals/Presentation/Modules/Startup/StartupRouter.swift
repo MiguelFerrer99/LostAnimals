@@ -18,5 +18,10 @@ final class StartupRouter {
   }
   
   // MARK: - Functions
-  
+  func goToLogin() {
+    let viewController = Container.shared.loginBuilder().build()
+    DispatchQueue.main.async {
+      self.viewController?.navigationController?.pushViewController(viewController, animated: true)
+    }
+  }
 }

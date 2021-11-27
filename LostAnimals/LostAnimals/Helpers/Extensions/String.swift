@@ -18,6 +18,11 @@ extension String {
     return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count)) != nil
   }
   
+  func isValidPassword() -> Bool {
+    let regex = try! NSRegularExpression(pattern: "^(?=.*[0-9])(?=.*[A-Z]).{8,32}$", options: .caseInsensitive)
+    return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count)) != nil
+  }
+  
   func toDate(withFormat format: String)-> Date? {
     let dateFormatter = DateFormatter()
     dateFormatter.calendar = Calendar(identifier: .gregorian)
