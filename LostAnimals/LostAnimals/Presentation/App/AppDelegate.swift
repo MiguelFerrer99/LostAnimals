@@ -21,10 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   // MARK: - Functions
   private func configureKeyboard() {
-    IQKeyboardManager.shared.enable                       = true
-    IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
-    IQKeyboardManager.shared.enableAutoToolbar            = false
-    IQKeyboardManager.shared.shouldResignOnTouchOutside   = true
+    IQKeyboardManager.shared.enable                        = true
+    IQKeyboardManager.shared.shouldShowToolbarPlaceholder  = false
+    IQKeyboardManager.shared.enableAutoToolbar             = false
+    IQKeyboardManager.shared.shouldResignOnTouchOutside    = true
+    IQKeyboardManager.shared.keyboardDistanceFromTextField = 30
+    IQKeyboardManager.shared.
   }
   
   // MARK: UISceneSession Lifecycle
