@@ -60,10 +60,8 @@ class CustomTextField: UIView, UITextFieldDelegate {
       let hasError = error.checkCondition(value)
       errorLabel.text     = error.localizedDescription
       errorLabel.isHidden = !hasError
-      UIView.animate(withDuration: 0.2) {
-        self.statusView.isHidden = false
-        self.statusImageView.image = UIImage(named: hasError ? "TextfieldBad" : "TextfieldOk")
-      }
+      self.statusView.isHidden = false
+      self.statusImageView.image = UIImage(named: hasError ? "TextfieldBad" : "TextfieldOk")
       if hasError { return false }
     }
     return false

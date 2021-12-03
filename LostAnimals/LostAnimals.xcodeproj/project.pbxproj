@@ -167,7 +167,7 @@
 				CCB0203B26A6EE9D00214CB9 /* Common */,
 				CCB0203D26A6EEC700214CB9 /* Data */,
 				CCB0205126A6EF6500214CB9 /* DI */,
-				41868B90272C030C00F389AB /* Domain */,
+				41E0005D275A5B69003CAF90 /* Domain */,
 				945B159825595DC9003A65E0 /* Helpers */,
 				CCB0201126A6EE3400214CB9 /* Presentation */,
 				3147D62E2419074F00E741D3 /* Resources */,
@@ -248,35 +248,6 @@
 			path = Startup;
 			sourceTree = "<group>";
 		};
-		41868B90272C030C00F389AB /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				41868B91272C031500F389AB /* Entity */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		41868B91272C031500F389AB /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
-		41868B92272C052600F389AB /* API */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
-		41868B93272C071700F389AB /* TableCells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TableCells;
-			sourceTree = "<group>";
-		};
 		41868B94272C072500F389AB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,6 +268,35 @@
 				41CE114C273BC05A00C493C8 /* ScrollViewExampleViewModel.swift */,
 			);
 			path = ScrollViewExample;
+			sourceTree = "<group>";
+		};
+		41E0005D275A5B69003CAF90 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				41E0005E275A5B6E003CAF90 /* Entity */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		41E0005E275A5B6E003CAF90 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		41E0005F275A5B79003CAF90 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		41E00060275A5B99003CAF90 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableCells;
 			sourceTree = "<group>";
 		};
 		943CE5F92546DFBC00CA93AA /* Designables */ = {
@@ -363,7 +363,7 @@
 		CCB0201526A6EE3400214CB9 /* CustomElements */ = {
 			isa = PBXGroup;
 			children = (
-				41868B93272C071700F389AB /* TableCells */,
+				41E00060275A5B99003CAF90 /* TableCells */,
 				943CE5F92546DFBC00CA93AA /* Designables */,
 				31981E46241919BD00D25074 /* Custom Views */,
 			);
@@ -392,7 +392,7 @@
 			isa = PBXGroup;
 			children = (
 				CCB0204326A6EF0B00214CB9 /* DTO */,
-				41868B92272C052600F389AB /* API */,
+				41E0005F275A5B79003CAF90 /* API */,
 			);
 			path = Data;
 			sourceTree = "<group>";

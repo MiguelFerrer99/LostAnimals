@@ -26,7 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     IQKeyboardManager.shared.enableAutoToolbar             = false
     IQKeyboardManager.shared.shouldResignOnTouchOutside    = true
     IQKeyboardManager.shared.keyboardDistanceFromTextField = 30
-    IQKeyboardManager.shared.
   }
   
   // MARK: UISceneSession Lifecycle

@@ -58,20 +58,14 @@ class ViewController: UIViewController {
     let titleAttributes = [NSAttributedString.Key.foregroundColor: navigationBarTitleColor, NSAttributedString.Key.font: UIFont.nunitoMediumBold]
     let largeTitleAttributes = [NSAttributedString.Key.font: UIFont.nunitoBigBold]
     
-    UIBarButtonItem.appearance().setTitleTextAttributes(titleAttributes, for: .normal)
     UINavigationBar.appearance().titleTextAttributes = titleAttributes
     UINavigationBar.appearance().largeTitleTextAttributes = largeTitleAttributes
     UINavigationBar.appearance().tintColor = navigationTintColor
     UINavigationBar.appearance().barTintColor = navigationBarTintColor
     navigationItem.title = navBarTitle
+    navigationItem.backButtonTitle = nil
     navigationItem.rightBarButtonItems = navBarRightButtons
     navigationItem.leftBarButtonItems = navBarLeftButtons
-    navigationController?.navigationBar.alpha = 0
-    
-    navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-    navigationController?.navigationBar.isTranslucent = false
-    navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-    navigationController?.navigationBar.shadowImage = UIImage()
     
     NotificationCenter.default.addObserver(self, selector: #selector(didBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -81,18 +75,11 @@ class ViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
-    navigationController?.navigationBar.prefersLargeTitles = useLargeTitle
+    if useLargeTitle {
+      navigationController?.navigationBar.prefersLargeTitles = true
+    }
     
-    navigationController?.setNavigationBarHidden(hideNavigationBar, animated: true)
-    navigationItem.largeTitleDisplayMode = useLargeTitle ? .always : .never
-  }
-  
-  override func viewWillDisappear(_ animated: Bool) {
-    super.viewWillDisappear(animated)
-    
-    navigationController?.navigationBar.prefersLargeTitles = useLargeTitle
-    
-    navigationController?.setNavigationBarHidden(hideNavigationBar, animated: true)
+    navigationController?.setNavigationBarHidden(hideNavigationBar, animated: false)
     navigationItem.largeTitleDisplayMode = useLargeTitle ? .always : .never
   }
   
@@ -108,12 +95,12 @@ class ViewController: UIViewController {
   
   // MARK: - Functions
   @objc func didBecomeActive() {
-    navigationController?.setNavigationBarHidden(hideNavigationBar, animated: true)
+    navigationController?.setNavigationBarHidden(hideNavigationBar, animated: false)
     navigationItem.largeTitleDisplayMode = useLargeTitle ? .always : .never
   }
   
-  @objc func keyboardWillShow(notification: NSNotification) {}
-  @objc func keyboardWillHide(notification: NSNotification) {}
+  @objc func keyboardWillShow(notification: NSNotification) { }
+  @objc func keyboardWillHide(notification: NSNotification) { }
   
   func hideTabBar() {
     var frame = self.tabBarController?.tabBar.frame
@@ -134,7 +121,7 @@ class ViewController: UIViewController {
 extension UIViewController {
   var topbarHeight: CGFloat {
     return (view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0.0) +
-      (self.navigationController?.navigationBar.frame.height ?? 0.0)
+    (self.navigationController?.navigationBar.frame.height ?? 0.0)
   }
   
   private class func getStoryboardName() -> String {
