@@ -13,6 +13,10 @@ class Container {
 }
 
 extension Container {
+  func forgotPasswordBuilder() -> ForgotPasswordBuilder {
+    return ForgotPasswordBuilder()
+  }
+  
   func loginBuilder() -> LoginBuilder {
     return LoginBuilder()
   }

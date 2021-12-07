@@ -18,4 +18,10 @@ final class LoginRouter {
   }
   
   // MARK: - Functions
+  func goToForgotPassword() {
+    let viewController = Container.shared.forgotPasswordBuilder().build()
+    DispatchQueue.main.async {
+      self.viewController?.navigationController?.pushViewController(viewController, animated: true)
+    }
+  }
 }

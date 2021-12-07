@@ -1,30 +1,28 @@
 //
-//  LoginViewModel.swift
+//  ForgotPasswordViewModel.swift
 //  LostAnimals
 //
-//  Created by Miguel Ferrer Fornali on 22/11/21.
+//  Created by Miguel Ferrer Fornali on 3/12/21.
 //  Copyright © 2021 Rudo. All rights reserved.
 //
 
 import Foundation
 
-final class LoginViewModel {
+final class ForgotPasswordViewModel {
   
   // MARK: - Properties
-  private let router: LoginRouter
+  private let router: ForgotPasswordRouter
   var editedTextFields = [CustomTextField]()
   
-  // MARK: - Dynamic properties
-  
   // MARK: - Init
-  required init(router: LoginRouter) {
+  required init(router: ForgotPasswordRouter) {
     self.router = router
   }
   
 }
 
 // MARK: - Life cycle
-extension LoginViewModel {
+extension ForgotPasswordViewModel {
   func viewReady() {
     // Called when view is loaded and ready
   }
@@ -35,7 +33,7 @@ extension LoginViewModel {
 }
 
 // MARK: - Functions
-extension LoginViewModel {
+extension ForgotPasswordViewModel {
   func textFieldsHaveErrors() -> Bool {
     var haveErrors = false
     editedTextFields.forEach { editedTextField in
@@ -45,10 +43,6 @@ extension LoginViewModel {
   }
   
   func didPressForgotPasswordButton() {
-    self.router.goToForgotPassword()
-  }
-  
-  func didPressLoginButton() {
     // TODO: Call API
   }
 }

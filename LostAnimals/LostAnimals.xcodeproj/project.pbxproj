@@ -12,20 +12,6 @@
 		31981E49241919D300D25074 /* CustomTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31981E48241919D300D25074 /* CustomTextField.xib */; };
 		31981E4B24191A4500D25074 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31981E4A24191A4500D25074 /* CustomTextField.swift */; };
 		31981E4D24191C2F00D25074 /* CustomTextField-Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31981E4C24191C2F00D25074 /* CustomTextField-Models.swift */; };
-		4104A8DD273848AC00F5946B /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8CF273848AA00F5946B /* Nunito-Regular.ttf */; };
-		4104A8DE273848AC00F5946B /* Nunito-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8D0273848AB00F5946B /* Nunito-ExtraLightItalic.ttf */; };
-		4104A8DF273848AC00F5946B /* Nunito-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8D1273848AB00F5946B /* Nunito-LightItalic.ttf */; };
-		4104A8E0273848AC00F5946B /* Nunito-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8D2273848AB00F5946B /* Nunito-ExtraBold.ttf */; };
-		4104A8E1273848AC00F5946B /* Nunito-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8D3273848AB00F5946B /* Nunito-ExtraBoldItalic.ttf */; };
-		4104A8E2273848AC00F5946B /* Nunito-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8D4273848AB00F5946B /* Nunito-BlackItalic.ttf */; };
-		4104A8E3273848AC00F5946B /* Nunito-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8D5273848AB00F5946B /* Nunito-SemiBoldItalic.ttf */; };
-		4104A8E4273848AC00F5946B /* Nunito-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8D6273848AB00F5946B /* Nunito-ExtraLight.ttf */; };
-		4104A8E5273848AC00F5946B /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8D7273848AB00F5946B /* Nunito-SemiBold.ttf */; };
-		4104A8E6273848AC00F5946B /* Nunito-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8D8273848AB00F5946B /* Nunito-Italic.ttf */; };
-		4104A8E7273848AC00F5946B /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8D9273848AC00F5946B /* Nunito-Light.ttf */; };
-		4104A8E8273848AC00F5946B /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8DA273848AC00F5946B /* Nunito-Bold.ttf */; };
-		4104A8E9273848AC00F5946B /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8DB273848AC00F5946B /* Nunito-Black.ttf */; };
-		4104A8EA273848AC00F5946B /* Nunito-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8DC273848AC00F5946B /* Nunito-BoldItalic.ttf */; };
 		411C7F6D274BA8FE00C9710A /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411C7F69274BA8FE00C9710A /* LoginRouter.swift */; };
 		411C7F6E274BA8FE00C9710A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411C7F6A274BA8FE00C9710A /* LoginViewController.swift */; };
 		411C7F6F274BA8FE00C9710A /* LoginBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411C7F6B274BA8FE00C9710A /* LoginBuilder.swift */; };
@@ -38,6 +24,26 @@
 		413987112737FA3500C243F4 /* StartupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4139870D2737FA3500C243F4 /* StartupViewModel.swift */; };
 		413987152738052C00C243F4 /* StartupViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 413987142738052C00C243F4 /* StartupViewController.storyboard */; };
 		417E58FF274D9CCD00447ED3 /* LoginTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417E58FE274D9CCD00447ED3 /* LoginTextFields.swift */; };
+		4187195C275BFA6D00C993BC /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8DB273848AC00F5946B /* Nunito-Black.ttf */; };
+		4187195D275BFA6D00C993BC /* Nunito-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8D4273848AB00F5946B /* Nunito-BlackItalic.ttf */; };
+		4187195E275BFA6D00C993BC /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8DA273848AC00F5946B /* Nunito-Bold.ttf */; };
+		4187195F275BFA6D00C993BC /* Nunito-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8DC273848AC00F5946B /* Nunito-BoldItalic.ttf */; };
+		41871960275BFA6D00C993BC /* Nunito-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8D2273848AB00F5946B /* Nunito-ExtraBold.ttf */; };
+		41871961275BFA6D00C993BC /* Nunito-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8D3273848AB00F5946B /* Nunito-ExtraBoldItalic.ttf */; };
+		41871962275BFA6D00C993BC /* Nunito-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8D6273848AB00F5946B /* Nunito-ExtraLight.ttf */; };
+		41871963275BFA6D00C993BC /* Nunito-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8D0273848AB00F5946B /* Nunito-ExtraLightItalic.ttf */; };
+		41871964275BFA6D00C993BC /* Nunito-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8D8273848AB00F5946B /* Nunito-Italic.ttf */; };
+		41871965275BFA6D00C993BC /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8D9273848AC00F5946B /* Nunito-Light.ttf */; };
+		41871966275BFA6D00C993BC /* Nunito-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8D1273848AB00F5946B /* Nunito-LightItalic.ttf */; };
+		41871967275BFA6D00C993BC /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8CF273848AA00F5946B /* Nunito-Regular.ttf */; };
+		41871968275BFA6D00C993BC /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8D7273848AB00F5946B /* Nunito-SemiBold.ttf */; };
+		41871969275BFA6D00C993BC /* Nunito-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8D5273848AB00F5946B /* Nunito-SemiBoldItalic.ttf */; };
+		418AD20A275A6A51005AFE3C /* ForgotPasswordTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418AD209275A6A51005AFE3C /* ForgotPasswordTextFields.swift */; };
+		418C4140275A5E310099BC5B /* ForgotPasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418C413C275A5E310099BC5B /* ForgotPasswordRouter.swift */; };
+		418C4141275A5E310099BC5B /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418C413D275A5E310099BC5B /* ForgotPasswordViewController.swift */; };
+		418C4142275A5E310099BC5B /* ForgotPasswordBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418C413E275A5E310099BC5B /* ForgotPasswordBuilder.swift */; };
+		418C4143275A5E310099BC5B /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418C413F275A5E310099BC5B /* ForgotPasswordViewModel.swift */; };
+		418C4145275A5F3F0099BC5B /* ForgotPasswordViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 418C4144275A5F3F0099BC5B /* ForgotPasswordViewController.storyboard */; };
 		41CE114D273BC05A00C493C8 /* ScrollViewExampleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CE1149273BC05A00C493C8 /* ScrollViewExampleRouter.swift */; };
 		41CE114E273BC05A00C493C8 /* ScrollViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CE114A273BC05A00C493C8 /* ScrollViewExampleViewController.swift */; };
 		41CE114F273BC05A00C493C8 /* ScrollViewExampleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CE114B273BC05A00C493C8 /* ScrollViewExampleBuilder.swift */; };
@@ -102,6 +108,12 @@
 		4139870D2737FA3500C243F4 /* StartupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupViewModel.swift; sourceTree = "<group>"; };
 		413987142738052C00C243F4 /* StartupViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartupViewController.storyboard; sourceTree = "<group>"; };
 		417E58FE274D9CCD00447ED3 /* LoginTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextFields.swift; sourceTree = "<group>"; };
+		418AD209275A6A51005AFE3C /* ForgotPasswordTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordTextFields.swift; sourceTree = "<group>"; };
+		418C413C275A5E310099BC5B /* ForgotPasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordRouter.swift; sourceTree = "<group>"; };
+		418C413D275A5E310099BC5B /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		418C413E275A5E310099BC5B /* ForgotPasswordBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordBuilder.swift; sourceTree = "<group>"; };
+		418C413F275A5E310099BC5B /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
+		418C4144275A5F3F0099BC5B /* ForgotPasswordViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotPasswordViewController.storyboard; sourceTree = "<group>"; };
 		41CE1149273BC05A00C493C8 /* ScrollViewExampleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewExampleRouter.swift; sourceTree = "<group>"; };
 		41CE114A273BC05A00C493C8 /* ScrollViewExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewExampleViewController.swift; sourceTree = "<group>"; };
 		41CE114B273BC05A00C493C8 /* ScrollViewExampleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewExampleBuilder.swift; sourceTree = "<group>"; };
@@ -251,11 +263,25 @@
 		41868B94272C072500F389AB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				418C413B275A5D000099BC5B /* ForgotPassword */,
 				411C7F68274BA8CB00C9710A /* Login */,
 				41CE1148273BC04300C493C8 /* ScrollViewExample */,
 				413987092737FA2600C243F4 /* Startup */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		418C413B275A5D000099BC5B /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				418C4144275A5F3F0099BC5B /* ForgotPasswordViewController.storyboard */,
+				418C413C275A5E310099BC5B /* ForgotPasswordRouter.swift */,
+				418C413D275A5E310099BC5B /* ForgotPasswordViewController.swift */,
+				418C413E275A5E310099BC5B /* ForgotPasswordBuilder.swift */,
+				418C413F275A5E310099BC5B /* ForgotPasswordViewModel.swift */,
+				418AD209275A6A51005AFE3C /* ForgotPasswordTextFields.swift */,
+			);
+			path = ForgotPassword;
 			sourceTree = "<group>";
 		};
 		41CE1148273BC04300C493C8 /* ScrollViewExample */ = {
@@ -484,26 +510,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4104A8E5273848AC00F5946B /* Nunito-SemiBold.ttf in Resources */,
-				4104A8DD273848AC00F5946B /* Nunito-Regular.ttf in Resources */,
-				4104A8DE273848AC00F5946B /* Nunito-ExtraLightItalic.ttf in Resources */,
+				4187195C275BFA6D00C993BC /* Nunito-Black.ttf in Resources */,
+				4187195D275BFA6D00C993BC /* Nunito-BlackItalic.ttf in Resources */,
+				4187195E275BFA6D00C993BC /* Nunito-Bold.ttf in Resources */,
+				4187195F275BFA6D00C993BC /* Nunito-BoldItalic.ttf in Resources */,
+				41871960275BFA6D00C993BC /* Nunito-ExtraBold.ttf in Resources */,
+				41871961275BFA6D00C993BC /* Nunito-ExtraBoldItalic.ttf in Resources */,
+				41871962275BFA6D00C993BC /* Nunito-ExtraLight.ttf in Resources */,
+				41871963275BFA6D00C993BC /* Nunito-ExtraLightItalic.ttf in Resources */,
+				41871964275BFA6D00C993BC /* Nunito-Italic.ttf in Resources */,
+				41871965275BFA6D00C993BC /* Nunito-Light.ttf in Resources */,
+				41871966275BFA6D00C993BC /* Nunito-LightItalic.ttf in Resources */,
+				41871967275BFA6D00C993BC /* Nunito-Regular.ttf in Resources */,
+				41871968275BFA6D00C993BC /* Nunito-SemiBold.ttf in Resources */,
+				41871969275BFA6D00C993BC /* Nunito-SemiBoldItalic.ttf in Resources */,
 				31981E49241919D300D25074 /* CustomTextField.xib in Resources */,
-				4104A8E4273848AC00F5946B /* Nunito-ExtraLight.ttf in Resources */,
 				41CE1152273BC06800C493C8 /* ScrollViewExampleViewController.storyboard in Resources */,
-				4104A8E6273848AC00F5946B /* Nunito-Italic.ttf in Resources */,
-				4104A8E8273848AC00F5946B /* Nunito-Bold.ttf in Resources */,
-				4104A8E3273848AC00F5946B /* Nunito-SemiBoldItalic.ttf in Resources */,
-				4104A8E9273848AC00F5946B /* Nunito-Black.ttf in Resources */,
+				418C4145275A5F3F0099BC5B /* ForgotPasswordViewController.storyboard in Resources */,
 				3147D626241906FD00E741D3 /* LaunchScreen.storyboard in Resources */,
-				4104A8DF273848AC00F5946B /* Nunito-LightItalic.ttf in Resources */,
 				413987152738052C00C243F4 /* StartupViewController.storyboard in Resources */,
-				4104A8EA273848AC00F5946B /* Nunito-BoldItalic.ttf in Resources */,
 				3147D623241906FD00E741D3 /* Assets.xcassets in Resources */,
-				4104A8E7273848AC00F5946B /* Nunito-Light.ttf in Resources */,
-				4104A8E0273848AC00F5946B /* Nunito-ExtraBold.ttf in Resources */,
 				411C7F72274BA91300C9710A /* LoginViewController.storyboard in Resources */,
-				4104A8E1273848AC00F5946B /* Nunito-ExtraBoldItalic.ttf in Resources */,
-				4104A8E2273848AC00F5946B /* Nunito-BlackItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +543,7 @@
 			files = (
 				411C7F6E274BA8FE00C9710A /* LoginViewController.swift in Sources */,
 				41CE1150273BC05A00C493C8 /* ScrollViewExampleViewModel.swift in Sources */,
+				418C4140275A5E310099BC5B /* ForgotPasswordRouter.swift in Sources */,
 				CCB0207626A6F12000214CB9 /* String.swift in Sources */,
 				411C7F6F274BA8FE00C9710A /* LoginBuilder.swift in Sources */,
 				417E58FF274D9CCD00447ED3 /* LoginTextFields.swift in Sources */,
@@ -525,6 +553,7 @@
 				945B15BD25595DC9003A65E0 /* Cache.swift in Sources */,
 				41CE114F273BC05A00C493C8 /* ScrollViewExampleBuilder.swift in Sources */,
 				31981E4B24191A4500D25074 /* CustomTextField.swift in Sources */,
+				418C4141275A5E310099BC5B /* ForgotPasswordViewController.swift in Sources */,
 				E3D14DCD242D081B00436D51 /* Constants.swift in Sources */,
 				943CE5FF2546DFBC00CA93AA /* CustomImageView.swift in Sources */,
 				4139870E2737FA3500C243F4 /* StartupRouter.swift in Sources */,
@@ -545,12 +574,15 @@
 				945B15B425595DC9003A65E0 /* Int.swift in Sources */,
 				943CE5FE2546DFBC00CA93AA /* CustomButton.swift in Sources */,
 				945B15B525595DC9003A65E0 /* UITableViewCell.swift in Sources */,
+				418AD20A275A6A51005AFE3C /* ForgotPasswordTextFields.swift in Sources */,
 				CCB0207526A6F12000214CB9 /* Date.swift in Sources */,
 				945B15BB25595DC9003A65E0 /* Window.swift in Sources */,
+				418C4142275A5E310099BC5B /* ForgotPasswordBuilder.swift in Sources */,
 				413987002737F6F200C243F4 /* UIFont.swift in Sources */,
 				CCB0205326A6EF6500214CB9 /* Container.swift in Sources */,
 				CCB0202A26A6EE3400214CB9 /* AppDelegate.swift in Sources */,
 				411C7F6D274BA8FE00C9710A /* LoginRouter.swift in Sources */,
+				418C4143275A5E310099BC5B /* ForgotPasswordViewModel.swift in Sources */,
 				411C7F70274BA8FE00C9710A /* LoginViewModel.swift in Sources */,
 				41CE114D273BC05A00C493C8 /* ScrollViewExampleRouter.swift in Sources */,
 			);

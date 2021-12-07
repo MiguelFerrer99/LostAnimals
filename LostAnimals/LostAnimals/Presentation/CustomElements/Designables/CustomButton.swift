@@ -91,6 +91,7 @@ import UIKit
   // MARK: - Private functions
   private func createActivityIndicator() -> UIActivityIndicatorView {
     let activityIndicator = UIActivityIndicatorView()
+    activityIndicator.startAnimating()
     activityIndicator.hidesWhenStopped = true
     activityIndicator.color = indicatorColor
     return activityIndicator
@@ -100,7 +101,6 @@ import UIKit
     activityIndicator.translatesAutoresizingMaskIntoConstraints = false
     addSubview(activityIndicator)
     centerActivityIndicatorInButton()
-    activityIndicator.startAnimating()
   }
   
   private func centerActivityIndicatorInButton() {
