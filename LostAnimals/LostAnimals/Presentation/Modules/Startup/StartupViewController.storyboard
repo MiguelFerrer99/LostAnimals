@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -64,13 +64,13 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in if you already have an account or Sign up to enjoy all the features of LostAnimals" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ia-BR-Ncj">
-                                                        <rect key="frame" x="0.0" y="50" width="295" height="63"/>
+                                                        <rect key="frame" x="0.0" y="50" width="295" height="74"/>
                                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="18"/>
                                                         <color key="textColor" name="CustomWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5dz-BV-hA2">
-                                                        <rect key="frame" x="0.0" y="123" width="295" height="12"/>
+                                                        <rect key="frame" x="0.0" y="134" width="295" height="1"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="30" id="GY1-wu-VNT"/>
@@ -80,7 +80,7 @@
                                                         <rect key="frame" x="0.0" y="145" width="295" height="25"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMk-Yx-9FK">
-                                                                <rect key="frame" x="74" y="0.0" width="147" height="25"/>
+                                                                <rect key="frame" x="69" y="0.0" width="157" height="25"/>
                                                                 <fontDescription key="fontDescription" name="Nunito-Black" family="Nunito" pointSize="18"/>
                                                                 <state key="normal" title="Continue as guest">
                                                                     <color key="titleColor" name="CustomWhite"/>
@@ -198,10 +198,10 @@
     </scenes>
     <designables>
         <designable name="MyI-La-a1L">
-            <size key="intrinsicContentSize" width="72" height="36"/>
+            <size key="intrinsicContentSize" width="74" height="40"/>
         </designable>
         <designable name="qrJ-U9-aUo">
-            <size key="intrinsicContentSize" width="56" height="36"/>
+            <size key="intrinsicContentSize" width="58" height="40"/>
         </designable>
     </designables>
     <color key="tintColor" name="CustomBlack"/>

@@ -25,6 +25,10 @@ extension Container {
     return ScrollViewExampleBuilder()
   }
   
+  func signupBuilder() -> SignUpBuilder {
+    return SignUpBuilder()
+  }
+  
   func startupBuilder() -> StartupBuilder {
     return StartupBuilder()
   }

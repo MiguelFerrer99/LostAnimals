@@ -24,4 +24,11 @@ final class StartupRouter {
       self.viewController?.navigationController?.pushViewController(viewController, animated: true)
     }
   }
+  
+  func gotoSignup() {
+    let viewController = Container.shared.signupBuilder().build()
+    DispatchQueue.main.async {
+      self.viewController?.navigationController?.pushViewController(viewController, animated: true)
+    }
+  }
 }

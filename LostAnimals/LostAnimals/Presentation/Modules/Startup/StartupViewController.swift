@@ -51,6 +51,6 @@ final class StartupViewController: ViewController {
   }
   
   @IBAction func signUpButtonPressed(_ sender: CustomButton) {
-    // TODO: Go to ExploreViewController
+    viewModel.didPressSignupButton()
   }
 }

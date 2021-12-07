@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-Black.ttf">
+            <string>Nunito-Black</string>
+        </array>
+        <array key="Nunito-Bold.ttf">
+            <string>Nunito-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Sign Up View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="SignUpViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="SignUpViewController" customModule="LostAnimals" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIj-HD-ffO">
+                                <rect key="frame" x="130.5" y="104" width="153" height="55"/>
+                                <fontDescription key="fontDescription" name="Nunito-Black" family="Nunito" pointSize="40"/>
+                                <color key="textColor" name="CustomBlack"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="038-01-abI" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
+                                <rect key="frame" x="40" y="224" width="334" height="10"/>
+                                <color key="backgroundColor" name="CustomBlack"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fullRound" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZsK-07-axw" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
+                                <rect key="frame" x="40" y="224" width="334" height="10"/>
+                                <color key="backgroundColor" name="CustomBlack"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="zYG-1K-Efp"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fullRound" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rK-Q7-Rh8">
+                                <rect key="frame" x="140" y="189" width="134.5" height="25"/>
+                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="18"/>
+                                <color key="textColor" name="CustomBlack"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LGX-7N-aC4" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="284" width="414" height="612"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fill your personal details to let us know something about you" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6a-eS-2V8">
+                                        <rect key="frame" x="40" y="40" width="334" height="44"/>
+                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="16"/>
+                                        <color key="textColor" name="CustomWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6RZ-aB-6Kh">
+                                        <rect key="frame" x="40" y="503" width="334" height="55"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="eGv-kV-4CX">
+                                                <rect key="frame" x="0.0" y="10" width="334" height="45"/>
+                                                <subviews>
+                                                    <button opaque="NO" alpha="0.0" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qIc-Ai-GY3" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="147" height="45"/>
+                                                        <color key="backgroundColor" name="CustomWhite"/>
+                                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="20"/>
+                                                        <state key="normal" title="Back">
+                                                            <color key="titleColor" name="CustomBlack"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="fullRound" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="backStepButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="cfY-pF-pIY"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dc6-pB-yAY" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
+                                                        <rect key="frame" x="187" y="0.0" width="147" height="45"/>
+                                                        <color key="backgroundColor" name="CustomWhite"/>
+                                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="20"/>
+                                                        <state key="normal" title="Next">
+                                                            <color key="titleColor" name="CustomBlack"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="fullRound" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="nextStepButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ReE-AP-Na1"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="vV5-Sb-Yuo"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="eGv-kV-4CX" secondAttribute="trailing" id="2kE-hR-rd3"/>
+                                            <constraint firstAttribute="bottom" secondItem="eGv-kV-4CX" secondAttribute="bottom" id="7AZ-Zr-svW"/>
+                                            <constraint firstAttribute="height" constant="55" id="B2K-LW-uYQ"/>
+                                            <constraint firstItem="eGv-kV-4CX" firstAttribute="leading" secondItem="6RZ-aB-6Kh" secondAttribute="leading" id="Npn-aW-vfN"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" name="CustomBlack"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="6RZ-aB-6Kh" secondAttribute="trailing" constant="40" id="HKD-6c-CyX"/>
+                                    <constraint firstAttribute="trailing" secondItem="T6a-eS-2V8" secondAttribute="trailing" constant="40" id="YjA-Xw-gEa"/>
+                                    <constraint firstItem="T6a-eS-2V8" firstAttribute="top" secondItem="LGX-7N-aC4" secondAttribute="top" constant="40" id="jN6-6g-EmO"/>
+                                    <constraint firstItem="6RZ-aB-6Kh" firstAttribute="leading" secondItem="LGX-7N-aC4" secondAttribute="leading" constant="40" id="pXn-k0-DuK"/>
+                                    <constraint firstItem="T6a-eS-2V8" firstAttribute="leading" secondItem="LGX-7N-aC4" secondAttribute="leading" constant="40" id="sfV-wq-oNJ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" name="CustomBlack"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" name="CustomGreen"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1rK-Q7-Rh8" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="18m-3r-41M"/>
+                            <constraint firstItem="ZsK-07-axw" firstAttribute="top" secondItem="1rK-Q7-Rh8" secondAttribute="bottom" constant="10" id="2BU-fs-jIZ"/>
+                            <constraint firstItem="038-01-abI" firstAttribute="trailing" secondItem="ZsK-07-axw" secondAttribute="trailing" id="7fy-jh-DyB"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="6RZ-aB-6Kh" secondAttribute="bottom" constant="20" id="8Xg-1Q-OuL"/>
+                            <constraint firstItem="ZsK-07-axw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="IoX-fA-Ked"/>
+                            <constraint firstItem="CIj-HD-ffO" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="J1k-F0-ZVP"/>
+                            <constraint firstAttribute="bottom" secondItem="LGX-7N-aC4" secondAttribute="bottom" id="Jbh-zf-RdK"/>
+                            <constraint firstItem="LGX-7N-aC4" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="L1W-nk-xhJ"/>
+                            <constraint firstItem="LGX-7N-aC4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Mvj-MV-w3O"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ZsK-07-axw" secondAttribute="trailing" constant="40" id="Phx-zu-43s"/>
+                            <constraint firstItem="038-01-abI" firstAttribute="height" secondItem="ZsK-07-axw" secondAttribute="height" id="U4H-ig-oNU"/>
+                            <constraint firstItem="038-01-abI" firstAttribute="leading" secondItem="ZsK-07-axw" secondAttribute="leading" id="XU3-vd-9A2"/>
+                            <constraint firstItem="CIj-HD-ffO" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="60" id="adw-Oz-2RI"/>
+                            <constraint firstItem="1rK-Q7-Rh8" firstAttribute="top" secondItem="CIj-HD-ffO" secondAttribute="bottom" constant="30" id="gAr-Me-bVQ"/>
+                            <constraint firstItem="LGX-7N-aC4" firstAttribute="top" secondItem="038-01-abI" secondAttribute="bottom" constant="50" id="hLf-q7-cMT"/>
+                            <constraint firstItem="038-01-abI" firstAttribute="bottom" secondItem="ZsK-07-axw" secondAttribute="bottom" id="kFs-a6-J0f"/>
+                            <constraint firstItem="038-01-abI" firstAttribute="top" secondItem="ZsK-07-axw" secondAttribute="top" id="tg2-KO-NbK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backStepButton" destination="qIc-Ai-GY3" id="lZR-9b-AZH"/>
+                        <outlet property="currentProgressBarView" destination="038-01-abI" id="8SM-gF-BXe"/>
+                        <outlet property="fullProgressBarView" destination="ZsK-07-axw" id="Wcb-Yx-dU0"/>
+                        <outlet property="nextStepButton" destination="Dc6-pB-yAY" id="hrI-Ye-NtL"/>
+                        <outlet property="progressBarLabel" destination="1rK-Q7-Rh8" id="zu5-0x-1wf"/>
+                        <outlet property="signupContentsView" destination="LGX-7N-aC4" id="Fdn-oT-5CU"/>
+                        <outlet property="stepInfoLabel" destination="T6a-eS-2V8" id="xUY-nO-mB3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="105.80357142857143"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="Dc6-pB-yAY">
+            <size key="intrinsicContentSize" width="45" height="40"/>
+        </designable>
+        <designable name="qIc-Ai-GY3">
+            <size key="intrinsicContentSize" width="45" height="40"/>
+        </designable>
+    </designables>
+    <resources>
+        <namedColor name="CustomBlack">
+            <color red="0.24705882352941178" green="0.24705882352941178" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="CustomGreen">
+            <color red="0.40784313725490196" green="0.72549019607843135" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="CustomWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

@@ -44,6 +44,11 @@
 		418C4142275A5E310099BC5B /* ForgotPasswordBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418C413E275A5E310099BC5B /* ForgotPasswordBuilder.swift */; };
 		418C4143275A5E310099BC5B /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418C413F275A5E310099BC5B /* ForgotPasswordViewModel.swift */; };
 		418C4145275A5F3F0099BC5B /* ForgotPasswordViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 418C4144275A5F3F0099BC5B /* ForgotPasswordViewController.storyboard */; };
+		41B75626275EE4CE00C00E03 /* SignUpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B75622275EE4CE00C00E03 /* SignUpRouter.swift */; };
+		41B75627275EE4CE00C00E03 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B75623275EE4CE00C00E03 /* SignUpViewController.swift */; };
+		41B75628275EE4CE00C00E03 /* SignUpBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B75624275EE4CE00C00E03 /* SignUpBuilder.swift */; };
+		41B75629275EE4CE00C00E03 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B75625275EE4CE00C00E03 /* SignUpViewModel.swift */; };
+		41B7562B275EE50900C00E03 /* SignUpViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41B7562A275EE50900C00E03 /* SignUpViewController.storyboard */; };
 		41CE114D273BC05A00C493C8 /* ScrollViewExampleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CE1149273BC05A00C493C8 /* ScrollViewExampleRouter.swift */; };
 		41CE114E273BC05A00C493C8 /* ScrollViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CE114A273BC05A00C493C8 /* ScrollViewExampleViewController.swift */; };
 		41CE114F273BC05A00C493C8 /* ScrollViewExampleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CE114B273BC05A00C493C8 /* ScrollViewExampleBuilder.swift */; };
@@ -114,6 +119,11 @@
 		418C413E275A5E310099BC5B /* ForgotPasswordBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordBuilder.swift; sourceTree = "<group>"; };
 		418C413F275A5E310099BC5B /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		418C4144275A5F3F0099BC5B /* ForgotPasswordViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotPasswordViewController.storyboard; sourceTree = "<group>"; };
+		41B75622275EE4CE00C00E03 /* SignUpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRouter.swift; sourceTree = "<group>"; };
+		41B75623275EE4CE00C00E03 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		41B75624275EE4CE00C00E03 /* SignUpBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpBuilder.swift; sourceTree = "<group>"; };
+		41B75625275EE4CE00C00E03 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		41B7562A275EE50900C00E03 /* SignUpViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpViewController.storyboard; sourceTree = "<group>"; };
 		41CE1149273BC05A00C493C8 /* ScrollViewExampleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewExampleRouter.swift; sourceTree = "<group>"; };
 		41CE114A273BC05A00C493C8 /* ScrollViewExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewExampleViewController.swift; sourceTree = "<group>"; };
 		41CE114B273BC05A00C493C8 /* ScrollViewExampleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewExampleBuilder.swift; sourceTree = "<group>"; };
@@ -266,6 +276,7 @@
 				418C413B275A5D000099BC5B /* ForgotPassword */,
 				411C7F68274BA8CB00C9710A /* Login */,
 				41CE1148273BC04300C493C8 /* ScrollViewExample */,
+				41B75621275EE4B000C00E03 /* SignUp */,
 				413987092737FA2600C243F4 /* Startup */,
 			);
 			path = Modules;
@@ -282,6 +293,18 @@
 				418AD209275A6A51005AFE3C /* ForgotPasswordTextFields.swift */,
 			);
 			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		41B75621275EE4B000C00E03 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				41B7562A275EE50900C00E03 /* SignUpViewController.storyboard */,
+				41B75622275EE4CE00C00E03 /* SignUpRouter.swift */,
+				41B75623275EE4CE00C00E03 /* SignUpViewController.swift */,
+				41B75624275EE4CE00C00E03 /* SignUpBuilder.swift */,
+				41B75625275EE4CE00C00E03 /* SignUpViewModel.swift */,
+			);
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 		41CE1148273BC04300C493C8 /* ScrollViewExample */ = {
@@ -524,6 +547,7 @@
 				41871967275BFA6D00C993BC /* Nunito-Regular.ttf in Resources */,
 				41871968275BFA6D00C993BC /* Nunito-SemiBold.ttf in Resources */,
 				41871969275BFA6D00C993BC /* Nunito-SemiBoldItalic.ttf in Resources */,
+				41B7562B275EE50900C00E03 /* SignUpViewController.storyboard in Resources */,
 				31981E49241919D300D25074 /* CustomTextField.xib in Resources */,
 				41CE1152273BC06800C493C8 /* ScrollViewExampleViewController.storyboard in Resources */,
 				418C4145275A5F3F0099BC5B /* ForgotPasswordViewController.storyboard in Resources */,
@@ -541,11 +565,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41B75626275EE4CE00C00E03 /* SignUpRouter.swift in Sources */,
 				411C7F6E274BA8FE00C9710A /* LoginViewController.swift in Sources */,
 				41CE1150273BC05A00C493C8 /* ScrollViewExampleViewModel.swift in Sources */,
 				418C4140275A5E310099BC5B /* ForgotPasswordRouter.swift in Sources */,
 				CCB0207626A6F12000214CB9 /* String.swift in Sources */,
 				411C7F6F274BA8FE00C9710A /* LoginBuilder.swift in Sources */,
+				41B75627275EE4CE00C00E03 /* SignUpViewController.swift in Sources */,
 				417E58FF274D9CCD00447ED3 /* LoginTextFields.swift in Sources */,
 				943CE5FD2546DFBC00CA93AA /* CustomView.swift in Sources */,
 				945B15AC25595DC9003A65E0 /* TableParent.swift in Sources */,
@@ -563,6 +589,7 @@
 				945B15B325595DC9003A65E0 /* UIColor.swift in Sources */,
 				945B15AE25595DC9003A65E0 /* Dynamic.swift in Sources */,
 				413987112737FA3500C243F4 /* StartupViewModel.swift in Sources */,
+				41B75628275EE4CE00C00E03 /* SignUpBuilder.swift in Sources */,
 				CCB0206726A6F04500214CB9 /* ViewController.swift in Sources */,
 				945B15B125595DC9003A65E0 /* ViewModel.swift in Sources */,
 				945B15B825595DC9003A65E0 /* UIImage.swift in Sources */,
@@ -572,6 +599,7 @@
 				41CE114E273BC05A00C493C8 /* ScrollViewExampleViewController.swift in Sources */,
 				31981E4D24191C2F00D25074 /* CustomTextField-Models.swift in Sources */,
 				945B15B425595DC9003A65E0 /* Int.swift in Sources */,
+				41B75629275EE4CE00C00E03 /* SignUpViewModel.swift in Sources */,
 				943CE5FE2546DFBC00CA93AA /* CustomButton.swift in Sources */,
 				945B15B525595DC9003A65E0 /* UITableViewCell.swift in Sources */,
 				418AD20A275A6A51005AFE3C /* ForgotPasswordTextFields.swift in Sources */,
