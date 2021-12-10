@@ -12,10 +12,8 @@ extension UIColor {
   
   static let customBlack = UIColor(named: "CustomBlack") ?? .black
   static let customBlue = UIColor(named: "CustomBlue") ?? .blue
-  static let customGray = UIColor(named: "CustomGray") ?? .gray
   static let customGreen = UIColor(named: "CustomGreen") ?? .green
   static let customLightBlue = UIColor(named: "CustomLightBlue") ?? .blue
-  static let customLightGray = UIColor(named: "CustomLightGray") ?? .lightGray
   static let customLightGreen = UIColor(named: "CustomLightGreen") ?? .green
   static let customRed = UIColor(named: "CustomRed") ?? .red
   static let customWhite = UIColor(named: "CustomWhite") ?? .white

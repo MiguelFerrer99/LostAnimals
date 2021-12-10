@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -28,6 +28,7 @@
                 <outlet property="hideContentButton" destination="lpM-zS-wfu" id="qlS-cZ-HSG"/>
                 <outlet property="hideContentView" destination="QE8-FO-F1a" id="aVc-cH-A8p"/>
                 <outlet property="placeholderLabel" destination="c1L-wV-cau" id="42p-Cg-DgG"/>
+                <outlet property="selectCityButton" destination="GhD-gg-acv" id="0N8-Zv-7E6"/>
                 <outlet property="statusImageView" destination="5Xs-sB-GV6" id="Foo-vm-fWg"/>
                 <outlet property="statusView" destination="ZZq-PA-09W" id="fvW-Uv-d4G"/>
                 <outlet property="textField" destination="qks-Sh-gJe" id="cMU-is-vWL"/>
@@ -143,12 +144,27 @@
                         <constraint firstItem="cDF-oe-Tls" firstAttribute="leading" secondItem="B13-BB-XBd" secondAttribute="leading" id="pYD-6X-Rdt"/>
                     </constraints>
                 </stackView>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GhD-gg-acv">
+                    <rect key="frame" x="0.0" y="0.0" width="460" height="60"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="iGs-Kl-QME"/>
+                    </constraints>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <connections>
+                        <action selector="selectCityButtonPressed:" destination="-1" eventType="touchUpInside" id="jIQ-tY-SVU"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <color key="tintColor" name="CustomWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="B13-BB-XBd" secondAttribute="trailing" id="6EL-kq-haT"/>
+                <constraint firstItem="GhD-gg-acv" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Bgy-z8-P8Q"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="GhD-gg-acv" secondAttribute="trailing" id="CjN-IG-UC6"/>
+                <constraint firstAttribute="top" secondItem="GhD-gg-acv" secondAttribute="top" id="JIh-iX-PK7"/>
                 <constraint firstItem="B13-BB-XBd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="reS-SG-0T6"/>
                 <constraint firstAttribute="top" secondItem="B13-BB-XBd" secondAttribute="top" id="wf5-Qf-pTS"/>
             </constraints>

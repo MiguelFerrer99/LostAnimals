@@ -9,10 +9,11 @@
 import UIKit
 
 @objc protocol CustomTextFieldDelegate: AnyObject {
-  @objc optional func textFieldShouldReturn(_ customTextField: CustomTextField) -> Bool
-  @objc optional func textFieldDidEndEditing(_ customTextField: CustomTextField)
-  @objc optional func textFieldDidBeginEditing(_ customTextField: CustomTextField)
+  func textFieldShouldReturn(_ customTextField: CustomTextField) -> Bool
+  func textFieldDidEndEditing(_ customTextField: CustomTextField)
+  func textFieldDidBeginEditing(_ customTextField: CustomTextField)
   func textFieldDidChange(_ customTextField: CustomTextField)
+  @objc optional func textFieldWillSelectCity(_ customTextField: CustomTextField)
 }
 
 @IBDesignable
@@ -21,7 +22,7 @@ class CustomTextField: UIView, UITextFieldDelegate {
   @IBInspectable var capitalizeFirstLetter: Bool = false {
     willSet { textField.autocapitalizationType = newValue ? .words : .none }
   }
-
+  
   @IBInspectable var hideContent: Bool = false {
     willSet {
       textField.isSecureTextEntry = newValue
@@ -29,16 +30,41 @@ class CustomTextField: UIView, UITextFieldDelegate {
     }
   }
   
-  @IBInspectable var placeholder: String = "" {
+  @IBInspectable var whiteTheme: Bool = false {
     willSet {
+      addStackView.backgroundColor = newValue ? .customWhite : .customBlack
+      textField.textColor = newValue ? .customBlack : .customWhite
+      textField.tintColor = newValue ? .customBlack : .customWhite
       textField.attributedPlaceholder = NSAttributedString(
-        string: newValue,
-        attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "CustomWhite")?.withAlphaComponent(0.5) ?? .white]
+        string: placeholder,
+        attributes: [NSAttributedString.Key.foregroundColor: newValue ? UIColor.customBlack.withAlphaComponent(0.5) : UIColor.customWhite.withAlphaComponent(0.5)]
       )
       placeholderLabel.attributedText = textField.attributedPlaceholder
     }
   }
-
+  
+  @IBInspectable var placeholder: String = "" {
+    willSet {
+      textField.attributedPlaceholder = NSAttributedString(
+        string: newValue,
+        attributes: [NSAttributedString.Key.foregroundColor: whiteTheme ? UIColor.customBlack.withAlphaComponent(0.5) : UIColor.customWhite.withAlphaComponent(0.5)]
+      )
+      placeholderLabel.attributedText = textField.attributedPlaceholder
+    }
+  }
+  
+  @IBInspectable var birthdatePickerEnabled: Bool = false {
+    willSet {
+      if newValue { createDatePicker() }
+    }
+  }
+  
+  @IBInspectable var cityPickerEnabled: Bool = false {
+    willSet {
+      selectCityButton.isHidden = newValue
+    }
+  }
+  
   // MARK: - IBOutlets
   @IBOutlet var customView: UIView!
   @IBOutlet weak var addStackView: UIStackView!
@@ -50,11 +76,13 @@ class CustomTextField: UIView, UITextFieldDelegate {
   @IBOutlet weak var statusView: UIView!
   @IBOutlet weak var statusImageView: UIImageView!
   @IBOutlet weak var errorLabel: UILabel!
+  @IBOutlet weak var selectCityButton: UIButton!
   
   // MARK: - Properties
   var delegate: CustomTextFieldDelegate?
   var errorsToCheck = [TextFieldError]()
-
+  let birthdatePicker = UIDatePicker()
+  
   var hasError: Bool {
     for error in errorsToCheck {
       let hasError = error.checkCondition(value)
@@ -62,26 +90,26 @@ class CustomTextField: UIView, UITextFieldDelegate {
       errorLabel.isHidden = !hasError
       self.statusView.isHidden = false
       self.statusImageView.image = UIImage(named: hasError ? "TextfieldBad" : "TextfieldOk")
-      if hasError { return false }
+      if hasError { return true }
     }
     return false
   }
-
+  
   var value: String {
     return textField.text ?? ""
   }
-
+  
   // MARK: - Init
   override init(frame: CGRect) {
     super.init(frame: frame)
     setup()
   }
-
+  
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     setup()
   }
-
+  
   // MARK: - Functions
   private func setup() {
     customView = loadViewFromNib()
@@ -92,18 +120,40 @@ class CustomTextField: UIView, UITextFieldDelegate {
     addSubview(customView)
     textField.delegate = self
   }
-
+  
   private func loadViewFromNib() -> UIView! {
     let bundle = Bundle(for: type(of: self))
     let nib = UINib(nibName: String(describing: type(of: self)), bundle: bundle)
     let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
     return view
   }
-
+  
+  private func createDatePicker() {
+    let toolbar = UIToolbar()
+    toolbar.sizeToFit()
+    let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+    let spacerItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+    toolbar.setItems([spacerItem, doneButton], animated: true)
+    toolbar.tintColor = .customBlack
+    textField.inputAccessoryView = toolbar
+    birthdatePicker.maximumDate = .today
+    birthdatePicker.datePickerMode = .date
+    if #available(iOS 13.4, *) {
+      birthdatePicker.preferredDatePickerStyle = .wheels
+    }
+    textField.inputView = birthdatePicker
+  }
+  
+  @objc private func donePressed() {
+    textField.text = birthdatePicker.date.toString(withFormat: DateFormat.dayMonthYearOther)
+    textField.addTarget(self, action: #selector(textFieldDidChangeEditing(_:)), for: .editingDidEnd)
+    textField.endEditing(true)
+  }
+  
   func addErrorsToCheck(_ errorsToCheck: [TextFieldError]) {
     self.errorsToCheck = errorsToCheck
   }
-
+  
   // MARK: - IBActions
   @IBAction func hideContentButtonPressed(_ sender: UIButton) {
     hideContentButton.setImage(UIImage(systemName: textField.isSecureTextEntry ? "eye.slash.fill" : "eye.fill"), for: .normal)
@@ -112,15 +162,15 @@ class CustomTextField: UIView, UITextFieldDelegate {
   
   // MARK: - UITextFieldDelegate
   func textFieldShouldReturn(_ customTextField: UITextField) -> Bool {
-    return ((delegate?.textFieldShouldReturn?(self)) != nil)
+    return ((delegate?.textFieldShouldReturn(self)) != nil)
   }
   
   func textFieldDidBeginEditing(_ customTextField: UITextField) {
-    delegate?.textFieldDidBeginEditing?(self)
+    delegate?.textFieldDidBeginEditing(self)
   }
-
+  
   func textFieldDidEndEditing(_ customTextField: UITextField) {
-    delegate?.textFieldDidEndEditing?(self)
+    delegate?.textFieldDidEndEditing(self)
   }
   
   @IBAction func textFieldDidChangeEditing(_ customTextField: UITextField) {
@@ -131,5 +181,9 @@ class CustomTextField: UIView, UITextFieldDelegate {
       self.layoutIfNeeded()
     }
     delegate?.textFieldDidChange(self)
+  }
+  
+  @IBAction func selectCityButtonPressed(_ sender: UIButton) {
+    delegate?.textFieldWillSelectCity?(self)
   }
 }

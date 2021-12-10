@@ -23,6 +23,21 @@ extension String {
     return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count)) != nil
   }
   
+  func areOnlyLetters() -> Bool {
+    let regex = try! NSRegularExpression(pattern: "^([A-Za-z]+)$", options: .caseInsensitive)
+    return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count)) != nil
+  }
+  
+  func areOnlyLettersAndSpaces() -> Bool {
+    let regex = try! NSRegularExpression(pattern: "^([A-Za-z ]+)$", options: .caseInsensitive)
+    return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count)) != nil
+  }
+  
+  func isValidDate() -> Bool {
+    let regex = try! NSRegularExpression(pattern: "^([0-2][0-9]|(3)[0-1])(/)(((0)[0-9])|((1)[0-2]))(/)[0-9]{4}$", options: .caseInsensitive)
+    return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count)) != nil
+  }
+  
   func toDate(withFormat format: String)-> Date? {
     let dateFormatter = DateFormatter()
     dateFormatter.calendar = Calendar(identifier: .gregorian)

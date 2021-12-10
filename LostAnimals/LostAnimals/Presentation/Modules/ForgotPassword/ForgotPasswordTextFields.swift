@@ -28,10 +28,21 @@ extension ForgotPasswordViewController: CustomTextFieldDelegate {
     return true
   }
   
-  func textFieldDidChange(_ customTextField: CustomTextField) {
+  func textFieldDidBeginEditing(_ customTextField: CustomTextField) {
     if viewModel.editedTextFields.first(where: {$0 == customTextField}) == nil {
       viewModel.editedTextFields.append(customTextField)
     }
-    _ = viewModel.textFieldsHaveErrors()
+  }
+  
+  func textFieldDidChange(_ customTextField: CustomTextField) {
+    let haveErrors = viewModel.textFieldsHaveErrors()
+    forgotPasswordButton.alpha = (haveErrors || viewModel.editedTextFields.count < 1) ? 0.5 : 1
+    forgotPasswordButton.isEnabled = !haveErrors && viewModel.editedTextFields.count == 1
+  }
+  
+  func textFieldDidEndEditing(_ customTextField: CustomTextField) {
+    let haveErrors = viewModel.textFieldsHaveErrors()
+    forgotPasswordButton.alpha = (haveErrors || viewModel.editedTextFields.count < 1) ? 0.5 : 1
+    forgotPasswordButton.isEnabled = !haveErrors && viewModel.editedTextFields.count == 1
   }
 }

@@ -13,11 +13,10 @@ final class SignUpViewController: ViewController {
   // MARK: - IBOutlets
   @IBOutlet weak var progressBarLabel: UILabel!
   @IBOutlet weak var currentProgressBarView: CustomView!
+  @IBOutlet weak var currentProgressBarViewWidth: NSLayoutConstraint!
   @IBOutlet weak var fullProgressBarView: CustomView!
   @IBOutlet weak var signupContentsView: CustomView!
-  @IBOutlet weak var stepInfoLabel: UILabel!
-  @IBOutlet weak var backStepButton: CustomButton!
-  @IBOutlet weak var nextStepButton: CustomButton!
+  @IBOutlet weak var stepsCollectionView: UICollectionView!
   
   // MARK: - Properties
   var viewModel: SignUpViewModel!
@@ -43,15 +42,55 @@ final class SignUpViewController: ViewController {
   }
   
   private func setupUI() {
+    configureCollectionView(stepsCollectionView)
     signupContentsView.layer.maskedCorners =  [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+    updateCurrentProgressBarView()
   }
   
-  // MARK: - IBActions
-  @IBAction func backStepButtonPressed(_ sender: CustomButton) {
-    // TODO: Go to back step
+  private func updateCurrenCollectionViewItem(direction: SignUpMoveDirection) {
+    let indexPath = IndexPath(item: viewModel.currentStep.rawValue, section: 0)
+    stepsCollectionView.scrollToItem(at: indexPath, at: direction == .back ? .left : .right, animated: true)
   }
   
-  @IBAction func nextStepButtonPressed(_ sender: CustomButton) {
-    // TODO: Go to next step
+  private func updateCurrentProgressBarView() {
+    let percentageInFloat = (1.0 / CGFloat(self.viewModel.numberOfSteps)) * (CGFloat(self.viewModel.currentStep.rawValue) + 1.0)
+    self.currentProgressBarViewWidth.constant = self.fullProgressBarView.frame.width * percentageInFloat
+    UIView.animate(withDuration: 0.5) {
+      self.currentProgressBarView.layoutIfNeeded()
+    }
+    UIView.transition(with: progressBarLabel, duration: 0.25, options: .transitionCrossDissolve, animations: { [weak self] in
+      guard let self = self else { return }
+      self.progressBarLabel.text = self.viewModel.currentStepLabel.rawValue
+    })
+  }
+  
+  func moveToPreviousStep() {
+    switch viewModel.currentStep {
+    case .personalDetails: return
+    case .accountDetails:
+      viewModel.currentStep = .personalDetails
+      viewModel.currentStepLabel = .personalDetails
+    case .socialMediaDetails:
+      viewModel.currentStep = .accountDetails
+      viewModel.currentStepLabel = .accountDetails
+    }
+    updateCurrenCollectionViewItem(direction: .back)
+    updateCurrentProgressBarView()
+  }
+  
+  func moveToNextStep() {
+    switch viewModel.currentStep {
+    case .personalDetails:
+      viewModel.currentStep = .accountDetails
+      viewModel.currentStepLabel = .accountDetails
+    case .accountDetails:
+      viewModel.currentStep = .socialMediaDetails
+      viewModel.currentStepLabel = .socialMediaDetails
+    case .socialMediaDetails:
+      // TODO: Go to Onboarding/Explore
+      return
+    }
+    updateCurrenCollectionViewItem(direction: .next)
+    updateCurrentProgressBarView()
   }
 }

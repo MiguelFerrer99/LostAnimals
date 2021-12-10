@@ -53,3 +53,19 @@ class TextFieldErrorPasswordFormat: TextFieldError {
     }
   }
 }
+
+class TextFieldErrorOnlyLettersAndSpaces: TextFieldError {
+  init() {
+    super.init(localizedDescription: "The field may contain only letters and spaces") { (value) -> Bool in
+      return !value.areOnlyLettersAndSpaces()
+    }
+  }
+}
+
+class TextFieldErrorDate: TextFieldError {
+  init() {
+    super.init(localizedDescription: "The field must contain a valid date (dd/mm/yyyy)") { (value) -> Bool in
+      return !value.isValidDate()
+    }
+  }
+}

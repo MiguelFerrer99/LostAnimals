@@ -12,6 +12,9 @@ final class SignUpViewModel {
   
   // MARK: - Properties
   private let router: SignUpRouter
+  let numberOfSteps: Int = 3
+  var currentStep: SignUpStep = .personalDetails
+  var currentStepLabel: SignUpStepLabel = .personalDetails
   
   // MARK: - Init
   required init(router: SignUpRouter) {

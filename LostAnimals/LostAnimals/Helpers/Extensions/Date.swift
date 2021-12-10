@@ -24,6 +24,8 @@ extension Date {
     self = gregorianCalendar.date(from: dateComponents)!
   }
   
+  static let today = Date()
+  
   var day: Int {
     let calendar = Calendar.current
     return calendar.component(.day, from: self)
@@ -63,4 +65,33 @@ extension Date {
     formatter.locale = Locale(identifier: Locale.preferredLanguages.first ?? "en-EN")
     return formatter.localizedString(for: self, relativeTo: Date())
   }
+  
+  var isCurrentMonth: Bool {
+    return year == Date().year && month == Date().month
+  }
+  
+  var isToday: Bool {
+    return year == Date().year && month == Date().month && day == Date().day
+  }
+  
+  var isYesterday: Bool {
+    return year == Date().year && month == Date().month && day == Date().day - 1
+  }
+}
+
+struct DateFormat {
+  static let backend = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+  static let full = "yyyy/MM/dd HH:mm:ss"
+  static let dayMonthYear = "d/MM/yyyy"
+  static let dayMonthYearHyphen = "dd-MM-yyyy"
+  static let dayMonthYearOther = "dd/MM/yyyy"
+  static let dayMonthYearShort = "dd/MM/yy"
+  static let yearMonthDay = "yyyy/MM/dd"
+  static let hourMinutes = "HH:mm"
+  static let minuteSeconds = "mm:ss"
+  static let yearMonthDayBackend = "yyyy-MM-dd"
+  static let dayMonth = "d/MM"
+  static let dayMonthOther = "dd MMM"
+  static let dayMonthYearHour = "dd-MM-yyyy HH:mm:ss"
+  static let yearMonthDayHyphen = "yyyy-MM-dd"
 }

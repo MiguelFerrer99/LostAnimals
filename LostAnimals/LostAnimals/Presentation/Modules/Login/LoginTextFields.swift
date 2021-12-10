@@ -7,7 +7,6 @@
 //
 
 extension LoginViewController: CustomTextFieldDelegate {
-  
   // MARK: - Functions
   func configureTextFields() {
     mailTextField.delegate = self
@@ -36,10 +35,21 @@ extension LoginViewController: CustomTextFieldDelegate {
     return true
   }
   
-  func textFieldDidChange(_ customTextField: CustomTextField) {
+  func textFieldDidBeginEditing(_ customTextField: CustomTextField) {
     if viewModel.editedTextFields.first(where: {$0 == customTextField}) == nil {
       viewModel.editedTextFields.append(customTextField)
     }
-    _ = viewModel.textFieldsHaveErrors()
+  }
+  
+  func textFieldDidChange(_ customTextField: CustomTextField) {
+    let haveErrors = viewModel.textFieldsHaveErrors()
+    logInButton.alpha = (haveErrors || viewModel.editedTextFields.count < 2) ? 0.5 : 1
+    logInButton.isEnabled = !haveErrors && viewModel.editedTextFields.count == 2
+  }
+  
+  func textFieldDidEndEditing(_ customTextField: CustomTextField) {
+    let haveErrors = viewModel.textFieldsHaveErrors()
+    logInButton.alpha = (haveErrors || viewModel.editedTextFields.count < 2) ? 0.5 : 1
+    logInButton.isEnabled = !haveErrors && viewModel.editedTextFields.count == 2
   }
 }

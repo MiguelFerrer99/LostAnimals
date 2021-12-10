@@ -26,7 +26,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9Z-NB-VOJ">
-                                <rect key="frame" x="151" y="104" width="112" height="47"/>
+                                <rect key="frame" x="151" y="84" width="112" height="47"/>
                                 <fontDescription key="fontDescription" name="Nunito-Black" family="Nunito" pointSize="40"/>
                                 <color key="textColor" name="CustomBlack"/>
                                 <nil key="highlightedColor"/>
@@ -45,6 +45,9 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Mail"/>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="hideContent" value="NO"/>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="capitalizeFirstLetter" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="whiteTheme" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="birthdatePickerEnabled" value="NO"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DvV-CO-43e" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
@@ -58,6 +61,9 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="capitalizeFirstLetter" value="NO"/>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="hideContent" value="YES"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Password"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="whiteTheme" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="birthdatePickerEnabled" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
@@ -72,7 +78,7 @@
                                     <action selector="forgotPasswordButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="RPi-KO-Vgh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RDN-TM-gf9" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RDN-TM-gf9" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
                                 <rect key="frame" x="40" y="792" width="334" height="50"/>
                                 <color key="backgroundColor" name="CustomBlack"/>
                                 <constraints>
@@ -102,7 +108,7 @@
                             <constraint firstItem="Uij-Sy-9cP" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" constant="-14" id="jal-9g-BmX"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Uij-Sy-9cP" secondAttribute="trailing" constant="40" id="kRR-0I-4e3"/>
                             <constraint firstItem="P9Z-NB-VOJ" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="vJC-0d-Mco"/>
-                            <constraint firstItem="P9Z-NB-VOJ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="60" id="yHj-Ls-9N3"/>
+                            <constraint firstItem="P9Z-NB-VOJ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="40" id="yHj-Ls-9N3"/>
                         </constraints>
                     </view>
                     <connections>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="AccountDetailsCollectionViewCell" customModule="LostAnimals" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="260" height="335"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="260" height="335"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vps-NN-36b">
+                        <rect key="frame" x="0.0" y="0.0" width="260" height="335"/>
+                        <color key="backgroundColor" name="CustomGreen"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="Vps-NN-36b" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="fcJ-dW-8dE"/>
+                <constraint firstAttribute="bottom" secondItem="Vps-NN-36b" secondAttribute="bottom" id="isK-nH-8X7"/>
+                <constraint firstItem="Vps-NN-36b" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="k3Z-2R-ooT"/>
+                <constraint firstAttribute="trailing" secondItem="Vps-NN-36b" secondAttribute="trailing" id="nUz-1Z-8Hj"/>
+            </constraints>
+            <size key="customSize" width="260" height="335"/>
+            <point key="canvasLocation" x="289.85507246376812" y="215.95982142857142"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="CustomGreen">
+            <color red="0.40784313725490196" green="0.72549019607843135" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>
