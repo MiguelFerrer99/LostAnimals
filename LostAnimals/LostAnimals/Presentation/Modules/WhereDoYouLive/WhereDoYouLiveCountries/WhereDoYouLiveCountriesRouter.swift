@@ -1,14 +1,14 @@
 //
-//  SignUpRouter.swift
+//  WhereDoYouLiveCountriesRouter.swift
 //  LostAnimals
 //
-//  Created by Miguel Ferrer Fornali on 7/12/21.
+//  Created by Miguel Ferrer Fornali on 10/12/21.
 //  Copyright © 2021 Rudo. All rights reserved.
 //
 
 import UIKit
 
-final class SignUpRouter {
+final class WhereDoYouLiveCountriesRouter {
   // MARK: - Properties
   private weak var viewController: UIViewController?
   
@@ -18,8 +18,8 @@ final class SignUpRouter {
   }
   
   // MARK: - Functions
-  func goToWhereDoYouLiveCountries() {
-    let viewController = Container.shared.whereDoYouLiveCountriesBuilder().build()
+  func goToWhereDoYouLiveCities(cities: [String]) {
+    let viewController = Container.shared.whereDoYouLiveCitiesBuilder().build(cities: cities)
     DispatchQueue.main.async {
       self.viewController?.navigationController?.pushViewController(viewController, animated: true)
     }

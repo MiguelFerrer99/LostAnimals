@@ -25,9 +25,9 @@ extension SignUpViewController: UICollectionViewDelegate, UICollectionViewDataSo
   internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     switch indexPath.row {
     case 0:
-      let personalDetailsCell = collectionView.dequeue(PersonalDetailsCollectionViewCell.self, for: indexPath)
+      let personalDetailsCellVM = PersonalDetailsCollectionViewCellViewModel()
+      let personalDetailsCell = collectionView.dequeue(PersonalDetailsCollectionViewCell.self, for: indexPath, viewModel: personalDetailsCellVM)
       personalDetailsCell.signUpStepsDelegate = self
-      personalDetailsCell.presenter = self
       return personalDetailsCell
     case 1:
       let accountDetails = collectionView.dequeue(AccountDetailsCollectionViewCell.self, for: indexPath)

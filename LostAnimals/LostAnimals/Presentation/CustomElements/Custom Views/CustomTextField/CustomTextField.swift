@@ -61,7 +61,7 @@ class CustomTextField: UIView, UITextFieldDelegate {
   
   @IBInspectable var cityPickerEnabled: Bool = false {
     willSet {
-      selectCityButton.isHidden = newValue
+      selectCityButton.isHidden = !newValue
     }
   }
   

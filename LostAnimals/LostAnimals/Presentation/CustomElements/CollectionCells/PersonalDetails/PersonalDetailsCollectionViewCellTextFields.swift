@@ -49,28 +49,24 @@ extension PersonalDetailsCollectionViewCell: CustomTextFieldDelegate {
   }
   
   func textFieldDidBeginEditing(_ customTextField: CustomTextField) {
-    if editedTextFields.first(where: {$0 == customTextField}) == nil {
-      editedTextFields.append(customTextField)
+    if viewModel.editedTextFields.first(where: {$0 == customTextField}) == nil {
+      viewModel.editedTextFields.append(customTextField)
     }
   }
   
   func textFieldDidChange(_ customTextField: CustomTextField) {
-    let haveErrors = textFieldsHaveErrors()
-    nextStepButton.alpha = (haveErrors || editedTextFields.count < 4) ? 0.5 : 1
-    nextStepButton.isEnabled = !haveErrors && editedTextFields.count == 4
+    let haveErrors = viewModel.textFieldsHaveErrors()
+    nextStepButton.alpha = (haveErrors || viewModel.editedTextFields.count < 4) ? 0.5 : 1
+    nextStepButton.isEnabled = !haveErrors && viewModel.editedTextFields.count == 4
   }
   
   func textFieldDidEndEditing(_ customTextField: CustomTextField) {
-    let haveErrors = textFieldsHaveErrors()
-    nextStepButton.alpha = (haveErrors || editedTextFields.count < 4) ? 0.5 : 1
-    nextStepButton.isEnabled = !haveErrors && editedTextFields.count == 4
+    let haveErrors = viewModel.textFieldsHaveErrors()
+    nextStepButton.alpha = (haveErrors || viewModel.editedTextFields.count < 4) ? 0.5 : 1
+    nextStepButton.isEnabled = !haveErrors && viewModel.editedTextFields.count == 4
   }
   
   func textFieldWillSelectCity(_ customTextField: CustomTextField) {
-    // TODO: Push WhereDoYouLiveVC
-//    let viewController = UIViewController.instantiate(viewController: X.self)
-//    let viewModel = XViewModel(router: router)
-//    viewController.viewModel = viewModel
-//    self.presenter?.presentWithNavBar(viewController: viewController, completion: nil)
+    signUpStepsDelegate?.signUpGoToWhereDoYouLiveCountries()
   }
 }

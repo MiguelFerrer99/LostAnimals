@@ -17,6 +17,7 @@
 		4108D8D52762287900880E0B /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4108D8D42762287900880E0B /* Protocols.swift */; };
 		4108D8DB27624C8600880E0B /* PersonalDetailsCollectionViewCellTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4108D8DA27624C8600880E0B /* PersonalDetailsCollectionViewCellTextFields.swift */; };
 		4108D8DF2762A45D00880E0B /* CustomStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4108D8DE2762A45D00880E0B /* CustomStackView.swift */; };
+		410B31F3276B32C300CE4180 /* Countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 410B31F2276B32C300CE4180 /* Countries.json */; };
 		4114ABC8275F92C900F1AB01 /* SignUpCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4114ABC7275F92C900F1AB01 /* SignUpCollectionView.swift */; };
 		4114ABCC275F94B400F1AB01 /* PersonalDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4114ABCA275F94B400F1AB01 /* PersonalDetailsCollectionViewCell.swift */; };
 		4114ABCD275F94B400F1AB01 /* PersonalDetailsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4114ABCB275F94B400F1AB01 /* PersonalDetailsCollectionViewCell.xib */; };
@@ -35,10 +36,20 @@
 		413987102737FA3500C243F4 /* StartupBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4139870C2737FA3500C243F4 /* StartupBuilder.swift */; };
 		413987112737FA3500C243F4 /* StartupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4139870D2737FA3500C243F4 /* StartupViewModel.swift */; };
 		413987152738052C00C243F4 /* StartupViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 413987142738052C00C243F4 /* StartupViewController.storyboard */; };
-		415E59702763E834009A013E /* WhereDoYouLiveRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E596C2763E834009A013E /* WhereDoYouLiveRouter.swift */; };
-		415E59712763E834009A013E /* WhereDoYouLiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E596D2763E834009A013E /* WhereDoYouLiveViewController.swift */; };
-		415E59722763E834009A013E /* WhereDoYouLiveBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E596E2763E834009A013E /* WhereDoYouLiveBuilder.swift */; };
-		415E59732763E834009A013E /* WhereDoYouLiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E596F2763E834009A013E /* WhereDoYouLiveViewModel.swift */; };
+		415E597C2763EA7E009A013E /* WhereDoYouLiveCountriesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E59782763EA7E009A013E /* WhereDoYouLiveCountriesRouter.swift */; };
+		415E597D2763EA7E009A013E /* WhereDoYouLiveCountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E59792763EA7E009A013E /* WhereDoYouLiveCountriesViewController.swift */; };
+		415E597E2763EA7E009A013E /* WhereDoYouLiveCountriesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E597A2763EA7E009A013E /* WhereDoYouLiveCountriesBuilder.swift */; };
+		415E597F2763EA7E009A013E /* WhereDoYouLiveCountriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E597B2763EA7E009A013E /* WhereDoYouLiveCountriesViewModel.swift */; };
+		415E59812763EA94009A013E /* WhereDoYouLiveCountriesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 415E59802763EA94009A013E /* WhereDoYouLiveCountriesViewController.storyboard */; };
+		415E59832763EB4E009A013E /* WhereDoYouLiveCountriesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E59822763EB4E009A013E /* WhereDoYouLiveCountriesTableView.swift */; };
+		415E59852763F28C009A013E /* PersonalDetailsCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E59842763F28C009A013E /* PersonalDetailsCollectionViewCellViewModel.swift */; };
+		415E59902764F1F8009A013E /* WhereDoYouLiveCitiesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E598C2764F1F8009A013E /* WhereDoYouLiveCitiesRouter.swift */; };
+		415E59912764F1F8009A013E /* WhereDoYouLiveCitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E598D2764F1F8009A013E /* WhereDoYouLiveCitiesViewController.swift */; };
+		415E59922764F1F8009A013E /* WhereDoYouLiveCitiesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E598E2764F1F8009A013E /* WhereDoYouLiveCitiesBuilder.swift */; };
+		415E59932764F1F8009A013E /* WhereDoYouLiveCitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E598F2764F1F8009A013E /* WhereDoYouLiveCitiesViewModel.swift */; };
+		415E59952764F206009A013E /* WhereDoYouLiveCitiesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 415E59942764F206009A013E /* WhereDoYouLiveCitiesViewController.storyboard */; };
+		415E599D27650C7C009A013E /* CountryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E599C27650C7C009A013E /* CountryDTO.swift */; };
+		415E59A127650D77009A013E /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E59A027650D77009A013E /* Country.swift */; };
 		417E58FF274D9CCD00447ED3 /* LoginTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417E58FE274D9CCD00447ED3 /* LoginTextFields.swift */; };
 		4187195C275BFA6D00C993BC /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8DB273848AC00F5946B /* Nunito-Black.ttf */; };
 		4187195D275BFA6D00C993BC /* Nunito-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8D4273848AB00F5946B /* Nunito-BlackItalic.ttf */; };
@@ -65,6 +76,13 @@
 		41B75628275EE4CE00C00E03 /* SignUpBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B75624275EE4CE00C00E03 /* SignUpBuilder.swift */; };
 		41B75629275EE4CE00C00E03 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B75625275EE4CE00C00E03 /* SignUpViewModel.swift */; };
 		41B7562B275EE50900C00E03 /* SignUpViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41B7562A275EE50900C00E03 /* SignUpViewController.storyboard */; };
+		41BFE16B276539BC00AC5570 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BFE169276539BC00AC5570 /* CountryTableViewCell.swift */; };
+		41BFE16C276539BC00AC5570 /* CountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41BFE16A276539BC00AC5570 /* CountryTableViewCell.xib */; };
+		41BFE17027653A6300AC5570 /* CountryTableViewCellSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BFE16F27653A6300AC5570 /* CountryTableViewCellSummary.swift */; };
+		41BFE174276618C900AC5570 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BFE172276618C900AC5570 /* CityTableViewCell.swift */; };
+		41BFE175276618C900AC5570 /* CityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41BFE173276618C900AC5570 /* CityTableViewCell.xib */; };
+		41BFE177276618E400AC5570 /* CityTableViewCellSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BFE176276618E400AC5570 /* CityTableViewCellSummary.swift */; };
+		41BFE17927661A2D00AC5570 /* WhereDoYouLiveCitiesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BFE17827661A2D00AC5570 /* WhereDoYouLiveCitiesTableView.swift */; };
 		41CE114D273BC05A00C493C8 /* ScrollViewExampleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CE1149273BC05A00C493C8 /* ScrollViewExampleRouter.swift */; };
 		41CE114E273BC05A00C493C8 /* ScrollViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CE114A273BC05A00C493C8 /* ScrollViewExampleViewController.swift */; };
 		41CE114F273BC05A00C493C8 /* ScrollViewExampleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CE114B273BC05A00C493C8 /* ScrollViewExampleBuilder.swift */; };
@@ -122,6 +140,7 @@
 		4108D8D42762287900880E0B /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		4108D8DA27624C8600880E0B /* PersonalDetailsCollectionViewCellTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDetailsCollectionViewCellTextFields.swift; sourceTree = "<group>"; };
 		4108D8DE2762A45D00880E0B /* CustomStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStackView.swift; sourceTree = "<group>"; };
+		410B31F2276B32C300CE4180 /* Countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Countries.json; sourceTree = "<group>"; };
 		4114ABC7275F92C900F1AB01 /* SignUpCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCollectionView.swift; sourceTree = "<group>"; };
 		4114ABCA275F94B400F1AB01 /* PersonalDetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDetailsCollectionViewCell.swift; sourceTree = "<group>"; };
 		4114ABCB275F94B400F1AB01 /* PersonalDetailsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalDetailsCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -140,10 +159,20 @@
 		4139870C2737FA3500C243F4 /* StartupBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupBuilder.swift; sourceTree = "<group>"; };
 		4139870D2737FA3500C243F4 /* StartupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupViewModel.swift; sourceTree = "<group>"; };
 		413987142738052C00C243F4 /* StartupViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartupViewController.storyboard; sourceTree = "<group>"; };
-		415E596C2763E834009A013E /* WhereDoYouLiveRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereDoYouLiveRouter.swift; sourceTree = "<group>"; };
-		415E596D2763E834009A013E /* WhereDoYouLiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereDoYouLiveViewController.swift; sourceTree = "<group>"; };
-		415E596E2763E834009A013E /* WhereDoYouLiveBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereDoYouLiveBuilder.swift; sourceTree = "<group>"; };
-		415E596F2763E834009A013E /* WhereDoYouLiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereDoYouLiveViewModel.swift; sourceTree = "<group>"; };
+		415E59782763EA7E009A013E /* WhereDoYouLiveCountriesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereDoYouLiveCountriesRouter.swift; sourceTree = "<group>"; };
+		415E59792763EA7E009A013E /* WhereDoYouLiveCountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereDoYouLiveCountriesViewController.swift; sourceTree = "<group>"; };
+		415E597A2763EA7E009A013E /* WhereDoYouLiveCountriesBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereDoYouLiveCountriesBuilder.swift; sourceTree = "<group>"; };
+		415E597B2763EA7E009A013E /* WhereDoYouLiveCountriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereDoYouLiveCountriesViewModel.swift; sourceTree = "<group>"; };
+		415E59802763EA94009A013E /* WhereDoYouLiveCountriesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WhereDoYouLiveCountriesViewController.storyboard; sourceTree = "<group>"; };
+		415E59822763EB4E009A013E /* WhereDoYouLiveCountriesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereDoYouLiveCountriesTableView.swift; sourceTree = "<group>"; };
+		415E59842763F28C009A013E /* PersonalDetailsCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDetailsCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		415E598C2764F1F8009A013E /* WhereDoYouLiveCitiesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereDoYouLiveCitiesRouter.swift; sourceTree = "<group>"; };
+		415E598D2764F1F8009A013E /* WhereDoYouLiveCitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereDoYouLiveCitiesViewController.swift; sourceTree = "<group>"; };
+		415E598E2764F1F8009A013E /* WhereDoYouLiveCitiesBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereDoYouLiveCitiesBuilder.swift; sourceTree = "<group>"; };
+		415E598F2764F1F8009A013E /* WhereDoYouLiveCitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereDoYouLiveCitiesViewModel.swift; sourceTree = "<group>"; };
+		415E59942764F206009A013E /* WhereDoYouLiveCitiesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WhereDoYouLiveCitiesViewController.storyboard; sourceTree = "<group>"; };
+		415E599C27650C7C009A013E /* CountryDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDTO.swift; sourceTree = "<group>"; };
+		415E59A027650D77009A013E /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		417E58FE274D9CCD00447ED3 /* LoginTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextFields.swift; sourceTree = "<group>"; };
 		418AD209275A6A51005AFE3C /* ForgotPasswordTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordTextFields.swift; sourceTree = "<group>"; };
 		418C413C275A5E310099BC5B /* ForgotPasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordRouter.swift; sourceTree = "<group>"; };
@@ -156,6 +185,13 @@
 		41B75624275EE4CE00C00E03 /* SignUpBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpBuilder.swift; sourceTree = "<group>"; };
 		41B75625275EE4CE00C00E03 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		41B7562A275EE50900C00E03 /* SignUpViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpViewController.storyboard; sourceTree = "<group>"; };
+		41BFE169276539BC00AC5570 /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
+		41BFE16A276539BC00AC5570 /* CountryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryTableViewCell.xib; sourceTree = "<group>"; };
+		41BFE16F27653A6300AC5570 /* CountryTableViewCellSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCellSummary.swift; sourceTree = "<group>"; };
+		41BFE172276618C900AC5570 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
+		41BFE173276618C900AC5570 /* CityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityTableViewCell.xib; sourceTree = "<group>"; };
+		41BFE176276618E400AC5570 /* CityTableViewCellSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCellSummary.swift; sourceTree = "<group>"; };
+		41BFE17827661A2D00AC5570 /* WhereDoYouLiveCitiesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereDoYouLiveCitiesTableView.swift; sourceTree = "<group>"; };
 		41CE1149273BC05A00C493C8 /* ScrollViewExampleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewExampleRouter.swift; sourceTree = "<group>"; };
 		41CE114A273BC05A00C493C8 /* ScrollViewExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewExampleViewController.swift; sourceTree = "<group>"; };
 		41CE114B273BC05A00C493C8 /* ScrollViewExampleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewExampleBuilder.swift; sourceTree = "<group>"; };
@@ -233,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				4104A8CE2738489500F5946B /* Fonts */,
+				41BFE1672765392600AC5570 /* Jsons */,
 				3147D622241906FD00E741D3 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -292,6 +329,7 @@
 			children = (
 				4114ABCB275F94B400F1AB01 /* PersonalDetailsCollectionViewCell.xib */,
 				4114ABCA275F94B400F1AB01 /* PersonalDetailsCollectionViewCell.swift */,
+				415E59842763F28C009A013E /* PersonalDetailsCollectionViewCellViewModel.swift */,
 				4108D8DA27624C8600880E0B /* PersonalDetailsCollectionViewCellTextFields.swift */,
 			);
 			path = PersonalDetails;
@@ -343,12 +381,36 @@
 		415E596B2763E784009A013E /* WhereDoYouLive */ = {
 			isa = PBXGroup;
 			children = (
-				415E596C2763E834009A013E /* WhereDoYouLiveRouter.swift */,
-				415E596D2763E834009A013E /* WhereDoYouLiveViewController.swift */,
-				415E596E2763E834009A013E /* WhereDoYouLiveBuilder.swift */,
-				415E596F2763E834009A013E /* WhereDoYouLiveViewModel.swift */,
+				415E59762763EA47009A013E /* WhereDoYouLiveCountries */,
+				415E59772763EA57009A013E /* WhereDoYouLiveCities */,
 			);
 			path = WhereDoYouLive;
+			sourceTree = "<group>";
+		};
+		415E59762763EA47009A013E /* WhereDoYouLiveCountries */ = {
+			isa = PBXGroup;
+			children = (
+				415E59802763EA94009A013E /* WhereDoYouLiveCountriesViewController.storyboard */,
+				415E59782763EA7E009A013E /* WhereDoYouLiveCountriesRouter.swift */,
+				415E59792763EA7E009A013E /* WhereDoYouLiveCountriesViewController.swift */,
+				415E597A2763EA7E009A013E /* WhereDoYouLiveCountriesBuilder.swift */,
+				415E597B2763EA7E009A013E /* WhereDoYouLiveCountriesViewModel.swift */,
+				415E59822763EB4E009A013E /* WhereDoYouLiveCountriesTableView.swift */,
+			);
+			path = WhereDoYouLiveCountries;
+			sourceTree = "<group>";
+		};
+		415E59772763EA57009A013E /* WhereDoYouLiveCities */ = {
+			isa = PBXGroup;
+			children = (
+				415E59942764F206009A013E /* WhereDoYouLiveCitiesViewController.storyboard */,
+				415E598C2764F1F8009A013E /* WhereDoYouLiveCitiesRouter.swift */,
+				415E598D2764F1F8009A013E /* WhereDoYouLiveCitiesViewController.swift */,
+				415E598E2764F1F8009A013E /* WhereDoYouLiveCitiesBuilder.swift */,
+				415E598F2764F1F8009A013E /* WhereDoYouLiveCitiesViewModel.swift */,
+				41BFE17827661A2D00AC5570 /* WhereDoYouLiveCitiesTableView.swift */,
+			);
+			path = WhereDoYouLiveCities;
 			sourceTree = "<group>";
 		};
 		41868B94272C072500F389AB /* Modules */ = {
@@ -391,6 +453,34 @@
 			path = SignUp;
 			sourceTree = "<group>";
 		};
+		41BFE1672765392600AC5570 /* Jsons */ = {
+			isa = PBXGroup;
+			children = (
+				410B31F2276B32C300CE4180 /* Countries.json */,
+			);
+			path = Jsons;
+			sourceTree = "<group>";
+		};
+		41BFE1682765399D00AC5570 /* CountryTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				41BFE16A276539BC00AC5570 /* CountryTableViewCell.xib */,
+				41BFE169276539BC00AC5570 /* CountryTableViewCell.swift */,
+				41BFE16F27653A6300AC5570 /* CountryTableViewCellSummary.swift */,
+			);
+			path = CountryTableViewCell;
+			sourceTree = "<group>";
+		};
+		41BFE171276618AF00AC5570 /* CityTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				41BFE173276618C900AC5570 /* CityTableViewCell.xib */,
+				41BFE172276618C900AC5570 /* CityTableViewCell.swift */,
+				41BFE176276618E400AC5570 /* CityTableViewCellSummary.swift */,
+			);
+			path = CityTableViewCell;
+			sourceTree = "<group>";
+		};
 		41CE1148273BC04300C493C8 /* ScrollViewExample */ = {
 			isa = PBXGroup;
 			children = (
@@ -414,6 +504,7 @@
 		41E0005E275A5B6E003CAF90 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				415E59A027650D77009A013E /* Country.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -428,6 +519,8 @@
 		41E00060275A5B99003CAF90 /* TableCells */ = {
 			isa = PBXGroup;
 			children = (
+				41BFE171276618AF00AC5570 /* CityTableViewCell */,
+				41BFE1682765399D00AC5570 /* CountryTableViewCell */,
 			);
 			path = TableCells;
 			sourceTree = "<group>";
@@ -535,6 +628,7 @@
 		CCB0204326A6EF0B00214CB9 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				415E599C27650C7C009A013E /* CountryDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -631,6 +725,7 @@
 				41871963275BFA6D00C993BC /* Nunito-ExtraLightItalic.ttf in Resources */,
 				41871964275BFA6D00C993BC /* Nunito-Italic.ttf in Resources */,
 				41871965275BFA6D00C993BC /* Nunito-Light.ttf in Resources */,
+				41BFE175276618C900AC5570 /* CityTableViewCell.xib in Resources */,
 				41871966275BFA6D00C993BC /* Nunito-LightItalic.ttf in Resources */,
 				41871967275BFA6D00C993BC /* Nunito-Regular.ttf in Resources */,
 				4114ABCD275F94B400F1AB01 /* PersonalDetailsCollectionViewCell.xib in Resources */,
@@ -639,12 +734,16 @@
 				41871969275BFA6D00C993BC /* Nunito-SemiBoldItalic.ttf in Resources */,
 				4114ABD3275F960200F1AB01 /* AccountDetailsCollectionViewCell.xib in Resources */,
 				41B7562B275EE50900C00E03 /* SignUpViewController.storyboard in Resources */,
+				415E59952764F206009A013E /* WhereDoYouLiveCitiesViewController.storyboard in Resources */,
 				31981E49241919D300D25074 /* CustomTextField.xib in Resources */,
+				415E59812763EA94009A013E /* WhereDoYouLiveCountriesViewController.storyboard in Resources */,
 				41CE1152273BC06800C493C8 /* ScrollViewExampleViewController.storyboard in Resources */,
 				418C4145275A5F3F0099BC5B /* ForgotPasswordViewController.storyboard in Resources */,
 				3147D626241906FD00E741D3 /* LaunchScreen.storyboard in Resources */,
+				41BFE16C276539BC00AC5570 /* CountryTableViewCell.xib in Resources */,
 				413987152738052C00C243F4 /* StartupViewController.storyboard in Resources */,
 				3147D623241906FD00E741D3 /* Assets.xcassets in Resources */,
+				410B31F3276B32C300CE4180 /* Countries.json in Resources */,
 				411C7F72274BA91300C9710A /* LoginViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -662,12 +761,14 @@
 				41CE1150273BC05A00C493C8 /* ScrollViewExampleViewModel.swift in Sources */,
 				418C4140275A5E310099BC5B /* ForgotPasswordRouter.swift in Sources */,
 				CCB0207626A6F12000214CB9 /* String.swift in Sources */,
+				415E59852763F28C009A013E /* PersonalDetailsCollectionViewCellViewModel.swift in Sources */,
+				41BFE177276618E400AC5570 /* CityTableViewCellSummary.swift in Sources */,
 				411C7F6F274BA8FE00C9710A /* LoginBuilder.swift in Sources */,
 				41B75627275EE4CE00C00E03 /* SignUpViewController.swift in Sources */,
 				417E58FF274D9CCD00447ED3 /* LoginTextFields.swift in Sources */,
+				415E59932764F1F8009A013E /* WhereDoYouLiveCitiesViewModel.swift in Sources */,
 				943CE5FD2546DFBC00CA93AA /* CustomView.swift in Sources */,
 				945B15AC25595DC9003A65E0 /* TableParent.swift in Sources */,
-				415E59712763E834009A013E /* WhereDoYouLiveViewController.swift in Sources */,
 				4108D8D32762286400880E0B /* Enumerations.swift in Sources */,
 				4114ABD2275F960200F1AB01 /* AccountDetailsCollectionViewCell.swift in Sources */,
 				4139870F2737FA3500C243F4 /* StartupViewController.swift in Sources */,
@@ -680,42 +781,53 @@
 				E3D14DCD242D081B00436D51 /* Constants.swift in Sources */,
 				943CE5FF2546DFBC00CA93AA /* CustomImageView.swift in Sources */,
 				4139870E2737FA3500C243F4 /* StartupRouter.swift in Sources */,
+				415E597F2763EA7E009A013E /* WhereDoYouLiveCountriesViewModel.swift in Sources */,
 				CCB0202B26A6EE3400214CB9 /* SceneDelegate.swift in Sources */,
 				CCB0207826A6F12000214CB9 /* Array.swift in Sources */,
 				413987102737FA3500C243F4 /* StartupBuilder.swift in Sources */,
 				4108D8D52762287900880E0B /* Protocols.swift in Sources */,
 				945B15B325595DC9003A65E0 /* UIColor.swift in Sources */,
 				945B15AE25595DC9003A65E0 /* Dynamic.swift in Sources */,
+				415E597E2763EA7E009A013E /* WhereDoYouLiveCountriesBuilder.swift in Sources */,
 				413987112737FA3500C243F4 /* StartupViewModel.swift in Sources */,
 				4108D8DF2762A45D00880E0B /* CustomStackView.swift in Sources */,
 				41B75628275EE4CE00C00E03 /* SignUpBuilder.swift in Sources */,
 				CCB0206726A6F04500214CB9 /* ViewController.swift in Sources */,
-				415E59702763E834009A013E /* WhereDoYouLiveRouter.swift in Sources */,
 				945B15B125595DC9003A65E0 /* ViewModel.swift in Sources */,
+				415E59922764F1F8009A013E /* WhereDoYouLiveCitiesBuilder.swift in Sources */,
 				4114ABD7275F966600F1AB01 /* SocialMediaDetailsCollectionViewCell.swift in Sources */,
-				415E59732763E834009A013E /* WhereDoYouLiveViewModel.swift in Sources */,
 				945B15B825595DC9003A65E0 /* UIImage.swift in Sources */,
 				A01CC49125D2FB3700404685 /* LocalizedKey.swift in Sources */,
 				945B15B025595DC9003A65E0 /* CellsHelper.swift in Sources */,
-				415E59722763E834009A013E /* WhereDoYouLiveBuilder.swift in Sources */,
 				945B15B925595DC9003A65E0 /* Presenter.swift in Sources */,
 				4114ABC8275F92C900F1AB01 /* SignUpCollectionView.swift in Sources */,
 				41CE114E273BC05A00C493C8 /* ScrollViewExampleViewController.swift in Sources */,
+				41BFE17927661A2D00AC5570 /* WhereDoYouLiveCitiesTableView.swift in Sources */,
+				415E599D27650C7C009A013E /* CountryDTO.swift in Sources */,
 				31981E4D24191C2F00D25074 /* CustomTextField-Models.swift in Sources */,
 				945B15B425595DC9003A65E0 /* Int.swift in Sources */,
 				41B75629275EE4CE00C00E03 /* SignUpViewModel.swift in Sources */,
 				943CE5FE2546DFBC00CA93AA /* CustomButton.swift in Sources */,
+				415E59902764F1F8009A013E /* WhereDoYouLiveCitiesRouter.swift in Sources */,
 				945B15B525595DC9003A65E0 /* UITableViewCell.swift in Sources */,
 				418AD20A275A6A51005AFE3C /* ForgotPasswordTextFields.swift in Sources */,
+				41BFE174276618C900AC5570 /* CityTableViewCell.swift in Sources */,
+				41BFE16B276539BC00AC5570 /* CountryTableViewCell.swift in Sources */,
 				CCB0207526A6F12000214CB9 /* Date.swift in Sources */,
+				415E59A127650D77009A013E /* Country.swift in Sources */,
 				945B15BB25595DC9003A65E0 /* Window.swift in Sources */,
 				418C4142275A5E310099BC5B /* ForgotPasswordBuilder.swift in Sources */,
 				413987002737F6F200C243F4 /* UIFont.swift in Sources */,
+				415E597D2763EA7E009A013E /* WhereDoYouLiveCountriesViewController.swift in Sources */,
 				CCB0205326A6EF6500214CB9 /* Container.swift in Sources */,
 				CCB0202A26A6EE3400214CB9 /* AppDelegate.swift in Sources */,
+				415E59912764F1F8009A013E /* WhereDoYouLiveCitiesViewController.swift in Sources */,
+				41BFE17027653A6300AC5570 /* CountryTableViewCellSummary.swift in Sources */,
 				411C7F6D274BA8FE00C9710A /* LoginRouter.swift in Sources */,
 				418C4143275A5E310099BC5B /* ForgotPasswordViewModel.swift in Sources */,
 				411C7F70274BA8FE00C9710A /* LoginViewModel.swift in Sources */,
+				415E59832763EB4E009A013E /* WhereDoYouLiveCountriesTableView.swift in Sources */,
+				415E597C2763EA7E009A013E /* WhereDoYouLiveCountriesRouter.swift in Sources */,
 				41CE114D273BC05A00C493C8 /* ScrollViewExampleRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,19 +1,23 @@
 //
-//  WhereDoYouLiveViewController.swift
+//  WhereDoYouLiveCitiesViewController.swift
 //  LostAnimals
 //
-//  Created by Miguel Ferrer Fornali on 10/12/21.
+//  Created by Miguel Ferrer Fornali on 11/12/21.
 //  Copyright © 2021 Rudo. All rights reserved.
 //
 
 import UIKit
 
-final class WhereDoYouLiveViewController: UIViewController {
-  
+final class WhereDoYouLiveCitiesViewController: ViewController {
+
   // MARK: - IBOutlets
+  @IBOutlet weak var citiesTableView: UITableView!
   
   // MARK: - Properties
-  var viewModel: WhereDoYouLiveViewModel!
+  override var navBarTitle: String {
+    return "Select your city"
+  }
+  var viewModel: WhereDoYouLiveCitiesViewModel!
   
   // MARK: - Life cycle
   override func viewDidLoad() {
@@ -21,7 +25,7 @@ final class WhereDoYouLiveViewController: UIViewController {
     
     setupBindings()
     viewModel.viewReady()
-    
+    setupUI()
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -33,5 +37,9 @@ final class WhereDoYouLiveViewController: UIViewController {
   // MARK: - Functions
   private func setupBindings() {
     // Do bindings setup
+  }
+  
+  private func setupUI() {
+    configureTableview(citiesTableView)
   }
 }

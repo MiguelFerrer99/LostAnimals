@@ -16,4 +16,8 @@ extension SignUpViewController: SignUpStepsDelegate {
   func moveToPreviousSignUpStep() {
     moveToPreviousStep()
   }
+  
+  func signUpGoToWhereDoYouLiveCountries() {
+    goToWhereDoYouLiveCountries()
+  }
 }

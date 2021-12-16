@@ -1,14 +1,14 @@
 //
-//  WhereDoYouLiveRouter.swift
+//  WhereDoYouLiveCitiesRouter.swift
 //  LostAnimals
 //
-//  Created by Miguel Ferrer Fornali on 10/12/21.
+//  Created by Miguel Ferrer Fornali on 11/12/21.
 //  Copyright © 2021 Rudo. All rights reserved.
 //
 
 import UIKit
 
-final class WhereDoYouLiveRouter {
+final class WhereDoYouLiveCitiesRouter {
   // MARK: - Properties
   private weak var viewController: UIViewController?
   
@@ -18,5 +18,4 @@ final class WhereDoYouLiveRouter {
   }
   
   // MARK: - Functions
-  
 }

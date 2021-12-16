@@ -26,7 +26,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9Z-NB-VOJ">
-                                <rect key="frame" x="151" y="84" width="112" height="47"/>
+                                <rect key="frame" x="147" y="84" width="120.5" height="55"/>
                                 <fontDescription key="fontDescription" name="Nunito-Black" family="Nunito" pointSize="40"/>
                                 <color key="textColor" name="CustomBlack"/>
                                 <nil key="highlightedColor"/>
@@ -69,7 +69,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFj-SD-LHa">
-                                <rect key="frame" x="93" y="589" width="228" height="38"/>
+                                <rect key="frame" x="89.5" y="589" width="235" height="43"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="22"/>
                                 <color key="tintColor" name="CustomBlack"/>
@@ -125,7 +125,7 @@
     </scenes>
     <designables>
         <designable name="RDN-TM-gf9">
-            <size key="intrinsicContentSize" width="56" height="36"/>
+            <size key="intrinsicContentSize" width="58" height="40"/>
         </designable>
     </designables>
     <color key="tintColor" name="CustomBlack"/>

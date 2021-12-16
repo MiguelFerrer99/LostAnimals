@@ -13,7 +13,6 @@ class AccountDetailsCollectionViewCell: UICollectionViewCell, Reusable {
   // MARK: - IBOutlets
   
   // MARK: - Properties
-  weak var signUpStepsDelegate: SignUpStepsDelegate?
   
   // MARK: - Life cycle
   override func awakeFromNib() {

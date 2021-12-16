@@ -8,7 +8,8 @@
 
 import UIKit
 
-class PersonalDetailsCollectionViewCell: UICollectionViewCell, Reusable {
+class PersonalDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell {
+  typealias T = PersonalDetailsCollectionViewCellViewModel
   
   // MARK: - IBOutlets
   @IBOutlet weak var firstnameTextfield: CustomTextField!
@@ -18,16 +19,16 @@ class PersonalDetailsCollectionViewCell: UICollectionViewCell, Reusable {
   @IBOutlet weak var nextStepButton: CustomButton!
   
   // MARK: - Properties
-  var editedTextFields = [CustomTextField]()
   weak var signUpStepsDelegate: SignUpStepsDelegate?
-  weak var presenter: Presenter?
+  var viewModel: PersonalDetailsCollectionViewCellViewModel! {
+    didSet { fillUI() }
+  }
   
   // MARK: - Life cycle
   override func awakeFromNib() {
     super.awakeFromNib()
     
     setupBindings()
-    setupUI()
   }
   
   // MARK: - Functions
@@ -35,18 +36,8 @@ class PersonalDetailsCollectionViewCell: UICollectionViewCell, Reusable {
     // Do bindings setup
   }
   
-  private func setupUI() {
+  private func fillUI() {
     configureTextFields()
-  }
-  
-  func textFieldsHaveErrors() -> Bool {
-    var haveErrors = false
-    editedTextFields.forEach { editedTextField in
-      if editedTextField.hasError && !haveErrors {
-        haveErrors = true
-      }
-    }
-    return haveErrors
   }
   
   // MARK: - IBActions

@@ -12,9 +12,7 @@ final class SignUpViewController: ViewController {
   
   // MARK: - IBOutlets
   @IBOutlet weak var progressBarLabel: UILabel!
-  @IBOutlet weak var currentProgressBarView: CustomView!
-  @IBOutlet weak var currentProgressBarViewWidth: NSLayoutConstraint!
-  @IBOutlet weak var fullProgressBarView: CustomView!
+  @IBOutlet weak var progressView: UIProgressView!
   @IBOutlet weak var signupContentsView: CustomView!
   @IBOutlet weak var stepsCollectionView: UICollectionView!
   
@@ -53,10 +51,9 @@ final class SignUpViewController: ViewController {
   }
   
   private func updateCurrentProgressBarView() {
-    let percentageInFloat = (1.0 / CGFloat(self.viewModel.numberOfSteps)) * (CGFloat(self.viewModel.currentStep.rawValue) + 1.0)
-    self.currentProgressBarViewWidth.constant = self.fullProgressBarView.frame.width * percentageInFloat
-    UIView.animate(withDuration: 0.5) {
-      self.currentProgressBarView.layoutIfNeeded()
+    let percentageInFloat = (1.0 / Float(self.viewModel.numberOfSteps)) * (Float(self.viewModel.currentStep.rawValue) + 1.0)
+    UIView.animate(withDuration: 0.25) {
+      self.progressView.progress = percentageInFloat
     }
     UIView.transition(with: progressBarLabel, duration: 0.25, options: .transitionCrossDissolve, animations: { [weak self] in
       guard let self = self else { return }
@@ -92,5 +89,9 @@ final class SignUpViewController: ViewController {
     }
     updateCurrenCollectionViewItem(direction: .next)
     updateCurrentProgressBarView()
+  }
+  
+  func goToWhereDoYouLiveCountries() {
+    viewModel.didPressGoToWhereDoYouLiveCountries()
   }
 }

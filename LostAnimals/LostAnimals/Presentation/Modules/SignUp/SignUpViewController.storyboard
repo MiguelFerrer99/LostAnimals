@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -31,32 +32,6 @@
                                 <color key="textColor" name="CustomBlack"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="038-01-abI" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
-                                <rect key="frame" x="40" y="204" width="0.0" height="10"/>
-                                <color key="backgroundColor" name="CustomBlack"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" id="8tu-q8-d5S"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fullRound" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZsK-07-axw" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
-                                <rect key="frame" x="40" y="204" width="334" height="10"/>
-                                <color key="backgroundColor" name="CustomBlack"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="10" id="zYG-1K-Efp"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fullRound" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rK-Q7-Rh8">
                                 <rect key="frame" x="140" y="169" width="134.5" height="25"/>
                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="18"/>
@@ -64,10 +39,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LGX-7N-aC4" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="264" width="414" height="632"/>
+                                <rect key="frame" x="0.0" y="269" width="414" height="627"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5sR-yb-Lbi">
-                                        <rect key="frame" x="40" y="40" width="334" height="518"/>
+                                        <rect key="frame" x="40" y="40" width="334" height="513"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="zGU-NI-Tin">
@@ -104,34 +79,38 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.33333299999999999" translatesAutoresizingMaskIntoConstraints="NO" id="Gg7-eV-6ny">
+                                <rect key="frame" x="40" y="214" width="334" height="5"/>
+                                <color key="backgroundColor" systemColor="placeholderTextColor"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="5" id="mA4-Fw-itn"/>
+                                </constraints>
+                                <color key="progressTintColor" name="CustomBlack"/>
+                                <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="CustomGreen"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="1rK-Q7-Rh8" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="18m-3r-41M"/>
-                            <constraint firstItem="ZsK-07-axw" firstAttribute="top" secondItem="1rK-Q7-Rh8" secondAttribute="bottom" constant="10" id="2BU-fs-jIZ"/>
-                            <constraint firstItem="ZsK-07-axw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="IoX-fA-Ked"/>
+                            <constraint firstItem="LGX-7N-aC4" firstAttribute="top" secondItem="Gg7-eV-6ny" secondAttribute="bottom" constant="50" id="Buv-Pf-Ta4"/>
                             <constraint firstItem="CIj-HD-ffO" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="J1k-F0-ZVP"/>
                             <constraint firstAttribute="bottom" secondItem="LGX-7N-aC4" secondAttribute="bottom" id="Jbh-zf-RdK"/>
                             <constraint firstItem="LGX-7N-aC4" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="L1W-nk-xhJ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="5sR-yb-Lbi" secondAttribute="bottom" constant="40" id="LoB-Se-SSI"/>
                             <constraint firstItem="LGX-7N-aC4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Mvj-MV-w3O"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ZsK-07-axw" secondAttribute="trailing" constant="40" id="Phx-zu-43s"/>
-                            <constraint firstItem="038-01-abI" firstAttribute="height" secondItem="ZsK-07-axw" secondAttribute="height" id="U4H-ig-oNU"/>
-                            <constraint firstItem="038-01-abI" firstAttribute="leading" secondItem="ZsK-07-axw" secondAttribute="leading" id="XU3-vd-9A2"/>
+                            <constraint firstItem="Gg7-eV-6ny" firstAttribute="top" secondItem="1rK-Q7-Rh8" secondAttribute="bottom" constant="20" id="Z0Y-G6-88L"/>
                             <constraint firstItem="CIj-HD-ffO" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="40" id="adw-Oz-2RI"/>
+                            <constraint firstItem="Gg7-eV-6ny" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="dvQ-R6-tBW"/>
                             <constraint firstItem="1rK-Q7-Rh8" firstAttribute="top" secondItem="CIj-HD-ffO" secondAttribute="bottom" constant="30" id="gAr-Me-bVQ"/>
-                            <constraint firstItem="LGX-7N-aC4" firstAttribute="top" secondItem="038-01-abI" secondAttribute="bottom" constant="50" id="hLf-q7-cMT"/>
-                            <constraint firstItem="038-01-abI" firstAttribute="bottom" secondItem="ZsK-07-axw" secondAttribute="bottom" id="kFs-a6-J0f"/>
-                            <constraint firstItem="038-01-abI" firstAttribute="top" secondItem="ZsK-07-axw" secondAttribute="top" id="tg2-KO-NbK"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Gg7-eV-6ny" secondAttribute="trailing" constant="40" id="mHR-zE-e2i"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="currentProgressBarView" destination="038-01-abI" id="8SM-gF-BXe"/>
-                        <outlet property="currentProgressBarViewWidth" destination="8tu-q8-d5S" id="Bkg-oe-51L"/>
-                        <outlet property="fullProgressBarView" destination="ZsK-07-axw" id="Wcb-Yx-dU0"/>
                         <outlet property="progressBarLabel" destination="1rK-Q7-Rh8" id="zu5-0x-1wf"/>
+                        <outlet property="progressView" destination="Gg7-eV-6ny" id="TpM-Se-Iod"/>
                         <outlet property="signupContentsView" destination="LGX-7N-aC4" id="Fdn-oT-5CU"/>
                         <outlet property="stepsCollectionView" destination="5sR-yb-Lbi" id="hda-Ht-Uns"/>
                     </connections>
@@ -148,5 +127,8 @@
         <namedColor name="CustomGreen">
             <color red="0.40784313725490196" green="0.72549019607843135" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <systemColor name="placeholderTextColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

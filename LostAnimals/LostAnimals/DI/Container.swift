@@ -32,4 +32,12 @@ extension Container {
   func startupBuilder() -> StartupBuilder {
     return StartupBuilder()
   }
+  
+  func whereDoYouLiveCitiesBuilder() -> WhereDoYouLiveCitiesBuilder {
+    return WhereDoYouLiveCitiesBuilder()
+  }
+  
+  func whereDoYouLiveCountriesBuilder() -> WhereDoYouLiveCountriesBuilder {
+    return WhereDoYouLiveCountriesBuilder()
+  }
 }

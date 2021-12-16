@@ -55,7 +55,7 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    let titleAttributes = [NSAttributedString.Key.foregroundColor: navigationBarTitleColor, NSAttributedString.Key.font: UIFont.nunitoMediumBold]
+    let titleAttributes = [NSAttributedString.Key.foregroundColor: navigationBarTitleColor, NSAttributedString.Key.font: UIFont.nunitoSmallBold]
     let largeTitleAttributes = [NSAttributedString.Key.font: UIFont.nunitoBigBold]
     
     UINavigationBar.appearance().titleTextAttributes = titleAttributes
@@ -63,7 +63,7 @@ class ViewController: UIViewController {
     UINavigationBar.appearance().tintColor = navigationTintColor
     UINavigationBar.appearance().barTintColor = navigationBarTintColor
     navigationItem.title = navBarTitle
-    navigationItem.backButtonTitle = nil
+    navigationItem.backButtonTitle = ""
     navigationItem.rightBarButtonItems = navBarRightButtons
     navigationItem.leftBarButtonItems = navBarLeftButtons
     
