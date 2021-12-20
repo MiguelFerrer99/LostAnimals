@@ -7,21 +7,26 @@
 //
 
 import UIKit
+import MapKit
 
 final class WhereCanWeFindYouViewController: ViewController {
   
   // MARK: - IBOutlets
+  @IBOutlet weak var addressTableView: UITableView!
   
   // MARK: - Properties
   override var navBarTitle: String {
-    return "Select your location"
+    return "Select your address"
   }
+  private var searchController = UISearchController(searchResultsController: nil)
+  var searchCompleter = MKLocalSearchCompleter()
   var viewModel: WhereCanWeFindYouViewModel!
   
   // MARK: - Life cycle
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    setupUI()
     setupBindings()
     viewModel.viewReady()
   }
@@ -33,6 +38,12 @@ final class WhereCanWeFindYouViewController: ViewController {
   }
   
   // MARK: - Functions
+  private func setupUI() {
+    configureMapKit()
+    configureSearchController(searchController)
+    configureTableView(addressTableView)
+  }
+  
   private func setupBindings() {
     // Do bindings setup
   }

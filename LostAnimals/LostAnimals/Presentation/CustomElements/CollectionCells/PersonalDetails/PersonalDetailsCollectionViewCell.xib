@@ -77,6 +77,7 @@
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Where can we find you?"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="locationPickerEnabled" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="YES"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="REz-jd-agT" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">

@@ -32,7 +32,7 @@ class PersonalDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell {
     super.awakeFromNib()
     
     NotificationCenter.default.addObserver(self, selector: #selector(fillWhereDoYouLive), name: .SendWhereDoYouLiveCountryAndCities, object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(fillWhereCanWeFindYou), name: .SendWhereCanWeFindYouLocation, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(fillWhereCanWeFindYou), name: .SendWhereCanWeFindYouAddress, object: nil)
     
     setupBindings()
   }

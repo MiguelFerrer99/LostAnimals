@@ -16,14 +16,30 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="x4S-mf-UwI">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="CustomGreen"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="x4S-mf-UwI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="AcW-81-RKi"/>
+                            <constraint firstItem="x4S-mf-UwI" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="VqL-DI-ZBI"/>
+                            <constraint firstItem="x4S-mf-UwI" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="fqZ-nb-Qch"/>
+                            <constraint firstAttribute="bottom" secondItem="x4S-mf-UwI" secondAttribute="bottom" id="ft7-Vy-m8d"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addressTableView" destination="x4S-mf-UwI" id="F6T-8M-0OR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="90" y="106"/>
+            <point key="canvasLocation" x="89.855072463768124" y="105.80357142857143"/>
         </scene>
     </scenes>
     <resources>

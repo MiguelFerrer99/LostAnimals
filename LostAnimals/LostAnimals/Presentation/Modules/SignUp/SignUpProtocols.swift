@@ -23,6 +23,6 @@ extension SignUpViewController: SignUpStepsDelegate {
   }
   
   func goToWhereCanWeFindYou() {
-    goToWhereCanWeFindYouLocation()
+    goToWhereCanWeFindYouAddress()
   }
 }

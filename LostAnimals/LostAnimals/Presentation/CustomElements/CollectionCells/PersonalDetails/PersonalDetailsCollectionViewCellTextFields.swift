@@ -6,8 +6,8 @@
 //  Copyright © 2021 Rudo. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import MapKit
 
 extension PersonalDetailsCollectionViewCell: CustomTextFieldDelegate {
   // MARK: - Functions
@@ -49,9 +49,10 @@ extension PersonalDetailsCollectionViewCell: CustomTextFieldDelegate {
   }
   
   @objc func fillWhereCanWeFindYou(_ notification: NSNotification) {
-    if let whereCanWeFindYouString = notification.userInfo?["whereCanWeFindYou"] as? String {
-      whereCanWeFindYouTextfield.textField.text = whereCanWeFindYouString
-      whereCanWeFindYouTextfield.didFinishSelectWhereCanWeFindYouLocation()
+    if let searchResult = notification.userInfo?["searchResult"] as? MKLocalSearchCompletion {
+      let searchResultString = "\(searchResult.title), \(searchResult.subtitle)"
+      whereCanWeFindYouTextfield.textField.text = searchResultString
+      whereCanWeFindYouTextfield.didFinishSelectWhereCanWeFindYouAddress()
     }
   }
   
@@ -102,10 +103,16 @@ extension PersonalDetailsCollectionViewCell: CustomTextFieldDelegate {
   func textFieldWillSelectCity(_ customTextField: CustomTextField) {
     textFieldDidBeginEditing(customTextField)
     signUpStepsDelegate?.goToWhereDoYouLiveCountries()
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+      self.textFieldDidChange(customTextField)
+    }
   }
   
-  func textFieldWillSelectLocation(_ customTextField: CustomTextField) {
+  func textFieldWillSelectAddress(_ customTextField: CustomTextField) {
     textFieldDidBeginEditing(customTextField)
     signUpStepsDelegate?.goToWhereCanWeFindYou()
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+      self.textFieldDidChange(customTextField)
+    }
   }
 }

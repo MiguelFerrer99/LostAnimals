@@ -10,5 +10,5 @@ import Foundation
 
 extension Notification.Name {
   static let SendWhereDoYouLiveCountryAndCities = Notification.Name("SendWhereDoYouLiveCountryAndCities")
-  static let SendWhereCanWeFindYouLocation = Notification.Name("SendWhereCanWeFindYouLocation")
+  static let SendWhereCanWeFindYouAddress = Notification.Name("SendWhereCanWeFindYouAddress")
 }

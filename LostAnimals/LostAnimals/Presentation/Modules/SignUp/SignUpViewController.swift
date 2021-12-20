@@ -94,7 +94,7 @@ final class SignUpViewController: ViewController {
     viewModel.didPressGoToWhereDoYouLiveCountries()
   }
   
-  func goToWhereCanWeFindYouLocation() {
+  func goToWhereCanWeFindYouAddress() {
     viewModel.didPressGoToWhereCanWeFindYou()
   }
 }

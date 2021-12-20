@@ -14,7 +14,7 @@ import UIKit
   func textFieldDidBeginEditing(_ customTextField: CustomTextField)
   func textFieldDidChange(_ customTextField: CustomTextField)
   @objc optional func textFieldWillSelectCity(_ customTextField: CustomTextField)
-  @objc optional func textFieldWillSelectLocation(_ customTextField: CustomTextField)
+  @objc optional func textFieldWillSelectAddress(_ customTextField: CustomTextField)
 }
 
 @IBDesignable
@@ -66,9 +66,9 @@ class CustomTextField: UIView, UITextFieldDelegate {
     }
   }
   
-  @IBInspectable var locationPickerEnabled: Bool = false {
+  @IBInspectable var addressPickerEnabled: Bool = false {
     willSet {
-      selectLocationButton.isHidden = !newValue
+      selectAddressButton.isHidden = !newValue
     }
   }
   
@@ -84,7 +84,7 @@ class CustomTextField: UIView, UITextFieldDelegate {
   @IBOutlet weak var statusImageView: UIImageView!
   @IBOutlet weak var errorLabel: UILabel!
   @IBOutlet weak var selectCityButton: UIButton!
-  @IBOutlet weak var selectLocationButton: UIButton!
+  @IBOutlet weak var selectAddressButton: UIButton!
   
   // MARK: - Properties
   var delegate: CustomTextFieldDelegate?
@@ -162,7 +162,7 @@ class CustomTextField: UIView, UITextFieldDelegate {
     textFieldDidChangeEditing(textField)
   }
   
-  func didFinishSelectWhereCanWeFindYouLocation() {
+  func didFinishSelectWhereCanWeFindYouAddress() {
     textFieldDidChangeEditing(textField)
   }
   
@@ -214,7 +214,7 @@ class CustomTextField: UIView, UITextFieldDelegate {
     delegate?.textFieldWillSelectCity?(self)
   }
   
-  @IBAction func selectLocationButtonPressed(_ sender: UIButton) {
-    delegate?.textFieldWillSelectLocation?(self)
+  @IBAction func selectAddressButtonPressed(_ sender: UIButton) {
+    delegate?.textFieldWillSelectAddress?(self)
   }
 }

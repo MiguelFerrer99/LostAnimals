@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import MapKit
 
 final class WhereCanWeFindYouViewModel {
   
   // MARK: - Properties
+  var searchResults = [MKLocalSearchCompletion]()
   private let router: WhereCanWeFindYouRouter
   
   // MARK: - Init
@@ -33,4 +35,9 @@ extension WhereCanWeFindYouViewModel {
 
 // MARK: - Functions
 extension WhereCanWeFindYouViewModel {
+  func didPressAddress(searchResult: MKLocalSearchCompletion) {
+    let userInfo: [String: MKLocalSearchCompletion] = ["searchResult": searchResult]
+    NotificationCenter.default.post(name: .SendWhereCanWeFindYouAddress, object: nil, userInfo: userInfo)
+    self.router.goToSignUp()
+  }
 }
