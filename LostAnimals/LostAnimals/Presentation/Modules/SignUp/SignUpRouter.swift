@@ -24,4 +24,11 @@ final class SignUpRouter {
       self.viewController?.navigationController?.pushViewController(viewController, animated: true)
     }
   }
+  
+  func goToWhereCanWeFindYou() {
+    let viewController = Container.shared.whereCanWeFindYou().build()
+    DispatchQueue.main.async {
+      self.viewController?.navigationController?.pushViewController(viewController, animated: true)
+    }
+  }
 }

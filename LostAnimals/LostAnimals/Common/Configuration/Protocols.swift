@@ -8,8 +8,9 @@
 
 import Foundation
 
-public protocol SignUpStepsDelegate: AnyObject {
+protocol SignUpStepsDelegate: AnyObject {
   func moveToNextSignUpStep()
   func moveToPreviousSignUpStep()
-  func signUpGoToWhereDoYouLiveCountries()
+  func goToWhereDoYouLiveCountries()
+  func goToWhereCanWeFindYou()
 }

@@ -16,18 +16,18 @@ extension WhereDoYouLiveCitiesViewController: UITableViewDelegate, UITableViewDa
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return viewModel.cities.count
+    return viewModel.filteredCities.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeue(CityTableViewCell.self)
-    cell.display(summary: CityTableViewCellSummary(cityName: viewModel.cities[indexPath.row]))
+    cell.display(summary: CityTableViewCellSummary(cityName: viewModel.filteredCities[indexPath.row]))
     return cell
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     guard let selectedIndexPath = tableView.indexPathForSelectedRow else { return }
     tableView.deselectRow(at: selectedIndexPath, animated: true)
-    // TODO: - Back to SignUp Step 1
+    viewModel.didPressCity(city: viewModel.filteredCities[selectedIndexPath.row])
   }
 }

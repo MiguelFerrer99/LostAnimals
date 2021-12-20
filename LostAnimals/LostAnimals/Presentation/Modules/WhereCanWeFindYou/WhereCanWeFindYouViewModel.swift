@@ -1,27 +1,27 @@
 //
-//  ScrollViewExampleViewModel.swift
+//  WhereCanWeFindYouViewModel.swift
 //  LostAnimals
 //
-//  Created by Miguel Ferrer Fornali on 10/11/21.
+//  Created by Miguel Ferrer Fornali on 19/12/21.
 //  Copyright © 2021 Rudo. All rights reserved.
 //
 
 import Foundation
 
-final class ScrollViewExampleViewModel {
+final class WhereCanWeFindYouViewModel {
   
   // MARK: - Properties
-  private let router: ScrollViewExampleRouter
+  private let router: WhereCanWeFindYouRouter
   
   // MARK: - Init
-  required init(router: ScrollViewExampleRouter) {
+  required init(router: WhereCanWeFindYouRouter) {
     self.router = router
   }
-  
+
 }
 
 // MARK: - Life cycle
-extension ScrollViewExampleViewModel {
+extension WhereCanWeFindYouViewModel {
   func viewReady() {
     // Called when view is loaded and ready
   }
@@ -32,5 +32,5 @@ extension ScrollViewExampleViewModel {
 }
 
 // MARK: - Functions
-extension ScrollViewExampleViewModel {
+extension WhereCanWeFindYouViewModel {
 }

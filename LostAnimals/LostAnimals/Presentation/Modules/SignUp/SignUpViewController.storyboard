@@ -39,10 +39,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LGX-7N-aC4" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="269" width="414" height="627"/>
+                                <rect key="frame" x="0.0" y="268" width="414" height="628"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5sR-yb-Lbi">
-                                        <rect key="frame" x="40" y="40" width="334" height="513"/>
+                                        <rect key="frame" x="40" y="40" width="334" height="534"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="zGU-NI-Tin">
@@ -80,14 +80,11 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.33333299999999999" translatesAutoresizingMaskIntoConstraints="NO" id="Gg7-eV-6ny">
-                                <rect key="frame" x="40" y="214" width="334" height="5"/>
-                                <color key="backgroundColor" systemColor="placeholderTextColor"/>
+                                <rect key="frame" x="40" y="214" width="334" height="4"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="5" id="mA4-Fw-itn"/>
-                                </constraints>
                                 <color key="progressTintColor" name="CustomBlack"/>
-                                <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="trackTintColor" systemColor="tertiaryLabelColor"/>
                             </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -95,17 +92,17 @@
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="1rK-Q7-Rh8" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="18m-3r-41M"/>
-                            <constraint firstItem="LGX-7N-aC4" firstAttribute="top" secondItem="Gg7-eV-6ny" secondAttribute="bottom" constant="50" id="Buv-Pf-Ta4"/>
+                            <constraint firstItem="Gg7-eV-6ny" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="7cP-KL-ypN"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Gg7-eV-6ny" secondAttribute="trailing" constant="40" id="EAc-pC-sXS"/>
+                            <constraint firstItem="LGX-7N-aC4" firstAttribute="top" secondItem="Gg7-eV-6ny" secondAttribute="bottom" constant="50" id="HQb-h4-Tqa"/>
                             <constraint firstItem="CIj-HD-ffO" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="J1k-F0-ZVP"/>
                             <constraint firstAttribute="bottom" secondItem="LGX-7N-aC4" secondAttribute="bottom" id="Jbh-zf-RdK"/>
                             <constraint firstItem="LGX-7N-aC4" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="L1W-nk-xhJ"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="5sR-yb-Lbi" secondAttribute="bottom" constant="40" id="LoB-Se-SSI"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="5sR-yb-Lbi" secondAttribute="bottom" constant="20" id="LoB-Se-SSI"/>
                             <constraint firstItem="LGX-7N-aC4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Mvj-MV-w3O"/>
-                            <constraint firstItem="Gg7-eV-6ny" firstAttribute="top" secondItem="1rK-Q7-Rh8" secondAttribute="bottom" constant="20" id="Z0Y-G6-88L"/>
+                            <constraint firstItem="Gg7-eV-6ny" firstAttribute="top" secondItem="1rK-Q7-Rh8" secondAttribute="bottom" constant="20" id="UD4-dw-rWq"/>
                             <constraint firstItem="CIj-HD-ffO" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="40" id="adw-Oz-2RI"/>
-                            <constraint firstItem="Gg7-eV-6ny" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="dvQ-R6-tBW"/>
                             <constraint firstItem="1rK-Q7-Rh8" firstAttribute="top" secondItem="CIj-HD-ffO" secondAttribute="bottom" constant="30" id="gAr-Me-bVQ"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Gg7-eV-6ny" secondAttribute="trailing" constant="40" id="mHR-zE-e2i"/>
                         </constraints>
                     </view>
                     <connections>
@@ -127,7 +124,7 @@
         <namedColor name="CustomGreen">
             <color red="0.40784313725490196" green="0.72549019607843135" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
-        <systemColor name="placeholderTextColor">
+        <systemColor name="tertiaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>

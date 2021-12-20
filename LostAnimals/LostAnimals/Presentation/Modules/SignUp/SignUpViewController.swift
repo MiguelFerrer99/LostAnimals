@@ -41,6 +41,7 @@ final class SignUpViewController: ViewController {
   
   private func setupUI() {
     configureCollectionView(stepsCollectionView)
+    progressView.transform = progressView.transform.scaledBy(x: 1, y: 2)
     signupContentsView.layer.maskedCorners =  [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     updateCurrentProgressBarView()
   }
@@ -52,9 +53,7 @@ final class SignUpViewController: ViewController {
   
   private func updateCurrentProgressBarView() {
     let percentageInFloat = (1.0 / Float(self.viewModel.numberOfSteps)) * (Float(self.viewModel.currentStep.rawValue) + 1.0)
-    UIView.animate(withDuration: 0.25) {
-      self.progressView.progress = percentageInFloat
-    }
+    progressView.setProgress(percentageInFloat, animated: true)
     UIView.transition(with: progressBarLabel, duration: 0.25, options: .transitionCrossDissolve, animations: { [weak self] in
       guard let self = self else { return }
       self.progressBarLabel.text = self.viewModel.currentStepLabel.rawValue
@@ -91,7 +90,11 @@ final class SignUpViewController: ViewController {
     updateCurrentProgressBarView()
   }
   
-  func goToWhereDoYouLiveCountries() {
+  func goToWhereDoYouLive() {
     viewModel.didPressGoToWhereDoYouLiveCountries()
+  }
+  
+  func goToWhereCanWeFindYouLocation() {
+    viewModel.didPressGoToWhereCanWeFindYou()
   }
 }

@@ -19,9 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     window = UIWindow(frame: windowScene.coordinateSpace.bounds)
     window?.windowScene = windowScene
-    
-//    let navigation = Container.shared.scrollViewExampleBuilder().build().embeddedInNavigation()
-    
+        
     let navigation = Container.shared.startupBuilder().build().embeddedInNavigation()
     
     window?.rootViewController = navigation

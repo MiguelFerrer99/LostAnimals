@@ -16,6 +16,9 @@ class PersonalDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell {
   @IBOutlet weak var lastnameTextfield: CustomTextField!
   @IBOutlet weak var birthdateTexfield: CustomTextField!
   @IBOutlet weak var whereDoYouLiveTextfield: CustomTextField!
+  @IBOutlet weak var animalShelterNameTextfield: CustomTextField!
+  @IBOutlet weak var whereCanWeFindYouTextfield: CustomTextField!
+  @IBOutlet weak var personalDetailsModeButton: UIButton!
   @IBOutlet weak var nextStepButton: CustomButton!
   
   // MARK: - Properties
@@ -27,6 +30,9 @@ class PersonalDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell {
   // MARK: - Life cycle
   override func awakeFromNib() {
     super.awakeFromNib()
+    
+    NotificationCenter.default.addObserver(self, selector: #selector(fillWhereDoYouLive), name: .SendWhereDoYouLiveCountryAndCities, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(fillWhereCanWeFindYou), name: .SendWhereCanWeFindYouLocation, object: nil)
     
     setupBindings()
   }
@@ -40,9 +46,38 @@ class PersonalDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell {
     configureTextFields()
   }
   
+  private func updatePersonalDetailsMode() {
+    nextStepButton.alpha = 0.5
+    nextStepButton.isEnabled = false
+    if viewModel.isAnimalShelter {
+      personalDetailsModeButton.setTitle("Are you just a person?", for: .normal)
+      firstnameTextfield.isHidden = true
+      lastnameTextfield.isHidden = true
+      birthdateTexfield.isHidden = true
+      whereDoYouLiveTextfield.isHidden = true
+      animalShelterNameTextfield.isHidden = false
+      whereCanWeFindYouTextfield.isHidden = false
+      animalShelterNameTextfield.resetTextfield()
+      whereCanWeFindYouTextfield.resetTextfield()
+    } else {
+      personalDetailsModeButton.setTitle("Are you an animal shelter?", for: .normal)
+      animalShelterNameTextfield.isHidden = true
+      whereCanWeFindYouTextfield.isHidden = true
+      firstnameTextfield.isHidden = false
+      lastnameTextfield.isHidden = false
+      birthdateTexfield.isHidden = false
+      whereDoYouLiveTextfield.isHidden = false
+      firstnameTextfield.resetTextfield()
+      lastnameTextfield.resetTextfield()
+      birthdateTexfield.resetTextfield()
+      whereDoYouLiveTextfield.resetTextfield()
+    }
+  }
+  
   // MARK: - IBActions
   @IBAction func areYouAnAnimalShelterButton(_ sender: UIButton) {
-    // TODO: Show AnimalShelter UI
+    viewModel.isAnimalShelter.toggle()
+    updatePersonalDetailsMode()
   }
   
   @IBAction func nextStepButtonPressed(_ sender: CustomButton) {

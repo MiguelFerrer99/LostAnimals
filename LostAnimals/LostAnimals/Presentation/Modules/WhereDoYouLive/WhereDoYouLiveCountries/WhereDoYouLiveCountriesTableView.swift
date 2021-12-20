@@ -16,18 +16,18 @@ extension WhereDoYouLiveCountriesViewController: UITableViewDelegate, UITableVie
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return viewModel.countries.count
+    return viewModel.filteredCountries.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeue(CountryTableViewCell.self)
-    cell.display(summary: CountryTableViewCellSummary(countryName: viewModel.countries[indexPath.row].nameEN))
+    cell.display(summary: CountryTableViewCellSummary(countryName: viewModel.filteredCountries[indexPath.row].nameEN))
     return cell
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     guard let selectedIndexPath = tableView.indexPathForSelectedRow else { return }
     tableView.deselectRow(at: selectedIndexPath, animated: true)
-    viewModel.didPressCountryCell(cities: viewModel.countries[indexPath.row].cities)
+    viewModel.didPressCountryCell(country: viewModel.filteredCountries[indexPath.row], cities: viewModel.filteredCountries[indexPath.row].cities)
   }
 }

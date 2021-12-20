@@ -12,6 +12,7 @@ final class LoginViewModel {
   
   // MARK: - Properties
   private let router: LoginRouter
+  let numberOfTextFields = 2
   var editedTextFields = [CustomTextField]()
   
   // MARK: - Dynamic properties

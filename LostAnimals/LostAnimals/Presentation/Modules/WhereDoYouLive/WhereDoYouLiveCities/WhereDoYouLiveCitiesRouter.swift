@@ -18,4 +18,10 @@ final class WhereDoYouLiveCitiesRouter {
   }
   
   // MARK: - Functions
+  func goToSignUp() {
+    guard let viewController = self.viewController?.navigationController?.viewControllers[1] as? SignUpViewController else { return }
+    DispatchQueue.main.async {
+      self.viewController?.navigationController?.popToViewController(viewController, animated: true)
+    }
+  }
 }

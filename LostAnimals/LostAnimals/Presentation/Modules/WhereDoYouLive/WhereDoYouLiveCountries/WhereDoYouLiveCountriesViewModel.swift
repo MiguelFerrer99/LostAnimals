@@ -13,6 +13,7 @@ final class WhereDoYouLiveCountriesViewModel {
   // MARK: - Properties
   private let router: WhereDoYouLiveCountriesRouter
   var countries: [Country] = []
+  var filteredCountries: [Country] = []
   
   // MARK: - Init
   required init(router: WhereDoYouLiveCountriesRouter) {
@@ -42,11 +43,12 @@ extension WhereDoYouLiveCountriesViewModel {
       let countriesDTO = try JSONDecoder().decode([CountryDTO].self, from: jsonData)
       let countries = countriesDTO.compactMap({$0.map()})
       self.countries = countries
+      self.filteredCountries = self.countries
       completion()
     } catch { print(error) }
   }
   
-  func didPressCountryCell(cities: [String]) {
-    self.router.goToWhereDoYouLiveCities(cities: cities)
+  func didPressCountryCell(country: Country, cities: [String]) {
+    self.router.goToWhereDoYouLiveCities(country: country, cities: cities)
   }
 }

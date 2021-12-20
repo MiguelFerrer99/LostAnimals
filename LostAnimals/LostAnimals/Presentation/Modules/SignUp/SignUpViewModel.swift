@@ -39,4 +39,8 @@ extension SignUpViewModel {
   func didPressGoToWhereDoYouLiveCountries() {
     self.router.goToWhereDoYouLiveCountries()
   }
+  
+  func didPressGoToWhereCanWeFindYou() {
+    self.router.goToWhereCanWeFindYou()
+  }
 }

@@ -12,6 +12,7 @@ final class ForgotPasswordViewModel {
   
   // MARK: - Properties
   private let router: ForgotPasswordRouter
+  let numberOfTextFields = 1
   var editedTextFields = [CustomTextField]()
   
   // MARK: - Init

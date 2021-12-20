@@ -17,6 +17,7 @@ final class WhereDoYouLiveCountriesViewController: ViewController {
   override var navBarTitle: String {
     return "Select your country"
   }
+  private var searchController = UISearchController(searchResultsController: nil)
   var viewModel: WhereDoYouLiveCountriesViewModel!
   
   // MARK: - Life cycle
@@ -40,6 +41,7 @@ final class WhereDoYouLiveCountriesViewController: ViewController {
   }
   
   private func setupUI() {
+    configureSearchController(searchController)
     viewModel.getCountriesFromCountriesJson {
       configureTableview(countriesTableView)
     }

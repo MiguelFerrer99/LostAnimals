@@ -14,6 +14,7 @@ import UIKit
   func textFieldDidBeginEditing(_ customTextField: CustomTextField)
   func textFieldDidChange(_ customTextField: CustomTextField)
   @objc optional func textFieldWillSelectCity(_ customTextField: CustomTextField)
+  @objc optional func textFieldWillSelectLocation(_ customTextField: CustomTextField)
 }
 
 @IBDesignable
@@ -53,7 +54,7 @@ class CustomTextField: UIView, UITextFieldDelegate {
     }
   }
   
-  @IBInspectable var birthdatePickerEnabled: Bool = false {
+  @IBInspectable var datePickerEnabled: Bool = false {
     willSet {
       if newValue { createDatePicker() }
     }
@@ -62,6 +63,12 @@ class CustomTextField: UIView, UITextFieldDelegate {
   @IBInspectable var cityPickerEnabled: Bool = false {
     willSet {
       selectCityButton.isHidden = !newValue
+    }
+  }
+  
+  @IBInspectable var locationPickerEnabled: Bool = false {
+    willSet {
+      selectLocationButton.isHidden = !newValue
     }
   }
   
@@ -77,6 +84,7 @@ class CustomTextField: UIView, UITextFieldDelegate {
   @IBOutlet weak var statusImageView: UIImageView!
   @IBOutlet weak var errorLabel: UILabel!
   @IBOutlet weak var selectCityButton: UIButton!
+  @IBOutlet weak var selectLocationButton: UIButton!
   
   // MARK: - Properties
   var delegate: CustomTextFieldDelegate?
@@ -86,7 +94,7 @@ class CustomTextField: UIView, UITextFieldDelegate {
   var hasError: Bool {
     for error in errorsToCheck {
       let hasError = error.checkCondition(value)
-      errorLabel.text     = error.localizedDescription
+      errorLabel.text = error.localizedDescription
       errorLabel.isHidden = !hasError
       self.statusView.isHidden = false
       self.statusImageView.image = UIImage(named: hasError ? "TextfieldBad" : "TextfieldOk")
@@ -146,12 +154,31 @@ class CustomTextField: UIView, UITextFieldDelegate {
   
   @objc private func donePressed() {
     textField.text = birthdatePicker.date.toString(withFormat: DateFormat.dayMonthYearOther)
-    textField.addTarget(self, action: #selector(textFieldDidChangeEditing(_:)), for: .editingDidEnd)
+    textFieldDidChangeEditing(textField)
     textField.endEditing(true)
+  }
+  
+  func didFinishSelectWhereDoYouLiveCountryAndCity() {
+    textFieldDidChangeEditing(textField)
+  }
+  
+  func didFinishSelectWhereCanWeFindYouLocation() {
+    textFieldDidChangeEditing(textField)
   }
   
   func addErrorsToCheck(_ errorsToCheck: [TextFieldError]) {
     self.errorsToCheck = errorsToCheck
+  }
+  
+  func resetTextfield() {
+    textField.text = nil
+    errorLabel.text = nil
+    errorLabel.isHidden = true
+    statusView.isHidden = true
+    statusImageView.image = nil
+    placeholderLabel.alpha = 0
+    topTextFieldConstraint.constant = 0
+    layoutIfNeeded()
   }
   
   // MARK: - IBActions
@@ -161,20 +188,20 @@ class CustomTextField: UIView, UITextFieldDelegate {
   }
   
   // MARK: - UITextFieldDelegate
-  func textFieldShouldReturn(_ customTextField: UITextField) -> Bool {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     return ((delegate?.textFieldShouldReturn(self)) != nil)
   }
   
-  func textFieldDidBeginEditing(_ customTextField: UITextField) {
+  func textFieldDidBeginEditing(_ textField: UITextField) {
     delegate?.textFieldDidBeginEditing(self)
   }
   
-  func textFieldDidEndEditing(_ customTextField: UITextField) {
+  func textFieldDidEndEditing(_ textField: UITextField) {
     delegate?.textFieldDidEndEditing(self)
   }
   
-  @IBAction func textFieldDidChangeEditing(_ customTextField: UITextField) {
-    guard let text = customTextField.text else { return }
+  @IBAction func textFieldDidChangeEditing(_ textField: UITextField) {
+    guard let text = textField.text else { return }
     UIView.animate(withDuration: 0.2) {
       self.placeholderLabel.alpha = text.isEmpty ? 0 : 1
       self.topTextFieldConstraint.constant = text.isEmpty ? 0 : 15
@@ -185,5 +212,9 @@ class CustomTextField: UIView, UITextFieldDelegate {
   
   @IBAction func selectCityButtonPressed(_ sender: UIButton) {
     delegate?.textFieldWillSelectCity?(self)
+  }
+  
+  @IBAction func selectLocationButtonPressed(_ sender: UIButton) {
+    delegate?.textFieldWillSelectLocation?(self)
   }
 }

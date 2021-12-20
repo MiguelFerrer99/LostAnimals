@@ -10,6 +10,13 @@ import UIKit
 
 class PersonalDetailsCollectionViewCellViewModel: ViewModel {
   // MARK: - Properties
+  var isAnimalShelter = false {
+    didSet {
+      numberOfTextFields = isAnimalShelter ? 2 : 4
+      editedTextFields.removeAll()
+    }
+  }
+  var numberOfTextFields = 4
   var editedTextFields = [CustomTextField]()
   
   // MARK: - Init

@@ -17,6 +17,7 @@ final class WhereDoYouLiveCitiesViewController: ViewController {
   override var navBarTitle: String {
     return "Select your city"
   }
+  private var searchController = UISearchController(searchResultsController: nil)
   var viewModel: WhereDoYouLiveCitiesViewModel!
   
   // MARK: - Life cycle
@@ -40,6 +41,7 @@ final class WhereDoYouLiveCitiesViewController: ViewController {
   }
   
   private func setupUI() {
+    configureSearchController(searchController)
     configureTableview(citiesTableView)
   }
 }

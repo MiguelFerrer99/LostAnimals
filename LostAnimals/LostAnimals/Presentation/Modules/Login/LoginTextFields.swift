@@ -43,13 +43,13 @@ extension LoginViewController: CustomTextFieldDelegate {
   
   func textFieldDidChange(_ customTextField: CustomTextField) {
     let haveErrors = viewModel.textFieldsHaveErrors()
-    logInButton.alpha = (haveErrors || viewModel.editedTextFields.count < 2) ? 0.5 : 1
-    logInButton.isEnabled = !haveErrors && viewModel.editedTextFields.count == 2
+    logInButton.alpha = (haveErrors || viewModel.editedTextFields.count < viewModel.numberOfTextFields) ? 0.5 : 1
+    logInButton.isEnabled = !haveErrors && viewModel.editedTextFields.count == viewModel.numberOfTextFields
   }
   
   func textFieldDidEndEditing(_ customTextField: CustomTextField) {
     let haveErrors = viewModel.textFieldsHaveErrors()
-    logInButton.alpha = (haveErrors || viewModel.editedTextFields.count < 2) ? 0.5 : 1
-    logInButton.isEnabled = !haveErrors && viewModel.editedTextFields.count == 2
+    logInButton.alpha = (haveErrors || viewModel.editedTextFields.count < viewModel.numberOfTextFields) ? 0.5 : 1
+    logInButton.isEnabled = !haveErrors && viewModel.editedTextFields.count == viewModel.numberOfTextFields
   }
 }

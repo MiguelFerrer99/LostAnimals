@@ -1,22 +1,22 @@
 //
-//  ScrollViewExampleViewController.swift
+//  WhereCanWeFindYouViewController.swift
 //  LostAnimals
 //
-//  Created by Miguel Ferrer Fornali on 10/11/21.
+//  Created by Miguel Ferrer Fornali on 19/12/21.
 //  Copyright © 2021 Rudo. All rights reserved.
 //
 
 import UIKit
 
-final class ScrollViewExampleViewController: ViewController {
+final class WhereCanWeFindYouViewController: ViewController {
   
   // MARK: - IBOutlets
   
   // MARK: - Properties
-  override var hideNavigationBar: Bool {
-    return true
+  override var navBarTitle: String {
+    return "Select your location"
   }
-  var viewModel: ScrollViewExampleViewModel!
+  var viewModel: WhereCanWeFindYouViewModel!
   
   // MARK: - Life cycle
   override func viewDidLoad() {
@@ -24,7 +24,6 @@ final class ScrollViewExampleViewController: ViewController {
     
     setupBindings()
     viewModel.viewReady()
-    
   }
   
   override func viewDidAppear(_ animated: Bool) {

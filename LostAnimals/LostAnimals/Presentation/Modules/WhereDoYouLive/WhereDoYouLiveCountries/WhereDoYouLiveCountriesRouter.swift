@@ -18,8 +18,8 @@ final class WhereDoYouLiveCountriesRouter {
   }
   
   // MARK: - Functions
-  func goToWhereDoYouLiveCities(cities: [String]) {
-    let viewController = Container.shared.whereDoYouLiveCitiesBuilder().build(cities: cities)
+  func goToWhereDoYouLiveCities(country: Country, cities: [String]) {
+    let viewController = Container.shared.whereDoYouLiveCitiesBuilder().build(country: country, cities: cities)
     DispatchQueue.main.async {
       self.viewController?.navigationController?.pushViewController(viewController, animated: true)
     }

@@ -21,16 +21,16 @@ extension Container {
     return LoginBuilder()
   }
   
-  func scrollViewExampleBuilder() -> ScrollViewExampleBuilder {
-    return ScrollViewExampleBuilder()
-  }
-  
   func signupBuilder() -> SignUpBuilder {
     return SignUpBuilder()
   }
   
   func startupBuilder() -> StartupBuilder {
     return StartupBuilder()
+  }
+  
+  func whereCanWeFindYou() -> WhereCanWeFindYouBuilder {
+    return WhereCanWeFindYouBuilder()
   }
   
   func whereDoYouLiveCitiesBuilder() -> WhereDoYouLiveCitiesBuilder {

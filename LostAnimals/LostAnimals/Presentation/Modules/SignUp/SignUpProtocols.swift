@@ -9,6 +9,7 @@
 import Foundation
 
 extension SignUpViewController: SignUpStepsDelegate {
+  // MARK: - SignUpStepsDelegate
   func moveToNextSignUpStep() {
     moveToNextStep()
   }
@@ -17,7 +18,11 @@ extension SignUpViewController: SignUpStepsDelegate {
     moveToPreviousStep()
   }
   
-  func signUpGoToWhereDoYouLiveCountries() {
-    goToWhereDoYouLiveCountries()
+  func goToWhereDoYouLiveCountries() {
+    goToWhereDoYouLive()
+  }
+  
+  func goToWhereCanWeFindYou() {
+    goToWhereCanWeFindYouLocation()
   }
 }
