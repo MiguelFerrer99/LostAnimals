@@ -72,6 +72,7 @@
 		418C4142275A5E310099BC5B /* ForgotPasswordBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418C413E275A5E310099BC5B /* ForgotPasswordBuilder.swift */; };
 		418C4143275A5E310099BC5B /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418C413F275A5E310099BC5B /* ForgotPasswordViewModel.swift */; };
 		418C4145275A5F3F0099BC5B /* ForgotPasswordViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 418C4144275A5F3F0099BC5B /* ForgotPasswordViewController.storyboard */; };
+		419E507527708ACD007C196B /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419E507427708ACD007C196B /* NotificationName.swift */; };
 		41B75626275EE4CE00C00E03 /* SignUpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B75622275EE4CE00C00E03 /* SignUpRouter.swift */; };
 		41B75627275EE4CE00C00E03 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B75623275EE4CE00C00E03 /* SignUpViewController.swift */; };
 		41B75628275EE4CE00C00E03 /* SignUpBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B75624275EE4CE00C00E03 /* SignUpBuilder.swift */; };
@@ -84,7 +85,6 @@
 		41BFE175276618C900AC5570 /* CityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41BFE173276618C900AC5570 /* CityTableViewCell.xib */; };
 		41BFE177276618E400AC5570 /* CityTableViewCellSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BFE176276618E400AC5570 /* CityTableViewCellSummary.swift */; };
 		41BFE17927661A2D00AC5570 /* WhereDoYouLiveCitiesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BFE17827661A2D00AC5570 /* WhereDoYouLiveCitiesTableView.swift */; };
-		41F820BA276D077B0046B0EA /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F820B9276D077B0046B0EA /* NotificationName.swift */; };
 		41F820C7276FD83B0046B0EA /* WhereCanWeFindYouRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F820C3276FD83B0046B0EA /* WhereCanWeFindYouRouter.swift */; };
 		41F820C8276FD83B0046B0EA /* WhereCanWeFindYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F820C4276FD83B0046B0EA /* WhereCanWeFindYouViewController.swift */; };
 		41F820C9276FD83B0046B0EA /* WhereCanWeFindYouBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F820C5276FD83B0046B0EA /* WhereCanWeFindYouBuilder.swift */; };
@@ -185,6 +185,7 @@
 		418C413E275A5E310099BC5B /* ForgotPasswordBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordBuilder.swift; sourceTree = "<group>"; };
 		418C413F275A5E310099BC5B /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		418C4144275A5F3F0099BC5B /* ForgotPasswordViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotPasswordViewController.storyboard; sourceTree = "<group>"; };
+		419E507427708ACD007C196B /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		41B75622275EE4CE00C00E03 /* SignUpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRouter.swift; sourceTree = "<group>"; };
 		41B75623275EE4CE00C00E03 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		41B75624275EE4CE00C00E03 /* SignUpBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpBuilder.swift; sourceTree = "<group>"; };
@@ -197,7 +198,6 @@
 		41BFE173276618C900AC5570 /* CityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityTableViewCell.xib; sourceTree = "<group>"; };
 		41BFE176276618E400AC5570 /* CityTableViewCellSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCellSummary.swift; sourceTree = "<group>"; };
 		41BFE17827661A2D00AC5570 /* WhereDoYouLiveCitiesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereDoYouLiveCitiesTableView.swift; sourceTree = "<group>"; };
-		41F820B9276D077B0046B0EA /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		41F820C3276FD83B0046B0EA /* WhereCanWeFindYouRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereCanWeFindYouRouter.swift; sourceTree = "<group>"; };
 		41F820C4276FD83B0046B0EA /* WhereCanWeFindYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereCanWeFindYouViewController.swift; sourceTree = "<group>"; };
 		41F820C5276FD83B0046B0EA /* WhereCanWeFindYouBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereCanWeFindYouBuilder.swift; sourceTree = "<group>"; };
@@ -657,7 +657,7 @@
 			children = (
 				E3D14DCC242D081B00436D51 /* Constants.swift */,
 				4108D8D22762286400880E0B /* Enumerations.swift */,
-				41F820B9276D077B0046B0EA /* NotificationName.swift */,
+				419E507427708ACD007C196B /* NotificationName.swift */,
 				4108D8D42762287900880E0B /* Protocols.swift */,
 			);
 			path = Configuration;
@@ -817,7 +817,6 @@
 				945B15B925595DC9003A65E0 /* Presenter.swift in Sources */,
 				4114ABC8275F92C900F1AB01 /* SignUpCollectionView.swift in Sources */,
 				413193B6276FFDD60006FE7B /* WhereDoYouLiveCitiesSearchBar.swift in Sources */,
-				41F820BA276D077B0046B0EA /* NotificationName.swift in Sources */,
 				41BFE17927661A2D00AC5570 /* WhereDoYouLiveCitiesTableView.swift in Sources */,
 				415E599D27650C7C009A013E /* CountryDTO.swift in Sources */,
 				31981E4D24191C2F00D25074 /* CustomTextField-Models.swift in Sources */,
@@ -829,6 +828,7 @@
 				945B15B525595DC9003A65E0 /* UITableViewCell.swift in Sources */,
 				418AD20A275A6A51005AFE3C /* ForgotPasswordTextFields.swift in Sources */,
 				41BFE174276618C900AC5570 /* CityTableViewCell.swift in Sources */,
+				419E507527708ACD007C196B /* NotificationName.swift in Sources */,
 				41BFE16B276539BC00AC5570 /* CountryTableViewCell.swift in Sources */,
 				CCB0207526A6F12000214CB9 /* Date.swift in Sources */,
 				415E59A127650D77009A013E /* Country.swift in Sources */,

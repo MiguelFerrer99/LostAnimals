@@ -60,8 +60,7 @@ extension PersonalDetailsCollectionViewCell: CustomTextFieldDelegate {
     if viewModel.isAnimalShelter {
       switch customTextField.textField {
       case animalShelterNameTextfield.textField:
-        // TODO: textFieldWillSelectLocation(whereCanWeFindYou)
-        whereCanWeFindYouTextfield.textField.becomeFirstResponder()
+        animalShelterNameTextfield.textField.resignFirstResponder()
       case whereCanWeFindYouTextfield.textField:
         customTextField.textField.resignFirstResponder()
       default: customTextField.textField.resignFirstResponder()
@@ -73,7 +72,7 @@ extension PersonalDetailsCollectionViewCell: CustomTextFieldDelegate {
       case lastnameTextfield.textField:
         birthdateTexfield.textField.becomeFirstResponder()
       case birthdateTexfield.textField:
-        textFieldWillSelectCity(whereDoYouLiveTextfield)
+        birthdateTexfield.textField.resignFirstResponder()
       case whereDoYouLiveTextfield.textField:
         customTextField.textField.resignFirstResponder()
       default: customTextField.textField.resignFirstResponder()
