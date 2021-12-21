@@ -125,8 +125,9 @@ class CustomTextField: UIView, UITextFieldDelegate {
     customView.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth,
                                    UIView.AutoresizingMask.flexibleHeight]
     addStackView.layer.cornerRadius = 10
-    addSubview(customView)
+    textField.keyboardAppearance = .light
     textField.delegate = self
+    addSubview(customView)
   }
   
   private func loadViewFromNib() -> UIView! {
@@ -143,6 +144,7 @@ class CustomTextField: UIView, UITextFieldDelegate {
     let spacerItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
     toolbar.setItems([spacerItem, doneButton], animated: true)
     toolbar.tintColor = .customBlack
+    toolbar.backgroundColor = .customWhite
     textField.inputAccessoryView = toolbar
     birthdatePicker.maximumDate = .today
     birthdatePicker.datePickerMode = .date

@@ -42,6 +42,7 @@ final class SignUpViewController: ViewController {
   private func setupUI() {
     configureCollectionView(stepsCollectionView)
     progressView.transform = progressView.transform.scaledBy(x: 1, y: 2)
+    progressView.trackTintColor = .customBlack.withAlphaComponent(0.2)
     signupContentsView.layer.maskedCorners =  [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     updateCurrentProgressBarView()
   }

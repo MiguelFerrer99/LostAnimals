@@ -10,9 +10,10 @@ import UIKit
 
 extension WhereDoYouLiveCitiesViewController: UISearchBarDelegate {
   func configureSearchController(_ searchController: UISearchController) {
-    searchController.searchBar.delegate = self
     searchController.hidesNavigationBarDuringPresentation = false
+    searchController.searchBar.delegate = self
     searchController.searchBar.placeholder = "Search your city..."
+    searchController.searchBar.barStyle = .black
     searchController.searchBar.searchTextField.tintColor = .customWhite
     searchController.searchBar.searchTextField.backgroundColor = .customBlack
     searchController.searchBar.searchTextField.leftView?.tintColor = .customWhite
