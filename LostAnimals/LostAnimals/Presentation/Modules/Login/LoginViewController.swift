@@ -45,6 +45,7 @@ final class LoginViewController: ViewController {
   }
   
   private func updateUserInteraction() {
+    navigationController?.navigationBar.isUserInteractionEnabled = logInButton.isEnabled
     mailTextField.isUserInteractionEnabled = logInButton.isEnabled
     passwordTextField.isUserInteractionEnabled = logInButton.isEnabled
     forgotPasswordButton.isUserInteractionEnabled = logInButton.isEnabled

@@ -50,7 +50,9 @@ extension PersonalDetailsCollectionViewCell: CustomTextFieldDelegate {
   
   @objc func fillWhereCanWeFindYou(_ notification: NSNotification) {
     if let searchResult = notification.userInfo?["searchResult"] as? MKLocalSearchCompletion {
-      let searchResultString = "\(searchResult.title), \(searchResult.subtitle)"
+      let searchResultString1 = searchResult.title
+      let searchResultString2 = searchResult.subtitle.isEmpty ? "" : " ,\(searchResult.subtitle)"
+      let searchResultString = "\(searchResultString1)\(searchResultString2)"
       whereCanWeFindYouTextfield.textField.text = searchResultString
       whereCanWeFindYouTextfield.didFinishSelectWhereCanWeFindYouAddress()
     }
@@ -103,7 +105,7 @@ extension PersonalDetailsCollectionViewCell: CustomTextFieldDelegate {
   func textFieldWillSelectCity(_ customTextField: CustomTextField) {
     textFieldDidBeginEditing(customTextField)
     signUpStepsDelegate?.goToWhereDoYouLiveCountries()
-    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
       self.textFieldDidChange(customTextField)
     }
   }
@@ -111,7 +113,7 @@ extension PersonalDetailsCollectionViewCell: CustomTextFieldDelegate {
   func textFieldWillSelectAddress(_ customTextField: CustomTextField) {
     textFieldDidBeginEditing(customTextField)
     signUpStepsDelegate?.goToWhereCanWeFindYou()
-    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
       self.textFieldDidChange(customTextField)
     }
   }

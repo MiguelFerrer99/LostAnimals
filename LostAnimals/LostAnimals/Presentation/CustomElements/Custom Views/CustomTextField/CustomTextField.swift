@@ -41,6 +41,7 @@ class CustomTextField: UIView, UITextFieldDelegate {
         attributes: [NSAttributedString.Key.foregroundColor: newValue ? UIColor.customBlack.withAlphaComponent(0.5) : UIColor.customWhite.withAlphaComponent(0.5)]
       )
       placeholderLabel.attributedText = textField.attributedPlaceholder
+      hideContentButton.imageView?.tintColor = newValue ? .customBlack : .customWhite
     }
   }
   
@@ -90,14 +91,15 @@ class CustomTextField: UIView, UITextFieldDelegate {
   var delegate: CustomTextFieldDelegate?
   var errorsToCheck = [TextFieldError]()
   let birthdatePicker = UIDatePicker()
+  let passwordsAreNotEqualError = TextFieldErrorPasswordsAreNotEqual()
   
   var hasError: Bool {
     for error in errorsToCheck {
       let hasError = error.checkCondition(value)
       errorLabel.text = error.localizedDescription
       errorLabel.isHidden = !hasError
-      self.statusView.isHidden = false
-      self.statusImageView.image = UIImage(named: hasError ? "TextfieldBad" : "TextfieldOk")
+      statusView.isHidden = false
+      statusImageView.image = UIImage(named: hasError ? "TextfieldBad" : "TextfieldOk")
       if hasError { return true }
     }
     return false
@@ -181,6 +183,13 @@ class CustomTextField: UIView, UITextFieldDelegate {
     placeholderLabel.alpha = 0
     topTextFieldConstraint.constant = 0
     layoutIfNeeded()
+  }
+  
+  func showPasswordsAreNotEqualError() {
+    errorLabel.text = passwordsAreNotEqualError.localizedDescription
+    errorLabel.isHidden = false
+    statusView.isHidden = false
+    statusImageView.image = UIImage(named: "TextfieldBad")
   }
   
   // MARK: - IBActions

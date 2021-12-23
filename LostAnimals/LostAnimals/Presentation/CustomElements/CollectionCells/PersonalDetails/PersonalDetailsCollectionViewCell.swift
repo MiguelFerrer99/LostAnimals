@@ -81,6 +81,12 @@ class PersonalDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell {
   }
   
   @IBAction func nextStepButtonPressed(_ sender: CustomButton) {
+    signUpStepsDelegate?.sendSignUpStep1Data(isAnimalShelter: viewModel.isAnimalShelter,
+                                             firstname: firstnameTextfield.textField.text,
+                                             lastname: lastnameTextfield.textField.text,
+                                             animalShelterName: animalShelterNameTextfield.textField.text,
+                                             birthdate: birthdateTexfield.textField.text?.toDate(withFormat: DateFormat.dayMonthYearOther),
+                                             address: (viewModel.isAnimalShelter ? whereCanWeFindYouTextfield.textField.text : whereDoYouLiveTextfield.textField.text) ?? "")
     signUpStepsDelegate?.moveToNextSignUpStep()
   }
 }

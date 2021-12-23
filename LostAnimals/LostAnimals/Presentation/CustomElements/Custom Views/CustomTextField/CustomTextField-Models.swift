@@ -54,6 +54,14 @@ class TextFieldErrorPasswordFormat: TextFieldError {
   }
 }
 
+class TextFieldErrorPasswordsAreNotEqual: TextFieldError {
+  init() {
+    super.init(localizedDescription: "Passwords are not equal") { (value) -> Bool in
+      return true
+    }
+  }
+}
+
 class TextFieldErrorOnlyLettersAndSpaces: TextFieldError {
   init() {
     super.init(localizedDescription: "The field may contain only letters and spaces") { (value) -> Bool in

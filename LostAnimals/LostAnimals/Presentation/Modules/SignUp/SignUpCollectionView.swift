@@ -30,11 +30,14 @@ extension SignUpViewController: UICollectionViewDelegate, UICollectionViewDataSo
       personalDetailsCell.signUpStepsDelegate = self
       return personalDetailsCell
     case 1:
-      let accountDetails = collectionView.dequeue(AccountDetailsCollectionViewCell.self, for: indexPath)
-      return accountDetails
+      let accountDetailsCellVM = AccountDetailsCollectionViewCellViewModel()
+      let accountDetailsCell = collectionView.dequeue(AccountDetailsCollectionViewCell.self, for: indexPath, viewModel: accountDetailsCellVM)
+      accountDetailsCell.signUpStepsDelegate = self
+      return accountDetailsCell
     case 2:
-      let socialMediaDetails = collectionView.dequeue(SocialMediaDetailsCollectionViewCell.self, for: indexPath)
-      return socialMediaDetails
+      let socialMediaDetailsCell = collectionView.dequeue(SocialMediaDetailsCollectionViewCell.self, for: indexPath)
+      socialMediaDetailsCell.signUpStepsDelegate = self
+      return socialMediaDetailsCell
     default: return UICollectionViewCell()
     }
   }

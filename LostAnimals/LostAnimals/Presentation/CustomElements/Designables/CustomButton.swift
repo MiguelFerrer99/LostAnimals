@@ -70,15 +70,15 @@ import UIKit
   }
   
   func showLoading() {
-    originalButtonText = titleLabel?.text
+    isEnabled = false
     setTitle("", for: .normal)
+    originalButtonText = titleLabel?.text
     
     if (activityIndicator == nil) {
       activityIndicator = createActivityIndicator()
     }
     
     showSpinning()
-    isEnabled = false
   }
   
   func hideLoading() {

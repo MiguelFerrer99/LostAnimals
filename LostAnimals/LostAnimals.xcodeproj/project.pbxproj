@@ -57,6 +57,8 @@
 		415E59952764F206009A013E /* WhereDoYouLiveCitiesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 415E59942764F206009A013E /* WhereDoYouLiveCitiesViewController.storyboard */; };
 		415E599D27650C7C009A013E /* CountryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E599C27650C7C009A013E /* CountryDTO.swift */; };
 		415E59A127650D77009A013E /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E59A027650D77009A013E /* Country.swift */; };
+		416D29D22772551400CDD277 /* AccountDetailsCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D29D12772551400CDD277 /* AccountDetailsCollectionViewCellViewModel.swift */; };
+		416D29D42772558800CDD277 /* AccountDetailsCollectionViewCellTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D29D32772558800CDD277 /* AccountDetailsCollectionViewCellTextFields.swift */; };
 		417E58FF274D9CCD00447ED3 /* LoginTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417E58FE274D9CCD00447ED3 /* LoginTextFields.swift */; };
 		4187195C275BFA6D00C993BC /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8DB273848AC00F5946B /* Nunito-Black.ttf */; };
 		4187195D275BFA6D00C993BC /* Nunito-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8D4273848AB00F5946B /* Nunito-BlackItalic.ttf */; };
@@ -189,6 +191,8 @@
 		415E59942764F206009A013E /* WhereDoYouLiveCitiesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WhereDoYouLiveCitiesViewController.storyboard; sourceTree = "<group>"; };
 		415E599C27650C7C009A013E /* CountryDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDTO.swift; sourceTree = "<group>"; };
 		415E59A027650D77009A013E /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		416D29D12772551400CDD277 /* AccountDetailsCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		416D29D32772558800CDD277 /* AccountDetailsCollectionViewCellTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsCollectionViewCellTextFields.swift; sourceTree = "<group>"; };
 		417E58FE274D9CCD00447ED3 /* LoginTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextFields.swift; sourceTree = "<group>"; };
 		418AD209275A6A51005AFE3C /* ForgotPasswordTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordTextFields.swift; sourceTree = "<group>"; };
 		418C413C275A5E310099BC5B /* ForgotPasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordRouter.swift; sourceTree = "<group>"; };
@@ -368,6 +372,8 @@
 			children = (
 				4114ABD1275F960200F1AB01 /* AccountDetailsCollectionViewCell.xib */,
 				4114ABD0275F960200F1AB01 /* AccountDetailsCollectionViewCell.swift */,
+				416D29D12772551400CDD277 /* AccountDetailsCollectionViewCellViewModel.swift */,
+				416D29D32772558800CDD277 /* AccountDetailsCollectionViewCellTextFields.swift */,
 			);
 			path = AccountDetails;
 			sourceTree = "<group>";
@@ -814,6 +820,7 @@
 				4108D8D12762276800880E0B /* SignUpProtocols.swift in Sources */,
 				418C4141275A5E310099BC5B /* ForgotPasswordViewController.swift in Sources */,
 				E3D14DCD242D081B00436D51 /* Constants.swift in Sources */,
+				416D29D22772551400CDD277 /* AccountDetailsCollectionViewCellViewModel.swift in Sources */,
 				943CE5FF2546DFBC00CA93AA /* CustomImageView.swift in Sources */,
 				4139870E2737FA3500C243F4 /* StartupRouter.swift in Sources */,
 				415E597F2763EA7E009A013E /* WhereDoYouLiveCountriesViewModel.swift in Sources */,
@@ -847,6 +854,7 @@
 				41BFE17927661A2D00AC5570 /* WhereDoYouLiveCitiesTableView.swift in Sources */,
 				415E599D27650C7C009A013E /* CountryDTO.swift in Sources */,
 				31981E4D24191C2F00D25074 /* CustomTextField-Models.swift in Sources */,
+				416D29D42772558800CDD277 /* AccountDetailsCollectionViewCellTextFields.swift in Sources */,
 				945B15B425595DC9003A65E0 /* Int.swift in Sources */,
 				41F820C8276FD83B0046B0EA /* WhereCanWeFindYouViewController.swift in Sources */,
 				41B75629275EE4CE00C00E03 /* SignUpViewModel.swift in Sources */,

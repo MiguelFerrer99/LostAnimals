@@ -42,6 +42,7 @@ final class ForgotPasswordViewController: UIViewController {
   }
   
   private func updateUserInteraction() {
+    navigationController?.navigationBar.isUserInteractionEnabled = forgotPasswordButton.isEnabled
     mailTexfield.isUserInteractionEnabled = forgotPasswordButton.isEnabled
   }
   

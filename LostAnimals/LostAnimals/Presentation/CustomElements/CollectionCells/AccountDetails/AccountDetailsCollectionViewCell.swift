@@ -8,17 +8,45 @@
 
 import UIKit
 
-class AccountDetailsCollectionViewCell: UICollectionViewCell, Reusable {
+class AccountDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell {
+  typealias T = AccountDetailsCollectionViewCellViewModel
   
   // MARK: - IBOutlets
+  @IBOutlet weak var mailTextfield: CustomTextField!
+  @IBOutlet weak var passwordTextfield: CustomTextField!
+  @IBOutlet weak var repeatPasswordTextfield: CustomTextField!
+  @IBOutlet weak var backStepButton: CustomButton!
+  @IBOutlet weak var nextStepButton: CustomButton!
   
   // MARK: - Properties
+  weak var signUpStepsDelegate: SignUpStepsDelegate?
+  var viewModel: AccountDetailsCollectionViewCellViewModel! {
+    didSet { fillUI() }
+  }
   
   // MARK: - Life cycle
   override func awakeFromNib() {
     super.awakeFromNib()
-    // Initialization code
+    
+    setupBindings()
   }
   
   // MARK: - Functions
+  private func setupBindings() {
+    // Do bindings setup
+  }
+  
+  private func fillUI() {
+    configureTextFields()
+  }
+  
+  // MARK: - IBActions
+  @IBAction func backStepButtonPressed(_ sender: CustomButton) {
+    signUpStepsDelegate?.moveToPreviousSignUpStep()
+  }
+  
+  @IBAction func nextStepButtonPressed(_ sender: CustomButton) {
+    signUpStepsDelegate?.sendSignUpStep2Data(mail: mailTextfield.textField.text ?? "", password: "")
+    signUpStepsDelegate?.moveToNextSignUpStep()
+  }
 }
