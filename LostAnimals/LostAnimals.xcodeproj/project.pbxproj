@@ -57,6 +57,12 @@
 		415E59952764F206009A013E /* WhereDoYouLiveCitiesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 415E59942764F206009A013E /* WhereDoYouLiveCitiesViewController.storyboard */; };
 		415E599D27650C7C009A013E /* CountryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E599C27650C7C009A013E /* CountryDTO.swift */; };
 		415E59A127650D77009A013E /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E59A027650D77009A013E /* Country.swift */; };
+		4160E701277B99FB00C7066F /* TermsAndConditionsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4160E6FD277B99FB00C7066F /* TermsAndConditionsRouter.swift */; };
+		4160E702277B99FB00C7066F /* TermsAndConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4160E6FE277B99FB00C7066F /* TermsAndConditionsViewController.swift */; };
+		4160E703277B99FB00C7066F /* TermsAndConditionsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4160E6FF277B99FB00C7066F /* TermsAndConditionsBuilder.swift */; };
+		4160E704277B99FB00C7066F /* TermsAndConditionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4160E700277B99FB00C7066F /* TermsAndConditionsViewModel.swift */; };
+		416D1CE927751BFB00C75546 /* SocialMediaDetailsCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D1CE827751BFB00C75546 /* SocialMediaDetailsCollectionViewCellViewModel.swift */; };
+		416D1CEB27751C0C00C75546 /* SocialMediaDetailsCollectionViewCellTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D1CEA27751C0C00C75546 /* SocialMediaDetailsCollectionViewCellTextFields.swift */; };
 		416D29D22772551400CDD277 /* AccountDetailsCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D29D12772551400CDD277 /* AccountDetailsCollectionViewCellViewModel.swift */; };
 		416D29D42772558800CDD277 /* AccountDetailsCollectionViewCellTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D29D32772558800CDD277 /* AccountDetailsCollectionViewCellTextFields.swift */; };
 		417E58FF274D9CCD00447ED3 /* LoginTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417E58FE274D9CCD00447ED3 /* LoginTextFields.swift */; };
@@ -191,6 +197,12 @@
 		415E59942764F206009A013E /* WhereDoYouLiveCitiesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WhereDoYouLiveCitiesViewController.storyboard; sourceTree = "<group>"; };
 		415E599C27650C7C009A013E /* CountryDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDTO.swift; sourceTree = "<group>"; };
 		415E59A027650D77009A013E /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		4160E6FD277B99FB00C7066F /* TermsAndConditionsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsRouter.swift; sourceTree = "<group>"; };
+		4160E6FE277B99FB00C7066F /* TermsAndConditionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsViewController.swift; sourceTree = "<group>"; };
+		4160E6FF277B99FB00C7066F /* TermsAndConditionsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsBuilder.swift; sourceTree = "<group>"; };
+		4160E700277B99FB00C7066F /* TermsAndConditionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsViewModel.swift; sourceTree = "<group>"; };
+		416D1CE827751BFB00C75546 /* SocialMediaDetailsCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaDetailsCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		416D1CEA27751C0C00C75546 /* SocialMediaDetailsCollectionViewCellTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaDetailsCollectionViewCellTextFields.swift; sourceTree = "<group>"; };
 		416D29D12772551400CDD277 /* AccountDetailsCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		416D29D32772558800CDD277 /* AccountDetailsCollectionViewCellTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsCollectionViewCellTextFields.swift; sourceTree = "<group>"; };
 		417E58FE274D9CCD00447ED3 /* LoginTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextFields.swift; sourceTree = "<group>"; };
@@ -383,6 +395,8 @@
 			children = (
 				4114ABD6275F966600F1AB01 /* SocialMediaDetailsCollectionViewCell.xib */,
 				4114ABD5275F966600F1AB01 /* SocialMediaDetailsCollectionViewCell.swift */,
+				416D1CE827751BFB00C75546 /* SocialMediaDetailsCollectionViewCellViewModel.swift */,
+				416D1CEA27751C0C00C75546 /* SocialMediaDetailsCollectionViewCellTextFields.swift */,
 			);
 			path = SocialMediaDetails;
 			sourceTree = "<group>";
@@ -449,6 +463,17 @@
 			path = WhereDoYouLiveCities;
 			sourceTree = "<group>";
 		};
+		4160E6FC277B998100C7066F /* TermsAndConditions */ = {
+			isa = PBXGroup;
+			children = (
+				4160E6FD277B99FB00C7066F /* TermsAndConditionsRouter.swift */,
+				4160E6FE277B99FB00C7066F /* TermsAndConditionsViewController.swift */,
+				4160E6FF277B99FB00C7066F /* TermsAndConditionsBuilder.swift */,
+				4160E700277B99FB00C7066F /* TermsAndConditionsViewModel.swift */,
+			);
+			path = TermsAndConditions;
+			sourceTree = "<group>";
+		};
 		41868B94272C072500F389AB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -456,6 +481,7 @@
 				411C7F68274BA8CB00C9710A /* Login */,
 				41B75621275EE4B000C00E03 /* SignUp */,
 				413987092737FA2600C243F4 /* Startup */,
+				4160E6FC277B998100C7066F /* TermsAndConditions */,
 				41F820C2276FD8100046B0EA /* WhereCanWeFindYou */,
 				415E596B2763E784009A013E /* WhereDoYouLive */,
 			);
@@ -802,6 +828,7 @@
 				411C7F6E274BA8FE00C9710A /* LoginViewController.swift in Sources */,
 				418C4140275A5E310099BC5B /* ForgotPasswordRouter.swift in Sources */,
 				CCB0207626A6F12000214CB9 /* String.swift in Sources */,
+				4160E701277B99FB00C7066F /* TermsAndConditionsRouter.swift in Sources */,
 				415E59852763F28C009A013E /* PersonalDetailsCollectionViewCellViewModel.swift in Sources */,
 				41BFE177276618E400AC5570 /* CityTableViewCellSummary.swift in Sources */,
 				411C7F6F274BA8FE00C9710A /* LoginBuilder.swift in Sources */,
@@ -815,6 +842,7 @@
 				4114ABD2275F960200F1AB01 /* AccountDetailsCollectionViewCell.swift in Sources */,
 				4139870F2737FA3500C243F4 /* StartupViewController.swift in Sources */,
 				945B15BD25595DC9003A65E0 /* Cache.swift in Sources */,
+				416D1CE927751BFB00C75546 /* SocialMediaDetailsCollectionViewCellViewModel.swift in Sources */,
 				31981E4B24191A4500D25074 /* CustomTextField.swift in Sources */,
 				4108D8DB27624C8600880E0B /* PersonalDetailsCollectionViewCellTextFields.swift in Sources */,
 				4108D8D12762276800880E0B /* SignUpProtocols.swift in Sources */,
@@ -823,6 +851,7 @@
 				416D29D22772551400CDD277 /* AccountDetailsCollectionViewCellViewModel.swift in Sources */,
 				943CE5FF2546DFBC00CA93AA /* CustomImageView.swift in Sources */,
 				4139870E2737FA3500C243F4 /* StartupRouter.swift in Sources */,
+				416D1CEB27751C0C00C75546 /* SocialMediaDetailsCollectionViewCellTextFields.swift in Sources */,
 				415E597F2763EA7E009A013E /* WhereDoYouLiveCountriesViewModel.swift in Sources */,
 				CCB0202B26A6EE3400214CB9 /* SceneDelegate.swift in Sources */,
 				410FE6812770C4E200A390A3 /* AddressTableViewCellSummary.swift in Sources */,
@@ -830,6 +859,7 @@
 				413987102737FA3500C243F4 /* StartupBuilder.swift in Sources */,
 				4108D8D52762287900880E0B /* Protocols.swift in Sources */,
 				945B15B325595DC9003A65E0 /* UIColor.swift in Sources */,
+				4160E704277B99FB00C7066F /* TermsAndConditionsViewModel.swift in Sources */,
 				945B15AE25595DC9003A65E0 /* Dynamic.swift in Sources */,
 				415E597E2763EA7E009A013E /* WhereDoYouLiveCountriesBuilder.swift in Sources */,
 				410FE67E2770C4D100A390A3 /* AddressTableViewCell.swift in Sources */,
@@ -856,6 +886,7 @@
 				31981E4D24191C2F00D25074 /* CustomTextField-Models.swift in Sources */,
 				416D29D42772558800CDD277 /* AccountDetailsCollectionViewCellTextFields.swift in Sources */,
 				945B15B425595DC9003A65E0 /* Int.swift in Sources */,
+				4160E703277B99FB00C7066F /* TermsAndConditionsBuilder.swift in Sources */,
 				41F820C8276FD83B0046B0EA /* WhereCanWeFindYouViewController.swift in Sources */,
 				41B75629275EE4CE00C00E03 /* SignUpViewModel.swift in Sources */,
 				943CE5FE2546DFBC00CA93AA /* CustomButton.swift in Sources */,
@@ -874,6 +905,7 @@
 				CCB0205326A6EF6500214CB9 /* Container.swift in Sources */,
 				CCB0202A26A6EE3400214CB9 /* AppDelegate.swift in Sources */,
 				415E59912764F1F8009A013E /* WhereDoYouLiveCitiesViewController.swift in Sources */,
+				4160E702277B99FB00C7066F /* TermsAndConditionsViewController.swift in Sources */,
 				41BFE17027653A6300AC5570 /* CountryTableViewCellSummary.swift in Sources */,
 				410FE67A2770BCB400A390A3 /* WhereCanWeFindYouSearchBar.swift in Sources */,
 				411C7F6D274BA8FE00C9710A /* LoginRouter.swift in Sources */,

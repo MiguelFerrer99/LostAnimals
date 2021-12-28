@@ -12,19 +12,21 @@ extension AccountDetailsCollectionViewCell: CustomTextFieldDelegate {
   // MARK: - Functions
   func configureTextFields() {
     mailTextfield.delegate = self
+    mailTextfield.textField.textContentType = .username
+    mailTextfield.textField.keyboardType = .emailAddress
     mailTextfield.textField.returnKeyType = .next
     mailTextfield.addErrorsToCheck([TextFieldErrorEmptyValue(),
                                     TextFieldErrorEmailFormat()])
     
     passwordTextfield.delegate = self
-    passwordTextfield.textField.returnKeyType = .next
     passwordTextfield.textField.textContentType = .oneTimeCode
+    passwordTextfield.textField.returnKeyType = .next
     passwordTextfield.addErrorsToCheck([TextFieldErrorEmptyValue(),
                                         TextFieldErrorPasswordFormat()])
     
     repeatPasswordTextfield.delegate = self
-    repeatPasswordTextfield.textField.returnKeyType = .done
     repeatPasswordTextfield.textField.textContentType = .oneTimeCode
+    repeatPasswordTextfield.textField.returnKeyType = .done
     repeatPasswordTextfield.addErrorsToCheck([TextFieldErrorEmptyValue(),
                                               TextFieldErrorPasswordFormat()])
   }
@@ -61,16 +63,10 @@ extension AccountDetailsCollectionViewCell: CustomTextFieldDelegate {
   }
   
   func textFieldDidChange(_ customTextField: CustomTextField) {
-    let haveErrors = viewModel.textFieldsHaveErrors()
-    let passwordsAreEqual = checkPasswordsAreEqual()
-    nextStepButton.alpha = (haveErrors || !passwordsAreEqual || viewModel.editedTextFields.count < viewModel.numberOfTextFields) ? 0.5 : 1
-    nextStepButton.isEnabled = !haveErrors && passwordsAreEqual && viewModel.editedTextFields.count == viewModel.numberOfTextFields
+    checkAllContentsAreOk()
   }
   
   func textFieldDidEndEditing(_ customTextField: CustomTextField) {
-    let haveErrors = viewModel.textFieldsHaveErrors()
-    let passwordsAreEqual = checkPasswordsAreEqual()
-    nextStepButton.alpha = (haveErrors || !passwordsAreEqual || viewModel.editedTextFields.count < viewModel.numberOfTextFields) ? 0.5 : 1
-    nextStepButton.isEnabled = !haveErrors && passwordsAreEqual && viewModel.editedTextFields.count == viewModel.numberOfTextFields
+    checkAllContentsAreOk()
   }
 }

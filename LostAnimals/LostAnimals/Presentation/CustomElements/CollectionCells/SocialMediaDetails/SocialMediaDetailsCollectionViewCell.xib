@@ -1,27 +1,348 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-Bold.ttf">
+            <string>Nunito-Bold</string>
+        </array>
+        <array key="Nunito-Regular.ttf">
+            <string>Nunito-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SocialMediaDetailsCollectionViewCell" customModule="LostAnimals" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="228" height="293"/>
+            <rect key="frame" x="0.0" y="0.0" width="379" height="615"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="228" height="293"/>
+                <rect key="frame" x="0.0" y="0.0" width="379" height="615"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJP-UI-bRR">
-                        <rect key="frame" x="0.0" y="0.0" width="228" height="293"/>
-                        <color key="backgroundColor" name="CustomBlue"/>
+                        <rect key="frame" x="0.0" y="0.0" width="379" height="615"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ppU-IY-XXx">
+                                <rect key="frame" x="0.0" y="0.0" width="379" height="615"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write your social media accounts if you have. We will use them to give you the best user experience" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ktl-Gy-1el">
+                                        <rect key="frame" x="0.0" y="0.0" width="379" height="63"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="18"/>
+                                        <color key="textColor" name="CustomWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dP-yx-koR">
+                                        <rect key="frame" x="0.0" y="83" width="379" height="402"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zMr-TY-Z8e">
+                                                <rect key="frame" x="0.0" y="0.0" width="379" height="280"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fRw-n0-7FG">
+                                                        <rect key="frame" x="0.0" y="0.0" width="379" height="280"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vjy-Fp-Ms7">
+                                                                <rect key="frame" x="0.0" y="0.0" width="379" height="80"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="nxp-ix-z0C">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="80"/>
+                                                                        <subviews>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RKp-X7-Ffl" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                                                <subviews>
+                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhm-5w-aem">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                                                        <state key="normal" title="Button"/>
+                                                                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                                                        <connections>
+                                                                                            <action selector="phonePrefixButtonPressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="92A-2c-4b9"/>
+                                                                                        </connections>
+                                                                                    </button>
+                                                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pr" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vjn-wB-8K7">
+                                                                                        <rect key="frame" x="20" y="0.0" width="20" height="33"/>
+                                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                        <constraints>
+                                                                                            <constraint firstAttribute="height" constant="33" id="lfl-RO-uIG"/>
+                                                                                        </constraints>
+                                                                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
+                                                                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ojb-L7-kav">
+                                                                                        <rect key="frame" x="20" y="20" width="20" height="20"/>
+                                                                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
+                                                                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGb-bx-nNu">
+                                                                                        <rect key="frame" x="8" y="18" width="44" height="42"/>
+                                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                        <constraints>
+                                                                                            <constraint firstAttribute="height" constant="42" id="AeU-kd-NFQ"/>
+                                                                                        </constraints>
+                                                                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
+                                                                                        <color key="textColor" name="CustomBlack"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                </subviews>
+                                                                                <color key="backgroundColor" name="CustomWhite"/>
+                                                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <constraints>
+                                                                                    <constraint firstItem="uhm-5w-aem" firstAttribute="top" secondItem="RKp-X7-Ffl" secondAttribute="top" id="2rW-du-l05"/>
+                                                                                    <constraint firstItem="uhm-5w-aem" firstAttribute="leading" secondItem="RKp-X7-Ffl" secondAttribute="leading" id="Cgv-BJ-Eyr"/>
+                                                                                    <constraint firstItem="Ojb-L7-kav" firstAttribute="leading" secondItem="RKp-X7-Ffl" secondAttribute="leading" constant="20" id="MAf-1m-e1O"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="Vjn-wB-8K7" secondAttribute="trailing" constant="20" id="NVt-gZ-jtU"/>
+                                                                                    <constraint firstAttribute="height" constant="60" id="Oe7-rr-N2v"/>
+                                                                                    <constraint firstAttribute="bottom" secondItem="uhm-5w-aem" secondAttribute="bottom" id="P5Y-Bc-UoW"/>
+                                                                                    <constraint firstItem="Ojb-L7-kav" firstAttribute="centerY" secondItem="RKp-X7-Ffl" secondAttribute="centerY" id="WdZ-Tc-8ne"/>
+                                                                                    <constraint firstItem="ZGb-bx-nNu" firstAttribute="leading" secondItem="RKp-X7-Ffl" secondAttribute="leading" constant="8" id="YOy-EG-U4u"/>
+                                                                                    <constraint firstAttribute="bottom" secondItem="ZGb-bx-nNu" secondAttribute="bottom" id="egl-ze-tkk"/>
+                                                                                    <constraint firstItem="Vjn-wB-8K7" firstAttribute="leading" secondItem="RKp-X7-Ffl" secondAttribute="leading" constant="20" id="j7i-J2-i0R"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="uhm-5w-aem" secondAttribute="trailing" id="mKa-mV-HIZ"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="Ojb-L7-kav" secondAttribute="trailing" constant="20" id="ti9-Zb-bxg"/>
+                                                                                    <constraint firstItem="Vjn-wB-8K7" firstAttribute="top" secondItem="RKp-X7-Ffl" secondAttribute="top" id="vLO-ZA-hzR"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="ZGb-bx-nNu" secondAttribute="trailing" constant="8" id="vpj-Yi-smC"/>
+                                                                                </constraints>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                        <real key="value" value="10"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                </userDefinedRuntimeAttributes>
+                                                                            </view>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="avb-IE-KXD">
+                                                                                <rect key="frame" x="0.0" y="66" width="60" height="14"/>
+                                                                                <subviews>
+                                                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cnM-le-bg3">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="14"/>
+                                                                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="14"/>
+                                                                                        <color key="textColor" name="CustomRed"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                </subviews>
+                                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <constraints>
+                                                                                    <constraint firstItem="cnM-le-bg3" firstAttribute="leading" secondItem="avb-IE-KXD" secondAttribute="leading" id="4So-A7-KJj"/>
+                                                                                    <constraint firstItem="cnM-le-bg3" firstAttribute="top" secondItem="avb-IE-KXD" secondAttribute="top" id="HVd-9c-5Cc"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="cnM-le-bg3" secondAttribute="trailing" id="LUK-Ms-Pj1"/>
+                                                                                    <constraint firstAttribute="bottom" secondItem="cnM-le-bg3" secondAttribute="bottom" id="skJ-9l-5zG"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                        </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="60" id="2nx-ih-Xfn"/>
+                                                                        </constraints>
+                                                                    </stackView>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iTR-O4-n8b" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
+                                                                        <rect key="frame" x="70" y="0.0" width="309" height="80"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="80" id="jtB-Ws-18d"/>
+                                                                        </constraints>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="hideContent" value="NO"/>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="capitalizeFirstLetter" value="NO"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Phone"/>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="whiteTheme" value="YES"/>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="datePickerEnabled" value="NO"/>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="birthdatePickerEnabled" value="NO"/>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isOptional" value="NO"/>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="YES"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </view>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v2V-Ev-j9Q" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="100" width="379" height="80"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="80" id="B9o-Uh-kcw"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hideContent" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="capitalizeFirstLetter" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Instagram"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="whiteTheme" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="datePickerEnabled" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="birthdatePickerEnabled" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isOptional" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TAj-bp-F4V" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="200" width="379" height="80"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="80" id="8im-Hq-ezJ"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hideContent" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="capitalizeFirstLetter" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Twitter"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="whiteTheme" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="datePickerEnabled" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="birthdatePickerEnabled" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isOptional" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="fRw-n0-7FG" firstAttribute="top" secondItem="zMr-TY-Z8e" secondAttribute="top" id="Fhe-YK-Wcs"/>
+                                                    <constraint firstItem="fRw-n0-7FG" firstAttribute="leading" secondItem="zMr-TY-Z8e" secondAttribute="leading" id="s2U-gI-lrl"/>
+                                                    <constraint firstAttribute="trailing" secondItem="fRw-n0-7FG" secondAttribute="trailing" id="sCs-vc-RL9"/>
+                                                    <constraint firstAttribute="bottom" secondItem="fRw-n0-7FG" secondAttribute="bottom" id="xvx-wo-yFy"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="zMr-TY-Z8e" firstAttribute="top" secondItem="xIE-Mo-TYn" secondAttribute="top" id="C2y-5d-I6I"/>
+                                            <constraint firstItem="zMr-TY-Z8e" firstAttribute="bottom" secondItem="xIE-Mo-TYn" secondAttribute="bottom" id="EDp-vb-Yeo"/>
+                                            <constraint firstItem="zMr-TY-Z8e" firstAttribute="width" secondItem="NKf-3p-7ES" secondAttribute="width" id="M4Y-uS-ZU1"/>
+                                            <constraint firstItem="zMr-TY-Z8e" firstAttribute="trailing" secondItem="xIE-Mo-TYn" secondAttribute="trailing" id="Mon-3Z-s35"/>
+                                            <constraint firstItem="zMr-TY-Z8e" firstAttribute="leading" secondItem="xIE-Mo-TYn" secondAttribute="leading" id="utC-ZX-9jF"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="contentLayoutGuide" id="xIE-Mo-TYn"/>
+                                        <viewLayoutGuide key="frameLayoutGuide" id="NKf-3p-7ES"/>
+                                    </scrollView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="han-Ad-RAL">
+                                        <rect key="frame" x="0.0" y="505" width="379" height="110"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="waV-jT-fdX">
+                                                <rect key="frame" x="0.0" y="0.0" width="379" height="25"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yrm-BO-dRz">
+                                                        <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwL-zs-6Jb">
+                                                                <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <connections>
+                                                                    <action selector="termsAndConditionsRadioButtonPressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="A8d-TF-lCW"/>
+                                                                </connections>
+                                                            </button>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hB9-2R-5Vw">
+                                                                <rect key="frame" x="0.0" y="0.5" width="25" height="24"/>
+                                                                <color key="tintColor" name="CustomWhite"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="25" id="KqU-SO-ptz"/>
+                                                                    <constraint firstAttribute="height" constant="25" id="YP7-uG-5mr"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="hB9-2R-5Vw" firstAttribute="leading" secondItem="yrm-BO-dRz" secondAttribute="leading" id="3Ol-5G-zP7"/>
+                                                            <constraint firstItem="fwL-zs-6Jb" firstAttribute="leading" secondItem="yrm-BO-dRz" secondAttribute="leading" id="Dsn-S0-gSL"/>
+                                                            <constraint firstItem="fwL-zs-6Jb" firstAttribute="top" secondItem="yrm-BO-dRz" secondAttribute="top" id="VA5-Na-dZF"/>
+                                                            <constraint firstItem="hB9-2R-5Vw" firstAttribute="centerY" secondItem="yrm-BO-dRz" secondAttribute="centerY" id="VDJ-kI-Way"/>
+                                                            <constraint firstAttribute="height" constant="25" id="XkT-DI-m8q"/>
+                                                            <constraint firstAttribute="bottom" secondItem="fwL-zs-6Jb" secondAttribute="bottom" id="ZY8-eB-sCG"/>
+                                                            <constraint firstAttribute="trailing" secondItem="fwL-zs-6Jb" secondAttribute="trailing" id="ah1-99-Sl4"/>
+                                                            <constraint firstAttribute="width" constant="25" id="v91-Fb-Wig"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I have read and accept" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGW-mG-Nk9">
+                                                        <rect key="frame" x="30" y="0.0" width="123" height="25"/>
+                                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
+                                                        <color key="textColor" name="CustomWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qd-cT-U3Z">
+                                                        <rect key="frame" x="158" y="0.0" width="221" height="25"/>
+                                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Terms and Conditions">
+                                                            <color key="titleColor" name="CustomWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="termsAndConditionsButtonPressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="ZZp-A8-rcf"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="gEE-4t-QWZ">
+                                                <rect key="frame" x="0.0" y="65" width="379" height="45"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ieb-1D-Y6a" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="169.5" height="45"/>
+                                                        <color key="backgroundColor" name="CustomWhite"/>
+                                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="20"/>
+                                                        <state key="normal" title="Back">
+                                                            <color key="titleColor" name="CustomBlack"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="fullRound" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="backStepButtonPressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="KK8-ge-DbB"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ju7-bT-tuV" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
+                                                        <rect key="frame" x="209.5" y="0.0" width="169.5" height="45"/>
+                                                        <color key="backgroundColor" name="CustomWhite"/>
+                                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="20"/>
+                                                        <state key="normal" title="Get started">
+                                                            <color key="titleColor" name="CustomBlack"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="fullRound" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="indicatorColor">
+                                                                <color key="value" name="CustomBlack"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="getStartedButtonPressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="RCZ-7K-rcf"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="cAD-bo-PVr"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ppU-IY-XXx" firstAttribute="leading" secondItem="VJP-UI-bRR" secondAttribute="leading" id="Em3-L3-FVC"/>
+                            <constraint firstAttribute="bottom" secondItem="ppU-IY-XXx" secondAttribute="bottom" id="FiW-CJ-vWI"/>
+                            <constraint firstItem="ppU-IY-XXx" firstAttribute="top" secondItem="VJP-UI-bRR" secondAttribute="top" id="OcE-9W-ZeY"/>
+                            <constraint firstAttribute="trailing" secondItem="ppU-IY-XXx" secondAttribute="trailing" id="lfi-Sy-qkN"/>
+                        </constraints>
                     </view>
                 </subviews>
             </view>
@@ -32,13 +353,46 @@
                 <constraint firstItem="VJP-UI-bRR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="frc-ut-7lc"/>
                 <constraint firstAttribute="trailing" secondItem="VJP-UI-bRR" secondAttribute="trailing" id="k04-yc-1Xa"/>
             </constraints>
-            <size key="customSize" width="228" height="293"/>
-            <point key="canvasLocation" x="266.66666666666669" y="201.89732142857142"/>
+            <size key="customSize" width="379" height="615"/>
+            <connections>
+                <outlet property="backStepButton" destination="Ieb-1D-Y6a" id="FhB-Kp-kIa"/>
+                <outlet property="errorPhonePrefixLabel" destination="cnM-le-bg3" id="cco-Iz-eUc"/>
+                <outlet property="getStartedButton" destination="ju7-bT-tuV" id="6JU-yM-kec"/>
+                <outlet property="instagramTextfield" destination="v2V-Ev-j9Q" id="vdm-GW-PaP"/>
+                <outlet property="middlePrefixPlaceholder" destination="Ojb-L7-kav" id="NbH-4B-vq9"/>
+                <outlet property="phonePrefixButton" destination="uhm-5w-aem" id="HVK-X8-Yea"/>
+                <outlet property="phonePrefixLabel" destination="ZGb-bx-nNu" id="zHa-Vo-GD6"/>
+                <outlet property="phoneTextfield" destination="iTR-O4-n8b" id="gmX-lL-jpi"/>
+                <outlet property="termsAndConditionsButton" destination="2qd-cT-U3Z" id="luK-ok-QAB"/>
+                <outlet property="termsAndConditionsRadioButton" destination="fwL-zs-6Jb" id="XRq-jN-0gc"/>
+                <outlet property="termsAndConditionsRadioButtonImageView" destination="hB9-2R-5Vw" id="ZIY-Jg-ad0"/>
+                <outlet property="topPrefixPlaceholder" destination="Vjn-wB-8K7" id="XOh-iL-UX7"/>
+                <outlet property="twitterTextfield" destination="TAj-bp-F4V" id="2XR-qb-x1F"/>
+            </connections>
+            <point key="canvasLocation" x="393" y="290"/>
         </collectionViewCell>
     </objects>
+    <designables>
+        <designable name="Ieb-1D-Y6a">
+            <size key="intrinsicContentSize" width="46" height="36"/>
+        </designable>
+        <designable name="ju7-bT-tuV">
+            <size key="intrinsicContentSize" width="101" height="36"/>
+        </designable>
+    </designables>
     <resources>
-        <namedColor name="CustomBlue">
-            <color red="0.0" green="0.42745098039215684" blue="0.82352941176470584" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        <image name="circle" catalog="system" width="128" height="121"/>
+        <namedColor name="CustomBlack">
+            <color red="0.24705882352941178" green="0.24705882352941178" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <namedColor name="CustomRed">
+            <color red="1" green="0.41960784313725491" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="CustomWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

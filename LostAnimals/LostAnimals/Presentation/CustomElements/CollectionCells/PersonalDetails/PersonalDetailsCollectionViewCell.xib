@@ -30,7 +30,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="608"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fill your personal details to let us know something about you" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvr-8t-FPC">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="42"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="49.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="18"/>
@@ -38,7 +38,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGo-u9-9IY">
-                                        <rect key="frame" x="0.0" y="62" width="414" height="431"/>
+                                        <rect key="frame" x="0.0" y="69.5" width="414" height="423.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cRB-lb-ZPX">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="380"/>
@@ -61,6 +61,8 @@
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Animal shelter name"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isOptional" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rIi-ry-qv7" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
@@ -79,6 +81,8 @@
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Where can we find you?"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="locationPickerEnabled" value="YES"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isOptional" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="REz-jd-agT" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
@@ -97,6 +101,8 @@
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="birthdatePickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isOptional" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ASv-7o-1p3" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
@@ -115,6 +121,8 @@
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="birthdatePickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isOptional" value="NO"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xka-Tg-2gE" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
@@ -133,6 +141,8 @@
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="birthdatePickerEnabled" value="YES"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isOptional" value="NO"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qPy-Pp-Rnd" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
@@ -151,6 +161,8 @@
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="YES"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="datePickerEnabled" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isOptional" value="NO"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                         </subviews>
@@ -184,7 +196,7 @@
                                         <rect key="frame" x="0.0" y="513" width="414" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jIn-6Z-sHW">
-                                                <rect key="frame" x="100.5" y="-1.5" width="213" height="33"/>
+                                                <rect key="frame" x="95.5" y="-3.5" width="223" height="37"/>
                                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="18"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Are you an animal shelter?">
@@ -268,7 +280,7 @@
     </objects>
     <designables>
         <designable name="ct8-rw-mPz">
-            <size key="intrinsicContentSize" width="42" height="36"/>
+            <size key="intrinsicContentSize" width="45" height="40"/>
         </designable>
     </designables>
     <resources>

@@ -19,7 +19,7 @@ extension String {
   }
   
   func isValidPassword() -> Bool {
-    let regex = try! NSRegularExpression(pattern: "^(?=.*[0-9])(?=.*[A-Z]).{8,32}$", options: .caseInsensitive)
+    let regex = try! NSRegularExpression(pattern: "^(?=.*[a-z])(?=.*[0-9]).{8,}$", options: .caseInsensitive)
     return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count)) != nil
   }
   
@@ -33,8 +33,18 @@ extension String {
     return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count)) != nil
   }
   
-  func isValidDate() -> Bool {
-    let regex = try! NSRegularExpression(pattern: "^([0-2][0-9]|(3)[0-1])(/)(((0)[0-9])|((1)[0-2]))(/)[0-9]{4}$", options: .caseInsensitive)
+  func isValidPhoneNumber() -> Bool {
+    let regex = try! NSRegularExpression(pattern: "^([0-9]{1,12})$", options: .caseInsensitive)
+    return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count)) != nil
+  }
+  
+  func isValidTwitterUsername() -> Bool {
+    let regex = try! NSRegularExpression(pattern: "^[a-z0-9_]*$", options: .caseInsensitive)
+    return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count)) != nil
+  }
+  
+  func isValidInstagramUsername() -> Bool {
+    let regex = try! NSRegularExpression(pattern: "^[a-zA-Z0-9._]*$", options: .caseInsensitive)
     return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count)) != nil
   }
   

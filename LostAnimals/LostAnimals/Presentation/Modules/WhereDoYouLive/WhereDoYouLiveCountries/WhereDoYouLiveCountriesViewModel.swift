@@ -14,10 +14,12 @@ final class WhereDoYouLiveCountriesViewModel {
   private let router: WhereDoYouLiveCountriesRouter
   var countries: [Country] = []
   var filteredCountries: [Country] = []
+  let comesFrom: WhereDoYouLiveComesFrom
   
   // MARK: - Init
-  required init(router: WhereDoYouLiveCountriesRouter) {
+  required init(router: WhereDoYouLiveCountriesRouter, comesFrom: WhereDoYouLiveComesFrom) {
     self.router = router
+    self.comesFrom = comesFrom
   }
   
 }
@@ -49,6 +51,14 @@ extension WhereDoYouLiveCountriesViewModel {
   }
   
   func didPressCountryCell(country: Country, cities: [String]) {
-    self.router.goToWhereDoYouLiveCities(country: country, cities: cities)
+    switch comesFrom {
+    case .personalDetails:
+      self.router.goToWhereDoYouLiveCities(country: country, cities: cities)
+    case .socialMediaDetails:
+      let countryDialCodeString = country.dialCode
+      let userInfo: [String: String] = ["countryDialCodeString": countryDialCodeString]
+      NotificationCenter.default.post(name: .SendCountryDialCode, object: nil, userInfo: userInfo)
+      self.router.goToSignUp()
+    }
   }
 }

@@ -33,6 +33,9 @@ final class WhereDoYouLiveCountriesViewController: ViewController {
     super.viewDidAppear(animated)
     
     viewModel.viewDidAppear()
+    DispatchQueue.main.async {
+      self.searchController.searchBar.becomeFirstResponder()
+    }
   }
   
   // MARK: - Functions

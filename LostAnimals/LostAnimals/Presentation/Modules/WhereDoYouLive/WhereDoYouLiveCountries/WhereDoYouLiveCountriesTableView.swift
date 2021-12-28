@@ -21,7 +21,7 @@ extension WhereDoYouLiveCountriesViewController: UITableViewDelegate, UITableVie
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeue(CountryTableViewCell.self)
-    cell.display(summary: CountryTableViewCellSummary(countryName: viewModel.filteredCountries[indexPath.row].nameEN))
+    cell.display(summary: CountryTableViewCellSummary(countryName: viewModel.filteredCountries[indexPath.row].nameEN, dialCode: viewModel.filteredCountries[indexPath.row].dialCode, comesFrom: viewModel.comesFrom))
     return cell
   }
   

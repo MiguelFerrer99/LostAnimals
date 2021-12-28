@@ -18,8 +18,8 @@ final class SignUpRouter {
   }
   
   // MARK: - Functions
-  func goToWhereDoYouLiveCountries() {
-    let viewController = Container.shared.whereDoYouLiveCountriesBuilder().build()
+  func goToWhereDoYouLiveCountries(comesFrom: WhereDoYouLiveComesFrom) {
+    let viewController = Container.shared.whereDoYouLiveCountriesBuilder().build(comesFrom: comesFrom)
     DispatchQueue.main.async {
       self.viewController?.navigationController?.pushViewController(viewController, animated: true)
     }

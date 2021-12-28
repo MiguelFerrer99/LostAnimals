@@ -11,6 +11,7 @@ import UIKit
 class CountryTableViewCell: UITableViewCell, Reusable {
   // MARK: - IBOutlets
   @IBOutlet weak var countryName: UILabel!
+  @IBOutlet weak var rightArrowImageView: UIImageView!
   
   // MARK: - Life cycle
   override func awakeFromNib() {
@@ -24,5 +25,9 @@ class CountryTableViewCell: UITableViewCell, Reusable {
   // MARK: - Functions
   func display(summary: CountryTableViewCellSummary) {
     countryName.text = summary.countryName
+    if summary.comesFrom == .socialMediaDetails {
+      rightArrowImageView.isHidden = true
+      countryName.text?.append(contentsOf: " (+\(summary.dialCode))")
+    }
   }
 }

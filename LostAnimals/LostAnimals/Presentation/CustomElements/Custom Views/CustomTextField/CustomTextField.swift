@@ -73,6 +73,12 @@ class CustomTextField: UIView, UITextFieldDelegate {
     }
   }
   
+  @IBInspectable var isNumberPad: Bool = false {
+    willSet {
+      if newValue { createNumberPadToolbar() }
+    }
+  }
+  
   // MARK: - IBOutlets
   @IBOutlet var customView: UIView!
   @IBOutlet weak var addStackView: UIStackView!
@@ -142,7 +148,7 @@ class CustomTextField: UIView, UITextFieldDelegate {
   private func createDatePicker() {
     let toolbar = UIToolbar()
     toolbar.sizeToFit()
-    let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+    let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(doneDatePickerPressed))
     let spacerItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
     toolbar.setItems([spacerItem, doneButton], animated: true)
     toolbar.tintColor = .customBlack
@@ -156,10 +162,26 @@ class CustomTextField: UIView, UITextFieldDelegate {
     textField.inputView = birthdatePicker
   }
   
-  @objc private func donePressed() {
+  @objc private func doneDatePickerPressed() {
     textField.text = birthdatePicker.date.toString(withFormat: DateFormat.dayMonthYearOther)
     textFieldDidChangeEditing(textField)
     textField.endEditing(true)
+  }
+  
+  private func createNumberPadToolbar() {
+    let toolbar = UIToolbar()
+    toolbar.sizeToFit()
+    let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(doneNumberPadPressed))
+    let spacerItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+    toolbar.setItems([spacerItem, doneButton], animated: true)
+    toolbar.tintColor = .customBlack
+    toolbar.backgroundColor = .customWhite
+    textField.inputAccessoryView = toolbar
+  }
+  
+  @objc private func doneNumberPadPressed() {
+    textField.endEditing(true)
+    let _ = textFieldShouldReturn(self.textField)
   }
   
   func didFinishSelectWhereDoYouLiveCountryAndCity() {
@@ -212,10 +234,9 @@ class CustomTextField: UIView, UITextFieldDelegate {
   }
   
   @IBAction func textFieldDidChangeEditing(_ textField: UITextField) {
-    guard let text = textField.text else { return }
     UIView.animate(withDuration: 0.2) {
-      self.placeholderLabel.alpha = text.isEmpty ? 0 : 1
-      self.topTextFieldConstraint.constant = text.isEmpty ? 0 : 15
+      self.placeholderLabel.alpha = self.value.isEmpty ? 0 : 1
+      self.topTextFieldConstraint.constant = self.value.isEmpty ? 0 : 15
       self.layoutIfNeeded()
     }
     delegate?.textFieldDidChange(self)

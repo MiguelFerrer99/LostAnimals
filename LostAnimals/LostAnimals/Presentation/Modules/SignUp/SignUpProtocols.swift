@@ -18,22 +18,27 @@ extension SignUpViewController: SignUpStepsDelegate {
     moveToPreviousStep()
   }
   
-  func goToWhereDoYouLiveCountries() {
-    goToWhereDoYouLive()
+  func goToWhereDoYouLiveCountries(comesFrom: WhereDoYouLiveComesFrom) {
+    goToWhereDoYouLive(comesFrom: comesFrom)
   }
   
   func goToWhereCanWeFindYou() {
     goToWhereCanWeFindYouAddress()
   }
   
+  func updateSignUpUserInteraction(isUserInteractionEnabled: Bool) {
+    navigationController?.navigationBar.isUserInteractionEnabled = isUserInteractionEnabled
+    navigationController?.interactivePopGestureRecognizer?.isEnabled = isUserInteractionEnabled
+  }
+  
   func sendSignUpStep1Data(isAnimalShelter: Bool, firstname: String? = nil, lastname: String? = nil, animalShelterName: String? = nil, birthdate: Date? = nil, address: String) {
     print("""
           SIGNUP STEP1 DATA RECEIVED:
             isAnimalShelter: \(isAnimalShelter),
-            firstname: \(firstname ?? "nil"),
-            lastname: \(lastname ?? "nil"),
-            animalShelterName: \(animalShelterName ?? "nil"),
-            birthdate: \(birthdate?.toString(withFormat: DateFormat.dayMonthYearOther) ?? "nil"),
+            firstname: \(firstname == nil || (firstname?.isEmpty ?? true) ? "-" : firstname ?? "-"),
+            lastname: \(lastname == nil || (lastname?.isEmpty ?? true) ? "-" : lastname ?? "-"),
+            animalShelterName: \(animalShelterName == nil || (animalShelterName?.isEmpty ?? true) ? "-" : animalShelterName ?? "-"),
+            birthdate: \(birthdate?.toString(withFormat: DateFormat.dayMonthYearOther) ?? "-"),
             address: \(address)
           """)
   }
@@ -46,9 +51,13 @@ extension SignUpViewController: SignUpStepsDelegate {
           """)
   }
   
-  func sendSignUpStep3Data() {
+  func sendSignUpStep3Data(phonePrefix: String, phone: String, instagram: String? = nil, twitter: String? = nil) {
     print("""
           SIGNUP STEP3 DATA RECEIVED:
+            phonePrefix: \(phonePrefix),
+            phone: \(phone),
+            instagram: \(instagram ?? "-"),
+            twitter: \(twitter ?? "-")
           """)
   }
 }

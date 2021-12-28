@@ -13,25 +13,30 @@ extension PersonalDetailsCollectionViewCell: CustomTextFieldDelegate {
   // MARK: - Functions
   func configureTextFields() {
     firstnameTextfield.delegate = self
+    firstnameTextfield.textField.keyboardType = .alphabet
+    firstnameTextfield.textField.textContentType = .givenName
     firstnameTextfield.textField.returnKeyType = .next
     firstnameTextfield.addErrorsToCheck([TextFieldErrorEmptyValue(),
                                          TextFieldErrorOnlyLettersAndSpaces()])
     
     lastnameTextfield.delegate = self
+    lastnameTextfield.textField.keyboardType = .alphabet
+    lastnameTextfield.textField.textContentType = .familyName
     lastnameTextfield.textField.returnKeyType = .next
     lastnameTextfield.addErrorsToCheck([TextFieldErrorEmptyValue(),
                                         TextFieldErrorOnlyLettersAndSpaces()])
     
     birthdateTexfield.delegate = self
     birthdateTexfield.textField.returnKeyType = .next
-    birthdateTexfield.addErrorsToCheck([TextFieldErrorEmptyValue(),
-                                        TextFieldErrorDate()])
+    birthdateTexfield.addErrorsToCheck([TextFieldErrorEmptyValue()])
     
     whereDoYouLiveTextfield.delegate = self
     whereDoYouLiveTextfield.textField.returnKeyType = .done
     whereDoYouLiveTextfield.addErrorsToCheck([TextFieldErrorEmptyValue()])
     
     animalShelterNameTextfield.delegate = self
+    animalShelterNameTextfield.textField.keyboardType = .alphabet
+    animalShelterNameTextfield.textField.textContentType = .name
     animalShelterNameTextfield.textField.returnKeyType = .done
     animalShelterNameTextfield.addErrorsToCheck([TextFieldErrorEmptyValue(),
                                                  TextFieldErrorOnlyLettersAndSpaces()])
@@ -51,7 +56,7 @@ extension PersonalDetailsCollectionViewCell: CustomTextFieldDelegate {
   @objc func fillWhereCanWeFindYou(_ notification: NSNotification) {
     if let searchResult = notification.userInfo?["searchResult"] as? MKLocalSearchCompletion {
       let searchResultString1 = searchResult.title
-      let searchResultString2 = searchResult.subtitle.isEmpty ? "" : " ,\(searchResult.subtitle)"
+      let searchResultString2 = searchResult.subtitle.isEmpty ? "" : ", \(searchResult.subtitle)"
       let searchResultString = "\(searchResultString1)\(searchResultString2)"
       whereCanWeFindYouTextfield.textField.text = searchResultString
       whereCanWeFindYouTextfield.didFinishSelectWhereCanWeFindYouAddress()
@@ -91,26 +96,26 @@ extension PersonalDetailsCollectionViewCell: CustomTextFieldDelegate {
   }
   
   func textFieldDidChange(_ customTextField: CustomTextField) {
-    let haveErrors = viewModel.textFieldsHaveErrors()
-    nextStepButton.alpha = (haveErrors || viewModel.editedTextFields.count < viewModel.numberOfTextFields) ? 0.5 : 1
-    nextStepButton.isEnabled = !haveErrors && viewModel.editedTextFields.count == viewModel.numberOfTextFields
+    checkAllContentsAreOk()
   }
   
   func textFieldDidEndEditing(_ customTextField: CustomTextField) {
-    let haveErrors = viewModel.textFieldsHaveErrors()
-    nextStepButton.alpha = (haveErrors || viewModel.editedTextFields.count < viewModel.numberOfTextFields) ? 0.5 : 1
-    nextStepButton.isEnabled = !haveErrors && viewModel.editedTextFields.count == viewModel.numberOfTextFields
+    checkAllContentsAreOk()
   }
   
   func textFieldWillSelectCity(_ customTextField: CustomTextField) {
+    firstnameTextfield.textField.endEditing(true)
+    lastnameTextfield.textField.endEditing(true)
+    birthdateTexfield.textField.endEditing(true)
     textFieldDidBeginEditing(customTextField)
-    signUpStepsDelegate?.goToWhereDoYouLiveCountries()
+    signUpStepsDelegate?.goToWhereDoYouLiveCountries(comesFrom: .personalDetails)
     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
       self.textFieldDidChange(customTextField)
     }
   }
   
   func textFieldWillSelectAddress(_ customTextField: CustomTextField) {
+    animalShelterNameTextfield.textField.endEditing(true)
     textFieldDidBeginEditing(customTextField)
     signUpStepsDelegate?.goToWhereCanWeFindYou()
     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {

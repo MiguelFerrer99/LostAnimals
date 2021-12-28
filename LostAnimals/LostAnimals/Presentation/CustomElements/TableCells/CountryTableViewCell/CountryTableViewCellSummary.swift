@@ -10,4 +10,6 @@ import UIKit
 
 struct CountryTableViewCellSummary: Hashable {
   let countryName: String
+  let dialCode: String
+  let comesFrom: WhereDoYouLiveComesFrom
 }

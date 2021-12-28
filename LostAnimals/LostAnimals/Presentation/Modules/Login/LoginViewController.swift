@@ -46,9 +46,17 @@ final class LoginViewController: ViewController {
   
   private func updateUserInteraction() {
     navigationController?.navigationBar.isUserInteractionEnabled = logInButton.isEnabled
+    navigationController?.interactivePopGestureRecognizer?.isEnabled = logInButton.isEnabled
     mailTextField.isUserInteractionEnabled = logInButton.isEnabled
     passwordTextField.isUserInteractionEnabled = logInButton.isEnabled
     forgotPasswordButton.isUserInteractionEnabled = logInButton.isEnabled
+  }
+  
+  func checkAllContentsAreOk() {
+    let haveErrors = viewModel.textFieldsHaveErrors()
+    let canMoveToNextStep = !haveErrors && viewModel.editedTextFields.count == viewModel.numberOfTextFields
+    logInButton.alpha = canMoveToNextStep ? 1 : 0.5
+    logInButton.isEnabled = canMoveToNextStep
   }
   
   // MARK: - IBActions

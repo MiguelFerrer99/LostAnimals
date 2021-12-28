@@ -43,7 +43,15 @@ final class ForgotPasswordViewController: UIViewController {
   
   private func updateUserInteraction() {
     navigationController?.navigationBar.isUserInteractionEnabled = forgotPasswordButton.isEnabled
+    navigationController?.interactivePopGestureRecognizer?.isEnabled = forgotPasswordButton.isEnabled
     mailTexfield.isUserInteractionEnabled = forgotPasswordButton.isEnabled
+  }
+  
+  func checkAllContentsAreOk() {
+    let haveErrors = viewModel.textFieldsHaveErrors()
+    let canMoveToNextStep = !haveErrors && viewModel.editedTextFields.count == viewModel.numberOfTextFields
+    forgotPasswordButton.alpha = canMoveToNextStep ? 1 : 0.5
+    forgotPasswordButton.isEnabled = canMoveToNextStep
   }
   
   // MARK: - IBActions

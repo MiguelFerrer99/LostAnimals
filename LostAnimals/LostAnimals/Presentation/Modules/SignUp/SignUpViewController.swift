@@ -84,15 +84,15 @@ final class SignUpViewController: ViewController {
       viewModel.currentStep = .socialMediaDetails
       viewModel.currentStepLabel = .socialMediaDetails
     case .socialMediaDetails:
-      // TODO: Go to Onboarding/Explore
+      // TODO: Go to Onboarding
       return
     }
     updateCurrenCollectionViewItem(direction: .next)
     updateCurrentProgressBarView()
   }
   
-  func goToWhereDoYouLive() {
-    viewModel.didPressGoToWhereDoYouLiveCountries()
+  func goToWhereDoYouLive(comesFrom: WhereDoYouLiveComesFrom) {
+    viewModel.didPressGoToWhereDoYouLiveCountries(comesFrom: comesFrom)
   }
   
   func goToWhereCanWeFindYouAddress() {

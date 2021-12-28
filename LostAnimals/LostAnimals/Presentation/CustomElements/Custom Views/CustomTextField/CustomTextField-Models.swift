@@ -70,10 +70,10 @@ class TextFieldErrorOnlyLettersAndSpaces: TextFieldError {
   }
 }
 
-class TextFieldErrorDate: TextFieldError {
+class TextFieldErrorPhoneNumber: TextFieldError {
   init() {
-    super.init(localizedDescription: "The field must contain a valid date (dd/mm/yyyy)") { (value) -> Bool in
-      return !value.isValidDate()
+    super.init(localizedDescription: "Invalid phone number format") { (value) -> Bool in
+      return !value.isValidPhoneNumber()
     }
   }
 }

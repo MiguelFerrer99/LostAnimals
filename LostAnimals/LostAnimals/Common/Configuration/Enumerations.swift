@@ -24,3 +24,8 @@ public enum SignUpMoveDirection {
   case back
   case next
 }
+
+public enum WhereDoYouLiveComesFrom {
+  case personalDetails
+  case socialMediaDetails
+}

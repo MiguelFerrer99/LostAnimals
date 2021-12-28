@@ -10,7 +10,7 @@ extension LoginViewController: CustomTextFieldDelegate {
   // MARK: - Functions
   func configureTextFields() {
     mailTextField.delegate = self
-    mailTextField.textField.textContentType = .emailAddress
+    mailTextField.textField.textContentType = .username
     mailTextField.textField.keyboardType    = .emailAddress
     mailTextField.textField.returnKeyType = .next
     mailTextField.addErrorsToCheck([TextFieldErrorEmptyValue(),
@@ -18,7 +18,7 @@ extension LoginViewController: CustomTextFieldDelegate {
     
     passwordTextField.delegate = self
     passwordTextField.textField.textContentType = .password
-    passwordTextField.textField.returnKeyType = .go
+    passwordTextField.textField.returnKeyType = .done
     passwordTextField.addErrorsToCheck([TextFieldErrorEmptyValue(),
                                         TextFieldErrorPasswordFormat()])
   }
@@ -42,14 +42,10 @@ extension LoginViewController: CustomTextFieldDelegate {
   }
   
   func textFieldDidChange(_ customTextField: CustomTextField) {
-    let haveErrors = viewModel.textFieldsHaveErrors()
-    logInButton.alpha = (haveErrors || viewModel.editedTextFields.count < viewModel.numberOfTextFields) ? 0.5 : 1
-    logInButton.isEnabled = !haveErrors && viewModel.editedTextFields.count == viewModel.numberOfTextFields
+    checkAllContentsAreOk()
   }
   
   func textFieldDidEndEditing(_ customTextField: CustomTextField) {
-    let haveErrors = viewModel.textFieldsHaveErrors()
-    logInButton.alpha = (haveErrors || viewModel.editedTextFields.count < viewModel.numberOfTextFields) ? 0.5 : 1
-    logInButton.isEnabled = !haveErrors && viewModel.editedTextFields.count == viewModel.numberOfTextFields
+    checkAllContentsAreOk()
   }
 }

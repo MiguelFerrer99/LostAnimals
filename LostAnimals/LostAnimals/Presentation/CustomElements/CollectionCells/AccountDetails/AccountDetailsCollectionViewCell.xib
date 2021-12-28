@@ -30,7 +30,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="437" height="625"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fill your account details to register you in our system successfully" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWL-zQ-dGa">
-                                        <rect key="frame" x="0.0" y="0.0" width="437" height="42"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="437" height="49.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="18"/>
@@ -38,13 +38,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B58-yQ-gGR">
-                                        <rect key="frame" x="0.0" y="62" width="437" height="498"/>
+                                        <rect key="frame" x="0.0" y="69.5" width="437" height="490.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6fs-4M-yS4">
-                                                <rect key="frame" x="0.0" y="0.0" width="437" height="363"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="437" height="349.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="43F-dx-L22">
-                                                        <rect key="frame" x="0.0" y="0.0" width="437" height="363"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="437" height="349.5"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y9w-Ob-pxa" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="437" height="80"/>
@@ -55,13 +55,15 @@
                                                                 </constraints>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="hideContent" value="NO"/>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="capitalizeFirstLetter" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="capitalizeFirstLetter" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Mail"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="whiteTheme" value="YES"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="datePickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="birthdatePickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isOptional" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Phi-vO-jqe" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
@@ -80,6 +82,8 @@
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="birthdatePickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isOptional" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SHq-gn-eX3" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
@@ -98,10 +102,12 @@
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="birthdatePickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isOptional" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Must contain a minimum of 8 characters, including lowercase letters, one uppercase letter and one number" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4I3-pf-jxX">
-                                                                <rect key="frame" x="0.0" y="300" width="437" height="63"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Must contain a minimum of 8 characters, including at least one lowercase letter and one number" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4I3-pf-jxX">
+                                                                <rect key="frame" x="0.0" y="300" width="437" height="49.5"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="18"/>
@@ -207,10 +213,10 @@
     </objects>
     <designables>
         <designable name="RiH-hu-4G5">
-            <size key="intrinsicContentSize" width="46" height="36"/>
+            <size key="intrinsicContentSize" width="45" height="40"/>
         </designable>
         <designable name="jJ8-mV-WVQ">
-            <size key="intrinsicContentSize" width="42" height="36"/>
+            <size key="intrinsicContentSize" width="45" height="40"/>
         </designable>
     </designables>
     <resources>

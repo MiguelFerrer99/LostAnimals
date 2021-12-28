@@ -8,18 +8,105 @@
 
 import UIKit
 
-class SocialMediaDetailsCollectionViewCell: UICollectionViewCell, Reusable {
+class SocialMediaDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell {
+  typealias T = SocialMediaDetailsCollectionViewCellViewModel
   
   // MARK: - IBOutlets
+  @IBOutlet weak var topPrefixPlaceholder: UILabel!
+  @IBOutlet weak var middlePrefixPlaceholder: UILabel!
+  @IBOutlet weak var phonePrefixLabel: UILabel!
+  @IBOutlet weak var errorPhonePrefixLabel: UILabel!
+  @IBOutlet weak var phonePrefixButton: UIButton!
+  @IBOutlet weak var phoneTextfield: CustomTextField!
+  @IBOutlet weak var instagramTextfield: CustomTextField!
+  @IBOutlet weak var twitterTextfield: CustomTextField!
+  @IBOutlet weak var termsAndConditionsRadioButton: UIButton!
+  @IBOutlet weak var termsAndConditionsRadioButtonImageView: UIImageView!
+  @IBOutlet weak var termsAndConditionsButton: UIButton!
+  @IBOutlet weak var backStepButton: CustomButton!
+  @IBOutlet weak var getStartedButton: CustomButton!
   
   // MARK: - Properties
   weak var signUpStepsDelegate: SignUpStepsDelegate?
+  var viewModel: SocialMediaDetailsCollectionViewCellViewModel! {
+    didSet { fillUI() }
+  }
   
   // MARK: - Life cycle
   override func awakeFromNib() {
     super.awakeFromNib()
-    // Initialization code
+        
+    NotificationCenter.default.addObserver(self, selector: #selector(fillPhonePrefix), name: .SendCountryDialCode, object: nil)
+    
+    setupBindings()
   }
   
   // MARK: - Functions
+  private func setupBindings() {
+    // Do bindings setup
+  }
+  
+  private func fillUI() {
+    configureTextFields()
+    configureTermsAndConditionsButton()
+  }
+  
+  private func configureTermsAndConditionsButton() {
+    let attributes: [NSAttributedString.Key: Any] = [
+      .underlineStyle: NSUnderlineStyle.thick.rawValue
+    ]
+    let attributedString = NSAttributedString(string: "Terms and Conditions", attributes: attributes)
+    termsAndConditionsButton.setAttributedTitle(attributedString, for: .normal)
+  }
+  
+  private func toggleTermsAndConditionsButton() {
+    viewModel.termsAndContitionsAccepted.toggle()
+    termsAndConditionsRadioButtonImageView.image = UIImage(systemName: viewModel.termsAndContitionsAccepted ? "checkmark.circle.fill" : "circle")
+    checkAllContentsAreOk()
+  }
+  
+  private func updateUserInteraction() {
+    signUpStepsDelegate?.updateSignUpUserInteraction(isUserInteractionEnabled: false)
+    phonePrefixButton.isUserInteractionEnabled = getStartedButton.isEnabled
+    phoneTextfield.isUserInteractionEnabled = getStartedButton.isEnabled
+    instagramTextfield.isUserInteractionEnabled = getStartedButton.isEnabled
+    twitterTextfield.isUserInteractionEnabled = getStartedButton.isEnabled
+    termsAndConditionsRadioButton.isUserInteractionEnabled = getStartedButton.isEnabled
+    termsAndConditionsButton.isUserInteractionEnabled = getStartedButton.isEnabled
+    backStepButton.isUserInteractionEnabled = getStartedButton.isEnabled
+  }
+  
+  func checkAllContentsAreOk() {
+    let haveErrors = viewModel.textFieldsHaveErrors()
+    let canMoveToNextStep = !haveErrors && viewModel.numberOfTextFields <= viewModel.editedTextFields.count && viewModel.phonePrefixSelected && viewModel.termsAndContitionsAccepted
+    getStartedButton.alpha = canMoveToNextStep ? 1 : 0.5
+    getStartedButton.isEnabled = canMoveToNextStep
+  }
+  
+  // MARK: - IBActions
+  @IBAction func phonePrefixButtonPressed(_ sender: UIButton) {
+    didPresseddPhonePrefix()
+  }
+  
+  @IBAction func termsAndConditionsRadioButtonPressed(_ sender: UIButton) {
+    toggleTermsAndConditionsButton()
+  }
+  
+  @IBAction func termsAndConditionsButtonPressed(_ sender: UIButton) {
+    // TODO: Go to TermsAndConditionsVC
+  }
+  
+  @IBAction func backStepButtonPressed(_ sender: CustomButton) {
+    signUpStepsDelegate?.moveToPreviousSignUpStep()
+  }
+  
+  @IBAction func getStartedButtonPressed(_ sender: CustomButton) {
+    getStartedButton.showLoading()
+    updateUserInteraction()
+    signUpStepsDelegate?.sendSignUpStep3Data(phonePrefix: phonePrefixLabel.text ?? "",
+                                             phone: phoneTextfield.textField.text ?? "",
+                                             instagram: instagramTextfield.textField.text,
+                                             twitter: twitterTextfield.textField.text)
+    signUpStepsDelegate?.moveToNextSignUpStep()
+  }
 }

@@ -11,9 +11,10 @@ import Foundation
 protocol SignUpStepsDelegate: AnyObject {
   func moveToNextSignUpStep()
   func moveToPreviousSignUpStep()
-  func goToWhereDoYouLiveCountries()
+  func goToWhereDoYouLiveCountries(comesFrom: WhereDoYouLiveComesFrom)
   func goToWhereCanWeFindYou()
+  func updateSignUpUserInteraction(isUserInteractionEnabled: Bool)
   func sendSignUpStep1Data(isAnimalShelter: Bool, firstname: String?, lastname: String?, animalShelterName: String?, birthdate: Date?, address: String)
   func sendSignUpStep2Data(mail: String, password: String)
-  func sendSignUpStep3Data()
+  func sendSignUpStep3Data(phonePrefix: String, phone: String, instagram: String?, twitter: String?)
 }

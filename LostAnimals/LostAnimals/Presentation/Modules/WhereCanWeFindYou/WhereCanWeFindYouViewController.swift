@@ -35,6 +35,9 @@ final class WhereCanWeFindYouViewController: ViewController {
     super.viewDidAppear(animated)
     
     viewModel.viewDidAppear()
+    DispatchQueue.main.async {
+      self.searchController.searchBar.becomeFirstResponder()
+    }
   }
   
   // MARK: - Functions

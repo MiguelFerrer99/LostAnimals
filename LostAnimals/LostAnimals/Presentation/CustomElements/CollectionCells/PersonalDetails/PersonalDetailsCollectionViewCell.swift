@@ -74,6 +74,13 @@ class PersonalDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell {
     }
   }
   
+  func checkAllContentsAreOk() {
+    let haveErrors = viewModel.textFieldsHaveErrors()
+    let canMoveToNextStep = !haveErrors && viewModel.editedTextFields.count == viewModel.numberOfTextFields
+    nextStepButton.alpha = canMoveToNextStep ? 1 : 0.5
+    nextStepButton.isEnabled = canMoveToNextStep
+  }
+  
   // MARK: - IBActions
   @IBAction func areYouAnAnimalShelterButton(_ sender: UIButton) {
     viewModel.isAnimalShelter.toggle()
