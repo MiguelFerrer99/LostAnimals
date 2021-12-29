@@ -13,6 +13,7 @@ protocol SignUpStepsDelegate: AnyObject {
   func moveToPreviousSignUpStep()
   func goToWhereDoYouLiveCountries(comesFrom: WhereDoYouLiveComesFrom)
   func goToWhereCanWeFindYou()
+  func goToTermsAndConditions()
   func updateSignUpUserInteraction(isUserInteractionEnabled: Bool)
   func sendSignUpStep1Data(isAnimalShelter: Bool, firstname: String?, lastname: String?, animalShelterName: String?, birthdate: Date?, address: String)
   func sendSignUpStep2Data(mail: String, password: String)

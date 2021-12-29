@@ -1,22 +1,28 @@
 //
-//  TermsAndConditionsViewController.swift
+//  ExploreViewController.swift
 //  LostAnimals
 //
-//  Created by Miguel Ferrer Fornali on 28/12/21.
+//  Created by Miguel Ferrer Fornali on 29/12/21.
 //  Copyright © 2021 Rudo. All rights reserved.
 //
 
 import UIKit
 
-final class TermsAndConditionsViewController: ViewController {
+final class ExploreViewController: ViewController {
   
   // MARK: - IBOutlets
   
   // MARK: - Properties
   override var navBarTitle: String {
-    return "Terms and Conditions"
+    return "Explore"
   }
-  var viewModel: TermsAndConditionsViewModel!
+  override var useLargeTitle: Bool {
+    return true
+  }
+  override var hideBackButton: Bool {
+    return true
+  }
+  var viewModel: ExploreViewModel!
   
   // MARK: - Life cycle
   override func viewDidLoad() {
@@ -39,6 +45,6 @@ final class TermsAndConditionsViewController: ViewController {
   }
   
   private func setupUI() {
-    
+    // TODO: setupUI
   }
 }

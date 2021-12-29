@@ -1,14 +1,14 @@
 //
-//  TermsAndConditionsRouter.swift
+//  ExploreRouter.swift
 //  LostAnimals
 //
-//  Created by Miguel Ferrer Fornali on 28/12/21.
+//  Created by Miguel Ferrer Fornali on 29/12/21.
 //  Copyright © 2021 Rudo. All rights reserved.
 //
 
 import UIKit
 
-final class TermsAndConditionsRouter {
+final class ExploreRouter {
   // MARK: - Properties
   private weak var viewController: ViewController?
   

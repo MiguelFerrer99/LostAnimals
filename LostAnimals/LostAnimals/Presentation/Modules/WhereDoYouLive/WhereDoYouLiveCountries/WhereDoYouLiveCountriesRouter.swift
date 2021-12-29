@@ -10,24 +10,24 @@ import UIKit
 
 final class WhereDoYouLiveCountriesRouter {
   // MARK: - Properties
-  private weak var viewController: UIViewController?
+  private weak var viewController: ViewController?
   
   // MARK: - Init
-  required init(viewController: UIViewController?) {
+  required init(viewController: ViewController?) {
     self.viewController = viewController
   }
   
   // MARK: - Functions
   func goToSignUp() {
     DispatchQueue.main.async {
-      self.viewController?.navigationController?.popViewController(animated: true)
+      self.viewController?.pop()
     }
   }
   
   func goToWhereDoYouLiveCities(country: Country, cities: [String]) {
     let viewController = Container.shared.whereDoYouLiveCitiesBuilder().build(country: country, cities: cities)
     DispatchQueue.main.async {
-      self.viewController?.navigationController?.pushViewController(viewController, animated: true)
+      self.viewController?.push(viewController: viewController)
     }
   }
 }

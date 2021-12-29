@@ -1,14 +1,14 @@
 //
-//  LoginRouter.swift
+//  OnboardingRouter.swift
 //  LostAnimals
 //
-//  Created by Miguel Ferrer Fornali on 22/11/21.
+//  Created by Miguel Ferrer Fornali on 28/12/21.
 //  Copyright © 2021 Rudo. All rights reserved.
 //
 
 import UIKit
 
-final class LoginRouter {
+final class OnboardingRouter {
   // MARK: - Properties
   private weak var viewController: ViewController?
   
@@ -18,13 +18,6 @@ final class LoginRouter {
   }
   
   // MARK: - Functions
-  func goToForgotPassword() {
-    let viewController = Container.shared.forgotPasswordBuilder().build()
-    DispatchQueue.main.async {
-      self.viewController?.push(viewController: viewController)
-    }
-  }
-  
   func changeRootToExplore() {
     let viewController = Container.shared.exploreBuilder().build().embeddedInNavigation()
     DispatchQueue.main.async {

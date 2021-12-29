@@ -26,6 +26,10 @@ extension SignUpViewController: SignUpStepsDelegate {
     goToWhereCanWeFindYouAddress()
   }
   
+  func goToTermsAndConditions() {
+    goToTermsAndConditionsVC()
+  }
+  
   func updateSignUpUserInteraction(isUserInteractionEnabled: Bool) {
     navigationController?.navigationBar.isUserInteractionEnabled = isUserInteractionEnabled
     navigationController?.interactivePopGestureRecognizer?.isEnabled = isUserInteractionEnabled

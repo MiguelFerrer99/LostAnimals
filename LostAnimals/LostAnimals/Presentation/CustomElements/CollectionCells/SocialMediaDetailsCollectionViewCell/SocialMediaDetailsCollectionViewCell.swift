@@ -93,7 +93,7 @@ class SocialMediaDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell 
   }
   
   @IBAction func termsAndConditionsButtonPressed(_ sender: UIButton) {
-    // TODO: Go to TermsAndConditionsVC
+    signUpStepsDelegate?.goToTermsAndConditions()
   }
   
   @IBAction func backStepButtonPressed(_ sender: CustomButton) {

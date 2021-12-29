@@ -50,6 +50,6 @@ extension LoginViewModel {
   }
   
   func didPressLoginButton() {
-    // TODO: Call API
+    self.router.changeRootToExplore()
   }
 }

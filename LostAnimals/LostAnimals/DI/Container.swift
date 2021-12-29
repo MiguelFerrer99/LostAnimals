@@ -13,6 +13,10 @@ class Container {
 }
 
 extension Container {
+  func exploreBuilder() -> ExploreBuilder {
+    return ExploreBuilder()
+  }
+  
   func forgotPasswordBuilder() -> ForgotPasswordBuilder {
     return ForgotPasswordBuilder()
   }
@@ -21,12 +25,20 @@ extension Container {
     return LoginBuilder()
   }
   
+  func onboardingBuilder() -> OnboardingBuilder {
+    return OnboardingBuilder()
+  }
+  
   func signupBuilder() -> SignUpBuilder {
     return SignUpBuilder()
   }
   
   func startupBuilder() -> StartupBuilder {
     return StartupBuilder()
+  }
+  
+  func termsAndConditionsBuilder() -> TermsAndConditionsBuilder {
+    return TermsAndConditionsBuilder()
   }
   
   func whereCanWeFindYou() -> WhereCanWeFindYouBuilder {

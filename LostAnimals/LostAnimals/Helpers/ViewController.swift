@@ -45,6 +45,10 @@ class ViewController: UIViewController {
     return []
   }
   
+  var hideBackButton: Bool {
+    return false
+  }
+  
   var dismissGestureEnabled: Bool = true {
     willSet {
       self.isModalInPresentation = !newValue
@@ -64,6 +68,7 @@ class ViewController: UIViewController {
     UINavigationBar.appearance().barTintColor = navigationBarTintColor
     navigationItem.title = navBarTitle
     navigationItem.backButtonTitle = ""
+    navigationItem.setHidesBackButton(hideBackButton, animated: true)
     navigationItem.rightBarButtonItems = navBarRightButtons
     navigationItem.leftBarButtonItems = navBarLeftButtons
     

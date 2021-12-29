@@ -47,7 +47,7 @@ final class SignUpViewController: ViewController {
     updateCurrentProgressBarView()
   }
   
-  private func updateCurrenCollectionViewItem(direction: SignUpMoveDirection) {
+  private func updateCurrenCollectionViewItem(direction: MoveDirection) {
     let indexPath = IndexPath(item: viewModel.currentStep.rawValue, section: 0)
     stepsCollectionView.scrollToItem(at: indexPath, at: direction == .back ? .left : .right, animated: true)
   }
@@ -84,8 +84,7 @@ final class SignUpViewController: ViewController {
       viewModel.currentStep = .socialMediaDetails
       viewModel.currentStepLabel = .socialMediaDetails
     case .socialMediaDetails:
-      // TODO: Go to Onboarding
-      return
+      goToOnboardingVC()
     }
     updateCurrenCollectionViewItem(direction: .next)
     updateCurrentProgressBarView()
@@ -97,5 +96,13 @@ final class SignUpViewController: ViewController {
   
   func goToWhereCanWeFindYouAddress() {
     viewModel.didPressGoToWhereCanWeFindYou()
+  }
+  
+  func goToTermsAndConditionsVC() {
+    viewModel.didPressGoToTermsAndConditions()
+  }
+  
+  func goToOnboardingVC() {
+    viewModel.didPressGoToOnboarding()
   }
 }

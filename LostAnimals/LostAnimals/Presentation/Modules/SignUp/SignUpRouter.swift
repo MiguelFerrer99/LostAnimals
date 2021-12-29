@@ -10,10 +10,10 @@ import UIKit
 
 final class SignUpRouter {
   // MARK: - Properties
-  private weak var viewController: UIViewController?
+  private weak var viewController: ViewController?
   
   // MARK: - Init
-  required init(viewController: UIViewController?) {
+  required init(viewController: ViewController?) {
     self.viewController = viewController
   }
   
@@ -21,14 +21,28 @@ final class SignUpRouter {
   func goToWhereDoYouLiveCountries(comesFrom: WhereDoYouLiveComesFrom) {
     let viewController = Container.shared.whereDoYouLiveCountriesBuilder().build(comesFrom: comesFrom)
     DispatchQueue.main.async {
-      self.viewController?.navigationController?.pushViewController(viewController, animated: true)
+      self.viewController?.push(viewController: viewController)
     }
   }
   
   func goToWhereCanWeFindYou() {
     let viewController = Container.shared.whereCanWeFindYou().build()
     DispatchQueue.main.async {
-      self.viewController?.navigationController?.pushViewController(viewController, animated: true)
+      self.viewController?.push(viewController: viewController)
+    }
+  }
+  
+  func goToTermsAndConditions() {
+    let viewController = Container.shared.termsAndConditionsBuilder().build()
+    DispatchQueue.main.async {
+      self.viewController?.push(viewController: viewController)
+    }
+  }
+  
+  func goToOnboarding() {
+    let viewController = Container.shared.onboardingBuilder().build()
+    DispatchQueue.main.async {
+      self.viewController?.presentWithNavBar(viewController: viewController, completion: nil)
     }
   }
 }

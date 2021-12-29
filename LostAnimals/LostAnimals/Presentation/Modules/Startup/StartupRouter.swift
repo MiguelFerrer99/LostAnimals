@@ -10,10 +10,10 @@ import UIKit
 
 final class StartupRouter {
   // MARK: - Properties
-  private weak var viewController: UIViewController?
+  private weak var viewController: ViewController?
   
   // MARK: - Init
-  required init(viewController: UIViewController?) {
+  required init(viewController: ViewController?) {
     self.viewController = viewController
   }
   
@@ -21,14 +21,14 @@ final class StartupRouter {
   func goToLogin() {
     let viewController = Container.shared.loginBuilder().build()
     DispatchQueue.main.async {
-      self.viewController?.navigationController?.pushViewController(viewController, animated: true)
+      self.viewController?.push(viewController: viewController)
     }
   }
   
   func gotoSignup() {
     let viewController = Container.shared.signupBuilder().build()
     DispatchQueue.main.async {
-      self.viewController?.navigationController?.pushViewController(viewController, animated: true)
+      self.viewController?.push(viewController: viewController)
     }
   }
 }

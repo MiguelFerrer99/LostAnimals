@@ -20,7 +20,7 @@ public enum SignUpStepLabel: String {
   case socialMediaDetails = "Social media details"
 }
 
-public enum SignUpMoveDirection {
+public enum MoveDirection {
   case back
   case next
 }
@@ -28,4 +28,10 @@ public enum SignUpMoveDirection {
 public enum WhereDoYouLiveComesFrom {
   case personalDetails
   case socialMediaDetails
+}
+
+public enum OnboardingStep: Int {
+  case share = 0
+  case find = 1
+  case contact = 2
 }

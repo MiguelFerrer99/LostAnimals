@@ -43,4 +43,12 @@ extension SignUpViewModel {
   func didPressGoToWhereCanWeFindYou() {
     self.router.goToWhereCanWeFindYou()
   }
+  
+  func didPressGoToTermsAndConditions() {
+    self.router.goToTermsAndConditions()
+  }
+  
+  func didPressGoToOnboarding() {
+    self.router.goToOnboarding()
+  }
 }

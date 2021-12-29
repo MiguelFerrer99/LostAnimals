@@ -61,10 +61,25 @@
 		4160E702277B99FB00C7066F /* TermsAndConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4160E6FE277B99FB00C7066F /* TermsAndConditionsViewController.swift */; };
 		4160E703277B99FB00C7066F /* TermsAndConditionsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4160E6FF277B99FB00C7066F /* TermsAndConditionsBuilder.swift */; };
 		4160E704277B99FB00C7066F /* TermsAndConditionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4160E700277B99FB00C7066F /* TermsAndConditionsViewModel.swift */; };
+		4160E706277B9A5D00C7066F /* TermsAndConditionsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4160E705277B9A5D00C7066F /* TermsAndConditionsViewController.storyboard */; };
+		4160E70C277B9E9B00C7066F /* OnboardingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4160E708277B9E9B00C7066F /* OnboardingRouter.swift */; };
+		4160E70D277B9E9B00C7066F /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4160E709277B9E9B00C7066F /* OnboardingViewController.swift */; };
+		4160E70E277B9E9B00C7066F /* OnboardingBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4160E70A277B9E9B00C7066F /* OnboardingBuilder.swift */; };
+		4160E70F277B9E9B00C7066F /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4160E70B277B9E9B00C7066F /* OnboardingViewModel.swift */; };
+		4160E711277B9EA700C7066F /* OnboardingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4160E710277B9EA700C7066F /* OnboardingViewController.storyboard */; };
+		4160E713277BA00400C7066F /* OnboardingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4160E712277BA00400C7066F /* OnboardingCollectionView.swift */; };
+		4160E717277BA60900C7066F /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4160E715277BA60900C7066F /* OnboardingCollectionViewCell.swift */; };
+		4160E718277BA60900C7066F /* OnboardingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4160E716277BA60900C7066F /* OnboardingCollectionViewCell.xib */; };
+		4160E71A277BA6C200C7066F /* OnboardingCollectionViewCellSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4160E719277BA6C200C7066F /* OnboardingCollectionViewCellSummary.swift */; };
 		416D1CE927751BFB00C75546 /* SocialMediaDetailsCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D1CE827751BFB00C75546 /* SocialMediaDetailsCollectionViewCellViewModel.swift */; };
 		416D1CEB27751C0C00C75546 /* SocialMediaDetailsCollectionViewCellTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D1CEA27751C0C00C75546 /* SocialMediaDetailsCollectionViewCellTextFields.swift */; };
 		416D29D22772551400CDD277 /* AccountDetailsCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D29D12772551400CDD277 /* AccountDetailsCollectionViewCellViewModel.swift */; };
 		416D29D42772558800CDD277 /* AccountDetailsCollectionViewCellTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D29D32772558800CDD277 /* AccountDetailsCollectionViewCellTextFields.swift */; };
+		41742222277C815600915233 /* ExploreRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4174221E277C815600915233 /* ExploreRouter.swift */; };
+		41742223277C815600915233 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4174221F277C815600915233 /* ExploreViewController.swift */; };
+		41742224277C815600915233 /* ExploreBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41742220277C815600915233 /* ExploreBuilder.swift */; };
+		41742225277C815600915233 /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41742221277C815600915233 /* ExploreViewModel.swift */; };
+		41742227277C816100915233 /* ExploreViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41742226277C816100915233 /* ExploreViewController.storyboard */; };
 		417E58FF274D9CCD00447ED3 /* LoginTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417E58FE274D9CCD00447ED3 /* LoginTextFields.swift */; };
 		4187195C275BFA6D00C993BC /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8DB273848AC00F5946B /* Nunito-Black.ttf */; };
 		4187195D275BFA6D00C993BC /* Nunito-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8D4273848AB00F5946B /* Nunito-BlackItalic.ttf */; };
@@ -201,10 +216,25 @@
 		4160E6FE277B99FB00C7066F /* TermsAndConditionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsViewController.swift; sourceTree = "<group>"; };
 		4160E6FF277B99FB00C7066F /* TermsAndConditionsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsBuilder.swift; sourceTree = "<group>"; };
 		4160E700277B99FB00C7066F /* TermsAndConditionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsViewModel.swift; sourceTree = "<group>"; };
+		4160E705277B9A5D00C7066F /* TermsAndConditionsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TermsAndConditionsViewController.storyboard; sourceTree = "<group>"; };
+		4160E708277B9E9B00C7066F /* OnboardingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRouter.swift; sourceTree = "<group>"; };
+		4160E709277B9E9B00C7066F /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		4160E70A277B9E9B00C7066F /* OnboardingBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingBuilder.swift; sourceTree = "<group>"; };
+		4160E70B277B9E9B00C7066F /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		4160E710277B9EA700C7066F /* OnboardingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingViewController.storyboard; sourceTree = "<group>"; };
+		4160E712277BA00400C7066F /* OnboardingCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionView.swift; sourceTree = "<group>"; };
+		4160E715277BA60900C7066F /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		4160E716277BA60900C7066F /* OnboardingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCollectionViewCell.xib; sourceTree = "<group>"; };
+		4160E719277BA6C200C7066F /* OnboardingCollectionViewCellSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCellSummary.swift; sourceTree = "<group>"; };
 		416D1CE827751BFB00C75546 /* SocialMediaDetailsCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaDetailsCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		416D1CEA27751C0C00C75546 /* SocialMediaDetailsCollectionViewCellTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaDetailsCollectionViewCellTextFields.swift; sourceTree = "<group>"; };
 		416D29D12772551400CDD277 /* AccountDetailsCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		416D29D32772558800CDD277 /* AccountDetailsCollectionViewCellTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsCollectionViewCellTextFields.swift; sourceTree = "<group>"; };
+		4174221E277C815600915233 /* ExploreRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreRouter.swift; sourceTree = "<group>"; };
+		4174221F277C815600915233 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		41742220277C815600915233 /* ExploreBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreBuilder.swift; sourceTree = "<group>"; };
+		41742221277C815600915233 /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
+		41742226277C816100915233 /* ExploreViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExploreViewController.storyboard; sourceTree = "<group>"; };
 		417E58FE274D9CCD00447ED3 /* LoginTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextFields.swift; sourceTree = "<group>"; };
 		418AD209275A6A51005AFE3C /* ForgotPasswordTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordTextFields.swift; sourceTree = "<group>"; };
 		418C413C275A5E310099BC5B /* ForgotPasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordRouter.swift; sourceTree = "<group>"; };
@@ -361,14 +391,15 @@
 		4114ABC9275F948200F1AB01 /* CollectionCells */ = {
 			isa = PBXGroup;
 			children = (
-				4114ABCF275F951F00F1AB01 /* AccountDetails */,
-				4114ABCE275F94C100F1AB01 /* PersonalDetails */,
-				4114ABD4275F963F00F1AB01 /* SocialMediaDetails */,
+				4160E714277BA36500C7066F /* OnboardingCollectionViewCell */,
+				4114ABCF275F951F00F1AB01 /* AccountDetailsCollectionViewCell */,
+				4114ABCE275F94C100F1AB01 /* PersonalDetailsCollectionViewCell */,
+				4114ABD4275F963F00F1AB01 /* SocialMediaDetailsCollectionViewCell */,
 			);
 			path = CollectionCells;
 			sourceTree = "<group>";
 		};
-		4114ABCE275F94C100F1AB01 /* PersonalDetails */ = {
+		4114ABCE275F94C100F1AB01 /* PersonalDetailsCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				4114ABCB275F94B400F1AB01 /* PersonalDetailsCollectionViewCell.xib */,
@@ -376,10 +407,10 @@
 				415E59842763F28C009A013E /* PersonalDetailsCollectionViewCellViewModel.swift */,
 				4108D8DA27624C8600880E0B /* PersonalDetailsCollectionViewCellTextFields.swift */,
 			);
-			path = PersonalDetails;
+			path = PersonalDetailsCollectionViewCell;
 			sourceTree = "<group>";
 		};
-		4114ABCF275F951F00F1AB01 /* AccountDetails */ = {
+		4114ABCF275F951F00F1AB01 /* AccountDetailsCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				4114ABD1275F960200F1AB01 /* AccountDetailsCollectionViewCell.xib */,
@@ -387,10 +418,10 @@
 				416D29D12772551400CDD277 /* AccountDetailsCollectionViewCellViewModel.swift */,
 				416D29D32772558800CDD277 /* AccountDetailsCollectionViewCellTextFields.swift */,
 			);
-			path = AccountDetails;
+			path = AccountDetailsCollectionViewCell;
 			sourceTree = "<group>";
 		};
-		4114ABD4275F963F00F1AB01 /* SocialMediaDetails */ = {
+		4114ABD4275F963F00F1AB01 /* SocialMediaDetailsCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				4114ABD6275F966600F1AB01 /* SocialMediaDetailsCollectionViewCell.xib */,
@@ -398,7 +429,7 @@
 				416D1CE827751BFB00C75546 /* SocialMediaDetailsCollectionViewCellViewModel.swift */,
 				416D1CEA27751C0C00C75546 /* SocialMediaDetailsCollectionViewCellTextFields.swift */,
 			);
-			path = SocialMediaDetails;
+			path = SocialMediaDetailsCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		411C7F68274BA8CB00C9710A /* Login */ = {
@@ -466,6 +497,7 @@
 		4160E6FC277B998100C7066F /* TermsAndConditions */ = {
 			isa = PBXGroup;
 			children = (
+				4160E705277B9A5D00C7066F /* TermsAndConditionsViewController.storyboard */,
 				4160E6FD277B99FB00C7066F /* TermsAndConditionsRouter.swift */,
 				4160E6FE277B99FB00C7066F /* TermsAndConditionsViewController.swift */,
 				4160E6FF277B99FB00C7066F /* TermsAndConditionsBuilder.swift */,
@@ -474,11 +506,48 @@
 			path = TermsAndConditions;
 			sourceTree = "<group>";
 		};
+		4160E707277B9E8400C7066F /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				4160E710277B9EA700C7066F /* OnboardingViewController.storyboard */,
+				4160E708277B9E9B00C7066F /* OnboardingRouter.swift */,
+				4160E709277B9E9B00C7066F /* OnboardingViewController.swift */,
+				4160E70A277B9E9B00C7066F /* OnboardingBuilder.swift */,
+				4160E70B277B9E9B00C7066F /* OnboardingViewModel.swift */,
+				4160E712277BA00400C7066F /* OnboardingCollectionView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		4160E714277BA36500C7066F /* OnboardingCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				4160E716277BA60900C7066F /* OnboardingCollectionViewCell.xib */,
+				4160E715277BA60900C7066F /* OnboardingCollectionViewCell.swift */,
+				4160E719277BA6C200C7066F /* OnboardingCollectionViewCellSummary.swift */,
+			);
+			path = OnboardingCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		4174221D277C813C00915233 /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				41742226277C816100915233 /* ExploreViewController.storyboard */,
+				4174221E277C815600915233 /* ExploreRouter.swift */,
+				4174221F277C815600915233 /* ExploreViewController.swift */,
+				41742220277C815600915233 /* ExploreBuilder.swift */,
+				41742221277C815600915233 /* ExploreViewModel.swift */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
 		41868B94272C072500F389AB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				4174221D277C813C00915233 /* Explore */,
 				418C413B275A5D000099BC5B /* ForgotPassword */,
 				411C7F68274BA8CB00C9710A /* Login */,
+				4160E707277B9E8400C7066F /* Onboarding */,
 				41B75621275EE4B000C00E03 /* SignUp */,
 				413987092737FA2600C243F4 /* Startup */,
 				4160E6FC277B998100C7066F /* TermsAndConditions */,
@@ -786,6 +855,7 @@
 				4187195D275BFA6D00C993BC /* Nunito-BlackItalic.ttf in Resources */,
 				4187195E275BFA6D00C993BC /* Nunito-Bold.ttf in Resources */,
 				41F820CC276FD8510046B0EA /* WhereCanWeFindYouViewController.storyboard in Resources */,
+				4160E718277BA60900C7066F /* OnboardingCollectionViewCell.xib in Resources */,
 				4187195F275BFA6D00C993BC /* Nunito-BoldItalic.ttf in Resources */,
 				41871960275BFA6D00C993BC /* Nunito-ExtraBold.ttf in Resources */,
 				41871961275BFA6D00C993BC /* Nunito-ExtraBoldItalic.ttf in Resources */,
@@ -794,6 +864,7 @@
 				41871963275BFA6D00C993BC /* Nunito-ExtraLightItalic.ttf in Resources */,
 				41871964275BFA6D00C993BC /* Nunito-Italic.ttf in Resources */,
 				41871965275BFA6D00C993BC /* Nunito-Light.ttf in Resources */,
+				4160E711277B9EA700C7066F /* OnboardingViewController.storyboard in Resources */,
 				41BFE175276618C900AC5570 /* CityTableViewCell.xib in Resources */,
 				41871966275BFA6D00C993BC /* Nunito-LightItalic.ttf in Resources */,
 				41871967275BFA6D00C993BC /* Nunito-Regular.ttf in Resources */,
@@ -807,6 +878,8 @@
 				31981E49241919D300D25074 /* CustomTextField.xib in Resources */,
 				415E59812763EA94009A013E /* WhereDoYouLiveCountriesViewController.storyboard in Resources */,
 				418C4145275A5F3F0099BC5B /* ForgotPasswordViewController.storyboard in Resources */,
+				4160E706277B9A5D00C7066F /* TermsAndConditionsViewController.storyboard in Resources */,
+				41742227277C816100915233 /* ExploreViewController.storyboard in Resources */,
 				3147D626241906FD00E741D3 /* LaunchScreen.storyboard in Resources */,
 				41BFE16C276539BC00AC5570 /* CountryTableViewCell.xib in Resources */,
 				413987152738052C00C243F4 /* StartupViewController.storyboard in Resources */,
@@ -830,10 +903,14 @@
 				CCB0207626A6F12000214CB9 /* String.swift in Sources */,
 				4160E701277B99FB00C7066F /* TermsAndConditionsRouter.swift in Sources */,
 				415E59852763F28C009A013E /* PersonalDetailsCollectionViewCellViewModel.swift in Sources */,
+				4160E70E277B9E9B00C7066F /* OnboardingBuilder.swift in Sources */,
 				41BFE177276618E400AC5570 /* CityTableViewCellSummary.swift in Sources */,
 				411C7F6F274BA8FE00C9710A /* LoginBuilder.swift in Sources */,
 				41F820C7276FD83B0046B0EA /* WhereCanWeFindYouRouter.swift in Sources */,
+				4160E70C277B9E9B00C7066F /* OnboardingRouter.swift in Sources */,
 				41B75627275EE4CE00C00E03 /* SignUpViewController.swift in Sources */,
+				4160E713277BA00400C7066F /* OnboardingCollectionView.swift in Sources */,
+				4160E70F277B9E9B00C7066F /* OnboardingViewModel.swift in Sources */,
 				417E58FF274D9CCD00447ED3 /* LoginTextFields.swift in Sources */,
 				415E59932764F1F8009A013E /* WhereDoYouLiveCitiesViewModel.swift in Sources */,
 				943CE5FD2546DFBC00CA93AA /* CustomView.swift in Sources */,
@@ -849,14 +926,17 @@
 				418C4141275A5E310099BC5B /* ForgotPasswordViewController.swift in Sources */,
 				E3D14DCD242D081B00436D51 /* Constants.swift in Sources */,
 				416D29D22772551400CDD277 /* AccountDetailsCollectionViewCellViewModel.swift in Sources */,
+				4160E70D277B9E9B00C7066F /* OnboardingViewController.swift in Sources */,
 				943CE5FF2546DFBC00CA93AA /* CustomImageView.swift in Sources */,
 				4139870E2737FA3500C243F4 /* StartupRouter.swift in Sources */,
 				416D1CEB27751C0C00C75546 /* SocialMediaDetailsCollectionViewCellTextFields.swift in Sources */,
 				415E597F2763EA7E009A013E /* WhereDoYouLiveCountriesViewModel.swift in Sources */,
+				4160E717277BA60900C7066F /* OnboardingCollectionViewCell.swift in Sources */,
 				CCB0202B26A6EE3400214CB9 /* SceneDelegate.swift in Sources */,
 				410FE6812770C4E200A390A3 /* AddressTableViewCellSummary.swift in Sources */,
 				CCB0207826A6F12000214CB9 /* Array.swift in Sources */,
 				413987102737FA3500C243F4 /* StartupBuilder.swift in Sources */,
+				4160E71A277BA6C200C7066F /* OnboardingCollectionViewCellSummary.swift in Sources */,
 				4108D8D52762287900880E0B /* Protocols.swift in Sources */,
 				945B15B325595DC9003A65E0 /* UIColor.swift in Sources */,
 				4160E704277B99FB00C7066F /* TermsAndConditionsViewModel.swift in Sources */,
@@ -866,6 +946,7 @@
 				4103944E2770D56B00A1CC5C /* WhereCanWeFindYouMapkit.swift in Sources */,
 				41F820CA276FD83B0046B0EA /* WhereCanWeFindYouViewModel.swift in Sources */,
 				413987112737FA3500C243F4 /* StartupViewModel.swift in Sources */,
+				41742222277C815600915233 /* ExploreRouter.swift in Sources */,
 				4108D8DF2762A45D00880E0B /* CustomStackView.swift in Sources */,
 				41F820C9276FD83B0046B0EA /* WhereCanWeFindYouBuilder.swift in Sources */,
 				410FE6782770BCA800A390A3 /* WhereCanWeFindYouTableView.swift in Sources */,
@@ -882,6 +963,7 @@
 				4114ABC8275F92C900F1AB01 /* SignUpCollectionView.swift in Sources */,
 				413193B6276FFDD60006FE7B /* WhereDoYouLiveCitiesSearchBar.swift in Sources */,
 				41BFE17927661A2D00AC5570 /* WhereDoYouLiveCitiesTableView.swift in Sources */,
+				41742225277C815600915233 /* ExploreViewModel.swift in Sources */,
 				415E599D27650C7C009A013E /* CountryDTO.swift in Sources */,
 				31981E4D24191C2F00D25074 /* CustomTextField-Models.swift in Sources */,
 				416D29D42772558800CDD277 /* AccountDetailsCollectionViewCellTextFields.swift in Sources */,
@@ -892,6 +974,7 @@
 				943CE5FE2546DFBC00CA93AA /* CustomButton.swift in Sources */,
 				415E59902764F1F8009A013E /* WhereDoYouLiveCitiesRouter.swift in Sources */,
 				945B15B525595DC9003A65E0 /* UITableViewCell.swift in Sources */,
+				41742224277C815600915233 /* ExploreBuilder.swift in Sources */,
 				418AD20A275A6A51005AFE3C /* ForgotPasswordTextFields.swift in Sources */,
 				41BFE174276618C900AC5570 /* CityTableViewCell.swift in Sources */,
 				419E507527708ACD007C196B /* NotificationName.swift in Sources */,
@@ -901,6 +984,7 @@
 				945B15BB25595DC9003A65E0 /* Window.swift in Sources */,
 				418C4142275A5E310099BC5B /* ForgotPasswordBuilder.swift in Sources */,
 				413987002737F6F200C243F4 /* UIFont.swift in Sources */,
+				41742223277C815600915233 /* ExploreViewController.swift in Sources */,
 				415E597D2763EA7E009A013E /* WhereDoYouLiveCountriesViewController.swift in Sources */,
 				CCB0205326A6EF6500214CB9 /* Container.swift in Sources */,
 				CCB0202A26A6EE3400214CB9 /* AppDelegate.swift in Sources */,
