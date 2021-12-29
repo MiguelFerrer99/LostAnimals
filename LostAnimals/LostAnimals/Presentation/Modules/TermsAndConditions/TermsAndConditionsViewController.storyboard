@@ -16,14 +16,30 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="E5t-mD-60x">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="CustomGreen"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="E5t-mD-60x" secondAttribute="bottom" id="7jT-HO-RtS"/>
+                            <constraint firstItem="E5t-mD-60x" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="RLJ-Fz-yTN"/>
+                            <constraint firstItem="E5t-mD-60x" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="StU-mk-5aI"/>
+                            <constraint firstItem="E5t-mD-60x" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="sJE-RM-O20"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="termsAndConditionsTableView" destination="E5t-mD-60x" id="5GE-Rd-HqL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="92"/>
+            <point key="canvasLocation" x="73.913043478260875" y="91.741071428571431"/>
         </scene>
     </scenes>
     <resources>

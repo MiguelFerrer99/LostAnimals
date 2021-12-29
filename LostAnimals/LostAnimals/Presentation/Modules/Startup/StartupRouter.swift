@@ -31,4 +31,11 @@ final class StartupRouter {
       self.viewController?.push(viewController: viewController)
     }
   }
+  
+  func goToOnboarding() {
+    let viewController = Container.shared.onboardingBuilder().build()
+    DispatchQueue.main.async {
+      self.viewController?.presentWithNavBar(viewController: viewController, completion: nil)
+    }
+  }
 }

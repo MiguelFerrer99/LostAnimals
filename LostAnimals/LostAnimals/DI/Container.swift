@@ -37,6 +37,10 @@ extension Container {
     return StartupBuilder()
   }
   
+  func tabBarBuilder() -> TabBarBuilder {
+    return TabBarBuilder()
+  }
+  
   func termsAndConditionsBuilder() -> TermsAndConditionsBuilder {
     return TermsAndConditionsBuilder()
   }

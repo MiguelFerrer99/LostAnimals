@@ -35,4 +35,8 @@ extension StartupViewModel {
   func didPressSignupButton() {
     self.router.gotoSignup()
   }
+  
+  func didPressContinueAsGuestButton() {
+    self.router.goToOnboarding()
+  }
 }

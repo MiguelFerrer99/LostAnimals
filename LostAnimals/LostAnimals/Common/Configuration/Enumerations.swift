@@ -9,9 +9,9 @@
 import Foundation
 
 public enum SignUpStep: Int {
-  case personalDetails = 0
-  case accountDetails = 1
-  case socialMediaDetails = 2
+  case personalDetails
+  case accountDetails
+  case socialMediaDetails
 }
 
 public enum SignUpStepLabel: String {
@@ -31,7 +31,13 @@ public enum WhereDoYouLiveComesFrom {
 }
 
 public enum OnboardingStep: Int {
-  case share = 0
-  case find = 1
-  case contact = 2
+  case share
+  case find
+  case contact
+}
+
+public enum TabBarItem: Int {
+  case explore
+  case newPost
+  case profile
 }

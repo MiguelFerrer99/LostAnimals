@@ -50,6 +50,6 @@ extension LoginViewModel {
   }
   
   func didPressLoginButton() {
-    self.router.changeRootToExplore()
+    self.router.changeRootToTabBar()
   }
 }

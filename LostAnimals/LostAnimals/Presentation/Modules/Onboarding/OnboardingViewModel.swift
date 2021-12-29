@@ -46,6 +46,6 @@ extension OnboardingViewModel {
 // MARK: - Functions
 extension OnboardingViewModel {
   func didPressFinishOnboarding() {
-    self.router.changeRootToExplore()
+    self.router.changeRootToTabBar()
   }
 }

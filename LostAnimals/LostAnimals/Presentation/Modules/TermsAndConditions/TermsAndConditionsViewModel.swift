@@ -12,6 +12,21 @@ final class TermsAndConditionsViewModel {
   
   // MARK: - Properties
   private let router: TermsAndConditionsRouter
+  let terms = [
+    TermTableViewCellSummary(title: "Term 1", description: "jkfnasdkjfbasdjhlfbasdjfhbsdlfhjbasdfjlbasdfljhbasdljhbsadfjlhasdbfaljshdbfasldjhbf"),
+    TermTableViewCellSummary(title: "Term 2", description: "jkfnasdkjfbasdjhlfbasdjfhbsdlfhjbasdfjlbasdfljhbasdljhbsadfjlhasdbfaljshdbfasldjhbf"),
+    TermTableViewCellSummary(title: "Term 3", description: "jkfnasdkjfbasdjhlfbasdjfhbsdlfhjbasdfjlbasdfljhbasdljhbsadfjlhasdbfaljshdbfasldjhbf"),
+    TermTableViewCellSummary(title: "Term 4", description: "jkfnasdkjfbasdjhlfbasdjfhbsdlfhjbasdfjlbasdfljhbasdljhbsadfjlhasdbfaljshdbfasldjhbf"),
+    TermTableViewCellSummary(title: "Term 5", description: "jkfnasdkjfbasdjhlfbasdjfhbsdlfhjbasdfjlbasdfljhbasdljhbsadfjlhasdbfaljshdbfasldjhbf"),
+    TermTableViewCellSummary(title: "Term 6", description: "jkfnasdkjfbasdjhlfbasdjfhbsdlfhjbasdfjlbasdfljhbasdljhbsadfjlhasdbfaljshdbfasldjhbf"),
+    TermTableViewCellSummary(title: "Term 7", description: "jkfnasdkjfbasdjhlfbasdjfhbsdlfhjbasdfjlbasdfljhbasdljhbsadfjlhasdbfaljshdbfasldjhbf"),
+    TermTableViewCellSummary(title: "Term 8", description: "jkfnasdkjfbasdjhlfbasdjfhbsdlfhjbasdfjlbasdfljhbasdljhbsadfjlhasdbfaljshdbfasldjhbf"),
+    TermTableViewCellSummary(title: "Term 9", description: "jkfnasdkjfbasdjhlfbasdjfhbsdlfhjbasdfjlbasdfljhbasdljhbsadfjlhasdbfaljshdbfasldjhbf"),
+    TermTableViewCellSummary(title: "Term 10", description: "jkfnasdkjfbasdjhlfbasdjfhbsdlfhjbasdfjlbasdfljhbasdljhbsadfjlhasdbfaljshdbfasldjhbf"),
+    TermTableViewCellSummary(title: "Term 11", description: "jkfnasdkjfbasdjhlfbasdjfhbsdlfhjbasdfjlbasdfljhbasdljhbsadfjlhasdbfaljshdbfasldjhbf"),
+    TermTableViewCellSummary(title: "Term 12", description: "jkfnasdkjfbasdjhlfbasdjfhbsdlfhjbasdfjlbasdfljhbasdljhbsadfjlhasdbfaljshdbfasldjhbf"),
+    TermTableViewCellSummary(title: "Term 13", description: "jkfnasdkjfbasdjhlfbasdjfhbsdlfhjbasdfjlbasdfljhbasdljhbsadfjlhasdbfaljshdbfasldjhbf")
+  ]
   
   // MARK: - Init
   required init(router: TermsAndConditionsRouter) {

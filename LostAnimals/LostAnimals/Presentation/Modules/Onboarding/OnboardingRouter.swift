@@ -18,8 +18,8 @@ final class OnboardingRouter {
   }
   
   // MARK: - Functions
-  func changeRootToExplore() {
-    let viewController = Container.shared.exploreBuilder().build().embeddedInNavigation()
+  func changeRootToTabBar() {
+    let viewController = Container.shared.tabBarBuilder().build()
     DispatchQueue.main.async {
       changeRoot(to: viewController)
     }

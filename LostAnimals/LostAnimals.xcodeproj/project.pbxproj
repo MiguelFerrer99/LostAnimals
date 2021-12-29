@@ -101,6 +101,15 @@
 		418C4142275A5E310099BC5B /* ForgotPasswordBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418C413E275A5E310099BC5B /* ForgotPasswordBuilder.swift */; };
 		418C4143275A5E310099BC5B /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418C413F275A5E310099BC5B /* ForgotPasswordViewModel.swift */; };
 		418C4145275A5F3F0099BC5B /* ForgotPasswordViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 418C4144275A5F3F0099BC5B /* ForgotPasswordViewController.storyboard */; };
+		418E2340277CB619008BB92E /* TabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418E233C277CB619008BB92E /* TabBarRouter.swift */; };
+		418E2341277CB619008BB92E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418E233D277CB619008BB92E /* TabBarViewController.swift */; };
+		418E2342277CB619008BB92E /* TabBarBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418E233E277CB619008BB92E /* TabBarBuilder.swift */; };
+		418E2343277CB619008BB92E /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418E233F277CB619008BB92E /* TabBarViewModel.swift */; };
+		418E2345277CB641008BB92E /* TabBarViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 418E2344277CB641008BB92E /* TabBarViewController.storyboard */; };
+		418E2349277CC7FC008BB92E /* TermsAndConditionsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418E2348277CC7FC008BB92E /* TermsAndConditionsTableView.swift */; };
+		418E234D277CC8F6008BB92E /* TermTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418E234B277CC8F6008BB92E /* TermTableViewCell.swift */; };
+		418E234E277CC8F6008BB92E /* TermTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 418E234C277CC8F6008BB92E /* TermTableViewCell.xib */; };
+		418E2350277CC934008BB92E /* TermTableViewCellSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418E234F277CC934008BB92E /* TermTableViewCellSummary.swift */; };
 		419E507527708ACD007C196B /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419E507427708ACD007C196B /* NotificationName.swift */; };
 		41B75626275EE4CE00C00E03 /* SignUpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B75622275EE4CE00C00E03 /* SignUpRouter.swift */; };
 		41B75627275EE4CE00C00E03 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B75623275EE4CE00C00E03 /* SignUpViewController.swift */; };
@@ -242,6 +251,15 @@
 		418C413E275A5E310099BC5B /* ForgotPasswordBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordBuilder.swift; sourceTree = "<group>"; };
 		418C413F275A5E310099BC5B /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		418C4144275A5F3F0099BC5B /* ForgotPasswordViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotPasswordViewController.storyboard; sourceTree = "<group>"; };
+		418E233C277CB619008BB92E /* TabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRouter.swift; sourceTree = "<group>"; };
+		418E233D277CB619008BB92E /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		418E233E277CB619008BB92E /* TabBarBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarBuilder.swift; sourceTree = "<group>"; };
+		418E233F277CB619008BB92E /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
+		418E2344277CB641008BB92E /* TabBarViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBarViewController.storyboard; sourceTree = "<group>"; };
+		418E2348277CC7FC008BB92E /* TermsAndConditionsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsTableView.swift; sourceTree = "<group>"; };
+		418E234B277CC8F6008BB92E /* TermTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermTableViewCell.swift; sourceTree = "<group>"; };
+		418E234C277CC8F6008BB92E /* TermTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermTableViewCell.xib; sourceTree = "<group>"; };
+		418E234F277CC934008BB92E /* TermTableViewCellSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermTableViewCellSummary.swift; sourceTree = "<group>"; };
 		419E507427708ACD007C196B /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		41B75622275EE4CE00C00E03 /* SignUpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRouter.swift; sourceTree = "<group>"; };
 		41B75623275EE4CE00C00E03 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -502,6 +520,7 @@
 				4160E6FE277B99FB00C7066F /* TermsAndConditionsViewController.swift */,
 				4160E6FF277B99FB00C7066F /* TermsAndConditionsBuilder.swift */,
 				4160E700277B99FB00C7066F /* TermsAndConditionsViewModel.swift */,
+				418E2348277CC7FC008BB92E /* TermsAndConditionsTableView.swift */,
 			);
 			path = TermsAndConditions;
 			sourceTree = "<group>";
@@ -550,6 +569,7 @@
 				4160E707277B9E8400C7066F /* Onboarding */,
 				41B75621275EE4B000C00E03 /* SignUp */,
 				413987092737FA2600C243F4 /* Startup */,
+				418E2335277CAFA0008BB92E /* TabBar */,
 				4160E6FC277B998100C7066F /* TermsAndConditions */,
 				41F820C2276FD8100046B0EA /* WhereCanWeFindYou */,
 				415E596B2763E784009A013E /* WhereDoYouLive */,
@@ -568,6 +588,28 @@
 				418AD209275A6A51005AFE3C /* ForgotPasswordTextFields.swift */,
 			);
 			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		418E2335277CAFA0008BB92E /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				418E2344277CB641008BB92E /* TabBarViewController.storyboard */,
+				418E233C277CB619008BB92E /* TabBarRouter.swift */,
+				418E233D277CB619008BB92E /* TabBarViewController.swift */,
+				418E233E277CB619008BB92E /* TabBarBuilder.swift */,
+				418E233F277CB619008BB92E /* TabBarViewModel.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		418E234A277CC8D9008BB92E /* TermTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				418E234C277CC8F6008BB92E /* TermTableViewCell.xib */,
+				418E234B277CC8F6008BB92E /* TermTableViewCell.swift */,
+				418E234F277CC934008BB92E /* TermTableViewCellSummary.swift */,
+			);
+			path = TermTableViewCell;
 			sourceTree = "<group>";
 		};
 		41B75621275EE4B000C00E03 /* SignUp */ = {
@@ -641,6 +683,7 @@
 				410FE67B2770C33500A390A3 /* AddressTableViewCell */,
 				41BFE171276618AF00AC5570 /* CityTableViewCell */,
 				41BFE1682765399D00AC5570 /* CountryTableViewCell */,
+				418E234A277CC8D9008BB92E /* TermTableViewCell */,
 			);
 			path = TableCells;
 			sourceTree = "<group>";
@@ -876,6 +919,7 @@
 				41B7562B275EE50900C00E03 /* SignUpViewController.storyboard in Resources */,
 				415E59952764F206009A013E /* WhereDoYouLiveCitiesViewController.storyboard in Resources */,
 				31981E49241919D300D25074 /* CustomTextField.xib in Resources */,
+				418E234E277CC8F6008BB92E /* TermTableViewCell.xib in Resources */,
 				415E59812763EA94009A013E /* WhereDoYouLiveCountriesViewController.storyboard in Resources */,
 				418C4145275A5F3F0099BC5B /* ForgotPasswordViewController.storyboard in Resources */,
 				4160E706277B9A5D00C7066F /* TermsAndConditionsViewController.storyboard in Resources */,
@@ -884,6 +928,7 @@
 				41BFE16C276539BC00AC5570 /* CountryTableViewCell.xib in Resources */,
 				413987152738052C00C243F4 /* StartupViewController.storyboard in Resources */,
 				3147D623241906FD00E741D3 /* Assets.xcassets in Resources */,
+				418E2345277CB641008BB92E /* TabBarViewController.storyboard in Resources */,
 				410B31F3276B32C300CE4180 /* Countries.json in Resources */,
 				411C7F72274BA91300C9710A /* LoginViewController.storyboard in Resources */,
 			);
@@ -914,9 +959,11 @@
 				417E58FF274D9CCD00447ED3 /* LoginTextFields.swift in Sources */,
 				415E59932764F1F8009A013E /* WhereDoYouLiveCitiesViewModel.swift in Sources */,
 				943CE5FD2546DFBC00CA93AA /* CustomView.swift in Sources */,
+				418E2340277CB619008BB92E /* TabBarRouter.swift in Sources */,
 				945B15AC25595DC9003A65E0 /* TableParent.swift in Sources */,
 				4108D8D32762286400880E0B /* Enumerations.swift in Sources */,
 				4114ABD2275F960200F1AB01 /* AccountDetailsCollectionViewCell.swift in Sources */,
+				418E2350277CC934008BB92E /* TermTableViewCellSummary.swift in Sources */,
 				4139870F2737FA3500C243F4 /* StartupViewController.swift in Sources */,
 				945B15BD25595DC9003A65E0 /* Cache.swift in Sources */,
 				416D1CE927751BFB00C75546 /* SocialMediaDetailsCollectionViewCellViewModel.swift in Sources */,
@@ -930,6 +977,7 @@
 				943CE5FF2546DFBC00CA93AA /* CustomImageView.swift in Sources */,
 				4139870E2737FA3500C243F4 /* StartupRouter.swift in Sources */,
 				416D1CEB27751C0C00C75546 /* SocialMediaDetailsCollectionViewCellTextFields.swift in Sources */,
+				418E2343277CB619008BB92E /* TabBarViewModel.swift in Sources */,
 				415E597F2763EA7E009A013E /* WhereDoYouLiveCountriesViewModel.swift in Sources */,
 				4160E717277BA60900C7066F /* OnboardingCollectionViewCell.swift in Sources */,
 				CCB0202B26A6EE3400214CB9 /* SceneDelegate.swift in Sources */,
@@ -939,6 +987,7 @@
 				4160E71A277BA6C200C7066F /* OnboardingCollectionViewCellSummary.swift in Sources */,
 				4108D8D52762287900880E0B /* Protocols.swift in Sources */,
 				945B15B325595DC9003A65E0 /* UIColor.swift in Sources */,
+				418E2342277CB619008BB92E /* TabBarBuilder.swift in Sources */,
 				4160E704277B99FB00C7066F /* TermsAndConditionsViewModel.swift in Sources */,
 				945B15AE25595DC9003A65E0 /* Dynamic.swift in Sources */,
 				415E597E2763EA7E009A013E /* WhereDoYouLiveCountriesBuilder.swift in Sources */,
@@ -956,10 +1005,12 @@
 				945B15B125595DC9003A65E0 /* ViewModel.swift in Sources */,
 				415E59922764F1F8009A013E /* WhereDoYouLiveCitiesBuilder.swift in Sources */,
 				4114ABD7275F966600F1AB01 /* SocialMediaDetailsCollectionViewCell.swift in Sources */,
+				418E2349277CC7FC008BB92E /* TermsAndConditionsTableView.swift in Sources */,
 				945B15B825595DC9003A65E0 /* UIImage.swift in Sources */,
 				A01CC49125D2FB3700404685 /* LocalizedKey.swift in Sources */,
 				945B15B025595DC9003A65E0 /* CellsHelper.swift in Sources */,
 				945B15B925595DC9003A65E0 /* Presenter.swift in Sources */,
+				418E234D277CC8F6008BB92E /* TermTableViewCell.swift in Sources */,
 				4114ABC8275F92C900F1AB01 /* SignUpCollectionView.swift in Sources */,
 				413193B6276FFDD60006FE7B /* WhereDoYouLiveCitiesSearchBar.swift in Sources */,
 				41BFE17927661A2D00AC5570 /* WhereDoYouLiveCitiesTableView.swift in Sources */,
@@ -981,6 +1032,7 @@
 				41BFE16B276539BC00AC5570 /* CountryTableViewCell.swift in Sources */,
 				CCB0207526A6F12000214CB9 /* Date.swift in Sources */,
 				415E59A127650D77009A013E /* Country.swift in Sources */,
+				418E2341277CB619008BB92E /* TabBarViewController.swift in Sources */,
 				945B15BB25595DC9003A65E0 /* Window.swift in Sources */,
 				418C4142275A5E310099BC5B /* ForgotPasswordBuilder.swift in Sources */,
 				413987002737F6F200C243F4 /* UIFont.swift in Sources */,

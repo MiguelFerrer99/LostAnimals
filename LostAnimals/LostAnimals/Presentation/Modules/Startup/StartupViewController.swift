@@ -43,7 +43,7 @@ final class StartupViewController: ViewController {
   
   // MARK: - IBActions
   @IBAction func continueAsGuestButtonPressed(_ sender: UIButton) {
-    // TODO: Go to ExploreViewController
+    viewModel.didPressContinueAsGuestButton()
   }
   
   @IBAction func logInButtonPressed(_ sender: CustomButton) {
