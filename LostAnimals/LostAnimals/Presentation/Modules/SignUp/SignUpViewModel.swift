@@ -48,7 +48,12 @@ extension SignUpViewModel {
     self.router.goToTermsAndConditions()
   }
   
-  func didPressGoToOnboarding() {
-    self.router.goToOnboarding()
+  func didPressGetStartedButton() {
+    let onboardingDone = Cache.get(boolFor: .onboardingDone)
+    if onboardingDone {
+      self.router.changeRootToTabBar()
+    } else {
+      self.router.goToOnboarding()
+    }
   }
 }

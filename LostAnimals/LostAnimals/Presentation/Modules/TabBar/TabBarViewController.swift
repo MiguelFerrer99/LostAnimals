@@ -12,6 +12,7 @@ final class TabBarViewController: UITabBarController, UITabBarControllerDelegate
   
   // MARK: - Properties
   var viewModel: TabBarViewModel!
+  var lastTabBarIndex = 0
   
   // MARK: - Life cycle
   override func viewDidLoad() {
@@ -29,8 +30,8 @@ final class TabBarViewController: UITabBarController, UITabBarControllerDelegate
     
     let tabBarItems = tabBar.items! as [UITabBarItem]
     
-    for (index, item) in tabBarItems.enumerated() {
-      setNavigation(index, item)
+    for (index, _) in tabBarItems.enumerated() {
+      setNavigation(index)
     }
     
     self.selectedIndex = TabBarItem.explore.rawValue
@@ -47,17 +48,25 @@ final class TabBarViewController: UITabBarController, UITabBarControllerDelegate
     // Do bindings setup
   }
   
-  func setNavigation(_ index: Int, _ item: UITabBarItem) {
+  func setNavigation(_ index: Int) {
     guard let nav = viewControllers?[index] as? UINavigationController else { return }
     
     switch TabBarItem(rawValue: index) {
     case .explore:
       nav.viewControllers = [viewModel.didPressExploreTabBarItem()]
-    case .newPost:
-      nav.viewControllers = []
     case .profile:
-      nav.viewControllers = []
+      nav.viewControllers = [viewModel.didPressProfileTabBarItem()]
     default: return
+    }
+  }
+  
+  // MARK: - UITabBarControllerDelegate
+  func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+    if tabBarController.selectedIndex == TabBarItem.newPost.rawValue {
+      tabBarController.selectedIndex = lastTabBarIndex
+      viewModel.didPressNewPostTabBarItem()
+    } else {
+      lastTabBarIndex = tabBarController.selectedIndex
     }
   }
 }

@@ -84,7 +84,7 @@ final class SignUpViewController: ViewController {
       viewModel.currentStep = .socialMediaDetails
       viewModel.currentStepLabel = .socialMediaDetails
     case .socialMediaDetails:
-      goToOnboardingVC()
+      viewModel.didPressGetStartedButton()
     }
     updateCurrenCollectionViewItem(direction: .next)
     updateCurrentProgressBarView()
@@ -100,9 +100,5 @@ final class SignUpViewController: ViewController {
   
   func goToTermsAndConditionsVC() {
     viewModel.didPressGoToTermsAndConditions()
-  }
-  
-  func goToOnboardingVC() {
-    viewModel.didPressGoToOnboarding()
   }
 }

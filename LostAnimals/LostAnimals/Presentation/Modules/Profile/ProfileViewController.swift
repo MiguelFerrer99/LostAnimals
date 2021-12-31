@@ -1,20 +1,20 @@
 //
-//  ExploreViewController.swift
+//  ProfileViewController.swift
 //  LostAnimals
 //
-//  Created by Miguel Ferrer Fornali on 29/12/21.
+//  Created by Miguel Ferrer Fornali on 30/12/21.
 //  Copyright © 2021 Rudo. All rights reserved.
 //
 
 import UIKit
 
-final class ExploreViewController: ViewController {
+final class ProfileViewController: ViewController {
   
   // MARK: - IBOutlets
   
   // MARK: - Properties
   override var navBarTitle: String {
-    return "Explore"
+    return "Profile"
   }
   override var useLargeTitle: Bool {
     return true
@@ -22,7 +22,7 @@ final class ExploreViewController: ViewController {
   override var hideBackButton: Bool {
     return true
   }
-  var viewModel: ExploreViewModel!
+  var viewModel: ProfileViewModel!
   
   // MARK: - Life cycle
   override func viewDidLoad() {

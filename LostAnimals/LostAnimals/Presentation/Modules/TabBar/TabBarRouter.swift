@@ -21,4 +21,15 @@ final class TabBarRouter {
   func goToExplore() -> UIViewController {
     return Container.shared.exploreBuilder().build()
   }
+  
+  func goToNewPost() {
+    let viewController = Container.shared.newPostBuilder().build()
+    DispatchQueue.main.async {
+      self.viewController?.present(viewController: viewController, completion: nil)
+    }
+  }
+  
+  func goToProfile() -> UIViewController {
+    return Container.shared.profileBuilder().build()
+  }
 }

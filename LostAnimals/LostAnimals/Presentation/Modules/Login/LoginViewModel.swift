@@ -50,6 +50,12 @@ extension LoginViewModel {
   }
   
   func didPressLoginButton() {
-    self.router.changeRootToTabBar()
+    Cache.set(.logged, true)
+    let onboardingDone = Cache.get(boolFor: .onboardingDone)
+    if onboardingDone {
+      self.router.changeRootToTabBar()
+    } else {
+      self.router.goToOnboarding()
+    }
   }
 }

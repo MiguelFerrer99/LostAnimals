@@ -80,6 +80,16 @@
 		41742224277C815600915233 /* ExploreBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41742220277C815600915233 /* ExploreBuilder.swift */; };
 		41742225277C815600915233 /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41742221277C815600915233 /* ExploreViewModel.swift */; };
 		41742227277C816100915233 /* ExploreViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41742226277C816100915233 /* ExploreViewController.storyboard */; };
+		417B8609277D1F1C0051B8CF /* NewPostRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417B8604277D1F1C0051B8CF /* NewPostRouter.swift */; };
+		417B860A277D1F1C0051B8CF /* NewPostViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 417B8605277D1F1C0051B8CF /* NewPostViewController.storyboard */; };
+		417B860B277D1F1C0051B8CF /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417B8606277D1F1C0051B8CF /* NewPostViewController.swift */; };
+		417B860C277D1F1C0051B8CF /* NewPostBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417B8607277D1F1C0051B8CF /* NewPostBuilder.swift */; };
+		417B860D277D1F1C0051B8CF /* NewPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417B8608277D1F1C0051B8CF /* NewPostViewModel.swift */; };
+		417B861F277D27380051B8CF /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417B861A277D27380051B8CF /* ProfileRouter.swift */; };
+		417B8620277D27380051B8CF /* ProfileViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 417B861B277D27380051B8CF /* ProfileViewController.storyboard */; };
+		417B8621277D27380051B8CF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417B861C277D27380051B8CF /* ProfileViewController.swift */; };
+		417B8622277D27380051B8CF /* ProfileBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417B861D277D27380051B8CF /* ProfileBuilder.swift */; };
+		417B8623277D27380051B8CF /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417B861E277D27380051B8CF /* ProfileViewModel.swift */; };
 		417E58FF274D9CCD00447ED3 /* LoginTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417E58FE274D9CCD00447ED3 /* LoginTextFields.swift */; };
 		4187195C275BFA6D00C993BC /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8DB273848AC00F5946B /* Nunito-Black.ttf */; };
 		4187195D275BFA6D00C993BC /* Nunito-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8D4273848AB00F5946B /* Nunito-BlackItalic.ttf */; };
@@ -244,6 +254,16 @@
 		41742220277C815600915233 /* ExploreBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreBuilder.swift; sourceTree = "<group>"; };
 		41742221277C815600915233 /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
 		41742226277C816100915233 /* ExploreViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExploreViewController.storyboard; sourceTree = "<group>"; };
+		417B8604277D1F1C0051B8CF /* NewPostRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostRouter.swift; sourceTree = "<group>"; };
+		417B8605277D1F1C0051B8CF /* NewPostViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewPostViewController.storyboard; sourceTree = "<group>"; };
+		417B8606277D1F1C0051B8CF /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
+		417B8607277D1F1C0051B8CF /* NewPostBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostBuilder.swift; sourceTree = "<group>"; };
+		417B8608277D1F1C0051B8CF /* NewPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewModel.swift; sourceTree = "<group>"; };
+		417B861A277D27380051B8CF /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
+		417B861B277D27380051B8CF /* ProfileViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileViewController.storyboard; sourceTree = "<group>"; };
+		417B861C277D27380051B8CF /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		417B861D277D27380051B8CF /* ProfileBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBuilder.swift; sourceTree = "<group>"; };
+		417B861E277D27380051B8CF /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		417E58FE274D9CCD00447ED3 /* LoginTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextFields.swift; sourceTree = "<group>"; };
 		418AD209275A6A51005AFE3C /* ForgotPasswordTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordTextFields.swift; sourceTree = "<group>"; };
 		418C413C275A5E310099BC5B /* ForgotPasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordRouter.swift; sourceTree = "<group>"; };
@@ -560,13 +580,39 @@
 			path = Explore;
 			sourceTree = "<group>";
 		};
+		417B85F7277D08FA0051B8CF /* NewPost */ = {
+			isa = PBXGroup;
+			children = (
+				417B8605277D1F1C0051B8CF /* NewPostViewController.storyboard */,
+				417B8604277D1F1C0051B8CF /* NewPostRouter.swift */,
+				417B8606277D1F1C0051B8CF /* NewPostViewController.swift */,
+				417B8607277D1F1C0051B8CF /* NewPostBuilder.swift */,
+				417B8608277D1F1C0051B8CF /* NewPostViewModel.swift */,
+			);
+			path = NewPost;
+			sourceTree = "<group>";
+		};
+		417B8619277D27180051B8CF /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				417B861B277D27380051B8CF /* ProfileViewController.storyboard */,
+				417B861A277D27380051B8CF /* ProfileRouter.swift */,
+				417B861C277D27380051B8CF /* ProfileViewController.swift */,
+				417B861D277D27380051B8CF /* ProfileBuilder.swift */,
+				417B861E277D27380051B8CF /* ProfileViewModel.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		41868B94272C072500F389AB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
 				4174221D277C813C00915233 /* Explore */,
 				418C413B275A5D000099BC5B /* ForgotPassword */,
 				411C7F68274BA8CB00C9710A /* Login */,
+				417B85F7277D08FA0051B8CF /* NewPost */,
 				4160E707277B9E8400C7066F /* Onboarding */,
+				417B8619277D27180051B8CF /* Profile */,
 				41B75621275EE4B000C00E03 /* SignUp */,
 				413987092737FA2600C243F4 /* Startup */,
 				418E2335277CAFA0008BB92E /* TabBar */,
@@ -920,6 +966,7 @@
 				415E59952764F206009A013E /* WhereDoYouLiveCitiesViewController.storyboard in Resources */,
 				31981E49241919D300D25074 /* CustomTextField.xib in Resources */,
 				418E234E277CC8F6008BB92E /* TermTableViewCell.xib in Resources */,
+				417B860A277D1F1C0051B8CF /* NewPostViewController.storyboard in Resources */,
 				415E59812763EA94009A013E /* WhereDoYouLiveCountriesViewController.storyboard in Resources */,
 				418C4145275A5F3F0099BC5B /* ForgotPasswordViewController.storyboard in Resources */,
 				4160E706277B9A5D00C7066F /* TermsAndConditionsViewController.storyboard in Resources */,
@@ -931,6 +978,7 @@
 				418E2345277CB641008BB92E /* TabBarViewController.storyboard in Resources */,
 				410B31F3276B32C300CE4180 /* Countries.json in Resources */,
 				411C7F72274BA91300C9710A /* LoginViewController.storyboard in Resources */,
+				417B8620277D27380051B8CF /* ProfileViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -943,7 +991,9 @@
 			files = (
 				41B75626275EE4CE00C00E03 /* SignUpRouter.swift in Sources */,
 				4114ABCC275F94B400F1AB01 /* PersonalDetailsCollectionViewCell.swift in Sources */,
+				417B8623277D27380051B8CF /* ProfileViewModel.swift in Sources */,
 				411C7F6E274BA8FE00C9710A /* LoginViewController.swift in Sources */,
+				417B8609277D1F1C0051B8CF /* NewPostRouter.swift in Sources */,
 				418C4140275A5E310099BC5B /* ForgotPasswordRouter.swift in Sources */,
 				CCB0207626A6F12000214CB9 /* String.swift in Sources */,
 				4160E701277B99FB00C7066F /* TermsAndConditionsRouter.swift in Sources */,
@@ -985,6 +1035,7 @@
 				CCB0207826A6F12000214CB9 /* Array.swift in Sources */,
 				413987102737FA3500C243F4 /* StartupBuilder.swift in Sources */,
 				4160E71A277BA6C200C7066F /* OnboardingCollectionViewCellSummary.swift in Sources */,
+				417B860D277D1F1C0051B8CF /* NewPostViewModel.swift in Sources */,
 				4108D8D52762287900880E0B /* Protocols.swift in Sources */,
 				945B15B325595DC9003A65E0 /* UIColor.swift in Sources */,
 				418E2342277CB619008BB92E /* TabBarBuilder.swift in Sources */,
@@ -1005,8 +1056,10 @@
 				945B15B125595DC9003A65E0 /* ViewModel.swift in Sources */,
 				415E59922764F1F8009A013E /* WhereDoYouLiveCitiesBuilder.swift in Sources */,
 				4114ABD7275F966600F1AB01 /* SocialMediaDetailsCollectionViewCell.swift in Sources */,
+				417B8621277D27380051B8CF /* ProfileViewController.swift in Sources */,
 				418E2349277CC7FC008BB92E /* TermsAndConditionsTableView.swift in Sources */,
 				945B15B825595DC9003A65E0 /* UIImage.swift in Sources */,
+				417B861F277D27380051B8CF /* ProfileRouter.swift in Sources */,
 				A01CC49125D2FB3700404685 /* LocalizedKey.swift in Sources */,
 				945B15B025595DC9003A65E0 /* CellsHelper.swift in Sources */,
 				945B15B925595DC9003A65E0 /* Presenter.swift in Sources */,
@@ -1022,11 +1075,13 @@
 				4160E703277B99FB00C7066F /* TermsAndConditionsBuilder.swift in Sources */,
 				41F820C8276FD83B0046B0EA /* WhereCanWeFindYouViewController.swift in Sources */,
 				41B75629275EE4CE00C00E03 /* SignUpViewModel.swift in Sources */,
+				417B860C277D1F1C0051B8CF /* NewPostBuilder.swift in Sources */,
 				943CE5FE2546DFBC00CA93AA /* CustomButton.swift in Sources */,
 				415E59902764F1F8009A013E /* WhereDoYouLiveCitiesRouter.swift in Sources */,
 				945B15B525595DC9003A65E0 /* UITableViewCell.swift in Sources */,
 				41742224277C815600915233 /* ExploreBuilder.swift in Sources */,
 				418AD20A275A6A51005AFE3C /* ForgotPasswordTextFields.swift in Sources */,
+				417B8622277D27380051B8CF /* ProfileBuilder.swift in Sources */,
 				41BFE174276618C900AC5570 /* CityTableViewCell.swift in Sources */,
 				419E507527708ACD007C196B /* NotificationName.swift in Sources */,
 				41BFE16B276539BC00AC5570 /* CountryTableViewCell.swift in Sources */,
@@ -1039,6 +1094,7 @@
 				41742223277C815600915233 /* ExploreViewController.swift in Sources */,
 				415E597D2763EA7E009A013E /* WhereDoYouLiveCountriesViewController.swift in Sources */,
 				CCB0205326A6EF6500214CB9 /* Container.swift in Sources */,
+				417B860B277D1F1C0051B8CF /* NewPostViewController.swift in Sources */,
 				CCB0202A26A6EE3400214CB9 /* AppDelegate.swift in Sources */,
 				415E59912764F1F8009A013E /* WhereDoYouLiveCitiesViewController.swift in Sources */,
 				4160E702277B99FB00C7066F /* TermsAndConditionsViewController.swift in Sources */,

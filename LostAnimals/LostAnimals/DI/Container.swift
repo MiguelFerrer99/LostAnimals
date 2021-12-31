@@ -25,8 +25,16 @@ extension Container {
     return LoginBuilder()
   }
   
+  func newPostBuilder() -> NewPostBuilder {
+    return NewPostBuilder()
+  }
+  
   func onboardingBuilder() -> OnboardingBuilder {
     return OnboardingBuilder()
+  }
+  
+  func profileBuilder() -> ProfileBuilder {
+    return ProfileBuilder()
   }
   
   func signupBuilder() -> SignUpBuilder {

@@ -29,8 +29,14 @@ let screenHeight    = keyWindow?.frame.height ?? 0
 let screenWidth     = keyWindow?.frame.width ?? 0
 
 func changeRoot(to viewController: UIViewController) {
-  UIView.transition(with: keyWindow!, duration: 0.3, options: .transitionCrossDissolve, animations: {
-    keyWindow?.rootViewController = viewController
+  let overlayView = UIScreen.main.snapshotView(afterScreenUpdates: false)
+  viewController.view.addSubview(overlayView)
+  keyWindow?.rootViewController = viewController
+  
+  UIView.animate(withDuration: 0.25, delay: 0, options: .transitionCrossDissolve, animations: {
+    overlayView.alpha = 0
+  }, completion: { _ in 
+    overlayView.removeFromSuperview()
   })
 }
 

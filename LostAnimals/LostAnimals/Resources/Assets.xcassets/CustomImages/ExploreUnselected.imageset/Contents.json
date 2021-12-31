@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "ExploreNotSelected.png",
+      "filename" : "ExploreUnselected.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "ExploreNotSelected-1.png",
+      "filename" : "ExploreUnselected-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "ExploreNotSelected-2.png",
+      "filename" : "ExploreUnselected-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

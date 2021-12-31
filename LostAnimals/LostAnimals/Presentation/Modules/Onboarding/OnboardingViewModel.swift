@@ -46,6 +46,7 @@ extension OnboardingViewModel {
 // MARK: - Functions
 extension OnboardingViewModel {
   func didPressFinishOnboarding() {
+    Cache.set(.onboardingDone, true)
     self.router.changeRootToTabBar()
   }
 }

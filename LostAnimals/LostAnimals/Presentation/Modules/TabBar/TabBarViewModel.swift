@@ -37,4 +37,12 @@ extension TabBarViewModel {
   func didPressExploreTabBarItem() -> UIViewController {
     return router.goToExplore()
   }
+  
+  func didPressNewPostTabBarItem() {
+    self.router.goToNewPost()
+  }
+  
+  func didPressProfileTabBarItem() -> UIViewController {
+    return router.goToProfile()
+  }
 }

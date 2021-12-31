@@ -42,7 +42,14 @@ final class SignUpRouter {
   func goToOnboarding() {
     let viewController = Container.shared.onboardingBuilder().build()
     DispatchQueue.main.async {
-      self.viewController?.presentWithNavBar(viewController: viewController, completion: nil)
+      self.viewController?.present(viewController: viewController, completion: nil)
+    }
+  }
+  
+  func changeRootToTabBar() {
+    let viewController = Container.shared.tabBarBuilder().build()
+    DispatchQueue.main.async {
+      changeRoot(to: viewController)
     }
   }
 }

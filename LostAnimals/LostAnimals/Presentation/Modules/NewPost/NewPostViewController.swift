@@ -1,5 +1,5 @@
 //
-//  ExploreViewController.swift
+//  NewPostViewController.swift
 //  LostAnimals
 //
 //  Created by Miguel Ferrer Fornali on 29/12/21.
@@ -8,21 +8,13 @@
 
 import UIKit
 
-final class ExploreViewController: ViewController {
+final class NewPostViewController: ViewController {
   
   // MARK: - IBOutlets
+  @IBOutlet weak var newPostView: CustomView!
   
   // MARK: - Properties
-  override var navBarTitle: String {
-    return "Explore"
-  }
-  override var useLargeTitle: Bool {
-    return true
-  }
-  override var hideBackButton: Bool {
-    return true
-  }
-  var viewModel: ExploreViewModel!
+  var viewModel: NewPostViewModel!
   
   // MARK: - Life cycle
   override func viewDidLoad() {
@@ -45,6 +37,11 @@ final class ExploreViewController: ViewController {
   }
   
   private func setupUI() {
-    // Do UI setup
+    newPostView.layer.maskedCorners =  [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+  }
+  
+  // MARK: - IBActions
+  @IBAction func dismissButtonPressed(_ sender: UIButton) {
+    viewModel.didPressDismissButton()
   }
 }

@@ -37,6 +37,11 @@ extension StartupViewModel {
   }
   
   func didPressContinueAsGuestButton() {
-    self.router.goToOnboarding()
+    let onboardingDone = Cache.get(boolFor: .onboardingDone)
+    if onboardingDone {
+      self.router.changeRootToTabBar()
+    } else {
+      self.router.goToOnboarding()
+    }
   }
 }

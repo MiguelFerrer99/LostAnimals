@@ -10,10 +10,8 @@ import Foundation
 
 struct Cache {
   enum key: String {
-    case refresh_token,
-         access_token,
-         logged,
-         userID
+    case logged,
+         onboardingDone
   }
   
   static func set(_ key: key, _ value: Any?) {
@@ -56,7 +54,7 @@ struct Cache {
     return UserDefaults.standard.dictionary(forKey: dictionaryFor.rawValue)
   }
   
-  static func printAll(){
+  static func printAll() {
     print("[CacheHandler] Print Userdefaults:")
     print("------------------------------------")
     for (key, value) in UserDefaults.standard.dictionaryRepresentation() {
@@ -65,7 +63,7 @@ struct Cache {
     print("------------------------------------")
   }
   
-  static func clear(){
+  static func clear() {
     let defaults = UserDefaults.standard
     let dictionary = defaults.dictionaryRepresentation()
     dictionary.keys.forEach { key in
@@ -75,6 +73,5 @@ struct Cache {
   
   static func logOut() {
     Cache.set(.logged, false)
-    Cache.set(.userID, nil)
   }
 }
