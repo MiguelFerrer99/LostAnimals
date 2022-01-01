@@ -36,3 +36,13 @@ let termsAndConditions = [
   TermAndCondition(title: "Term 12", description: "jkfnasdkjfbasdjhlfbasdjfhbsdlfhjbasdfjlbasdfljhbasdljhbsadfjlhasdbfaljshdbfasldjhbf"),
   TermAndCondition(title: "Term 13", description: "jkfnasdkjfbasdjhlfbasdjfhbsdlfhjbasdfjlbasdfljhbasdljhbsadfjlhasdbfaljshdbfasldjhbf")
 ]
+
+var currentExploreFilters = [
+  PostsFilter(filterTitle: ExploreFilterType.all.rawValue, filterType: .all, enabled: true),
+  PostsFilter(filterTitle: ExploreFilterType.lost.rawValue, filterType: .lost, enabled: false),
+  PostsFilter(filterTitle: ExploreFilterType.found.rawValue, filterType: .found, enabled: false),
+  PostsFilter(filterTitle: ExploreFilterType.adopt.rawValue, filterType: .adopt, enabled: false),
+  PostsFilter(filterTitle: ExploreFilterType.animal.rawValue, filterType: .animal, enabled: false),
+  PostsFilter(filterTitle: ExploreFilterType.location.rawValue, filterType: .location, enabled: false),
+  PostsFilter(filterTitle: ExploreFilterType.date.rawValue, filterType: .date, enabled: false)
+]

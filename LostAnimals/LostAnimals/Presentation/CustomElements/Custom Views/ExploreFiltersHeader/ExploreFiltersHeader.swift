@@ -8,26 +8,22 @@
 
 import UIKit
 
-class ExploreFiltersHeader: UICollectionReusableView, ViewModelCell {
-  typealias T = ExploreFiltersHeaderViewModel
+class ExploreFiltersHeader: UICollectionReusableView, Reusable {
   
   // MARK: - IBOutlets
   @IBOutlet weak var filtersCollectionView: UICollectionView!
   
-  // MARK: - Properties
-  var viewModel: ExploreFiltersHeaderViewModel! {
-    didSet { fillUI() }
-  }
-  
   // MARK: - Life cycle
   override func awakeFromNib() {
     super.awakeFromNib()
+    
+    setupUI()
   }
   
   // MARK: - Functions
-  private func fillUI() {
-    configureCollectionView(filtersCollectionView)
+  private func setupUI() {
     preselectAllFilter()
+    configureCollectionView(filtersCollectionView)
   }
   
   private func preselectAllFilter() {

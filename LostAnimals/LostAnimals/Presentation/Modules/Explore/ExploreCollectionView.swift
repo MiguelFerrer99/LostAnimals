@@ -19,8 +19,7 @@ extension ExploreViewController: UICollectionViewDelegate, UICollectionViewDataS
   func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
     switch kind {
     case UICollectionView.elementKindSectionHeader:
-      let exploreFiltersHeaderVM = ExploreFiltersHeaderViewModel()
-      let exploreFiltersHeader = collectionView.dequeue(supplementaryView: ExploreFiltersHeader.self, for: indexPath, viewModel: exploreFiltersHeaderVM)
+      let exploreFiltersHeader = collectionView.dequeue(supplementaryView: ExploreFiltersHeader.self, for: indexPath)
       return exploreFiltersHeader
     default: assert(false, "Unexpected element kind")
     }

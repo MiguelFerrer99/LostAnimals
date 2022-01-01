@@ -17,12 +17,14 @@ extension ExploreFiltersHeader: UICollectionViewDelegate, UICollectionViewDataSo
   }
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return viewModel.filters.count
+    return currentExploreFilters.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let currentExploreFilter = currentExploreFilters[indexPath.row]
+    let summary = ExploreFiltersCollectionViewCellSummary(filterTitle: currentExploreFilter.filterTitle, filterType: currentExploreFilter.filterType)
     let cell = collectionView.dequeue(ExploreFiltersCollectionViewCell.self, for: indexPath)
-    cell.display(summary: viewModel.filters[indexPath.row])
+    cell.display(summary: summary)
     return cell
   }
   
