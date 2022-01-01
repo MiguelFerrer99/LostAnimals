@@ -11,6 +11,7 @@ import UIKit
 final class ExploreViewController: ViewController {
   
   // MARK: - IBOutlets
+  @IBOutlet weak var postsCollectionView: UICollectionView!
   
   // MARK: - Properties
   override var navBarTitle: String {
@@ -22,6 +23,13 @@ final class ExploreViewController: ViewController {
   override var hideBackButton: Bool {
     return true
   }
+  override var navBarRightButtons: [UIBarButtonItem] {
+    let savedPosts = UIButton()
+    savedPosts.setImage(UIImage(systemName: "book"), for: .normal)
+    savedPosts.addTarget(self, action: #selector(savedPostsButtonPressed), for: .touchUpInside)
+    return [UIBarButtonItem(customView: savedPosts)]
+  }
+  var refreshControl = UIRefreshControl()
   var viewModel: ExploreViewModel!
   
   // MARK: - Life cycle
@@ -45,6 +53,11 @@ final class ExploreViewController: ViewController {
   }
   
   private func setupUI() {
-    // Do UI setup
+    configureCollectionView(postsCollectionView)
+    configureRefreshControl(refreshControl)
+  }
+  
+  @objc private func savedPostsButtonPressed() {
+    viewModel.didPressSavedPosts()
   }
 }

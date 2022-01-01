@@ -44,4 +44,16 @@ final class NewPostViewController: ViewController {
   @IBAction func dismissButtonPressed(_ sender: UIButton) {
     viewModel.didPressDismissButton()
   }
+  
+  @IBAction func lostButtonPressed(_ sender: UIButton) {
+    viewModel.didPressLostButton()
+  }
+  
+  @IBAction func foundButtonPressed(_ sender: UIButton) {
+    viewModel.didPressFoundButton()
+  }
+  
+  @IBAction func toAdoptButtonPressed(_ sender: UIButton) {
+    viewModel.didPressAdoptButton()
+  }
 }

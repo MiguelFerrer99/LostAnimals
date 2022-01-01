@@ -18,5 +18,7 @@ final class ExploreRouter {
   }
   
   // MARK: - Functions
-  
+  func goToSavedPosts() {
+    // TODO: Go to SavedPostsVC
+  }
 }

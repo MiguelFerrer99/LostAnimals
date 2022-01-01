@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-Bold.ttf">
+            <string>Nunito-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ExploreFiltersCollectionViewCell" customModule="LostAnimals" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="126" height="55"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="126" height="55"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mQJ-Fh-RKa" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="116" height="55"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Jm-zY-jOY">
+                                <rect key="frame" x="40.5" y="16.5" width="35" height="22"/>
+                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="16"/>
+                                <color key="textColor" name="CustomWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="CustomBlack"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3Jm-zY-jOY" firstAttribute="centerX" secondItem="mQJ-Fh-RKa" secondAttribute="centerX" id="4bo-FN-9Zo"/>
+                            <constraint firstItem="3Jm-zY-jOY" firstAttribute="centerY" secondItem="mQJ-Fh-RKa" secondAttribute="centerY" id="TVM-us-S6I"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="fullRound" value="NO"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="mQJ-Fh-RKa" secondAttribute="trailing" constant="10" id="SFG-x2-WSo"/>
+                <constraint firstAttribute="bottom" secondItem="mQJ-Fh-RKa" secondAttribute="bottom" id="ciO-Dt-80r"/>
+                <constraint firstItem="mQJ-Fh-RKa" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="psy-Ii-zAO"/>
+                <constraint firstItem="mQJ-Fh-RKa" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="sxp-Pw-wjY"/>
+            </constraints>
+            <size key="customSize" width="126" height="55"/>
+            <connections>
+                <outlet property="filterTitleLabel" destination="3Jm-zY-jOY" id="CpX-jM-Rt7"/>
+                <outlet property="filterView" destination="mQJ-Fh-RKa" id="Utt-fk-lqz"/>
+            </connections>
+            <point key="canvasLocation" x="192.75362318840581" y="122.20982142857142"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="CustomBlack">
+            <color red="0.24705882352941178" green="0.24705882352941178" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="CustomWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

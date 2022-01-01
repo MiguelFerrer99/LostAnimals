@@ -41,3 +41,28 @@ public enum TabBarItem: Int {
   case newPost
   case profile
 }
+
+public enum PostType: Int {
+  case lost
+  case found
+  case adopt
+}
+
+public enum AnimalType {
+  case dog
+  case bird
+  case cat
+  case turtle
+  case snake
+  case rabbit
+}
+
+public enum ExploreFilterType: String {
+  case all = "All"
+  case lost = "Lost"
+  case found = "Found"
+  case adopt = "Adopt"
+  case animal = "Animal"
+  case location = "Location"
+  case date = "Date"
+}

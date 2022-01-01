@@ -6,7 +6,7 @@
 //  Copyright © 2021 Rudo. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 final class ExploreViewModel {
   
@@ -17,7 +17,6 @@ final class ExploreViewModel {
   required init(router: ExploreRouter) {
     self.router = router
   }
-  
 }
 
 // MARK: - Life cycle
@@ -33,4 +32,7 @@ extension ExploreViewModel {
 
 // MARK: - Functions
 extension ExploreViewModel {
+  func didPressSavedPosts() {
+    self.router.goToSavedPosts()
+  }
 }

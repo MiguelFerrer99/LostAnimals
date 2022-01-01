@@ -35,4 +35,16 @@ extension NewPostViewModel {
   func didPressDismissButton() {
     self.router.dismissNewPost()
   }
+  
+  func didPressLostButton() {
+    self.router.goToLostNewPost()
+  }
+  
+  func didPressFoundButton() {
+    self.router.goToFoundNewPost()
+  }
+  
+  func didPressAdoptButton() {
+    self.router.goToAdoptNewPost()
+  }
 }

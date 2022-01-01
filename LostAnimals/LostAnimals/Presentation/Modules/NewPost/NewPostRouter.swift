@@ -23,4 +23,16 @@ final class NewPostRouter {
       self.viewController?.dismissCurrentView(completion: nil)
     }
   }
+  
+  func goToLostNewPost() {
+    // TODO: Go to LostNewPostVC
+  }
+  
+  func goToFoundNewPost() {
+    // TODO: Go to FoundNewPostVC
+  }
+  
+  func goToAdoptNewPost() {
+    // TODO: Go to AdoptNewPostVC
+  }
 }

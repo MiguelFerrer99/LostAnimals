@@ -12,12 +12,12 @@
         <scene sceneID="WAU-bV-ny4">
             <objects>
                 <tabBarController storyboardIdentifier="TabBarViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rnE-z2-9hA" customClass="TabBarViewController" customModule="LostAnimals" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dlj-Nx-8CA">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="dlj-Nx-8CA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="CustomGreen"/>
                         <color key="tintColor" name="CustomBlack"/>
-                        <color key="barTintColor" name="CustomBlack"/>
+                        <color key="barTintColor" name="CustomGreen"/>
                         <color key="selectedImageTintColor" name="CustomBlack"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemTintColor">
@@ -81,7 +81,7 @@
     <resources>
         <image name="ExploreSelected" width="40" height="39.5"/>
         <image name="ExploreUnselected" width="40" height="39.5"/>
-        <image name="NewPost" width="40" height="39.5"/>
+        <image name="NewPost" width="40" height="40"/>
         <image name="ProfileSelected" width="40" height="39.5"/>
         <image name="ProfileUnselected" width="40" height="39.5"/>
         <namedColor name="CustomBlack">
