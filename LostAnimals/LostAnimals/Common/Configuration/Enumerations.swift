@@ -20,12 +20,12 @@ public enum SignUpStepLabel: String {
   case socialMediaDetails = "Social media details"
 }
 
-public enum MoveDirection {
+public enum MoveDirection: Int {
   case back
   case next
 }
 
-public enum WhereDoYouLiveComesFrom {
+public enum WhereDoYouLiveComesFrom: String {
   case personalDetails
   case socialMediaDetails
 }
@@ -48,21 +48,22 @@ public enum PostType: Int {
   case adopt
 }
 
-public enum AnimalType {
-  case dog
-  case bird
-  case cat
-  case turtle
-  case snake
-  case rabbit
+public enum AnimalType: String {
+  case dog = "Dog"
+  case bird = "Bird"
+  case cat = "Cat"
+  case turtle = "Turtle"
+  case snake = "Snake"
+  case rabbit = "Rabbit"
+  case other = "Other"
 }
 
-public enum ExploreFilterType: String {
-  case all = "All"
-  case lost = "Lost"
-  case found = "Found"
-  case adopt = "Adopt"
-  case animal = "Animal"
-  case location = "Location"
-  case date = "Date"
+public enum ExploreFilterType: Int {
+  case all
+  case lost
+  case found
+  case adopt
+  case animal
+  case location
+  case date
 }

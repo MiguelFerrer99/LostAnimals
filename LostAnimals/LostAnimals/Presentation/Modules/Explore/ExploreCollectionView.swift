@@ -20,6 +20,7 @@ extension ExploreViewController: UICollectionViewDelegate, UICollectionViewDataS
     switch kind {
     case UICollectionView.elementKindSectionHeader:
       let exploreFiltersHeader = collectionView.dequeue(supplementaryView: ExploreFiltersHeader.self, for: indexPath)
+      exploreFiltersHeader.postFiltersDelegate = self
       return exploreFiltersHeader
     default: assert(false, "Unexpected element kind")
     }
@@ -30,12 +31,12 @@ extension ExploreViewController: UICollectionViewDelegate, UICollectionViewDataS
   }
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return explorePosts.count
+    return HardcodedData.explorePosts.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let post = explorePosts[indexPath.row]
-    let summary = PostCollectionViewCellSummary(postType: post.postType, animalName: post.animalName, animalType: post.animalType, postImage: post.postImages.first)
+    let post = HardcodedData.explorePosts[indexPath.row]
+    let summary = PostCollectionViewCellSummary(postType: post.postType, animal: post.animal, postImage: post.postImages.first)
     let cell = collectionView.dequeue(PostCollectionViewCell.self, for: indexPath)
     cell.display(summary: summary)
     return cell

@@ -31,7 +31,7 @@ class PostCollectionViewCell: UICollectionViewCell, Reusable {
     case .adopt:
       postTypeImageView.image = UIImage(named: "Adopt")
     }
-    switch summary.animalType {
+    switch summary.animal.type {
     case .dog:
       animalTypeImageView.image = UIImage(named: "Dog")
     case .bird:
@@ -44,8 +44,10 @@ class PostCollectionViewCell: UICollectionViewCell, Reusable {
       animalTypeImageView.image = UIImage(named: "Snake")
     case .rabbit:
       animalTypeImageView.image = UIImage(named: "Rabbit")
+    case .other:
+      animalTypeImageView.image = UIImage(systemName: "questionmark.circle.fill")
     }
-    animalNameLabel.text = summary.animalName
+    animalNameLabel.text = summary.animal.name
     postImageView.image = summary.postImage
   }
 }

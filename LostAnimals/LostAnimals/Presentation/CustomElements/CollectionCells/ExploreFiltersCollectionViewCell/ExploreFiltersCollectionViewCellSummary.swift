@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ExploreFiltersCollectionViewCellSummary: Hashable {
+struct ExploreFiltersCollectionViewCellSummary {
   let filterTitle: String
   let filterType: ExploreFilterType
 }

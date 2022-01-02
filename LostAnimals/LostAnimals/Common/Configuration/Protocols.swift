@@ -19,3 +19,7 @@ protocol SignUpStepsDelegate: AnyObject {
   func sendSignUpStep2Data(mail: String, password: String)
   func sendSignUpStep3Data(phonePrefix: String, phone: String, instagram: String?, twitter: String?)
 }
+
+protocol PostFiltersDelegate: AnyObject {
+  func showPostFiltersDelegate(filterType: ExploreFilterType)
+}

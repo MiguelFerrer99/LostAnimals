@@ -23,7 +23,7 @@ final class TabBarRouter {
   }
   
   func goToNewPost() {
-    let viewController = Container.shared.newPostBuilder().build().embeddedInNavigation()
+    let viewController = Container.shared.newPostBuilder().build()
     DispatchQueue.main.async {
       self.viewController?.present(viewController: viewController, completion: nil)
     }

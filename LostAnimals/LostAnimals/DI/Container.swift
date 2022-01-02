@@ -13,6 +13,10 @@ class Container {
 }
 
 extension Container {
+  func animalFilterPopupBuilder() -> AnimalFilterPopupBuilder {
+    return AnimalFilterPopupBuilder()
+  }
+  
   func exploreBuilder() -> ExploreBuilder {
     return ExploreBuilder()
   }

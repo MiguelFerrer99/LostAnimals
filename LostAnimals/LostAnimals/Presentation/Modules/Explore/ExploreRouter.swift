@@ -18,6 +18,22 @@ final class ExploreRouter {
   }
   
   // MARK: - Functions
+  func goToFilterPopup(filterType: ExploreFilterType) {
+    let viewController: ViewController!
+    
+    switch filterType {
+    case .animal:
+      viewController = Container.shared.animalFilterPopupBuilder().build()
+    case .location: return
+    case .date: return
+    default: return
+    }
+    
+    DispatchQueue.main.async {
+      self.viewController?.present(viewController: viewController, completion: nil)
+    }
+  }
+  
   func goToSavedPosts() {
     // TODO: Go to SavedPostsVC
   }

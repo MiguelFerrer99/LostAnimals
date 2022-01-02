@@ -6,11 +6,11 @@
 //  Copyright © 2021 Rudo. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-struct PostCollectionViewCellSummary: Hashable {
+struct PostCollectionViewCellSummary {
   let postType: PostType
-  let animalName: String
-  let animalType: AnimalType
+  let animal: Animal
   let postImage: UIImage?
 }

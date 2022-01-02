@@ -16,11 +16,11 @@ extension TermsAndConditionsViewController: UITableViewDelegate, UITableViewData
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return termsAndConditions.count
+    return Constants.termsAndConditions.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let termAndCondition = termsAndConditions[indexPath.row]
+    let termAndCondition = Constants.termsAndConditions[indexPath.row]
     let summary = TermTableViewCellSummary(title: termAndCondition.title, description: termAndCondition.description)
     let cell = tableView.dequeue(TermTableViewCell.self)
     cell.display(summary: summary)

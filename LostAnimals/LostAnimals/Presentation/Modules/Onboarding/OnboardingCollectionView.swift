@@ -16,11 +16,11 @@ extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDa
   }
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return onboardingStepsInfo.count
+    return Constants.onboardingStepsInfo.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let onboardingStepInfo = onboardingStepsInfo[indexPath.row]
+    let onboardingStepInfo = Constants.onboardingStepsInfo[indexPath.row]
     let summary = OnboardingCollectionViewCellSummary(title: onboardingStepInfo.title, description: onboardingStepInfo.description, image: onboardingStepInfo.image)
     let cell = collectionView.dequeue(OnboardingCollectionViewCell.self, for: indexPath)
     cell.display(summary: summary)

@@ -11,10 +11,8 @@ import UIKit
 
 struct Post {
   let postType: PostType
-  let animalName: String
-  let animalType: AnimalType
+  let animal: Animal
   let postImages: [UIImage]
-  let animalBreed: String
   let lastTimeSeen: Date
   let location: String
   let description: String

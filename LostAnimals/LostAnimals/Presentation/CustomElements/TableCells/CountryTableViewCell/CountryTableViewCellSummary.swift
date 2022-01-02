@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct CountryTableViewCellSummary: Hashable {
+struct CountryTableViewCellSummary {
   let countryName: String
   let dialCode: String
   let comesFrom: WhereDoYouLiveComesFrom

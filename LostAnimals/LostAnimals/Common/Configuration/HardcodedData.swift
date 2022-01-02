@@ -9,17 +9,24 @@
 import Foundation
 import  UIKit
 
-let postAuthor = PostAuthor(name: "Miguel Ferrer Fornali", birthdate: Date(), location: "", image: UIImage())
-let explorePosts = [
-  Post(postType: .lost, animalName: "Pepe", animalType: .dog, postImages: [], animalBreed: "", lastTimeSeen: Date(), location: "", description: "", author: postAuthor, isSaved: false),
-  Post(postType: .lost, animalName: "Pepe", animalType: .dog, postImages: [], animalBreed: "", lastTimeSeen: Date(), location: "", description: "", author: postAuthor, isSaved: false),
-  Post(postType: .lost, animalName: "Pepe", animalType: .dog, postImages: [], animalBreed: "", lastTimeSeen: Date(), location: "", description: "", author: postAuthor, isSaved: false),
-  Post(postType: .lost, animalName: "Pepe", animalType: .dog, postImages: [], animalBreed: "", lastTimeSeen: Date(), location: "", description: "", author: postAuthor, isSaved: false),
-  Post(postType: .lost, animalName: "Pepe", animalType: .dog, postImages: [], animalBreed: "", lastTimeSeen: Date(), location: "", description: "", author: postAuthor, isSaved: false),
-  Post(postType: .lost, animalName: "Pepe", animalType: .dog, postImages: [], animalBreed: "", lastTimeSeen: Date(), location: "", description: "", author: postAuthor, isSaved: false),
-  Post(postType: .lost, animalName: "Pepe", animalType: .dog, postImages: [], animalBreed: "", lastTimeSeen: Date(), location: "", description: "", author: postAuthor, isSaved: false),
-  Post(postType: .lost, animalName: "Pepe", animalType: .dog, postImages: [], animalBreed: "", lastTimeSeen: Date(), location: "", description: "", author: postAuthor, isSaved: false),
-  Post(postType: .lost, animalName: "Pepe", animalType: .dog, postImages: [], animalBreed: "", lastTimeSeen: Date(), location: "", description: "", author: postAuthor, isSaved: false),
-  Post(postType: .lost, animalName: "Pepe", animalType: .dog, postImages: [], animalBreed: "", lastTimeSeen: Date(), location: "", description: "", author: postAuthor, isSaved: false),
-  Post(postType: .lost, animalName: "Pepe", animalType: .dog, postImages: [], animalBreed: "", lastTimeSeen: Date(), location: "", description: "", author: postAuthor, isSaved: false)
-]
+class HardcodedData {
+  static let shared = HardcodedData()
+}
+
+extension HardcodedData {
+  static let postAuthor = PostAuthor(name: "Miguel Ferrer Fornali", birthdate: Date(), location: "", image: UIImage())
+  static let animal = Animal(name: "Pepe", type: .dog, breed: "Labrador")
+  static let explorePosts = [
+    Post(postType: .lost, animal: animal, postImages: [], lastTimeSeen: Date(), location: "", description: "", author: postAuthor, isSaved: false),
+    Post(postType: .lost, animal: animal, postImages: [], lastTimeSeen: Date(), location: "", description: "", author: postAuthor, isSaved: false),
+    Post(postType: .lost, animal: animal, postImages: [], lastTimeSeen: Date(), location: "", description: "", author: postAuthor, isSaved: false),
+    Post(postType: .lost, animal: animal, postImages: [], lastTimeSeen: Date(), location: "", description: "", author: postAuthor, isSaved: false),
+    Post(postType: .lost, animal: animal, postImages: [], lastTimeSeen: Date(), location: "", description: "", author: postAuthor, isSaved: false),
+    Post(postType: .lost, animal: animal, postImages: [], lastTimeSeen: Date(), location: "", description: "", author: postAuthor, isSaved: false),
+    Post(postType: .lost, animal: animal, postImages: [], lastTimeSeen: Date(), location: "", description: "", author: postAuthor, isSaved: false),
+    Post(postType: .lost, animal: animal, postImages: [], lastTimeSeen: Date(), location: "", description: "", author: postAuthor, isSaved: false),
+    Post(postType: .lost, animal: animal, postImages: [], lastTimeSeen: Date(), location: "", description: "", author: postAuthor, isSaved: false),
+    Post(postType: .lost, animal: animal, postImages: [], lastTimeSeen: Date(), location: "", description: "", author: postAuthor, isSaved: false),
+    Post(postType: .lost, animal: animal, postImages: [], lastTimeSeen: Date(), location: "", description: "", author: postAuthor, isSaved: false)
+  ]
+}

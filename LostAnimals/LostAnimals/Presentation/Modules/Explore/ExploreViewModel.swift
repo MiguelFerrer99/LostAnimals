@@ -32,6 +32,10 @@ extension ExploreViewModel {
 
 // MARK: - Functions
 extension ExploreViewModel {
+  func didPressPostsFilterPopup(filterType: ExploreFilterType) {
+    self.router.goToFilterPopup(filterType: filterType)
+  }
+  
   func didPressSavedPosts() {
     self.router.goToSavedPosts()
   }

@@ -17,11 +17,11 @@ extension ExploreFiltersHeader: UICollectionViewDelegate, UICollectionViewDataSo
   }
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return currentExploreFilters.count
+    return Filters.currentExploreFilters.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let currentExploreFilter = currentExploreFilters[indexPath.row]
+    guard let currentExploreFilter = Filters.currentExploreFilters[ExploreFilterType(rawValue: indexPath.row) ?? .all] else { return UICollectionViewCell() }
     let summary = ExploreFiltersCollectionViewCellSummary(filterTitle: currentExploreFilter.filterTitle, filterType: currentExploreFilter.filterType)
     let cell = collectionView.dequeue(ExploreFiltersCollectionViewCell.self, for: indexPath)
     cell.display(summary: summary)
@@ -33,6 +33,31 @@ extension ExploreFiltersHeader: UICollectionViewDelegate, UICollectionViewDataSo
   }
   
   func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-    return true
+    guard let unselectedFilter = Filters.getFilter(from: indexPath.row) else { return false }
+    if unselectedFilter.filterType == .all {
+      deselectFilters()
+      Filters.setExploreFilterValue(exploreFilterType: .all, enabled: true)
+      return true
+    } else {
+      deselectFilter(type: .all)
+      Filters.setExploreFilterValue(exploreFilterType: unselectedFilter.filterType, enabled: true)
+      postFiltersDelegate?.showPostFiltersDelegate(filterType: unselectedFilter.filterType)
+      return true
+    }
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, shouldDeselectItemAt indexPath: IndexPath) -> Bool {
+    guard let selectedFilter = Filters.getFilter(from: indexPath.row), let selectedFilters = collectionView.indexPathsForSelectedItems else { return false }
+    if selectedFilter.filterType == .all {
+      return false
+    } else if selectedFilters.count == 1 {
+      selectFilter(type: .all)
+      Filters.setExploreFilterValue(exploreFilterType: selectedFilter.filterType, enabled: false)
+      return true
+    } else if selectedFilters.count > 1 {
+      Filters.setExploreFilterValue(exploreFilterType: selectedFilter.filterType, enabled: false)
+      return true
+    }
+    return false
   }
 }

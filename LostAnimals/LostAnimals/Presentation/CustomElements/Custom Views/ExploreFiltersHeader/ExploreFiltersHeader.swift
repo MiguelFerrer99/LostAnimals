@@ -13,6 +13,9 @@ class ExploreFiltersHeader: UICollectionReusableView, Reusable {
   // MARK: - IBOutlets
   @IBOutlet weak var filtersCollectionView: UICollectionView!
   
+  // MARK: - Properties
+  weak var postFiltersDelegate: PostFiltersDelegate?
+  
   // MARK: - Life cycle
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -29,6 +32,23 @@ class ExploreFiltersHeader: UICollectionReusableView, Reusable {
   private func preselectAllFilter() {
     filtersCollectionView.performBatchUpdates(nil) { result in
       if result { self.filtersCollectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: true, scrollPosition: .left) }
+    }
+  }
+  
+  func selectFilter(type: ExploreFilterType) {
+    filtersCollectionView.selectItem(at: IndexPath(item: type.rawValue, section: 0), animated: true, scrollPosition: .left)
+    Filters.setExploreFilterValue(exploreFilterType: type, enabled: true)
+  }
+  
+  func deselectFilter(type: ExploreFilterType) {
+    filtersCollectionView.deselectItem(at: IndexPath(item: type.rawValue, section: 0), animated: true)
+    Filters.setExploreFilterValue(exploreFilterType: type, enabled: false)
+  }
+  
+  func deselectFilters() {
+    Filters.currentExploreFilters.forEach { currentExploreFilter in
+      filtersCollectionView.deselectItem(at: IndexPath(item: currentExploreFilter.key.rawValue, section: 0), animated: true)
+      Filters.setExploreFilterValue(exploreFilterType: currentExploreFilter.key, enabled: false)
     }
   }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct TermTableViewCellSummary: Hashable {
+struct TermTableViewCellSummary {
   let title: String
   let description: String
 }

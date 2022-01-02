@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct OnboardingCollectionViewCellSummary: Hashable {
+struct OnboardingCollectionViewCellSummary {
   let title: String
   let description: String
   let image: UIImage

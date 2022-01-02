@@ -57,7 +57,7 @@ final class OnboardingViewController: ViewController {
   }
   
   private func updateOnboardingStepImage() {
-    onboardingImageView.image = onboardingStepsInfo[viewModel.currentOnboardingStep.rawValue].image
+    onboardingImageView.image = Constants.onboardingStepsInfo[viewModel.currentOnboardingStep.rawValue].image
   }
   
   private func moveToNextOnboardingStep() {

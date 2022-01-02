@@ -8,6 +8,6 @@
 
 import UIKit
 
-struct CityTableViewCellSummary: Hashable {
+struct CityTableViewCellSummary {
   let cityName: String
 }

@@ -9,6 +9,6 @@
 import UIKit
 import MapKit
 
-struct AddressTableViewCellSummary: Hashable {
+struct AddressTableViewCellSummary {
   let searchResult: MKLocalSearchCompletion
 }

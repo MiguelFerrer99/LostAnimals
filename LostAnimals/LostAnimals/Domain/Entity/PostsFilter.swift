@@ -11,5 +11,5 @@ import Foundation
 struct PostsFilter {
   let filterTitle: String
   let filterType: ExploreFilterType
-  let enabled: Bool
+  var enabled: Bool
 }
