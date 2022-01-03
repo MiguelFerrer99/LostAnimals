@@ -10,6 +10,16 @@ import Foundation
 
 struct PostsFilter {
   let filterTitle: String
-  let filterType: ExploreFilterType
+  let filterType: FilterType
   var enabled: Bool
+  var animalFilterDog: Bool
+  var animalFilterBird: Bool
+  var animalFilterCat: Bool
+  var animalFilterTurtle: Bool
+  var animalFilterSnake: Bool
+  var animalFilterRabbit: Bool
+  var animalFilterOther: Bool
+  var locationFilterRangeKm: Int?
+  var dateFilterDatesBeforeOf: Date?
+  var dateFilterDatesAfterOf: Date?
 }

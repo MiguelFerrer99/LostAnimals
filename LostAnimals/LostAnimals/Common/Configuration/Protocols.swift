@@ -21,5 +21,5 @@ protocol SignUpStepsDelegate: AnyObject {
 }
 
 protocol PostFiltersDelegate: AnyObject {
-  func showPostFiltersDelegate(filterType: ExploreFilterType)
+  func showPostFiltersDelegate(filterType: FilterType)
 }

@@ -53,7 +53,7 @@ func showAlert(title: String, message: String  = "", completion: (() -> Void)? =
   topMostController()?.present(viewController: alert)
 }
 
-func showFilterPopup(filterType: ExploreFilterType) {
+func showFilterPopup(filterType: FilterType) {
   if topMostController() is UIAlertController { return }
   
   var viewController = ViewController()

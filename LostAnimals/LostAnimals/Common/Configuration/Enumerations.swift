@@ -58,7 +58,7 @@ public enum AnimalType: String {
   case other = "Other"
 }
 
-public enum ExploreFilterType: Int {
+public enum FilterType: Int {
   case all
   case lost
   case found

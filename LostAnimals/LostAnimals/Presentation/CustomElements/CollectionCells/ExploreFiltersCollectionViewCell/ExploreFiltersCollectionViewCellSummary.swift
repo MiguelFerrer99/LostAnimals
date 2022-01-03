@@ -10,5 +10,5 @@ import Foundation
 
 struct ExploreFiltersCollectionViewCellSummary {
   let filterTitle: String
-  let filterType: ExploreFilterType
+  let filterType: FilterType
 }

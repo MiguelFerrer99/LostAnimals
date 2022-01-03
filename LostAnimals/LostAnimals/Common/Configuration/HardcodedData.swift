@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import  UIKit
+import UIKit
 
 class HardcodedData {
   static let shared = HardcodedData()
@@ -16,7 +16,7 @@ class HardcodedData {
 extension HardcodedData {
   static let postAuthor = PostAuthor(name: "Miguel Ferrer Fornali", birthdate: Date(), location: "", image: UIImage())
   static let animal = Animal(name: "Pepe", type: .dog, breed: "Labrador")
-  static let explorePosts = [
+  static let explorePosts: [Post] = [
     Post(postType: .lost, animal: animal, postImages: [], lastTimeSeen: Date(), location: "", description: "", author: postAuthor, isSaved: false),
     Post(postType: .lost, animal: animal, postImages: [], lastTimeSeen: Date(), location: "", description: "", author: postAuthor, isSaved: false),
     Post(postType: .lost, animal: animal, postImages: [], lastTimeSeen: Date(), location: "", description: "", author: postAuthor, isSaved: false),

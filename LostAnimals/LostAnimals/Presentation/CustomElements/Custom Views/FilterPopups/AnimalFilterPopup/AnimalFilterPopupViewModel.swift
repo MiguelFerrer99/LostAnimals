@@ -12,6 +12,7 @@ final class AnimalFilterPopupViewModel {
   
   // MARK: - Properties
   private let router: AnimalFilterPopupRouter
+  var selectedAnimalTypes: [AnimalType] = []
   
   // MARK: - Init
   required init(router: AnimalFilterPopupRouter) {
@@ -33,6 +34,18 @@ extension AnimalFilterPopupViewModel {
 // MARK: - Functions
 extension AnimalFilterPopupViewModel {
   func didPressApplyFilterButton() {
+    Filters.setFilterValue(filterType: .all, enabled: false)
+    selectedAnimalTypes.forEach { selectedAnimalType in
+      Filters.setFilterValue(filterType: .animal, enabled: true,
+                             animalFilterDog: selectedAnimalType == .dog,
+                             animalFilterBird: selectedAnimalType == .bird,
+                             animalFilterCat: selectedAnimalType == .cat,
+                             animalFilterTurtle: selectedAnimalType == .turtle,
+                             animalFilterSnake: selectedAnimalType == .snake,
+                             animalFilterRabbit: selectedAnimalType == .rabbit,
+                             animalFilterOther: selectedAnimalType == .other)
+    }
+    NotificationCenter.default.post(name: .UpdateFiltersUI, object: nil)
     self.router.dismissAnimalFilterPopup()
   }
   

@@ -20,6 +20,8 @@ class ExploreFiltersHeader: UICollectionReusableView, Reusable {
   override func awakeFromNib() {
     super.awakeFromNib()
     
+    NotificationCenter.default.addObserver(self, selector: #selector(updateFiltersUI), name: .UpdateFiltersUI, object: nil)
+    
     setupUI()
   }
   
@@ -35,20 +37,30 @@ class ExploreFiltersHeader: UICollectionReusableView, Reusable {
     }
   }
   
-  func selectFilter(type: ExploreFilterType) {
+  func selectFilter(type: FilterType) {
     filtersCollectionView.selectItem(at: IndexPath(item: type.rawValue, section: 0), animated: true, scrollPosition: .left)
-    Filters.setExploreFilterValue(exploreFilterType: type, enabled: true)
+    Filters.setFilterValue(filterType: type, enabled: true)
   }
   
-  func deselectFilter(type: ExploreFilterType) {
+  func deselectFilter(type: FilterType) {
     filtersCollectionView.deselectItem(at: IndexPath(item: type.rawValue, section: 0), animated: true)
-    Filters.setExploreFilterValue(exploreFilterType: type, enabled: false)
+    Filters.setFilterValue(filterType: type, enabled: false)
   }
   
   func deselectFilters() {
-    Filters.currentExploreFilters.forEach { currentExploreFilter in
+    Filters.currentFilters.forEach { currentExploreFilter in
       filtersCollectionView.deselectItem(at: IndexPath(item: currentExploreFilter.key.rawValue, section: 0), animated: true)
-      Filters.setExploreFilterValue(exploreFilterType: currentExploreFilter.key, enabled: false)
+      Filters.setFilterValue(filterType: currentExploreFilter.key, enabled: false)
+    }
+  }
+  
+  @objc private func updateFiltersUI() {
+    Filters.currentFilters.forEach { currentFilter in
+      if currentFilter.value.enabled {
+        selectFilter(type: currentFilter.key)
+      } else {
+        deselectFilter(type: currentFilter.key)
+      }
     }
   }
 }

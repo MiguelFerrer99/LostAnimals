@@ -18,14 +18,16 @@ final class ExploreRouter {
   }
   
   // MARK: - Functions
-  func goToFilterPopup(filterType: ExploreFilterType) {
+  func goToFilterPopup(filterType: FilterType) {
     let viewController: ViewController!
     
     switch filterType {
     case .animal:
       viewController = Container.shared.animalFilterPopupBuilder().build()
-    case .location: return
-    case .date: return
+    case .location:
+      viewController = Container.shared.locationFilterPopupBuilder().build()
+    case .date:
+      viewController = Container.shared.dateFilterPopupBuilder().build()
     default: return
     }
     

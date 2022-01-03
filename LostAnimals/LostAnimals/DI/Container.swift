@@ -17,12 +17,20 @@ extension Container {
     return AnimalFilterPopupBuilder()
   }
   
+  func dateFilterPopupBuilder() -> DateFilterPopupBuilder {
+    return DateFilterPopupBuilder()
+  }
+  
   func exploreBuilder() -> ExploreBuilder {
     return ExploreBuilder()
   }
   
   func forgotPasswordBuilder() -> ForgotPasswordBuilder {
     return ForgotPasswordBuilder()
+  }
+  
+  func locationFilterPopupBuilder() -> LocationFilterPopupBuilder {
+    return LocationFilterPopupBuilder()
   }
   
   func loginBuilder() -> LoginBuilder {

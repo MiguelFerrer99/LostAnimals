@@ -17,11 +17,11 @@ extension ExploreFiltersHeader: UICollectionViewDelegate, UICollectionViewDataSo
   }
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return Filters.currentExploreFilters.count
+    return Filters.currentFilters.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    guard let currentExploreFilter = Filters.currentExploreFilters[ExploreFilterType(rawValue: indexPath.row) ?? .all] else { return UICollectionViewCell() }
+    guard let currentExploreFilter = Filters.currentFilters[FilterType(rawValue: indexPath.row) ?? .all] else { return UICollectionViewCell() }
     let summary = ExploreFiltersCollectionViewCellSummary(filterTitle: currentExploreFilter.filterTitle, filterType: currentExploreFilter.filterType)
     let cell = collectionView.dequeue(ExploreFiltersCollectionViewCell.self, for: indexPath)
     cell.display(summary: summary)
@@ -36,13 +36,15 @@ extension ExploreFiltersHeader: UICollectionViewDelegate, UICollectionViewDataSo
     guard let unselectedFilter = Filters.getFilter(from: indexPath.row) else { return false }
     if unselectedFilter.filterType == .all {
       deselectFilters()
-      Filters.setExploreFilterValue(exploreFilterType: .all, enabled: true)
+      Filters.setFilterValue(filterType: .all, enabled: true)
+      return true
+    } else if (unselectedFilter.filterType == .lost) || (unselectedFilter.filterType == .found) || (unselectedFilter.filterType == .adopt) {
+      deselectFilter(type: .all)
+      Filters.setFilterValue(filterType: unselectedFilter.filterType, enabled: true)
       return true
     } else {
-      deselectFilter(type: .all)
-      Filters.setExploreFilterValue(exploreFilterType: unselectedFilter.filterType, enabled: true)
       postFiltersDelegate?.showPostFiltersDelegate(filterType: unselectedFilter.filterType)
-      return true
+      return false
     }
   }
   
@@ -52,12 +54,11 @@ extension ExploreFiltersHeader: UICollectionViewDelegate, UICollectionViewDataSo
       return false
     } else if selectedFilters.count == 1 {
       selectFilter(type: .all)
-      Filters.setExploreFilterValue(exploreFilterType: selectedFilter.filterType, enabled: false)
+      Filters.setFilterValue(filterType: selectedFilter.filterType, enabled: false)
       return true
     } else if selectedFilters.count > 1 {
-      Filters.setExploreFilterValue(exploreFilterType: selectedFilter.filterType, enabled: false)
+      Filters.setFilterValue(filterType: selectedFilter.filterType, enabled: false)
       return true
-    }
-    return false
+    } else { return false }
   }
 }

@@ -25,17 +25,17 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQF-Es-Ttf">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
                                     <action selector="dismissButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="wrE-NR-zei"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AkG-cS-W2v" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
-                                <rect key="frame" x="20" y="483.5" width="374" height="358.5"/>
+                                <rect key="frame" x="20" y="480" width="374" height="362"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7h4-pC-Y2Q">
-                                        <rect key="frame" x="40" y="30" width="294" height="293.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="7h4-pC-Y2Q">
+                                        <rect key="frame" x="40" y="30" width="294" height="297"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the animals you want" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8JU-Lp-TMr">
                                                 <rect key="frame" x="0.0" y="0.0" width="294" height="22"/>
@@ -43,14 +43,20 @@
                                                 <color key="textColor" name="CustomWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oAA-H2-DPZ">
-                                                <rect key="frame" x="0.0" y="32" width="294" height="217.5"/>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="none" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oAA-H2-DPZ">
+                                                <rect key="frame" x="0.0" y="42" width="294" height="200"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="oMb-u5-5Im"/>
+                                                </constraints>
                                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </tableView>
                                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebq-bg-4g6" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="259.5" width="294" height="34"/>
+                                                <rect key="frame" x="0.0" y="262" width="294" height="35"/>
                                                 <color key="backgroundColor" name="CustomGreen"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="mHK-P4-Zlg"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="16"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Apply filter">
@@ -97,7 +103,6 @@
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="wQF-Es-Ttf" secondAttribute="bottom" id="7Rd-5T-XbB"/>
-                            <constraint firstItem="AkG-cS-W2v" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.4" id="G4P-55-jiG"/>
                             <constraint firstItem="wQF-Es-Ttf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Ng5-Uq-FPv"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="AkG-cS-W2v" secondAttribute="bottom" constant="20" id="Vta-H7-h2Y"/>
                             <constraint firstItem="wQF-Es-Ttf" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="eqM-2k-INh"/>
