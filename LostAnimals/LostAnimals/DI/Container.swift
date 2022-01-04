@@ -45,8 +45,20 @@ extension Container {
     return OnboardingBuilder()
   }
   
+  func postBuilder() -> PostBuilder {
+    return PostBuilder()
+  }
+  
+  func postOptionsPopupBuilder() -> PostOptionsPopupBuilder {
+    return PostOptionsPopupBuilder()
+  }
+  
   func profileBuilder() -> ProfileBuilder {
     return ProfileBuilder()
+  }
+  
+  func savedPostsBuilder() -> SavedPostsBuilder {
+    return SavedPostsBuilder()
   }
   
   func signupBuilder() -> SignUpBuilder {

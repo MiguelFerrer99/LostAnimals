@@ -37,19 +37,18 @@ class ExploreFiltersHeader: UICollectionReusableView, Reusable {
     }
   }
   
-  func selectFilter(type: FilterType) {
-    filtersCollectionView.selectItem(at: IndexPath(item: type.rawValue, section: 0), animated: true, scrollPosition: .left)
-    Filters.setFilterValue(filterType: type, enabled: true)
+  private func selectFilter(type: FilterType) {
+    let indexPath = IndexPath(item: type.rawValue, section: 0)
+    filtersCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
   }
   
-  func deselectFilter(type: FilterType) {
-    filtersCollectionView.deselectItem(at: IndexPath(item: type.rawValue, section: 0), animated: true)
-    Filters.setFilterValue(filterType: type, enabled: false)
+  private func deselectFilter(type: FilterType) {
+    let indexPath = IndexPath(item: type.rawValue, section: 0)
+    filtersCollectionView.deselectItem(at: indexPath, animated: true)
   }
   
-  func deselectFilters() {
+  func disableFilters() {
     Filters.currentFilters.forEach { currentExploreFilter in
-      filtersCollectionView.deselectItem(at: IndexPath(item: currentExploreFilter.key.rawValue, section: 0), animated: true)
       Filters.setFilterValue(filterType: currentExploreFilter.key, enabled: false)
     }
   }

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "ExploreSelected-1.png",
+      "filename" : "SavePostFilled.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "ExploreSelected.png",
+      "filename" : "SavePostFilled-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "ExploreSelected-2.png",
+      "filename" : "SavePostFilled-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

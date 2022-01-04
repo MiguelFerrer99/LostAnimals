@@ -1,18 +1,18 @@
 //
-//  ExploreRefreshControl.swift
+//  SavedPostsRefreshControl.swift
 //  LostAnimals
 //
-//  Created by Miguel Ferrer Fornali on 1/1/22.
+//  Created by Miguel Ferrer Fornali on 3/1/22.
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
 import UIKit
 
-extension ExploreViewController {
+extension SavedPostsViewController {
   func configureRefreshControl(_ refreshControl: UIRefreshControl) {
     refreshControl.tintColor = .customBlack
     refreshControl.addTarget(self, action: #selector(refreshPosts), for: .valueChanged)
-    postsCollectionView.addSubview(refreshControl)
+    savedPostsCollectionView.addSubview(refreshControl)
   }
   
   @objc private func refreshPosts() {

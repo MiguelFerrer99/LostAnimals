@@ -1,14 +1,14 @@
 //
-//  ExploreCollectionView.swift
+//  SavedPostsCollectionView.swift
 //  LostAnimals
 //
-//  Created by Miguel Ferrer Fornali on 31/12/21.
-//  Copyright © 2021 Rudo. All rights reserved.
+//  Created by Miguel Ferrer Fornali on 3/1/22.
+//  Copyright © 2022 Rudo. All rights reserved.
 //
 
 import UIKit
 
-extension ExploreViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension SavedPostsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
   func configureCollectionView(_ collectionView: UICollectionView) {
     collectionView.delegate = self
     collectionView.dataSource = self

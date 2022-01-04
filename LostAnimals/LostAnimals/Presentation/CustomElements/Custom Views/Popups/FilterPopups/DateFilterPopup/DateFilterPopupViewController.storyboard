@@ -75,8 +75,7 @@
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Wp-ei-QCc">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="208" height="45"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                <state key="normal" title="Button"/>
-                                                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                 <connections>
                                                                                     <action selector="postsPreviousToButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="btW-oU-W9x"/>
                                                                                 </connections>
@@ -142,8 +141,7 @@
                                                                             </stackView>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icJ-aE-Vtk">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="208" height="45"/>
-                                                                                <state key="normal" title="Button"/>
-                                                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                 <connections>
                                                                                     <action selector="postsAfterButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="GPk-Uz-e5g"/>
                                                                                 </connections>

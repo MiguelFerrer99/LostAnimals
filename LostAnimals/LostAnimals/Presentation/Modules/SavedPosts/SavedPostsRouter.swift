@@ -1,14 +1,14 @@
 //
-//  ExploreRouter.swift
+//  SavedPostsRouter.swift
 //  LostAnimals
 //
-//  Created by Miguel Ferrer Fornali on 29/12/21.
-//  Copyright © 2021 Rudo. All rights reserved.
+//  Created by Miguel Ferrer Fornali on 3/1/22.
+//  Copyright © 2022 Rudo. All rights reserved.
 //
 
 import UIKit
 
-final class ExploreRouter {
+final class SavedPostsRouter {
   // MARK: - Properties
   private weak var viewController: ViewController?
   
@@ -33,13 +33,6 @@ final class ExploreRouter {
     
     DispatchQueue.main.async {
       self.viewController?.present(viewController: viewController, completion: nil)
-    }
-  }
-  
-  func goToSavedPosts() {
-    let viewController = Container.shared.savedPostsBuilder().build()
-    DispatchQueue.main.async {
-      self.viewController?.push(viewController: viewController)
     }
   }
   

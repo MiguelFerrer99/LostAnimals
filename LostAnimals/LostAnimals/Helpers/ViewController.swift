@@ -69,8 +69,8 @@ class ViewController: UIViewController {
     navigationItem.title = navBarTitle
     navigationItem.backButtonTitle = ""
     navigationItem.setHidesBackButton(hideBackButton, animated: true)
-    navigationItem.rightBarButtonItems = navBarRightButtons
     navigationItem.leftBarButtonItems = navBarLeftButtons
+    navigationItem.rightBarButtonItems = navBarRightButtons
     
     NotificationCenter.default.addObserver(self, selector: #selector(didBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)

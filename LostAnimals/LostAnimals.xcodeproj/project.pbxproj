@@ -12,6 +12,16 @@
 		31981E49241919D300D25074 /* CustomTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31981E48241919D300D25074 /* CustomTextField.xib */; };
 		31981E4B24191A4500D25074 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31981E4A24191A4500D25074 /* CustomTextField.swift */; };
 		31981E4D24191C2F00D25074 /* CustomTextField-Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31981E4C24191C2F00D25074 /* CustomTextField-Models.swift */; };
+		4100A0ED278372110049EEF0 /* PostRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4100A0E8278372110049EEF0 /* PostRouter.swift */; };
+		4100A0EE278372110049EEF0 /* PostViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4100A0E9278372110049EEF0 /* PostViewController.storyboard */; };
+		4100A0EF278372110049EEF0 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4100A0EA278372110049EEF0 /* PostViewController.swift */; };
+		4100A0F0278372110049EEF0 /* PostBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4100A0EB278372110049EEF0 /* PostBuilder.swift */; };
+		4100A0F1278372110049EEF0 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4100A0EC278372110049EEF0 /* PostViewModel.swift */; };
+		4100A0FA2783AE640049EEF0 /* PostOptionsPopupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4100A0F52783AE640049EEF0 /* PostOptionsPopupRouter.swift */; };
+		4100A0FB2783AE640049EEF0 /* PostOptionsPopupViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4100A0F62783AE640049EEF0 /* PostOptionsPopupViewController.storyboard */; };
+		4100A0FC2783AE640049EEF0 /* PostOptionsPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4100A0F72783AE640049EEF0 /* PostOptionsPopupViewController.swift */; };
+		4100A0FD2783AE640049EEF0 /* PostOptionsPopupBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4100A0F82783AE640049EEF0 /* PostOptionsPopupBuilder.swift */; };
+		4100A0FE2783AE640049EEF0 /* PostOptionsPopupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4100A0F92783AE640049EEF0 /* PostOptionsPopupViewModel.swift */; };
 		4103944E2770D56B00A1CC5C /* WhereCanWeFindYouMapkit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4103944D2770D56B00A1CC5C /* WhereCanWeFindYouMapkit.swift */; };
 		4108D8D12762276800880E0B /* SignUpProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4108D8D02762276800880E0B /* SignUpProtocols.swift */; };
 		4108D8D32762286400880E0B /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4108D8D22762286400880E0B /* Enumerations.swift */; };
@@ -169,6 +179,14 @@
 		41CD1118278350F300257B2B /* EmptyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CD1116278350F300257B2B /* EmptyCollectionViewCell.swift */; };
 		41CD1119278350F300257B2B /* EmptyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41CD1117278350F300257B2B /* EmptyCollectionViewCell.xib */; };
 		41CD111B2783510700257B2B /* EmptyCollectionViewCellSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CD111A2783510700257B2B /* EmptyCollectionViewCellSummary.swift */; };
+		41CD112227835C2200257B2B /* SavedPostsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CD111D27835C2200257B2B /* SavedPostsRouter.swift */; };
+		41CD112327835C2200257B2B /* SavedPostsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41CD111E27835C2200257B2B /* SavedPostsViewController.storyboard */; };
+		41CD112427835C2200257B2B /* SavedPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CD111F27835C2200257B2B /* SavedPostsViewController.swift */; };
+		41CD112527835C2200257B2B /* SavedPostsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CD112027835C2200257B2B /* SavedPostsBuilder.swift */; };
+		41CD112627835C2200257B2B /* SavedPostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CD112127835C2200257B2B /* SavedPostsViewModel.swift */; };
+		41CD112827835F0600257B2B /* SavedPostsRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CD112727835F0600257B2B /* SavedPostsRefreshControl.swift */; };
+		41CD112A27835F3F00257B2B /* SavedPostsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CD112927835F3F00257B2B /* SavedPostsProtocols.swift */; };
+		41CD112C27835F6500257B2B /* SavedPostsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CD112B27835F6500257B2B /* SavedPostsCollectionView.swift */; };
 		41CDA4302780DD000009AB55 /* ExploreRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CDA42F2780DD000009AB55 /* ExploreRefreshControl.swift */; };
 		41CDA4322780E0D60009AB55 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CDA4312780E0D60009AB55 /* Post.swift */; };
 		41CDA4342780E21C0009AB55 /* PostAuthor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CDA4332780E21C0009AB55 /* PostAuthor.swift */; };
@@ -215,6 +233,16 @@
 		31981E48241919D300D25074 /* CustomTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextField.xib; sourceTree = "<group>"; };
 		31981E4A24191A4500D25074 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		31981E4C24191C2F00D25074 /* CustomTextField-Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomTextField-Models.swift"; sourceTree = "<group>"; };
+		4100A0E8278372110049EEF0 /* PostRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRouter.swift; sourceTree = "<group>"; };
+		4100A0E9278372110049EEF0 /* PostViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostViewController.storyboard; sourceTree = "<group>"; };
+		4100A0EA278372110049EEF0 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		4100A0EB278372110049EEF0 /* PostBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostBuilder.swift; sourceTree = "<group>"; };
+		4100A0EC278372110049EEF0 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		4100A0F52783AE640049EEF0 /* PostOptionsPopupRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostOptionsPopupRouter.swift; sourceTree = "<group>"; };
+		4100A0F62783AE640049EEF0 /* PostOptionsPopupViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostOptionsPopupViewController.storyboard; sourceTree = "<group>"; };
+		4100A0F72783AE640049EEF0 /* PostOptionsPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostOptionsPopupViewController.swift; sourceTree = "<group>"; };
+		4100A0F82783AE640049EEF0 /* PostOptionsPopupBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostOptionsPopupBuilder.swift; sourceTree = "<group>"; };
+		4100A0F92783AE640049EEF0 /* PostOptionsPopupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostOptionsPopupViewModel.swift; sourceTree = "<group>"; };
 		4103944D2770D56B00A1CC5C /* WhereCanWeFindYouMapkit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereCanWeFindYouMapkit.swift; sourceTree = "<group>"; };
 		4104A8CF273848AA00F5946B /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		4104A8D0273848AB00F5946B /* Nunito-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
@@ -372,6 +400,14 @@
 		41CD1116278350F300257B2B /* EmptyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCollectionViewCell.swift; sourceTree = "<group>"; };
 		41CD1117278350F300257B2B /* EmptyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyCollectionViewCell.xib; sourceTree = "<group>"; };
 		41CD111A2783510700257B2B /* EmptyCollectionViewCellSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCollectionViewCellSummary.swift; sourceTree = "<group>"; };
+		41CD111D27835C2200257B2B /* SavedPostsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPostsRouter.swift; sourceTree = "<group>"; };
+		41CD111E27835C2200257B2B /* SavedPostsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SavedPostsViewController.storyboard; sourceTree = "<group>"; };
+		41CD111F27835C2200257B2B /* SavedPostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPostsViewController.swift; sourceTree = "<group>"; };
+		41CD112027835C2200257B2B /* SavedPostsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPostsBuilder.swift; sourceTree = "<group>"; };
+		41CD112127835C2200257B2B /* SavedPostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPostsViewModel.swift; sourceTree = "<group>"; };
+		41CD112727835F0600257B2B /* SavedPostsRefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPostsRefreshControl.swift; sourceTree = "<group>"; };
+		41CD112927835F3F00257B2B /* SavedPostsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPostsProtocols.swift; sourceTree = "<group>"; };
+		41CD112B27835F6500257B2B /* SavedPostsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPostsCollectionView.swift; sourceTree = "<group>"; };
 		41CDA42F2780DD000009AB55 /* ExploreRefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreRefreshControl.swift; sourceTree = "<group>"; };
 		41CDA4312780E0D60009AB55 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		41CDA4332780E21C0009AB55 /* PostAuthor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAuthor.swift; sourceTree = "<group>"; };
@@ -466,7 +502,7 @@
 		31981E46241919BD00D25074 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				41CD10E4278217FC00257B2B /* FilterPopups */,
+				4100A0F42783AE4B0049EEF0 /* Popups */,
 				31981E47241919C400D25074 /* CustomTextField */,
 				4186AC83277F6F0B009C07E2 /* ExploreFiltersHeader */,
 			);
@@ -481,6 +517,49 @@
 				31981E4C24191C2F00D25074 /* CustomTextField-Models.swift */,
 			);
 			path = CustomTextField;
+			sourceTree = "<group>";
+		};
+		4100A0E7278371FF0049EEF0 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				4100A0E9278372110049EEF0 /* PostViewController.storyboard */,
+				4100A0E8278372110049EEF0 /* PostRouter.swift */,
+				4100A0EA278372110049EEF0 /* PostViewController.swift */,
+				4100A0EB278372110049EEF0 /* PostBuilder.swift */,
+				4100A0EC278372110049EEF0 /* PostViewModel.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		4100A0F2278393C60049EEF0 /* SignUpCollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				4114ABCF275F951F00F1AB01 /* AccountDetailsCollectionViewCell */,
+				4114ABCE275F94C100F1AB01 /* PersonalDetailsCollectionViewCell */,
+				4114ABD4275F963F00F1AB01 /* SocialMediaDetailsCollectionViewCell */,
+			);
+			path = SignUpCollectionViewCells;
+			sourceTree = "<group>";
+		};
+		4100A0F32783AE440049EEF0 /* PostOptionsPopup */ = {
+			isa = PBXGroup;
+			children = (
+				4100A0F62783AE640049EEF0 /* PostOptionsPopupViewController.storyboard */,
+				4100A0F52783AE640049EEF0 /* PostOptionsPopupRouter.swift */,
+				4100A0F72783AE640049EEF0 /* PostOptionsPopupViewController.swift */,
+				4100A0F82783AE640049EEF0 /* PostOptionsPopupBuilder.swift */,
+				4100A0F92783AE640049EEF0 /* PostOptionsPopupViewModel.swift */,
+			);
+			path = PostOptionsPopup;
+			sourceTree = "<group>";
+		};
+		4100A0F42783AE4B0049EEF0 /* Popups */ = {
+			isa = PBXGroup;
+			children = (
+				41CD10E4278217FC00257B2B /* FilterPopups */,
+				4100A0F32783AE440049EEF0 /* PostOptionsPopup */,
+			);
+			path = Popups;
 			sourceTree = "<group>";
 		};
 		4104A8CE2738489500F5946B /* Fonts */ = {
@@ -517,13 +596,11 @@
 		4114ABC9275F948200F1AB01 /* CollectionCells */ = {
 			isa = PBXGroup;
 			children = (
-				4114ABCF275F951F00F1AB01 /* AccountDetailsCollectionViewCell */,
+				4100A0F2278393C60049EEF0 /* SignUpCollectionViewCells */,
 				41CD1115278350CA00257B2B /* EmptyCollectionViewCell */,
 				4186AC8E277F7769009C07E2 /* ExploreFiltersCollectionViewCell */,
 				4160E714277BA36500C7066F /* OnboardingCollectionViewCell */,
-				4114ABCE275F94C100F1AB01 /* PersonalDetailsCollectionViewCell */,
 				41B9CE6E277F41B700966509 /* PostCollectionViewCell */,
-				4114ABD4275F963F00F1AB01 /* SocialMediaDetailsCollectionViewCell */,
 			);
 			path = CollectionCells;
 			sourceTree = "<group>";
@@ -706,7 +783,9 @@
 				411C7F68274BA8CB00C9710A /* Login */,
 				417B85F7277D08FA0051B8CF /* NewPost */,
 				4160E707277B9E8400C7066F /* Onboarding */,
+				4100A0E7278371FF0049EEF0 /* Post */,
 				417B8619277D27180051B8CF /* Profile */,
+				41CD111C27835C0200257B2B /* SavedPosts */,
 				41B75621275EE4B000C00E03 /* SignUp */,
 				413987092737FA2600C243F4 /* Startup */,
 				418E2335277CAFA0008BB92E /* TabBar */,
@@ -890,6 +969,21 @@
 				41CD111A2783510700257B2B /* EmptyCollectionViewCellSummary.swift */,
 			);
 			path = EmptyCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		41CD111C27835C0200257B2B /* SavedPosts */ = {
+			isa = PBXGroup;
+			children = (
+				41CD111E27835C2200257B2B /* SavedPostsViewController.storyboard */,
+				41CD111D27835C2200257B2B /* SavedPostsRouter.swift */,
+				41CD111F27835C2200257B2B /* SavedPostsViewController.swift */,
+				41CD112027835C2200257B2B /* SavedPostsBuilder.swift */,
+				41CD112127835C2200257B2B /* SavedPostsViewModel.swift */,
+				41CD112B27835F6500257B2B /* SavedPostsCollectionView.swift */,
+				41CD112727835F0600257B2B /* SavedPostsRefreshControl.swift */,
+				41CD112927835F3F00257B2B /* SavedPostsProtocols.swift */,
+			);
+			path = SavedPosts;
 			sourceTree = "<group>";
 		};
 		41E0005D275A5B69003CAF90 /* Domain */ = {
@@ -1154,6 +1248,7 @@
 				41871962275BFA6D00C993BC /* Nunito-ExtraLight.ttf in Resources */,
 				41871963275BFA6D00C993BC /* Nunito-ExtraLightItalic.ttf in Resources */,
 				41871964275BFA6D00C993BC /* Nunito-Italic.ttf in Resources */,
+				41CD112327835C2200257B2B /* SavedPostsViewController.storyboard in Resources */,
 				41871965275BFA6D00C993BC /* Nunito-Light.ttf in Resources */,
 				4160E711277B9EA700C7066F /* OnboardingViewController.storyboard in Resources */,
 				4186AC87277F6F57009C07E2 /* ExploreFiltersHeader.xib in Resources */,
@@ -1166,6 +1261,7 @@
 				41871969275BFA6D00C993BC /* Nunito-SemiBoldItalic.ttf in Resources */,
 				4186AC92277F77EF009C07E2 /* ExploreFiltersCollectionViewCell.xib in Resources */,
 				4114ABD3275F960200F1AB01 /* AccountDetailsCollectionViewCell.xib in Resources */,
+				4100A0EE278372110049EEF0 /* PostViewController.storyboard in Resources */,
 				41B7562B275EE50900C00E03 /* SignUpViewController.storyboard in Resources */,
 				41CD11042783244700257B2B /* LocationFilterPopupViewController.storyboard in Resources */,
 				41CD1119278350F300257B2B /* EmptyCollectionViewCell.xib in Resources */,
@@ -1184,6 +1280,7 @@
 				413987152738052C00C243F4 /* StartupViewController.storyboard in Resources */,
 				3147D623241906FD00E741D3 /* Assets.xcassets in Resources */,
 				418E2345277CB641008BB92E /* TabBarViewController.storyboard in Resources */,
+				4100A0FB2783AE640049EEF0 /* PostOptionsPopupViewController.storyboard in Resources */,
 				410B31F3276B32C300CE4180 /* Countries.json in Resources */,
 				41CD10F8278222F200257B2B /* AnimalFilterTableViewCell.xib in Resources */,
 				411C7F72274BA91300C9710A /* LoginViewController.storyboard in Resources */,
@@ -1202,6 +1299,8 @@
 				41CDA43C2780E6930009AB55 /* PostsFilter.swift in Sources */,
 				4114ABCC275F94B400F1AB01 /* PersonalDetailsCollectionViewCell.swift in Sources */,
 				417B8623277D27380051B8CF /* ProfileViewModel.swift in Sources */,
+				4100A0FC2783AE640049EEF0 /* PostOptionsPopupViewController.swift in Sources */,
+				41CD112C27835F6500257B2B /* SavedPostsCollectionView.swift in Sources */,
 				411C7F6E274BA8FE00C9710A /* LoginViewController.swift in Sources */,
 				4186AC91277F77EF009C07E2 /* ExploreFiltersCollectionViewCell.swift in Sources */,
 				417B8609277D1F1C0051B8CF /* NewPostRouter.swift in Sources */,
@@ -1209,6 +1308,7 @@
 				CCB0207626A6F12000214CB9 /* String.swift in Sources */,
 				4160E701277B99FB00C7066F /* TermsAndConditionsRouter.swift in Sources */,
 				415E59852763F28C009A013E /* PersonalDetailsCollectionViewCellViewModel.swift in Sources */,
+				4100A0FD2783AE640049EEF0 /* PostOptionsPopupBuilder.swift in Sources */,
 				4160E70E277B9E9B00C7066F /* OnboardingBuilder.swift in Sources */,
 				41BFE177276618E400AC5570 /* CityTableViewCellSummary.swift in Sources */,
 				411C7F6F274BA8FE00C9710A /* LoginBuilder.swift in Sources */,
@@ -1221,6 +1321,8 @@
 				415E59932764F1F8009A013E /* WhereDoYouLiveCitiesViewModel.swift in Sources */,
 				943CE5FD2546DFBC00CA93AA /* CustomView.swift in Sources */,
 				418E2340277CB619008BB92E /* TabBarRouter.swift in Sources */,
+				4100A0EF278372110049EEF0 /* PostViewController.swift in Sources */,
+				41CD112627835C2200257B2B /* SavedPostsViewModel.swift in Sources */,
 				945B15AC25595DC9003A65E0 /* TableParent.swift in Sources */,
 				4108D8D32762286400880E0B /* Enumerations.swift in Sources */,
 				4114ABD2275F960200F1AB01 /* AccountDetailsCollectionViewCell.swift in Sources */,
@@ -1228,6 +1330,7 @@
 				4186AC94277F78FB009C07E2 /* ExploreFiltersCollectionViewCellSummary.swift in Sources */,
 				41CD11072783244700257B2B /* LocationFilterPopupViewModel.swift in Sources */,
 				4139870F2737FA3500C243F4 /* StartupViewController.swift in Sources */,
+				4100A0F0278372110049EEF0 /* PostBuilder.swift in Sources */,
 				945B15BD25595DC9003A65E0 /* Cache.swift in Sources */,
 				416D1CE927751BFB00C75546 /* SocialMediaDetailsCollectionViewCellViewModel.swift in Sources */,
 				31981E4B24191A4500D25074 /* CustomTextField.swift in Sources */,
@@ -1246,6 +1349,7 @@
 				943CE5FF2546DFBC00CA93AA /* CustomImageView.swift in Sources */,
 				4139870E2737FA3500C243F4 /* StartupRouter.swift in Sources */,
 				41CDA4302780DD000009AB55 /* ExploreRefreshControl.swift in Sources */,
+				4100A0FE2783AE640049EEF0 /* PostOptionsPopupViewModel.swift in Sources */,
 				41CD111B2783510700257B2B /* EmptyCollectionViewCellSummary.swift in Sources */,
 				416D1CEB27751C0C00C75546 /* SocialMediaDetailsCollectionViewCellTextFields.swift in Sources */,
 				418E2343277CB619008BB92E /* TabBarViewModel.swift in Sources */,
@@ -1263,11 +1367,13 @@
 				41CD10FC27822C2500257B2B /* ExploreProtocols.swift in Sources */,
 				945B15B325595DC9003A65E0 /* UIColor.swift in Sources */,
 				418E2342277CB619008BB92E /* TabBarBuilder.swift in Sources */,
+				41CD112527835C2200257B2B /* SavedPostsBuilder.swift in Sources */,
 				4160E704277B99FB00C7066F /* TermsAndConditionsViewModel.swift in Sources */,
 				945B15AE25595DC9003A65E0 /* Dynamic.swift in Sources */,
 				41CDA4342780E21C0009AB55 /* PostAuthor.swift in Sources */,
 				415E597E2763EA7E009A013E /* WhereDoYouLiveCountriesBuilder.swift in Sources */,
 				410FE67E2770C4D100A390A3 /* AddressTableViewCell.swift in Sources */,
+				41CD112227835C2200257B2B /* SavedPostsRouter.swift in Sources */,
 				4103944E2770D56B00A1CC5C /* WhereCanWeFindYouMapkit.swift in Sources */,
 				41F820CA276FD83B0046B0EA /* WhereCanWeFindYouViewModel.swift in Sources */,
 				413987112737FA3500C243F4 /* StartupViewModel.swift in Sources */,
@@ -1279,6 +1385,7 @@
 				41B75628275EE4CE00C00E03 /* SignUpBuilder.swift in Sources */,
 				CCB0206726A6F04500214CB9 /* ViewController.swift in Sources */,
 				41F820CE276FDE260046B0EA /* WhereDoYouLiveCountriesSearchBar.swift in Sources */,
+				4100A0ED278372110049EEF0 /* PostRouter.swift in Sources */,
 				945B15B125595DC9003A65E0 /* ViewModel.swift in Sources */,
 				41CD10F327821B5000257B2B /* Animal.swift in Sources */,
 				415E59922764F1F8009A013E /* WhereDoYouLiveCitiesBuilder.swift in Sources */,
@@ -1287,6 +1394,7 @@
 				418E2349277CC7FC008BB92E /* TermsAndConditionsTableView.swift in Sources */,
 				945B15B825595DC9003A65E0 /* UIImage.swift in Sources */,
 				417B861F277D27380051B8CF /* ProfileRouter.swift in Sources */,
+				41CD112A27835F3F00257B2B /* SavedPostsProtocols.swift in Sources */,
 				41CDA43A2780E59B0009AB55 /* TermAndCondition.swift in Sources */,
 				41CD10F7278222F200257B2B /* AnimalFilterTableViewCell.swift in Sources */,
 				A01CC49125D2FB3700404685 /* LocalizedKey.swift in Sources */,
@@ -1312,6 +1420,7 @@
 				417B860C277D1F1C0051B8CF /* NewPostBuilder.swift in Sources */,
 				943CE5FE2546DFBC00CA93AA /* CustomButton.swift in Sources */,
 				415E59902764F1F8009A013E /* WhereDoYouLiveCitiesRouter.swift in Sources */,
+				41CD112827835F0600257B2B /* SavedPostsRefreshControl.swift in Sources */,
 				945B15B525595DC9003A65E0 /* UITableViewCell.swift in Sources */,
 				41742224277C815600915233 /* ExploreBuilder.swift in Sources */,
 				418AD20A275A6A51005AFE3C /* ForgotPasswordTextFields.swift in Sources */,
@@ -1323,6 +1432,7 @@
 				41BFE16B276539BC00AC5570 /* CountryTableViewCell.swift in Sources */,
 				CCB0207526A6F12000214CB9 /* Date.swift in Sources */,
 				415E59A127650D77009A013E /* Country.swift in Sources */,
+				41CD112427835C2200257B2B /* SavedPostsViewController.swift in Sources */,
 				418E2341277CB619008BB92E /* TabBarViewController.swift in Sources */,
 				945B15BB25595DC9003A65E0 /* Window.swift in Sources */,
 				41CD11062783244700257B2B /* LocationFilterPopupBuilder.swift in Sources */,
@@ -1334,10 +1444,12 @@
 				41CD1111278336F400257B2B /* DateFilterPopupBuilder.swift in Sources */,
 				41CD10EF2782183900257B2B /* AnimalFilterPopupViewModel.swift in Sources */,
 				CCB0205326A6EF6500214CB9 /* Container.swift in Sources */,
+				4100A0FA2783AE640049EEF0 /* PostOptionsPopupRouter.swift in Sources */,
 				417B860B277D1F1C0051B8CF /* NewPostViewController.swift in Sources */,
 				41CD10EB2782183900257B2B /* AnimalFilterPopupRouter.swift in Sources */,
 				CCB0202A26A6EE3400214CB9 /* AppDelegate.swift in Sources */,
 				415E59912764F1F8009A013E /* WhereDoYouLiveCitiesViewController.swift in Sources */,
+				4100A0F1278372110049EEF0 /* PostViewModel.swift in Sources */,
 				4160E702277B99FB00C7066F /* TermsAndConditionsViewController.swift in Sources */,
 				41BFE17027653A6300AC5570 /* CountryTableViewCellSummary.swift in Sources */,
 				410FE67A2770BCB400A390A3 /* WhereCanWeFindYouSearchBar.swift in Sources */,

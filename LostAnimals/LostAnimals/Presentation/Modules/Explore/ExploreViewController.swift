@@ -25,7 +25,8 @@ final class ExploreViewController: ViewController {
   }
   override var navBarRightButtons: [UIBarButtonItem] {
     let savedPosts = UIButton()
-    savedPosts.setImage(UIImage(systemName: "book"), for: .normal)
+    savedPosts.tintColor = .customBlack
+    savedPosts.setImage(UIImage(named: "SavedPosts"), for: .normal)
     savedPosts.addTarget(self, action: #selector(savedPostsButtonPressed), for: .touchUpInside)
     return [UIBarButtonItem(customView: savedPosts)]
   }

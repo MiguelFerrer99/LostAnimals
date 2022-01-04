@@ -1,26 +1,26 @@
 //
-//  ExploreViewModel.swift
+//  SavedPostsViewModel.swift
 //  LostAnimals
 //
-//  Created by Miguel Ferrer Fornali on 29/12/21.
-//  Copyright © 2021 Rudo. All rights reserved.
+//  Created by Miguel Ferrer Fornali on 3/1/22.
+//  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-final class ExploreViewModel {
+final class SavedPostsViewModel {
   
   // MARK: - Properties
-  private let router: ExploreRouter
+  private let router: SavedPostsRouter
   
   // MARK: - Init
-  required init(router: ExploreRouter) {
+  required init(router: SavedPostsRouter) {
     self.router = router
   }
 }
 
 // MARK: - Life cycle
-extension ExploreViewModel {
+extension SavedPostsViewModel {
   func viewReady() {
     // Called when view is loaded and ready
   }
@@ -33,13 +33,9 @@ extension ExploreViewModel {
 }
 
 // MARK: - Functions
-extension ExploreViewModel {
+extension SavedPostsViewModel {
   func didPressPostsFilterPopup(filterType: FilterType) {
     self.router.goToFilterPopup(filterType: filterType)
-  }
-  
-  func didPressSavedPosts() {
-    self.router.goToSavedPosts()
   }
   
   func didPressPost(post: Post) {

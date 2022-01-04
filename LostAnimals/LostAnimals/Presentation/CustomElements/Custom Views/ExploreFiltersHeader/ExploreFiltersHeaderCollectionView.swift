@@ -35,30 +35,29 @@ extension ExploreFiltersHeader: UICollectionViewDelegate, UICollectionViewDataSo
   func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
     guard let unselectedFilter = Filters.getFilter(from: indexPath.row) else { return false }
     if unselectedFilter.filterType == .all {
-      deselectFilters()
+      disableFilters()
       Filters.setFilterValue(filterType: .all, enabled: true)
-      return true
+      NotificationCenter.default.post(name: .UpdateFiltersUI, object: nil)
     } else if (unselectedFilter.filterType == .lost) || (unselectedFilter.filterType == .found) || (unselectedFilter.filterType == .adopt) {
-      deselectFilter(type: .all)
+      Filters.setFilterValue(filterType: .all, enabled: false)
       Filters.setFilterValue(filterType: unselectedFilter.filterType, enabled: true)
-      return true
+      NotificationCenter.default.post(name: .UpdateFiltersUI, object: nil)
     } else {
       postFiltersDelegate?.showPostFiltersDelegate(filterType: unselectedFilter.filterType)
-      return false
     }
+    return false
   }
   
   func collectionView(_ collectionView: UICollectionView, shouldDeselectItemAt indexPath: IndexPath) -> Bool {
     guard let selectedFilter = Filters.getFilter(from: indexPath.row), let selectedFilters = collectionView.indexPathsForSelectedItems else { return false }
-    if selectedFilter.filterType == .all {
-      return false
-    } else if selectedFilters.count == 1 {
-      selectFilter(type: .all)
+    if (selectedFilters.count == 1) && selectedFilter.filterType != .all {
+      Filters.setFilterValue(filterType: .all, enabled: true)
       Filters.setFilterValue(filterType: selectedFilter.filterType, enabled: false)
-      return true
+      NotificationCenter.default.post(name: .UpdateFiltersUI, object: nil)
     } else if selectedFilters.count > 1 {
       Filters.setFilterValue(filterType: selectedFilter.filterType, enabled: false)
-      return true
-    } else { return false }
+      NotificationCenter.default.post(name: .UpdateFiltersUI, object: nil)
+    }
+    return false
   }
 }
