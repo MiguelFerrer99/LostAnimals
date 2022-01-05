@@ -9,7 +9,7 @@
 import Foundation
 
 extension ExploreViewController: PostFiltersDelegate {
-  func showPostFiltersDelegate(filterType: FilterType) {
+  func showPostFilters(filterType: FilterType) {
     viewModel.didPressPostsFilterPopup(filterType: filterType)
   }
 }

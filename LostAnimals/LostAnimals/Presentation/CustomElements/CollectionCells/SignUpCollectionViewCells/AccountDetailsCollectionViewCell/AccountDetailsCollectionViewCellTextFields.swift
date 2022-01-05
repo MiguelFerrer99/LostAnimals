@@ -31,7 +31,7 @@ extension AccountDetailsCollectionViewCell: CustomTextFieldDelegate {
                                               TextFieldErrorPasswordFormat()])
   }
   
-  func checkPasswordsAreEqual() -> Bool {
+  private func checkPasswordsAreEqual() -> Bool {
     if passwordTextfield.textField.text == repeatPasswordTextfield.textField.text {
       return true
     } else if viewModel.editedTextFields.contains(passwordTextfield) && viewModel.editedTextFields.contains(repeatPasswordTextfield) {
@@ -40,6 +40,14 @@ extension AccountDetailsCollectionViewCell: CustomTextFieldDelegate {
       return false
     }
     return true
+  }
+  
+  private func checkAllContentsAreOk() {
+    let haveErrors = viewModel.textFieldsHaveErrors()
+    let passwordsAreEqual = checkPasswordsAreEqual()
+    let canMoveToNextStep = !haveErrors && passwordsAreEqual && viewModel.editedTextFields.count == viewModel.numberOfTextFields
+    nextStepButton.alpha = canMoveToNextStep ? 1 : 0.5
+    nextStepButton.isEnabled = canMoveToNextStep
   }
   
   // MARK: - CustomTextFieldDelegate

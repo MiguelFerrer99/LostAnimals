@@ -26,29 +26,51 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lAN-bt-fcf" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
                         <rect key="frame" x="10" y="10" width="159" height="240"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tah-1e-Tbn">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DogExample" translatesAutoresizingMaskIntoConstraints="NO" id="Tah-1e-Tbn" customClass="CustomImageView" customModule="LostAnimals" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="159" height="240"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BbS-wx-vWX">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LostWhite" translatesAutoresizingMaskIntoConstraints="NO" id="oSl-xe-pYu">
+                                <rect key="frame" x="9" y="9" width="22" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="22" id="EKR-1h-cHC"/>
+                                    <constraint firstAttribute="height" constant="22" id="W2Z-5P-xQD"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lost" translatesAutoresizingMaskIntoConstraints="NO" id="BbS-wx-vWX">
                                 <rect key="frame" x="10" y="10" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="4K9-ax-Fxe"/>
                                     <constraint firstAttribute="height" constant="20" id="VrA-hY-7LW"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="questionmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="RkG-HC-Hvg">
-                                <rect key="frame" x="10" y="200.5" width="30" height="29"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OtherWhite" translatesAutoresizingMaskIntoConstraints="NO" id="Zb3-Q0-qIU">
+                                <rect key="frame" x="9" y="204" width="27" height="27"/>
                                 <color key="tintColor" name="CustomBlack"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="dCs-pu-fd6"/>
-                                    <constraint firstAttribute="width" constant="30" id="wbU-WV-E7s"/>
+                                    <constraint firstAttribute="height" constant="27" id="eyW-2z-Qkp"/>
+                                    <constraint firstAttribute="width" constant="27" id="gy0-Jt-rNS"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Other" translatesAutoresizingMaskIntoConstraints="NO" id="RkG-HC-Hvg">
+                                <rect key="frame" x="10" y="205" width="25" height="25"/>
+                                <color key="tintColor" name="CustomBlack"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="dCs-pu-fd6"/>
+                                    <constraint firstAttribute="width" constant="25" id="wbU-WV-E7s"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hi-nd-LKr">
-                                <rect key="frame" x="50" y="204" width="41.5" height="22"/>
+                                <rect key="frame" x="45" y="206" width="42.5" height="23"/>
                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="16"/>
                                 <color key="textColor" name="CustomBlack"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" name="CustomWhite"/>
+                                <size key="shadowOffset" width="1" height="1"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" name="CustomBlue"/>
@@ -58,12 +80,16 @@
                             <constraint firstAttribute="bottom" secondItem="Tah-1e-Tbn" secondAttribute="bottom" id="6iu-68-rSw"/>
                             <constraint firstItem="BbS-wx-vWX" firstAttribute="top" secondItem="lAN-bt-fcf" secondAttribute="top" constant="10" id="Fgt-Mr-5od"/>
                             <constraint firstItem="3hi-nd-LKr" firstAttribute="centerY" secondItem="RkG-HC-Hvg" secondAttribute="centerY" id="GDJ-CN-PfR"/>
+                            <constraint firstItem="oSl-xe-pYu" firstAttribute="top" secondItem="lAN-bt-fcf" secondAttribute="top" constant="9" id="GZZ-fa-rSc"/>
+                            <constraint firstItem="oSl-xe-pYu" firstAttribute="leading" secondItem="lAN-bt-fcf" secondAttribute="leading" constant="9" id="MaI-aJ-2Wv"/>
+                            <constraint firstAttribute="bottom" secondItem="Zb3-Q0-qIU" secondAttribute="bottom" constant="9" id="NVN-aa-c2k"/>
                             <constraint firstItem="Tah-1e-Tbn" firstAttribute="leading" secondItem="lAN-bt-fcf" secondAttribute="leading" id="dOX-VU-F1O"/>
                             <constraint firstAttribute="trailing" secondItem="Tah-1e-Tbn" secondAttribute="trailing" id="fvC-NE-HZU"/>
                             <constraint firstAttribute="bottom" secondItem="RkG-HC-Hvg" secondAttribute="bottom" constant="10" id="m48-WI-EUO"/>
                             <constraint firstItem="Tah-1e-Tbn" firstAttribute="top" secondItem="lAN-bt-fcf" secondAttribute="top" id="mQ9-hy-uZf"/>
                             <constraint firstItem="RkG-HC-Hvg" firstAttribute="leading" secondItem="lAN-bt-fcf" secondAttribute="leading" constant="10" id="smH-oE-2AI"/>
                             <constraint firstItem="3hi-nd-LKr" firstAttribute="leading" secondItem="RkG-HC-Hvg" secondAttribute="trailing" constant="10" id="wKe-bq-YCB"/>
+                            <constraint firstItem="Zb3-Q0-qIU" firstAttribute="leading" secondItem="lAN-bt-fcf" secondAttribute="leading" constant="9" id="y5J-0g-ojD"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -101,19 +127,28 @@
             <connections>
                 <outlet property="animalNameLabel" destination="3hi-nd-LKr" id="TMV-mN-b7V"/>
                 <outlet property="animalTypeImageView" destination="RkG-HC-Hvg" id="PnR-cG-RKU"/>
+                <outlet property="animalTypeWhiteImageView" destination="Zb3-Q0-qIU" id="zDe-Mh-jBn"/>
                 <outlet property="postImageView" destination="Tah-1e-Tbn" id="F0d-VX-w4t"/>
                 <outlet property="postTypeImageView" destination="BbS-wx-vWX" id="jlY-aW-mTT"/>
+                <outlet property="postTypeWhiteImageView" destination="oSl-xe-pYu" id="oVh-Wv-svb"/>
             </connections>
             <point key="canvasLocation" x="231.15942028985509" y="176.78571428571428"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="questionmark.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="DogExample" width="678" height="500"/>
+        <image name="Lost" width="25" height="25"/>
+        <image name="LostWhite" width="25" height="25"/>
+        <image name="Other" width="256" height="256"/>
+        <image name="OtherWhite" width="256" height="256"/>
         <namedColor name="CustomBlack">
             <color red="0.24705882352941178" green="0.24705882352941178" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="CustomBlue">
             <color red="0.0" green="0.42745098039215684" blue="0.82352941176470584" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="CustomWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

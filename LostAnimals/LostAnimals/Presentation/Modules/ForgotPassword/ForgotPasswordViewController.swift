@@ -47,13 +47,6 @@ final class ForgotPasswordViewController: ViewController {
     mailTexfield.isUserInteractionEnabled = forgotPasswordButton.isEnabled
   }
   
-  func checkAllContentsAreOk() {
-    let haveErrors = viewModel.textFieldsHaveErrors()
-    let canMoveToNextStep = !haveErrors && viewModel.editedTextFields.count == viewModel.numberOfTextFields
-    forgotPasswordButton.alpha = canMoveToNextStep ? 1 : 0.5
-    forgotPasswordButton.isEnabled = canMoveToNextStep
-  }
-  
   // MARK: - IBActions
   @IBAction func recoverPasswordButtonPressed(_ sender: CustomButton) {
     forgotPasswordButton.showLoading()

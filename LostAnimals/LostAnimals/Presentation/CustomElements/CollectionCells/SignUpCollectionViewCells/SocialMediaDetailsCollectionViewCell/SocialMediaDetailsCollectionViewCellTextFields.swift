@@ -47,6 +47,13 @@ extension SocialMediaDetailsCollectionViewCell: CustomTextFieldDelegate {
     signUpStepsDelegate?.goToWhereDoYouLiveCountries(comesFrom: .socialMediaDetails)
   }
   
+  func checkAllContentsAreOk() {
+    let haveErrors = viewModel.textFieldsHaveErrors()
+    let canMoveToNextStep = !haveErrors && viewModel.numberOfTextFields <= viewModel.editedTextFields.count && viewModel.phonePrefixSelected && viewModel.termsAndContitionsAccepted
+    getStartedButton.alpha = canMoveToNextStep ? 1 : 0.5
+    getStartedButton.isEnabled = canMoveToNextStep
+  }
+  
   // MARK: - CustomTextFieldDelegate
   func textFieldShouldReturn(_ customTextField: CustomTextField) -> Bool {
     switch customTextField.textField {

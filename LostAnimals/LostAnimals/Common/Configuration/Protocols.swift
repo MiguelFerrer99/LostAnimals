@@ -15,11 +15,11 @@ protocol SignUpStepsDelegate: AnyObject {
   func goToWhereCanWeFindYou()
   func goToTermsAndConditions()
   func updateSignUpUserInteraction(isUserInteractionEnabled: Bool)
-  func sendSignUpStep1Data(isAnimalShelter: Bool, firstname: String?, lastname: String?, animalShelterName: String?, birthdate: Date?, address: String)
+  func sendSignUpStep1Data(isAnimalShelter: Bool, firstname: String?, lastname: String?, animalShelterName: String?, birthdate: Date?, address: String, location: Location?)
   func sendSignUpStep2Data(mail: String, password: String)
   func sendSignUpStep3Data(phonePrefix: String, phone: String, instagram: String?, twitter: String?)
 }
 
 protocol PostFiltersDelegate: AnyObject {
-  func showPostFiltersDelegate(filterType: FilterType)
+  func showPostFilters(filterType: FilterType)
 }

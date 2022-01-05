@@ -26,7 +26,7 @@ final class PostViewController: ViewController {
   override var navBarRightButtons: [UIBarButtonItem] {
     let savePost = UIButton()
     savePost.tintColor = .customBlack
-    savePost.setImage(UIImage(named: "SavePost"), for: .normal)
+    savePost.setImage(UIImage(named: viewModel.post.isSaved ? "SavePostFilled" : "SavePost"), for: .normal)
     savePost.addTarget(self, action: #selector(savePostButtonPressed), for: .touchUpInside)
     
     let options = UIButton()
@@ -41,6 +41,8 @@ final class PostViewController: ViewController {
   // MARK: - Life cycle
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    NotificationCenter.default.addObserver(self, selector: #selector(editPostButtonPressed), name: .GoToEditPostFromPostOptionsPopup, object: nil)
     
     setupUI()
     setupBindings()
@@ -68,5 +70,9 @@ final class PostViewController: ViewController {
   
   @objc private func optionsButtonPressed() {
     viewModel.didPressOptionsButton()
+  }
+  
+  @objc private func editPostButtonPressed() {
+    viewModel.didPressEditPostButton()
   }
 }

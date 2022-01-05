@@ -85,6 +85,7 @@ struct DateFormat {
   static let dayMonthYear = "d/MM/yyyy"
   static let dayMonthYearHyphen = "dd-MM-yyyy"
   static let dayMonthYearOther = "dd/MM/yyyy"
+  static let dayMonthYearHourOther = "dd/MM/yyyy HH:mm"
   static let dayMonthYearShort = "dd/MM/yy"
   static let yearMonthDay = "yyyy/MM/dd"
   static let hourMinutes = "HH:mm"

@@ -24,4 +24,11 @@ final class PostRouter {
       self.viewController?.present(viewController: viewController, completion: nil)
     }
   }
+  
+  func goToEditPost(post: Post) {
+    let viewController = Container.shared.editPostBuilder().build(post: post)
+    DispatchQueue.main.async {
+      self.viewController?.push(viewController: viewController)
+    }
+  }
 }

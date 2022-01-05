@@ -17,8 +17,16 @@ extension Container {
     return AnimalFilterPopupBuilder()
   }
   
+  func animalTypesBuilder() -> AnimalTypesBuilder {
+    return AnimalTypesBuilder()
+  }
+  
   func dateFilterPopupBuilder() -> DateFilterPopupBuilder {
     return DateFilterPopupBuilder()
+  }
+  
+  func editPostBuilder() -> EditPostBuilder {
+    return EditPostBuilder()
   }
   
   func exploreBuilder() -> ExploreBuilder {

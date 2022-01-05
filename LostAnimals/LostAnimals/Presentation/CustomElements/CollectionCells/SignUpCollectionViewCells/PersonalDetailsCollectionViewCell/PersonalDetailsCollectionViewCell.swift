@@ -32,7 +32,7 @@ class PersonalDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell {
     super.awakeFromNib()
     
     NotificationCenter.default.addObserver(self, selector: #selector(fillWhereDoYouLive), name: .SendWhereDoYouLiveCountryAndCities, object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(fillWhereCanWeFindYou), name: .SendWhereCanWeFindYouAddress, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(fillWhereCanWeFindYou), name: .SendWhereCanWeFindYouAddressToSignUp, object: nil)
     
     setupBindings()
   }
@@ -74,13 +74,6 @@ class PersonalDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell {
     }
   }
   
-  func checkAllContentsAreOk() {
-    let haveErrors = viewModel.textFieldsHaveErrors()
-    let canMoveToNextStep = !haveErrors && viewModel.editedTextFields.count == viewModel.numberOfTextFields
-    nextStepButton.alpha = canMoveToNextStep ? 1 : 0.5
-    nextStepButton.isEnabled = canMoveToNextStep
-  }
-  
   // MARK: - IBActions
   @IBAction func areYouAnAnimalShelterButton(_ sender: UIButton) {
     viewModel.isAnimalShelter.toggle()
@@ -93,7 +86,8 @@ class PersonalDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell {
                                              lastname: lastnameTextfield.textField.text,
                                              animalShelterName: animalShelterNameTextfield.textField.text,
                                              birthdate: birthdateTexfield.textField.text?.toDate(withFormat: DateFormat.dayMonthYearOther),
-                                             address: (viewModel.isAnimalShelter ? whereCanWeFindYouTextfield.textField.text : whereDoYouLiveTextfield.textField.text) ?? "")
+                                             address: (viewModel.isAnimalShelter ? whereCanWeFindYouTextfield.textField.text : whereDoYouLiveTextfield.textField.text) ?? "",
+                                             location: viewModel.location)
     signUpStepsDelegate?.moveToNextSignUpStep()
   }
 }

@@ -11,6 +11,7 @@ import UIKit
 class AnimalFilterTableViewCell: UITableViewCell, Reusable {
   
   // MARK: - IBOutlets
+  @IBOutlet weak var animalTypeImageView: UIImageView!
   @IBOutlet weak var animalTypeTitleLabel: UILabel!
   @IBOutlet weak var checkmarkView: UIView!
   
@@ -31,6 +32,7 @@ class AnimalFilterTableViewCell: UITableViewCell, Reusable {
   
   // MARK: - Functions
   func display(summary: AnimalFilterTableViewCellSummary) {
+    animalTypeImageView.image = summary.animalTypeImage
     animalTypeTitleLabel.text = summary.animalTypeTitle
   }
 }

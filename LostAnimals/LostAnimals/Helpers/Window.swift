@@ -52,19 +52,3 @@ func showAlert(title: String, message: String  = "", completion: (() -> Void)? =
   
   topMostController()?.present(viewController: alert)
 }
-
-func showFilterPopup(filterType: FilterType) {
-  if topMostController() is UIAlertController { return }
-  
-  var viewController = ViewController()
-  
-  switch filterType {
-  case .animal:
-    viewController = Container.shared.animalFilterPopupBuilder().build()
-  case .location: return
-  case .date: return
-  default: return
-  }
-  
-  topMostController()?.present(viewController: viewController, completion: nil)
-}

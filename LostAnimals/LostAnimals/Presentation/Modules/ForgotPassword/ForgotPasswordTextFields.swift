@@ -7,7 +7,6 @@
 //
 
 extension ForgotPasswordViewController: CustomTextFieldDelegate {
-  
   // MARK: - Functions
   func configureTextFields() {
     mailTexfield.delegate = self
@@ -16,6 +15,13 @@ extension ForgotPasswordViewController: CustomTextFieldDelegate {
     mailTexfield.textField.returnKeyType = .done
     mailTexfield.addErrorsToCheck([TextFieldErrorEmptyValue(),
                                     TextFieldErrorEmailFormat()])
+  }
+  
+  private func checkAllContentsAreOk() {
+    let haveErrors = viewModel.textFieldsHaveErrors()
+    let canMoveToNextStep = !haveErrors && viewModel.editedTextFields.count == viewModel.numberOfTextFields
+    forgotPasswordButton.alpha = canMoveToNextStep ? 1 : 0.5
+    forgotPasswordButton.isEnabled = canMoveToNextStep
   }
   
   // MARK: - CustomTextFieldDelegate

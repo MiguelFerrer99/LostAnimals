@@ -37,7 +37,7 @@ extension PostOptionsPopupViewModel {
   }
   
   func didPressEditPostButton() {
-    // TODO: Edit post
+    self.router.goBack()
   }
   
   func didPressReportPostButton() {

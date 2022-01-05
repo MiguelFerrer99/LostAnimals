@@ -22,10 +22,14 @@ extension AnimalFilterPopupViewController: UITableViewDelegate, UITableViewDataS
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let animalType = Constants.animalTypes[indexPath.row]
-    let summary = AnimalFilterTableViewCellSummary(animalTypeTitle: animalType.rawValue)
+    let summary = AnimalFilterTableViewCellSummary(animalTypeTitle: animalType.rawValue, animalTypeImage: UIImage(named: "\(animalType.rawValue)White") ?? UIImage())
     let cell = tableView.dequeue(AnimalFilterTableViewCell.self)
     cell.display(summary: summary)
     return cell
+  }
+  
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return 40
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -42,9 +46,5 @@ extension AnimalFilterPopupViewController: UITableViewDelegate, UITableViewDataS
     if (tableView.indexPathsForSelectedRows?.isEmpty ?? true) && viewModel.selectedAnimalTypes.isEmpty {
       disableApplyFilterButton()
     }
-  }
-  
-  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 40
   }
 }

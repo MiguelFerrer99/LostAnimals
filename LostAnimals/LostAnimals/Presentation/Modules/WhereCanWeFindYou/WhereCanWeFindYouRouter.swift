@@ -18,10 +18,9 @@ final class WhereCanWeFindYouRouter {
   }
   
   // MARK: - Functions
-  func goToSignUp() {
-    guard let viewController = self.viewController?.navigationController?.viewControllers[1] as? SignUpViewController else { return }
+  func goBack() {
     DispatchQueue.main.async {
-      self.viewController?.navigationController?.popToViewController(viewController, animated: true)
+      self.viewController?.pop()
     }
   }
 }

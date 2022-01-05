@@ -76,13 +76,6 @@ class SocialMediaDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell 
     backStepButton.isUserInteractionEnabled = getStartedButton.isEnabled
   }
   
-  func checkAllContentsAreOk() {
-    let haveErrors = viewModel.textFieldsHaveErrors()
-    let canMoveToNextStep = !haveErrors && viewModel.numberOfTextFields <= viewModel.editedTextFields.count && viewModel.phonePrefixSelected && viewModel.termsAndContitionsAccepted
-    getStartedButton.alpha = canMoveToNextStep ? 1 : 0.5
-    getStartedButton.isEnabled = canMoveToNextStep
-  }
-  
   // MARK: - IBActions
   @IBAction func phonePrefixButtonPressed(_ sender: UIButton) {
     didPresseddPhonePrefix()

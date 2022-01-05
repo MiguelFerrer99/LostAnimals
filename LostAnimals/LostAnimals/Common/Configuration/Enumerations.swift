@@ -30,6 +30,11 @@ public enum WhereDoYouLiveComesFrom: String {
   case socialMediaDetails
 }
 
+public enum WhereCanWeFindYouComesFrom: String {
+  case signUp
+  case editPost
+}
+
 public enum OnboardingStep: Int {
   case share
   case find
@@ -42,10 +47,10 @@ public enum TabBarItem: Int {
   case profile
 }
 
-public enum PostType: Int {
-  case lost
-  case found
-  case adopt
+public enum PostType: String {
+  case lost = "Lost"
+  case found = "Found"
+  case adopt = "Adopt"
 }
 
 public enum AnimalType: String {

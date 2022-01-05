@@ -35,7 +35,7 @@ extension SignUpViewController: SignUpStepsDelegate {
     navigationController?.interactivePopGestureRecognizer?.isEnabled = isUserInteractionEnabled
   }
   
-  func sendSignUpStep1Data(isAnimalShelter: Bool, firstname: String? = nil, lastname: String? = nil, animalShelterName: String? = nil, birthdate: Date? = nil, address: String) {
+  func sendSignUpStep1Data(isAnimalShelter: Bool, firstname: String? = nil, lastname: String? = nil, animalShelterName: String? = nil, birthdate: Date? = nil, address: String, location: Location? = nil) {
     print("""
           SIGNUP STEP1 DATA RECEIVED:
             isAnimalShelter: \(isAnimalShelter),
@@ -43,7 +43,10 @@ extension SignUpViewController: SignUpStepsDelegate {
             lastname: \(lastname == nil || (lastname?.isEmpty ?? true) ? "-" : lastname ?? "-"),
             animalShelterName: \(animalShelterName == nil || (animalShelterName?.isEmpty ?? true) ? "-" : animalShelterName ?? "-"),
             birthdate: \(birthdate?.toString(withFormat: DateFormat.dayMonthYearOther) ?? "-"),
-            address: \(address)
+            address: \(address),
+            location:
+              lat  = \(location?.lat ?? 0)
+              long = \(location?.long ?? 0)
           """)
   }
   

@@ -38,13 +38,13 @@ extension ExploreViewController: UICollectionViewDelegate, UICollectionViewDataS
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     if HardcodedData.explorePosts.isEmpty {
-      let summary = EmptyCollectionViewCellSummary(emptyTitle: "There are not available posts", emptyImage: UIImage(named: "NotAvailablePosts") ?? UIImage())
+      let summary = EmptyCollectionViewCellSummary(emptyTitle: "There are not available posts", emptyImage: UIImage(named: "Other") ?? UIImage())
       let cell = collectionView.dequeue(EmptyCollectionViewCell.self, for: indexPath)
       cell.display(summary: summary)
       return cell
     } else {
       let post = HardcodedData.explorePosts[indexPath.row]
-      let summary = PostCollectionViewCellSummary(postType: post.postType, animal: post.animal, postImage: post.postImages.first)
+      let summary = PostCollectionViewCellSummary(postType: post.postType, animal: post.animal, postImage: post.postImages.first ?? UIImage(named: "SelectPhotoPlaceholder"))
       let cell = collectionView.dequeue(PostCollectionViewCell.self, for: indexPath)
       cell.display(summary: summary)
       return cell

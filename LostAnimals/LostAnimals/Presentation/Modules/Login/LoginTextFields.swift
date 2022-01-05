@@ -23,6 +23,13 @@ extension LoginViewController: CustomTextFieldDelegate {
                                         TextFieldErrorPasswordFormat()])
   }
   
+  private func checkAllContentsAreOk() {
+    let haveErrors = viewModel.textFieldsHaveErrors()
+    let canMoveToNextStep = !haveErrors && viewModel.editedTextFields.count == viewModel.numberOfTextFields
+    logInButton.alpha = canMoveToNextStep ? 1 : 0.5
+    logInButton.isEnabled = canMoveToNextStep
+  }
+  
   // MARK: - CustomTextFieldDelegate
   func textFieldShouldReturn(_ customTextField: CustomTextField) -> Bool {
     switch customTextField.textField {

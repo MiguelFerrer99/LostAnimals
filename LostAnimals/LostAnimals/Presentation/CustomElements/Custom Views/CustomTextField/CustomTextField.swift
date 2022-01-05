@@ -10,11 +10,12 @@ import UIKit
 
 @objc protocol CustomTextFieldDelegate: AnyObject {
   func textFieldShouldReturn(_ customTextField: CustomTextField) -> Bool
-  func textFieldDidEndEditing(_ customTextField: CustomTextField)
-  func textFieldDidBeginEditing(_ customTextField: CustomTextField)
   func textFieldDidChange(_ customTextField: CustomTextField)
+  func textFieldDidEndEditing(_ customTextField: CustomTextField)
+  @objc optional func textFieldDidBeginEditing(_ customTextField: CustomTextField)
   @objc optional func textFieldWillSelectCity(_ customTextField: CustomTextField)
   @objc optional func textFieldWillSelectAddress(_ customTextField: CustomTextField)
+  @objc optional func textFieldWillSelectAnimal(_ customTextField: CustomTextField)
 }
 
 @IBDesignable
@@ -57,7 +58,13 @@ class CustomTextField: UIView, UITextFieldDelegate {
   
   @IBInspectable var datePickerEnabled: Bool = false {
     willSet {
-      if newValue { createDatePicker() }
+      if newValue { createDatePicker(datePickerMode: .date) }
+    }
+  }
+  
+  @IBInspectable var dateAndTimePickerEnabled: Bool = false {
+    willSet {
+      if newValue { createDatePicker(datePickerMode: .dateAndTime) }
     }
   }
   
@@ -79,6 +86,12 @@ class CustomTextField: UIView, UITextFieldDelegate {
     }
   }
   
+  @IBInspectable var animalPickerEnabled: Bool = false {
+    willSet {
+      selectAnimalButton.isHidden = !newValue
+    }
+  }
+  
   // MARK: - IBOutlets
   @IBOutlet var customView: UIView!
   @IBOutlet weak var addStackView: UIStackView!
@@ -92,11 +105,12 @@ class CustomTextField: UIView, UITextFieldDelegate {
   @IBOutlet weak var errorLabel: UILabel!
   @IBOutlet weak var selectCityButton: UIButton!
   @IBOutlet weak var selectAddressButton: UIButton!
+  @IBOutlet weak var selectAnimalButton: UIButton!
   
   // MARK: - Properties
   var delegate: CustomTextFieldDelegate?
   var errorsToCheck = [TextFieldError]()
-  let birthdatePicker = UIDatePicker()
+  let datePicker = UIDatePicker()
   let passwordsAreNotEqualError = TextFieldErrorPasswordsAreNotEqual()
   
   var hasError: Bool {
@@ -145,7 +159,7 @@ class CustomTextField: UIView, UITextFieldDelegate {
     return view
   }
   
-  private func createDatePicker() {
+  private func createDatePicker(datePickerMode: UIDatePicker.Mode) {
     let toolbar = UIToolbar()
     toolbar.sizeToFit()
     let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(doneDatePickerPressed))
@@ -154,16 +168,16 @@ class CustomTextField: UIView, UITextFieldDelegate {
     toolbar.tintColor = .customBlack
     toolbar.backgroundColor = .customWhite
     textField.inputAccessoryView = toolbar
-    birthdatePicker.maximumDate = .today
-    birthdatePicker.datePickerMode = .date
+    datePicker.maximumDate = .today
+    datePicker.datePickerMode = datePickerMode
     if #available(iOS 13.4, *) {
-      birthdatePicker.preferredDatePickerStyle = .wheels
+      datePicker.preferredDatePickerStyle = .wheels
     }
-    textField.inputView = birthdatePicker
+    textField.inputView = datePicker
   }
   
   @objc private func doneDatePickerPressed() {
-    textField.text = birthdatePicker.date.toString(withFormat: DateFormat.dayMonthYearOther)
+    textField.text = datePicker.date.toString(withFormat: datePickerEnabled ? DateFormat.dayMonthYearOther : DateFormat.dayMonthYearHourOther)
     textFieldDidChangeEditing(textField)
     textField.endEditing(true)
   }
@@ -184,11 +198,7 @@ class CustomTextField: UIView, UITextFieldDelegate {
     let _ = textFieldShouldReturn(self.textField)
   }
   
-  func didFinishSelectWhereDoYouLiveCountryAndCity() {
-    textFieldDidChangeEditing(textField)
-  }
-  
-  func didFinishSelectWhereCanWeFindYouAddress() {
+  func didFinishSelectContentFromOtherVC() {
     textFieldDidChangeEditing(textField)
   }
   
@@ -214,6 +224,13 @@ class CustomTextField: UIView, UITextFieldDelegate {
     statusImageView.image = UIImage(named: "TextfieldBad")
   }
   
+  func initEditableTextfield() {
+    self.placeholderLabel.alpha = 1
+    self.topTextFieldConstraint.constant = 15
+    self.statusView.isHidden = false
+    self.statusImageView.image = UIImage(named: "TextfieldOk")
+  }
+  
   // MARK: - IBActions
   @IBAction func hideContentButtonPressed(_ sender: UIButton) {
     hideContentButton.setImage(UIImage(systemName: textField.isSecureTextEntry ? "eye.slash.fill" : "eye.fill"), for: .normal)
@@ -226,7 +243,7 @@ class CustomTextField: UIView, UITextFieldDelegate {
   }
   
   func textFieldDidBeginEditing(_ textField: UITextField) {
-    delegate?.textFieldDidBeginEditing(self)
+    delegate?.textFieldDidBeginEditing?(self)
   }
   
   func textFieldDidEndEditing(_ textField: UITextField) {
@@ -248,5 +265,9 @@ class CustomTextField: UIView, UITextFieldDelegate {
   
   @IBAction func selectAddressButtonPressed(_ sender: UIButton) {
     delegate?.textFieldWillSelectAddress?(self)
+  }
+  
+  @IBAction func selectAnimalButtonPressed(_ sender: UIButton) {
+    delegate?.textFieldWillSelectAnimal?(self)
   }
 }

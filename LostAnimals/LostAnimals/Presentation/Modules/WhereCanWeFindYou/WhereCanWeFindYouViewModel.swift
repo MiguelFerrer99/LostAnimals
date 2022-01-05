@@ -10,16 +10,16 @@ import Foundation
 import MapKit
 
 final class WhereCanWeFindYouViewModel {
-  
   // MARK: - Properties
-  var searchResults = [MKLocalSearchCompletion]()
   private let router: WhereCanWeFindYouRouter
+  var searchResults = [MKLocalSearchCompletion]()
+  let comesFrom: WhereCanWeFindYouComesFrom
   
   // MARK: - Init
-  required init(router: WhereCanWeFindYouRouter) {
+  required init(router: WhereCanWeFindYouRouter, comesFrom: WhereCanWeFindYouComesFrom) {
     self.router = router
+    self.comesFrom = comesFrom
   }
-
 }
 
 // MARK: - Life cycle
@@ -29,7 +29,7 @@ extension WhereCanWeFindYouViewModel {
   }
   
   func viewDidAppear() {
-    
+    // Called when view has appeared
   }
 }
 
@@ -37,7 +37,12 @@ extension WhereCanWeFindYouViewModel {
 extension WhereCanWeFindYouViewModel {
   func didPressAddress(searchResult: MKLocalSearchCompletion) {
     let userInfo: [String: MKLocalSearchCompletion] = ["searchResult": searchResult]
-    NotificationCenter.default.post(name: .SendWhereCanWeFindYouAddress, object: nil, userInfo: userInfo)
-    self.router.goToSignUp()
+    switch comesFrom {
+    case .signUp:
+      NotificationCenter.default.post(name: .SendWhereCanWeFindYouAddressToSignUp, object: nil, userInfo: userInfo)
+    case .editPost:
+      NotificationCenter.default.post(name: .SendWhereCanWeFindYouAddressToEditPost, object: nil, userInfo: userInfo)
+    }
+    self.router.goBack()
   }
 }

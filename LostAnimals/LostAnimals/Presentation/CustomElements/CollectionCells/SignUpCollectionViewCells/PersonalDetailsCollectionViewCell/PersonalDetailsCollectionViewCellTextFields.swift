@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 extension PersonalDetailsCollectionViewCell: CustomTextFieldDelegate {
   // MARK: - Functions
@@ -49,7 +50,8 @@ extension PersonalDetailsCollectionViewCell: CustomTextFieldDelegate {
   @objc func fillWhereDoYouLive(_ notification: NSNotification) {
     if let whereDoYouLiveString = notification.userInfo?["whereDoYouLiveString"] as? String {
       whereDoYouLiveTextfield.textField.text = whereDoYouLiveString
-      whereDoYouLiveTextfield.didFinishSelectWhereDoYouLiveCountryAndCity()
+      whereDoYouLiveTextfield.didFinishSelectContentFromOtherVC()
+      convertAddressToLocation(address: whereDoYouLiveString)
     }
   }
   
@@ -59,8 +61,27 @@ extension PersonalDetailsCollectionViewCell: CustomTextFieldDelegate {
       let searchResultString2 = searchResult.subtitle.isEmpty ? "" : ", \(searchResult.subtitle)"
       let searchResultString = "\(searchResultString1)\(searchResultString2)"
       whereCanWeFindYouTextfield.textField.text = searchResultString
-      whereCanWeFindYouTextfield.didFinishSelectWhereCanWeFindYouAddress()
+      whereCanWeFindYouTextfield.didFinishSelectContentFromOtherVC()
+      convertAddressToLocation(address: searchResultString)
     }
+  }
+  
+  private func convertAddressToLocation(address: String) {
+    let geocoder = CLGeocoder()
+    geocoder.geocodeAddressString(address) { placemarks, error in
+      if let placemark = placemarks?.first, let location = placemark.location {
+        let lat = location.coordinate.latitude
+        let long = location.coordinate.longitude
+        self.viewModel.location = Location(lat: lat, long: long)
+      }
+    }
+  }
+  
+  private func checkAllContentsAreOk() {
+    let haveErrors = viewModel.textFieldsHaveErrors()
+    let canMoveToNextStep = !haveErrors && viewModel.editedTextFields.count == viewModel.numberOfTextFields
+    nextStepButton.alpha = canMoveToNextStep ? 1 : 0.5
+    nextStepButton.isEnabled = canMoveToNextStep
   }
   
   // MARK: - CustomTextFieldDelegate

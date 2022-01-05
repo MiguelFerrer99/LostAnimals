@@ -23,4 +23,12 @@ final class PostOptionsPopupRouter {
       self.viewController?.dismissCurrentView(completion: nil)
     }
   }
+  
+  func goBack() {
+    DispatchQueue.main.async {
+      self.viewController?.dismissCurrentView(completion: {
+        NotificationCenter.default.post(name: .GoToEditPostFromPostOptionsPopup, object: nil)
+      })
+    }
+  }
 }

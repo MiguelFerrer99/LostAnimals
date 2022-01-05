@@ -40,14 +40,6 @@ class AccountDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell {
     configureTextFields()
   }
   
-  func checkAllContentsAreOk() {
-    let haveErrors = viewModel.textFieldsHaveErrors()
-    let passwordsAreEqual = checkPasswordsAreEqual()
-    let canMoveToNextStep = !haveErrors && passwordsAreEqual && viewModel.editedTextFields.count == viewModel.numberOfTextFields
-    nextStepButton.alpha = canMoveToNextStep ? 1 : 0.5
-    nextStepButton.isEnabled = canMoveToNextStep
-  }
-  
   // MARK: - IBActions
   @IBAction func backStepButtonPressed(_ sender: CustomButton) {
     signUpStepsDelegate?.moveToPreviousSignUpStep()

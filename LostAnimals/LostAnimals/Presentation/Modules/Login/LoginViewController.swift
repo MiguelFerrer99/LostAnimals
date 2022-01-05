@@ -52,13 +52,6 @@ final class LoginViewController: ViewController {
     forgotPasswordButton.isUserInteractionEnabled = logInButton.isEnabled
   }
   
-  func checkAllContentsAreOk() {
-    let haveErrors = viewModel.textFieldsHaveErrors()
-    let canMoveToNextStep = !haveErrors && viewModel.editedTextFields.count == viewModel.numberOfTextFields
-    logInButton.alpha = canMoveToNextStep ? 1 : 0.5
-    logInButton.isEnabled = canMoveToNextStep
-  }
-  
   // MARK: - IBActions
   @IBAction func forgotPasswordButtonPressed(_ sender: UIButton) {
     viewModel.didPressForgotPasswordButton()

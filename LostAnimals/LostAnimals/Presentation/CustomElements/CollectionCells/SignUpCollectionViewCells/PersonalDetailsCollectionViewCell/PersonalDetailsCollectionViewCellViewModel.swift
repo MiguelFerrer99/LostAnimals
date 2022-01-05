@@ -18,6 +18,7 @@ class PersonalDetailsCollectionViewCellViewModel: ViewModel {
   }
   var numberOfTextFields = 4
   var editedTextFields = [CustomTextField]()
+  var location: Location?
   
   // MARK: - Init
   init() {}

@@ -43,7 +43,7 @@ extension ExploreFiltersHeader: UICollectionViewDelegate, UICollectionViewDataSo
       Filters.setFilterValue(filterType: unselectedFilter.filterType, enabled: true)
       NotificationCenter.default.post(name: .UpdateFiltersUI, object: nil)
     } else {
-      postFiltersDelegate?.showPostFiltersDelegate(filterType: unselectedFilter.filterType)
+      postFiltersDelegate?.showPostFilters(filterType: unselectedFilter.filterType)
     }
     return false
   }

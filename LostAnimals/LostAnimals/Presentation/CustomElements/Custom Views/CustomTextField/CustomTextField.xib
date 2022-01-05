@@ -29,6 +29,7 @@
                 <outlet property="hideContentView" destination="QE8-FO-F1a" id="aVc-cH-A8p"/>
                 <outlet property="placeholderLabel" destination="c1L-wV-cau" id="42p-Cg-DgG"/>
                 <outlet property="selectAddressButton" destination="46N-KU-pIU" id="8Hv-df-5SU"/>
+                <outlet property="selectAnimalButton" destination="nZ8-hq-DiR" id="onH-aQ-yUd"/>
                 <outlet property="selectCityButton" destination="GhD-gg-acv" id="0N8-Zv-7E6"/>
                 <outlet property="statusImageView" destination="5Xs-sB-GV6" id="Foo-vm-fWg"/>
                 <outlet property="statusView" destination="ZZq-PA-09W" id="fvW-Uv-d4G"/>
@@ -61,7 +62,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="tintColor" name="CustomWhite"/>
                                             <color key="textColor" name="CustomWhite"/>
-                                            <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="16"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                             <connections>
                                                 <action selector="textFieldDidChangeEditing:" destination="-1" eventType="editingChanged" id="WQL-5Q-NCV"/>
@@ -171,6 +172,18 @@
                         <action selector="selectAddressButtonPressed:" destination="-1" eventType="touchUpInside" id="HzY-lu-28s"/>
                     </connections>
                 </button>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZ8-hq-DiR">
+                    <rect key="frame" x="0.0" y="0.0" width="460" height="60"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="3ea-AO-PaX"/>
+                    </constraints>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <connections>
+                        <action selector="selectAnimalButtonPressed:" destination="-1" eventType="touchUpInside" id="lYF-Td-B6f"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -179,8 +192,11 @@
                 <constraint firstAttribute="trailing" secondItem="B13-BB-XBd" secondAttribute="trailing" id="6EL-kq-haT"/>
                 <constraint firstItem="GhD-gg-acv" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Bgy-z8-P8Q"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="GhD-gg-acv" secondAttribute="trailing" id="CjN-IG-UC6"/>
+                <constraint firstItem="nZ8-hq-DiR" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="GIE-KM-TA0"/>
                 <constraint firstAttribute="top" secondItem="GhD-gg-acv" secondAttribute="top" id="JIh-iX-PK7"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="46N-KU-pIU" secondAttribute="trailing" id="iLz-VA-QZT"/>
+                <constraint firstItem="nZ8-hq-DiR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="jQe-1V-tmb"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="nZ8-hq-DiR" secondAttribute="trailing" id="plu-qo-cRU"/>
                 <constraint firstItem="46N-KU-pIU" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ppj-4Y-v1E"/>
                 <constraint firstItem="B13-BB-XBd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="reS-SG-0T6"/>
                 <constraint firstAttribute="top" secondItem="46N-KU-pIU" secondAttribute="top" id="sB4-km-gUH"/>

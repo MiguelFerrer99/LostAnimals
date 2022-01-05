@@ -10,7 +10,10 @@ import Foundation
 
 extension Notification.Name {
   static let SendWhereDoYouLiveCountryAndCities = Notification.Name("SendWhereDoYouLiveCountryAndCities")
-  static let SendWhereCanWeFindYouAddress = Notification.Name("SendWhereCanWeFindYouAddress")
+  static let SendWhereCanWeFindYouAddressToSignUp = Notification.Name("SendWhereCanWeFindYouAddressToSignUp")
+  static let SendWhereCanWeFindYouAddressToEditPost = Notification.Name("SendWhereCanWeFindYouAddressToEditPost")
   static let SendCountryDialCode = Notification.Name("SendCountryDialCode")
   static let UpdateFiltersUI = Notification.Name("UpdateFiltersUI")
+  static let GoToEditPostFromPostOptionsPopup = Notification.Name("GoToEditPostFromPostOptionsPopup")
+  static let SendAnimalToEditPost = Notification.Name("SendAnimalToEditPost")
 }

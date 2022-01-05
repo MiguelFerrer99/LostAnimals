@@ -44,7 +44,7 @@ extension SavedPostsViewController: UICollectionViewDelegate, UICollectionViewDa
       return cell
     } else {
       let post = HardcodedData.explorePosts[indexPath.row]
-      let summary = PostCollectionViewCellSummary(postType: post.postType, animal: post.animal, postImage: post.postImages.first)
+      let summary = PostCollectionViewCellSummary(postType: post.postType, animal: post.animal, postImage: post.postImages.first ?? UIImage(named: "SelectPhotoPlaceholder"))
       let cell = collectionView.dequeue(PostCollectionViewCell.self, for: indexPath)
       cell.display(summary: summary)
       return cell

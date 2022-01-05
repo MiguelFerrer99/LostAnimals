@@ -23,11 +23,27 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7QT-b7-Po1">
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7QT-b7-Po1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aFQ-je-w1b">
+                                <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kwr-Xu-COb">
+                                        <rect key="frame" x="10" y="10" width="24" height="24"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="aFQ-je-w1b" secondAttribute="height" multiplier="1:1" id="GLN-DI-UCg"/>
+                                    <constraint firstAttribute="trailing" secondItem="Kwr-Xu-COb" secondAttribute="trailing" constant="10" id="Ihe-ah-XYA"/>
+                                    <constraint firstAttribute="bottom" secondItem="Kwr-Xu-COb" secondAttribute="bottom" constant="10" id="Y4O-wo-h3A"/>
+                                    <constraint firstItem="Kwr-Xu-COb" firstAttribute="leading" secondItem="aFQ-je-w1b" secondAttribute="leading" constant="10" id="hLR-lD-7Ur"/>
+                                    <constraint firstItem="Kwr-Xu-COb" firstAttribute="top" secondItem="aFQ-je-w1b" secondAttribute="top" constant="10" id="scQ-br-kV3"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jsT-L4-ldS">
-                                <rect key="frame" x="0.0" y="0.0" width="276" height="44"/>
+                                <rect key="frame" x="54" y="0.0" width="212" height="44"/>
                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="16"/>
                                 <color key="textColor" name="CustomWhite"/>
                                 <nil key="highlightedColor"/>
@@ -70,6 +86,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="animalTypeImageView" destination="Kwr-Xu-COb" id="DGT-sd-duh"/>
                 <outlet property="animalTypeTitleLabel" destination="jsT-L4-ldS" id="OZf-Vx-LBd"/>
                 <outlet property="checkmarkView" destination="egD-TP-G6o" id="1kf-gz-9N8"/>
             </connections>
