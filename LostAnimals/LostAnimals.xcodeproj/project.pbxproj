@@ -210,6 +210,26 @@
 		41EC16AC2785E20800096B7A /* AnimalTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC16AA2785E20800096B7A /* AnimalTypeTableViewCell.swift */; };
 		41EC16AD2785E20800096B7A /* AnimalTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41EC16AB2785E20800096B7A /* AnimalTypeTableViewCell.xib */; };
 		41EC16AF2785E24800096B7A /* AnimalTypeTableViewCellSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC16AE2785E24800096B7A /* AnimalTypeTableViewCellSummary.swift */; };
+		41EC16BD278678CE00096B7A /* SelectPhotoPopupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC16B8278678CE00096B7A /* SelectPhotoPopupRouter.swift */; };
+		41EC16BE278678CE00096B7A /* SelectPhotoPopupViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41EC16B9278678CE00096B7A /* SelectPhotoPopupViewController.storyboard */; };
+		41EC16BF278678CE00096B7A /* SelectPhotoPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC16BA278678CE00096B7A /* SelectPhotoPopupViewController.swift */; };
+		41EC16C0278678CE00096B7A /* SelectPhotoPopupBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC16BB278678CE00096B7A /* SelectPhotoPopupBuilder.swift */; };
+		41EC16C1278678CE00096B7A /* SelectPhotoPopupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC16BC278678CE00096B7A /* SelectPhotoPopupViewModel.swift */; };
+		41EC16C82786890600096B7A /* ErrorPopupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC16C32786890600096B7A /* ErrorPopupRouter.swift */; };
+		41EC16C92786890600096B7A /* ErrorPopupViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41EC16C42786890600096B7A /* ErrorPopupViewController.storyboard */; };
+		41EC16CA2786890600096B7A /* ErrorPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC16C52786890600096B7A /* ErrorPopupViewController.swift */; };
+		41EC16CB2786890600096B7A /* ErrorPopupBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC16C62786890600096B7A /* ErrorPopupBuilder.swift */; };
+		41EC16CC2786890600096B7A /* ErrorPopupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC16C72786890600096B7A /* ErrorPopupViewModel.swift */; };
+		41EC16D327868C2900096B7A /* SuccessPopupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC16CE27868C2900096B7A /* SuccessPopupRouter.swift */; };
+		41EC16D427868C2900096B7A /* SuccessPopupViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41EC16CF27868C2900096B7A /* SuccessPopupViewController.storyboard */; };
+		41EC16D527868C2900096B7A /* SuccessPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC16D027868C2900096B7A /* SuccessPopupViewController.swift */; };
+		41EC16D627868C2900096B7A /* SuccessPopupBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC16D127868C2900096B7A /* SuccessPopupBuilder.swift */; };
+		41EC16D727868C2900096B7A /* SuccessPopupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC16D227868C2900096B7A /* SuccessPopupViewModel.swift */; };
+		41EC16DE27868FF900096B7A /* GuestPopupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC16D927868FF900096B7A /* GuestPopupRouter.swift */; };
+		41EC16DF27868FF900096B7A /* GuestPopupViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41EC16DA27868FF900096B7A /* GuestPopupViewController.storyboard */; };
+		41EC16E027868FF900096B7A /* GuestPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC16DB27868FF900096B7A /* GuestPopupViewController.swift */; };
+		41EC16E127868FF900096B7A /* GuestPopupBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC16DC27868FF900096B7A /* GuestPopupBuilder.swift */; };
+		41EC16E227868FF900096B7A /* GuestPopupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC16DD27868FF900096B7A /* GuestPopupViewModel.swift */; };
 		41F820C7276FD83B0046B0EA /* WhereCanWeFindYouRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F820C3276FD83B0046B0EA /* WhereCanWeFindYouRouter.swift */; };
 		41F820C8276FD83B0046B0EA /* WhereCanWeFindYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F820C4276FD83B0046B0EA /* WhereCanWeFindYouViewController.swift */; };
 		41F820C9276FD83B0046B0EA /* WhereCanWeFindYouBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F820C5276FD83B0046B0EA /* WhereCanWeFindYouBuilder.swift */; };
@@ -447,6 +467,26 @@
 		41EC16AA2785E20800096B7A /* AnimalTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTypeTableViewCell.swift; sourceTree = "<group>"; };
 		41EC16AB2785E20800096B7A /* AnimalTypeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalTypeTableViewCell.xib; sourceTree = "<group>"; };
 		41EC16AE2785E24800096B7A /* AnimalTypeTableViewCellSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTypeTableViewCellSummary.swift; sourceTree = "<group>"; };
+		41EC16B8278678CE00096B7A /* SelectPhotoPopupRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoPopupRouter.swift; sourceTree = "<group>"; };
+		41EC16B9278678CE00096B7A /* SelectPhotoPopupViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectPhotoPopupViewController.storyboard; sourceTree = "<group>"; };
+		41EC16BA278678CE00096B7A /* SelectPhotoPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoPopupViewController.swift; sourceTree = "<group>"; };
+		41EC16BB278678CE00096B7A /* SelectPhotoPopupBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoPopupBuilder.swift; sourceTree = "<group>"; };
+		41EC16BC278678CE00096B7A /* SelectPhotoPopupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoPopupViewModel.swift; sourceTree = "<group>"; };
+		41EC16C32786890600096B7A /* ErrorPopupRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorPopupRouter.swift; sourceTree = "<group>"; };
+		41EC16C42786890600096B7A /* ErrorPopupViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ErrorPopupViewController.storyboard; sourceTree = "<group>"; };
+		41EC16C52786890600096B7A /* ErrorPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorPopupViewController.swift; sourceTree = "<group>"; };
+		41EC16C62786890600096B7A /* ErrorPopupBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorPopupBuilder.swift; sourceTree = "<group>"; };
+		41EC16C72786890600096B7A /* ErrorPopupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorPopupViewModel.swift; sourceTree = "<group>"; };
+		41EC16CE27868C2900096B7A /* SuccessPopupRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessPopupRouter.swift; sourceTree = "<group>"; };
+		41EC16CF27868C2900096B7A /* SuccessPopupViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SuccessPopupViewController.storyboard; sourceTree = "<group>"; };
+		41EC16D027868C2900096B7A /* SuccessPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessPopupViewController.swift; sourceTree = "<group>"; };
+		41EC16D127868C2900096B7A /* SuccessPopupBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessPopupBuilder.swift; sourceTree = "<group>"; };
+		41EC16D227868C2900096B7A /* SuccessPopupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessPopupViewModel.swift; sourceTree = "<group>"; };
+		41EC16D927868FF900096B7A /* GuestPopupRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestPopupRouter.swift; sourceTree = "<group>"; };
+		41EC16DA27868FF900096B7A /* GuestPopupViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GuestPopupViewController.storyboard; sourceTree = "<group>"; };
+		41EC16DB27868FF900096B7A /* GuestPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestPopupViewController.swift; sourceTree = "<group>"; };
+		41EC16DC27868FF900096B7A /* GuestPopupBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestPopupBuilder.swift; sourceTree = "<group>"; };
+		41EC16DD27868FF900096B7A /* GuestPopupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestPopupViewModel.swift; sourceTree = "<group>"; };
 		41F820C3276FD83B0046B0EA /* WhereCanWeFindYouRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereCanWeFindYouRouter.swift; sourceTree = "<group>"; };
 		41F820C4276FD83B0046B0EA /* WhereCanWeFindYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereCanWeFindYouViewController.swift; sourceTree = "<group>"; };
 		41F820C5276FD83B0046B0EA /* WhereCanWeFindYouBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereCanWeFindYouBuilder.swift; sourceTree = "<group>"; };
@@ -588,8 +628,12 @@
 		4100A0F42783AE4B0049EEF0 /* Popups */ = {
 			isa = PBXGroup;
 			children = (
+				41EC16C2278688EB00096B7A /* ErrorPopup */,
 				41CD10E4278217FC00257B2B /* FilterPopups */,
+				41EC16D827868FE500096B7A /* GuestPopup */,
 				4100A0F32783AE440049EEF0 /* PostOptionsPopup */,
+				41EC16B72786783400096B7A /* SelectPhotoPopup */,
+				41EC16CD27868C1400096B7A /* SuccessPopup */,
 			);
 			path = Popups;
 			sourceTree = "<group>";
@@ -1099,6 +1143,54 @@
 			path = AnimalTypeTableViewCell;
 			sourceTree = "<group>";
 		};
+		41EC16B72786783400096B7A /* SelectPhotoPopup */ = {
+			isa = PBXGroup;
+			children = (
+				41EC16B9278678CE00096B7A /* SelectPhotoPopupViewController.storyboard */,
+				41EC16B8278678CE00096B7A /* SelectPhotoPopupRouter.swift */,
+				41EC16BA278678CE00096B7A /* SelectPhotoPopupViewController.swift */,
+				41EC16BB278678CE00096B7A /* SelectPhotoPopupBuilder.swift */,
+				41EC16BC278678CE00096B7A /* SelectPhotoPopupViewModel.swift */,
+			);
+			path = SelectPhotoPopup;
+			sourceTree = "<group>";
+		};
+		41EC16C2278688EB00096B7A /* ErrorPopup */ = {
+			isa = PBXGroup;
+			children = (
+				41EC16C42786890600096B7A /* ErrorPopupViewController.storyboard */,
+				41EC16C32786890600096B7A /* ErrorPopupRouter.swift */,
+				41EC16C52786890600096B7A /* ErrorPopupViewController.swift */,
+				41EC16C62786890600096B7A /* ErrorPopupBuilder.swift */,
+				41EC16C72786890600096B7A /* ErrorPopupViewModel.swift */,
+			);
+			path = ErrorPopup;
+			sourceTree = "<group>";
+		};
+		41EC16CD27868C1400096B7A /* SuccessPopup */ = {
+			isa = PBXGroup;
+			children = (
+				41EC16CF27868C2900096B7A /* SuccessPopupViewController.storyboard */,
+				41EC16CE27868C2900096B7A /* SuccessPopupRouter.swift */,
+				41EC16D027868C2900096B7A /* SuccessPopupViewController.swift */,
+				41EC16D127868C2900096B7A /* SuccessPopupBuilder.swift */,
+				41EC16D227868C2900096B7A /* SuccessPopupViewModel.swift */,
+			);
+			path = SuccessPopup;
+			sourceTree = "<group>";
+		};
+		41EC16D827868FE500096B7A /* GuestPopup */ = {
+			isa = PBXGroup;
+			children = (
+				41EC16DA27868FF900096B7A /* GuestPopupViewController.storyboard */,
+				41EC16D927868FF900096B7A /* GuestPopupRouter.swift */,
+				41EC16DB27868FF900096B7A /* GuestPopupViewController.swift */,
+				41EC16DC27868FF900096B7A /* GuestPopupBuilder.swift */,
+				41EC16DD27868FF900096B7A /* GuestPopupViewModel.swift */,
+			);
+			path = GuestPopup;
+			sourceTree = "<group>";
+		};
 		41F820C2276FD8100046B0EA /* WhereCanWeFindYou */ = {
 			isa = PBXGroup;
 			children = (
@@ -1334,10 +1426,12 @@
 				4186AC92277F77EF009C07E2 /* ExploreFiltersCollectionViewCell.xib in Resources */,
 				4114ABD3275F960200F1AB01 /* AccountDetailsCollectionViewCell.xib in Resources */,
 				4100A0EE278372110049EEF0 /* PostViewController.storyboard in Resources */,
+				41EC16BE278678CE00096B7A /* SelectPhotoPopupViewController.storyboard in Resources */,
 				41B7562B275EE50900C00E03 /* SignUpViewController.storyboard in Resources */,
 				41CD11042783244700257B2B /* LocationFilterPopupViewController.storyboard in Resources */,
 				4100A11127848E240049EEF0 /* EditPostViewController.storyboard in Resources */,
 				41CD1119278350F300257B2B /* EmptyCollectionViewCell.xib in Resources */,
+				41EC16D427868C2900096B7A /* SuccessPopupViewController.storyboard in Resources */,
 				415E59952764F206009A013E /* WhereDoYouLiveCitiesViewController.storyboard in Resources */,
 				41B9CE72277F421300966509 /* PostCollectionViewCell.xib in Resources */,
 				31981E49241919D300D25074 /* CustomTextField.xib in Resources */,
@@ -1352,8 +1446,10 @@
 				3147D626241906FD00E741D3 /* LaunchScreen.storyboard in Resources */,
 				41BFE16C276539BC00AC5570 /* CountryTableViewCell.xib in Resources */,
 				413987152738052C00C243F4 /* StartupViewController.storyboard in Resources */,
+				41EC16C92786890600096B7A /* ErrorPopupViewController.storyboard in Resources */,
 				3147D623241906FD00E741D3 /* Assets.xcassets in Resources */,
 				418E2345277CB641008BB92E /* TabBarViewController.storyboard in Resources */,
+				41EC16DF27868FF900096B7A /* GuestPopupViewController.storyboard in Resources */,
 				4100A0FB2783AE640049EEF0 /* PostOptionsPopupViewController.storyboard in Resources */,
 				410B31F3276B32C300CE4180 /* Countries.json in Resources */,
 				41CD10F8278222F200257B2B /* AnimalFilterTableViewCell.xib in Resources */,
@@ -1370,6 +1466,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41EC16CA2786890600096B7A /* ErrorPopupViewController.swift in Sources */,
+				41EC16C82786890600096B7A /* ErrorPopupRouter.swift in Sources */,
 				41B75626275EE4CE00C00E03 /* SignUpRouter.swift in Sources */,
 				41CDA43C2780E6930009AB55 /* PostsFilter.swift in Sources */,
 				4114ABCC275F94B400F1AB01 /* PersonalDetailsCollectionViewCell.swift in Sources */,
@@ -1378,12 +1476,15 @@
 				41CD112C27835F6500257B2B /* SavedPostsCollectionView.swift in Sources */,
 				411C7F6E274BA8FE00C9710A /* LoginViewController.swift in Sources */,
 				4186AC91277F77EF009C07E2 /* ExploreFiltersCollectionViewCell.swift in Sources */,
+				41EC16C1278678CE00096B7A /* SelectPhotoPopupViewModel.swift in Sources */,
 				417B8609277D1F1C0051B8CF /* NewPostRouter.swift in Sources */,
 				418C4140275A5E310099BC5B /* ForgotPasswordRouter.swift in Sources */,
 				CCB0207626A6F12000214CB9 /* String.swift in Sources */,
+				41EC16DE27868FF900096B7A /* GuestPopupRouter.swift in Sources */,
 				4160E701277B99FB00C7066F /* TermsAndConditionsRouter.swift in Sources */,
 				415E59852763F28C009A013E /* PersonalDetailsCollectionViewCellViewModel.swift in Sources */,
 				4100A0FD2783AE640049EEF0 /* PostOptionsPopupBuilder.swift in Sources */,
+				41EC16CC2786890600096B7A /* ErrorPopupViewModel.swift in Sources */,
 				4160E70E277B9E9B00C7066F /* OnboardingBuilder.swift in Sources */,
 				41BFE177276618E400AC5570 /* CityTableViewCellSummary.swift in Sources */,
 				411C7F6F274BA8FE00C9710A /* LoginBuilder.swift in Sources */,
@@ -1405,15 +1506,18 @@
 				4114ABD2275F960200F1AB01 /* AccountDetailsCollectionViewCell.swift in Sources */,
 				418E2350277CC934008BB92E /* TermTableViewCellSummary.swift in Sources */,
 				4186AC94277F78FB009C07E2 /* ExploreFiltersCollectionViewCellSummary.swift in Sources */,
+				41EC16E227868FF900096B7A /* GuestPopupViewModel.swift in Sources */,
 				41CD11072783244700257B2B /* LocationFilterPopupViewModel.swift in Sources */,
 				4139870F2737FA3500C243F4 /* StartupViewController.swift in Sources */,
 				4100A0F0278372110049EEF0 /* PostBuilder.swift in Sources */,
 				945B15BD25595DC9003A65E0 /* Cache.swift in Sources */,
 				416D1CE927751BFB00C75546 /* SocialMediaDetailsCollectionViewCellViewModel.swift in Sources */,
 				31981E4B24191A4500D25074 /* CustomTextField.swift in Sources */,
+				41EC16BF278678CE00096B7A /* SelectPhotoPopupViewController.swift in Sources */,
 				4108D8DB27624C8600880E0B /* PersonalDetailsCollectionViewCellTextFields.swift in Sources */,
 				41EC16AF2785E24800096B7A /* AnimalTypeTableViewCellSummary.swift in Sources */,
 				4108D8D12762276800880E0B /* SignUpProtocols.swift in Sources */,
+				41EC16D327868C2900096B7A /* SuccessPopupRouter.swift in Sources */,
 				41CD110E278336F400257B2B /* DateFilterPopupRouter.swift in Sources */,
 				41CD11052783244700257B2B /* LocationFilterPopupViewController.swift in Sources */,
 				41CDA4322780E0D60009AB55 /* Post.swift in Sources */,
@@ -1423,6 +1527,7 @@
 				416D29D22772551400CDD277 /* AccountDetailsCollectionViewCellViewModel.swift in Sources */,
 				41CD10EE2782183900257B2B /* AnimalFilterPopupBuilder.swift in Sources */,
 				41CDA4382780E4400009AB55 /* OnboardingStep.swift in Sources */,
+				41EC16D527868C2900096B7A /* SuccessPopupViewController.swift in Sources */,
 				4100A11327848E240049EEF0 /* EditPostBuilder.swift in Sources */,
 				4160E70D277B9E9B00C7066F /* OnboardingViewController.swift in Sources */,
 				943CE5FF2546DFBC00CA93AA /* CustomImageView.swift in Sources */,
@@ -1433,6 +1538,7 @@
 				4100A0FE2783AE640049EEF0 /* PostOptionsPopupViewModel.swift in Sources */,
 				41CD111B2783510700257B2B /* EmptyCollectionViewCellSummary.swift in Sources */,
 				416D1CEB27751C0C00C75546 /* SocialMediaDetailsCollectionViewCellTextFields.swift in Sources */,
+				41EC16D727868C2900096B7A /* SuccessPopupViewModel.swift in Sources */,
 				418E2343277CB619008BB92E /* TabBarViewModel.swift in Sources */,
 				415E597F2763EA7E009A013E /* WhereDoYouLiveCountriesViewModel.swift in Sources */,
 				41EC16902784EEEA00096B7A /* Location.swift in Sources */,
@@ -1450,6 +1556,7 @@
 				945B15B325595DC9003A65E0 /* UIColor.swift in Sources */,
 				418E2342277CB619008BB92E /* TabBarBuilder.swift in Sources */,
 				41CD112527835C2200257B2B /* SavedPostsBuilder.swift in Sources */,
+				41EC16E127868FF900096B7A /* GuestPopupBuilder.swift in Sources */,
 				41EC16A42785E08700096B7A /* AnimalTypesViewController.swift in Sources */,
 				4160E704277B99FB00C7066F /* TermsAndConditionsViewModel.swift in Sources */,
 				945B15AE25595DC9003A65E0 /* Dynamic.swift in Sources */,
@@ -1472,6 +1579,7 @@
 				945B15B125595DC9003A65E0 /* ViewModel.swift in Sources */,
 				41CD10F327821B5000257B2B /* Animal.swift in Sources */,
 				415E59922764F1F8009A013E /* WhereDoYouLiveCitiesBuilder.swift in Sources */,
+				41EC16E027868FF900096B7A /* GuestPopupViewController.swift in Sources */,
 				4114ABD7275F966600F1AB01 /* SocialMediaDetailsCollectionViewCell.swift in Sources */,
 				417B8621277D27380051B8CF /* ProfileViewController.swift in Sources */,
 				418E2349277CC7FC008BB92E /* TermsAndConditionsTableView.swift in Sources */,
@@ -1485,6 +1593,7 @@
 				A01CC49125D2FB3700404685 /* LocalizedKey.swift in Sources */,
 				945B15B025595DC9003A65E0 /* CellsHelper.swift in Sources */,
 				945B15B925595DC9003A65E0 /* Presenter.swift in Sources */,
+				41EC16CB2786890600096B7A /* ErrorPopupBuilder.swift in Sources */,
 				4100A11227848E240049EEF0 /* EditPostViewController.swift in Sources */,
 				418E234D277CC8F6008BB92E /* TermTableViewCell.swift in Sources */,
 				41CD10ED2782183900257B2B /* AnimalFilterPopupViewController.swift in Sources */,
@@ -1504,6 +1613,7 @@
 				41F820C8276FD83B0046B0EA /* WhereCanWeFindYouViewController.swift in Sources */,
 				41B75629275EE4CE00C00E03 /* SignUpViewModel.swift in Sources */,
 				417B860C277D1F1C0051B8CF /* NewPostBuilder.swift in Sources */,
+				41EC16D627868C2900096B7A /* SuccessPopupBuilder.swift in Sources */,
 				943CE5FE2546DFBC00CA93AA /* CustomButton.swift in Sources */,
 				415E59902764F1F8009A013E /* WhereDoYouLiveCitiesRouter.swift in Sources */,
 				41CD112827835F0600257B2B /* SavedPostsRefreshControl.swift in Sources */,
@@ -1514,12 +1624,14 @@
 				41CDA4362780E3EC0009AB55 /* HardcodedData.swift in Sources */,
 				417B8622277D27380051B8CF /* ProfileBuilder.swift in Sources */,
 				41B9CE71277F421300966509 /* PostCollectionViewCell.swift in Sources */,
+				41EC16C0278678CE00096B7A /* SelectPhotoPopupBuilder.swift in Sources */,
 				41BFE174276618C900AC5570 /* CityTableViewCell.swift in Sources */,
 				419E507527708ACD007C196B /* NotificationName.swift in Sources */,
 				41BFE16B276539BC00AC5570 /* CountryTableViewCell.swift in Sources */,
 				CCB0207526A6F12000214CB9 /* Date.swift in Sources */,
 				415E59A127650D77009A013E /* Country.swift in Sources */,
 				41CD112427835C2200257B2B /* SavedPostsViewController.swift in Sources */,
+				41EC16BD278678CE00096B7A /* SelectPhotoPopupRouter.swift in Sources */,
 				418E2341277CB619008BB92E /* TabBarViewController.swift in Sources */,
 				945B15BB25595DC9003A65E0 /* Window.swift in Sources */,
 				41CD11062783244700257B2B /* LocationFilterPopupBuilder.swift in Sources */,

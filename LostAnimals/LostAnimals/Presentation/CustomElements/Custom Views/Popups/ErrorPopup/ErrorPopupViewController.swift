@@ -1,19 +1,19 @@
 //
-//  PostOptionsPopupViewController.swift
+//  ErrorPopupViewController.swift
 //  LostAnimals
 //
-//  Created by Miguel Ferrer Fornali on 3/1/22.
+//  Created by Miguel Ferrer Fornali on 6/1/22.
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
 import UIKit
 
-final class PostOptionsPopupViewController: ViewController {
+final class ErrorPopupViewController: ViewController {
   // MARK: - IBOutlets
   @IBOutlet weak var backgroundView: UIView!
   
   // MARK: - Properties
-  var viewModel: PostOptionsPopupViewModel!
+  var viewModel: ErrorPopupViewModel!
   
   // MARK: - Life cycle
   override func viewDidLoad() {
@@ -60,11 +60,7 @@ final class PostOptionsPopupViewController: ViewController {
     viewModel.didPressDismissButton()
   }
   
-  @IBAction func editPostButtonPressed(_ sender: UIButton) {
-    viewModel.didPressEditPostButton()
-  }
-  
-  @IBAction func reportPostButtonPressed(_ sender: UIButton) {
-    viewModel.didPressReportPostButton()
+  @IBAction func okButtonPressed(_ sender: UIButton) {
+    viewModel.didPressOkButton()
   }
 }

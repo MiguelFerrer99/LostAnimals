@@ -22,6 +22,13 @@ final class EditPostRouter {
     self.viewController?.pop()
   }
   
+  func goToSelectPhotoPopup(showRemoveOption: Bool, indexImageView: Int) {
+    let viewController = Container.shared.selectPhotoPopupBuilder().build(showRemoveOption: showRemoveOption, indexImageView: indexImageView)
+    DispatchQueue.main.async {
+      self.viewController?.present(viewController: viewController, completion: nil)
+    }
+  }
+  
   func goToAnimalTypes(selectedAnimalType: AnimalType) {
     let viewController = Container.shared.animalTypesBuilder().build(selectedAnimalType: selectedAnimalType)
     DispatchQueue.main.async {

@@ -52,3 +52,33 @@ func showAlert(title: String, message: String  = "", completion: (() -> Void)? =
   
   topMostController()?.present(viewController: alert)
 }
+
+func showGuestPopup() {
+  if topMostController() is UIAlertController { return }
+  
+  let viewController = Container.shared.guestPopupBuilder().build()
+  
+  DispatchQueue.main.async {
+    topMostController()?.present(viewController: viewController)
+  }
+}
+
+func showErrorPopup() {
+  if topMostController() is UIAlertController { return }
+  
+  let viewController = Container.shared.errorPopupBuilder().build()
+  
+  DispatchQueue.main.async {
+    topMostController()?.present(viewController: viewController)
+  }
+}
+
+func showSuccessPopup(title: String) {
+  if topMostController() is UIAlertController { return }
+  
+  let viewController = Container.shared.successPopupBuilder().build(successTitle: title)
+  
+  DispatchQueue.main.async {
+    topMostController()?.present(viewController: viewController)
+  }
+}

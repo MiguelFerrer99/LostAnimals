@@ -32,10 +32,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mLx-cp-LpY">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1177"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1222"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qbc-Gi-86c">
-                                                <rect key="frame" x="20" y="0.0" width="374" height="1177"/>
+                                                <rect key="frame" x="20" y="0.0" width="374" height="1222"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F7S-Hg-Bet">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="20"/>
@@ -434,15 +434,21 @@
                                                             </stackView>
                                                         </subviews>
                                                     </stackView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uro-Ie-REI">
-                                                        <rect key="frame" x="0.0" y="352" width="374" height="20"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You must select at least one photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKB-K7-I9C">
+                                                        <rect key="frame" x="0.0" y="352" width="374" height="25"/>
+                                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="18"/>
+                                                        <color key="textColor" name="CustomBlack"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P1D-yT-AYG">
+                                                        <rect key="frame" x="0.0" y="397" width="374" height="20"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="20" id="sqb-ib-6rB"/>
+                                                            <constraint firstAttribute="height" constant="20" id="fWF-3r-P4h"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qW6-ul-zfy" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="392" width="374" height="80"/>
+                                                        <rect key="frame" x="0.0" y="437" width="374" height="80"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="80" id="dec-AU-Ji4"/>
@@ -453,7 +459,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="htB-lE-P84" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="492" width="374" height="80"/>
+                                                        <rect key="frame" x="0.0" y="537" width="374" height="80"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="80" id="K7P-Na-GU1"/>
@@ -464,7 +470,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WJK-6z-zNb" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="592" width="374" height="80"/>
+                                                        <rect key="frame" x="0.0" y="637" width="374" height="80"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="80" id="JDx-xm-VKG"/>
@@ -475,7 +481,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6aE-zP-tLV" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="692" width="374" height="80"/>
+                                                        <rect key="frame" x="0.0" y="737" width="374" height="80"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="80" id="At4-sQ-w6w"/>
@@ -486,7 +492,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nwB-Wc-qQW" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="792" width="374" height="80"/>
+                                                        <rect key="frame" x="0.0" y="837" width="374" height="80"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="80" id="7Wl-3a-80G"/>
@@ -497,7 +503,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pHH-tC-hlN" customClass="CustomStackView" customModule="LostAnimals" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="892" width="374" height="85"/>
+                                                        <rect key="frame" x="0.0" y="937" width="374" height="85"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="15h-Dy-Uyh">
                                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="35"/>
@@ -552,14 +558,14 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hl1-DN-Azn">
-                                                        <rect key="frame" x="0.0" y="997" width="374" height="20"/>
+                                                        <rect key="frame" x="0.0" y="1042" width="374" height="20"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="6y0-Uc-Hqb"/>
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="5G9-UP-vVj">
-                                                        <rect key="frame" x="0.0" y="1037" width="374" height="140"/>
+                                                        <rect key="frame" x="0.0" y="1082" width="374" height="140"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5c-zU-faL" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
@@ -647,19 +653,28 @@
                     <connections>
                         <outlet property="animalTextfield" destination="qW6-ul-zfy" id="7qc-W6-l3k"/>
                         <outlet property="breedTextfield" destination="WJK-6z-zNb" id="tJa-xs-faa"/>
+                        <outlet property="deletePostButton" destination="D5c-zU-faL" id="04q-B9-avH"/>
                         <outlet property="descriptionTextview" destination="I6m-so-Scg" id="fRt-Lr-6al"/>
                         <outlet property="lastTimeSeenTextfield" destination="6aE-zP-tLV" id="0Bw-Fz-Yg6"/>
                         <outlet property="locationTextfield" destination="nwB-Wc-qQW" id="4O8-6O-mzp"/>
                         <outlet property="nameTextfield" destination="htB-lE-P84" id="Hio-Zh-sPP"/>
                         <outlet property="postTypeLabel" destination="AqB-OS-Qyi" id="n87-Mq-tzg"/>
                         <outlet property="saveChangesButton" destination="Dkq-iE-RJE" id="pSC-Uj-0tQ"/>
+                        <outlet property="selectPhoto1Button" destination="N3l-ir-L8m" id="uAT-3L-p1A"/>
                         <outlet property="selectPhoto1ImageView" destination="S6z-fd-2KB" id="4uV-ig-x8u"/>
+                        <outlet property="selectPhoto2Button" destination="L1B-vh-4Mf" id="1Uc-s5-wzt"/>
                         <outlet property="selectPhoto2ImageView" destination="FCM-GZ-Tw3" id="ZgV-xQ-wJK"/>
+                        <outlet property="selectPhoto3Button" destination="pSQ-m4-Eg4" id="iuN-Yr-gZ8"/>
                         <outlet property="selectPhoto3ImageView" destination="PwZ-cj-zYl" id="HVC-Pp-x5y"/>
+                        <outlet property="selectPhoto4Button" destination="yEr-kE-Fmb" id="Oi6-KP-Ctw"/>
                         <outlet property="selectPhoto4ImageView" destination="beJ-0T-UCe" id="X5d-fZ-PHz"/>
+                        <outlet property="selectPhoto5Button" destination="LkL-tG-s24" id="58a-co-31f"/>
                         <outlet property="selectPhoto5ImageView" destination="5sK-zW-Ant" id="voD-mC-onu"/>
+                        <outlet property="selectPhoto6Button" destination="8hh-e2-Buh" id="fPC-S0-0s5"/>
                         <outlet property="selectPhoto6ImageView" destination="JW9-vk-kM7" id="ci8-Bg-ggx"/>
+                        <outlet property="selectPhoto7Button" destination="Ozq-9t-KlJ" id="w7R-yS-nYA"/>
                         <outlet property="selectPhoto7ImageView" destination="n0d-K2-LBF" id="nF5-NS-sXn"/>
+                        <outlet property="selectPhoto8Button" destination="f8v-yf-Ca4" id="Jhf-CP-rrZ"/>
                         <outlet property="selectPhoto8ImageView" destination="eQF-Z8-BeZ" id="DyK-RY-fN7"/>
                     </connections>
                 </viewController>

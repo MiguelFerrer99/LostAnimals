@@ -16,4 +16,7 @@ extension Notification.Name {
   static let UpdateFiltersUI = Notification.Name("UpdateFiltersUI")
   static let GoToEditPostFromPostOptionsPopup = Notification.Name("GoToEditPostFromPostOptionsPopup")
   static let SendAnimalToEditPost = Notification.Name("SendAnimalToEditPost")
+  static let RemovePhotoFromSelectPhotoPopup = Notification.Name("RemovePhotoFromSelectPhotoPopup")
+  static let ChooseFromLibraryFromSelectPhotoPopup = Notification.Name("ChooseFromLibraryFromSelectPhotoPopup")
+  static let TakeAPhotoFromSelectPhotoPopup = Notification.Name("TakeAPhotoFromSelectPhotoPopup")
 }

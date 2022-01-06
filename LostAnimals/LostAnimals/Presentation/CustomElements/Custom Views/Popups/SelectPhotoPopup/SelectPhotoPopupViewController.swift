@@ -1,19 +1,20 @@
 //
-//  PostOptionsPopupViewController.swift
+//  SelectPhotoPopupViewController.swift
 //  LostAnimals
 //
-//  Created by Miguel Ferrer Fornali on 3/1/22.
+//  Created by Miguel Ferrer Fornali on 6/1/22.
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
 import UIKit
 
-final class PostOptionsPopupViewController: ViewController {
+final class SelectPhotoPopupViewController: ViewController {
   // MARK: - IBOutlets
   @IBOutlet weak var backgroundView: UIView!
+  @IBOutlet weak var removePhotoOptionView: UIView!
   
   // MARK: - Properties
-  var viewModel: PostOptionsPopupViewModel!
+  var viewModel: SelectPhotoPopupViewModel!
   
   // MARK: - Life cycle
   override func viewDidLoad() {
@@ -52,7 +53,7 @@ final class PostOptionsPopupViewController: ViewController {
   }
   
   private func setupUI() {
-    // Do UI setup
+    removePhotoOptionView.isHidden = !viewModel.showRemoveOption
   }
   
   // MARK: - IBActions
@@ -60,11 +61,15 @@ final class PostOptionsPopupViewController: ViewController {
     viewModel.didPressDismissButton()
   }
   
-  @IBAction func editPostButtonPressed(_ sender: UIButton) {
-    viewModel.didPressEditPostButton()
+  @IBAction func removePhotoButtonPressed(_ sender: UIButton) {
+    viewModel.didPressRemovePhotoButton()
   }
   
-  @IBAction func reportPostButtonPressed(_ sender: UIButton) {
-    viewModel.didPressReportPostButton()
+  @IBAction func chooseFromLibraryButtonPressed(_ sender: UIButton) {
+    viewModel.didPressChooseFromLibraryButton()
+  }
+  
+  @IBAction func takeAPhotoButtonPressed(_ sender: UIButton) {
+    viewModel.didPressTakeAPhotoButton()
   }
 }

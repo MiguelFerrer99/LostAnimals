@@ -47,6 +47,10 @@ extension EditPostViewModel {
     return haveErrors
   }
   
+  func didPressSelectPhotoButton(indexImageView: Int) {
+    self.router.goToSelectPhotoPopup(showRemoveOption: selectPhotoImageViews[indexImageView].image != UIImage(named: "SelectPhotoPlaceholder"), indexImageView: indexImageView)
+  }
+  
   func didPressAnimalTypeButton() {
     self.router.goToAnimalTypes(selectedAnimalType: post.animal.type)
   }

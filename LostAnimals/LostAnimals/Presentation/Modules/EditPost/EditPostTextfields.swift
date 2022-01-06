@@ -75,7 +75,8 @@ extension EditPostViewController: CustomTextFieldDelegate {
   
   private func checkAllContentsAreOk() {
     let haveErrors = viewModel.textFieldsHaveErrors()
-    let canMoveToNextStep = !haveErrors && viewModel.editedTextFields.count == viewModel.numberOfTextFields
+    let hasAtLeastOnePhoto = viewModel.selectPhotoImageViews.contains(where: { $0.image != nil })
+    let canMoveToNextStep = !haveErrors && hasAtLeastOnePhoto && viewModel.editedTextFields.count == viewModel.numberOfTextFields
     saveChangesButton.alpha = canMoveToNextStep ? 1 : 0.5
     saveChangesButton.isEnabled = canMoveToNextStep
   }

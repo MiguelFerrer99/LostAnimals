@@ -35,7 +35,7 @@ extension PostViewModel {
 // MARK: - Functions
 extension PostViewModel {
   func didPressSavePostButton() {
-    // TODO: Save post
+    showGuestPopup()
   }
   
   func didPressOptionsButton() {

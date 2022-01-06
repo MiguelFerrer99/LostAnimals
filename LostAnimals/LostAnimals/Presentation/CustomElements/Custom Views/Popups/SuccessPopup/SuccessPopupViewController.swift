@@ -1,19 +1,20 @@
 //
-//  PostOptionsPopupViewController.swift
+//  SuccessPopupViewController.swift
 //  LostAnimals
 //
-//  Created by Miguel Ferrer Fornali on 3/1/22.
+//  Created by Miguel Ferrer Fornali on 6/1/22.
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
 import UIKit
 
-final class PostOptionsPopupViewController: ViewController {
+final class SuccessPopupViewController: ViewController {
   // MARK: - IBOutlets
   @IBOutlet weak var backgroundView: UIView!
+  @IBOutlet weak var successTitleLabel: UILabel!
   
   // MARK: - Properties
-  var viewModel: PostOptionsPopupViewModel!
+  var viewModel: SuccessPopupViewModel!
   
   // MARK: - Life cycle
   override func viewDidLoad() {
@@ -52,7 +53,7 @@ final class PostOptionsPopupViewController: ViewController {
   }
   
   private func setupUI() {
-    // Do UI setup
+    successTitleLabel.text = viewModel.successTitle
   }
   
   // MARK: - IBActions
@@ -60,11 +61,7 @@ final class PostOptionsPopupViewController: ViewController {
     viewModel.didPressDismissButton()
   }
   
-  @IBAction func editPostButtonPressed(_ sender: UIButton) {
-    viewModel.didPressEditPostButton()
-  }
-  
-  @IBAction func reportPostButtonPressed(_ sender: UIButton) {
-    viewModel.didPressReportPostButton()
+  @IBAction func okButtonPressed(_ sender: UIButton) {
+    viewModel.didPressOkButton()
   }
 }

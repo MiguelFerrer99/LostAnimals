@@ -29,12 +29,20 @@ extension Container {
     return EditPostBuilder()
   }
   
+  func errorPopupBuilder() -> ErrorPopupBuilder {
+    return ErrorPopupBuilder()
+  }
+  
   func exploreBuilder() -> ExploreBuilder {
     return ExploreBuilder()
   }
   
   func forgotPasswordBuilder() -> ForgotPasswordBuilder {
     return ForgotPasswordBuilder()
+  }
+  
+  func guestPopupBuilder() -> GuestPopupBuilder {
+    return GuestPopupBuilder()
   }
   
   func locationFilterPopupBuilder() -> LocationFilterPopupBuilder {
@@ -69,12 +77,20 @@ extension Container {
     return SavedPostsBuilder()
   }
   
+  func selectPhotoPopupBuilder() -> SelectPhotoPopupBuilder {
+    return SelectPhotoPopupBuilder()
+  }
+  
   func signupBuilder() -> SignUpBuilder {
     return SignUpBuilder()
   }
   
   func startupBuilder() -> StartupBuilder {
     return StartupBuilder()
+  }
+  
+  func successPopupBuilder() -> SuccessPopupBuilder {
+    return SuccessPopupBuilder()
   }
   
   func tabBarBuilder() -> TabBarBuilder {
