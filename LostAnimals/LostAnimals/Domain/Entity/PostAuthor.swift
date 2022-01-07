@@ -10,8 +10,10 @@ import Foundation
 import UIKit
 
 struct PostAuthor {
-  let name: String
+  let firstname: String
+  let lastname: String
   let birthdate: Date
-  let location: String
+  let address: String
+  let location: Location?
   let image: UIImage
 }

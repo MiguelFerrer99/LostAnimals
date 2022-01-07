@@ -45,6 +45,10 @@ extension Container {
     return GuestPopupBuilder()
   }
   
+  func locationBuilder() -> LocationBuilder {
+    return LocationBuilder()
+  }
+  
   func locationFilterPopupBuilder() -> LocationFilterPopupBuilder {
     return LocationFilterPopupBuilder()
   }

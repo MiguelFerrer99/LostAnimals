@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PostImageCollectionViewCell" customModule="LostAnimals" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="216" height="131"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="216" height="131"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lb3-wR-min">
+                        <rect key="frame" x="0.0" y="0.0" width="216" height="131"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xVt-At-cpr">
+                                <rect key="frame" x="0.0" y="0.0" width="216" height="131"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xVt-At-cpr" firstAttribute="leading" secondItem="Lb3-wR-min" secondAttribute="leading" id="bTH-bn-CtI"/>
+                            <constraint firstItem="xVt-At-cpr" firstAttribute="top" secondItem="Lb3-wR-min" secondAttribute="top" id="kXd-lB-uqc"/>
+                            <constraint firstAttribute="trailing" secondItem="xVt-At-cpr" secondAttribute="trailing" id="kxE-gi-rdD"/>
+                            <constraint firstAttribute="bottom" secondItem="xVt-At-cpr" secondAttribute="bottom" id="lWZ-SP-c1g"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Lb3-wR-min" secondAttribute="trailing" id="LPs-kI-kEs"/>
+                <constraint firstItem="Lb3-wR-min" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="SOY-2f-r9n"/>
+                <constraint firstItem="Lb3-wR-min" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="i0Q-Ln-6sD"/>
+                <constraint firstAttribute="bottom" secondItem="Lb3-wR-min" secondAttribute="bottom" id="p7j-1M-rYe"/>
+            </constraints>
+            <size key="customSize" width="216" height="131"/>
+            <connections>
+                <outlet property="postImageView" destination="xVt-At-cpr" id="fCJ-eU-gZd"/>
+            </connections>
+            <point key="canvasLocation" x="257.97101449275362" y="147.65625"/>
+        </collectionViewCell>
+    </objects>
+</document>

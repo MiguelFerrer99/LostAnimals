@@ -684,11 +684,35 @@
         </scene>
     </scenes>
     <designables>
+        <designable name="5sK-zW-Ant">
+            <size key="intrinsicContentSize" width="70" height="70"/>
+        </designable>
         <designable name="D5c-zU-faL">
             <size key="intrinsicContentSize" width="98" height="37"/>
         </designable>
         <designable name="Dkq-iE-RJE">
             <size key="intrinsicContentSize" width="114" height="37"/>
+        </designable>
+        <designable name="FCM-GZ-Tw3">
+            <size key="intrinsicContentSize" width="70" height="70"/>
+        </designable>
+        <designable name="JW9-vk-kM7">
+            <size key="intrinsicContentSize" width="70" height="70"/>
+        </designable>
+        <designable name="PwZ-cj-zYl">
+            <size key="intrinsicContentSize" width="70" height="70"/>
+        </designable>
+        <designable name="S6z-fd-2KB">
+            <size key="intrinsicContentSize" width="70" height="70"/>
+        </designable>
+        <designable name="beJ-0T-UCe">
+            <size key="intrinsicContentSize" width="70" height="70"/>
+        </designable>
+        <designable name="eQF-Z8-BeZ">
+            <size key="intrinsicContentSize" width="70" height="70"/>
+        </designable>
+        <designable name="n0d-K2-LBF">
+            <size key="intrinsicContentSize" width="70" height="70"/>
         </designable>
     </designables>
     <resources>

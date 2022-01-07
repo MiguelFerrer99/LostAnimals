@@ -36,6 +36,20 @@ extension PostViewModel {
 
 // MARK: - Functions
 extension PostViewModel {
+  func didPressLocation() {
+    if let location = post.location {
+      self.router.goToLocation(location: location, animal: post.animal)
+    }
+  }
+  
+  func didPressAuthor() {
+    self.router.goToAuthorProfile()
+  }
+  
+  func didPressContactWithAuthor() {
+    // TODO: - Present ContactWithAuthorVC
+  }
+  
   func didPressSavePostButton() {
     let logged = Cache.get(boolFor: .logged)
     if logged {

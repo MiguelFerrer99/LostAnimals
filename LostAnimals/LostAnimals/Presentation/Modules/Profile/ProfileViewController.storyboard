@@ -56,6 +56,11 @@
             <point key="canvasLocation" x="7" y="106"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="k5Q-rH-hUu">
+            <size key="intrinsicContentSize" width="64" height="37"/>
+        </designable>
+    </designables>
     <resources>
         <namedColor name="CustomBlack">
             <color red="0.24705882352941178" green="0.24705882352941178" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

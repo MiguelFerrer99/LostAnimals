@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="448" width="414" height="448"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PY3-bW-S89">
-                                <rect key="frame" x="50" y="104" width="314" height="244"/>
+                                <rect key="frame" x="0.0" y="104" width="414" height="244"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="JXv-q3-8pU">
@@ -113,11 +113,11 @@
                         <constraints>
                             <constraint firstItem="xqg-as-hnU" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="5dg-cq-jGi"/>
                             <constraint firstItem="U8z-ag-vCO" firstAttribute="top" secondItem="PY3-bW-S89" secondAttribute="bottom" constant="100" id="BQs-py-sZh"/>
-                            <constraint firstItem="PY3-bW-S89" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="DVp-LH-F3K"/>
+                            <constraint firstItem="PY3-bW-S89" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="DVp-LH-F3K"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="7bJ-bY-ULy" secondAttribute="trailing" constant="30" id="Dmx-Hg-RTe"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="7bJ-bY-ULy" secondAttribute="bottom" constant="30" id="GnR-3Y-5CB"/>
                             <constraint firstItem="U8z-ag-vCO" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.5" id="Hpm-fm-TxE"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="PY3-bW-S89" secondAttribute="trailing" constant="50" id="IWG-WK-LYq"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="PY3-bW-S89" secondAttribute="trailing" id="IWG-WK-LYq"/>
                             <constraint firstItem="PY3-bW-S89" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="60" id="VLU-mX-HCF"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="xqg-as-hnU" secondAttribute="bottom" constant="30" id="d2P-PS-fu2"/>
                             <constraint firstItem="U8z-ag-vCO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="g4c-qJ-bDc"/>

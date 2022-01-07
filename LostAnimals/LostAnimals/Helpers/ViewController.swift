@@ -83,6 +83,7 @@ class ViewController: UIViewController {
     if useLargeTitle {
       navigationController?.navigationBar.prefersLargeTitles = true
     }
+//    navigationController?.navigationBar.prefersLargeTitles = useLargeTitle // TODO: Error
     
     navigationController?.setNavigationBarHidden(hideNavigationBar, animated: false)
     navigationItem.largeTitleDisplayMode = useLargeTitle ? .always : .never

@@ -20,7 +20,7 @@ final class ProfileViewController: ViewController {
     return true
   }
   override var hideBackButton: Bool {
-    return true
+    return viewModel.hideBackButton
   }
   var viewModel: ProfileViewModel!
   

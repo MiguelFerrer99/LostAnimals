@@ -18,6 +18,21 @@ final class PostRouter {
   }
   
   // MARK: - Functions
+  func goToLocation(location: Location, animal: Animal) {
+    let viewController = Container.shared.locationBuilder().build(location: location, animal: animal)
+    DispatchQueue.main.async {
+      self.viewController?.push(viewController: viewController)
+    }
+  }
+  
+  func goToAuthorProfile() {
+    let viewController = Container.shared.profileBuilder().build(hideBackButton: false)
+    viewController.hidesBottomBarWhenPushed = true
+    DispatchQueue.main.async {
+      self.viewController?.push(viewController: viewController)
+    }
+  }
+  
   func goToPostOptionsPopup(comesFrom: PostComesFrom) {
     let viewController = Container.shared.postOptionsPopupBuilder().build(comesFrom: comesFrom)
     DispatchQueue.main.async {

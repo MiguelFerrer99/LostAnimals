@@ -30,6 +30,6 @@ final class TabBarRouter {
   }
   
   func goToProfile() -> ViewController {
-    return Container.shared.profileBuilder().build()
+    return Container.shared.profileBuilder().build(hideBackButton: true)
   }
 }

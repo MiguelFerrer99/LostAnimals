@@ -11,6 +11,20 @@ import UIKit
 final class PostViewController: ViewController {
   
   // MARK: - IBOutlets
+  @IBOutlet weak var postImagesCollectionView: UICollectionView!
+  @IBOutlet weak var postImagesPageControl: UIPageControl!
+  @IBOutlet weak var postTypeImageView: UIImageView!
+  @IBOutlet weak var postTypeLabel: UILabel!
+  @IBOutlet weak var animalNameLabel: UILabel!
+  @IBOutlet weak var animalBreedLabel: UILabel!
+  @IBOutlet weak var lastTimeSeenLabel: UILabel!
+  @IBOutlet weak var locationLabel: UILabel!
+  @IBOutlet weak var descriptionTextView: UITextView!
+  @IBOutlet weak var authorPhotoImageView: UIImageView!
+  @IBOutlet weak var authorNameLabel: UILabel!
+  @IBOutlet weak var authorAgeLabel: UILabel!
+  @IBOutlet weak var authorAddressLabel: UILabel!
+  @IBOutlet weak var contactWithAuthorButton: UIButton!
   
   // MARK: - Properties
   override var navBarTitle: String {
@@ -64,7 +78,38 @@ final class PostViewController: ViewController {
   }
   
   private func setupUI() {
-    // Do UI setup
+    configureCollectionView(postImagesCollectionView)
+    fillUI()
+  }
+  
+  private func fillUI() {
+    postTypeImageView.image = UIImage(named: "\(viewModel.post.animal.type.rawValue)")
+    switch viewModel.post.postType {
+    case .lost:
+      postTypeLabel.text = "Lost animal"
+    case .found:
+      postTypeLabel.text = "Found animal"
+    case .adopt:
+      postTypeLabel.text = "To adopt animal"
+    }
+    
+    authorPhotoImageView.image = viewModel.post.author.image
+    animalNameLabel.text = viewModel.post.animal.name
+    animalBreedLabel.text = viewModel.post.animal.breed
+    lastTimeSeenLabel.text = viewModel.post.lastTimeSeen.toString(withFormat: DateFormat.dayMonthYearHourOther)
+    locationLabel.text = viewModel.post.address
+    descriptionTextView.text = viewModel.post.description
+    authorNameLabel.text = "\(viewModel.post.author.firstname) \(viewModel.post.author.lastname)"
+    
+    let birthdate = DateComponents(year: viewModel.post.author.birthdate.year, month: viewModel.post.author.birthdate.month, day: viewModel.post.author.birthdate.day)
+    let now = Calendar.current.dateComponents([.year, .month, .day], from: Date())
+    let ageComponents = Calendar.current.dateComponents([.year], from: birthdate, to: now)
+    if let authorAge = ageComponents.year {
+      authorAgeLabel.text = "\(authorAge) years old"
+    }
+    
+    authorAddressLabel.text = viewModel.post.author.address
+    contactWithAuthorButton.setTitle("Contact with \(viewModel.post.author.firstname)", for: .normal)
   }
   
   @objc private func savePostButtonPressed() {
@@ -89,5 +134,18 @@ final class PostViewController: ViewController {
   
   @objc private func showErrorPopupFromPostOptionsPopup() {
     viewModel.showErrorPopupFromPostOptionsPopup()
+  }
+  
+  // MARK: - IBActions
+  @IBAction func locationButtonPressed(_ sender: UIButton) {
+    viewModel.didPressLocation()
+  }
+  
+  @IBAction func authorButtonPressed(_ sender: UIButton) {
+    viewModel.didPressAuthor()
+  }
+  
+  @IBAction func contactWithAuthorButtonPressed(_ sender: UIButton) {
+    viewModel.didPressContactWithAuthor()
   }
 }
