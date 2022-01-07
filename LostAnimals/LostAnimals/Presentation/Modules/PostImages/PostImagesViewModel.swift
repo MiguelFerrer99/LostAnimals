@@ -7,15 +7,20 @@
 //
 
 import Foundation
+import UIKit
 
 final class PostImagesViewModel {
   
   // MARK: - Properties
   private let router: PostImagesRouter
+  let postImages: [UIImage?]
+  let indexPostImage: Int
   
   // MARK: - Init
-  required init(router: PostImagesRouter) {
+  required init(router: PostImagesRouter, postImages: [UIImage?], indexPostImage: Int) {
     self.router = router
+    self.postImages = postImages
+    self.indexPostImage = indexPostImage
   }
 }
 
@@ -32,4 +37,7 @@ extension PostImagesViewModel {
 
 // MARK: - Functions
 extension PostImagesViewModel {
+  func didPressDismissButton() {
+    self.router.dismissPostImages()
+  }
 }

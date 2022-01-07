@@ -73,6 +73,10 @@ extension Container {
     return PostBuilder()
   }
   
+  func postImagesBuilder() -> PostImagesBuilder {
+    return PostImagesBuilder()
+  }
+  
   func postOptionsPopupBuilder() -> PostOptionsPopupBuilder {
     return PostOptionsPopupBuilder()
   }

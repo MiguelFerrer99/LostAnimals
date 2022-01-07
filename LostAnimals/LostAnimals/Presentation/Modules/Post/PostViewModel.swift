@@ -36,6 +36,10 @@ extension PostViewModel {
 
 // MARK: - Functions
 extension PostViewModel {
+  func didPressPostImage(indexPostImage: Int) {
+    self.router.goToPostImages(postImages: post.postImages, indexPostImages: indexPostImage)
+  }
+  
   func didPressLocation() {
     if let location = post.location {
       self.router.goToLocation(location: location, animal: post.animal)

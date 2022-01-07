@@ -11,4 +11,5 @@ import UIKit
 
 struct PostImageCollectionViewCellSummary {
   let postImage: UIImage
+  let aspectImage: UIView.ContentMode
 }

@@ -23,7 +23,7 @@ extension PostViewController: UICollectionViewDelegate, UICollectionViewDataSour
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let postImage = viewModel.post.postImages[indexPath.row]
-    let summary = PostImageCollectionViewCellSummary(postImage: postImage ?? UIImage())
+    let summary = PostImageCollectionViewCellSummary(postImage: postImage ?? UIImage(), aspectImage: .scaleAspectFill)
     let cell = collectionView.dequeue(PostImageCollectionViewCell.self, for: indexPath)
     cell.display(summary: summary)
     return cell
@@ -41,6 +41,6 @@ extension PostViewController: UICollectionViewDelegate, UICollectionViewDataSour
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    // TODO: Go to PostImagesVC
+    viewModel.didPressPostImage(indexPostImage: indexPath.row)
   }
 }

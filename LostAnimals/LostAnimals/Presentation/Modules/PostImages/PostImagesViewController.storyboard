@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,7 +12,7 @@
         <!--Post Images View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="PostImagesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="PostImagesViewController" customModule="LostAnimals" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PostImagesViewController" modalPresentationStyle="overFullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="PostImagesViewController" customModule="LostAnimals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -19,7 +20,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hmr-Fv-bEh">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TJR-87-aIX">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="TJR-87-aIX">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -27,26 +28,51 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="IRW-88-89Y">
-                                <rect key="frame" x="0.0" y="816" width="414" height="26"/>
-                            </pageControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gAQ-dJ-kET">
+                                <rect key="frame" x="359" y="64" width="35" height="35"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ySL-3q-0Bl">
+                                        <rect key="frame" x="0.0" y="0.5" width="35" height="34"/>
+                                        <color key="tintColor" name="CustomWhite"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Yb-VH-haG">
+                                        <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <connections>
+                                            <action selector="dismissButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="XEA-sy-ETm"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ySL-3q-0Bl" secondAttribute="trailing" id="22g-1A-3Nd"/>
+                                    <constraint firstAttribute="width" constant="35" id="2Cr-W1-ukb"/>
+                                    <constraint firstAttribute="height" constant="35" id="7gl-1i-oUn"/>
+                                    <constraint firstItem="9Yb-VH-haG" firstAttribute="top" secondItem="gAQ-dJ-kET" secondAttribute="top" id="Z9h-a2-JUg"/>
+                                    <constraint firstAttribute="bottom" secondItem="9Yb-VH-haG" secondAttribute="bottom" id="aAk-i2-tlg"/>
+                                    <constraint firstItem="ySL-3q-0Bl" firstAttribute="leading" secondItem="gAQ-dJ-kET" secondAttribute="leading" id="bqq-ep-bYs"/>
+                                    <constraint firstAttribute="bottom" secondItem="ySL-3q-0Bl" secondAttribute="bottom" id="dMy-ag-buk"/>
+                                    <constraint firstItem="ySL-3q-0Bl" firstAttribute="top" secondItem="gAQ-dJ-kET" secondAttribute="top" id="iu7-0q-KO1"/>
+                                    <constraint firstItem="9Yb-VH-haG" firstAttribute="leading" secondItem="gAQ-dJ-kET" secondAttribute="leading" id="lMZ-X8-aQb"/>
+                                    <constraint firstAttribute="trailing" secondItem="9Yb-VH-haG" secondAttribute="trailing" id="thl-eY-JlT"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Hmr-Fv-bEh" secondAttribute="bottom" id="4qr-Up-T22"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="IRW-88-89Y" secondAttribute="bottom" constant="20" id="4uy-Ss-Vz4"/>
                             <constraint firstItem="Hmr-Fv-bEh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="G4I-HJ-34S"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="IRW-88-89Y" secondAttribute="trailing" id="GxK-aa-Ewa"/>
-                            <constraint firstItem="IRW-88-89Y" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="HHc-wI-m9a"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gAQ-dJ-kET" secondAttribute="trailing" constant="20" id="IFd-ny-JVM"/>
                             <constraint firstItem="Hmr-Fv-bEh" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="cqY-Zi-7Ns"/>
+                            <constraint firstItem="gAQ-dJ-kET" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="hCb-au-2X3"/>
                             <constraint firstAttribute="trailing" secondItem="Hmr-Fv-bEh" secondAttribute="trailing" id="oHk-4I-IDS"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="postImagesCollectionView" destination="Hmr-Fv-bEh" id="rIh-Dd-bXk"/>
-                        <outlet property="postImagesPageControl" destination="IRW-88-89Y" id="8Et-Gq-gst"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -54,4 +80,10 @@
             <point key="canvasLocation" x="111.59420289855073" y="105.80357142857143"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
+        <namedColor name="CustomWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
 </document>

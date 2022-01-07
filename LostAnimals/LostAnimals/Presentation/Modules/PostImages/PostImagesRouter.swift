@@ -18,4 +18,7 @@ final class PostImagesRouter {
   }
   
   // MARK: - Functions
+  func dismissPostImages() {
+    self.viewController?.dismissCurrentView(completion: nil)
+  }
 }

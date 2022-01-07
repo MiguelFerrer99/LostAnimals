@@ -18,6 +18,13 @@ final class PostRouter {
   }
   
   // MARK: - Functions
+  func goToPostImages(postImages: [UIImage?], indexPostImages: Int) {
+    let viewController = Container.shared.postImagesBuilder().build(postImages: postImages, indexPostImage: indexPostImages)
+    DispatchQueue.main.async {
+      self.viewController?.present(viewController: viewController, completion: nil)
+    }
+  }
+  
   func goToLocation(location: Location, animal: Animal) {
     let viewController = Container.shared.locationBuilder().build(location: location, animal: animal)
     DispatchQueue.main.async {

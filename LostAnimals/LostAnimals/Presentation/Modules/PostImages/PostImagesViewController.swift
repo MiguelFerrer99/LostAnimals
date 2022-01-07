@@ -12,7 +12,6 @@ final class PostImagesViewController: ViewController {
   
   // MARK: - IBOutlets
   @IBOutlet weak var postImagesCollectionView: UICollectionView!
-  @IBOutlet weak var postImagesPageControl: UIPageControl!
   
   // MARK: - Properties
   var viewModel: PostImagesViewModel!
@@ -38,6 +37,21 @@ final class PostImagesViewController: ViewController {
   }
   
   private func setupUI() {
-    // Do UI setup
+    configureCollectionView(postImagesCollectionView)
+    scrollToInitItem()
+  }
+  
+  private func scrollToInitItem() {
+    postImagesCollectionView.performBatchUpdates(nil) { result in
+      if result {
+        let indexPath = IndexPath(item: self.viewModel.indexPostImage, section: 0)
+        self.postImagesCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
+      }
+    }
+  }
+  
+  // MARK: - IBActions
+  @IBAction func dismissButtonPressed(_ sender: UIButton) {
+    viewModel.didPressDismissButton()
   }
 }
