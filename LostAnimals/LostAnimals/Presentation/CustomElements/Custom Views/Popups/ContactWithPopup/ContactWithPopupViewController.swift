@@ -1,0 +1,88 @@
+//
+//  ContactWithPopupViewController.swift
+//  LostAnimals
+//
+//  Created by Miguel Ferrer Fornali on 7/1/22.
+//  Copyright © 2022 Rudo. All rights reserved.
+//
+
+import UIKit
+
+final class ContactWithPopupViewController: ViewController {
+  
+  // MARK: - IBOutlets
+  @IBOutlet weak var backgroundView: UIView!
+  @IBOutlet weak var mailView: CustomView!
+  @IBOutlet weak var phoneView: CustomView!
+  @IBOutlet weak var whatsappView: CustomView!
+  @IBOutlet weak var instagramView: CustomView!
+  @IBOutlet weak var twitterView: CustomView!
+  
+  // MARK: - Properties
+  var viewModel: ContactWithPopupViewModel!
+  
+  // MARK: - Life cycle
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    setupUI()
+    setupBindings()
+    viewModel.viewReady()
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    
+    viewModel.viewDidAppear()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    UIView.animate(withDuration: 0.25) {
+      self.backgroundView.alpha = 0.6
+    }
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    
+    UIView.animate(withDuration: 0.25) {
+      self.backgroundView.alpha = 0
+    }
+  }
+  
+  // MARK: - Functions
+  private func setupBindings() {
+    // Do bindings setup
+  }
+  
+  private func setupUI() {
+    // Do UI setup
+  }
+  
+  // MARK: - IBActions
+  @IBAction func backgroundButtonPressed(_ sender: UIButton) {
+    viewModel.dismissButtonPressed()
+  }
+  
+  @IBAction func mailViewButtonPressed(_ sender: UIButton) {
+    viewModel.didPressMailButton()
+  }
+  
+  @IBAction func phoneViewButtonPressed(_ sender: UIButton) {
+    viewModel.didPressPhoneButton()
+  }
+  
+  @IBAction func whatsappViewButtonPressed(_ sender: UIButton) {
+    viewModel.didPressWhatsappButton()
+  }
+  
+  @IBAction func instagramViewButtonPressed(_ sender: UIButton) {
+    viewModel.didPressInstagramButton()
+  }
+  
+  @IBAction func twitterButtonPressed(_ sender: UIButton) {
+    viewModel.didPressTwitterButton()
+  }
+}

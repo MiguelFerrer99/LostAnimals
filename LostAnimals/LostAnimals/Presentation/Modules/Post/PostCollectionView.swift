@@ -39,4 +39,8 @@ extension PostViewController: UICollectionViewDelegate, UICollectionViewDataSour
       postImagesPageControl.currentPage = ip.row
     }
   }
+  
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    // TODO: Go to PostImagesVC
+  }
 }

@@ -33,6 +33,13 @@ final class PostRouter {
     }
   }
   
+  func showContactWithPopup() {
+    let viewController = Container.shared.contactWithPopupBuilder().build()
+    DispatchQueue.main.async {
+      self.viewController?.present(viewController: viewController, completion: nil)
+    }
+  }
+  
   func goToPostOptionsPopup(comesFrom: PostComesFrom) {
     let viewController = Container.shared.postOptionsPopupBuilder().build(comesFrom: comesFrom)
     DispatchQueue.main.async {

@@ -47,7 +47,7 @@ extension PostViewModel {
   }
   
   func didPressContactWithAuthor() {
-    // TODO: - Present ContactWithAuthorVC
+    self.router.showContactWithPopup()
   }
   
   func didPressSavePostButton() {

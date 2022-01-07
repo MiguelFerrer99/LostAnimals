@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-Black.ttf">
+            <string>Nunito-Black</string>
+        </array>
+        <array key="Nunito-Bold.ttf">
+            <string>Nunito-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Contact With Popup View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="ContactWithPopupViewController" modalPresentationStyle="overFullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="ContactWithPopupViewController" customModule="LostAnimals" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vju-6h-kkP">
+                                <rect key="frame" x="0.0" y="-1104" width="414" height="2000"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2000" id="dJY-bN-jku"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7Q-AO-T3x">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="backgroundButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="4aM-B6-cDj"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5P0-hR-DVP" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="522.5" width="414" height="373.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="yi1-0g-JXi">
+                                        <rect key="frame" x="40" y="20" width="334" height="299.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Contact" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEt-DR-IoM">
+                                                <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="GWm-jf-gMg"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Nunito-Black" family="Nunito" pointSize="40"/>
+                                                <color key="textColor" name="CustomWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="These are the options you have to contact with Miguel. Choose one" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LsG-Ww-vLK">
+                                                <rect key="frame" x="0.0" y="100" width="334" height="49.5"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="18"/>
+                                                <color key="textColor" name="CustomWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="S0n-hd-45z">
+                                                <rect key="frame" x="0.0" y="199.5" width="334" height="100"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vSp-RA-9la" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="51" height="100"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mail" translatesAutoresizingMaskIntoConstraints="NO" id="JKO-zE-Ijx">
+                                                                <rect key="frame" x="8" y="32.5" width="35" height="35"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="35" id="hpI-Ye-Qdl"/>
+                                                                    <constraint firstAttribute="height" constant="35" id="sOm-LF-J8V"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gu7-Rn-IWF">
+                                                                <rect key="frame" x="0.0" y="0.0" width="51" height="100"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <connections>
+                                                                    <action selector="mailViewButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="eeF-QS-cxm"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" name="CustomRed"/>
+                                                        <constraints>
+                                                            <constraint firstItem="JKO-zE-Ijx" firstAttribute="centerY" secondItem="vSp-RA-9la" secondAttribute="centerY" id="A6p-KU-GFY"/>
+                                                            <constraint firstItem="JKO-zE-Ijx" firstAttribute="centerX" secondItem="vSp-RA-9la" secondAttribute="centerX" id="Csb-fs-xFb"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Gu7-Rn-IWF" secondAttribute="trailing" id="jb9-S3-Kut"/>
+                                                            <constraint firstItem="Gu7-Rn-IWF" firstAttribute="leading" secondItem="vSp-RA-9la" secondAttribute="leading" id="kuR-DW-dla"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Gu7-Rn-IWF" secondAttribute="bottom" id="pkG-uU-rt0"/>
+                                                            <constraint firstItem="Gu7-Rn-IWF" firstAttribute="top" secondItem="vSp-RA-9la" secondAttribute="top" id="vZC-sN-wIc"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UXE-0f-vd0" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
+                                                        <rect key="frame" x="71" y="0.0" width="50.5" height="100"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Phone" translatesAutoresizingMaskIntoConstraints="NO" id="k34-qK-sLc">
+                                                                <rect key="frame" x="7.5" y="32.5" width="35" height="35"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="35" id="7cg-tG-xlk"/>
+                                                                    <constraint firstAttribute="height" constant="35" id="aV8-wI-whb"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZeT-7m-ZKs">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50.5" height="100"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <connections>
+                                                                    <action selector="phoneViewButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="hIA-T2-gpv"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" name="CustomBlue"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="ZeT-7m-ZKs" secondAttribute="bottom" id="6rh-yp-OOV"/>
+                                                            <constraint firstItem="k34-qK-sLc" firstAttribute="centerY" secondItem="UXE-0f-vd0" secondAttribute="centerY" id="GCC-wv-agP"/>
+                                                            <constraint firstItem="ZeT-7m-ZKs" firstAttribute="top" secondItem="UXE-0f-vd0" secondAttribute="top" id="O56-TY-E8b"/>
+                                                            <constraint firstItem="k34-qK-sLc" firstAttribute="centerX" secondItem="UXE-0f-vd0" secondAttribute="centerX" id="SBW-P1-KNH"/>
+                                                            <constraint firstItem="ZeT-7m-ZKs" firstAttribute="leading" secondItem="UXE-0f-vd0" secondAttribute="leading" id="f2J-7r-4hJ"/>
+                                                            <constraint firstAttribute="trailing" secondItem="ZeT-7m-ZKs" secondAttribute="trailing" id="qI6-f6-bHf"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ciF-t9-2wx" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
+                                                        <rect key="frame" x="141.5" y="0.0" width="51" height="100"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Whatsapp" translatesAutoresizingMaskIntoConstraints="NO" id="pXu-Rp-yiG">
+                                                                <rect key="frame" x="8" y="32.5" width="35" height="35"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="35" id="cOG-H6-pDd"/>
+                                                                    <constraint firstAttribute="height" constant="35" id="kb9-Mf-7Yr"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KB0-ym-9HX">
+                                                                <rect key="frame" x="0.0" y="0.0" width="51" height="100"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <connections>
+                                                                    <action selector="whatsappViewButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="d4H-Ft-jNm"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" name="CustomGreen"/>
+                                                        <constraints>
+                                                            <constraint firstItem="pXu-Rp-yiG" firstAttribute="centerX" secondItem="ciF-t9-2wx" secondAttribute="centerX" id="39E-sx-ZQG"/>
+                                                            <constraint firstItem="KB0-ym-9HX" firstAttribute="leading" secondItem="ciF-t9-2wx" secondAttribute="leading" id="9SC-71-2QQ"/>
+                                                            <constraint firstAttribute="trailing" secondItem="KB0-ym-9HX" secondAttribute="trailing" id="Ndj-Rd-pRJ"/>
+                                                            <constraint firstItem="pXu-Rp-yiG" firstAttribute="centerY" secondItem="ciF-t9-2wx" secondAttribute="centerY" id="cqb-P2-LnM"/>
+                                                            <constraint firstAttribute="bottom" secondItem="KB0-ym-9HX" secondAttribute="bottom" id="fkn-oF-ueZ"/>
+                                                            <constraint firstItem="KB0-ym-9HX" firstAttribute="top" secondItem="ciF-t9-2wx" secondAttribute="top" id="pRc-Lo-nwk"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W9z-sT-fRm" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
+                                                        <rect key="frame" x="212.5" y="0.0" width="50.5" height="100"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="InstagramBackground" translatesAutoresizingMaskIntoConstraints="NO" id="aGO-yX-6Kb" customClass="CustomImageView" customModule="LostAnimals" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50.5" height="100"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </imageView>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Instagram" translatesAutoresizingMaskIntoConstraints="NO" id="lxH-Ew-BUz">
+                                                                <rect key="frame" x="8" y="32.5" width="35" height="35"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="35" id="5qU-k5-y6k"/>
+                                                                    <constraint firstAttribute="width" constant="35" id="Csh-7j-jgJ"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6P-L8-tya">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50.5" height="100"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <connections>
+                                                                    <action selector="instagramViewButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="f60-qW-SjO"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="aGO-yX-6Kb" firstAttribute="top" secondItem="W9z-sT-fRm" secondAttribute="top" id="0Qb-7I-Au4"/>
+                                                            <constraint firstItem="aGO-yX-6Kb" firstAttribute="leading" secondItem="W9z-sT-fRm" secondAttribute="leading" id="2cq-aI-zAf"/>
+                                                            <constraint firstAttribute="trailing" secondItem="w6P-L8-tya" secondAttribute="trailing" id="6Rx-t3-CDk"/>
+                                                            <constraint firstItem="w6P-L8-tya" firstAttribute="leading" secondItem="W9z-sT-fRm" secondAttribute="leading" id="6V2-Zs-Vmv"/>
+                                                            <constraint firstAttribute="bottom" secondItem="aGO-yX-6Kb" secondAttribute="bottom" id="FFk-69-KRC"/>
+                                                            <constraint firstAttribute="bottom" secondItem="w6P-L8-tya" secondAttribute="bottom" id="MeZ-1Z-sJy"/>
+                                                            <constraint firstItem="lxH-Ew-BUz" firstAttribute="centerX" secondItem="W9z-sT-fRm" secondAttribute="centerX" id="OUL-pl-Pys"/>
+                                                            <constraint firstItem="lxH-Ew-BUz" firstAttribute="centerY" secondItem="W9z-sT-fRm" secondAttribute="centerY" id="YjD-ZJ-bIJ"/>
+                                                            <constraint firstAttribute="trailing" secondItem="aGO-yX-6Kb" secondAttribute="trailing" id="iNo-T6-BT2"/>
+                                                            <constraint firstItem="w6P-L8-tya" firstAttribute="top" secondItem="W9z-sT-fRm" secondAttribute="top" id="luW-nX-ATS"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WGz-L7-yGb" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
+                                                        <rect key="frame" x="283" y="0.0" width="51" height="100"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Twitter" translatesAutoresizingMaskIntoConstraints="NO" id="mt6-N1-ey5">
+                                                                <rect key="frame" x="8" y="32.5" width="35" height="35"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="35" id="Yy6-Md-29D"/>
+                                                                    <constraint firstAttribute="height" constant="35" id="lV7-aZ-Zn7"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4IL-uU-LpB">
+                                                                <rect key="frame" x="0.0" y="0.0" width="51" height="100"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <connections>
+                                                                    <action selector="twitterButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Pad-87-6DH"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" name="CustomLightBlue"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="4IL-uU-LpB" secondAttribute="bottom" id="0cI-UK-r54"/>
+                                                            <constraint firstItem="mt6-N1-ey5" firstAttribute="centerY" secondItem="WGz-L7-yGb" secondAttribute="centerY" id="3pw-LK-Set"/>
+                                                            <constraint firstAttribute="trailing" secondItem="4IL-uU-LpB" secondAttribute="trailing" id="EbH-U8-iUW"/>
+                                                            <constraint firstItem="4IL-uU-LpB" firstAttribute="top" secondItem="WGz-L7-yGb" secondAttribute="top" id="bVI-VG-5Fj"/>
+                                                            <constraint firstItem="4IL-uU-LpB" firstAttribute="leading" secondItem="WGz-L7-yGb" secondAttribute="leading" id="ipB-ie-mM1"/>
+                                                            <constraint firstItem="mt6-N1-ey5" firstAttribute="centerX" secondItem="WGz-L7-yGb" secondAttribute="centerX" id="xcn-Q8-ZS6"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="M8k-Al-4Ry"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" name="CustomBlack"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="yi1-0g-JXi" secondAttribute="trailing" constant="40" id="Asr-I6-3km"/>
+                                    <constraint firstItem="yi1-0g-JXi" firstAttribute="leading" secondItem="5P0-hR-DVP" secondAttribute="leading" constant="40" id="SXi-Xt-TYm"/>
+                                    <constraint firstItem="yi1-0g-JXi" firstAttribute="top" secondItem="5P0-hR-DVP" secondAttribute="top" constant="20" id="me9-hU-cMW"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" name="CustomBlack"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="y7Q-AO-T3x" secondAttribute="bottom" id="Brw-MT-ggX"/>
+                            <constraint firstAttribute="bottom" secondItem="5P0-hR-DVP" secondAttribute="bottom" id="Ebk-UI-Cz9"/>
+                            <constraint firstItem="y7Q-AO-T3x" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="Pv3-j2-tP8"/>
+                            <constraint firstItem="5P0-hR-DVP" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="VLl-Me-cPx"/>
+                            <constraint firstItem="Vju-6h-kkP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Ww1-yx-ZoM"/>
+                            <constraint firstItem="Vju-6h-kkP" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="a6Z-He-7tt"/>
+                            <constraint firstItem="y7Q-AO-T3x" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="gZe-Xu-8dK"/>
+                            <constraint firstItem="5P0-hR-DVP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="o3G-ai-e5V"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="yi1-0g-JXi" secondAttribute="bottom" constant="20" id="y2r-sj-ZdD"/>
+                            <constraint firstAttribute="bottom" secondItem="Vju-6h-kkP" secondAttribute="bottom" id="y3Q-VF-Jge"/>
+                            <constraint firstItem="y7Q-AO-T3x" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="z2L-fr-4wM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="Vju-6h-kkP" id="URp-Mx-3qT"/>
+                        <outlet property="instagramView" destination="W9z-sT-fRm" id="8y5-k9-DpJ"/>
+                        <outlet property="mailView" destination="vSp-RA-9la" id="qce-3S-Zb2"/>
+                        <outlet property="phoneView" destination="UXE-0f-vd0" id="L2f-D7-f19"/>
+                        <outlet property="twitterView" destination="WGz-L7-yGb" id="yWU-TD-vCm"/>
+                        <outlet property="whatsappView" destination="ciF-t9-2wx" id="GIX-Xi-igT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="111.59420289855073" y="105.80357142857143"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="aGO-yX-6Kb">
+            <size key="intrinsicContentSize" width="111" height="148"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="Instagram" width="45" height="45"/>
+        <image name="InstagramBackground" width="111" height="148"/>
+        <image name="Mail" width="39.5" height="33"/>
+        <image name="Phone" width="40" height="39.5"/>
+        <image name="Twitter" width="45" height="37.5"/>
+        <image name="Whatsapp" width="40" height="39.5"/>
+        <namedColor name="CustomBlack">
+            <color red="0.24705882352941178" green="0.24705882352941178" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="CustomBlue">
+            <color red="0.0" green="0.42745098039215684" blue="0.82352941176470584" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="CustomGreen">
+            <color red="0.40784313725490196" green="0.72549019607843135" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="CustomLightBlue">
+            <color red="0.0" green="0.76078431372549016" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="CustomRed">
+            <color red="1" green="0.41960784313725491" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="CustomWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

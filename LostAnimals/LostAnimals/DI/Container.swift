@@ -21,6 +21,10 @@ extension Container {
     return AnimalTypesBuilder()
   }
   
+  func contactWithPopupBuilder() -> ContactWithPopupBuilder {
+    return ContactWithPopupBuilder()
+  }
+  
   func dateFilterPopupBuilder() -> DateFilterPopupBuilder {
     return DateFilterPopupBuilder()
   }
