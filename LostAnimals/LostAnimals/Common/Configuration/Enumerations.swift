@@ -75,5 +75,5 @@ public enum FilterType: Int {
 
 public enum PostComesFrom: String {
   case explore
-  case signUp
+  case profile
 }

@@ -16,6 +16,7 @@ final class EditPostViewModel {
   let numberOfTextFields = 5
   var editedTextFields = [CustomTextField]()
   var selectPhotoImageViews: [UIImageView] = []
+  var selectedIndexImageView = 0
   var newPostLocation: Location? = nil
   let post: Post
   
@@ -47,8 +48,8 @@ extension EditPostViewModel {
     return haveErrors
   }
   
-  func didPressSelectPhotoButton(indexImageView: Int) {
-    self.router.goToSelectPhotoPopup(showRemoveOption: selectPhotoImageViews[indexImageView].image != UIImage(named: "SelectPhotoPlaceholder"), indexImageView: indexImageView)
+  func didPressSelectPhotoButton() {
+    self.router.goToSelectPhotoPopup(showRemoveOption: selectPhotoImageViews[selectedIndexImageView].image != UIImage(named: "SelectPhotoPlaceholder"))
   }
   
   func didPressAnimalTypeButton() {

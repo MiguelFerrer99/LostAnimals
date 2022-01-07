@@ -30,8 +30,8 @@ final class EditPostRouter {
     }
   }
   
-  func goToSelectPhotoPopup(showRemoveOption: Bool, indexImageView: Int) {
-    let viewController = Container.shared.selectPhotoPopupBuilder().build(showRemoveOption: showRemoveOption, indexImageView: indexImageView)
+  func goToSelectPhotoPopup(showRemoveOption: Bool) {
+    let viewController = Container.shared.selectPhotoPopupBuilder().build(showRemoveOption: showRemoveOption)
     DispatchQueue.main.async {
       self.viewController?.present(viewController: viewController, completion: nil)
     }

@@ -1,0 +1,26 @@
+//
+//  EditPostImagePicker.swift
+//  LostAnimals
+//
+//  Created by Miguel Ferrer Fornali on 7/1/22.
+//  Copyright © 2022 Rudo. All rights reserved.
+//
+
+import Foundation
+import UIKit
+
+extension EditPostViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+  // MARK: - Functions
+  func configureImagePickerController() {
+    imagePickerController.delegate = self
+    imagePickerController.allowsEditing = true
+  }
+  
+  // MARK: - UIImagePickerControllerDelegate
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+      viewModel.selectPhotoImageViews[viewModel.selectedIndexImageView].image = pickedImage
+      dismiss(animated: true, completion: nil)
+    }
+  }
+}

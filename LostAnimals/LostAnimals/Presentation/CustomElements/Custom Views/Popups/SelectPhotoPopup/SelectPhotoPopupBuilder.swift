@@ -10,12 +10,12 @@ import UIKit
 
 final class SelectPhotoPopupBuilder {
   
-  func build(showRemoveOption: Bool, indexImageView: Int) -> SelectPhotoPopupViewController {
+  func build(showRemoveOption: Bool) -> SelectPhotoPopupViewController {
     
     let viewController = UIViewController.instantiate(viewController: SelectPhotoPopupViewController.self)
     
     let router = SelectPhotoPopupRouter(viewController: viewController)
-    let viewModel = SelectPhotoPopupViewModel(router: router, showRemoveOption: showRemoveOption, indexImageView: indexImageView)
+    let viewModel = SelectPhotoPopupViewModel(router: router, showRemoveOption: showRemoveOption)
     
     viewController.viewModel = viewModel
     

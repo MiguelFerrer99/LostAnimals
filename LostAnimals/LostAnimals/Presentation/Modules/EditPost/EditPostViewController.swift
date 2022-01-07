@@ -42,7 +42,7 @@ final class EditPostViewController: ViewController {
     return "Edit post"
   }
   var viewModel: EditPostViewModel!
-  var descriptionPlaceholderModeEnabled = true
+  let imagePickerController = UIImagePickerController()
   
   // MARK: - Life cycle
   override func viewDidLoad() {
@@ -74,6 +74,7 @@ final class EditPostViewController: ViewController {
     viewModel.selectPhotoImageViews = [selectPhoto1ImageView, selectPhoto2ImageView, selectPhoto3ImageView, selectPhoto4ImageView,
                                        selectPhoto5ImageView, selectPhoto6ImageView, selectPhoto7ImageView, selectPhoto8ImageView]
     configureTextfields()
+    configureImagePickerController()
     fillUI()
   }
   
@@ -96,23 +97,17 @@ final class EditPostViewController: ViewController {
   }
   
   @objc private func removePhoto(_ notification: NSNotification) {
-    if let indexImageView = notification.userInfo?["indexImageView"] as? Int {
-      viewModel.selectPhotoImageViews[indexImageView].image = UIImage(named: "SelectPhotoPlaceholder")
-    }
+    viewModel.selectPhotoImageViews[viewModel.selectedIndexImageView].image = UIImage(named: "SelectPhotoPlaceholder")
   }
   
   @objc private func chooseFromLibrary(_ notification: NSNotification) {
-    if let indexImageView = notification.userInfo?["indexImageView"] as? Int {
-      print(indexImageView)
-      // TODO: Go to chooseFromLibraryVC
-    }
+    self.imagePickerController.sourceType = .photoLibrary
+    self.present(viewController: imagePickerController, completion: nil)
   }
   
   @objc private func takeAPhoto(_ notification: NSNotification) {
-    if let indexImageView = notification.userInfo?["indexImageView"] as? Int {
-      print(indexImageView)
-      // TODO: Go to takeAPhotoVC
-    }
+    self.imagePickerController.sourceType = .camera
+    self.present(viewController: imagePickerController, completion: nil)
   }
   
   private func updateUserInteraction() {
@@ -136,35 +131,43 @@ final class EditPostViewController: ViewController {
   
   // MARK: - IBAction
   @IBAction func selectPhoto1ButtonPressed(_ sender: UIButton) {
-    viewModel.didPressSelectPhotoButton(indexImageView: 0)
+    viewModel.selectedIndexImageView = 0
+    viewModel.didPressSelectPhotoButton()
   }
   
   @IBAction func selectPhoto2ButtonPressed(_ sender: UIButton) {
-    viewModel.didPressSelectPhotoButton(indexImageView: 1)
+    viewModel.selectedIndexImageView = 1
+    viewModel.didPressSelectPhotoButton()
   }
   
   @IBAction func selectPhoto3ButtonPressed(_ sender: UIButton) {
-    viewModel.didPressSelectPhotoButton(indexImageView: 2)
+    viewModel.selectedIndexImageView = 2
+    viewModel.didPressSelectPhotoButton()
   }
   
   @IBAction func selectPhoto4ButtonPressed(_ sender: UIButton) {
-    viewModel.didPressSelectPhotoButton(indexImageView: 3)
+    viewModel.selectedIndexImageView = 3
+    viewModel.didPressSelectPhotoButton()
   }
   
   @IBAction func selectPhoto5ButtonPressed(_ sender: UIButton) {
-    viewModel.didPressSelectPhotoButton(indexImageView: 4)
+    viewModel.selectedIndexImageView = 4
+    viewModel.didPressSelectPhotoButton()
   }
   
   @IBAction func selectPhoto6ButtonPressed(_ sender: UIButton) {
-    viewModel.didPressSelectPhotoButton(indexImageView: 5)
+    viewModel.selectedIndexImageView = 5
+    viewModel.didPressSelectPhotoButton()
   }
   
   @IBAction func selectPhoto7ButtonPressed(_ sender: UIButton) {
-    viewModel.didPressSelectPhotoButton(indexImageView: 6)
+    viewModel.selectedIndexImageView = 6
+    viewModel.didPressSelectPhotoButton()
   }
   
   @IBAction func selectPhoto8ButtonPressed(_ sender: UIButton) {
-    viewModel.didPressSelectPhotoButton(indexImageView: 7)
+    viewModel.selectedIndexImageView = 7
+    viewModel.didPressSelectPhotoButton()
   }
   
   @IBAction func deletePostButtonPressed(_ sender: CustomButton) {

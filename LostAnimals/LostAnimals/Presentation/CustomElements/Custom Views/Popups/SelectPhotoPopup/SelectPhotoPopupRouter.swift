@@ -24,29 +24,26 @@ final class SelectPhotoPopupRouter {
     }
   }
   
-  func dismissSelectPhotoPopupAndRemovePhoto(indexImageView: Int) {
+  func dismissSelectPhotoPopupAndRemovePhoto() {
     DispatchQueue.main.async {
       self.viewController?.dismissCurrentView(completion: {
-        let userInfo: [String: Int] = ["indexImageView": indexImageView]
-        NotificationCenter.default.post(name: .RemovePhotoFromSelectPhotoPopup, object: nil, userInfo: userInfo)
+        NotificationCenter.default.post(name: .RemovePhotoFromSelectPhotoPopup, object: nil)
       })
     }
   }
   
-  func dismissSelectPhotoPopupAndChooseFromLibrary(indexImageView: Int) {
+  func dismissSelectPhotoPopupAndChooseFromLibrary() {
     DispatchQueue.main.async {
       self.viewController?.dismissCurrentView(completion: {
-        let userInfo: [String: Int] = ["indexImageView": indexImageView]
-        NotificationCenter.default.post(name: .ChooseFromLibraryFromSelectPhotoPopup, object: nil, userInfo: userInfo)
+        NotificationCenter.default.post(name: .ChooseFromLibraryFromSelectPhotoPopup, object: nil)
       })
     }
   }
   
-  func dismissSelectPhotoPopupAndTakeAPhoto(indexImageView: Int) {
+  func dismissSelectPhotoPopupAndTakeAPhoto() {
     DispatchQueue.main.async {
       self.viewController?.dismissCurrentView(completion: {
-        let userInfo: [String: Int] = ["indexImageView": indexImageView]
-        NotificationCenter.default.post(name: .TakeAPhotoFromSelectPhotoPopup, object: nil, userInfo: userInfo)
+        NotificationCenter.default.post(name: .TakeAPhotoFromSelectPhotoPopup, object: nil)
       })
     }
   }

@@ -13,13 +13,11 @@ final class SelectPhotoPopupViewModel {
   // MARK: - Properties
   private let router: SelectPhotoPopupRouter
   let showRemoveOption: Bool
-  let indexImageView: Int
   
   // MARK: - Init
-  required init(router: SelectPhotoPopupRouter, showRemoveOption: Bool, indexImageView: Int) {
+  required init(router: SelectPhotoPopupRouter, showRemoveOption: Bool) {
     self.router = router
     self.showRemoveOption = showRemoveOption
-    self.indexImageView = indexImageView
   }
 }
 
@@ -41,14 +39,14 @@ extension SelectPhotoPopupViewModel {
   }
   
   func didPressRemovePhotoButton() {
-    self.router.dismissSelectPhotoPopupAndRemovePhoto(indexImageView: indexImageView)
+    self.router.dismissSelectPhotoPopupAndRemovePhoto()
   }
   
   func didPressChooseFromLibraryButton() {
-    self.router.dismissSelectPhotoPopupAndChooseFromLibrary(indexImageView: indexImageView)
+    self.router.dismissSelectPhotoPopupAndChooseFromLibrary()
   }
   
   func didPressTakeAPhotoButton() {
-    self.router.dismissSelectPhotoPopupAndTakeAPhoto(indexImageView: indexImageView)
+    self.router.dismissSelectPhotoPopupAndTakeAPhoto()
   }
 }
