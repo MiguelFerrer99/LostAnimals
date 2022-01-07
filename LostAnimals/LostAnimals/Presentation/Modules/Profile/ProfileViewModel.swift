@@ -26,10 +26,14 @@ extension ProfileViewModel {
   }
   
   func viewDidAppear() {
-    
+    // Called when view has appeared
   }
 }
 
 // MARK: - Functions
 extension ProfileViewModel {
+  func didPressLogoutButton() {
+    Cache.logOut()
+    self.router.changeRootToStartup()
+  }
 }

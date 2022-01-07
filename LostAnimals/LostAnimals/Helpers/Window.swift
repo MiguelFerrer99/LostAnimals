@@ -63,20 +63,20 @@ func showGuestPopup() {
   }
 }
 
-func showErrorPopup() {
+func showErrorPopup(action: (() -> Void)? = nil) {
   if topMostController() is UIAlertController { return }
   
-  let viewController = Container.shared.errorPopupBuilder().build()
+  let viewController = Container.shared.errorPopupBuilder().build(action: action)
   
   DispatchQueue.main.async {
     topMostController()?.present(viewController: viewController)
   }
 }
 
-func showSuccessPopup(title: String) {
+func showSuccessPopup(title: String, action: (() -> Void)? = nil) {
   if topMostController() is UIAlertController { return }
   
-  let viewController = Container.shared.successPopupBuilder().build(successTitle: title)
+  let viewController = Container.shared.successPopupBuilder().build(successTitle: title, action: action)
   
   DispatchQueue.main.async {
     topMostController()?.present(viewController: viewController)

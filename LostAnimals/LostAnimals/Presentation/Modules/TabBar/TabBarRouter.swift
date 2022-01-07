@@ -18,7 +18,7 @@ final class TabBarRouter {
   }
   
   // MARK: - Functions
-  func goToExplore() -> UIViewController {
+  func goToExplore() -> ViewController {
     return Container.shared.exploreBuilder().build()
   }
   
@@ -29,7 +29,7 @@ final class TabBarRouter {
     }
   }
   
-  func goToProfile() -> UIViewController {
+  func goToProfile() -> ViewController {
     return Container.shared.profileBuilder().build()
   }
 }

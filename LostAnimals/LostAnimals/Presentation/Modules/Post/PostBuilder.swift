@@ -10,12 +10,12 @@ import UIKit
 
 final class PostBuilder {
   
-  func build(post: Post) -> PostViewController {
+  func build(comesFrom: PostComesFrom, post: Post) -> PostViewController {
     
     let viewController = UIViewController.instantiate(viewController: PostViewController.self)
     
     let router = PostRouter(viewController: viewController)
-    let viewModel = PostViewModel(router: router, post: post)
+    let viewModel = PostViewModel(router: router, comesFrom: comesFrom, post: post)
     
     viewController.viewModel = viewModel
     

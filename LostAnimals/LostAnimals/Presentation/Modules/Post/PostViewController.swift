@@ -43,6 +43,9 @@ final class PostViewController: ViewController {
     super.viewDidLoad()
     
     NotificationCenter.default.addObserver(self, selector: #selector(editPostButtonPressed), name: .GoToEditPostFromPostOptionsPopup, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(showGuestPopupFromPostOptionsPopup), name: .ShowGuestPopupFromPostOptionsPopup, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(showSuccessPopupFromPostOptionsPopup), name: .ShowSuccessPopupFromPostOptionsPopup, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(showErrorPopupFromPostOptionsPopup), name: .ShowErrorPopupFromPostOptionsPopup, object: nil)
     
     setupUI()
     setupBindings()
@@ -74,5 +77,17 @@ final class PostViewController: ViewController {
   
   @objc private func editPostButtonPressed() {
     viewModel.didPressEditPostButton()
+  }
+  
+  @objc private func showGuestPopupFromPostOptionsPopup() {
+    viewModel.showGuestPopupFromPostOptionsPopup()
+  }
+  
+  @objc private func showSuccessPopupFromPostOptionsPopup() {
+    viewModel.showSuccessPopupFromPostOptionsPopup()
+  }
+  
+  @objc private func showErrorPopupFromPostOptionsPopup() {
+    viewModel.showErrorPopupFromPostOptionsPopup()
   }
 }

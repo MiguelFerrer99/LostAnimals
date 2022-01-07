@@ -18,8 +18,8 @@ final class PostRouter {
   }
   
   // MARK: - Functions
-  func goToPostOptionsPopup() {
-    let viewController = Container.shared.postOptionsPopupBuilder().build()
+  func goToPostOptionsPopup(comesFrom: PostComesFrom) {
+    let viewController = Container.shared.postOptionsPopupBuilder().build(comesFrom: comesFrom)
     DispatchQueue.main.async {
       self.viewController?.present(viewController: viewController, completion: nil)
     }

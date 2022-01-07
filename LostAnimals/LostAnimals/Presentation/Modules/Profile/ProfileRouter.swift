@@ -18,4 +18,10 @@ final class ProfileRouter {
   }
   
   // MARK: - Functions
+  func changeRootToStartup() {
+    let viewController = Container.shared.startupBuilder().build()
+    DispatchQueue.main.async {
+      changeRoot(to: viewController)
+    }
+  }
 }

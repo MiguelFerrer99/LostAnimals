@@ -1,5 +1,5 @@
 //
-//  ErrorPopupViewController.swift
+//  SuccessPopupViewController.swift
 //  LostAnimals
 //
 //  Created by Miguel Ferrer Fornali on 6/1/22.
@@ -8,12 +8,13 @@
 
 import UIKit
 
-final class ErrorPopupViewController: ViewController {
+final class SuccessPopupViewController: ViewController {
   // MARK: - IBOutlets
   @IBOutlet weak var backgroundView: UIView!
+  @IBOutlet weak var successTitleLabel: UILabel!
   
   // MARK: - Properties
-  var viewModel: ErrorPopupViewModel!
+  var viewModel: SuccessPopupViewModel!
   
   // MARK: - Life cycle
   override func viewDidLoad() {
@@ -52,14 +53,10 @@ final class ErrorPopupViewController: ViewController {
   }
   
   private func setupUI() {
-    // Do UI setup
+    successTitleLabel.text = viewModel.successTitle
   }
   
-  // MARK: - IBActions
-  @IBAction func dismissButtonPressed(_ sender: UIButton) {
-    viewModel.didPressDismissButton()
-  }
-  
+  // MARK: - IBActions  
   @IBAction func okButtonPressed(_ sender: UIButton) {
     viewModel.didPressOkButton()
   }

@@ -72,3 +72,8 @@ public enum FilterType: Int {
   case location
   case date
 }
+
+public enum PostComesFrom: String {
+  case explore
+  case signUp
+}

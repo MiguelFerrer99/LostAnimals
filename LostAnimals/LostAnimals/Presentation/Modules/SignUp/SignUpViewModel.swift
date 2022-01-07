@@ -49,6 +49,7 @@ extension SignUpViewModel {
   }
   
   func didPressGetStartedButton() {
+    Cache.set(.logged, true)
     let onboardingDone = Cache.get(boolFor: .onboardingDone)
     if onboardingDone {
       self.router.changeRootToTabBar()

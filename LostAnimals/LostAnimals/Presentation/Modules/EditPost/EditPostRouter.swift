@@ -22,6 +22,14 @@ final class EditPostRouter {
     self.viewController?.pop()
   }
   
+  func goBack2Times() {
+    guard let viewControllers = self.viewController?.navigationController?.viewControllers else { return }
+    let viewController = viewControllers[viewControllers.count - 3]
+    DispatchQueue.main.async {
+      self.viewController?.navigationController?.popToViewController(viewController, animated: true)
+    }
+  }
+  
   func goToSelectPhotoPopup(showRemoveOption: Bool, indexImageView: Int) {
     let viewController = Container.shared.selectPhotoPopupBuilder().build(showRemoveOption: showRemoveOption, indexImageView: indexImageView)
     DispatchQueue.main.async {

@@ -12,10 +12,12 @@ final class PostOptionsPopupViewModel {
   
   // MARK: - Properties
   private let router: PostOptionsPopupRouter
+  let comesFrom: PostComesFrom
   
   // MARK: - Init
-  required init(router: PostOptionsPopupRouter) {
+  required init(router: PostOptionsPopupRouter, comesFrom: PostComesFrom) {
     self.router = router
+    self.comesFrom = comesFrom
   }
 }
 
@@ -41,6 +43,12 @@ extension PostOptionsPopupViewModel {
   }
   
   func didPressReportPostButton() {
-    // TODO: Report post
+    let logged = Cache.get(boolFor: .logged)
+    if logged {
+      self.router.dismissPostOptionsPopup()
+      NotificationCenter.default.post(name: .ShowSuccessPopupFromPostOptionsPopup, object: nil)
+    } else {
+      self.router.dismissPostOptionsPopupAndShowGuestPopup()
+    }
   }
 }

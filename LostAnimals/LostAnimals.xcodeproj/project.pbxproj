@@ -628,12 +628,10 @@
 		4100A0F42783AE4B0049EEF0 /* Popups */ = {
 			isa = PBXGroup;
 			children = (
-				41EC16C2278688EB00096B7A /* ErrorPopup */,
 				41CD10E4278217FC00257B2B /* FilterPopups */,
-				41EC16D827868FE500096B7A /* GuestPopup */,
+				4163B2682787754B00C83245 /* GenericPopups */,
 				4100A0F32783AE440049EEF0 /* PostOptionsPopup */,
 				41EC16B72786783400096B7A /* SelectPhotoPopup */,
-				41EC16CD27868C1400096B7A /* SuccessPopup */,
 			);
 			path = Popups;
 			sourceTree = "<group>";
@@ -823,6 +821,16 @@
 				4160E719277BA6C200C7066F /* OnboardingCollectionViewCellSummary.swift */,
 			);
 			path = OnboardingCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		4163B2682787754B00C83245 /* GenericPopups */ = {
+			isa = PBXGroup;
+			children = (
+				41EC16C2278688EB00096B7A /* ErrorPopup */,
+				41EC16D827868FE500096B7A /* GuestPopup */,
+				41EC16CD27868C1400096B7A /* SuccessPopup */,
+			);
+			path = GenericPopups;
 			sourceTree = "<group>";
 		};
 		4174221D277C813C00915233 /* Explore */ = {

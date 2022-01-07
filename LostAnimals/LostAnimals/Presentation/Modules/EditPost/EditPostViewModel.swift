@@ -60,10 +60,13 @@ extension EditPostViewModel {
   }
   
   func didPressDeletePostButton() {
-    self.router.goBack()
+    self.router.goBack2Times()
+    NotificationCenter.default.post(name: .ShowSuccessPopupFromEditPost, object: nil)
   }
   
   func didPressSaveChangesButton() {
-    self.router.goBack()
+    showSuccessPopup(title: "The changes has been saved successfully") {
+      self.router.goBack()
+    }
   }
 }

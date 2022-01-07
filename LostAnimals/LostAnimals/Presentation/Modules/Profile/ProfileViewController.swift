@@ -47,4 +47,9 @@ final class ProfileViewController: ViewController {
   private func setupUI() {
     // Do UI setup
   }
+  
+  // MARK: - IBActions
+  @IBAction func logoutButtonPressed(_ sender: CustomButton) {
+    viewModel.didPressLogoutButton()
+  }
 }

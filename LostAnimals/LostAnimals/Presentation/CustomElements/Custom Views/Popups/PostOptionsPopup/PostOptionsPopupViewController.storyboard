@@ -38,18 +38,18 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7b0-Tg-2sm">
-                                <rect key="frame" x="20" y="652" width="374" height="190"/>
+                                <rect key="frame" x="20" y="712" width="374" height="130"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xO8-oh-kMR">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="190"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="130"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZbP-QP-Mcs" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="120"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tgr-NZ-3GD">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="120"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0qa-Pq-M2p">
+                                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0qa-Pq-M2p">
                                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Oex-uF-5vx">
@@ -92,7 +92,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Atz-nX-dXd">
-                                                                <rect key="frame" x="0.0" y="60" width="374" height="60"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zUe-Xj-y1R">
                                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
@@ -143,14 +143,14 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IIM-ew-hEj">
-                                                <rect key="frame" x="0.0" y="120" width="374" height="10"/>
+                                                <rect key="frame" x="0.0" y="60" width="374" height="10"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="10" id="DEO-Ve-Yza"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gmj-3i-r3O" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="130" width="374" height="60"/>
+                                                <rect key="frame" x="0.0" y="70" width="374" height="60"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Cancel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVf-6G-fTB">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
@@ -215,6 +215,7 @@
                     </view>
                     <connections>
                         <outlet property="backgroundView" destination="Opd-w4-trW" id="Os9-L5-9qz"/>
+                        <outlet property="editPostButtonView" destination="0qa-Pq-M2p" id="U1i-yo-eTt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

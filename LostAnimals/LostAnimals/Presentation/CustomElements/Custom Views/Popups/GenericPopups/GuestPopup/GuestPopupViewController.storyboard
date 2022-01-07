@@ -14,54 +14,56 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Success Popup View Controller-->
+        <!--Guest Popup View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="SuccessPopupViewController" modalPresentationStyle="overFullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="SuccessPopupViewController" customModule="LostAnimals" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GuestPopupViewController" modalPresentationStyle="overFullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="GuestPopupViewController" customModule="LostAnimals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y7x-Q9-Tjd">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r4T-74-Akg">
+                                <rect key="frame" x="0.0" y="-1104" width="414" height="2000"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2000" id="NZY-xB-rCI"/>
+                                </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvF-NO-Zzn">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="snJ-ki-Kta">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <connections>
-                                    <action selector="dismissButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="qUy-AH-0DK"/>
+                                    <action selector="dismissButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="iMj-tx-O5B"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lrN-yf-hPe" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hHm-dR-6Np" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
                                 <rect key="frame" x="20" y="702" width="374" height="140"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JAL-Jy-Vfd">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kff-TR-Fo4">
                                         <rect key="frame" x="20" y="10" width="334" height="110"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SuccessTitle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISB-CG-ivf">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up to unlock every advantages of LostAnimals!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HjD-7H-djQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="334" height="60"/>
                                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="18"/>
                                                 <color key="textColor" name="CustomWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Fj-da-PoM" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EOi-EA-Lzo" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="70" width="334" height="40"/>
                                                 <color key="backgroundColor" name="CustomGreen"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="Gbf-2R-Gyt"/>
+                                                    <constraint firstAttribute="height" constant="40" id="RyV-cZ-Lca"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="18"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Ok">
+                                                <state key="normal" title="Go to Startup">
                                                     <color key="titleColor" name="CustomBlack"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="fullRound" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="okButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="blz-SE-j70"/>
+                                                    <action selector="startupButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="bhz-H3-aaI"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -69,11 +71,11 @@
                                 </subviews>
                                 <color key="backgroundColor" name="CustomBlack"/>
                                 <constraints>
-                                    <constraint firstItem="JAL-Jy-Vfd" firstAttribute="leading" secondItem="lrN-yf-hPe" secondAttribute="leading" constant="20" id="GCU-we-7Oy"/>
-                                    <constraint firstAttribute="height" constant="140" id="Iug-WJ-Hly"/>
-                                    <constraint firstAttribute="trailing" secondItem="JAL-Jy-Vfd" secondAttribute="trailing" constant="20" id="K3s-NE-dms"/>
-                                    <constraint firstAttribute="bottom" secondItem="JAL-Jy-Vfd" secondAttribute="bottom" constant="20" id="Khr-ZC-ydB"/>
-                                    <constraint firstItem="JAL-Jy-Vfd" firstAttribute="top" secondItem="lrN-yf-hPe" secondAttribute="top" constant="10" id="rhy-Sm-VZm"/>
+                                    <constraint firstAttribute="height" constant="140" id="0sD-Cq-1tE"/>
+                                    <constraint firstItem="kff-TR-Fo4" firstAttribute="top" secondItem="hHm-dR-6Np" secondAttribute="top" constant="10" id="3VK-yp-bWc"/>
+                                    <constraint firstAttribute="bottom" secondItem="kff-TR-Fo4" secondAttribute="bottom" constant="20" id="76h-ph-x0w"/>
+                                    <constraint firstAttribute="trailing" secondItem="kff-TR-Fo4" secondAttribute="trailing" constant="20" id="FkY-jF-P5k"/>
+                                    <constraint firstItem="kff-TR-Fo4" firstAttribute="leading" secondItem="hHm-dR-6Np" secondAttribute="leading" constant="20" id="dJs-xq-120"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -86,29 +88,32 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="y7x-Q9-Tjd" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="5fx-za-jcB"/>
-                            <constraint firstItem="vvF-NO-Zzn" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="JrB-rN-c6M"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="lrN-yf-hPe" secondAttribute="bottom" constant="20" id="K56-Ho-vQR"/>
-                            <constraint firstAttribute="bottom" secondItem="y7x-Q9-Tjd" secondAttribute="bottom" id="VKh-rN-fzg"/>
-                            <constraint firstItem="y7x-Q9-Tjd" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="aan-zJ-9M7"/>
-                            <constraint firstItem="vvF-NO-Zzn" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="biT-hz-xXt"/>
-                            <constraint firstAttribute="bottom" secondItem="vvF-NO-Zzn" secondAttribute="bottom" id="eLh-7f-Sx5"/>
-                            <constraint firstItem="y7x-Q9-Tjd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="gkI-MJ-7qe"/>
-                            <constraint firstItem="vvF-NO-Zzn" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="o9E-IC-ZXj"/>
-                            <constraint firstItem="lrN-yf-hPe" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="xwX-hN-NjB"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="lrN-yf-hPe" secondAttribute="trailing" constant="20" id="zqM-Kl-NtK"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="hHm-dR-6Np" secondAttribute="trailing" constant="20" id="0rg-fV-VCV"/>
+                            <constraint firstItem="snJ-ki-Kta" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="EGg-nt-dYN"/>
+                            <constraint firstItem="r4T-74-Akg" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="JN3-iR-baE"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="hHm-dR-6Np" secondAttribute="bottom" constant="20" id="MN6-vt-GDW"/>
+                            <constraint firstAttribute="bottom" secondItem="r4T-74-Akg" secondAttribute="bottom" id="Opr-me-olT"/>
+                            <constraint firstItem="hHm-dR-6Np" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="VKx-tv-DGR"/>
+                            <constraint firstAttribute="bottom" secondItem="snJ-ki-Kta" secondAttribute="bottom" id="cDL-Mu-ku9"/>
+                            <constraint firstItem="snJ-ki-Kta" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="k54-cA-d0G"/>
+                            <constraint firstItem="r4T-74-Akg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="s0C-wi-RbH"/>
+                            <constraint firstItem="snJ-ki-Kta" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="uEO-V7-nDu"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="backgroundView" destination="y7x-Q9-Tjd" id="TVd-dg-v3x"/>
-                        <outlet property="successTitleLabel" destination="ISB-CG-ivf" id="K5C-wR-F5f"/>
+                        <outlet property="backgroundView" destination="r4T-74-Akg" id="2sc-9V-5pB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="100.00000000000001" y="91.741071428571431"/>
+            <point key="canvasLocation" x="100.00000000000001" y="105.80357142857143"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="EOi-EA-Lzo">
+            <size key="intrinsicContentSize" width="115" height="37"/>
+        </designable>
+    </designables>
     <resources>
         <namedColor name="CustomBlack">
             <color red="0.24705882352941178" green="0.24705882352941178" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

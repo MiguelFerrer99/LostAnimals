@@ -39,7 +39,12 @@ extension ExploreViewModel {
   }
   
   func didPressSavedPosts() {
-    self.router.goToSavedPosts()
+    let logged = Cache.get(boolFor: .logged)
+    if logged {
+      self.router.goToSavedPosts()
+    } else {
+      showGuestPopup()
+    }
   }
   
   func didPressPost(post: Post) {

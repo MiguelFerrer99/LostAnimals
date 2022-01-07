@@ -31,4 +31,12 @@ final class PostOptionsPopupRouter {
       })
     }
   }
+  
+  func dismissPostOptionsPopupAndShowGuestPopup() {
+    DispatchQueue.main.async {
+      self.viewController?.dismissCurrentView(completion: {
+        NotificationCenter.default.post(name: .ShowGuestPopupFromPostOptionsPopup, object: nil)
+      })
+    }
+  }
 }

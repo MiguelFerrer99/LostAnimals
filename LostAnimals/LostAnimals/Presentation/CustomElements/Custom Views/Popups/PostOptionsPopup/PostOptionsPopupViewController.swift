@@ -11,6 +11,7 @@ import UIKit
 final class PostOptionsPopupViewController: ViewController {
   // MARK: - IBOutlets
   @IBOutlet weak var backgroundView: UIView!
+  @IBOutlet weak var editPostButtonView: UIView!
   
   // MARK: - Properties
   var viewModel: PostOptionsPopupViewModel!
@@ -52,7 +53,7 @@ final class PostOptionsPopupViewController: ViewController {
   }
   
   private func setupUI() {
-    // Do UI setup
+    editPostButtonView.isHidden = viewModel.comesFrom == .explore
   }
   
   // MARK: - IBActions

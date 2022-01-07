@@ -12,7 +12,7 @@ final class TabBarViewController: UITabBarController, UITabBarControllerDelegate
   
   // MARK: - Properties
   var viewModel: TabBarViewModel!
-  var lastTabBarIndex = 0
+  var lastTabBarIndex = TabBarItem.explore.rawValue
   
   // MARK: - Life cycle
   override func viewDidLoad() {
@@ -62,11 +62,26 @@ final class TabBarViewController: UITabBarController, UITabBarControllerDelegate
   
   // MARK: - UITabBarControllerDelegate
   func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-    if tabBarController.selectedIndex == TabBarItem.newPost.rawValue {
-      tabBarController.selectedIndex = lastTabBarIndex
-      viewModel.didPressNewPostTabBarItem()
-    } else {
+    switch tabBarController.selectedIndex {
+    case TabBarItem.explore.rawValue:
       lastTabBarIndex = tabBarController.selectedIndex
+    case TabBarItem.newPost.rawValue:
+      tabBarController.selectedIndex = lastTabBarIndex
+      let logged = Cache.get(boolFor: .logged)
+      if logged {
+        viewModel.didPressNewPostTabBarItem()
+      } else {
+        showGuestPopup()
+      }
+    case TabBarItem.profile.rawValue:
+      let logged = Cache.get(boolFor: .logged)
+      if logged {
+        lastTabBarIndex = tabBarController.selectedIndex
+      } else {
+        tabBarController.selectedIndex = lastTabBarIndex
+        showGuestPopup()
+      }
+    default: return
     }
   }
 }

@@ -1,5 +1,5 @@
 //
-//  SuccessPopupViewModel.swift
+//  ErrorPopupViewModel.swift
 //  LostAnimals
 //
 //  Created by Miguel Ferrer Fornali on 6/1/22.
@@ -8,21 +8,21 @@
 
 import Foundation
 
-final class SuccessPopupViewModel {
+final class ErrorPopupViewModel {
   
   // MARK: - Properties
-  private let router: SuccessPopupRouter
-  let successTitle: String
+  private let router: ErrorPopupRouter
+  let action: (() -> Void)?
   
   // MARK: - Init
-  required init(router: SuccessPopupRouter, successTitle: String) {
+  required init(router: ErrorPopupRouter, action: (() -> Void)? = nil) {
     self.router = router
-    self.successTitle = successTitle
+    self.action = action
   }
 }
 
 // MARK: - Life cycle
-extension SuccessPopupViewModel {
+extension ErrorPopupViewModel {
   func viewReady() {
     // Called when view is loaded and ready
   }
@@ -33,12 +33,8 @@ extension SuccessPopupViewModel {
 }
 
 // MARK: - Functions
-extension SuccessPopupViewModel {
-  func didPressDismissButton() {
-    self.router.dismissSuccessPopup()
-  }
-  
+extension ErrorPopupViewModel {  
   func didPressOkButton() {
-    self.router.dismissSuccessPopup()
+    self.router.dismissErrorPopup(action: action)
   }
 }

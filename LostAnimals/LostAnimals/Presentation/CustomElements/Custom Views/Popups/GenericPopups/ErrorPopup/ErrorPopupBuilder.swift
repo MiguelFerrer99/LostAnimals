@@ -10,12 +10,12 @@ import UIKit
 
 final class ErrorPopupBuilder {
   
-  func build() -> ErrorPopupViewController {
+  func build(action: (() -> Void)? = nil) -> ErrorPopupViewController {
     
     let viewController = UIViewController.instantiate(viewController: ErrorPopupViewController.self)
     
     let router = ErrorPopupRouter(viewController: viewController)
-    let viewModel = ErrorPopupViewModel(router: router)
+    let viewModel = ErrorPopupViewModel(router: router, action: action)
     
     viewController.viewModel = viewModel
     
