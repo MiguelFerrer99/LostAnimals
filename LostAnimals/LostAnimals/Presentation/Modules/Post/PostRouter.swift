@@ -25,8 +25,8 @@ final class PostRouter {
     }
   }
   
-  func goToLocation(location: Location, animal: Animal) {
-    let viewController = Container.shared.locationBuilder().build(location: location, animal: animal)
+  func goToLocation(coordinates: Coordinates, animal: Animal) {
+    let viewController = Container.shared.locationBuilder().build(coordinates: coordinates, animal: animal)
     DispatchQueue.main.async {
       self.viewController?.push(viewController: viewController)
     }
@@ -40,15 +40,15 @@ final class PostRouter {
     }
   }
   
-  func showContactWithPopup() {
-    let viewController = Container.shared.contactWithPopupBuilder().build()
+  func showContactWithPopup(authorSocialMedias: SocialMedias) {
+    let viewController = Container.shared.contactWithPopupBuilder().build(authorSocialMedias: authorSocialMedias)
     DispatchQueue.main.async {
       self.viewController?.present(viewController: viewController, completion: nil)
     }
   }
   
-  func goToPostOptionsPopup(comesFrom: PostComesFrom) {
-    let viewController = Container.shared.postOptionsPopupBuilder().build(comesFrom: comesFrom)
+  func goToPostOptionsPopup(comesFrom: PostComesFrom, post: Post) {
+    let viewController = Container.shared.postOptionsPopupBuilder().build(comesFrom: comesFrom, post: post)
     DispatchQueue.main.async {
       self.viewController?.present(viewController: viewController, completion: nil)
     }

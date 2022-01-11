@@ -13,7 +13,7 @@ extension LocationViewController: MKMapViewDelegate {
   // MARK: - Functions
   func configureMapView(_ mapView: MKMapView) {
     mapView.delegate = self
-    let location = CLLocationCoordinate2D(latitude: viewModel.location.lat, longitude: viewModel.location.long)
+    let location = CLLocationCoordinate2D(latitude: viewModel.coordinates.lat, longitude: viewModel.coordinates.long)
     let regionRadius = 500.0
     let region = MKCoordinateRegion(center: location, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
     mapView.setRegion(region, animated: false)

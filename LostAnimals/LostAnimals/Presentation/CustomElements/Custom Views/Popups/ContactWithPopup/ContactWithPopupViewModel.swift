@@ -12,10 +12,12 @@ final class ContactWithPopupViewModel {
   
   // MARK: - Properties
   private let router: ContactWithPopupRouter
+  let authorSocialMedias: SocialMedias
   
   // MARK: - Init
-  required init(router: ContactWithPopupRouter) {
+  required init(router: ContactWithPopupRouter, authorSocialMedias: SocialMedias) {
     self.router = router
+    self.authorSocialMedias = authorSocialMedias
   }
 }
 
@@ -36,23 +38,19 @@ extension ContactWithPopupViewModel {
     self.router.dismissContactWithPopup()
   }
   
-  func didPressMailButton() {
-    self.router.contactByMail()
-  }
-  
   func didPressPhoneButton() {
-    self.router.contactByPhone()
+    self.router.contactByPhone(prefixNumber: authorSocialMedias.phonePrefix, phoneNumber: authorSocialMedias.phoneNumber)
   }
   
   func didPressWhatsappButton() {
-    self.router.contactByWhatsapp()
+    self.router.contactByWhatsapp(prefixNumber: authorSocialMedias.phonePrefix, phoneNumber: authorSocialMedias.phoneNumber)
   }
   
   func didPressInstagramButton() {
-    self.router.contactByInstagram()
+    self.router.contactByInstagram(instagram: authorSocialMedias.instagram)
   }
   
   func didPressTwitterButton() {
-    self.router.contactByTwitter()
+    self.router.contactByTwitter(twitter: authorSocialMedias.twitter)
   }
 }

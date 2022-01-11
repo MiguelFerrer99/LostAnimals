@@ -13,11 +13,13 @@ final class PostOptionsPopupViewModel {
   // MARK: - Properties
   private let router: PostOptionsPopupRouter
   let comesFrom: PostComesFrom
+  let post: Post
   
   // MARK: - Init
-  required init(router: PostOptionsPopupRouter, comesFrom: PostComesFrom) {
+  required init(router: PostOptionsPopupRouter, comesFrom: PostComesFrom, post: Post) {
     self.router = router
     self.comesFrom = comesFrom
+    self.post = post
   }
 }
 
@@ -50,5 +52,9 @@ extension PostOptionsPopupViewModel {
     } else {
       self.router.dismissPostOptionsPopupAndShowGuestPopup()
     }
+  }
+  
+  func didPressSharePostButton() {
+    self.router.dismissPostOptionsAndShowActivityViewController()
   }
 }

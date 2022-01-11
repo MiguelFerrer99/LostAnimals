@@ -85,14 +85,18 @@ final class EditPostViewController: ViewController {
     case .adopt: postTypeLabel.text = "To adopt animal"
     }
     viewModel.selectPhotoImageViews.enumerated().forEach { selectPhotoImageView in
-      let postImage = viewModel.post.postImages[selectPhotoImageView.offset]
-      selectPhotoImageView.element.image = postImage != nil ? postImage : UIImage(named: "SelectPhotoPlaceholder")
+      if selectPhotoImageView.offset <= viewModel.post.animal.images.count - 1 {
+        let postImage = viewModel.post.animal.images[selectPhotoImageView.offset]
+        selectPhotoImageView.element.image = postImage
+      } else {
+        selectPhotoImageView.element.image = UIImage(named: "SelectPhotoPlaceholder")
+      }
     }
     nameTextfield.textField.text = viewModel.post.animal.name
     animalTextfield.textField.text = viewModel.post.animal.type.rawValue
     breedTextfield.textField.text = viewModel.post.animal.breed
     lastTimeSeenTextfield.textField.text = viewModel.post.lastTimeSeen.toString(withFormat: DateFormat.dayMonthYearOther)
-    locationTextfield.textField.text = viewModel.post.address
+    locationTextfield.textField.text = viewModel.post.location.address
     descriptionTextview.text = viewModel.post.description
   }
   

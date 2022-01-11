@@ -86,8 +86,7 @@ class PersonalDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell {
                                              lastname: lastnameTextfield.textField.text,
                                              animalShelterName: animalShelterNameTextfield.textField.text,
                                              birthdate: birthdateTexfield.textField.text?.toDate(withFormat: DateFormat.dayMonthYearOther),
-                                             address: (viewModel.isAnimalShelter ? whereCanWeFindYouTextfield.textField.text : whereDoYouLiveTextfield.textField.text) ?? "",
-                                             location: viewModel.location)
+                                             location: viewModel.location ?? Location(address: "", coordinates: nil))
     signUpStepsDelegate?.moveToNextSignUpStep()
   }
 }

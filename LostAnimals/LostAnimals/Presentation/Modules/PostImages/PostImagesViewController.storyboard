@@ -62,6 +62,7 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Hmr-Fv-bEh" secondAttribute="bottom" id="4qr-Up-T22"/>
                             <constraint firstItem="Hmr-Fv-bEh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="G4I-HJ-34S"/>
@@ -70,12 +71,20 @@
                             <constraint firstItem="gAQ-dJ-kET" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="hCb-au-2X3"/>
                             <constraint firstAttribute="trailing" secondItem="Hmr-Fv-bEh" secondAttribute="trailing" id="oHk-4I-IDS"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="JZu-Q7-Iw5" appends="YES" id="jDk-4I-Eul"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="postImagesCollectionView" destination="Hmr-Fv-bEh" id="rIh-Dd-bXk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="JZu-Q7-Iw5">
+                    <connections>
+                        <action selector="didPanDownGestureRecognized:" destination="Y6W-OH-hqX" id="HJU-Tb-3fA"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="111.59420289855073" y="105.80357142857143"/>
         </scene>

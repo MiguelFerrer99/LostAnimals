@@ -10,12 +10,12 @@ import UIKit
 
 final class LocationBuilder {
   
-  func build(location: Location, animal: Animal) -> LocationViewController {
+  func build(coordinates: Coordinates, animal: Animal) -> LocationViewController {
     
     let viewController = UIViewController.instantiate(viewController: LocationViewController.self)
     
     let router = LocationRouter(viewController: viewController)
-    let viewModel = LocationViewModel(router: router, location: location, animal: animal)
+    let viewModel = LocationViewModel(router: router, coordinates: coordinates, animal: animal)
     
     viewController.viewModel = viewModel
     

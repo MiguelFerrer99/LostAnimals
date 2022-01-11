@@ -13,13 +13,13 @@ final class LocationViewModel {
   
   // MARK: - Properties
   private let router: LocationRouter
-  let location: Location
+  let coordinates: Coordinates
   let animal: Animal
   
   // MARK: - Init
-  required init(router: LocationRouter, location: Location, animal: Animal) {
+  required init(router: LocationRouter, coordinates: Coordinates, animal: Animal) {
     self.router = router
-    self.location = location
+    self.coordinates = coordinates
     self.animal = animal
   }
 }
@@ -38,7 +38,7 @@ extension LocationViewModel {
 // MARK: - Functions
 extension LocationViewModel {
   func openLocationInMaps() {
-    let coordinate = CLLocationCoordinate2DMake(location.lat, location.long)
+    let coordinate = CLLocationCoordinate2DMake(coordinates.lat, coordinates.long)
     let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary: nil))
     mapItem.name = animal.name
     mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving])

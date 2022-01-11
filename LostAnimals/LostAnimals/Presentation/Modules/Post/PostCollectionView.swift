@@ -14,15 +14,15 @@ extension PostViewController: UICollectionViewDelegate, UICollectionViewDataSour
     collectionView.delegate = self
     collectionView.dataSource = self
     collectionView.register(PostImageCollectionViewCell.self)
-    postImagesPageControl.numberOfPages = viewModel.post.postImages.count
+    postImagesPageControl.numberOfPages = viewModel.post.animal.images.count
   }
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return viewModel.post.postImages.count
+    return viewModel.post.animal.images.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let postImage = viewModel.post.postImages[indexPath.row]
+    let postImage = viewModel.post.animal.images[indexPath.row]
     let summary = PostImageCollectionViewCellSummary(postImage: postImage ?? UIImage(), aspectImage: .scaleAspectFill)
     let cell = collectionView.dequeue(PostImageCollectionViewCell.self, for: indexPath)
     cell.display(summary: summary)

@@ -204,9 +204,10 @@
 		41CDA4322780E0D60009AB55 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CDA4312780E0D60009AB55 /* Post.swift */; };
 		41CDA4342780E21C0009AB55 /* PostAuthor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CDA4332780E21C0009AB55 /* PostAuthor.swift */; };
 		41CDA4362780E3EC0009AB55 /* HardcodedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CDA4352780E3EC0009AB55 /* HardcodedData.swift */; };
-		41CDA4382780E4400009AB55 /* OnboardingStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CDA4372780E4400009AB55 /* OnboardingStep.swift */; };
+		41CDA4382780E4400009AB55 /* OnboardingStepInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CDA4372780E4400009AB55 /* OnboardingStepInfo.swift */; };
 		41CDA43A2780E59B0009AB55 /* TermAndCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CDA4392780E59B0009AB55 /* TermAndCondition.swift */; };
 		41CDA43C2780E6930009AB55 /* PostsFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CDA43B2780E6930009AB55 /* PostsFilter.swift */; };
+		41E8F8EF278C9AB600E73670 /* ContactWithPopupMailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E8F8EE278C9AB600E73670 /* ContactWithPopupMailController.swift */; };
 		41EC16902784EEEA00096B7A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC168F2784EEEA00096B7A /* Location.swift */; };
 		41EC16A22785E08700096B7A /* AnimalTypesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC169D2785E08700096B7A /* AnimalTypesRouter.swift */; };
 		41EC16A32785E08700096B7A /* AnimalTypesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41EC169E2785E08700096B7A /* AnimalTypesViewController.storyboard */; };
@@ -237,6 +238,9 @@
 		41EC16E027868FF900096B7A /* GuestPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC16DB27868FF900096B7A /* GuestPopupViewController.swift */; };
 		41EC16E127868FF900096B7A /* GuestPopupBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC16DC27868FF900096B7A /* GuestPopupBuilder.swift */; };
 		41EC16E227868FF900096B7A /* GuestPopupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC16DD27868FF900096B7A /* GuestPopupViewModel.swift */; };
+		41F2DA78278B887300E582E8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F2DA77278B887300E582E8 /* User.swift */; };
+		41F2DA7C278B8DF600E582E8 /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F2DA7B278B8DF600E582E8 /* Coordinates.swift */; };
+		41F2DA7E278B959B00E582E8 /* SocialMedias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F2DA7D278B959B00E582E8 /* SocialMedias.swift */; };
 		41F820C7276FD83B0046B0EA /* WhereCanWeFindYouRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F820C3276FD83B0046B0EA /* WhereCanWeFindYouRouter.swift */; };
 		41F820C8276FD83B0046B0EA /* WhereCanWeFindYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F820C4276FD83B0046B0EA /* WhereCanWeFindYouViewController.swift */; };
 		41F820C9276FD83B0046B0EA /* WhereCanWeFindYouBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F820C5276FD83B0046B0EA /* WhereCanWeFindYouBuilder.swift */; };
@@ -483,9 +487,10 @@
 		41CDA4312780E0D60009AB55 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		41CDA4332780E21C0009AB55 /* PostAuthor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAuthor.swift; sourceTree = "<group>"; };
 		41CDA4352780E3EC0009AB55 /* HardcodedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardcodedData.swift; sourceTree = "<group>"; };
-		41CDA4372780E4400009AB55 /* OnboardingStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStep.swift; sourceTree = "<group>"; };
+		41CDA4372780E4400009AB55 /* OnboardingStepInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStepInfo.swift; sourceTree = "<group>"; };
 		41CDA4392780E59B0009AB55 /* TermAndCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermAndCondition.swift; sourceTree = "<group>"; };
 		41CDA43B2780E6930009AB55 /* PostsFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsFilter.swift; sourceTree = "<group>"; };
+		41E8F8EE278C9AB600E73670 /* ContactWithPopupMailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactWithPopupMailController.swift; sourceTree = "<group>"; };
 		41EC168F2784EEEA00096B7A /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		41EC169D2785E08700096B7A /* AnimalTypesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTypesRouter.swift; sourceTree = "<group>"; };
 		41EC169E2785E08700096B7A /* AnimalTypesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AnimalTypesViewController.storyboard; sourceTree = "<group>"; };
@@ -516,6 +521,9 @@
 		41EC16DB27868FF900096B7A /* GuestPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestPopupViewController.swift; sourceTree = "<group>"; };
 		41EC16DC27868FF900096B7A /* GuestPopupBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestPopupBuilder.swift; sourceTree = "<group>"; };
 		41EC16DD27868FF900096B7A /* GuestPopupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestPopupViewModel.swift; sourceTree = "<group>"; };
+		41F2DA77278B887300E582E8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		41F2DA7B278B8DF600E582E8 /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
+		41F2DA7D278B959B00E582E8 /* SocialMedias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMedias.swift; sourceTree = "<group>"; };
 		41F820C3276FD83B0046B0EA /* WhereCanWeFindYouRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereCanWeFindYouRouter.swift; sourceTree = "<group>"; };
 		41F820C4276FD83B0046B0EA /* WhereCanWeFindYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereCanWeFindYouViewController.swift; sourceTree = "<group>"; };
 		41F820C5276FD83B0046B0EA /* WhereCanWeFindYouBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereCanWeFindYouBuilder.swift; sourceTree = "<group>"; };
@@ -1160,13 +1168,16 @@
 			isa = PBXGroup;
 			children = (
 				41CD10F227821B5000257B2B /* Animal.swift */,
+				41F2DA7B278B8DF600E582E8 /* Coordinates.swift */,
 				415E59A027650D77009A013E /* Country.swift */,
 				41EC168F2784EEEA00096B7A /* Location.swift */,
-				41CDA4372780E4400009AB55 /* OnboardingStep.swift */,
+				41CDA4372780E4400009AB55 /* OnboardingStepInfo.swift */,
 				41CDA4312780E0D60009AB55 /* Post.swift */,
 				41CDA4332780E21C0009AB55 /* PostAuthor.swift */,
 				41CDA43B2780E6930009AB55 /* PostsFilter.swift */,
+				41F2DA7D278B959B00E582E8 /* SocialMedias.swift */,
 				41CDA4392780E59B0009AB55 /* TermAndCondition.swift */,
+				41F2DA77278B887300E582E8 /* User.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1308,6 +1319,7 @@
 				41FEE1EA2788D76600F11449 /* ContactWithPopupViewController.swift */,
 				41FEE1EB2788D76600F11449 /* ContactWithPopupBuilder.swift */,
 				41FEE1EC2788D76600F11449 /* ContactWithPopupViewModel.swift */,
+				41E8F8EE278C9AB600E73670 /* ContactWithPopupMailController.swift */,
 			);
 			path = ContactWithPopup;
 			sourceTree = "<group>";
@@ -1609,6 +1621,7 @@
 				4160E713277BA00400C7066F /* OnboardingCollectionView.swift in Sources */,
 				4160E70F277B9E9B00C7066F /* OnboardingViewModel.swift in Sources */,
 				417E58FF274D9CCD00447ED3 /* LoginTextFields.swift in Sources */,
+				41E8F8EF278C9AB600E73670 /* ContactWithPopupMailController.swift in Sources */,
 				415E59932764F1F8009A013E /* WhereDoYouLiveCitiesViewModel.swift in Sources */,
 				411EF7D02788E14F00725B73 /* PostImagesCollectionView.swift in Sources */,
 				943CE5FD2546DFBC00CA93AA /* CustomView.swift in Sources */,
@@ -1642,7 +1655,7 @@
 				E3D14DCD242D081B00436D51 /* Constants.swift in Sources */,
 				416D29D22772551400CDD277 /* AccountDetailsCollectionViewCellViewModel.swift in Sources */,
 				41CD10EE2782183900257B2B /* AnimalFilterPopupBuilder.swift in Sources */,
-				41CDA4382780E4400009AB55 /* OnboardingStep.swift in Sources */,
+				41CDA4382780E4400009AB55 /* OnboardingStepInfo.swift in Sources */,
 				41EC16D527868C2900096B7A /* SuccessPopupViewController.swift in Sources */,
 				4100A11327848E240049EEF0 /* EditPostBuilder.swift in Sources */,
 				4160E70D277B9E9B00C7066F /* OnboardingViewController.swift in Sources */,
@@ -1662,6 +1675,7 @@
 				41B9CE74277F42CA00966509 /* PostCollectionViewCellSummary.swift in Sources */,
 				4160E717277BA60900C7066F /* OnboardingCollectionViewCell.swift in Sources */,
 				CCB0202B26A6EE3400214CB9 /* SceneDelegate.swift in Sources */,
+				41F2DA7C278B8DF600E582E8 /* Coordinates.swift in Sources */,
 				410FE6812770C4E200A390A3 /* AddressTableViewCellSummary.swift in Sources */,
 				CCB0207826A6F12000214CB9 /* Array.swift in Sources */,
 				4186AC89277F6FB4009C07E2 /* ExploreFiltersHeaderCollectionView.swift in Sources */,
@@ -1706,6 +1720,7 @@
 				4100A11427848E240049EEF0 /* EditPostViewModel.swift in Sources */,
 				417B861F277D27380051B8CF /* ProfileRouter.swift in Sources */,
 				41EC16A82785E11A00096B7A /* AnimalTypesTableView.swift in Sources */,
+				41F2DA7E278B959B00E582E8 /* SocialMedias.swift in Sources */,
 				41CD112A27835F3F00257B2B /* SavedPostsProtocols.swift in Sources */,
 				41CDA43A2780E59B0009AB55 /* TermAndCondition.swift in Sources */,
 				41CD10F7278222F200257B2B /* AnimalFilterTableViewCell.swift in Sources */,
@@ -1720,6 +1735,7 @@
 				4114ABC8275F92C900F1AB01 /* SignUpCollectionView.swift in Sources */,
 				413193B6276FFDD60006FE7B /* WhereDoYouLiveCitiesSearchBar.swift in Sources */,
 				41BFE17927661A2D00AC5570 /* WhereDoYouLiveCitiesTableView.swift in Sources */,
+				41F2DA78278B887300E582E8 /* User.swift in Sources */,
 				41FEE1ED2788D76600F11449 /* ContactWithPopupRouter.swift in Sources */,
 				41742225277C815600915233 /* ExploreViewModel.swift in Sources */,
 				415E599D27650C7C009A013E /* CountryDTO.swift in Sources */,

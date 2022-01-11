@@ -37,12 +37,12 @@ extension PostViewModel {
 // MARK: - Functions
 extension PostViewModel {
   func didPressPostImage(indexPostImage: Int) {
-    self.router.goToPostImages(postImages: post.postImages, indexPostImages: indexPostImage)
+    self.router.goToPostImages(postImages: post.animal.images, indexPostImages: indexPostImage)
   }
   
   func didPressLocation() {
-    if let location = post.location {
-      self.router.goToLocation(location: location, animal: post.animal)
+    if let coordinates = post.location.coordinates {
+      self.router.goToLocation(coordinates: coordinates, animal: post.animal)
     }
   }
   
@@ -51,20 +51,22 @@ extension PostViewModel {
   }
   
   func didPressContactWithAuthor() {
-    self.router.showContactWithPopup()
+    self.router.showContactWithPopup(authorSocialMedias: post.author.socialMedias)
   }
   
-  func didPressSavePostButton() {
+  func didPressSavePostButton(allowed: ((Bool) -> ())) {
     let logged = Cache.get(boolFor: .logged)
     if logged {
       // TODO: - Save post
+      allowed(true)
     } else {
       showGuestPopup()
+      allowed(false)
     }
   }
   
   func didPressOptionsButton() {
-    self.router.goToPostOptionsPopup(comesFrom: comesFrom)
+    self.router.goToPostOptionsPopup(comesFrom: comesFrom, post: post)
   }
   
   func didPressEditPostButton() {
@@ -80,6 +82,6 @@ extension PostViewModel {
   }
   
   func showErrorPopupFromPostOptionsPopup() {
-    showErrorPopup(action: nil)
+    showErrorPopup(title: "Error reporting post. Please, try again later", action: nil)
   }
 }

@@ -10,6 +10,7 @@ import UIKit
 
 final class ErrorPopupViewController: ViewController {
   // MARK: - IBOutlets
+  @IBOutlet weak var errorTitleLabel: UILabel!
   @IBOutlet weak var backgroundView: UIView!
   
   // MARK: - Properties
@@ -52,7 +53,7 @@ final class ErrorPopupViewController: ViewController {
   }
   
   private func setupUI() {
-    // Do UI setup
+    errorTitleLabel.text = viewModel.errorTitle
   }
   
   // MARK: - IBActions  

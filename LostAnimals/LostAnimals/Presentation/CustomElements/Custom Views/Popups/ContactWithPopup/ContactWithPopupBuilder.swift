@@ -10,12 +10,12 @@ import UIKit
 
 final class ContactWithPopupBuilder {
   
-  func build() -> ContactWithPopupViewController {
+  func build(authorSocialMedias: SocialMedias) -> ContactWithPopupViewController {
     
     let viewController = UIViewController.instantiate(viewController: ContactWithPopupViewController.self)
     
     let router = ContactWithPopupRouter(viewController: viewController)
-    let viewModel = ContactWithPopupViewModel(router: router)
+    let viewModel = ContactWithPopupViewModel(router: router, authorSocialMedias: authorSocialMedias)
     
     viewController.viewModel = viewModel
     

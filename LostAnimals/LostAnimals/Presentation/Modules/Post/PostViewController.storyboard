@@ -32,10 +32,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xCg-vx-Fil">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1138"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1181"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="MnO-2G-3ZO">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="1118"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="1161"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jWu-yv-TYG">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
@@ -68,10 +68,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wq4-UO-xmj">
-                                                        <rect key="frame" x="0.0" y="220" width="375" height="898"/>
+                                                        <rect key="frame" x="0.0" y="220" width="375" height="941"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="aHp-7N-79h">
-                                                                <rect key="frame" x="20" y="0.0" width="335" height="898"/>
+                                                                <rect key="frame" x="20" y="0.0" width="335" height="941"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="BpK-pO-xMh">
                                                                         <rect key="frame" x="0.0" y="0.0" width="335" height="40"/>
@@ -350,22 +350,22 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aiN-Va-WFG" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="340" width="335" height="283"/>
+                                                                        <rect key="frame" x="0.0" y="340" width="335" height="286"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Kl5-YG-D6Y">
-                                                                                <rect key="frame" x="0.0" y="10" width="335" height="263"/>
+                                                                                <rect key="frame" x="0.0" y="10" width="335" height="266"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0y-2O-nnC">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="335" height="22"/>
-                                                                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="16"/>
+                                                                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="16"/>
                                                                                         <color key="textColor" name="CustomWhite"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BYa-oH-txj">
-                                                                                        <rect key="frame" x="0.0" y="22" width="335" height="241"/>
+                                                                                        <rect key="frame" x="0.0" y="22" width="335" height="244"/>
                                                                                         <subviews>
                                                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.59999999999999998" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Description" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X59-dC-TiR">
-                                                                                                <rect key="frame" x="15" y="0.0" width="305" height="241"/>
+                                                                                                <rect key="frame" x="15" y="0.0" width="305" height="244"/>
                                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <color key="tintColor" name="CustomWhite"/>
                                                                                                 <color key="textColor" name="CustomWhite"/>
@@ -402,28 +402,28 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sn3-pS-yhW" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="643" width="335" height="145"/>
+                                                                        <rect key="frame" x="0.0" y="646" width="335" height="185"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="yez-Ry-JUG">
-                                                                                <rect key="frame" x="0.0" y="10" width="335" height="125"/>
+                                                                                <rect key="frame" x="0.0" y="10" width="335" height="165"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Rr-dv-Ml5">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="30" id="dWV-Ro-VFy"/>
                                                                                         </constraints>
-                                                                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="16"/>
+                                                                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="16"/>
                                                                                         <color key="textColor" name="CustomWhite"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="GBk-ua-U9l">
-                                                                                        <rect key="frame" x="0.0" y="35" width="335" height="90"/>
+                                                                                        <rect key="frame" x="0.0" y="35" width="335" height="130"/>
                                                                                         <subviews>
                                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c5E-Lv-N8f">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="167.5" height="90"/>
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="167.5" height="130"/>
                                                                                                 <subviews>
-                                                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserProfilePhoto" translatesAutoresizingMaskIntoConstraints="NO" id="aOH-aG-1fo">
-                                                                                                        <rect key="frame" x="20" y="5" width="127.5" height="80"/>
+                                                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfileImagePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="aOH-aG-1fo">
+                                                                                                        <rect key="frame" x="20" y="5" width="127.5" height="120"/>
                                                                                                     </imageView>
                                                                                                 </subviews>
                                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -435,25 +435,25 @@
                                                                                                 </constraints>
                                                                                             </view>
                                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Txv-JC-W5W">
-                                                                                                <rect key="frame" x="167.5" y="0.0" width="167.5" height="90"/>
+                                                                                                <rect key="frame" x="167.5" y="0.0" width="167.5" height="130"/>
                                                                                                 <subviews>
                                                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6Gn-Nd-Vad">
-                                                                                                        <rect key="frame" x="0.0" y="0.0" width="147.5" height="90"/>
+                                                                                                        <rect key="frame" x="0.0" y="0.0" width="147.5" height="130"/>
                                                                                                         <subviews>
                                                                                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6f-SG-5Gc">
-                                                                                                                <rect key="frame" x="0.0" y="0.0" width="147.5" height="30"/>
+                                                                                                                <rect key="frame" x="0.0" y="0.0" width="147.5" height="43.5"/>
                                                                                                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
                                                                                                                 <color key="textColor" name="CustomWhite"/>
                                                                                                                 <nil key="highlightedColor"/>
                                                                                                             </label>
                                                                                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRL-zd-z1f">
-                                                                                                                <rect key="frame" x="0.0" y="30" width="147.5" height="30"/>
+                                                                                                                <rect key="frame" x="0.0" y="43.5" width="147.5" height="43.5"/>
                                                                                                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
                                                                                                                 <color key="textColor" name="CustomWhite"/>
                                                                                                                 <nil key="highlightedColor"/>
                                                                                                             </label>
                                                                                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OoL-za-OLt">
-                                                                                                                <rect key="frame" x="0.0" y="60" width="147.5" height="30"/>
+                                                                                                                <rect key="frame" x="0.0" y="87" width="147.5" height="43"/>
                                                                                                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
                                                                                                                 <color key="textColor" name="CustomWhite"/>
                                                                                                                 <nil key="highlightedColor"/>
@@ -471,14 +471,14 @@
                                                                                             </view>
                                                                                         </subviews>
                                                                                         <constraints>
-                                                                                            <constraint firstAttribute="height" constant="90" id="fvu-3e-q14"/>
+                                                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="90" id="fvu-3e-q14"/>
                                                                                         </constraints>
                                                                                     </stackView>
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             </stackView>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47W-7X-qaX">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="335" height="145"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="335" height="185"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                 <connections>
@@ -504,14 +504,14 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jyw-Qg-abB">
-                                                                        <rect key="frame" x="0.0" y="808" width="335" height="20"/>
+                                                                        <rect key="frame" x="0.0" y="851" width="335" height="20"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="20" id="XYg-RP-FmO"/>
                                                                         </constraints>
                                                                     </view>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdL-xC-82Y" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="848" width="335" height="50"/>
+                                                                        <rect key="frame" x="0.0" y="891" width="335" height="50"/>
                                                                         <color key="backgroundColor" name="CustomWhite"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="50" id="j1E-pi-tvo"/>
@@ -601,9 +601,14 @@
             <point key="canvasLocation" x="113.04347826086958" y="105.80357142857143"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="wdL-xC-82Y">
+            <size key="intrinsicContentSize" width="171" height="37"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Dog" width="47" height="46"/>
-        <image name="UserProfilePhoto" width="120" height="120"/>
+        <image name="ProfileImagePlaceholder" width="120" height="120"/>
         <namedColor name="CustomBlack">
             <color red="0.24705882352941178" green="0.24705882352941178" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

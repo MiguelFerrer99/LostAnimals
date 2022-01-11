@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageUI
 
 final class ContactWithPopupViewController: ViewController {
   
@@ -20,6 +21,7 @@ final class ContactWithPopupViewController: ViewController {
   
   // MARK: - Properties
   var viewModel: ContactWithPopupViewModel!
+  let mailController = MFMailComposeViewController()
   
   // MARK: - Life cycle
   override func viewDidLoad() {
@@ -58,7 +60,9 @@ final class ContactWithPopupViewController: ViewController {
   }
   
   private func setupUI() {
-    // Do UI setup
+    configureMailController(mailController: mailController)
+    instagramView.isHidden = viewModel.authorSocialMedias.instagram == nil
+    twitterView.isHidden = viewModel.authorSocialMedias.twitter == nil
   }
   
   // MARK: - IBActions
@@ -67,7 +71,7 @@ final class ContactWithPopupViewController: ViewController {
   }
   
   @IBAction func mailViewButtonPressed(_ sender: UIButton) {
-    viewModel.didPressMailButton()
+    sendEmail(email: viewModel.authorSocialMedias.email)
   }
   
   @IBAction func phoneViewButtonPressed(_ sender: UIButton) {

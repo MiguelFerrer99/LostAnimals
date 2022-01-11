@@ -50,6 +50,7 @@ extension LoginViewModel {
   }
   
   func didPressLoginButton() {
+    User.shared = HardcodedData.exampleUser1
     Cache.set(.logged, true)
     let onboardingDone = Cache.get(boolFor: .onboardingDone)
     if onboardingDone {

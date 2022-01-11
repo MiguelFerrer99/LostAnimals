@@ -63,10 +63,10 @@ func showGuestPopup() {
   }
 }
 
-func showErrorPopup(action: (() -> Void)? = nil) {
+func showErrorPopup(title: String, action: (() -> Void)? = nil) {
   if topMostController() is UIAlertController { return }
   
-  let viewController = Container.shared.errorPopupBuilder().build(action: action)
+  let viewController = Container.shared.errorPopupBuilder().build(errorTitle: title, action: action)
   
   DispatchQueue.main.async {
     topMostController()?.present(viewController: viewController)

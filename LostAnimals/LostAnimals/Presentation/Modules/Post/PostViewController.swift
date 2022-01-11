@@ -28,29 +28,10 @@ final class PostViewController: ViewController {
   
   // MARK: - Properties
   override var navBarTitle: String {
-    switch viewModel.post.postType {
-    case .lost:
-      return "Lost animal"
-    case .found:
-      return "Found animal"
-    case .adopt:
-      return "To adopt animal"
-    }
-  }
-  override var navBarRightButtons: [UIBarButtonItem] {
-    let savePost = UIButton()
-    savePost.tintColor = .customBlack
-    savePost.setImage(UIImage(named: viewModel.post.isSaved ? "SavePostFilled" : "SavePost"), for: .normal)
-    savePost.addTarget(self, action: #selector(savePostButtonPressed), for: .touchUpInside)
-    
-    let options = UIButton()
-    options.tintColor = .customBlack
-    options.setImage(UIImage(named: "PostOptions"), for: .normal)
-    options.addTarget(self, action: #selector(optionsButtonPressed), for: .touchUpInside)
-    
-    return [UIBarButtonItem(customView: options), UIBarButtonItem(customView: savePost)]
+    return viewModel.post.animal.name
   }
   var viewModel: PostViewModel!
+  var savePostBarButtonItem = UIBarButtonItem()
   
   // MARK: - Life cycle
   override func viewDidLoad() {
@@ -60,6 +41,7 @@ final class PostViewController: ViewController {
     NotificationCenter.default.addObserver(self, selector: #selector(showGuestPopupFromPostOptionsPopup), name: .ShowGuestPopupFromPostOptionsPopup, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(showSuccessPopupFromPostOptionsPopup), name: .ShowSuccessPopupFromPostOptionsPopup, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(showErrorPopupFromPostOptionsPopup), name: .ShowErrorPopupFromPostOptionsPopup, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(showActivityViewControllerFromPostOptionsPopup), name: .ShowActivityViewControllerFromPostOptionsPopup, object: nil)
     
     setupUI()
     setupBindings()
@@ -78,8 +60,21 @@ final class PostViewController: ViewController {
   }
   
   private func setupUI() {
+    setNavBarButtons()
     configureCollectionView(postImagesCollectionView)
     fillUI()
+  }
+  
+  private func setNavBarButtons() {
+    let optionsBarButtonItem = UIBarButtonItem(image: UIImage(named: "PostOptions"),
+                                               style: .plain,
+                                               target: self,
+                                               action: #selector(optionsButtonPressed))
+    savePostBarButtonItem = UIBarButtonItem(image: UIImage(named: viewModel.post.isSaved ? "SavePostFilled" : "SavePost"),
+                                            style: .plain,
+                                            target: self,
+                                            action: #selector(savePostButtonPressed))
+    self.navigationItem.rightBarButtonItems = [optionsBarButtonItem, savePostBarButtonItem]
   }
   
   private func fillUI() {
@@ -93,11 +88,11 @@ final class PostViewController: ViewController {
       postTypeLabel.text = "To adopt animal"
     }
     
-    authorPhotoImageView.image = viewModel.post.author.image
+    authorPhotoImageView.image = viewModel.post.author.profileImage
     animalNameLabel.text = viewModel.post.animal.name
     animalBreedLabel.text = viewModel.post.animal.breed
     lastTimeSeenLabel.text = viewModel.post.lastTimeSeen.toString(withFormat: DateFormat.dayMonthYearHourOther)
-    locationLabel.text = viewModel.post.address
+    locationLabel.text = viewModel.post.location.address
     descriptionTextView.text = viewModel.post.description
     authorNameLabel.text = "\(viewModel.post.author.firstname) \(viewModel.post.author.lastname)"
     
@@ -108,12 +103,16 @@ final class PostViewController: ViewController {
       authorAgeLabel.text = "\(authorAge) years old"
     }
     
-    authorAddressLabel.text = viewModel.post.author.address
+    authorAddressLabel.text = viewModel.post.author.location.address
     contactWithAuthorButton.setTitle("Contact with \(viewModel.post.author.firstname)", for: .normal)
   }
   
   @objc private func savePostButtonPressed() {
-    viewModel.didPressSavePostButton()
+    viewModel.didPressSavePostButton { allowed in
+      if allowed {
+        savePostBarButtonItem.image = savePostBarButtonItem.image == UIImage(named: "SavePost") ? UIImage(named: "SavePostFilled") : UIImage(named: "SavePost")
+      }
+    }
   }
   
   @objc private func optionsButtonPressed() {
@@ -134,6 +133,13 @@ final class PostViewController: ViewController {
   
   @objc private func showErrorPopupFromPostOptionsPopup() {
     viewModel.showErrorPopupFromPostOptionsPopup()
+  }
+  
+  @objc private func showActivityViewControllerFromPostOptionsPopup(_ notification: NSNotification) {
+    if let postImageToShare = notification.userInfo?["postImageToShare"] as? UIImage {
+      let activityViewController = UIActivityViewController(activityItems: ["Image from \"LostAnimals\"", postImageToShare], applicationActivities: nil)
+      self.present(viewController: activityViewController, completion: nil)
+    }
   }
   
   // MARK: - IBActions

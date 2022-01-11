@@ -91,6 +91,7 @@
                     </view>
                     <connections>
                         <outlet property="backgroundView" destination="gQW-SY-l3M" id="YWo-h8-apO"/>
+                        <outlet property="errorTitleLabel" destination="HZw-VH-Cbg" id="Vme-Kp-a77"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -100,7 +101,7 @@
     </scenes>
     <designables>
         <designable name="oSU-av-u1p">
-            <size key="intrinsicContentSize" width="30" height="33"/>
+            <size key="intrinsicContentSize" width="30" height="37"/>
         </designable>
     </designables>
     <resources>

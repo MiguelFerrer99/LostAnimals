@@ -11,6 +11,7 @@ import UIKit
 final class NewPostViewController: ViewController {
   
   // MARK: - IBOutlets
+  @IBOutlet weak var backgroundView: UIView!
   @IBOutlet weak var newPostView: CustomView!
   
   // MARK: - Properties
@@ -29,6 +30,22 @@ final class NewPostViewController: ViewController {
     super.viewDidAppear(animated)
     
     viewModel.viewDidAppear()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    UIView.animate(withDuration: 0.25) {
+      self.backgroundView.alpha = 0.6
+    }
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    
+    UIView.animate(withDuration: 0.25) {
+      self.backgroundView.alpha = 0
+    }
   }
   
   // MARK: - Functions
