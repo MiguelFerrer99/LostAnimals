@@ -36,6 +36,10 @@ extension PostViewModel {
 
 // MARK: - Functions
 extension PostViewModel {
+  func didPressBackButton() {
+    self.router.goBack()
+  }
+  
   func didPressPostImage(indexPostImage: Int) {
     self.router.goToPostImages(postImages: post.animal.images, indexPostImages: indexPostImage)
   }

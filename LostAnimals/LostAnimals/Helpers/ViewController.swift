@@ -59,6 +59,12 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    navigationItem.title = navBarTitle
+    navigationItem.backButtonTitle = ""
+    navigationItem.setHidesBackButton(hideBackButton, animated: true)
+    navigationItem.leftBarButtonItems = navBarLeftButtons
+    navigationItem.rightBarButtonItems = navBarRightButtons
+    
     let titleAttributes = [NSAttributedString.Key.foregroundColor: navigationBarTitleColor, NSAttributedString.Key.font: UIFont.nunitoSmallBold]
     let largeTitleAttributes = [NSAttributedString.Key.font: UIFont.nunitoBigBold]
     
@@ -66,11 +72,6 @@ class ViewController: UIViewController {
     UINavigationBar.appearance().largeTitleTextAttributes = largeTitleAttributes
     UINavigationBar.appearance().tintColor = navigationTintColor
     UINavigationBar.appearance().barTintColor = navigationBarTintColor
-    navigationItem.title = navBarTitle
-    navigationItem.backButtonTitle = ""
-    navigationItem.setHidesBackButton(hideBackButton, animated: true)
-    navigationItem.leftBarButtonItems = navBarLeftButtons
-    navigationItem.rightBarButtonItems = navBarRightButtons
     
     NotificationCenter.default.addObserver(self, selector: #selector(didBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -83,7 +84,6 @@ class ViewController: UIViewController {
     if useLargeTitle {
       navigationController?.navigationBar.prefersLargeTitles = true
     }
-//    navigationController?.navigationBar.prefersLargeTitles = useLargeTitle // TODO: Error
     
     navigationController?.setNavigationBarHidden(hideNavigationBar, animated: false)
     navigationItem.largeTitleDisplayMode = useLargeTitle ? .always : .never
@@ -156,21 +156,5 @@ extension UIViewController {
   func embeddedInNavigation() -> UINavigationController {
     let navigationVC = UINavigationController(rootViewController: self)
     return navigationVC
-  }
-  
-  func setShadowOn() {
-    self.navigationController?.navigationBar.layer.shadowColor = UIColor.darkGray.cgColor
-    self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-    self.navigationController?.navigationBar.layer.shadowRadius = 4.0
-    self.navigationController?.navigationBar.layer.shadowOpacity = 1.0
-    self.navigationController?.navigationBar.layer.masksToBounds = false
-  }
-  
-  func setShadowOff() {
-    self.navigationController?.navigationBar.layer.shadowColor = UIColor.white.cgColor
-    self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
-    self.navigationController?.navigationBar.layer.shadowRadius = 0.0
-    self.navigationController?.navigationBar.layer.shadowOpacity = 0.0
-    self.navigationController?.navigationBar.layer.masksToBounds = true
   }
 }

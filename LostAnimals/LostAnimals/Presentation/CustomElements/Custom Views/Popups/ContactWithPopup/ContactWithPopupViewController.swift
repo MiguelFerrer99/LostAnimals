@@ -13,6 +13,7 @@ final class ContactWithPopupViewController: ViewController {
   
   // MARK: - IBOutlets
   @IBOutlet weak var backgroundView: UIView!
+  @IBOutlet weak var contactWithPopupView: CustomView!
   @IBOutlet weak var mailView: CustomView!
   @IBOutlet weak var phoneView: CustomView!
   @IBOutlet weak var whatsappView: CustomView!
@@ -60,9 +61,10 @@ final class ContactWithPopupViewController: ViewController {
   }
   
   private func setupUI() {
-    configureMailController(mailController: mailController)
+    contactWithPopupView.layer.maskedCorners =  [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     instagramView.isHidden = viewModel.authorSocialMedias.instagram == nil
     twitterView.isHidden = viewModel.authorSocialMedias.twitter == nil
+    configureMailController(mailController: mailController)
   }
   
   // MARK: - IBActions

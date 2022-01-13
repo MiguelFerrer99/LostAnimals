@@ -6,11 +6,15 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 final class PostViewController: ViewController {
   
   // MARK: - IBOutlets
+  @IBOutlet weak var customNavBarView: UIView!
+  @IBOutlet weak var savePostImageView: UIImageView!
+  @IBOutlet weak var postScrollView: UIScrollView!
   @IBOutlet weak var postImagesCollectionView: UICollectionView!
   @IBOutlet weak var postImagesPageControl: UIPageControl!
   @IBOutlet weak var postTypeImageView: UIImageView!
@@ -28,7 +32,17 @@ final class PostViewController: ViewController {
   
   // MARK: - Properties
   override var navBarTitle: String {
-    return viewModel.post.animal.name
+    switch viewModel.post.postType {
+    case .lost:
+      return "Lost animal"
+    case .found:
+      return "Found animal"
+    case .adopt:
+      return "To adopt animal"
+    }
+  }
+  override var hideNavigationBar: Bool {
+    return true
   }
   var viewModel: PostViewModel!
   var savePostBarButtonItem = UIBarButtonItem()
@@ -51,6 +65,7 @@ final class PostViewController: ViewController {
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     
+    configureScrollView(postScrollView)
     viewModel.viewDidAppear()
   }
   
@@ -69,11 +84,11 @@ final class PostViewController: ViewController {
     let optionsBarButtonItem = UIBarButtonItem(image: UIImage(named: "PostOptions"),
                                                style: .plain,
                                                target: self,
-                                               action: #selector(optionsButtonPressed))
+                                               action: #selector(optionsBarButtonPressed))
     savePostBarButtonItem = UIBarButtonItem(image: UIImage(named: viewModel.post.isSaved ? "SavePostFilled" : "SavePost"),
                                             style: .plain,
                                             target: self,
-                                            action: #selector(savePostButtonPressed))
+                                            action: #selector(savePostBarButtonPressed))
     self.navigationItem.rightBarButtonItems = [optionsBarButtonItem, savePostBarButtonItem]
   }
   
@@ -107,7 +122,7 @@ final class PostViewController: ViewController {
     contactWithAuthorButton.setTitle("Contact with \(viewModel.post.author.firstname)", for: .normal)
   }
   
-  @objc private func savePostButtonPressed() {
+  @objc private func savePostBarButtonPressed() {
     viewModel.didPressSavePostButton { allowed in
       if allowed {
         savePostBarButtonItem.image = savePostBarButtonItem.image == UIImage(named: "SavePost") ? UIImage(named: "SavePostFilled") : UIImage(named: "SavePost")
@@ -115,7 +130,7 @@ final class PostViewController: ViewController {
     }
   }
   
-  @objc private func optionsButtonPressed() {
+  @objc private func optionsBarButtonPressed() {
     viewModel.didPressOptionsButton()
   }
   
@@ -137,12 +152,28 @@ final class PostViewController: ViewController {
   
   @objc private func showActivityViewControllerFromPostOptionsPopup(_ notification: NSNotification) {
     if let postImageToShare = notification.userInfo?["postImageToShare"] as? UIImage {
-      let activityViewController = UIActivityViewController(activityItems: ["Image from \"LostAnimals\"", postImageToShare], applicationActivities: nil)
+      let activityViewController = UIActivityViewController(activityItems: [postImageToShare], applicationActivities: nil)
       self.present(viewController: activityViewController, completion: nil)
     }
   }
   
   // MARK: - IBActions
+  @IBAction func backButtonPressed(_ sender: UIButton) {
+    viewModel.didPressBackButton()
+  }
+  
+  @IBAction func savePostButtonPressed(_ sender: UIButton) {
+    viewModel.didPressSavePostButton { allowed in
+      if allowed {
+        savePostBarButtonItem.image = savePostBarButtonItem.image == UIImage(named: "SavePost") ? UIImage(named: "SavePostFilled") : UIImage(named: "SavePost")
+      }
+    }
+  }
+  
+  @IBAction func postOptionsButtonPressed(_ sender: UIButton) {
+    viewModel.didPressOptionsButton()
+  }
+  
   @IBAction func locationButtonPressed(_ sender: UIButton) {
     viewModel.didPressLocation()
   }

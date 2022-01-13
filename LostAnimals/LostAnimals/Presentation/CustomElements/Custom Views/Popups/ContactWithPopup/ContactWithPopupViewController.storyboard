@@ -299,6 +299,7 @@
                     </view>
                     <connections>
                         <outlet property="backgroundView" destination="Vju-6h-kkP" id="URp-Mx-3qT"/>
+                        <outlet property="contactWithPopupView" destination="5P0-hR-DVP" id="OeC-lv-Ua0"/>
                         <outlet property="instagramView" destination="W9z-sT-fRm" id="8y5-k9-DpJ"/>
                         <outlet property="mailView" destination="vSp-RA-9la" id="qce-3S-Zb2"/>
                         <outlet property="phoneView" destination="UXE-0f-vd0" id="L2f-D7-f19"/>

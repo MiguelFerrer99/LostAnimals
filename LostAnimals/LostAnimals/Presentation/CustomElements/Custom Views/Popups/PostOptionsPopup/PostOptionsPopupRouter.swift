@@ -40,10 +40,9 @@ final class PostOptionsPopupRouter {
     }
   }
   
-  func dismissPostOptionsAndShowActivityViewController() {
+  func dismissPostOptionsAndShowActivityViewController(postImageToShare: UIImage) {
     DispatchQueue.main.async {
       self.viewController?.dismissCurrentView(completion: {
-        let postImageToShare = UIImage(named: "CatExample1") ?? UIImage()
         let userInfo: [String: UIImage] = ["postImageToShare": postImageToShare]
         NotificationCenter.default.post(name: .ShowActivityViewControllerFromPostOptionsPopup, object: nil, userInfo: userInfo)
       })

@@ -21,4 +21,14 @@ extension UIImage {
     }
     return nil
   }
+    
+  func drawIn(bgImage: UIImage, position: CGRect) -> UIImage? {
+    UIGraphicsBeginImageContext(bgImage.size)
+    bgImage.draw(in: CGRect(x: 0, y: 0, width: bgImage.size.width, height: bgImage.size.height))
+    self.draw(in: position, blendMode: .normal, alpha: 1)
+    let returnedImage = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    
+    return returnedImage
+  }
 }

@@ -34,7 +34,7 @@ extension HardcodedData {
                                 profileImage: UIImage(named: "ProfileImagePlaceholder") ?? UIImage(),
                                 location: Location(address: "Vega Baixa, 2, Ondara, Alicante, España", coordinates: Coordinates(lat: 38.82358282803209, long: 0.01773679796108817)),
                                 isAnimalShelter: false,
-                                socialMedias: SocialMedias(email: "joanferrer41@gmail.com", phonePrefix: 34, phoneNumber: 688211592, instagram: "ff.joan_00_", twitter: "Joan_flash"),
+                                socialMedias: SocialMedias(email: "joanferrer41@gmail.com", phonePrefix: 34, phoneNumber: 688211592, instagram: "ff.joan_00", twitter: "Joan_flash"),
                                 isBanned: false)
   static let exampleAnimal1 = Animal(name: "Llum", type: .dog, breed: "Labrador", images: [UIImage(named: "DogExample1"), UIImage(named: "DogExample2")])
   static let exampleAnimal2 = Animal(name: "Benito", type: .cat, breed: "Gato común europeo", images: [UIImage(named: "CatExample1"), UIImage(named: "CatExample2")])

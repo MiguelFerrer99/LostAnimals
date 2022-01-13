@@ -18,6 +18,12 @@ final class PostRouter {
   }
   
   // MARK: - Functions
+  func goBack() {
+    DispatchQueue.main.async {
+      self.viewController?.pop()
+    }
+  }
+  
   func goToPostImages(postImages: [UIImage?], indexPostImages: Int) {
     let viewController = Container.shared.postImagesBuilder().build(postImages: postImages, indexPostImage: indexPostImages)
     DispatchQueue.main.async {

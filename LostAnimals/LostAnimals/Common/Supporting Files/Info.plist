@@ -8,6 +8,7 @@
   <array>
     <string>instagram</string>
     <string>twitter</string>
+    <string>whatsapp</string>
   </array>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>LostAnimals needs to access the photo library to choose photos of your animals</string>

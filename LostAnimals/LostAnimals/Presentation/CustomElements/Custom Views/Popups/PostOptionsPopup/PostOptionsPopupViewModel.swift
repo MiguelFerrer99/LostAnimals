@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 final class PostOptionsPopupViewModel {
   
@@ -55,6 +56,26 @@ extension PostOptionsPopupViewModel {
   }
   
   func didPressSharePostButton() {
-    self.router.dismissPostOptionsAndShowActivityViewController()
+    guard let imageToShare = createImageToShare() else { return }
+    self.router.dismissPostOptionsAndShowActivityViewController(postImageToShare: imageToShare)
+  }
+  
+  func createImageToShare() -> UIImage? {
+    var bgImage: UIImage?
+    switch post.postType {
+    case .lost:
+      bgImage = UIImage(named: "LostAnimalStoryBackground")
+    case .found:
+      bgImage = UIImage(named: "FoundAnimalStoryBackground")
+    case .adopt:
+      bgImage = UIImage(named: "ToAdoptAnimalStoryBackground")
+    }
+    guard let animalImage = post.animal.images.first, let stickerImage = animalImage, let bgImage = bgImage else { return nil }
+
+    guard let returnedImage = stickerImage.drawIn(bgImage: bgImage,
+                                          position: CGRect(x: bgImage.size.width/2 - 250, y: bgImage.size.height/2 - 250, width: 500, height: 500))
+    else { return nil }
+    
+    return returnedImage
   }
 }
