@@ -33,7 +33,7 @@ extension PostViewController: UICollectionViewDelegate, UICollectionViewDataSour
     return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
   }
   
-  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+  func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
     let center = CGPoint(x: scrollView.contentOffset.x + (scrollView.frame.width / 2), y: (scrollView.frame.height / 2))
     if let ip = postImagesCollectionView.indexPathForItem(at: center) {
       postImagesPageControl.currentPage = ip.row

@@ -568,7 +568,7 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="Pqp-4a-CjU"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="uQr-cs-G7C"/>
                             </scrollView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6P9-dz-cSI">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6P9-dz-cSI">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IWz-HV-dpg">
@@ -581,8 +581,7 @@
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5g-3c-jht">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <connections>
                                                     <action selector="backButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="5Ez-qw-Efa"/>
                                                 </connections>
@@ -611,8 +610,7 @@
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ESm-8a-1ff">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <connections>
                                                     <action selector="savePostButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="JtB-x8-6fe"/>
                                                 </connections>
@@ -642,8 +640,7 @@
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFS-ra-zA3">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <connections>
                                                     <action selector="postOptionsButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Fh0-Sc-uwX"/>
                                                 </connections>

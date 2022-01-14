@@ -9,9 +9,14 @@
 import Foundation
 import UIKit
 
-extension PostViewController {
+extension PostViewController: UIScrollViewDelegate {
   // MARK: - Functions
   func configureScrollView(_ scrollView: UIScrollView) {
-    scrollView.setContentOffset(CGPoint(x: 0, y: 44), animated: true)
+    scrollView.delegate = self
+  }
+  
+  // MARK: - UIScrollViewDelegate
+  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    print("ScrollView Y = \(scrollView.contentOffset.y)")
   }
 }

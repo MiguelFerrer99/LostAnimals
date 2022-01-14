@@ -42,7 +42,7 @@ final class PostViewController: ViewController {
     }
   }
   override var hideNavigationBar: Bool {
-    return true
+    return false
   }
   var viewModel: PostViewModel!
   var savePostBarButtonItem = UIBarButtonItem()
@@ -65,7 +65,6 @@ final class PostViewController: ViewController {
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     
-    configureScrollView(postScrollView)
     viewModel.viewDidAppear()
   }
   
