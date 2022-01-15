@@ -64,18 +64,18 @@ extension PostOptionsPopupViewModel {
     var bgImage: UIImage?
     switch post.postType {
     case .lost:
-      bgImage = UIImage(named: "LostAnimalStoryBackground")
+      bgImage = UIImage(named: "LostAnimalImageToShare")
     case .found:
-      bgImage = UIImage(named: "FoundAnimalStoryBackground")
+      bgImage = UIImage(named: "FoundAnimalImageToShare")
     case .adopt:
-      bgImage = UIImage(named: "ToAdoptAnimalStoryBackground")
+      bgImage = UIImage(named: "ToAdoptAnimalImageToShare")
     }
     guard let animalImage = post.animal.images.first, let stickerImage = animalImage, let bgImage = bgImage else { return nil }
 
-    guard let returnedImage = stickerImage.drawIn(bgImage: bgImage,
-                                          position: CGRect(x: bgImage.size.width/2 - 250, y: bgImage.size.height/2 - 250, width: 500, height: 500))
+//    guard let returnedImage = stickerImage.drawIn(bgImage: bgImage,
+//                                                  position: CGRect(x: bgImage.size.width/2 - 250, y: bgImage.size.height/2 - 250, width: 500, height: 500))
     else { return nil }
     
-    return returnedImage
+    return nil
   }
 }

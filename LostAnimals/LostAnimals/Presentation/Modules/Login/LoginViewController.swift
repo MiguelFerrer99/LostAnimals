@@ -58,8 +58,8 @@ final class LoginViewController: ViewController {
   }
   
   @IBAction func logInButtonPressed(_ sender: CustomButton) {
-    logInButton.showLoading()
-    updateUserInteraction()
+//    logInButton.showLoading()
+//    updateUserInteraction()
     viewModel.didPressLoginButton()
   }
 }

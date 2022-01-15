@@ -49,8 +49,8 @@ final class ForgotPasswordViewController: ViewController {
   
   // MARK: - IBActions
   @IBAction func recoverPasswordButtonPressed(_ sender: CustomButton) {
-    forgotPasswordButton.showLoading()
-    updateUserInteraction()
+//    forgotPasswordButton.showLoading()
+//    updateUserInteraction()
     viewModel.didPressForgotPasswordButton()
   }
 }

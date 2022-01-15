@@ -17,6 +17,6 @@ extension PostViewController: UIScrollViewDelegate {
   
   // MARK: - UIScrollViewDelegate
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
-    print("ScrollView Y = \(scrollView.contentOffset.y)")
+    self.navigationController?.setNavigationBarHidden(shouldHideNavigationBar, animated: true)
   }
 }

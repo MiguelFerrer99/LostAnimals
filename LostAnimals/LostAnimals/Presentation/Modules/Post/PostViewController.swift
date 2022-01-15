@@ -9,10 +9,9 @@
 import Foundation
 import UIKit
 
-final class PostViewController: ViewController {
+final class PostViewController: ViewController, UIGestureRecognizerDelegate {
   
   // MARK: - IBOutlets
-  @IBOutlet weak var customNavBarView: UIView!
   @IBOutlet weak var savePostImageView: UIImageView!
   @IBOutlet weak var postScrollView: UIScrollView!
   @IBOutlet weak var postImagesCollectionView: UICollectionView!
@@ -42,7 +41,10 @@ final class PostViewController: ViewController {
     }
   }
   override var hideNavigationBar: Bool {
-    return false
+    return shouldHideNavigationBar
+  }
+  var shouldHideNavigationBar: Bool {
+    return postScrollView.contentOffset.y < 280
   }
   var viewModel: PostViewModel!
   var savePostBarButtonItem = UIBarButtonItem()
@@ -74,7 +76,9 @@ final class PostViewController: ViewController {
   }
   
   private func setupUI() {
+    self.navigationController?.interactivePopGestureRecognizer?.delegate = self
     setNavBarButtons()
+    configureScrollView(postScrollView)
     configureCollectionView(postImagesCollectionView)
     fillUI()
   }
@@ -125,6 +129,7 @@ final class PostViewController: ViewController {
     viewModel.didPressSavePostButton { allowed in
       if allowed {
         savePostBarButtonItem.image = savePostBarButtonItem.image == UIImage(named: "SavePost") ? UIImage(named: "SavePostFilled") : UIImage(named: "SavePost")
+        savePostImageView.image = savePostBarButtonItem.image
       }
     }
   }
@@ -164,7 +169,8 @@ final class PostViewController: ViewController {
   @IBAction func savePostButtonPressed(_ sender: UIButton) {
     viewModel.didPressSavePostButton { allowed in
       if allowed {
-        savePostBarButtonItem.image = savePostBarButtonItem.image == UIImage(named: "SavePost") ? UIImage(named: "SavePostFilled") : UIImage(named: "SavePost")
+        savePostImageView.image = savePostImageView.image == UIImage(named: "SavePost") ? UIImage(named: "SavePostFilled") : UIImage(named: "SavePost")
+        savePostBarButtonItem.image = savePostImageView.image
       }
     }
   }

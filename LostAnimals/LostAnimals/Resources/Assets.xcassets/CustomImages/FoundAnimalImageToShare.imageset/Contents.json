@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "UserProfilePhotoExample.png",
+      "filename" : "FoundAnimalImageToShare.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "UserProfilePhotoExample-1.png",
+      "filename" : "FoundAnimalImageToShare-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "UserProfilePhotoExample-2.png",
+      "filename" : "FoundAnimalImageToShare-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

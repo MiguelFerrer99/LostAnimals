@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "ToAdoptAnimalStoryBackground.png",
+      "filename" : "ToAdoptAnimalImageToShare.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "ToAdoptAnimalStoryBackground-1.png",
+      "filename" : "ToAdoptAnimalImageToShare-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "ToAdoptAnimalStoryBackground-2.png",
+      "filename" : "ToAdoptAnimalImageToShare-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
