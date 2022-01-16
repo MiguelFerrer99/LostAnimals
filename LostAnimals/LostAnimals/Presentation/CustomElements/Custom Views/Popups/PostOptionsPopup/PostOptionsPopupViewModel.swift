@@ -48,8 +48,7 @@ extension PostOptionsPopupViewModel {
   func didPressReportPostButton() {
     let logged = Cache.get(boolFor: .logged)
     if logged {
-      self.router.dismissPostOptionsPopup()
-      NotificationCenter.default.post(name: .ShowSuccessPopupFromPostOptionsPopup, object: nil)
+      self.router.dismissPostOptionsPopupAndShowSuccessPopup()
     } else {
       self.router.dismissPostOptionsPopupAndShowGuestPopup()
     }

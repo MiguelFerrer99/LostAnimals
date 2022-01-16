@@ -40,6 +40,22 @@ final class PostOptionsPopupRouter {
     }
   }
   
+  func dismissPostOptionsPopupAndShowSuccessPopup() {
+    DispatchQueue.main.async {
+      self.viewController?.dismissCurrentView(completion: {
+        NotificationCenter.default.post(name: .ShowSuccessPopupFromPostOptionsPopup, object: nil)
+      })
+    }
+  }
+  
+  func dismissPostOptionsPopupAndShowErrorPopup() {
+    DispatchQueue.main.async {
+      self.viewController?.dismissCurrentView(completion: {
+        NotificationCenter.default.post(name: .ShowErrorPopupFromPostOptionsPopup, object: nil)
+      })
+    }
+  }
+  
   func dismissPostOptionsAndShowActivityViewController(postImageToShare: UIImage) {
     DispatchQueue.main.async {
       self.viewController?.dismissCurrentView(completion: {

@@ -26,7 +26,4 @@ extension Notification.Name {
   static let ShowSuccessPopupFromPostOptionsPopup = Notification.Name("ShowSuccessPopupFromPostOptionsPopup")
   static let ShowErrorPopupFromPostOptionsPopup = Notification.Name("ShowErrorPopupFromPostOptionsPopup")
   static let ShowActivityViewControllerFromPostOptionsPopup = Notification.Name("ShowActivityViewControllerFromPostOptionsPopup")
-  
-  static let ShowSuccessPopupFromEditPost = Notification.Name("ShowSuccessPopupFromEditPost")
-  static let ShowErrorPopupFromEditPost = Notification.Name("ShowErrorPopupFromEditPost")
 }

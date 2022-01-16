@@ -61,8 +61,9 @@ extension EditPostViewModel {
   }
   
   func didPressDeletePostButton() {
-    self.router.goBack2Times()
-    NotificationCenter.default.post(name: .ShowSuccessPopupFromEditPost, object: nil)
+    showSuccessPopup(title: "The post has been removed sucessfully") {
+      self.router.goBack2Times()
+    }
   }
   
   func didPressSaveChangesButton() {

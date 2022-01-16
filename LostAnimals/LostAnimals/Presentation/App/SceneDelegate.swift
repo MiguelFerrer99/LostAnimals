@@ -59,6 +59,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     if logged {
       if onboardingDone {
+        User.shared = HardcodedData.exampleUser1
         window?.rootViewController = Container.shared.tabBarBuilder().build()
       } else {
         window?.rootViewController = Container.shared.onboardingBuilder().build().embeddedInNavigation()
