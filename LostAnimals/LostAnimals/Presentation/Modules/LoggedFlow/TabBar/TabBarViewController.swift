@@ -19,6 +19,7 @@ final class TabBarViewController: UITabBarController, UITabBarControllerDelegate
     super.viewDidLoad()
     self.delegate = self
     
+    setupUI()
     setupBindings()
     viewModel.viewReady()
   }
@@ -44,6 +45,16 @@ final class TabBarViewController: UITabBarController, UITabBarControllerDelegate
   }
   
   // MARK: - Functions
+  private func setupUI() {
+    let titleAttributes = [NSAttributedString.Key.foregroundColor: UIColor.customBlack, NSAttributedString.Key.font: UIFont.nunitoSmallBold]
+    let largeTitleAttributes = [NSAttributedString.Key.font: UIFont.nunitoBigBold]
+    
+    UINavigationBar.appearance().titleTextAttributes = titleAttributes
+    UINavigationBar.appearance().largeTitleTextAttributes = largeTitleAttributes
+    UINavigationBar.appearance().tintColor = .customBlack
+    UINavigationBar.appearance().barTintColor = .customGreen
+  }
+  
   private func setupBindings() {
     // Do bindings setup
   }

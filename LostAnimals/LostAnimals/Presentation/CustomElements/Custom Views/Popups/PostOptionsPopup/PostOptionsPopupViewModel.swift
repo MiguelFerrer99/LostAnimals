@@ -61,21 +61,75 @@ extension PostOptionsPopupViewModel {
   }
   
   func createImageToShare() -> UIImage? {
+    // Variables
     var bgImage: UIImage?
+    var firstText: String
+    var secondText: String
+    
+    // Text attributes
+    let paragraphStyle = NSMutableParagraphStyle()
+    paragraphStyle.alignment = .center
+    let mainTextAttributes: [NSAttributedString.Key: Any] = [
+      .foregroundColor: UIColor.customWhite,
+      .font: UIFont.nunitoBigBlack,
+      .paragraphStyle: paragraphStyle
+    ]
+    let otherTextAttributes: [NSAttributedString.Key: Any] = [
+      .foregroundColor: UIColor.customWhite.withAlphaComponent(0.6),
+      .font: UIFont.nunitoSmallBold,
+      .paragraphStyle: paragraphStyle
+    ]
+    
+    // Setup variables
     switch post.postType {
     case .lost:
       bgImage = UIImage(named: "LostAnimalImageToShare")
+      firstText = post.location.address
+      secondText = post.lastTimeSeen.toString(withFormat: DateFormat.dayMonthYearHourOther)
     case .found:
       bgImage = UIImage(named: "FoundAnimalImageToShare")
+      firstText = post.location.address
+      secondText = post.lastTimeSeen.toString(withFormat: DateFormat.dayMonthYearHourOther)
     case .adopt:
       bgImage = UIImage(named: "ToAdoptAnimalImageToShare")
+      firstText = post.author.firstname
+      secondText = post.location.address
     }
-    guard let animalImage = post.animal.images.first, let stickerImage = animalImage, let bgImage = bgImage else { return nil }
+    
+    // Basic images
+    guard let clearBg = UIImage(named: "ClearBackgroundImageToShare"),
+          let postImage = post.animal.images.first, let animalImage = postImage,
+          let bgImage = bgImage
+    else { return nil }
 
-//    guard let returnedImage = stickerImage.drawIn(bgImage: bgImage,
-//                                                  position: CGRect(x: bgImage.size.width/2 - 250, y: bgImage.size.height/2 - 250, width: 500, height: 500))
+    // Clear background
+    guard let returnedImage1 = animalImage.drawImageIn(bgImage: clearBg,
+                                                       position: CGRect(x: clearBg.size.width/2 - 180, y: clearBg.size.height/2 - 313, width: 360, height: 360))
     else { return nil }
     
-    return nil
+    // Basic background
+    guard let returnedImage2 = bgImage.drawImageIn(bgImage: returnedImage1,
+                                                   position: CGRect(x: 0, y: 0, width: returnedImage1.size.width, height: returnedImage1.size.height))
+    else { return nil }
+
+    // Animal name
+    guard let returnedImage3 = post.animal.name.drawTextIn(bgImage: returnedImage2,
+                                                    position: CGRect(x: 70, y: 215, width: returnedImage2.size.width - 140, height: returnedImage2.size.height),
+                                                    textAttributes: mainTextAttributes)
+    else { return nil }
+    
+    // Lost in
+    guard let returnedImage4 = firstText.drawTextIn(bgImage: returnedImage3,
+                                                    position: CGRect(x: 70, y: returnedImage3.size.height/2 + 125, width: returnedImage3.size.width - 140, height: returnedImage3.size.height),
+                                                    textAttributes: otherTextAttributes)
+    else { return nil }
+    
+    // Lost on
+    guard let returnedImage5 = secondText.drawTextIn(bgImage: returnedImage4,
+                                                     position: CGRect(x: 70, y: returnedImage4.size.height/2 + 245, width: returnedImage4.size.width - 140, height: returnedImage4.size.height),
+                                                     textAttributes: otherTextAttributes)
+    else { return nil }
+    
+    return returnedImage5
   }
 }

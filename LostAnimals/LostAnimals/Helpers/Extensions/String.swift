@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension String {
   var localized: String {
@@ -55,5 +56,16 @@ extension String {
     let date = dateFormatter.date(from: self)
     
     return date
+  }
+  
+  func drawTextIn(bgImage: UIImage, position: CGRect, textAttributes: [NSAttributedString.Key: Any]) -> UIImage? {
+    let nsString = NSString(string: self)
+    UIGraphicsBeginImageContext(bgImage.size)
+    bgImage.draw(in: CGRect(x: 0, y: 0, width: bgImage.size.width, height: bgImage.size.height))
+    nsString.draw(in: position, withAttributes: textAttributes)
+    let returnedImage = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    
+    return returnedImage
   }
 }

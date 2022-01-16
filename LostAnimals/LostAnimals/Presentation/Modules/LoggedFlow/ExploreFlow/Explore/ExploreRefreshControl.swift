@@ -12,7 +12,7 @@ extension ExploreViewController {
   func configureRefreshControl(_ refreshControl: UIRefreshControl) {
     refreshControl.tintColor = .customBlack
     refreshControl.addTarget(self, action: #selector(refreshPosts), for: .valueChanged)
-    postsCollectionView.addSubview(refreshControl)
+    postsCollectionView.refreshControl = refreshControl
   }
   
   @objc private func refreshPosts() {
