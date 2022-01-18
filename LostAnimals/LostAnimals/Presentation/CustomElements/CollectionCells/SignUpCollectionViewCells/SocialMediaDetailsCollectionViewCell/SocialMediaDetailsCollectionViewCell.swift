@@ -35,13 +35,24 @@ class SocialMediaDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell 
   // MARK: - Life cycle
   override func awakeFromNib() {
     super.awakeFromNib()
-        
-    NotificationCenter.default.addObserver(self, selector: #selector(fillPhonePrefix), name: .SendCountryDialCode, object: nil)
     
+    subscribeToNotifications()
     setupBindings()
   }
   
+  deinit {
+    unsubscribeToNotifications()
+  }
+  
   // MARK: - Functions
+  private func subscribeToNotifications() {
+    NotificationCenter.default.addObserver(self, selector: #selector(fillPhonePrefix), name: .SendCountryDialCode, object: nil)
+  }
+  
+  private func unsubscribeToNotifications() {
+    NotificationCenter.default.removeObserver(self)
+  }
+  
   private func setupBindings() {
     // Do bindings setup
   }

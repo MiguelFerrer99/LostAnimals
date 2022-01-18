@@ -73,9 +73,7 @@ class ViewController: UIViewController {
     UINavigationBar.appearance().tintColor = navigationTintColor
     UINavigationBar.appearance().barTintColor = navigationBarTintColor
     
-    NotificationCenter.default.addObserver(self, selector: #selector(didBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    subscribeToNotifications()
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -96,7 +94,7 @@ class ViewController: UIViewController {
   }
   
   deinit {
-    NotificationCenter.default.removeObserver(self)
+    unsubscribeToNotifications()
   }
   
   // MARK: - Functions
@@ -114,6 +112,16 @@ class ViewController: UIViewController {
     
     self.tabBarController?.tabBar.frame = frame!
     self.tabBarController?.tabBar.isHidden = true
+  }
+  
+  private func subscribeToNotifications() {
+    NotificationCenter.default.addObserver(self, selector: #selector(didBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+  }
+  
+  private func unsubscribeToNotifications() {
+    NotificationCenter.default.removeObserver(self)
   }
   
   func showTabBar() {

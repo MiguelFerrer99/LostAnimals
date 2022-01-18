@@ -33,6 +33,7 @@ public enum WhereDoYouLiveComesFrom: String {
 public enum WhereCanWeFindYouComesFrom: String {
   case signUp
   case editPost
+  case newPost
 }
 
 public enum OnboardingStep: Int {
@@ -76,4 +77,14 @@ public enum FilterType: Int {
 public enum PostComesFrom: String {
   case explore
   case profile
+}
+
+public enum AnimalTypesComesFrom: String {
+  case editPost
+  case newPost
+}
+
+public enum SelectPhotoPopupComesFrom: String {
+  case editPost
+  case newPost
 }

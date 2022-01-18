@@ -65,6 +65,10 @@ extension Container {
     return NewPostBuilder()
   }
   
+  func newPostGenericBuilder() -> NewPostGenericBuilder {
+    return NewPostGenericBuilder()
+  }
+  
   func onboardingBuilder() -> OnboardingBuilder {
     return OnboardingBuilder()
   }

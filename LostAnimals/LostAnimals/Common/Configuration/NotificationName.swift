@@ -12,15 +12,20 @@ extension Notification.Name {
   static let SendWhereDoYouLiveCountryAndCities = Notification.Name("SendWhereDoYouLiveCountryAndCities")
   static let SendWhereCanWeFindYouAddressToSignUp = Notification.Name("SendWhereCanWeFindYouAddressToSignUp")
   static let SendWhereCanWeFindYouAddressToEditPost = Notification.Name("SendWhereCanWeFindYouAddressToEditPost")
+  static let SendWhereCanWeFindYouAddressToNewPost = Notification.Name("SendWhereCanWeFindYouAddressToNewPost")
   static let SendCountryDialCode = Notification.Name("SendCountryDialCode")
   static let SendAnimalToEditPost = Notification.Name("SendAnimalToEditPost")
+  static let SendAnimalToNewPost = Notification.Name("SendAnimalToNewPost")
   
   static let UpdateFiltersUI = Notification.Name("UpdateFiltersUI")
   
   static let GoToEditPostFromPostOptionsPopup = Notification.Name("GoToEditPostFromPostOptionsPopup")
-  static let RemovePhotoFromSelectPhotoPopup = Notification.Name("RemovePhotoFromSelectPhotoPopup")
-  static let ChooseFromLibraryFromSelectPhotoPopup = Notification.Name("ChooseFromLibraryFromSelectPhotoPopup")
-  static let TakeAPhotoFromSelectPhotoPopup = Notification.Name("TakeAPhotoFromSelectPhotoPopup")
+  static let RemovePhotoFromSelectPhotoPopupFromEditPost = Notification.Name("RemovePhotoFromSelectPhotoPopupFromEditPost")
+  static let ChooseFromLibraryFromSelectPhotoPopupFromEditPost = Notification.Name("ChooseFromLibraryFromSelectPhotoPopupFromEditPost")
+  static let TakeAPhotoFromSelectPhotoPopupFromEditPost = Notification.Name("TakeAPhotoFromSelectPhotoPopupFromEditPost")
+  static let RemovePhotoFromSelectPhotoPopupFromNewPost = Notification.Name("RemovePhotoFromSelectPhotoPopupFromNewPost")
+  static let ChooseFromLibraryFromSelectPhotoPopupFromNewPost = Notification.Name("ChooseFromLibraryFromSelectPhotoPopupFromNewPost")
+  static let TakeAPhotoFromSelectPhotoPopupFromNewPost = Notification.Name("TakeAPhotoFromSelectPhotoPopupFromNewPost")
   
   static let ShowGuestPopupFromPostOptionsPopup = Notification.Name("ShowGuestPopupFromPostOptionsPopup")
   static let ShowSuccessPopupFromPostOptionsPopup = Notification.Name("ShowSuccessPopupFromPostOptionsPopup")

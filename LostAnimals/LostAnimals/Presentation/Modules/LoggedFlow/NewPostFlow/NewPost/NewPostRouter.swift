@@ -24,15 +24,10 @@ final class NewPostRouter {
     }
   }
   
-  func goToLostNewPost() {
-    // TODO: Go to LostNewPostVC
-  }
-  
-  func goToFoundNewPost() {
-    // TODO: Go to FoundNewPostVC
-  }
-  
-  func goToAdoptNewPost() {
-    // TODO: Go to AdoptNewPostVC
+  func goToNewPostGeneric(postType: PostType) {
+    let viewController = Container.shared.newPostGenericBuilder().build(postType: postType)
+    DispatchQueue.main.async {
+      self.viewController?.push(viewController: viewController)
+    }
   }
 }

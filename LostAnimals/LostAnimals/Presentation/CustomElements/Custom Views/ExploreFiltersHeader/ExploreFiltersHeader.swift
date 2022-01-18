@@ -20,12 +20,23 @@ class ExploreFiltersHeader: UICollectionReusableView, Reusable {
   override func awakeFromNib() {
     super.awakeFromNib()
     
-    NotificationCenter.default.addObserver(self, selector: #selector(updateFiltersUI), name: .UpdateFiltersUI, object: nil)
-    
+    subscribeToNotifications()
     setupUI()
   }
   
+  deinit {
+    unsubscribeToNotifications()
+  }
+  
   // MARK: - Functions
+  private func subscribeToNotifications() {
+    NotificationCenter.default.addObserver(self, selector: #selector(updateFiltersUI), name: .UpdateFiltersUI, object: nil)
+  }
+  
+  private func unsubscribeToNotifications() {
+    NotificationCenter.default.removeObserver(self)
+  }
+  
   private func setupUI() {
     preselectAllFilter()
     configureCollectionView(filtersCollectionView)

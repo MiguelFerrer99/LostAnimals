@@ -31,14 +31,14 @@ final class EditPostRouter {
   }
   
   func goToSelectPhotoPopup(showRemoveOption: Bool) {
-    let viewController = Container.shared.selectPhotoPopupBuilder().build(showRemoveOption: showRemoveOption)
+    let viewController = Container.shared.selectPhotoPopupBuilder().build(showRemoveOption: showRemoveOption, comesFrom: .editPost)
     DispatchQueue.main.async {
       self.viewController?.present(viewController: viewController, completion: nil)
     }
   }
   
   func goToAnimalTypes(selectedAnimalType: AnimalType) {
-    let viewController = Container.shared.animalTypesBuilder().build(selectedAnimalType: selectedAnimalType)
+    let viewController = Container.shared.animalTypesBuilder().build(comesFrom: .editPost)
     DispatchQueue.main.async {
       self.viewController?.push(viewController: viewController)
     }

@@ -46,6 +46,10 @@
 		4114ABD3275F960200F1AB01 /* AccountDetailsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4114ABD1275F960200F1AB01 /* AccountDetailsCollectionViewCell.xib */; };
 		4114ABD7275F966600F1AB01 /* SocialMediaDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4114ABD5275F966600F1AB01 /* SocialMediaDetailsCollectionViewCell.swift */; };
 		4114ABD8275F966600F1AB01 /* SocialMediaDetailsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4114ABD6275F966600F1AB01 /* SocialMediaDetailsCollectionViewCell.xib */; };
+		4119F6CD27958A9A006B665A /* NewPostGenericRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4119F6C827958A9A006B665A /* NewPostGenericRouter.swift */; };
+		4119F6CF27958A9A006B665A /* NewPostGenericViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4119F6CA27958A9A006B665A /* NewPostGenericViewController.swift */; };
+		4119F6D027958A9A006B665A /* NewPostGenericBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4119F6CB27958A9A006B665A /* NewPostGenericBuilder.swift */; };
+		4119F6D127958A9A006B665A /* NewPostGenericViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4119F6CC27958A9A006B665A /* NewPostGenericViewModel.swift */; };
 		411C7F6D274BA8FE00C9710A /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411C7F69274BA8FE00C9710A /* LoginRouter.swift */; };
 		411C7F6E274BA8FE00C9710A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411C7F6A274BA8FE00C9710A /* LoginViewController.swift */; };
 		411C7F6F274BA8FE00C9710A /* LoginBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411C7F6B274BA8FE00C9710A /* LoginBuilder.swift */; };
@@ -114,6 +118,9 @@
 		417B8623277D27380051B8CF /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417B861E277D27380051B8CF /* ProfileViewModel.swift */; };
 		417E58FF274D9CCD00447ED3 /* LoginTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417E58FE274D9CCD00447ED3 /* LoginTextFields.swift */; };
 		417FA21F2790B3B800F0C2CD /* PostScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417FA21E2790B3B800F0C2CD /* PostScrollView.swift */; };
+		4183EE2727961A8E005C554E /* NewPostGenericImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4183EE2627961A8E005C554E /* NewPostGenericImagePicker.swift */; };
+		4183EE2927961AC1005C554E /* NewPostGenericTextfields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4183EE2827961AC1005C554E /* NewPostGenericTextfields.swift */; };
+		4183EE2B27962005005C554E /* NewPostGenericViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4183EE2A27962005005C554E /* NewPostGenericViewController.storyboard */; };
 		4186AC86277F6F57009C07E2 /* ExploreFiltersHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186AC84277F6F57009C07E2 /* ExploreFiltersHeader.swift */; };
 		4186AC87277F6F57009C07E2 /* ExploreFiltersHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4186AC85277F6F57009C07E2 /* ExploreFiltersHeader.xib */; };
 		4186AC89277F6FB4009C07E2 /* ExploreFiltersHeaderCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186AC88277F6FB4009C07E2 /* ExploreFiltersHeaderCollectionView.swift */; };
@@ -344,6 +351,10 @@
 		4114ABD1275F960200F1AB01 /* AccountDetailsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountDetailsCollectionViewCell.xib; sourceTree = "<group>"; };
 		4114ABD5275F966600F1AB01 /* SocialMediaDetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaDetailsCollectionViewCell.swift; sourceTree = "<group>"; };
 		4114ABD6275F966600F1AB01 /* SocialMediaDetailsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SocialMediaDetailsCollectionViewCell.xib; sourceTree = "<group>"; };
+		4119F6C827958A9A006B665A /* NewPostGenericRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostGenericRouter.swift; sourceTree = "<group>"; };
+		4119F6CA27958A9A006B665A /* NewPostGenericViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostGenericViewController.swift; sourceTree = "<group>"; };
+		4119F6CB27958A9A006B665A /* NewPostGenericBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostGenericBuilder.swift; sourceTree = "<group>"; };
+		4119F6CC27958A9A006B665A /* NewPostGenericViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostGenericViewModel.swift; sourceTree = "<group>"; };
 		411C7F69274BA8FE00C9710A /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		411C7F6A274BA8FE00C9710A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		411C7F6B274BA8FE00C9710A /* LoginBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBuilder.swift; sourceTree = "<group>"; };
@@ -412,6 +423,9 @@
 		417B861E277D27380051B8CF /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		417E58FE274D9CCD00447ED3 /* LoginTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextFields.swift; sourceTree = "<group>"; };
 		417FA21E2790B3B800F0C2CD /* PostScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostScrollView.swift; sourceTree = "<group>"; };
+		4183EE2627961A8E005C554E /* NewPostGenericImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostGenericImagePicker.swift; sourceTree = "<group>"; };
+		4183EE2827961AC1005C554E /* NewPostGenericTextfields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostGenericTextfields.swift; sourceTree = "<group>"; };
+		4183EE2A27962005005C554E /* NewPostGenericViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewPostGenericViewController.storyboard; sourceTree = "<group>"; };
 		4186AC84277F6F57009C07E2 /* ExploreFiltersHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreFiltersHeader.swift; sourceTree = "<group>"; };
 		4186AC85277F6F57009C07E2 /* ExploreFiltersHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExploreFiltersHeader.xib; sourceTree = "<group>"; };
 		4186AC88277F6FB4009C07E2 /* ExploreFiltersHeaderCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreFiltersHeaderCollectionView.swift; sourceTree = "<group>"; };
@@ -826,16 +840,23 @@
 			isa = PBXGroup;
 			children = (
 				417B85F7277D08FA0051B8CF /* NewPost */,
-				414096412794A7E600E6A781 /* NewPostLostAnimal */,
+				414096412794A7E600E6A781 /* NewPostGeneric */,
 			);
 			path = NewPostFlow;
 			sourceTree = "<group>";
 		};
-		414096412794A7E600E6A781 /* NewPostLostAnimal */ = {
+		414096412794A7E600E6A781 /* NewPostGeneric */ = {
 			isa = PBXGroup;
 			children = (
+				4183EE2A27962005005C554E /* NewPostGenericViewController.storyboard */,
+				4119F6C827958A9A006B665A /* NewPostGenericRouter.swift */,
+				4119F6CA27958A9A006B665A /* NewPostGenericViewController.swift */,
+				4119F6CB27958A9A006B665A /* NewPostGenericBuilder.swift */,
+				4119F6CC27958A9A006B665A /* NewPostGenericViewModel.swift */,
+				4183EE2827961AC1005C554E /* NewPostGenericTextfields.swift */,
+				4183EE2627961A8E005C554E /* NewPostGenericImagePicker.swift */,
 			);
-			path = NewPostLostAnimal;
+			path = NewPostGeneric;
 			sourceTree = "<group>";
 		};
 		414096432794A83A00E6A781 /* AuthFlow */ = {
@@ -1608,6 +1629,7 @@
 				41CD112327835C2200257B2B /* SavedPostsViewController.storyboard in Resources */,
 				41871965275BFA6D00C993BC /* Nunito-Light.ttf in Resources */,
 				4160E711277B9EA700C7066F /* OnboardingViewController.storyboard in Resources */,
+				4183EE2B27962005005C554E /* NewPostGenericViewController.storyboard in Resources */,
 				4186AC87277F6F57009C07E2 /* ExploreFiltersHeader.xib in Resources */,
 				41BFE175276618C900AC5570 /* CityTableViewCell.xib in Resources */,
 				41FEE1D72788926E00F11449 /* PostImageCollectionViewCell.xib in Resources */,
@@ -1715,6 +1737,7 @@
 				4100A0F0278372110049EEF0 /* PostBuilder.swift in Sources */,
 				945B15BD25595DC9003A65E0 /* Cache.swift in Sources */,
 				416D1CE927751BFB00C75546 /* SocialMediaDetailsCollectionViewCellViewModel.swift in Sources */,
+				4183EE2927961AC1005C554E /* NewPostGenericTextfields.swift in Sources */,
 				31981E4B24191A4500D25074 /* CustomTextField.swift in Sources */,
 				41EC16BF278678CE00096B7A /* SelectPhotoPopupViewController.swift in Sources */,
 				4108D8DB27624C8600880E0B /* PersonalDetailsCollectionViewCellTextFields.swift in Sources */,
@@ -1725,6 +1748,7 @@
 				41CD110E278336F400257B2B /* DateFilterPopupRouter.swift in Sources */,
 				41CD11052783244700257B2B /* LocationFilterPopupViewController.swift in Sources */,
 				41CDA4322780E0D60009AB55 /* Post.swift in Sources */,
+				4119F6D127958A9A006B665A /* NewPostGenericViewModel.swift in Sources */,
 				41CD111427834A8E00257B2B /* DateFilterPopupTextfields.swift in Sources */,
 				418C4141275A5E310099BC5B /* ForgotPasswordViewController.swift in Sources */,
 				E3D14DCD242D081B00436D51 /* Constants.swift in Sources */,
@@ -1737,6 +1761,7 @@
 				943CE5FF2546DFBC00CA93AA /* CustomImageView.swift in Sources */,
 				4139870E2737FA3500C243F4 /* StartupRouter.swift in Sources */,
 				415476BF27849A0300BD684F /* EditPostTextfields.swift in Sources */,
+				4183EE2727961A8E005C554E /* NewPostGenericImagePicker.swift in Sources */,
 				41CDA4302780DD000009AB55 /* ExploreRefreshControl.swift in Sources */,
 				417FA21F2790B3B800F0C2CD /* PostScrollView.swift in Sources */,
 				41FEE1E62788B6FD00F11449 /* LocationMapView.swift in Sources */,
@@ -1754,6 +1779,7 @@
 				41F2DA7C278B8DF600E582E8 /* Coordinates.swift in Sources */,
 				410FE6812770C4E200A390A3 /* AddressTableViewCellSummary.swift in Sources */,
 				CCB0207826A6F12000214CB9 /* Array.swift in Sources */,
+				4119F6CF27958A9A006B665A /* NewPostGenericViewController.swift in Sources */,
 				4186AC89277F6FB4009C07E2 /* ExploreFiltersHeaderCollectionView.swift in Sources */,
 				413987102737FA3500C243F4 /* StartupBuilder.swift in Sources */,
 				4160E71A277BA6C200C7066F /* OnboardingCollectionViewCellSummary.swift in Sources */,
@@ -1836,6 +1862,7 @@
 				41742224277C815600915233 /* ExploreBuilder.swift in Sources */,
 				418AD20A275A6A51005AFE3C /* ForgotPasswordTextFields.swift in Sources */,
 				41CDA4362780E3EC0009AB55 /* HardcodedData.swift in Sources */,
+				4119F6D027958A9A006B665A /* NewPostGenericBuilder.swift in Sources */,
 				417B8622277D27380051B8CF /* ProfileBuilder.swift in Sources */,
 				41B9CE71277F421300966509 /* PostCollectionViewCell.swift in Sources */,
 				41EC16C0278678CE00096B7A /* SelectPhotoPopupBuilder.swift in Sources */,
@@ -1865,6 +1892,7 @@
 				41CD10EB2782183900257B2B /* AnimalFilterPopupRouter.swift in Sources */,
 				CCB0202A26A6EE3400214CB9 /* AppDelegate.swift in Sources */,
 				415E59912764F1F8009A013E /* WhereDoYouLiveCitiesViewController.swift in Sources */,
+				4119F6CD27958A9A006B665A /* NewPostGenericRouter.swift in Sources */,
 				4100A0F1278372110049EEF0 /* PostViewModel.swift in Sources */,
 				4160E702277B99FB00C7066F /* TermsAndConditionsViewController.swift in Sources */,
 				41BFE17027653A6300AC5570 /* CountryTableViewCellSummary.swift in Sources */,

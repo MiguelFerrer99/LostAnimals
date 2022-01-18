@@ -31,13 +31,24 @@ class PersonalDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell {
   override func awakeFromNib() {
     super.awakeFromNib()
     
-    NotificationCenter.default.addObserver(self, selector: #selector(fillWhereDoYouLive), name: .SendWhereDoYouLiveCountryAndCities, object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(fillWhereCanWeFindYou), name: .SendWhereCanWeFindYouAddressToSignUp, object: nil)
-    
+    subscribeToNotifications()
     setupBindings()
   }
   
+  deinit {
+    unsubscribeToNotifications()
+  }
+  
   // MARK: - Functions
+  private func subscribeToNotifications() {
+    NotificationCenter.default.addObserver(self, selector: #selector(fillWhereDoYouLive), name: .SendWhereDoYouLiveCountryAndCities, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(fillWhereCanWeFindYou), name: .SendWhereCanWeFindYouAddressToSignUp, object: nil)
+  }
+  
+  private func unsubscribeToNotifications() {
+    NotificationCenter.default.removeObserver(self)
+  }
+  
   private func setupBindings() {
     // Do bindings setup
   }

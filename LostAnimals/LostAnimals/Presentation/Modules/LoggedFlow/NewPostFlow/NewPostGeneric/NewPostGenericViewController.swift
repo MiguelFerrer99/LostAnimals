@@ -1,14 +1,14 @@
 //
-//  EditPostViewController.swift
+//  NewPostGenericViewController.swift
 //  LostAnimals
 //
-//  Created by Miguel Ferrer Fornali on 4/1/22.
+//  Created by Miguel Ferrer Fornali on 17/1/22.
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
 import UIKit
 
-final class EditPostViewController: ViewController {
+final class NewPostGenericViewController: ViewController {
   
   // MARK: - IBOutlets
   @IBOutlet weak var postTypeLabel: UILabel!
@@ -34,14 +34,13 @@ final class EditPostViewController: ViewController {
   @IBOutlet weak var lastTimeSeenTextfield: CustomTextField!
   @IBOutlet weak var locationTextfield: CustomTextField!
   @IBOutlet weak var descriptionTextview: UITextView!
-  @IBOutlet weak var deletePostButton: CustomButton!
-  @IBOutlet weak var saveChangesButton: CustomButton!
+  @IBOutlet weak var publishPostButton: CustomButton!
   
   // MARK: - Properties
   override var navBarTitle: String {
-    return "Edit post"
+    return "New post"
   }
-  var viewModel: EditPostViewModel!
+  var viewModel: NewPostGenericViewModel!
   let imagePickerController = UIImagePickerController()
   
   // MARK: - Life cycle
@@ -66,11 +65,11 @@ final class EditPostViewController: ViewController {
   
   // MARK: - Functions
   private func subscribeToNotifications() {
-    NotificationCenter.default.addObserver(self, selector: #selector(fillWhereCanWeFindYou), name: .SendWhereCanWeFindYouAddressToEditPost, object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(fillAnimal), name: .SendAnimalToEditPost, object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(removePhoto), name: .RemovePhotoFromSelectPhotoPopupFromEditPost, object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(chooseFromLibrary), name: .ChooseFromLibraryFromSelectPhotoPopupFromEditPost, object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(takeAPhoto), name: .TakeAPhotoFromSelectPhotoPopupFromEditPost, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(fillWhereCanWeFindYou), name: .SendWhereCanWeFindYouAddressToNewPost, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(fillAnimal), name: .SendAnimalToNewPost, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(removePhoto), name: .RemovePhotoFromSelectPhotoPopupFromNewPost, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(chooseFromLibrary), name: .ChooseFromLibraryFromSelectPhotoPopupFromNewPost, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(takeAPhoto), name: .TakeAPhotoFromSelectPhotoPopupFromNewPost, object: nil)
   }
   
   private func unsubscribeToNotifications() {
@@ -90,25 +89,16 @@ final class EditPostViewController: ViewController {
   }
   
   private func fillUI() {
-    switch viewModel.post.postType {
-    case .lost: postTypeLabel.text = "Lost animal"
-    case .found: postTypeLabel.text = "Found animal"
-    case .adopt: postTypeLabel.text = "To adopt animal"
+    switch viewModel.postType {
+    case .lost:
+      postTypeLabel.text = "Lost animal"
+    case .found:
+      postTypeLabel.text = "Found animal"
+      nameTextfield.isHidden = true
+    case .adopt:
+      postTypeLabel.text = "To adopt animal"
+      lastTimeSeenTextfield.isHidden = true
     }
-    viewModel.selectPhotoImageViews.enumerated().forEach { selectPhotoImageView in
-      if selectPhotoImageView.offset <= viewModel.post.animal.images.count - 1 {
-        let postImage = viewModel.post.animal.images[selectPhotoImageView.offset]
-        selectPhotoImageView.element.image = postImage
-      } else {
-        selectPhotoImageView.element.image = UIImage(named: "SelectPhotoPlaceholder")
-      }
-    }
-    nameTextfield.textField.text = viewModel.post.animal.name
-    animalTextfield.textField.text = viewModel.post.animal.type.rawValue
-    breedTextfield.textField.text = viewModel.post.animal.breed
-    lastTimeSeenTextfield.textField.text = viewModel.post.lastTimeSeen.toString(withFormat: DateFormat.dayMonthYearOther)
-    locationTextfield.textField.text = viewModel.post.location.address
-    descriptionTextview.text = viewModel.post.description
   }
   
   @objc private func removePhoto(_ notification: NSNotification) {
@@ -126,25 +116,25 @@ final class EditPostViewController: ViewController {
   }
   
   private func updateUserInteraction() {
-    navigationController?.navigationBar.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
-    navigationController?.interactivePopGestureRecognizer?.isEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
-    nameTextfield.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
-    animalTextfield.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
-    breedTextfield.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
-    lastTimeSeenTextfield.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
-    locationTextfield.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
-    descriptionTextview.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
-    selectPhoto1Button.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
-    selectPhoto2Button.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
-    selectPhoto3Button.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
-    selectPhoto4Button.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
-    selectPhoto5Button.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
-    selectPhoto6Button.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
-    selectPhoto7Button.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
-    selectPhoto8Button.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
+    navigationController?.navigationBar.isUserInteractionEnabled = publishPostButton.isEnabled
+    navigationController?.interactivePopGestureRecognizer?.isEnabled = publishPostButton.isEnabled
+    nameTextfield.isUserInteractionEnabled = publishPostButton.isEnabled
+    animalTextfield.isUserInteractionEnabled = publishPostButton.isEnabled
+    breedTextfield.isUserInteractionEnabled = publishPostButton.isEnabled
+    lastTimeSeenTextfield.isUserInteractionEnabled = publishPostButton.isEnabled
+    locationTextfield.isUserInteractionEnabled = publishPostButton.isEnabled
+    descriptionTextview.isUserInteractionEnabled = publishPostButton.isEnabled
+    selectPhoto1Button.isUserInteractionEnabled = publishPostButton.isEnabled
+    selectPhoto2Button.isUserInteractionEnabled = publishPostButton.isEnabled
+    selectPhoto3Button.isUserInteractionEnabled = publishPostButton.isEnabled
+    selectPhoto4Button.isUserInteractionEnabled = publishPostButton.isEnabled
+    selectPhoto5Button.isUserInteractionEnabled = publishPostButton.isEnabled
+    selectPhoto6Button.isUserInteractionEnabled = publishPostButton.isEnabled
+    selectPhoto7Button.isUserInteractionEnabled = publishPostButton.isEnabled
+    selectPhoto8Button.isUserInteractionEnabled = publishPostButton.isEnabled
   }
   
-  // MARK: - IBActions
+  // MARK: - IBAction
   @IBAction func selectPhoto1ButtonPressed(_ sender: UIButton) {
     viewModel.selectedIndexImageView = 0
     viewModel.didPressSelectPhotoButton()
@@ -185,15 +175,9 @@ final class EditPostViewController: ViewController {
     viewModel.didPressSelectPhotoButton()
   }
   
-  @IBAction func deletePostButtonPressed(_ sender: CustomButton) {
-    deletePostButton.showLoading()
+  @IBAction func publishPostButtonPressed(_ sender: CustomButton) {
+    publishPostButton.showLoading()
     updateUserInteraction()
-    viewModel.didPressDeletePostButton()
-  }
-  
-  @IBAction func saveChangesButtonPressed(_ sender: CustomButton) {
-    saveChangesButton.showLoading()
-    updateUserInteraction()
-    viewModel.didPressSaveChangesButton()
+    viewModel.didPressPublishPostButton()
   }
 }

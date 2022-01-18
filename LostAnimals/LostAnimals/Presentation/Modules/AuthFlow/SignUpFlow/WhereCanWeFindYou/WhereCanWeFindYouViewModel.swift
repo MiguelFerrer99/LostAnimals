@@ -42,6 +42,8 @@ extension WhereCanWeFindYouViewModel {
       NotificationCenter.default.post(name: .SendWhereCanWeFindYouAddressToSignUp, object: nil, userInfo: userInfo)
     case .editPost:
       NotificationCenter.default.post(name: .SendWhereCanWeFindYouAddressToEditPost, object: nil, userInfo: userInfo)
+    case .newPost:
+      NotificationCenter.default.post(name: .SendWhereCanWeFindYouAddressToNewPost, object: nil, userInfo: userInfo)
     }
     self.router.goBack()
   }

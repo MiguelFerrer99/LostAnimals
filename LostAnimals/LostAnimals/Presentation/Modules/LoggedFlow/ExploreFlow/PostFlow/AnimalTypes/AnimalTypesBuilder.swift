@@ -10,12 +10,12 @@ import UIKit
 
 final class AnimalTypesBuilder {
   
-  func build(selectedAnimalType: AnimalType) -> AnimalTypesViewController {
+  func build(comesFrom: AnimalTypesComesFrom) -> AnimalTypesViewController {
     
     let viewController = UIViewController.instantiate(viewController: AnimalTypesViewController.self)
     
     let router = AnimalTypesRouter(viewController: viewController)
-    let viewModel = AnimalTypesViewModel(router: router, selectedAnimalType: selectedAnimalType)
+    let viewModel = AnimalTypesViewModel(router: router, comesFrom: comesFrom)
     
     viewController.viewModel = viewModel
     

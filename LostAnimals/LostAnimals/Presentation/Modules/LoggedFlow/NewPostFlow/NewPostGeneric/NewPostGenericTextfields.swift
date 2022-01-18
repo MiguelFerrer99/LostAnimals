@@ -1,8 +1,8 @@
 //
-//  EditPostTextfields.swift
+//  NewPostGenericTextfields.swift
 //  LostAnimals
 //
-//  Created by Miguel Ferrer Fornali on 4/1/22.
+//  Created by Miguel Ferrer Fornali on 17/1/22.
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
@@ -10,23 +10,20 @@ import Foundation
 import UIKit
 import MapKit
 
-extension EditPostViewController: CustomTextFieldDelegate {
+extension NewPostGenericViewController: CustomTextFieldDelegate {
   // MARK: - Functions
   func configureTextfields() {
-    animalTextfield.delegate = self
-    animalTextfield.initEditableTextfield()
-    animalTextfield.addErrorsToCheck([TextFieldErrorEmptyValue()])
-    
     nameTextfield.delegate = self
-    nameTextfield.initEditableTextfield()
     nameTextfield.textField.textContentType = .name
     nameTextfield.textField.keyboardType    = .alphabet
     nameTextfield.textField.returnKeyType   = .next
     nameTextfield.addErrorsToCheck([TextFieldErrorEmptyValue(),
                                     TextFieldErrorOnlyLettersAndSpaces()])
     
+    animalTextfield.delegate = self
+    animalTextfield.addErrorsToCheck([TextFieldErrorEmptyValue()])
+    
     breedTextfield.delegate = self
-    breedTextfield.initEditableTextfield()
     breedTextfield.textField.textContentType = .name
     breedTextfield.textField.keyboardType    = .alphabet
     breedTextfield.textField.returnKeyType   = .next
@@ -34,14 +31,10 @@ extension EditPostViewController: CustomTextFieldDelegate {
                                      TextFieldErrorOnlyLettersAndSpaces()])
     
     lastTimeSeenTextfield.delegate = self
-    lastTimeSeenTextfield.initEditableTextfield()
     lastTimeSeenTextfield.addErrorsToCheck([TextFieldErrorEmptyValue()])
     
     locationTextfield.delegate = self
-    locationTextfield.initEditableTextfield()
     locationTextfield.addErrorsToCheck([TextFieldErrorEmptyValue()])
-    
-    viewModel.editedTextFields = [nameTextfield, animalTextfield, breedTextfield, lastTimeSeenTextfield, locationTextfield]
   }
   
   @objc func fillWhereCanWeFindYou(_ notification: NSNotification) {
@@ -77,8 +70,8 @@ extension EditPostViewController: CustomTextFieldDelegate {
     let haveErrors = viewModel.textFieldsHaveErrors()
     let hasAtLeastOnePhoto = viewModel.selectPhotoImageViews.contains(where: { $0.image != nil })
     let canMoveToNextStep = !haveErrors && hasAtLeastOnePhoto && viewModel.editedTextFields.count == viewModel.numberOfTextFields
-    saveChangesButton.alpha = canMoveToNextStep ? 1 : 0.5
-    saveChangesButton.isEnabled = canMoveToNextStep
+    publishPostButton.alpha = canMoveToNextStep ? 1 : 0.5
+    publishPostButton.isEnabled = canMoveToNextStep
   }
   
   // MARK: - CustomTextFieldDelegate

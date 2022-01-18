@@ -12,12 +12,13 @@ final class AnimalTypesViewModel {
   
   // MARK: - Properties
   private let router: AnimalTypesRouter
-  var selectedAnimalType: AnimalType
+  let comesFrom: AnimalTypesComesFrom
+  var selectedAnimalType: AnimalType?
   
   // MARK: - Init
-  required init(router: AnimalTypesRouter, selectedAnimalType: AnimalType) {
+  required init(router: AnimalTypesRouter, comesFrom: AnimalTypesComesFrom) {
     self.router = router
-    self.selectedAnimalType = selectedAnimalType
+    self.comesFrom = comesFrom
   }
 }
 
@@ -35,8 +36,13 @@ extension AnimalTypesViewModel {
 // MARK: - Functions
 extension AnimalTypesViewModel {
   func didSelectedAnimalType() {
-    let userInfo: [String: AnimalType] = ["animalType": selectedAnimalType]
-    NotificationCenter.default.post(name: .SendAnimalToEditPost, object: nil, userInfo: userInfo)
+    let userInfo: [String: AnimalType] = ["animalType": selectedAnimalType ?? .other]
+    switch comesFrom {
+    case .editPost:
+      NotificationCenter.default.post(name: .SendAnimalToEditPost, object: nil, userInfo: userInfo)
+    case .newPost:
+      NotificationCenter.default.post(name: .SendAnimalToNewPost, object: nil, userInfo: userInfo)
+    }
     self.router.goBack()
   }
 }

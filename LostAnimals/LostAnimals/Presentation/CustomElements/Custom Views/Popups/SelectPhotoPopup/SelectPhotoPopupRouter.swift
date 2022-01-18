@@ -24,26 +24,41 @@ final class SelectPhotoPopupRouter {
     }
   }
   
-  func dismissSelectPhotoPopupAndRemovePhoto() {
+  func dismissSelectPhotoPopupAndRemovePhoto(comesFrom: SelectPhotoPopupComesFrom) {
     DispatchQueue.main.async {
       self.viewController?.dismissCurrentView(completion: {
-        NotificationCenter.default.post(name: .RemovePhotoFromSelectPhotoPopup, object: nil)
+        switch comesFrom {
+        case .editPost:
+          NotificationCenter.default.post(name: .RemovePhotoFromSelectPhotoPopupFromEditPost, object: nil)
+        case .newPost:
+          NotificationCenter.default.post(name: .RemovePhotoFromSelectPhotoPopupFromNewPost, object: nil)
+        }
       })
     }
   }
   
-  func dismissSelectPhotoPopupAndChooseFromLibrary() {
+  func dismissSelectPhotoPopupAndChooseFromLibrary(comesFrom: SelectPhotoPopupComesFrom) {
     DispatchQueue.main.async {
       self.viewController?.dismissCurrentView(completion: {
-        NotificationCenter.default.post(name: .ChooseFromLibraryFromSelectPhotoPopup, object: nil)
+        switch comesFrom {
+        case .editPost:
+          NotificationCenter.default.post(name: .ChooseFromLibraryFromSelectPhotoPopupFromEditPost, object: nil)
+        case .newPost:
+          NotificationCenter.default.post(name: .ChooseFromLibraryFromSelectPhotoPopupFromNewPost, object: nil)
+        }
       })
     }
   }
   
-  func dismissSelectPhotoPopupAndTakeAPhoto() {
+  func dismissSelectPhotoPopupAndTakeAPhoto(comesFrom: SelectPhotoPopupComesFrom) {
     DispatchQueue.main.async {
       self.viewController?.dismissCurrentView(completion: {
-        NotificationCenter.default.post(name: .TakeAPhotoFromSelectPhotoPopup, object: nil)
+        switch comesFrom {
+        case .editPost:
+          NotificationCenter.default.post(name: .TakeAPhotoFromSelectPhotoPopupFromEditPost, object: nil)
+        case .newPost:
+          NotificationCenter.default.post(name: .TakeAPhotoFromSelectPhotoPopupFromNewPost, object: nil)
+        }
       })
     }
   }

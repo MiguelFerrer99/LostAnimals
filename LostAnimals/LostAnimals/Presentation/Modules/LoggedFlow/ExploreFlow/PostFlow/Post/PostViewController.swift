@@ -54,12 +54,7 @@ final class PostViewController: ViewController, UIGestureRecognizerDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    NotificationCenter.default.addObserver(self, selector: #selector(editPostButtonPressed), name: .GoToEditPostFromPostOptionsPopup, object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(showGuestPopupFromPostOptionsPopup), name: .ShowGuestPopupFromPostOptionsPopup, object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(showSuccessPopupFromPostOptionsPopup), name: .ShowSuccessPopupFromPostOptionsPopup, object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(showErrorPopupFromPostOptionsPopup), name: .ShowErrorPopupFromPostOptionsPopup, object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(showActivityViewControllerFromPostOptionsPopup), name: .ShowActivityViewControllerFromPostOptionsPopup, object: nil)
-    
+    subscribeToNotifications()
     setupUI()
     setupBindings()
     viewModel.viewReady()
@@ -71,7 +66,23 @@ final class PostViewController: ViewController, UIGestureRecognizerDelegate {
     viewModel.viewDidAppear()
   }
   
+  deinit {
+    unsubscribeToNotifications()
+  }
+  
   // MARK: - Functions
+  private func subscribeToNotifications() {
+    NotificationCenter.default.addObserver(self, selector: #selector(editPostButtonPressed), name: .GoToEditPostFromPostOptionsPopup, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(showGuestPopupFromPostOptionsPopup), name: .ShowGuestPopupFromPostOptionsPopup, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(showSuccessPopupFromPostOptionsPopup), name: .ShowSuccessPopupFromPostOptionsPopup, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(showErrorPopupFromPostOptionsPopup), name: .ShowErrorPopupFromPostOptionsPopup, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(showActivityViewControllerFromPostOptionsPopup), name: .ShowActivityViewControllerFromPostOptionsPopup, object: nil)
+  }
+  
+  private func unsubscribeToNotifications() {
+    NotificationCenter.default.removeObserver(self)
+  }
+  
   private func setupBindings() {
     // Do bindings setup
   }

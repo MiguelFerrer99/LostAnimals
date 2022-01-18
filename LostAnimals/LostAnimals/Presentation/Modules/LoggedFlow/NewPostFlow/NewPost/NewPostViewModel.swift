@@ -37,14 +37,14 @@ extension NewPostViewModel {
   }
   
   func didPressLostButton() {
-    self.router.goToLostNewPost()
+    self.router.goToNewPostGeneric(postType: .lost)
   }
   
   func didPressFoundButton() {
-    self.router.goToFoundNewPost()
+    self.router.goToNewPostGeneric(postType: .found)
   }
   
   func didPressAdoptButton() {
-    self.router.goToAdoptNewPost()
+    self.router.goToNewPostGeneric(postType: .adopt)
   }
 }
