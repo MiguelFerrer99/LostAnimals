@@ -27,7 +27,6 @@ final class WhereCanWeFindYouViewController: ViewController {
     super.viewDidLoad()
     
     setupUI()
-    setupBindings()
     viewModel.viewReady()
   }
   
@@ -45,9 +44,5 @@ final class WhereCanWeFindYouViewController: ViewController {
     configureMapKit()
     configureSearchController(searchController)
     configureTableView(addressTableView)
-  }
-  
-  private func setupBindings() {
-    // Do bindings setup
   }
 }

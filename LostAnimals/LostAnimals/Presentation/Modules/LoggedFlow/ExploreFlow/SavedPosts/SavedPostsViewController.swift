@@ -25,7 +25,6 @@ final class SavedPostsViewController: ViewController {
     super.viewDidLoad()
     
     setupUI()
-    setupBindings()
     viewModel.viewReady()
   }
   
@@ -36,10 +35,6 @@ final class SavedPostsViewController: ViewController {
   }
   
   // MARK: - Functions
-  private func setupBindings() {
-    // Do bindings setup
-  }
-  
   private func setupUI() {
     configureCollectionView(savedPostsCollectionView)
     configureRefreshControl(refreshControl)

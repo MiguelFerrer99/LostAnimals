@@ -21,7 +21,6 @@ final class PostImagesViewController: ViewController {
     super.viewDidLoad()
     
     setupUI()
-    setupBindings()
     viewModel.viewReady()
   }
   
@@ -32,10 +31,6 @@ final class PostImagesViewController: ViewController {
   }
   
   // MARK: - Functions
-  private func setupBindings() {
-    // Do bindings setup
-  }
-  
   private func setupUI() {
     configureCollectionView(postImagesCollectionView)
     scrollToInitItem()

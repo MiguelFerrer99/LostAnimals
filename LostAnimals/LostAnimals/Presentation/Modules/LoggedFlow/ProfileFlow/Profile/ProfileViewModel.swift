@@ -12,12 +12,12 @@ final class ProfileViewModel {
   
   // MARK: - Properties
   private let router: ProfileRouter
-  let hideBackButton: Bool
+  let isMyProfile: Bool
   
   // MARK: - Init
-  required init(router: ProfileRouter, hideBackButton: Bool) {
+  required init(router: ProfileRouter, isMyProfile: Bool) {
     self.router = router
-    self.hideBackButton = hideBackButton
+    self.isMyProfile = isMyProfile
   }
 }
 

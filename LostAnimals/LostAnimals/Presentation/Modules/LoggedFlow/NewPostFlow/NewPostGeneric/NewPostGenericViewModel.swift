@@ -13,7 +13,7 @@ final class NewPostGenericViewModel {
   
   // MARK: - Properties
   private let router: NewPostGenericRouter
-  var numberOfTextFields = 4
+  var numberOfTextFields = 0
   let postType: PostType
   var editedTextFields = [CustomTextField]()
   var selectPhotoImageViews: [UIImageView] = []
@@ -25,7 +25,14 @@ final class NewPostGenericViewModel {
   required init(router: NewPostGenericRouter, postType: PostType) {
     self.router = router
     self.postType = postType
-    if postType == .lost { numberOfTextFields = 5 }
+    switch postType {
+    case .lost:
+      numberOfTextFields = 4
+    case .found:
+      numberOfTextFields = 3
+    case .adopt:
+      numberOfTextFields = 2
+    }
   }
 }
 
@@ -51,7 +58,8 @@ extension NewPostGenericViewModel {
   }
   
   func didPressSelectPhotoButton() {
-    self.router.goToSelectPhotoPopup(showRemoveOption: selectPhotoImageViews[selectedIndexImageView].image != UIImage(named: "SelectPhotoPlaceholder"))
+    guard let selectPhotoImageView = selectPhotoImageViews[selectedIndexImageView].image else { return }
+    self.router.goToSelectPhotoPopup(showRemoveOption: !selectPhotoImageView.isEqualTo(image: UIImage(named: "SelectPhotoPlaceholder")))
   }
   
   func didPressAnimalTypeButton() {

@@ -26,12 +26,9 @@ extension EditPostViewController: CustomTextFieldDelegate {
                                     TextFieldErrorOnlyLettersAndSpaces()])
     
     breedTextfield.delegate = self
-    breedTextfield.initEditableTextfield()
     breedTextfield.textField.textContentType = .name
     breedTextfield.textField.keyboardType    = .alphabet
     breedTextfield.textField.returnKeyType   = .next
-    breedTextfield.addErrorsToCheck([TextFieldErrorEmptyValue(),
-                                     TextFieldErrorOnlyLettersAndSpaces()])
     
     lastTimeSeenTextfield.delegate = self
     lastTimeSeenTextfield.initEditableTextfield()
@@ -41,7 +38,14 @@ extension EditPostViewController: CustomTextFieldDelegate {
     locationTextfield.initEditableTextfield()
     locationTextfield.addErrorsToCheck([TextFieldErrorEmptyValue()])
     
-    viewModel.editedTextFields = [nameTextfield, animalTextfield, breedTextfield, lastTimeSeenTextfield, locationTextfield]
+    switch viewModel.post.postType {
+    case .lost:
+      viewModel.editedTextFields = [nameTextfield, animalTextfield, breedTextfield, lastTimeSeenTextfield, locationTextfield]
+    case .found:
+      viewModel.editedTextFields = [animalTextfield, breedTextfield, lastTimeSeenTextfield, locationTextfield]
+    case .adopt:
+      viewModel.editedTextFields = [nameTextfield, animalTextfield, breedTextfield]
+    }
   }
   
   @objc func fillWhereCanWeFindYou(_ notification: NSNotification) {
@@ -73,9 +77,12 @@ extension EditPostViewController: CustomTextFieldDelegate {
     }
   }
   
-  private func checkAllContentsAreOk() {
+  func checkAllContentsAreOk() {
     let haveErrors = viewModel.textFieldsHaveErrors()
-    let hasAtLeastOnePhoto = viewModel.selectPhotoImageViews.contains(where: { $0.image != nil })
+    let hasAtLeastOnePhoto = viewModel.selectPhotoImageViews.contains(where: {
+      guard let image = $0.image else { return false }
+      return !image.isEqualTo(image: UIImage(named: "SelectPhotoPlaceholder"))
+    })
     let canMoveToNextStep = !haveErrors && hasAtLeastOnePhoto && viewModel.editedTextFields.count == viewModel.numberOfTextFields
     saveChangesButton.alpha = canMoveToNextStep ? 1 : 0.5
     saveChangesButton.isEnabled = canMoveToNextStep
@@ -99,6 +106,7 @@ extension EditPostViewController: CustomTextFieldDelegate {
     nameTextfield.textField.endEditing(true)
     breedTextfield.textField.endEditing(true)
     lastTimeSeenTextfield.textField.endEditing(true)
+    textFieldDidBeginEditing(customTextField)
     viewModel.didPressAnimalTypeButton()
     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
       self.textFieldDidChange(customTextField)
@@ -109,9 +117,16 @@ extension EditPostViewController: CustomTextFieldDelegate {
     nameTextfield.textField.endEditing(true)
     breedTextfield.textField.endEditing(true)
     lastTimeSeenTextfield.textField.endEditing(true)
+    textFieldDidBeginEditing(customTextField)
     viewModel.didPressLocationButton()
     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
       self.textFieldDidChange(customTextField)
+    }
+  }
+  
+  func textFieldDidBeginEditing(_ customTextField: CustomTextField) {
+    if viewModel.editedTextFields.first(where: {$0 == customTextField}) == nil {
+      viewModel.editedTextFields.append(customTextField)
     }
   }
   

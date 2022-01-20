@@ -24,7 +24,6 @@ final class StartupViewController: ViewController {
     super.viewDidLoad()
     
     setupUI()
-    setupBindings()
     viewModel.viewReady()
   }
   
@@ -38,8 +37,6 @@ final class StartupViewController: ViewController {
   private func setupUI() {
     welcomeView.layer.maskedCorners =  [.layerMinXMinYCorner, .layerMaxXMinYCorner]
   }
-  
-  private func setupBindings() {}
   
   // MARK: - IBActions
   @IBAction func continueAsGuestButtonPressed(_ sender: UIButton) {

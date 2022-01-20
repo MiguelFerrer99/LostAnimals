@@ -32,7 +32,6 @@ final class LocationViewController: ViewController {
     super.viewDidLoad()
     
     setupUI()
-    setupBindings()
     viewModel.viewReady()
   }
   
@@ -43,10 +42,6 @@ final class LocationViewController: ViewController {
   }
   
   // MARK: - Functions
-  private func setupBindings() {
-    // Do bindings setup
-  }
-  
   private func setupUI() {
     configureMapView(locationMapView)
   }

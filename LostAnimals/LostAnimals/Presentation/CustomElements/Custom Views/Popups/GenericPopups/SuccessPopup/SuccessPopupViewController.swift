@@ -21,7 +21,6 @@ final class SuccessPopupViewController: ViewController {
     super.viewDidLoad()
     
     setupUI()
-    setupBindings()
     viewModel.viewReady()
   }
   
@@ -48,10 +47,6 @@ final class SuccessPopupViewController: ViewController {
   }
   
   // MARK: - Functions
-  private func setupBindings() {
-    // Do bindings setup
-  }
-  
   private func setupUI() {
     successTitleLabel.text = viewModel.successTitle
   }

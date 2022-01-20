@@ -13,7 +13,7 @@ final class EditPostViewModel {
   
   // MARK: - Properties
   private let router: EditPostRouter
-  let numberOfTextFields = 5
+  var numberOfTextFields = 0
   var editedTextFields = [CustomTextField]()
   var selectPhotoImageViews: [UIImageView] = []
   var selectedIndexImageView = 0
@@ -24,6 +24,14 @@ final class EditPostViewModel {
   required init(router: EditPostRouter, post: Post) {
     self.router = router
     self.post = post
+    switch post.postType {
+    case .lost:
+      numberOfTextFields = 4
+    case .found:
+      numberOfTextFields = 3
+    case .adopt:
+      numberOfTextFields = 2
+    }
   }
 }
 
@@ -49,7 +57,8 @@ extension EditPostViewModel {
   }
   
   func didPressSelectPhotoButton() {
-    self.router.goToSelectPhotoPopup(showRemoveOption: selectPhotoImageViews[selectedIndexImageView].image != UIImage(named: "SelectPhotoPlaceholder"))
+    guard let selectPhotoImageView = selectPhotoImageViews[selectedIndexImageView].image else { return }
+    self.router.goToSelectPhotoPopup(showRemoveOption: !selectPhotoImageView.isEqualTo(image: UIImage(named: "SelectPhotoPlaceholder")))
   }
   
   func didPressAnimalTypeButton() {

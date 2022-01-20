@@ -14,13 +14,13 @@ final class ProfileViewController: ViewController {
   
   // MARK: - Properties
   override var navBarTitle: String {
-    return "Profile"
+    return "My profile"
   }
-  override var useLargeTitle: Bool {
+  override var hideNavigationBar: Bool {
     return true
   }
   override var hideBackButton: Bool {
-    return viewModel.hideBackButton
+    return viewModel.isMyProfile
   }
   var viewModel: ProfileViewModel!
   
@@ -29,7 +29,6 @@ final class ProfileViewController: ViewController {
     super.viewDidLoad()
     
     setupUI()
-    setupBindings()
     viewModel.viewReady()
   }
   
@@ -40,10 +39,6 @@ final class ProfileViewController: ViewController {
   }
   
   // MARK: - Functions
-  private func setupBindings() {
-    // Do bindings setup
-  }
-  
   private func setupUI() {
     // Do UI setup
   }

@@ -37,7 +37,6 @@ class SocialMediaDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell 
     super.awakeFromNib()
     
     subscribeToNotifications()
-    setupBindings()
   }
   
   deinit {
@@ -51,10 +50,6 @@ class SocialMediaDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell 
   
   private func unsubscribeToNotifications() {
     NotificationCenter.default.removeObserver(self)
-  }
-  
-  private func setupBindings() {
-    // Do bindings setup
   }
   
   private func fillUI() {

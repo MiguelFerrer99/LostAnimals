@@ -49,7 +49,6 @@ final class NewPostGenericViewController: ViewController {
     
     subscribeToNotifications()
     setupUI()
-    setupBindings()
     viewModel.viewReady()
   }
   
@@ -76,10 +75,6 @@ final class NewPostGenericViewController: ViewController {
     NotificationCenter.default.removeObserver(self)
   }
   
-  private func setupBindings() {
-    // Do bindings setup
-  }
-  
   private func setupUI() {
     viewModel.selectPhotoImageViews = [selectPhoto1ImageView, selectPhoto2ImageView, selectPhoto3ImageView, selectPhoto4ImageView,
                                        selectPhoto5ImageView, selectPhoto6ImageView, selectPhoto7ImageView, selectPhoto8ImageView]
@@ -98,11 +93,13 @@ final class NewPostGenericViewController: ViewController {
     case .adopt:
       postTypeLabel.text = "To adopt animal"
       lastTimeSeenTextfield.isHidden = true
+      locationTextfield.isHidden = true
     }
   }
   
   @objc private func removePhoto(_ notification: NSNotification) {
     viewModel.selectPhotoImageViews[viewModel.selectedIndexImageView].image = UIImage(named: "SelectPhotoPlaceholder")
+    checkAllContentsAreOk()
   }
   
   @objc private func chooseFromLibrary(_ notification: NSNotification) {

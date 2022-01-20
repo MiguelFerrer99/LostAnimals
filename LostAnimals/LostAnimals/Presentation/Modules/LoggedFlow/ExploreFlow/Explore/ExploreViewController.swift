@@ -38,7 +38,6 @@ final class ExploreViewController: ViewController {
     super.viewDidLoad()
     
     setupUI()
-    setupBindings()
     viewModel.viewReady()
   }
   
@@ -49,10 +48,6 @@ final class ExploreViewController: ViewController {
   }
   
   // MARK: - Functions
-  private func setupBindings() {
-    // Do bindings setup
-  }
-  
   private func setupUI() {
     configureCollectionView(postsCollectionView)
     configureRefreshControl(refreshControl)

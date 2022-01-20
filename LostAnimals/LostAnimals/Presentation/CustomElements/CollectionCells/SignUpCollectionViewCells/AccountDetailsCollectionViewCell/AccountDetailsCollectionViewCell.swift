@@ -27,15 +27,9 @@ class AccountDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell {
   // MARK: - Life cycle
   override func awakeFromNib() {
     super.awakeFromNib()
-    
-    setupBindings()
   }
   
   // MARK: - Functions
-  private func setupBindings() {
-    // Do bindings setup
-  }
-  
   private func fillUI() {
     configureTextFields()
   }

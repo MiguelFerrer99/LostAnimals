@@ -31,4 +31,12 @@ extension UIImage {
     
     return returnedImage
   }
+  
+  func isEqualTo(image: UIImage?) -> Bool {
+    guard let nsData1 = self.pngData(),
+          let image = image,
+          let nsData2 = image.pngData()
+    else { return false }
+    return nsData1 == nsData2
+  }
 }

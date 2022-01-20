@@ -14,7 +14,6 @@ final class PostViewController: ViewController, UIGestureRecognizerDelegate {
   // MARK: - IBOutlets
   @IBOutlet weak var savePostImageView: UIImageView!
   @IBOutlet weak var postScrollView: UIScrollView!
-  @IBOutlet weak var postImagesGradientView: UIView!
   @IBOutlet weak var postImagesCollectionView: UICollectionView!
   @IBOutlet weak var postImagesPageControl: UIPageControl!
   @IBOutlet weak var postTypeImageView: UIImageView!
@@ -45,7 +44,7 @@ final class PostViewController: ViewController, UIGestureRecognizerDelegate {
     return shouldHideNavigationBar
   }
   var shouldHideNavigationBar: Bool {
-    return postScrollView.contentOffset.y < 280
+    return postScrollView.contentOffset.y < 250
   }
   var viewModel: PostViewModel!
   var savePostBarButtonItem = UIBarButtonItem()
@@ -56,7 +55,6 @@ final class PostViewController: ViewController, UIGestureRecognizerDelegate {
     
     subscribeToNotifications()
     setupUI()
-    setupBindings()
     viewModel.viewReady()
   }
   
@@ -81,10 +79,6 @@ final class PostViewController: ViewController, UIGestureRecognizerDelegate {
   
   private func unsubscribeToNotifications() {
     NotificationCenter.default.removeObserver(self)
-  }
-  
-  private func setupBindings() {
-    // Do bindings setup
   }
   
   private func setupUI() {
@@ -140,8 +134,12 @@ final class PostViewController: ViewController, UIGestureRecognizerDelegate {
   @objc private func savePostBarButtonPressed() {
     viewModel.didPressSavePostButton { allowed in
       if allowed {
-        savePostBarButtonItem.image = savePostBarButtonItem.image == UIImage(named: "SavePost") ? UIImage(named: "SavePostFilled") : UIImage(named: "SavePost")
-        savePostImageView.image = savePostImageView.image == UIImage(named: "SavePostWhite") ? UIImage(named: "SavePostFilled") : UIImage(named: "SavePostWhite")
+        guard let savePostBarButtonItemImage = savePostBarButtonItem.image,
+              let savePostImageViewImage = savePostImageView.image
+        else { return }
+        
+        savePostBarButtonItem.image = savePostBarButtonItemImage.isEqualTo(image: UIImage(named: "SavePost")) ? UIImage(named: "SavePostFilled") : UIImage(named: "SavePost")
+        savePostImageView.image = savePostImageViewImage.isEqualTo(image: UIImage(named: "SavePostWhite")) ? UIImage(named: "SavePostFilled") : UIImage(named: "SavePostWhite")
       }
     }
   }
@@ -181,8 +179,12 @@ final class PostViewController: ViewController, UIGestureRecognizerDelegate {
   @IBAction func savePostButtonPressed(_ sender: UIButton) {
     viewModel.didPressSavePostButton { allowed in
       if allowed {
-        savePostImageView.image = savePostImageView.image == UIImage(named: "SavePostWhite") ? UIImage(named: "SavePostFilled") : UIImage(named: "SavePostWhite")
-        savePostBarButtonItem.image = savePostBarButtonItem.image == UIImage(named: "SavePost") ? UIImage(named: "SavePostFilled") : UIImage(named: "SavePost")
+        guard let savePostImageViewImage = savePostImageView.image,
+              let savePostBarButtonItemImage = savePostBarButtonItem.image
+        else { return }
+        
+        savePostImageView.image = savePostImageViewImage.isEqualTo(image: UIImage(named: "SavePostWhite")) ? UIImage(named: "SavePostFilled") : UIImage(named: "SavePostWhite")
+        savePostBarButtonItem.image = savePostBarButtonItemImage.isEqualTo(image: UIImage(named: "SavePost")) ? UIImage(named: "SavePostFilled") : UIImage(named: "SavePost")
       }
     }
   }

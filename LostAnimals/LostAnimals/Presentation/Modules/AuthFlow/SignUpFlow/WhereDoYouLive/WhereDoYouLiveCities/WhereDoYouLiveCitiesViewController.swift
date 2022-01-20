@@ -24,7 +24,6 @@ final class WhereDoYouLiveCitiesViewController: ViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    setupBindings()
     viewModel.viewReady()
     setupUI()
   }
@@ -39,10 +38,6 @@ final class WhereDoYouLiveCitiesViewController: ViewController {
   }
   
   // MARK: - Functions
-  private func setupBindings() {
-    // Do bindings setup
-  }
-  
   private func setupUI() {
     configureSearchController(searchController)
     configureTableview(citiesTableView)

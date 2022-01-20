@@ -22,7 +22,6 @@ final class AnimalFilterPopupViewController: ViewController {
     super.viewDidLoad()
     
     setupUI()
-    setupBindings()
     viewModel.viewReady()
   }
   
@@ -32,11 +31,7 @@ final class AnimalFilterPopupViewController: ViewController {
     viewModel.viewDidAppear()
   }
   
-  // MARK: - Functions
-  private func setupBindings() {
-    // Do bindings setup
-  }
-  
+  // MARK: - Functions  
   private func setupUI() {
     configureTableView(animalsFilterTableView)
   }

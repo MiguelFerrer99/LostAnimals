@@ -50,7 +50,6 @@ final class EditPostViewController: ViewController {
     
     subscribeToNotifications()
     setupUI()
-    setupBindings()
     viewModel.viewReady()
   }
   
@@ -77,10 +76,6 @@ final class EditPostViewController: ViewController {
     NotificationCenter.default.removeObserver(self)
   }
   
-  private func setupBindings() {
-    // Do bindings setup
-  }
-  
   private func setupUI() {
     viewModel.selectPhotoImageViews = [selectPhoto1ImageView, selectPhoto2ImageView, selectPhoto3ImageView, selectPhoto4ImageView,
                                        selectPhoto5ImageView, selectPhoto6ImageView, selectPhoto7ImageView, selectPhoto8ImageView]
@@ -91,9 +86,14 @@ final class EditPostViewController: ViewController {
   
   private func fillUI() {
     switch viewModel.post.postType {
-    case .lost: postTypeLabel.text = "Lost animal"
-    case .found: postTypeLabel.text = "Found animal"
-    case .adopt: postTypeLabel.text = "To adopt animal"
+    case .lost:
+      postTypeLabel.text = "Lost animal"
+    case .found:
+      postTypeLabel.text = "Found animal"
+      nameTextfield.isHidden = true
+    case .adopt:
+      postTypeLabel.text = "To adopt animal"
+      lastTimeSeenTextfield.isHidden = true
     }
     viewModel.selectPhotoImageViews.enumerated().forEach { selectPhotoImageView in
       if selectPhotoImageView.offset <= viewModel.post.animal.images.count - 1 {
@@ -113,6 +113,7 @@ final class EditPostViewController: ViewController {
   
   @objc private func removePhoto(_ notification: NSNotification) {
     viewModel.selectPhotoImageViews[viewModel.selectedIndexImageView].image = UIImage(named: "SelectPhotoPlaceholder")
+    checkAllContentsAreOk()
   }
   
   @objc private func chooseFromLibrary(_ notification: NSNotification) {

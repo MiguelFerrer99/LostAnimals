@@ -24,7 +24,6 @@ final class SignUpViewController: ViewController {
     super.viewDidLoad()
     
     setupUI()
-    setupBindings()
     viewModel.viewReady()
   }
   
@@ -34,11 +33,7 @@ final class SignUpViewController: ViewController {
     viewModel.viewDidAppear()
   }
   
-  // MARK: - Functions
-  private func setupBindings() {
-    // Do bindings setup
-  }
-  
+  // MARK: - Functions  
   private func setupUI() {
     configureCollectionView(stepsCollectionView)
     progressView.transform = progressView.transform.scaledBy(x: 1, y: 2)

@@ -21,7 +21,6 @@ final class ForgotPasswordViewController: ViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    setupBindings()
     viewModel.viewReady()
     setupUI()
   }
@@ -33,10 +32,6 @@ final class ForgotPasswordViewController: ViewController {
   }
   
   // MARK: - Functions
-  private func setupBindings() {
-    // Do bindings setup
-  }
-  
   private func setupUI() {
     configureTextFields()
   }

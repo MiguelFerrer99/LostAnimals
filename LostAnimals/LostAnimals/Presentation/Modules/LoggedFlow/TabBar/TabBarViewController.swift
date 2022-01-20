@@ -20,7 +20,6 @@ final class TabBarViewController: UITabBarController, UITabBarControllerDelegate
     self.delegate = self
     
     setupUI()
-    setupBindings()
     viewModel.viewReady()
   }
   
@@ -53,10 +52,6 @@ final class TabBarViewController: UITabBarController, UITabBarControllerDelegate
     UINavigationBar.appearance().largeTitleTextAttributes = largeTitleAttributes
     UINavigationBar.appearance().tintColor = .customBlack
     UINavigationBar.appearance().barTintColor = .customGreen
-  }
-  
-  private func setupBindings() {
-    // Do bindings setup
   }
   
   func setNavigation(_ index: Int) {

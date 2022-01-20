@@ -27,8 +27,6 @@ extension NewPostGenericViewController: CustomTextFieldDelegate {
     breedTextfield.textField.textContentType = .name
     breedTextfield.textField.keyboardType    = .alphabet
     breedTextfield.textField.returnKeyType   = .next
-    breedTextfield.addErrorsToCheck([TextFieldErrorEmptyValue(),
-                                     TextFieldErrorOnlyLettersAndSpaces()])
     
     lastTimeSeenTextfield.delegate = self
     lastTimeSeenTextfield.addErrorsToCheck([TextFieldErrorEmptyValue()])
@@ -66,9 +64,12 @@ extension NewPostGenericViewController: CustomTextFieldDelegate {
     }
   }
   
-  private func checkAllContentsAreOk() {
+  func checkAllContentsAreOk() {
     let haveErrors = viewModel.textFieldsHaveErrors()
-    let hasAtLeastOnePhoto = viewModel.selectPhotoImageViews.contains(where: { $0.image != nil })
+    let hasAtLeastOnePhoto = viewModel.selectPhotoImageViews.contains(where: {
+      guard let image = $0.image else { return false }
+      return !image.isEqualTo(image: UIImage(named: "SelectPhotoPlaceholder"))
+    })
     let canMoveToNextStep = !haveErrors && hasAtLeastOnePhoto && viewModel.editedTextFields.count == viewModel.numberOfTextFields
     publishPostButton.alpha = canMoveToNextStep ? 1 : 0.5
     publishPostButton.isEnabled = canMoveToNextStep
@@ -92,6 +93,7 @@ extension NewPostGenericViewController: CustomTextFieldDelegate {
     nameTextfield.textField.endEditing(true)
     breedTextfield.textField.endEditing(true)
     lastTimeSeenTextfield.textField.endEditing(true)
+    textFieldDidBeginEditing(customTextField)
     viewModel.didPressAnimalTypeButton()
     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
       self.textFieldDidChange(customTextField)
@@ -102,9 +104,16 @@ extension NewPostGenericViewController: CustomTextFieldDelegate {
     nameTextfield.textField.endEditing(true)
     breedTextfield.textField.endEditing(true)
     lastTimeSeenTextfield.textField.endEditing(true)
+    textFieldDidBeginEditing(customTextField)
     viewModel.didPressLocationButton()
     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
       self.textFieldDidChange(customTextField)
+    }
+  }
+  
+  func textFieldDidBeginEditing(_ customTextField: CustomTextField) {
+    if viewModel.editedTextFields.first(where: {$0 == customTextField}) == nil {
+      viewModel.editedTextFields.append(customTextField)
     }
   }
   

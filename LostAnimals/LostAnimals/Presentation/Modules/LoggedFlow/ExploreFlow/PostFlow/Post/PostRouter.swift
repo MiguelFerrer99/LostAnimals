@@ -38,8 +38,8 @@ final class PostRouter {
     }
   }
   
-  func goToAuthorProfile() {
-    let viewController = Container.shared.profileBuilder().build(hideBackButton: false)
+  func goToAuthorProfile(isMyProfile: Bool) {
+    let viewController = Container.shared.profileBuilder().build(isMyProfile: isMyProfile)
     viewController.hidesBottomBarWhenPushed = true
     DispatchQueue.main.async {
       self.viewController?.push(viewController: viewController)

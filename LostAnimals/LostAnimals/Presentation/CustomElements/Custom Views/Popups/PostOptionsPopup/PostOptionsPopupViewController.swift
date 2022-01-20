@@ -22,7 +22,6 @@ final class PostOptionsPopupViewController: ViewController {
     super.viewDidLoad()
     
     setupUI()
-    setupBindings()
     viewModel.viewReady()
   }
   
@@ -49,10 +48,6 @@ final class PostOptionsPopupViewController: ViewController {
   }
   
   // MARK: - Functions
-  private func setupBindings() {
-    // Do bindings setup
-  }
-  
   private func setupUI() {
     editPostButtonView.isHidden = (viewModel.comesFrom == .explore) || (viewModel.post.author != User.shared)
     reportPostButtonView.isHidden = viewModel.post.author == User.shared

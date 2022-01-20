@@ -29,7 +29,6 @@ final class ContactWithPopupViewController: ViewController {
     super.viewDidLoad()
     
     setupUI()
-    setupBindings()
     viewModel.viewReady()
   }
   
@@ -55,11 +54,7 @@ final class ContactWithPopupViewController: ViewController {
     }
   }
   
-  // MARK: - Functions
-  private func setupBindings() {
-    // Do bindings setup
-  }
-  
+  // MARK: - Functions  
   private func setupUI() {
     contactWithPopupView.layer.maskedCorners =  [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     instagramView.isHidden = viewModel.authorSocialMedias.instagram == nil

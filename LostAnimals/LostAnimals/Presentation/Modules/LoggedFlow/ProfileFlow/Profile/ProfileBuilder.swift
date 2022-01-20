@@ -10,12 +10,12 @@ import UIKit
 
 final class ProfileBuilder {
   
-  func build(hideBackButton: Bool) -> ProfileViewController {
+  func build(isMyProfile: Bool) -> ProfileViewController {
     
     let viewController = UIViewController.instantiate(viewController: ProfileViewController.self)
     
     let router = ProfileRouter(viewController: viewController)
-    let viewModel = ProfileViewModel(router: router, hideBackButton: hideBackButton)
+    let viewModel = ProfileViewModel(router: router, isMyProfile: isMyProfile)
     
     viewController.viewModel = viewModel
     

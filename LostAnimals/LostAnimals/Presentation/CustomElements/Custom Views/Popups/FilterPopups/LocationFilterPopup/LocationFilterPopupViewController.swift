@@ -21,7 +21,6 @@ final class LocationFilterPopupViewController: ViewController {
     super.viewDidLoad()
     
     setupUI()
-    setupBindings()
     viewModel.viewReady()
   }
   
@@ -32,10 +31,6 @@ final class LocationFilterPopupViewController: ViewController {
   }
   
   // MARK: - Functions
-  private func setupBindings() {
-    // Do bindings setup
-  }
-  
   private func setupUI() {
     // Do UI setup
   }

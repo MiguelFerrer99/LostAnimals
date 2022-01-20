@@ -23,7 +23,6 @@ final class LoginViewController: ViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    setupBindings()
     viewModel.viewReady()
     setupUI()
   }
@@ -35,10 +34,6 @@ final class LoginViewController: ViewController {
   }
   
   // MARK: - Functions
-  private func setupBindings() {
-    // Do bindings setup
-  }
-  
   private func setupUI() {
     configureTextFields()
     forgotPasswordButton.setTitleColor(.customBlack, for: .disabled)

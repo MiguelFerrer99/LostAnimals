@@ -51,7 +51,7 @@ extension PostViewModel {
   }
   
   func didPressAuthor() {
-    self.router.goToAuthorProfile()
+    self.router.goToAuthorProfile(isMyProfile: User.shared?.id == post.author.id)
   }
   
   func didPressContactWithAuthor() {

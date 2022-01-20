@@ -16,15 +16,9 @@ class OnboardingCollectionViewCell: UICollectionViewCell, Reusable {
   // MARK: - Life cycle
   override func awakeFromNib() {
     super.awakeFromNib()
-    
-    setupBindings()
   }
   
-  // MARK: - Functions
-  private func setupBindings() {
-    // Do bindings setup
-  }
-  
+  // MARK: - Functions  
   func display(summary: OnboardingCollectionViewCellSummary) {
     titleLabel.text = summary.title
     descriptionLabel.text = summary.description

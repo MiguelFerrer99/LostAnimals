@@ -27,7 +27,6 @@ final class OnboardingViewController: ViewController {
     super.viewDidLoad()
     
     setupUI()
-    setupBindings()
     viewModel.viewReady()
   }
   
@@ -38,10 +37,6 @@ final class OnboardingViewController: ViewController {
   }
   
   // MARK: - Functions
-  private func setupBindings() {
-    // Do bindings setup
-  }
-  
   private func setupUI() {
     configureCollectionView(onboardingCollectionView)
   }
