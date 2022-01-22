@@ -18,7 +18,7 @@
                     <rect key="frame" x="0.0" y="10" width="464" height="84"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="76t-nR-g51">
-                            <rect key="frame" x="10" y="0.0" width="444" height="74"/>
+                            <rect key="frame" x="0.0" y="0.0" width="464" height="74"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Ipu-Fc-1YR">
@@ -33,9 +33,9 @@
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="76t-nR-g51" secondAttribute="bottom" constant="10" id="LO1-Li-5RX"/>
-                        <constraint firstItem="76t-nR-g51" firstAttribute="leading" secondItem="xMm-Bx-SkK" secondAttribute="leading" constant="10" id="NVF-hG-jdk"/>
+                        <constraint firstItem="76t-nR-g51" firstAttribute="leading" secondItem="xMm-Bx-SkK" secondAttribute="leading" id="NVF-hG-jdk"/>
                         <constraint firstItem="76t-nR-g51" firstAttribute="top" secondItem="xMm-Bx-SkK" secondAttribute="top" id="QTz-wp-zTM"/>
-                        <constraint firstAttribute="trailing" secondItem="76t-nR-g51" secondAttribute="trailing" constant="10" id="VlG-zk-U4m"/>
+                        <constraint firstAttribute="trailing" secondItem="76t-nR-g51" secondAttribute="trailing" id="VlG-zk-U4m"/>
                     </constraints>
                 </view>
             </subviews>

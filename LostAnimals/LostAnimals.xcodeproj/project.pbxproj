@@ -118,7 +118,6 @@
 		417B8622277D27380051B8CF /* ProfileBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417B861D277D27380051B8CF /* ProfileBuilder.swift */; };
 		417B8623277D27380051B8CF /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417B861E277D27380051B8CF /* ProfileViewModel.swift */; };
 		417E58FF274D9CCD00447ED3 /* LoginTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417E58FE274D9CCD00447ED3 /* LoginTextFields.swift */; };
-		417FA21F2790B3B800F0C2CD /* PostScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417FA21E2790B3B800F0C2CD /* PostScrollView.swift */; };
 		4183EE2727961A8E005C554E /* NewPostGenericImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4183EE2627961A8E005C554E /* NewPostGenericImagePicker.swift */; };
 		4183EE2927961AC1005C554E /* NewPostGenericTextfields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4183EE2827961AC1005C554E /* NewPostGenericTextfields.swift */; };
 		4183EE2B27962005005C554E /* NewPostGenericViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4183EE2A27962005005C554E /* NewPostGenericViewController.storyboard */; };
@@ -216,6 +215,7 @@
 		41CDA4382780E4400009AB55 /* OnboardingStepInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CDA4372780E4400009AB55 /* OnboardingStepInfo.swift */; };
 		41CDA43A2780E59B0009AB55 /* TermAndCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CDA4392780E59B0009AB55 /* TermAndCondition.swift */; };
 		41CDA43C2780E6930009AB55 /* PostsFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CDA43B2780E6930009AB55 /* PostsFilter.swift */; };
+		41DDB2F0279C963000DCCECF /* PostScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DDB2EF279C963000DCCECF /* PostScrollView.swift */; };
 		41E8F8EF278C9AB600E73670 /* ContactWithPopupMailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E8F8EE278C9AB600E73670 /* ContactWithPopupMailController.swift */; };
 		41EC16902784EEEA00096B7A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC168F2784EEEA00096B7A /* Location.swift */; };
 		41EC16A22785E08700096B7A /* AnimalTypesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC169D2785E08700096B7A /* AnimalTypesRouter.swift */; };
@@ -424,7 +424,6 @@
 		417B861D277D27380051B8CF /* ProfileBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBuilder.swift; sourceTree = "<group>"; };
 		417B861E277D27380051B8CF /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		417E58FE274D9CCD00447ED3 /* LoginTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextFields.swift; sourceTree = "<group>"; };
-		417FA21E2790B3B800F0C2CD /* PostScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostScrollView.swift; sourceTree = "<group>"; };
 		4183EE2627961A8E005C554E /* NewPostGenericImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostGenericImagePicker.swift; sourceTree = "<group>"; };
 		4183EE2827961AC1005C554E /* NewPostGenericTextfields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostGenericTextfields.swift; sourceTree = "<group>"; };
 		4183EE2A27962005005C554E /* NewPostGenericViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewPostGenericViewController.storyboard; sourceTree = "<group>"; };
@@ -508,6 +507,7 @@
 		41CDA4372780E4400009AB55 /* OnboardingStepInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStepInfo.swift; sourceTree = "<group>"; };
 		41CDA4392780E59B0009AB55 /* TermAndCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermAndCondition.swift; sourceTree = "<group>"; };
 		41CDA43B2780E6930009AB55 /* PostsFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsFilter.swift; sourceTree = "<group>"; };
+		41DDB2EF279C963000DCCECF /* PostScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostScrollView.swift; sourceTree = "<group>"; };
 		41E8F8EE278C9AB600E73670 /* ContactWithPopupMailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactWithPopupMailController.swift; sourceTree = "<group>"; };
 		41EC168F2784EEEA00096B7A /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		41EC169D2785E08700096B7A /* AnimalTypesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTypesRouter.swift; sourceTree = "<group>"; };
@@ -670,7 +670,7 @@
 				4100A0EB278372110049EEF0 /* PostBuilder.swift */,
 				4100A0EC278372110049EEF0 /* PostViewModel.swift */,
 				41FEE1D12788855300F11449 /* PostCollectionView.swift */,
-				417FA21E2790B3B800F0C2CD /* PostScrollView.swift */,
+				41DDB2EF279C963000DCCECF /* PostScrollView.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -1766,7 +1766,6 @@
 				415476BF27849A0300BD684F /* EditPostTextfields.swift in Sources */,
 				4183EE2727961A8E005C554E /* NewPostGenericImagePicker.swift in Sources */,
 				41CDA4302780DD000009AB55 /* ExploreRefreshControl.swift in Sources */,
-				417FA21F2790B3B800F0C2CD /* PostScrollView.swift in Sources */,
 				41FEE1E62788B6FD00F11449 /* LocationMapView.swift in Sources */,
 				41EC16A22785E08700096B7A /* AnimalTypesRouter.swift in Sources */,
 				4100A0FE2783AE640049EEF0 /* PostOptionsPopupViewModel.swift in Sources */,
@@ -1789,6 +1788,7 @@
 				417B860D277D1F1C0051B8CF /* NewPostViewModel.swift in Sources */,
 				4108D8D52762287900880E0B /* Protocols.swift in Sources */,
 				41CD10FC27822C2500257B2B /* ExploreProtocols.swift in Sources */,
+				41DDB2F0279C963000DCCECF /* PostScrollView.swift in Sources */,
 				411EF7CC2788E0BA00725B73 /* PostImagesViewController.swift in Sources */,
 				945B15B325595DC9003A65E0 /* UIColor.swift in Sources */,
 				418E2342277CB619008BB92E /* TabBarBuilder.swift in Sources */,

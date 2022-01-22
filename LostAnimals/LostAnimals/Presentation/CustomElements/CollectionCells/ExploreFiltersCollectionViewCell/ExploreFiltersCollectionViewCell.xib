@@ -24,7 +24,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mQJ-Fh-RKa" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="116" height="55"/>
+                        <rect key="frame" x="5" y="0.0" width="116" height="55"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Jm-zY-jOY">
                                 <rect key="frame" x="40.5" y="16.5" width="35" height="22"/>
@@ -50,15 +50,17 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="mQJ-Fh-RKa" secondAttribute="trailing" constant="10" id="SFG-x2-WSo"/>
+                <constraint firstAttribute="trailing" secondItem="mQJ-Fh-RKa" secondAttribute="trailing" constant="5" id="SFG-x2-WSo"/>
                 <constraint firstAttribute="bottom" secondItem="mQJ-Fh-RKa" secondAttribute="bottom" id="ciO-Dt-80r"/>
                 <constraint firstItem="mQJ-Fh-RKa" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="psy-Ii-zAO"/>
-                <constraint firstItem="mQJ-Fh-RKa" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="sxp-Pw-wjY"/>
+                <constraint firstItem="mQJ-Fh-RKa" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="sxp-Pw-wjY"/>
             </constraints>
             <size key="customSize" width="126" height="55"/>
             <connections>
                 <outlet property="filterTitleLabel" destination="3Jm-zY-jOY" id="CpX-jM-Rt7"/>
                 <outlet property="filterView" destination="mQJ-Fh-RKa" id="Utt-fk-lqz"/>
+                <outlet property="leadingConstraint" destination="sxp-Pw-wjY" id="3wT-2I-ls8"/>
+                <outlet property="trailingConstraint" destination="SFG-x2-WSo" id="SRx-g1-hPO"/>
             </connections>
             <point key="canvasLocation" x="192.75362318840581" y="122.20982142857142"/>
         </collectionViewCell>

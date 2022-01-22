@@ -36,6 +36,17 @@ extension HardcodedData {
                                 isAnimalShelter: false,
                                 socialMedias: SocialMedias(email: "joanferrer41@gmail.com", phonePrefix: 34, phoneNumber: 688211592, instagram: "ff.joan_00", twitter: "Joan_flash"),
                                 isBanned: false)
+  static let exampleUser3 = User(id: 2,
+                                email: "militardeaire00@gmail.com",
+                                firstname: "Refugio de animales Jordán",
+                                lastname: "",
+                                birthdate: "16/10/2000".toDate(withFormat: DateFormat.dayMonthYearOther) ?? Date.today,
+                                headerImage: UIImage(named: "ProfileHeaderPlaceholder") ?? UIImage(),
+                                profileImage: UIImage(named: "ProfileImagePlaceholder") ?? UIImage(),
+                                location: Location(address: "Vega Baixa, 2, Ondara, Alicante, España", coordinates: Coordinates(lat: 38.82358282803209, long: 0.01773679796108817)),
+                                isAnimalShelter: true,
+                                socialMedias: SocialMedias(email: "militardeaire00@gmail.com", phonePrefix: 34, phoneNumber: 688211592, instagram: "ff.joan_00", twitter: "Joan_flash"),
+                                isBanned: false)
   static let exampleAnimal1 = Animal(name: "Benito", type: .cat, breed: "Gato común europeo", images: [UIImage(named: "CatExample1"), UIImage(named: "CatExample2")])
   static let exampleAnimal2 = Animal(name: nil, type: .dog, breed: "Labrador", images: [UIImage(named: "DogExample1"), UIImage(named: "DogExample2")])
   static let exampleAnimal3 = Animal(name: "Palomo", type: .bird, breed: nil, images: [UIImage(named: "BirdExample1"), UIImage(named: "BirdExample2")])
@@ -59,7 +70,7 @@ extension HardcodedData {
          lastTimeSeen: nil,
          location: nil,
          description: nil,
-         author: exampleUser2,
+         author: exampleUser3,
          isSaved: false)
   ]
 }

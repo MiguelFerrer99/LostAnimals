@@ -22,14 +22,15 @@ extension ExploreFiltersHeader: UICollectionViewDelegate, UICollectionViewDataSo
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard let currentExploreFilter = Filters.currentFilters[FilterType(rawValue: indexPath.row) ?? .all] else { return UICollectionViewCell() }
-    let summary = ExploreFiltersCollectionViewCellSummary(filterTitle: currentExploreFilter.filterTitle, filterType: currentExploreFilter.filterType)
+    let summary = ExploreFiltersCollectionViewCellSummary(filterTitle: currentExploreFilter.filterTitle, filterType: currentExploreFilter.filterType, index: indexPath.row)
     let cell = collectionView.dequeue(ExploreFiltersCollectionViewCell.self, for: indexPath)
     cell.display(summary: summary)
     return cell
   }
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    return CGSize(width: 90, height: collectionView.frame.height)
+    if indexPath.row == 0 || indexPath.row == Filters.currentFilters.count - 1 { return CGSize(width: 110, height: collectionView.frame.height) }
+    else { return CGSize(width: 90, height: collectionView.frame.height) }
   }
   
   func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
