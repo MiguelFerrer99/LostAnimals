@@ -83,16 +83,16 @@ extension PostOptionsPopupViewModel {
     switch post.postType {
     case .lost:
       bgImage = UIImage(named: "LostAnimalImageToShare")
-      firstText = post.location.address
-      secondText = post.lastTimeSeen.toString(withFormat: DateFormat.dayMonthYearHourOther)
+      firstText = post.location?.address ?? "Not specified"
+      secondText = post.lastTimeSeen?.toString(withFormat: DateFormat.dayMonthYearHourOther) ?? "Not specified"
     case .found:
       bgImage = UIImage(named: "FoundAnimalImageToShare")
-      firstText = post.location.address
-      secondText = post.lastTimeSeen.toString(withFormat: DateFormat.dayMonthYearHourOther)
+      firstText = post.location?.address ?? "Not specified"
+      secondText = post.lastTimeSeen?.toString(withFormat: DateFormat.dayMonthYearHourOther) ?? "Not specified"
     case .adopt:
       bgImage = UIImage(named: "ToAdoptAnimalImageToShare")
       firstText = post.author.firstname
-      secondText = post.location.address
+      secondText = post.author.location.address
     }
     
     // Basic images
@@ -112,9 +112,10 @@ extension PostOptionsPopupViewModel {
     else { return nil }
 
     // Animal name
-    guard let returnedImage3 = post.animal.name.drawTextIn(bgImage: returnedImage2,
-                                                    position: CGRect(x: 70, y: 215, width: returnedImage2.size.width - 140, height: returnedImage2.size.height),
-                                                    textAttributes: mainTextAttributes)
+    let name: String = post.animal.name ?? ""
+    guard let returnedImage3 = name.drawTextIn(bgImage: returnedImage2,
+                                               position: CGRect(x: 70, y: 215, width: returnedImage2.size.width - 140, height: returnedImage2.size.height),
+                                               textAttributes: mainTextAttributes)
     else { return nil }
     
     // Lost in

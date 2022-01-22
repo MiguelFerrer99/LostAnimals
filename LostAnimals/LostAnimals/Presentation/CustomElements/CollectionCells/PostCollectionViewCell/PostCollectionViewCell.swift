@@ -17,6 +17,8 @@ class PostCollectionViewCell: UICollectionViewCell, Reusable {
   @IBOutlet weak var animalTypeWhiteImageView: UIImageView!
   @IBOutlet weak var animalNameLabel: UILabel!
   @IBOutlet weak var postImageView: UIImageView!
+  @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
+  @IBOutlet weak var trailingConstraint: NSLayoutConstraint!
   
   // MARK: - Life cycle
   override func awakeFromNib() {
@@ -31,5 +33,12 @@ class PostCollectionViewCell: UICollectionViewCell, Reusable {
     animalTypeWhiteImageView.image = UIImage(named: "\(summary.animal.type.rawValue)White")
     animalNameLabel.text = summary.animal.name
     postImageView.image = summary.postImage
+    
+    if (summary.index % 2) == 0 {
+      leadingConstraint.constant = 20
+    } else {
+      trailingConstraint.constant = 20
+    }
+    self.layoutIfNeeded()
   }
 }

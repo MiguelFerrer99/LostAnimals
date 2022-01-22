@@ -30,19 +30,19 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C87-KW-6ZA" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
-                                <rect key="frame" x="20" y="702" width="374" height="140"/>
+                                <rect key="frame" x="20" y="692.5" width="374" height="149.5"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="J9E-mX-CTS">
-                                        <rect key="frame" x="20" y="10" width="334" height="110"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="J9E-mX-CTS">
+                                        <rect key="frame" x="20" y="20" width="334" height="109.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error with internet connection, try it again later" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZw-VH-Cbg">
-                                                <rect key="frame" x="0.0" y="0.0" width="334" height="60"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="334" height="49.5"/>
                                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="18"/>
                                                 <color key="textColor" name="CustomWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oSU-av-u1p" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="70" width="334" height="40"/>
+                                                <rect key="frame" x="0.0" y="69.5" width="334" height="40"/>
                                                 <color key="backgroundColor" name="CustomRed"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Agq-ek-ItD"/>
@@ -65,9 +65,8 @@
                                 <color key="backgroundColor" name="CustomBlack"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="J9E-mX-CTS" secondAttribute="trailing" constant="20" id="BMC-5Q-qvy"/>
-                                    <constraint firstAttribute="height" constant="140" id="YKn-Hd-WJx"/>
                                     <constraint firstAttribute="bottom" secondItem="J9E-mX-CTS" secondAttribute="bottom" constant="20" id="cCW-tF-xZu"/>
-                                    <constraint firstItem="J9E-mX-CTS" firstAttribute="top" secondItem="C87-KW-6ZA" secondAttribute="top" constant="10" id="vMZ-GO-E8J"/>
+                                    <constraint firstItem="J9E-mX-CTS" firstAttribute="top" secondItem="C87-KW-6ZA" secondAttribute="top" constant="20" id="vMZ-GO-E8J"/>
                                     <constraint firstItem="J9E-mX-CTS" firstAttribute="leading" secondItem="C87-KW-6ZA" secondAttribute="leading" constant="20" id="xLQ-9J-BqN"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>

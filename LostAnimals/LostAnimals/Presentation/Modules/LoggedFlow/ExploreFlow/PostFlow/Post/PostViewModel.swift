@@ -36,6 +36,16 @@ extension PostViewModel {
 
 // MARK: - Functions
 extension PostViewModel {
+  func getAge() -> Int? {
+    let birthdate = DateComponents(year: post.author.birthdate.year,
+                                   month: post.author.birthdate.month,
+                                   day: post.author.birthdate.day)
+    let now = Calendar.current.dateComponents([.year, .month, .day], from: Date())
+    let ageComponents = Calendar.current.dateComponents([.year], from: birthdate, to: now)
+    
+    return ageComponents.year
+  }
+  
   func didPressBackButton() {
     self.router.goBack()
   }
@@ -45,13 +55,13 @@ extension PostViewModel {
   }
   
   func didPressLocation() {
-    if let coordinates = post.location.coordinates {
-      self.router.goToLocation(coordinates: coordinates, animal: post.animal)
-    }
+    guard let location = post.location,
+          let coordinates = location.coordinates else { return }
+    self.router.goToLocation(coordinates: coordinates, animal: post.animal)
   }
   
   func didPressAuthor() {
-    self.router.goToAuthorProfile(isMyProfile: User.shared?.id == post.author.id)
+    self.router.goToAuthorProfile(user: post.author)
   }
   
   func didPressContactWithAuthor() {

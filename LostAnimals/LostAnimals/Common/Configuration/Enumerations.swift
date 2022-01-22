@@ -88,3 +88,8 @@ public enum SelectPhotoPopupComesFrom: String {
   case editPost
   case newPost
 }
+
+public enum BannedPopupComesFrom: String {
+  case login
+  case tabbar
+}

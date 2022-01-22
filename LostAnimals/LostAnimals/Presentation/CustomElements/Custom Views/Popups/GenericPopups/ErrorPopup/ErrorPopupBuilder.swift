@@ -10,7 +10,7 @@ import UIKit
 
 final class ErrorPopupBuilder {
   
-  func build(errorTitle: String, action: (() -> Void)? = nil) -> ErrorPopupViewController {
+  func build(errorTitle: String, action: ()? = nil) -> ErrorPopupViewController {
     
     let viewController = UIViewController.instantiate(viewController: ErrorPopupViewController.self)
     

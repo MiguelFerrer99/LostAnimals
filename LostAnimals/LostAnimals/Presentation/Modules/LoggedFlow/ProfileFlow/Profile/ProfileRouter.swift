@@ -18,6 +18,12 @@ final class ProfileRouter {
   }
   
   // MARK: - Functions
+  func goBack() {
+    DispatchQueue.main.async {
+      self.viewController?.pop()
+    }
+  }
+  
   func changeRootToStartup() {
     let viewController = Container.shared.startupBuilder().build().embeddedInNavigation()
     DispatchQueue.main.async {

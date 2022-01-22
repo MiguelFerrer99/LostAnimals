@@ -131,6 +131,30 @@ final class NewPostGenericViewController: ViewController {
     selectPhoto8Button.isUserInteractionEnabled = publishPostButton.isEnabled
   }
   
+  private func buildNewPost() -> Post? {
+    guard let selectedAnimalType = viewModel.selectedAnimalType,
+          let animalNameText = animalTextfield.textField.text,
+          let animalBreedText = breedTextfield.textField.text,
+          let lastTimeSeenText = lastTimeSeenTextfield.textField.text,
+          let lastTimeSeenDate = lastTimeSeenText.toDate(withFormat: DateFormat.dayMonthYearHourOther),
+          let newPostLocation = viewModel.newPostLocation,
+          let me = User.shared
+    else { return nil }
+    
+    let newPost = Post(postType: viewModel.postType,
+                       animal: Animal(name: animalNameText.isEmpty ? nil : animalNameText,
+                                      type: selectedAnimalType,
+                                      breed: animalBreedText.isEmpty ? nil : animalBreedText,
+                                      images: viewModel.sortNilImagesFromImageViewsToFinal()),
+                       lastTimeSeen: lastTimeSeenDate,
+                       location: newPostLocation,
+                       description: descriptionTextview.text.isEmpty ? nil : descriptionTextview.text,
+                       author: me,
+                       isSaved: false)
+    
+    return newPost
+  }
+  
   // MARK: - IBAction
   @IBAction func selectPhoto1ButtonPressed(_ sender: UIButton) {
     viewModel.selectedIndexImageView = 0
@@ -175,6 +199,7 @@ final class NewPostGenericViewController: ViewController {
   @IBAction func publishPostButtonPressed(_ sender: CustomButton) {
     publishPostButton.showLoading()
     updateUserInteraction()
-    viewModel.didPressPublishPostButton()
+    let newPost = buildNewPost()
+    viewModel.didPressPublishPostButton(newPost: newPost)
   }
 }

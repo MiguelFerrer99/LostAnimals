@@ -57,6 +57,30 @@ extension NewPostGenericViewModel {
     return haveErrors
   }
   
+  func sortNilImagesFromImageViewsToFinal() -> [UIImage?] {
+    var imagesArray: [UIImage?] = []
+    var sortedImagesArray: [UIImage?] = []
+    
+    selectPhotoImageViews.forEach { selectPhotoImageView in
+      imagesArray.append(selectPhotoImageView.image)
+    }
+    
+    sortedImagesArray = imagesArray
+    
+    for _ in 0...7 {
+      sortedImagesArray.enumerated().forEach { image in
+        if image.element == nil {
+          let nextImageCopy = sortedImagesArray[image.offset + 1]
+          sortedImagesArray[image.offset + 1] = image.element
+          sortedImagesArray[image.offset] = nextImageCopy
+          return
+        }
+      }
+    }
+    
+    return sortedImagesArray
+  }
+  
   func didPressSelectPhotoButton() {
     guard let selectPhotoImageView = selectPhotoImageViews[selectedIndexImageView].image else { return }
     self.router.goToSelectPhotoPopup(showRemoveOption: !selectPhotoImageView.isEqualTo(image: UIImage(named: "SelectPhotoPlaceholder")))
@@ -70,9 +94,12 @@ extension NewPostGenericViewModel {
     self.router.goToWhereCanWeFindYou()
   }
   
-  func didPressPublishPostButton() {
-    showSuccessPopup(title: "The post has been published successfully") {
-      self.router.goBack()
+  func didPressPublishPostButton(newPost: Post?) {
+    // TODO: - Publish post
+    if let _ = newPost {
+      showSuccessPopup(title: "The post has been published successfully", action: self.router.goBackToTabBar())
+    } else {
+      showErrorPopup(title: "The post couldn't be created successfully", action: nil)
     }
   }
 }

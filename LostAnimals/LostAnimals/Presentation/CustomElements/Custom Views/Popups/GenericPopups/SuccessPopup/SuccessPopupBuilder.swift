@@ -10,7 +10,7 @@ import UIKit
 
 final class SuccessPopupBuilder {
   
-  func build(successTitle: String, action: (() -> Void)? = nil) -> SuccessPopupViewController {
+  func build(successTitle: String, action: ()? = nil) -> SuccessPopupViewController {
     
     let viewController = UIViewController.instantiate(viewController: SuccessPopupViewController.self)
     

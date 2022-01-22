@@ -70,14 +70,10 @@ extension EditPostViewModel {
   }
   
   func didPressDeletePostButton() {
-    showSuccessPopup(title: "The post has been removed sucessfully") {
-      self.router.goBack2Times()
-    }
+    showSuccessPopup(title: "The post has been removed sucessfully", action: self.router.goBack2Times())
   }
   
   func didPressSaveChangesButton() {
-    showSuccessPopup(title: "The changes has been saved successfully") {
-      self.router.goBack()
-    }
+    showSuccessPopup(title: "The changes has been saved successfully", action: self.router.goBack())
   }
 }

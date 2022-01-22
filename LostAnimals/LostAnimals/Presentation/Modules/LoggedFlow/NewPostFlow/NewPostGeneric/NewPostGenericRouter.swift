@@ -18,8 +18,10 @@ final class NewPostGenericRouter {
   }
   
   // MARK: - Functions
-  func goBack() {
-    self.viewController?.pop()
+  func goBackToTabBar() {
+    DispatchQueue.main.async {
+      self.viewController?.dismissCurrentView(completion: nil)
+    }
   }
   
   func goToSelectPhotoPopup(showRemoveOption: Bool) {

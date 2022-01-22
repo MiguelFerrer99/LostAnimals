@@ -94,7 +94,9 @@ final class EditPostViewController: ViewController {
     case .adopt:
       postTypeLabel.text = "To adopt animal"
       lastTimeSeenTextfield.isHidden = true
+      locationTextfield.isHidden = true
     }
+    
     viewModel.selectPhotoImageViews.enumerated().forEach { selectPhotoImageView in
       if selectPhotoImageView.offset <= viewModel.post.animal.images.count - 1 {
         let postImage = viewModel.post.animal.images[selectPhotoImageView.offset]
@@ -103,12 +105,19 @@ final class EditPostViewController: ViewController {
         selectPhotoImageView.element.image = UIImage(named: "SelectPhotoPlaceholder")
       }
     }
+    
     nameTextfield.textField.text = viewModel.post.animal.name
     animalTextfield.textField.text = viewModel.post.animal.type.rawValue
-    breedTextfield.textField.text = viewModel.post.animal.breed
-    lastTimeSeenTextfield.textField.text = viewModel.post.lastTimeSeen.toString(withFormat: DateFormat.dayMonthYearOther)
-    locationTextfield.textField.text = viewModel.post.location.address
-    descriptionTextview.text = viewModel.post.description
+    breedTextfield.textField.text = viewModel.post.animal.breed == nil ? "Not specified" : viewModel.post.animal.breed
+    descriptionTextview.text = viewModel.post.description == nil ? "Without description" : viewModel.post.description
+    
+    if let lastTimeSeen = viewModel.post.lastTimeSeen {
+      lastTimeSeenTextfield.textField.text = lastTimeSeen.toString(withFormat: DateFormat.dayMonthYearOther)
+    }
+    
+    if let location = viewModel.post.location {
+      locationTextfield.textField.text = location.address
+    }
   }
   
   @objc private func removePhoto(_ notification: NSNotification) {

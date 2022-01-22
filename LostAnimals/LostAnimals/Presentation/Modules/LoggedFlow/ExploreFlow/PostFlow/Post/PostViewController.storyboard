@@ -33,10 +33,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xCg-vx-Fil">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1249"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1258"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="MnO-2G-3ZO">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="1229"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="1238"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jWu-yv-TYG">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
@@ -64,9 +64,9 @@
                                                                                 <color key="tintColor" name="CustomBlack"/>
                                                                                 <imageReference key="image" image="chevron.left.circle.fill" catalog="system" symbolScale="default" renderingMode="hierarchical">
                                                                                     <hierarchicalColors>
-                                                                                        <color name="CustomWhite"/>
-                                                                                        <color white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                         <color name="CustomBlack"/>
+                                                                                        <color white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                        <color name="CustomWhite"/>
                                                                                     </hierarchicalColors>
                                                                                 </imageReference>
                                                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="black"/>
@@ -187,10 +187,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wq4-UO-xmj">
-                                                        <rect key="frame" x="0.0" y="270" width="375" height="959"/>
+                                                        <rect key="frame" x="0.0" y="270" width="375" height="968"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="aHp-7N-79h">
-                                                                <rect key="frame" x="20" y="0.0" width="335" height="959"/>
+                                                                <rect key="frame" x="20" y="0.0" width="335" height="968"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="BpK-pO-xMh">
                                                                         <rect key="frame" x="0.0" y="0.0" width="335" height="40"/>
@@ -469,10 +469,10 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aiN-Va-WFG" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="340" width="335" height="304"/>
+                                                                        <rect key="frame" x="0.0" y="340" width="335" height="313"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Kl5-YG-D6Y">
-                                                                                <rect key="frame" x="0.0" y="10" width="335" height="284"/>
+                                                                                <rect key="frame" x="0.0" y="10" width="335" height="293"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0y-2O-nnC">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="335" height="22"/>
@@ -481,10 +481,10 @@
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BYa-oH-txj">
-                                                                                        <rect key="frame" x="0.0" y="22" width="335" height="262"/>
+                                                                                        <rect key="frame" x="0.0" y="22" width="335" height="271"/>
                                                                                         <subviews>
                                                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.59999999999999998" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Description" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X59-dC-TiR">
-                                                                                                <rect key="frame" x="15" y="0.0" width="305" height="262"/>
+                                                                                                <rect key="frame" x="15" y="0.0" width="305" height="271"/>
                                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <color key="tintColor" name="CustomWhite"/>
                                                                                                 <color key="textColor" name="CustomWhite"/>
@@ -521,7 +521,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sn3-pS-yhW" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="664" width="335" height="185"/>
+                                                                        <rect key="frame" x="0.0" y="673" width="335" height="185"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="yez-Ry-JUG">
                                                                                 <rect key="frame" x="0.0" y="10" width="335" height="165"/>
@@ -544,11 +544,20 @@
                                                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfileImagePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="aOH-aG-1fo">
                                                                                                         <rect key="frame" x="20" y="5" width="127.5" height="120"/>
                                                                                                     </imageView>
+                                                                                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AnimalShelter" translatesAutoresizingMaskIntoConstraints="NO" id="mNP-3J-hDu">
+                                                                                                        <rect key="frame" x="107.5" y="15" width="30" height="30"/>
+                                                                                                        <constraints>
+                                                                                                            <constraint firstAttribute="width" constant="30" id="BfQ-1Y-nge"/>
+                                                                                                            <constraint firstAttribute="height" constant="30" id="ejd-XI-C1E"/>
+                                                                                                        </constraints>
+                                                                                                    </imageView>
                                                                                                 </subviews>
                                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <constraints>
+                                                                                                    <constraint firstItem="mNP-3J-hDu" firstAttribute="top" secondItem="aOH-aG-1fo" secondAttribute="top" constant="10" id="9xf-mK-fi2"/>
                                                                                                     <constraint firstAttribute="trailing" secondItem="aOH-aG-1fo" secondAttribute="trailing" constant="20" id="FeM-bQ-Psc"/>
                                                                                                     <constraint firstItem="aOH-aG-1fo" firstAttribute="top" secondItem="c5E-Lv-N8f" secondAttribute="top" constant="5" id="GJx-Oh-5nh"/>
+                                                                                                    <constraint firstItem="mNP-3J-hDu" firstAttribute="trailing" secondItem="aOH-aG-1fo" secondAttribute="trailing" constant="-10" id="LIg-NP-wgU"/>
                                                                                                     <constraint firstAttribute="bottom" secondItem="aOH-aG-1fo" secondAttribute="bottom" constant="5" id="e60-h0-ySy"/>
                                                                                                     <constraint firstItem="aOH-aG-1fo" firstAttribute="leading" secondItem="c5E-Lv-N8f" secondAttribute="leading" constant="20" id="o2d-RY-zoq"/>
                                                                                                 </constraints>
@@ -623,14 +632,14 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jyw-Qg-abB">
-                                                                        <rect key="frame" x="0.0" y="869" width="335" height="20"/>
+                                                                        <rect key="frame" x="0.0" y="878" width="335" height="20"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="20" id="XYg-RP-FmO"/>
                                                                         </constraints>
                                                                     </view>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdL-xC-82Y" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="909" width="335" height="50"/>
+                                                                        <rect key="frame" x="0.0" y="918" width="335" height="50"/>
                                                                         <color key="backgroundColor" name="CustomWhite"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="50" id="j1E-pi-tvo"/>
@@ -699,13 +708,19 @@
                     </view>
                     <connections>
                         <outlet property="animalBreedLabel" destination="v9p-yF-2mJ" id="Gvq-kb-VUO"/>
+                        <outlet property="animalBreedView" destination="gKN-uU-Fir" id="pPw-cI-Bec"/>
                         <outlet property="animalNameLabel" destination="gNT-2i-Dyj" id="LBt-jg-LtZ"/>
+                        <outlet property="animalNameView" destination="EFR-kc-Hsv" id="Lb0-do-YMM"/>
+                        <outlet property="animalShelterImageView" destination="mNP-3J-hDu" id="2j9-f5-Vjj"/>
                         <outlet property="authorAddressLabel" destination="OoL-za-OLt" id="498-AF-WPs"/>
                         <outlet property="authorAgeLabel" destination="DRL-zd-z1f" id="BYO-hd-1yu"/>
                         <outlet property="authorNameLabel" destination="P6f-SG-5Gc" id="GpF-dw-bLQ"/>
                         <outlet property="authorPhotoImageView" destination="aOH-aG-1fo" id="soL-Ds-tbp"/>
+                        <outlet property="authorView" destination="sn3-pS-yhW" id="k5I-cm-6xm"/>
                         <outlet property="contactWithAuthorButton" destination="wdL-xC-82Y" id="yGc-hY-Pcv"/>
                         <outlet property="descriptionTextView" destination="X59-dC-TiR" id="gJo-iR-RHM"/>
+                        <outlet property="descriptionView" destination="aiN-Va-WFG" id="wpo-2e-Yt2"/>
+                        <outlet property="lastTimeSeenAndLocationStackView" destination="mUO-dM-QkR" id="vP9-iL-eTa"/>
                         <outlet property="lastTimeSeenLabel" destination="yny-it-gTX" id="Ulr-o7-6oh"/>
                         <outlet property="locationLabel" destination="iJ6-OI-mwx" id="7AR-N5-Zdq"/>
                         <outlet property="postImagesCollectionView" destination="evv-mb-LHg" id="F8D-F9-whC"/>
@@ -727,6 +742,7 @@
         </designable>
     </designables>
     <resources>
+        <image name="AnimalShelter" width="45.5" height="43.5"/>
         <image name="Dog" width="47" height="46"/>
         <image name="PostOptionsWhite" width="30" height="30"/>
         <image name="ProfileImagePlaceholder" width="120" height="120"/>

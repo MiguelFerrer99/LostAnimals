@@ -44,7 +44,7 @@ extension ExploreViewController: UICollectionViewDelegate, UICollectionViewDataS
       return cell
     } else {
       let post = HardcodedData.explorePosts[indexPath.row]
-      let summary = PostCollectionViewCellSummary(postType: post.postType, animal: post.animal, postImage: post.animal.images.first ?? UIImage(named: "SelectPhotoPlaceholder"))
+      let summary = PostCollectionViewCellSummary(postType: post.postType, animal: post.animal, postImage: post.animal.images.first ?? UIImage(named: "SelectPhotoPlaceholder"), index: indexPath.row)
       let cell = collectionView.dequeue(PostCollectionViewCell.self, for: indexPath)
       cell.display(summary: summary)
       return cell

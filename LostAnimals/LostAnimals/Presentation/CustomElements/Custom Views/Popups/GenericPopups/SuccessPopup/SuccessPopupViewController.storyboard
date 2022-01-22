@@ -30,19 +30,19 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lrN-yf-hPe" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
-                                <rect key="frame" x="20" y="702" width="374" height="140"/>
+                                <rect key="frame" x="20" y="717" width="374" height="125"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JAL-Jy-Vfd">
-                                        <rect key="frame" x="20" y="10" width="334" height="110"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="JAL-Jy-Vfd">
+                                        <rect key="frame" x="20" y="20" width="334" height="85"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SuccessTitle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISB-CG-ivf">
-                                                <rect key="frame" x="0.0" y="0.0" width="334" height="60"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="334" height="25"/>
                                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="18"/>
                                                 <color key="textColor" name="CustomWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Fj-da-PoM" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="70" width="334" height="40"/>
+                                                <rect key="frame" x="0.0" y="45" width="334" height="40"/>
                                                 <color key="backgroundColor" name="CustomGreen"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Gbf-2R-Gyt"/>
@@ -65,10 +65,9 @@
                                 <color key="backgroundColor" name="CustomBlack"/>
                                 <constraints>
                                     <constraint firstItem="JAL-Jy-Vfd" firstAttribute="leading" secondItem="lrN-yf-hPe" secondAttribute="leading" constant="20" id="GCU-we-7Oy"/>
-                                    <constraint firstAttribute="height" constant="140" id="Iug-WJ-Hly"/>
                                     <constraint firstAttribute="trailing" secondItem="JAL-Jy-Vfd" secondAttribute="trailing" constant="20" id="K3s-NE-dms"/>
                                     <constraint firstAttribute="bottom" secondItem="JAL-Jy-Vfd" secondAttribute="bottom" constant="20" id="Khr-ZC-ydB"/>
-                                    <constraint firstItem="JAL-Jy-Vfd" firstAttribute="top" secondItem="lrN-yf-hPe" secondAttribute="top" constant="10" id="rhy-Sm-VZm"/>
+                                    <constraint firstItem="JAL-Jy-Vfd" firstAttribute="top" secondItem="lrN-yf-hPe" secondAttribute="top" constant="20" id="rhy-Sm-VZm"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -101,7 +100,7 @@
     </scenes>
     <designables>
         <designable name="6Fj-da-PoM">
-            <size key="intrinsicContentSize" width="30" height="33"/>
+            <size key="intrinsicContentSize" width="30" height="37"/>
         </designable>
     </designables>
     <resources>

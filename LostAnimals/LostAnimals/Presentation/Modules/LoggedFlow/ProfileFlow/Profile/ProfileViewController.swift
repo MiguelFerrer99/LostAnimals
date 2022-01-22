@@ -8,19 +8,18 @@
 
 import UIKit
 
-final class ProfileViewController: ViewController {
+final class ProfileViewController: ViewController, UIGestureRecognizerDelegate {
   
   // MARK: - IBOutlets
+  @IBOutlet weak var headerImageView: UIImageView!
+  @IBOutlet weak var userImageView: UIImageView!
+  @IBOutlet weak var welcomeBackLabel: UILabel!
+  @IBOutlet weak var basicInfoView: UIView!
+  @IBOutlet weak var profileCollectionView: UICollectionView!
   
   // MARK: - Properties
-  override var navBarTitle: String {
-    return "My profile"
-  }
   override var hideNavigationBar: Bool {
     return true
-  }
-  override var hideBackButton: Bool {
-    return viewModel.isMyProfile
   }
   var viewModel: ProfileViewModel!
   
@@ -40,10 +39,26 @@ final class ProfileViewController: ViewController {
   
   // MARK: - Functions
   private func setupUI() {
-    // Do UI setup
+    self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+    configureCollectionView(profileCollectionView)
+    fillUI()
+  }
+  
+  private func fillUI() {
+    headerImageView.image = viewModel.user.headerImage
+    userImageView.image = viewModel.user.profileImage
+    welcomeBackLabel.text = viewModel.isMyProfile ? "Welcome back, \(viewModel.user.firstname)" : "\(viewModel.user.firstname) \(viewModel.user.lastname)"
   }
   
   // MARK: - IBActions
+  @IBAction func backButtonPressed(_ sender: UIButton) {
+    viewModel.didPressBackButton()
+  }
+  
+  @IBAction func blockUserButtonPressed(_ sender: UIButton) {
+    viewModel.didPressBlockUserButton()
+  }
+  
   @IBAction func logoutButtonPressed(_ sender: CustomButton) {
     viewModel.didPressLogoutButton()
   }

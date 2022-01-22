@@ -44,7 +44,7 @@ final class ExploreRouter {
   }
   
   func goToPost(post: Post) {
-    let viewController = Container.shared.postBuilder().build(comesFrom: .profile, post: post)
+    let viewController = Container.shared.postBuilder().build(comesFrom: .explore, post: post)
     DispatchQueue.main.async {
       self.viewController?.push(viewController: viewController)
     }

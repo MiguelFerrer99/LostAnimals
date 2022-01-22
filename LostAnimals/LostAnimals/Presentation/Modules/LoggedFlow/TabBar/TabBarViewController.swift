@@ -41,6 +41,8 @@ final class TabBarViewController: UITabBarController, UITabBarControllerDelegate
     super.viewDidAppear(animated)
     
     viewModel.viewDidAppear()
+    
+    if User.shared?.isBanned ?? false { showBannedPopup(comesFrom: .tabbar) }
   }
   
   // MARK: - Functions

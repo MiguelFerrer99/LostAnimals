@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 struct Animal {
-  let name: String
+  let name: String?
   let type: AnimalType
-  let breed: String
+  let breed: String?
   let images: [UIImage?]
 }

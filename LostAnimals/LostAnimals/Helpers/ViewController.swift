@@ -83,7 +83,7 @@ class ViewController: UIViewController {
       navigationController?.navigationBar.prefersLargeTitles = true
     }
     
-    navigationController?.setNavigationBarHidden(hideNavigationBar, animated: false)
+    navigationController?.setNavigationBarHidden(hideNavigationBar, animated: true)
     navigationItem.largeTitleDisplayMode = useLargeTitle ? .always : .never
   }
   
@@ -99,7 +99,7 @@ class ViewController: UIViewController {
   
   // MARK: - Functions
   @objc func didBecomeActive() {
-    navigationController?.setNavigationBarHidden(hideNavigationBar, animated: false)
+    navigationController?.setNavigationBarHidden(hideNavigationBar, animated: true)
     navigationItem.largeTitleDisplayMode = useLargeTitle ? .always : .never
   }
   

@@ -70,7 +70,7 @@ extension NewPostGenericViewController: CustomTextFieldDelegate {
       guard let image = $0.image else { return false }
       return !image.isEqualTo(image: UIImage(named: "SelectPhotoPlaceholder"))
     })
-    let canMoveToNextStep = !haveErrors && hasAtLeastOnePhoto && viewModel.editedTextFields.count == viewModel.numberOfTextFields
+    let canMoveToNextStep = !haveErrors && hasAtLeastOnePhoto && viewModel.editedTextFields.count >= viewModel.numberOfTextFields
     publishPostButton.alpha = canMoveToNextStep ? 1 : 0.5
     publishPostButton.isEnabled = canMoveToNextStep
   }

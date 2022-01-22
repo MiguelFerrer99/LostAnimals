@@ -73,5 +73,6 @@ struct Cache {
   
   static func logOut() {
     Cache.set(.logged, false)
+    User.shared = nil
   }
 }

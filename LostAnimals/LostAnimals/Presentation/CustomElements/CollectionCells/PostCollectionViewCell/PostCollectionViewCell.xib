@@ -128,9 +128,11 @@
                 <outlet property="animalNameLabel" destination="3hi-nd-LKr" id="TMV-mN-b7V"/>
                 <outlet property="animalTypeImageView" destination="RkG-HC-Hvg" id="PnR-cG-RKU"/>
                 <outlet property="animalTypeWhiteImageView" destination="Zb3-Q0-qIU" id="zDe-Mh-jBn"/>
+                <outlet property="leadingConstraint" destination="OaX-Ky-5H0" id="ekE-N6-cPs"/>
                 <outlet property="postImageView" destination="Tah-1e-Tbn" id="F0d-VX-w4t"/>
                 <outlet property="postTypeImageView" destination="BbS-wx-vWX" id="jlY-aW-mTT"/>
                 <outlet property="postTypeWhiteImageView" destination="oSl-xe-pYu" id="oVh-Wv-svb"/>
+                <outlet property="trailingConstraint" destination="6VC-B3-h4h" id="sre-bC-H7t"/>
             </connections>
             <point key="canvasLocation" x="231.15942028985509" y="176.78571428571428"/>
         </collectionViewCell>

@@ -13,10 +13,10 @@ final class SuccessPopupViewModel {
   // MARK: - Properties
   private let router: SuccessPopupRouter
   let successTitle: String
-  let action: (() -> Void)?
+  let action: ()?
   
   // MARK: - Init
-  required init(router: SuccessPopupRouter, successTitle: String, action: (() -> Void)? = nil) {
+  required init(router: SuccessPopupRouter, successTitle: String, action: ()? = nil) {
     self.router = router
     self.successTitle = successTitle
     self.action = action

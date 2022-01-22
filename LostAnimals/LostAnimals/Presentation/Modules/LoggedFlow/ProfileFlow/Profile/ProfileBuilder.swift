@@ -10,12 +10,12 @@ import UIKit
 
 final class ProfileBuilder {
   
-  func build(isMyProfile: Bool) -> ProfileViewController {
+  func build(user: User) -> ProfileViewController {
     
     let viewController = UIViewController.instantiate(viewController: ProfileViewController.self)
     
     let router = ProfileRouter(viewController: viewController)
-    let viewModel = ProfileViewModel(router: router, isMyProfile: isMyProfile)
+    let viewModel = ProfileViewModel(router: router, user: user)
     
     viewController.viewModel = viewModel
     

@@ -63,7 +63,7 @@ func showGuestPopup() {
   }
 }
 
-func showErrorPopup(title: String, action: (() -> Void)? = nil) {
+func showErrorPopup(title: String, action: ()? = nil) {
   if topMostController() is UIAlertController { return }
   
   let viewController = Container.shared.errorPopupBuilder().build(errorTitle: title, action: action)
@@ -73,10 +73,25 @@ func showErrorPopup(title: String, action: (() -> Void)? = nil) {
   }
 }
 
-func showSuccessPopup(title: String, action: (() -> Void)? = nil) {
+func showSuccessPopup(title: String, action: ()? = nil) {
   if topMostController() is UIAlertController { return }
   
   let viewController = Container.shared.successPopupBuilder().build(successTitle: title, action: action)
+  
+  DispatchQueue.main.async {
+    topMostController()?.present(viewController: viewController)
+  }
+}
+
+func showBannedPopup(comesFrom: BannedPopupComesFrom) {
+  if topMostController() is UIAlertController { return }
+  
+  Cache.logOut()
+  
+  let startupViewController = Container.shared.startupBuilder().build().embeddedInNavigation()
+  let viewController = Container.shared.errorPopupBuilder().build(
+    errorTitle: "You has been banned of LostAnimals. Please contact with the administrator to solve this situation",
+    action: comesFrom == .login ? nil : changeRoot(to: startupViewController))
   
   DispatchQueue.main.async {
     topMostController()?.present(viewController: viewController)

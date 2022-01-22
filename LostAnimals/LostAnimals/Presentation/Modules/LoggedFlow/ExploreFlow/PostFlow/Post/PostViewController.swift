@@ -18,11 +18,17 @@ final class PostViewController: ViewController, UIGestureRecognizerDelegate {
   @IBOutlet weak var postImagesPageControl: UIPageControl!
   @IBOutlet weak var postTypeImageView: UIImageView!
   @IBOutlet weak var postTypeLabel: UILabel!
+  @IBOutlet weak var animalNameView: CustomView!
   @IBOutlet weak var animalNameLabel: UILabel!
   @IBOutlet weak var animalBreedLabel: UILabel!
+  @IBOutlet weak var animalBreedView: CustomView!
+  @IBOutlet weak var lastTimeSeenAndLocationStackView: UIStackView!
   @IBOutlet weak var lastTimeSeenLabel: UILabel!
   @IBOutlet weak var locationLabel: UILabel!
   @IBOutlet weak var descriptionTextView: UITextView!
+  @IBOutlet weak var descriptionView: CustomView!
+  @IBOutlet weak var authorView: CustomView!
+  @IBOutlet weak var animalShelterImageView: UIImageView!
   @IBOutlet weak var authorPhotoImageView: UIImageView!
   @IBOutlet weak var authorNameLabel: UILabel!
   @IBOutlet weak var authorAgeLabel: UILabel!
@@ -33,18 +39,18 @@ final class PostViewController: ViewController, UIGestureRecognizerDelegate {
   override var navBarTitle: String {
     switch viewModel.post.postType {
     case .lost:
-      return "Lost animal"
+      return viewModel.post.animal.name ?? "Lost animal"
     case .found:
       return "Found animal"
     case .adopt:
-      return "To adopt animal"
+      return viewModel.post.animal.name ?? "To adopt animal"
     }
   }
   override var hideNavigationBar: Bool {
     return shouldHideNavigationBar
   }
   var shouldHideNavigationBar: Bool {
-    return postScrollView.contentOffset.y < 250
+    return postScrollView.contentOffset.y < 20
   }
   var viewModel: PostViewModel!
   var savePostBarButtonItem = UIBarButtonItem()
@@ -108,27 +114,34 @@ final class PostViewController: ViewController, UIGestureRecognizerDelegate {
       postTypeLabel.text = "Lost animal"
     case .found:
       postTypeLabel.text = "Found animal"
+      animalNameView.isHidden = true
     case .adopt:
       postTypeLabel.text = "To adopt animal"
+      lastTimeSeenAndLocationStackView.isHidden = true
     }
     
-    authorPhotoImageView.image = viewModel.post.author.profileImage
     animalNameLabel.text = viewModel.post.animal.name
-    animalBreedLabel.text = viewModel.post.animal.breed
-    lastTimeSeenLabel.text = viewModel.post.lastTimeSeen.toString(withFormat: DateFormat.dayMonthYearHourOther)
-    locationLabel.text = viewModel.post.location.address
-    descriptionTextView.text = viewModel.post.description
+    animalBreedLabel.text = viewModel.post.animal.breed == nil ? "Not specified" : viewModel.post.animal.breed
+    descriptionTextView.text = viewModel.post.description == nil ? "Without description" : viewModel.post.description
+    authorPhotoImageView.image = viewModel.post.author.profileImage
     authorNameLabel.text = "\(viewModel.post.author.firstname) \(viewModel.post.author.lastname)"
+    authorAddressLabel.text = viewModel.post.author.location.address
+    if let authorAge = viewModel.getAge() { authorAgeLabel.text = "\(authorAge) years old" }
     
-    let birthdate = DateComponents(year: viewModel.post.author.birthdate.year, month: viewModel.post.author.birthdate.month, day: viewModel.post.author.birthdate.day)
-    let now = Calendar.current.dateComponents([.year, .month, .day], from: Date())
-    let ageComponents = Calendar.current.dateComponents([.year], from: birthdate, to: now)
-    if let authorAge = ageComponents.year {
-      authorAgeLabel.text = "\(authorAge) years old"
+    if let lastTimeSeen = viewModel.post.lastTimeSeen {
+      lastTimeSeenLabel.text = lastTimeSeen.toString(withFormat: DateFormat.dayMonthYearHourOther)
+    }
+    if let location = viewModel.post.location {
+      locationLabel.text = location.address
     }
     
-    authorAddressLabel.text = viewModel.post.author.location.address
     contactWithAuthorButton.setTitle("Contact with \(viewModel.post.author.firstname)", for: .normal)
+    
+    if let me = User.shared, me.id == viewModel.post.author.id {
+      authorView.isHidden = true
+      contactWithAuthorButton.isHidden = true
+    }
+    animalShelterImageView.isHidden = !viewModel.post.author.isAnimalShelter
   }
   
   @objc private func savePostBarButtonPressed() {

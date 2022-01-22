@@ -13,10 +13,10 @@ final class ErrorPopupViewModel {
   // MARK: - Properties
   private let router: ErrorPopupRouter
   let errorTitle: String
-  let action: (() -> Void)?
+  let action: ()?
   
   // MARK: - Init
-  required init(router: ErrorPopupRouter, errorTitle: String, action: (() -> Void)? = nil) {
+  required init(router: ErrorPopupRouter, errorTitle: String, action: ()? = nil) {
     self.router = router
     self.errorTitle = errorTitle
     self.action = action

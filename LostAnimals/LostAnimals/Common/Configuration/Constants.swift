@@ -11,6 +11,18 @@ import UIKit
 
 // MARK: - Constants
 struct Constants {
+  static let emptyUser = User(id: -1,
+                                 email: "",
+                                 firstname: "",
+                                 lastname: "",
+                                 birthdate: Date.today,
+                                 headerImage: UIImage(),
+                                 profileImage: UIImage(),
+                                 location: Location(address: "", coordinates: nil),
+                                 isAnimalShelter: false,
+                                 socialMedias: SocialMedias(email: "militardeaire99@gmail.com", phonePrefix: 34, phoneNumber: 606505059, instagram: nil, twitter: nil),
+                                 isBanned: false)
+  
   static let onboardingStepsInfo = [
     OnboardingStepInfo(title: "Share",
                        description: "Have you lost your pet? We help you to find her by sharing information. Everyone stay tuned! 👀",

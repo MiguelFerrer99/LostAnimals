@@ -13,4 +13,5 @@ struct PostCollectionViewCellSummary {
   let postType: PostType
   let animal: Animal
   let postImage: UIImage?
+  let index: Int
 }

@@ -51,12 +51,16 @@ extension LoginViewModel {
   
   func didPressLoginButton() {
     User.shared = HardcodedData.exampleUser1
-    Cache.set(.logged, true)
-    let onboardingDone = Cache.get(boolFor: .onboardingDone)
-    if onboardingDone {
-      self.router.changeRootToTabBar()
-    } else {
-      self.router.goToOnboarding()
+    
+    if User.shared?.isBanned ?? false { showBannedPopup(comesFrom: .login) }
+    else {
+      Cache.set(.logged, true)
+      let onboardingDone = Cache.get(boolFor: .onboardingDone)
+      if onboardingDone {
+        self.router.changeRootToTabBar()
+      } else {
+        self.router.goToOnboarding()
+      }
     }
   }
 }

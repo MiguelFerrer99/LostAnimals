@@ -18,10 +18,10 @@ final class ErrorPopupRouter {
   }
   
   // MARK: - Functions
-  func dismissErrorPopup(action: (() -> Void)? = nil) {
+  func dismissErrorPopup(action: ()? = nil) {
     DispatchQueue.main.async {
       self.viewController?.dismissCurrentView(completion: {
-        if let action = action { action() }
+        if let action = action { action }
       })
     }
   }

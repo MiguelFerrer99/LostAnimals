@@ -12,12 +12,14 @@ final class ProfileViewModel {
   
   // MARK: - Properties
   private let router: ProfileRouter
+  let user: User
   let isMyProfile: Bool
   
   // MARK: - Init
-  required init(router: ProfileRouter, isMyProfile: Bool) {
+  required init(router: ProfileRouter, user: User) {
     self.router = router
-    self.isMyProfile = isMyProfile
+    self.user = user
+    self.isMyProfile = user == User.shared
   }
 }
 
@@ -34,8 +36,16 @@ extension ProfileViewModel {
 
 // MARK: - Functions
 extension ProfileViewModel {
+  func didPressBackButton() {
+    self.router.goBack()
+  }
+  
   func didPressLogoutButton() {
     Cache.logOut()
     self.router.changeRootToStartup()
+  }
+  
+  func didPressBlockUserButton() {
+    // TODO: Block user and change UI
   }
 }
