@@ -11,6 +11,9 @@ import UIKit
 final class ProfileViewController: ViewController, UIGestureRecognizerDelegate {
   
   // MARK: - IBOutlets
+  @IBOutlet weak var backButtonView: UIView!
+  @IBOutlet weak var blockUserButtonView: UIView!
+  @IBOutlet weak var settingsButtonView: UIView!
   @IBOutlet weak var headerImageView: UIImageView!
   @IBOutlet weak var userImageView: UIImageView!
   @IBOutlet weak var welcomeBackLabel: UILabel!
@@ -48,6 +51,9 @@ final class ProfileViewController: ViewController, UIGestureRecognizerDelegate {
     headerImageView.image = viewModel.user.headerImage
     userImageView.image = viewModel.user.profileImage
     welcomeBackLabel.text = viewModel.isMyProfile ? "Welcome back, \(viewModel.user.firstname)" : "\(viewModel.user.firstname) \(viewModel.user.lastname)"
+    backButtonView.isHidden = viewModel.isMyProfile
+    blockUserButtonView.isHidden = viewModel.isMyProfile
+    settingsButtonView.isHidden = !viewModel.isMyProfile
   }
   
   // MARK: - IBActions

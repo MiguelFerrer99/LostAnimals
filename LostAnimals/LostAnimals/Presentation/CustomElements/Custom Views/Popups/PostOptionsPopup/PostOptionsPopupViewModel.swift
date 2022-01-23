@@ -103,7 +103,7 @@ extension PostOptionsPopupViewModel {
 
     // Clear background
     guard let returnedImage1 = animalImage.drawImageIn(bgImage: clearBg,
-                                                       position: CGRect(x: 0, y: clearBg.size.height/2 - 313, width: clearBg.size.width, height: 360))
+                                                       position: CGRect(x: clearBg.size.width/2 - 180, y: clearBg.size.height/2 - 313, width: 360, height: 360))
     else { return nil }
     
     // Basic background
