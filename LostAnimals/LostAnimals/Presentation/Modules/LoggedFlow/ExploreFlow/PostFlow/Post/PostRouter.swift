@@ -31,8 +31,8 @@ final class PostRouter {
     }
   }
   
-  func goToLocation(coordinates: Coordinates, animal: Animal) {
-    let viewController = Container.shared.locationBuilder().build(coordinates: coordinates, animal: animal)
+  func goToLocation(coordinates: Coordinates, animalName: String? = nil) {
+    let viewController = Container.shared.locationBuilder().build(coordinates: coordinates, animalName: animalName)
     DispatchQueue.main.async {
       self.viewController?.push(viewController: viewController)
     }
@@ -40,7 +40,7 @@ final class PostRouter {
   
   func goToAuthorProfile(user: User) {
     let viewController = Container.shared.profileBuilder().build(user: user)
-    viewController.hidesBottomBarWhenPushed = User.shared != user
+    viewController.hidesBottomBarWhenPushed = true
     DispatchQueue.main.async {
       self.viewController?.push(viewController: viewController)
     }

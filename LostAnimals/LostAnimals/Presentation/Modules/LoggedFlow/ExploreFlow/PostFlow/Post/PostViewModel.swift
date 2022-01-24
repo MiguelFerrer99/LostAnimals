@@ -57,7 +57,7 @@ extension PostViewModel {
   func didPressLocation() {
     guard let location = post.location,
           let coordinates = location.coordinates else { return }
-    self.router.goToLocation(coordinates: coordinates, animal: post.animal)
+    self.router.goToLocation(coordinates: coordinates, animalName: post.animal.name)
   }
   
   func didPressAuthor() {
@@ -71,7 +71,6 @@ extension PostViewModel {
   func didPressSavePostButton(allowed: ((Bool) -> ())) {
     let logged = Cache.get(boolFor: .logged)
     if logged {
-      // TODO: - Save post
       allowed(true)
     } else {
       showGuestPopup()

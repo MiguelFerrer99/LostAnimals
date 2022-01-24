@@ -24,6 +24,17 @@ final class ProfileRouter {
     }
   }
   
+  func goToProfileSettings() {
+    // TODO: - Go to ProfileSettingsVC
+  }
+  
+  func goToLocation(coordinates: Coordinates, userFirstName: String? = nil) {
+    let viewController = Container.shared.locationBuilder().build(coordinates: coordinates, userFirstName: userFirstName)
+    DispatchQueue.main.async {
+      self.viewController?.push(viewController: viewController)
+    }
+  }
+  
   func changeRootToStartup() {
     let viewController = Container.shared.startupBuilder().build().embeddedInNavigation()
     DispatchQueue.main.async {

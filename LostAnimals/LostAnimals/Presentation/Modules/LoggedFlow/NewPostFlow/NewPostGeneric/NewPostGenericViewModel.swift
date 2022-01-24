@@ -95,7 +95,6 @@ extension NewPostGenericViewModel {
   }
   
   func didPressPublishPostButton(newPost: Post?) {
-    // TODO: - Publish post
     if let _ = newPost {
       showSuccessPopup(title: "The post has been published successfully", action: self.router.goBackToTabBar())
     } else {

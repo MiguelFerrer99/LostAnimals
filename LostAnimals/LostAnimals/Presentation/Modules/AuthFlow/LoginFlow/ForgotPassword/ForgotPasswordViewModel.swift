@@ -44,6 +44,6 @@ extension ForgotPasswordViewModel {
   }
   
   func didPressForgotPasswordButton() {
-    // TODO: Call API
+    showSuccessPopup(title: "We have sent an email to recover your password", action: nil)
   }
 }

@@ -16,8 +16,11 @@ final class ProfileViewController: ViewController, UIGestureRecognizerDelegate {
   @IBOutlet weak var settingsButtonView: UIView!
   @IBOutlet weak var headerImageView: UIImageView!
   @IBOutlet weak var userImageView: UIImageView!
+  @IBOutlet weak var animalShelterImageView: UIImageView!
   @IBOutlet weak var welcomeBackLabel: UILabel!
   @IBOutlet weak var basicInfoView: UIView!
+  @IBOutlet weak var basicInfoViewFirstLabel: UILabel!
+  @IBOutlet weak var basicInfoViewSecondLabel: UILabel!
   @IBOutlet weak var profileCollectionView: UICollectionView!
   
   // MARK: - Properties
@@ -48,12 +51,19 @@ final class ProfileViewController: ViewController, UIGestureRecognizerDelegate {
   }
   
   private func fillUI() {
-    headerImageView.image = viewModel.user.headerImage
-    userImageView.image = viewModel.user.profileImage
-    welcomeBackLabel.text = viewModel.isMyProfile ? "Welcome back, \(viewModel.user.firstname)" : "\(viewModel.user.firstname) \(viewModel.user.lastname)"
     backButtonView.isHidden = viewModel.isMyProfile
     blockUserButtonView.isHidden = viewModel.isMyProfile
     settingsButtonView.isHidden = !viewModel.isMyProfile
+    headerImageView.image = viewModel.user.headerImage
+    userImageView.image = viewModel.user.profileImage
+    animalShelterImageView.isHidden = !viewModel.user.isAnimalShelter
+    welcomeBackLabel.text = viewModel.isMyProfile ? "Welcome back, \(viewModel.user.firstname)" : "\(viewModel.user.firstname) \(viewModel.user.lastname)"
+    basicInfoView.isHidden = viewModel.isMyProfile
+    basicInfoViewFirstLabel.isHidden = viewModel.user.isAnimalShelter
+    if let age = viewModel.getAge() {
+      basicInfoViewFirstLabel.text = "\(age) years old"
+    }
+    basicInfoViewSecondLabel.text = viewModel.user.location.address
   }
   
   // MARK: - IBActions
@@ -62,7 +72,19 @@ final class ProfileViewController: ViewController, UIGestureRecognizerDelegate {
   }
   
   @IBAction func blockUserButtonPressed(_ sender: UIButton) {
-    viewModel.didPressBlockUserButton()
+    viewModel.didPressBlockUserButton { allowed in
+      if allowed {
+        // TODO: - Change UI
+      }
+    }
+  }
+  
+  @IBAction func settingsButtonPressed(_ sender: UIButton) {
+    viewModel.didPressSettingsButton()
+  }
+  
+  @IBAction func locationButtonPressed(_ sender: UIButton) {
+    viewModel.didPressLocation()
   }
   
   @IBAction func logoutButtonPressed(_ sender: CustomButton) {

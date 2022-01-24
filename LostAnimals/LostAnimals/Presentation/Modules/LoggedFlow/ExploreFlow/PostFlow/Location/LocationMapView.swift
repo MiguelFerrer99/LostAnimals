@@ -19,7 +19,11 @@ extension LocationViewController: MKMapViewDelegate {
     mapView.setRegion(region, animated: false)
     
     let annotation = MKPointAnnotation()
-    annotation.title = viewModel.animal.name
+    if let animalName = viewModel.animalName {
+      annotation.title = animalName
+    } else if let userFirstName = viewModel.userFirstName {
+      annotation.title = userFirstName
+    }
     annotation.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
     mapView.addAnnotation(annotation)
   }

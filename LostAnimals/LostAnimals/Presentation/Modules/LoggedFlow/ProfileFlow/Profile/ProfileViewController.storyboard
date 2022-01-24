@@ -40,9 +40,17 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="197.5"/>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfileImagePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="OdU-2w-JUY">
-                                                        <rect key="frame" x="0.0" y="137.5" width="414" height="120"/>
+                                                        <rect key="frame" x="147" y="137.5" width="120" height="120"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="120" id="0Qi-yT-d92"/>
+                                                            <constraint firstAttribute="width" constant="120" id="v2T-R4-l4F"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AnimalShelter" translatesAutoresizingMaskIntoConstraints="NO" id="g8t-rU-knB">
+                                                        <rect key="frame" x="237" y="227.5" width="30" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="30" id="An3-gH-Jd0"/>
+                                                            <constraint firstAttribute="height" constant="30" id="ith-Wn-NnY"/>
                                                         </constraints>
                                                     </imageView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UeK-2r-TtM">
@@ -128,11 +136,11 @@
                                                                         <rect key="frame" x="5" y="5" width="30" height="30"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <color key="tintColor" name="CustomBlack"/>
-                                                                        <imageReference key="image" image="BlockUser" renderingMode="hierarchical">
+                                                                        <imageReference key="image" image="ProfileSettings" symbolScale="default" renderingMode="hierarchical">
                                                                             <hierarchicalColors>
                                                                                 <color name="CustomBlack"/>
                                                                                 <color name="CustomWhite"/>
-                                                                                <color name="CustomBlack"/>
+                                                                                <color name="CustomWhite"/>
                                                                             </hierarchicalColors>
                                                                         </imageReference>
                                                                     </imageView>
@@ -140,7 +148,7 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <connections>
-                                                                            <action selector="blockUserButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ApO-17-T9e"/>
+                                                                            <action selector="settingsButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="TKt-nn-FGX"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -175,12 +183,13 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="OdU-2w-JUY" secondAttribute="trailing" id="Fn3-ai-4G5"/>
                                                     <constraint firstItem="UE6-hy-l66" firstAttribute="height" secondItem="irm-4F-XJr" secondAttribute="height" multiplier="0.75" id="Iq0-gd-veo"/>
-                                                    <constraint firstItem="OdU-2w-JUY" firstAttribute="leading" secondItem="irm-4F-XJr" secondAttribute="leading" id="MRj-bH-Oj1"/>
                                                     <constraint firstItem="UE6-hy-l66" firstAttribute="top" secondItem="irm-4F-XJr" secondAttribute="top" id="PLM-Du-SIV"/>
+                                                    <constraint firstItem="g8t-rU-knB" firstAttribute="bottom" secondItem="OdU-2w-JUY" secondAttribute="bottom" id="Qtn-mS-42Y"/>
+                                                    <constraint firstItem="OdU-2w-JUY" firstAttribute="centerX" secondItem="irm-4F-XJr" secondAttribute="centerX" id="Wuw-LZ-51g"/>
                                                     <constraint firstItem="OdU-2w-JUY" firstAttribute="centerY" secondItem="UE6-hy-l66" secondAttribute="bottom" id="YhE-Ne-u4E"/>
                                                     <constraint firstItem="UE6-hy-l66" firstAttribute="leading" secondItem="irm-4F-XJr" secondAttribute="leading" id="jpE-yQ-OP6"/>
+                                                    <constraint firstItem="g8t-rU-knB" firstAttribute="trailing" secondItem="OdU-2w-JUY" secondAttribute="trailing" id="l6o-IP-8zb"/>
                                                     <constraint firstAttribute="trailing" secondItem="UE6-hy-l66" secondAttribute="trailing" id="rdU-qX-R9e"/>
                                                 </constraints>
                                             </view>
@@ -206,25 +215,36 @@
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23 años" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cs0-Pl-VqW">
                                                                 <rect key="frame" x="0.0" y="0.0" width="354" height="49.5"/>
-                                                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="18"/>
+                                                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="16"/>
                                                                 <color key="textColor" systemColor="systemGray2Color"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valencia, Spainfsdfsdfsdfsd fsdfsdfdsf sfsdfsdf fsdfsd" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADk-rs-QbS">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valencia, Spain" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADk-rs-QbS">
                                                                 <rect key="frame" x="0.0" y="49.5" width="354" height="49.5"/>
-                                                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="18"/>
+                                                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="16"/>
                                                                 <color key="textColor" systemColor="systemGray2Color"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
                                                     </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AM6-kH-aJU">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="119"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <connections>
+                                                            <action selector="locationButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="uTb-oY-ggN"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" name="CustomBlack"/>
                                                 <constraints>
                                                     <constraint firstItem="ffy-TD-JkQ" firstAttribute="top" secondItem="goH-bO-P57" secondAttribute="top" constant="10" id="2wP-ru-eGv"/>
+                                                    <constraint firstAttribute="bottom" secondItem="AM6-kH-aJU" secondAttribute="bottom" id="KpH-zK-RwE"/>
+                                                    <constraint firstItem="AM6-kH-aJU" firstAttribute="top" secondItem="goH-bO-P57" secondAttribute="top" id="T2O-v9-QcZ"/>
                                                     <constraint firstAttribute="trailing" secondItem="ffy-TD-JkQ" secondAttribute="trailing" constant="10" id="fMb-Eh-0Fa"/>
                                                     <constraint firstAttribute="bottom" secondItem="ffy-TD-JkQ" secondAttribute="bottom" constant="10" id="hzL-a1-avS"/>
                                                     <constraint firstItem="ffy-TD-JkQ" firstAttribute="leading" secondItem="goH-bO-P57" secondAttribute="leading" constant="10" id="nRG-Uc-UWv"/>
+                                                    <constraint firstAttribute="trailing" secondItem="AM6-kH-aJU" secondAttribute="trailing" id="pvw-4v-4CF"/>
+                                                    <constraint firstItem="AM6-kH-aJU" firstAttribute="leading" secondItem="goH-bO-P57" secondAttribute="leading" id="xlH-pA-WWj"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -321,8 +341,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="animalShelterImageView" destination="g8t-rU-knB" id="ygl-z1-fpY"/>
                         <outlet property="backButtonView" destination="K9l-fj-QMf" id="tUr-fx-Bdg"/>
-                        <outlet property="basicInfoView" destination="9zx-HY-k4o" id="RJO-vH-Wxj"/>
+                        <outlet property="basicInfoView" destination="9zx-HY-k4o" id="gHE-4S-Fw0"/>
+                        <outlet property="basicInfoViewFirstLabel" destination="cs0-Pl-VqW" id="Juj-MG-WUf"/>
+                        <outlet property="basicInfoViewSecondLabel" destination="ADk-rs-QbS" id="5b6-Uh-uDd"/>
                         <outlet property="blockUserButtonView" destination="V0D-7e-vJu" id="Ogj-bz-iPx"/>
                         <outlet property="headerImageView" destination="UE6-hy-l66" id="GKi-Y0-F36"/>
                         <outlet property="profileCollectionView" destination="z2P-zY-eQN" id="ZwZ-lf-eiC"/>
@@ -342,9 +365,11 @@
         </designable>
     </designables>
     <resources>
+        <image name="AnimalShelter" width="45.5" height="43.5"/>
         <image name="BlockUser" width="500" height="500"/>
         <image name="ProfileHeaderPlaceholder" width="413.5" height="283"/>
         <image name="ProfileImagePlaceholder" width="120" height="120"/>
+        <image name="ProfileSettings" width="350" height="350"/>
         <image name="chevron.left.circle.fill" catalog="system" width="128" height="121"/>
         <namedColor name="CustomBlack">
             <color red="0.24705882352941178" green="0.24705882352941178" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

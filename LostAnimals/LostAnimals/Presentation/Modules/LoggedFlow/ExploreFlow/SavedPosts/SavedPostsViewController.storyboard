@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qRQ-2Q-GfS">
-                                <rect key="frame" x="10" y="0.0" width="394" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="cY1-C8-WgM">
                                     <size key="itemSize" width="128" height="128"/>
@@ -35,8 +35,8 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="qRQ-2Q-GfS" secondAttribute="bottom" id="HzG-Sa-Xx3"/>
                             <constraint firstItem="qRQ-2Q-GfS" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="d7i-ub-Dqi"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="qRQ-2Q-GfS" secondAttribute="trailing" constant="10" id="pW5-dg-X2u"/>
-                            <constraint firstItem="qRQ-2Q-GfS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="tcT-KO-lWZ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="qRQ-2Q-GfS" secondAttribute="trailing" id="pW5-dg-X2u"/>
+                            <constraint firstItem="qRQ-2Q-GfS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="tcT-KO-lWZ"/>
                         </constraints>
                     </view>
                     <connections>

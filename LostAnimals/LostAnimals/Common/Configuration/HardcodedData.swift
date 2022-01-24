@@ -61,7 +61,7 @@ extension HardcodedData {
     Post(postType: .found,
          animal: exampleAnimal2,
          lastTimeSeen: Date(),
-         location: Location(address: "Pueblo remoto que no tiene coordenadas", coordinates: nil),
+         location: Location(address: "Vega Baixa, 2, Ondara, Alicante, España", coordinates: Coordinates(lat: 38.82358282803209, long: 0.01773679796108817)),
          description: nil,
          author: exampleUser2,
          isSaved: false),
