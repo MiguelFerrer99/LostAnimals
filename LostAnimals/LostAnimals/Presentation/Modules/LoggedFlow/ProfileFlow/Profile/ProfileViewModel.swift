@@ -98,9 +98,7 @@ extension ProfileViewModel {
     }
     
     func didPressFirstCollectionHeaderButton() {
-        if isMyProfile {
-            
-        }
+        self.router.goToProfilePosts(user: user)
     }
     
     func didPressSecondCollectionHeaderButton() {

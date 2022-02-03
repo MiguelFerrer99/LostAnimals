@@ -24,33 +24,33 @@ final class ProfileSettingsRouter {
         }
     }
     
-    func goToEditPersonalData() {
+    func goToSelectPhotoPopup(showRemoveOption: Bool) {
+        let viewController = Container.shared.selectPhotoPopupBuilder().build(showRemoveOption: showRemoveOption, comesFrom: .profileSettings)
         DispatchQueue.main.async {
-            self.viewController?.pop()
+            self.viewController?.present(viewController: viewController, completion: nil)
         }
+    }
+    
+    func goToEditPersonalData() {
+        // TODO: Create EditPersonalData module
     }
     
     func goToEditSocialMedias() {
-        DispatchQueue.main.async {
-            self.viewController?.pop()
-        }
+        // TODO: Create EditSocialMedias module
     }
     
     func goToChangePassword() {
-        DispatchQueue.main.async {
-            self.viewController?.pop()
-        }
+        // TODO: Create ChangePassword module
     }
     
     func goToBlockedUsers() {
-        DispatchQueue.main.async {
-            self.viewController?.pop()
-        }
+        // TODO: Create BlockedUsers module
     }
     
     func goToTermsAndConditions() {
+        let viewController = Container.shared.termsAndConditionsBuilder().build()
         DispatchQueue.main.async {
-            self.viewController?.pop()
+            self.viewController?.push(viewController: viewController)
         }
     }
     

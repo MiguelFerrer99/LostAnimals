@@ -89,6 +89,10 @@ extension Container {
         return ProfileBuilder()
     }
     
+    func profilePostsBuilder() -> ProfilePostsBuilder {
+        return ProfilePostsBuilder()
+    }
+    
     func profileSettingsBuilder() -> ProfileSettingsBuilder {
         return ProfileSettingsBuilder()
     }

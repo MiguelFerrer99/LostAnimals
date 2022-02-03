@@ -87,6 +87,7 @@ public enum AnimalTypesComesFrom: String {
 public enum SelectPhotoPopupComesFrom: String {
     case editPost
     case newPost
+    case profileSettings
 }
 
 public enum BannedPopupComesFrom: String {
@@ -106,4 +107,9 @@ public enum SocialMediaType: String {
     case whatsapp
     case instagram
     case twitter
+}
+
+public enum ProfileSettingsImageType: String {
+    case header
+    case user
 }

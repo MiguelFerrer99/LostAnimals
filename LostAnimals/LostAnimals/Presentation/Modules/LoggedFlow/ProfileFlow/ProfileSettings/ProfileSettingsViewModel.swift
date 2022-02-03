@@ -7,11 +7,12 @@
 //
 
 import Foundation
+import UIKit
 
 final class ProfileSettingsViewModel {
-    
     // MARK: - Properties
     private let router: ProfileSettingsRouter
+    var selectedImageView: ProfileSettingsImageType = .user
     let me: User
     
     // MARK: - Init
@@ -38,12 +39,14 @@ extension ProfileSettingsViewModel {
         self.router.goBack()
     }
     
-    func didPressedChangeHeaderImageButton() {
-        // TODO: - Open SelectPhotoPopup
+    func didPressedChangeHeaderImageButton(headerImage: UIImage) {
+        selectedImageView = .header
+        self.router.goToSelectPhotoPopup(showRemoveOption: !headerImage.isEqualTo(image: UIImage(named: "ProfileHeaderPlaceholder")))
     }
     
-    func didPressedChangeProfileImageButton() {
-        // TODO: - Open SelectPhotoPopup
+    func didPressedChangeProfileImageButton(profileImage: UIImage) {
+        selectedImageView = .user
+        self.router.goToSelectPhotoPopup(showRemoveOption: !profileImage.isEqualTo(image: UIImage(named: "ProfileImagePlaceholder")))
     }
     
     func didPressedEditPersonalDataButton() {

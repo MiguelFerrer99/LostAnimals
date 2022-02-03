@@ -39,14 +39,10 @@ final class ProfileViewController: ViewController, UIGestureRecognizerDelegate {
         return viewModel.isMyProfile
     }
     override var hideNavigationBar: Bool {
-        return shouldHideNavigationBar
-    }
-    var shouldHideNavigationBar: Bool {
-        return profileScrollView.contentOffset.y < 20
+        return true
     }
     var viewModel: ProfileViewModel!
     let mailController = MFMailComposeViewController()
-    var blockUserBarButtonItem = UIBarButtonItem()
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -63,26 +59,8 @@ final class ProfileViewController: ViewController, UIGestureRecognizerDelegate {
     }
     
     // MARK: - Functions
-    private func setNavBarButtons() {
-        let settingsBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gearshape.fill"),
-                                                    style: .plain,
-                                                    target: self,
-                                                    action: #selector(settingsBarButtonItemPressed))
-        settingsBarButtonItem.tintColor = .customBlack
-        
-        blockUserBarButtonItem = UIBarButtonItem(image: UIImage(named: self.viewModel.isBlocked ? "UnblockUser" : "BlockUser"),
-                                                 style: .plain,
-                                                 target: self,
-                                                 action: #selector(blockUserBarButtonItemPressed))
-        blockUserBarButtonItem.tintColor = .customBlack
-        
-        self.navigationItem.rightBarButtonItems = [viewModel.isMyProfile ? settingsBarButtonItem : blockUserBarButtonItem]
-    }
-    
     private func setupUI() {
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
-        setNavBarButtons()
-        configureScrollView(profileScrollView)
         configureCollectionView(firstCollectionView)
         configureCollectionView(secondCollectionView)
         if !viewModel.isMyProfile {
@@ -113,7 +91,6 @@ final class ProfileViewController: ViewController, UIGestureRecognizerDelegate {
     private func updateBlockedUserUI() {
         UIView.animate(withDuration: 0.25) {
             self.blockUserButtonImageView.image = UIImage(named: self.viewModel.isBlocked ? "UnblockUserWhite" : "BlockUserWhite")
-            self.blockUserBarButtonItem.image = UIImage(named: self.viewModel.isBlocked ? "UnblockUser" : "BlockUser")
             self.basicInfoView.isHidden = self.viewModel.isBlocked
             self.firstStackView.isHidden = self.viewModel.isBlocked
             self.secondStackView.isHidden = self.viewModel.isBlocked
@@ -124,14 +101,6 @@ final class ProfileViewController: ViewController, UIGestureRecognizerDelegate {
         viewModel.didPressBlockUserButton { allowed in
             if allowed { updateBlockedUserUI() }
         }
-    }
-    
-    @objc private func settingsBarButtonItemPressed() {
-        viewModel.didPressSettingsButton()
-    }
-    
-    @objc private func blockUserBarButtonItemPressed() {
-        blockUser()
     }
     
     // MARK: - IBActions

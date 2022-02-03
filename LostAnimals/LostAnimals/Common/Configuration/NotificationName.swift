@@ -26,6 +26,9 @@ extension Notification.Name {
     static let RemovePhotoFromSelectPhotoPopupFromNewPost = Notification.Name("RemovePhotoFromSelectPhotoPopupFromNewPost")
     static let ChooseFromLibraryFromSelectPhotoPopupFromNewPost = Notification.Name("ChooseFromLibraryFromSelectPhotoPopupFromNewPost")
     static let TakeAPhotoFromSelectPhotoPopupFromNewPost = Notification.Name("TakeAPhotoFromSelectPhotoPopupFromNewPost")
+    static let RemovePhotoFromSelectPhotoPopupFromProfileSettings = Notification.Name("RemovePhotoFromSelectPhotoPopupFromProfileSettings")
+    static let ChooseFromLibraryFromSelectPhotoPopupFromProfileSettings = Notification.Name("ChooseFromLibraryFromSelectPhotoPopupFromProfileSettings")
+    static let TakeAPhotoFromSelectPhotoPopupFromProfileSettings = Notification.Name("TakeAPhotoFromSelectPhotoPopupFromProfileSettings")
     
     static let ShowGuestPopupFromPostOptionsPopup = Notification.Name("ShowGuestPopupFromPostOptionsPopup")
     static let ShowSuccessPopupFromPostOptionsPopup = Notification.Name("ShowSuccessPopupFromPostOptionsPopup")

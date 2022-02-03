@@ -66,7 +66,7 @@ class ViewController: UIViewController {
         navigationItem.rightBarButtonItems = navBarRightButtons
         
         let titleAttributes = [NSAttributedString.Key.foregroundColor: navigationBarTitleColor, NSAttributedString.Key.font: UIFont.nunitoSmallBold]
-        let largeTitleAttributes = [NSAttributedString.Key.font: UIFont.nunitoBigBold]
+        let largeTitleAttributes = [NSAttributedString.Key.foregroundColor: navigationBarTitleColor, NSAttributedString.Key.font: UIFont.nunitoBigBold]
         
         UINavigationBar.appearance().titleTextAttributes = titleAttributes
         UINavigationBar.appearance().largeTitleTextAttributes = largeTitleAttributes

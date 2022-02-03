@@ -105,4 +105,11 @@ final class ProfileRouter {
             self.viewController?.push(viewController: viewController)
         }
     }
+    
+    func goToProfilePosts(user: User) {
+        let viewController = Container.shared.profilePostsBuilder().build(user: user)
+        DispatchQueue.main.async {
+            self.viewController?.push(viewController: viewController)
+        }
+    }
 }
