@@ -9,22 +9,22 @@
 import UIKit
 
 class AnimalTypeTableViewCell: UITableViewCell, Reusable {
-  // MARK: - IBOutlets
-  @IBOutlet weak var animalTypeImageView: UIImageView!
-  @IBOutlet weak var animalTypeLabel: UILabel!
-  
-  // MARK: - Life cycle
-  override func awakeFromNib() {
-    super.awakeFromNib()
+    // MARK: - IBOutlets
+    @IBOutlet weak var animalTypeImageView: UIImageView!
+    @IBOutlet weak var animalTypeLabel: UILabel!
     
-    let bgView = UIView()
-    bgView.backgroundColor = .customWhite.withAlphaComponent(0.3)
-    self.selectedBackgroundView = bgView
-  }
-  
-  // MARK: - Functions
-  func display(summary: AnimalTypeTableViewCellSummary) {
-    animalTypeImageView.image = summary.animalTypeImage
-    animalTypeLabel.text = summary.animalTypeTitle
-  }
+    // MARK: - Life cycle
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        let bgView = UIView()
+        bgView.backgroundColor = .customWhite.withAlphaComponent(0.3)
+        self.selectedBackgroundView = bgView
+    }
+    
+    // MARK: - Functions
+    func display(summary: AnimalTypeTableViewCellSummary) {
+        animalTypeImageView.image = summary.animalTypeImage
+        animalTypeLabel.text = summary.animalTypeTitle
+    }
 }

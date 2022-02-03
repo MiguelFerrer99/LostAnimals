@@ -9,14 +9,14 @@
 import UIKit
 
 final class ForgotPasswordRouter {
-  // MARK: - Properties
-  private weak var viewController: ViewController?
-  
-  // MARK: - Init
-  required init(viewController: ViewController?) {
-    self.viewController = viewController
-  }
-  
-  // MARK: - Functions
-  
+    // MARK: - Properties
+    private weak var viewController: ViewController?
+    
+    // MARK: - Init
+    required init(viewController: ViewController?) {
+        self.viewController = viewController
+    }
+    
+    // MARK: - Functions
+    
 }

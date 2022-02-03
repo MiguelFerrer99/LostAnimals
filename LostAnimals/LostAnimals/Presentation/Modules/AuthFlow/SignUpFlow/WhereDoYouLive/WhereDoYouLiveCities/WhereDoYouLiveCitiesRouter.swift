@@ -9,19 +9,19 @@
 import UIKit
 
 final class WhereDoYouLiveCitiesRouter {
-  // MARK: - Properties
-  private weak var viewController: ViewController?
-  
-  // MARK: - Init
-  required init(viewController: ViewController?) {
-    self.viewController = viewController
-  }
-  
-  // MARK: - Functions
-  func goToSignUp() {
-    guard let viewController = self.viewController?.navigationController?.viewControllers[1] as? SignUpViewController else { return }
-    DispatchQueue.main.async {
-      self.viewController?.navigationController?.popToViewController(viewController, animated: true)
+    // MARK: - Properties
+    private weak var viewController: ViewController?
+    
+    // MARK: - Init
+    required init(viewController: ViewController?) {
+        self.viewController = viewController
     }
-  }
+    
+    // MARK: - Functions
+    func goToSignUp() {
+        guard let viewController = self.viewController?.navigationController?.viewControllers[1] as? SignUpViewController else { return }
+        DispatchQueue.main.async {
+            self.viewController?.navigationController?.popToViewController(viewController, animated: true)
+        }
+    }
 }

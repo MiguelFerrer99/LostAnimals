@@ -10,34 +10,34 @@ import Foundation
 import UIKit
 
 final class PostImagesViewModel {
-  
-  // MARK: - Properties
-  private let router: PostImagesRouter
-  let postImages: [UIImage?]
-  let indexPostImage: Int
-  
-  // MARK: - Init
-  required init(router: PostImagesRouter, postImages: [UIImage?], indexPostImage: Int) {
-    self.router = router
-    self.postImages = postImages
-    self.indexPostImage = indexPostImage
-  }
+    
+    // MARK: - Properties
+    private let router: PostImagesRouter
+    let postImages: [UIImage?]
+    let indexPostImage: Int
+    
+    // MARK: - Init
+    required init(router: PostImagesRouter, postImages: [UIImage?], indexPostImage: Int) {
+        self.router = router
+        self.postImages = postImages
+        self.indexPostImage = indexPostImage
+    }
 }
 
 // MARK: - Life cycle
 extension PostImagesViewModel {
-  func viewReady() {
-    // Called when view is loaded and ready
-  }
-  
-  func viewDidAppear() {
-    // Called when view has appeared
-  }
+    func viewReady() {
+        // Called when view is loaded and ready
+    }
+    
+    func viewDidAppear() {
+        // Called when view has appeared
+    }
 }
 
 // MARK: - Functions
 extension PostImagesViewModel {
-  func didPressDismissButton() {
-    self.router.dismissPostImages()
-  }
+    func didPressDismissButton() {
+        self.router.dismissPostImages()
+    }
 }

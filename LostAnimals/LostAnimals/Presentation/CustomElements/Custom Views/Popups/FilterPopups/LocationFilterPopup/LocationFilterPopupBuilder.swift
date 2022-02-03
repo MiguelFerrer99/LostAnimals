@@ -9,16 +9,16 @@
 import UIKit
 
 final class LocationFilterPopupBuilder {
-  
-  func build() -> LocationFilterPopupViewController {
     
-    let viewController = UIViewController.instantiate(viewController: LocationFilterPopupViewController.self)
-    
-    let router = LocationFilterPopupRouter(viewController: viewController)
-    let viewModel = LocationFilterPopupViewModel(router: router)
-    
-    viewController.viewModel = viewModel
-    
-    return viewController
-  }
+    func build() -> LocationFilterPopupViewController {
+        
+        let viewController = UIViewController.instantiate(viewController: LocationFilterPopupViewController.self)
+        
+        let router = LocationFilterPopupRouter(viewController: viewController)
+        let viewModel = LocationFilterPopupViewModel(router: router)
+        
+        viewController.viewModel = viewModel
+        
+        return viewController
+    }
 }

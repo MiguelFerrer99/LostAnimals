@@ -9,39 +9,39 @@
 import Foundation
 
 final class StartupViewModel {
-  
-  // MARK: - Properties
-  private let router: StartupRouter
-  
-  // MARK: - Init
-  required init(router: StartupRouter) {
-    self.router = router
-  }
+    
+    // MARK: - Properties
+    private let router: StartupRouter
+    
+    // MARK: - Init
+    required init(router: StartupRouter) {
+        self.router = router
+    }
 }
 
 // MARK: - Life cycle
 extension StartupViewModel {
-  func viewReady() {}
-  
-  func viewDidAppear() {}
+    func viewReady() {}
+    
+    func viewDidAppear() {}
 }
 
 // MARK: - Functions
 extension StartupViewModel {
-  func didPressLoginButton() {
-    self.router.goToLogin()
-  }
-  
-  func didPressSignupButton() {
-    self.router.gotoSignup()
-  }
-  
-  func didPressContinueAsGuestButton() {
-    let onboardingDone = Cache.get(boolFor: .onboardingDone)
-    if onboardingDone {
-      self.router.changeRootToTabBar()
-    } else {
-      self.router.goToOnboarding()
+    func didPressLoginButton() {
+        self.router.goToLogin()
     }
-  }
+    
+    func didPressSignupButton() {
+        self.router.gotoSignup()
+    }
+    
+    func didPressContinueAsGuestButton() {
+        let onboardingDone = Cache.get(boolFor: .onboardingDone)
+        if onboardingDone {
+            self.router.changeRootToTabBar()
+        } else {
+            self.router.goToOnboarding()
+        }
+    }
 }

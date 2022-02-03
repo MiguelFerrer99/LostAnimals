@@ -9,62 +9,62 @@
 import UIKit
 
 final class SelectPhotoPopupViewController: ViewController {
-  // MARK: - IBOutlets
-  @IBOutlet weak var backgroundView: UIView!
-  @IBOutlet weak var removePhotoOptionView: UIView!
-  
-  // MARK: - Properties
-  var viewModel: SelectPhotoPopupViewModel!
-  
-  // MARK: - Life cycle
-  override func viewDidLoad() {
-    super.viewDidLoad()
+    // MARK: - IBOutlets
+    @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var removePhotoOptionView: UIView!
     
-    setupUI()
-    viewModel.viewReady()
-  }
-  
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
+    // MARK: - Properties
+    var viewModel: SelectPhotoPopupViewModel!
     
-    viewModel.viewDidAppear()
-  }
-  
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    
-    UIView.animate(withDuration: 0.25) {
-      self.backgroundView.alpha = 0.6
+    // MARK: - Life cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupUI()
+        viewModel.viewReady()
     }
-  }
-  
-  override func viewWillDisappear(_ animated: Bool) {
-    super.viewWillDisappear(animated)
     
-    UIView.animate(withDuration: 0.25) {
-      self.backgroundView.alpha = 0
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        viewModel.viewDidAppear()
     }
-  }
-  
-  // MARK: - Functions
-  private func setupUI() {
-    removePhotoOptionView.isHidden = !viewModel.showRemoveOption
-  }
-  
-  // MARK: - IBActions
-  @IBAction func dismissButtonPressed(_ sender: UIButton) {
-    viewModel.didPressDismissButton()
-  }
-  
-  @IBAction func removePhotoButtonPressed(_ sender: UIButton) {
-    viewModel.didPressRemovePhotoButton()
-  }
-  
-  @IBAction func chooseFromLibraryButtonPressed(_ sender: UIButton) {
-    viewModel.didPressChooseFromLibraryButton()
-  }
-  
-  @IBAction func takeAPhotoButtonPressed(_ sender: UIButton) {
-    viewModel.didPressTakeAPhotoButton()
-  }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        UIView.animate(withDuration: 0.25) {
+            self.backgroundView.alpha = 0.6
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        UIView.animate(withDuration: 0.25) {
+            self.backgroundView.alpha = 0
+        }
+    }
+    
+    // MARK: - Functions
+    private func setupUI() {
+        removePhotoOptionView.isHidden = !viewModel.showRemoveOption
+    }
+    
+    // MARK: - IBActions
+    @IBAction func dismissButtonPressed(_ sender: UIButton) {
+        viewModel.didPressDismissButton()
+    }
+    
+    @IBAction func removePhotoButtonPressed(_ sender: UIButton) {
+        viewModel.didPressRemovePhotoButton()
+    }
+    
+    @IBAction func chooseFromLibraryButtonPressed(_ sender: UIButton) {
+        viewModel.didPressChooseFromLibraryButton()
+    }
+    
+    @IBAction func takeAPhotoButtonPressed(_ sender: UIButton) {
+        viewModel.didPressTakeAPhotoButton()
+    }
 }

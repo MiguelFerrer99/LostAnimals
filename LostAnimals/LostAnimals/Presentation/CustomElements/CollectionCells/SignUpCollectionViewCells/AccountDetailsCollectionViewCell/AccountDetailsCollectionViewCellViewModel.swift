@@ -9,21 +9,21 @@
 import UIKit
 
 class AccountDetailsCollectionViewCellViewModel: ViewModel {
-  // MARK: - Properties
-  var numberOfTextFields = 3
-  var editedTextFields = [CustomTextField]()
-  
-  // MARK: - Init
-  init() {}
-  
-  // MARK: - Functions
-  func textFieldsHaveErrors() -> Bool {
-    var haveErrors = false
-    editedTextFields.forEach { editedTextField in
-      if editedTextField.hasError && !haveErrors {
-        haveErrors = true
-      }
+    // MARK: - Properties
+    var numberOfTextFields = 3
+    var editedTextFields = [CustomTextField]()
+    
+    // MARK: - Init
+    init() {}
+    
+    // MARK: - Functions
+    func textFieldsHaveErrors() -> Bool {
+        var haveErrors = false
+        editedTextFields.forEach { editedTextField in
+            if editedTextField.hasError && !haveErrors {
+                haveErrors = true
+            }
+        }
+        return haveErrors
     }
-    return haveErrors
-  }
 }

@@ -10,5 +10,5 @@ import UIKit
 import MapKit
 
 struct AddressTableViewCellSummary {
-  let searchResult: MKLocalSearchCompletion
+    let searchResult: MKLocalSearchCompletion
 }

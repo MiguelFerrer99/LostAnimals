@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 
 struct Post {
-  let postType: PostType
-  let animal: Animal
-  let lastTimeSeen: Date?
-  let location: Location?
-  let description: String?
-  let author: User
-  let isSaved: Bool
+    let postType: PostType
+    let animal: Animal
+    let lastTimeSeen: Date?
+    let location: Location?
+    let description: String?
+    let author: User
+    let isSaved: Bool
 }

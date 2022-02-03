@@ -9,18 +9,18 @@
 import UIKit
 
 final class DateFilterPopupRouter {
-  // MARK: - Properties
-  private weak var viewController: UIViewController?
-  
-  // MARK: - Init
-  required init(viewController: UIViewController?) {
-    self.viewController = viewController
-  }
-  
-  // MARK: - Functions
-  func dismissDateFilterPopup() {
-    DispatchQueue.main.async {
-      self.viewController?.dismissCurrentView(completion: nil)
+    // MARK: - Properties
+    private weak var viewController: UIViewController?
+    
+    // MARK: - Init
+    required init(viewController: UIViewController?) {
+        self.viewController = viewController
     }
-  }
+    
+    // MARK: - Functions
+    func dismissDateFilterPopup() {
+        DispatchQueue.main.async {
+            self.viewController?.dismissCurrentView(completion: nil)
+        }
+    }
 }

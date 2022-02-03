@@ -9,16 +9,16 @@
 import UIKit
 
 final class PostImagesRouter {
-  // MARK: - Properties
-  private weak var viewController: ViewController?
-  
-  // MARK: - Init
-  required init(viewController: ViewController?) {
-    self.viewController = viewController
-  }
-  
-  // MARK: - Functions
-  func dismissPostImages() {
-    self.viewController?.dismissCurrentView(completion: nil)
-  }
+    // MARK: - Properties
+    private weak var viewController: ViewController?
+    
+    // MARK: - Init
+    required init(viewController: ViewController?) {
+        self.viewController = viewController
+    }
+    
+    // MARK: - Functions
+    func dismissPostImages() {
+        self.viewController?.dismissCurrentView(completion: nil)
+    }
 }

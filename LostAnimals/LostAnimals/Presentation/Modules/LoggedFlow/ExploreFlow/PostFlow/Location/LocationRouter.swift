@@ -9,13 +9,13 @@
 import UIKit
 
 final class LocationRouter {
-  // MARK: - Properties
-  private weak var viewController: ViewController?
-  
-  // MARK: - Init
-  required init(viewController: ViewController?) {
-    self.viewController = viewController
-  }
-  
-  // MARK: - Functions
+    // MARK: - Properties
+    private weak var viewController: ViewController?
+    
+    // MARK: - Init
+    required init(viewController: ViewController?) {
+        self.viewController = viewController
+    }
+    
+    // MARK: - Functions
 }

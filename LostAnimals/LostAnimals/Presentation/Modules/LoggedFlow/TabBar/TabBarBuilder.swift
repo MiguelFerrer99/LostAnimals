@@ -9,16 +9,16 @@
 import UIKit
 
 final class TabBarBuilder {
-  
-  func build() -> TabBarViewController {
     
-    let viewController = UIViewController.instantiate(viewController: TabBarViewController.self)
-    
-    let router = TabBarRouter(viewController: viewController)
-    let viewModel = TabBarViewModel(router: router)
-    
-    viewController.viewModel = viewModel
-    
-    return viewController
-  }
+    func build() -> TabBarViewController {
+        
+        let viewController = UIViewController.instantiate(viewController: TabBarViewController.self)
+        
+        let router = TabBarRouter(viewController: viewController)
+        let viewModel = TabBarViewModel(router: router)
+        
+        viewController.viewModel = viewModel
+        
+        return viewController
+    }
 }

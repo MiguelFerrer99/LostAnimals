@@ -9,20 +9,20 @@
 import UIKit
 
 final class ErrorPopupRouter {
-  // MARK: - Properties
-  private weak var viewController: ViewController?
-  
-  // MARK: - Init
-  required init(viewController: ViewController?) {
-    self.viewController = viewController
-  }
-  
-  // MARK: - Functions
-  func dismissErrorPopup(action: ()? = nil) {
-    DispatchQueue.main.async {
-      self.viewController?.dismissCurrentView(completion: {
-        if let action = action { action }
-      })
+    // MARK: - Properties
+    private weak var viewController: ViewController?
+    
+    // MARK: - Init
+    required init(viewController: ViewController?) {
+        self.viewController = viewController
     }
-  }
+    
+    // MARK: - Functions
+    func dismissErrorPopup(action: ()? = nil) {
+        DispatchQueue.main.async {
+            self.viewController?.dismissCurrentView(completion: {
+                if let action = action { action }
+            })
+        }
+    }
 }

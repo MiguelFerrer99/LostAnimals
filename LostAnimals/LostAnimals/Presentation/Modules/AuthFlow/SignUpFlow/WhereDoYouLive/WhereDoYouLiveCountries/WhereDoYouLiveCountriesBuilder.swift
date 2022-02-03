@@ -9,17 +9,17 @@
 import UIKit
 
 final class WhereDoYouLiveCountriesBuilder {
-  
-  func build(comesFrom: WhereDoYouLiveComesFrom) -> WhereDoYouLiveCountriesViewController {
     
-    let viewController = UIViewController.instantiate(viewController: WhereDoYouLiveCountriesViewController.self)
-    
-    let router = WhereDoYouLiveCountriesRouter(viewController: viewController)
+    func build(comesFrom: WhereDoYouLiveComesFrom) -> WhereDoYouLiveCountriesViewController {
         
-    let viewModel = WhereDoYouLiveCountriesViewModel(router: router, comesFrom: comesFrom)
-    
-    viewController.viewModel = viewModel
-    
-    return viewController
-  }
+        let viewController = UIViewController.instantiate(viewController: WhereDoYouLiveCountriesViewController.self)
+        
+        let router = WhereDoYouLiveCountriesRouter(viewController: viewController)
+        
+        let viewModel = WhereDoYouLiveCountriesViewModel(router: router, comesFrom: comesFrom)
+        
+        viewController.viewModel = viewModel
+        
+        return viewController
+    }
 }

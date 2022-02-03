@@ -9,32 +9,32 @@
 import UIKit
 
 final class TermsAndConditionsViewController: ViewController {
-  
-  // MARK: - IBOutlets
-  @IBOutlet weak var termsAndConditionsTableView: UITableView!
-  
-  // MARK: - Properties
-  override var navBarTitle: String {
-    return "Terms and Conditions"
-  }
-  var viewModel: TermsAndConditionsViewModel!
-  
-  // MARK: - Life cycle
-  override func viewDidLoad() {
-    super.viewDidLoad()
     
-    setupUI()
-    viewModel.viewReady()
-  }
-  
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
+    // MARK: - IBOutlets
+    @IBOutlet weak var termsAndConditionsTableView: UITableView!
     
-    viewModel.viewDidAppear()
-  }
-  
-  // MARK: - Functions
-  private func setupUI() {
-    configureTableView(termsAndConditionsTableView)
-  }
+    // MARK: - Properties
+    override var navBarTitle: String {
+        return "Terms and Conditions"
+    }
+    var viewModel: TermsAndConditionsViewModel!
+    
+    // MARK: - Life cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupUI()
+        viewModel.viewReady()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        viewModel.viewDidAppear()
+    }
+    
+    // MARK: - Functions
+    private func setupUI() {
+        configureTableView(termsAndConditionsTableView)
+    }
 }

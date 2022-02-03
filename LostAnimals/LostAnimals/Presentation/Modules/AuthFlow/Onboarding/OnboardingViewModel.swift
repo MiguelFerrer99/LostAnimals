@@ -9,33 +9,33 @@
 import UIKit
 
 final class OnboardingViewModel {
-  
-  // MARK: - Properties
-  private let router: OnboardingRouter
-  var currentOnboardingStep: OnboardingStep = .share
-  
-  // MARK: - Init
-  required init(router: OnboardingRouter) {
-    self.router = router
-  }
-  
+    
+    // MARK: - Properties
+    private let router: OnboardingRouter
+    var currentOnboardingStep: OnboardingStep = .share
+    
+    // MARK: - Init
+    required init(router: OnboardingRouter) {
+        self.router = router
+    }
+    
 }
 
 // MARK: - Life cycle
 extension OnboardingViewModel {
-  func viewReady() {
-    // Called when view is loaded and ready
-  }
-  
-  func viewDidAppear() {
+    func viewReady() {
+        // Called when view is loaded and ready
+    }
     
-  }
+    func viewDidAppear() {
+        
+    }
 }
 
 // MARK: - Functions
 extension OnboardingViewModel {
-  func didPressFinishOnboarding() {
-    Cache.set(.onboardingDone, true)
-    self.router.changeRootToTabBar()
-  }
+    func didPressFinishOnboarding() {
+        Cache.set(.onboardingDone, true)
+        self.router.changeRootToTabBar()
+    }
 }

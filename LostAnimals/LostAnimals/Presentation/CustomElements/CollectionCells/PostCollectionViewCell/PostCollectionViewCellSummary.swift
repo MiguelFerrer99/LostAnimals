@@ -10,8 +10,9 @@ import Foundation
 import UIKit
 
 struct PostCollectionViewCellSummary {
-  let postType: PostType
-  let animal: Animal
-  let postImage: UIImage?
-  let index: Int
+    let postType: PostType
+    let animal: Animal
+    let postImage: UIImage?
+    let leadingPadding: CGFloat
+    let trailingPadding: CGFloat
 }

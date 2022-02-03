@@ -9,45 +9,45 @@
 import UIKit
 
 final class EditPostRouter {
-  // MARK: - Properties
-  private weak var viewController: ViewController?
-  
-  // MARK: - Init
-  required init(viewController: ViewController?) {
-    self.viewController = viewController
-  }
-  
-  // MARK: - Functions
-  func goBack() {
-    self.viewController?.pop()
-  }
-  
-  func goBack2Times() {
-    guard let viewControllers = self.viewController?.navigationController?.viewControllers else { return }
-    let viewController = viewControllers[viewControllers.count - 3]
-    DispatchQueue.main.async {
-      self.viewController?.navigationController?.popToViewController(viewController, animated: true)
+    // MARK: - Properties
+    private weak var viewController: ViewController?
+    
+    // MARK: - Init
+    required init(viewController: ViewController?) {
+        self.viewController = viewController
     }
-  }
-  
-  func goToSelectPhotoPopup(showRemoveOption: Bool) {
-    let viewController = Container.shared.selectPhotoPopupBuilder().build(showRemoveOption: showRemoveOption, comesFrom: .editPost)
-    DispatchQueue.main.async {
-      self.viewController?.present(viewController: viewController, completion: nil)
+    
+    // MARK: - Functions
+    func goBack() {
+        self.viewController?.pop()
     }
-  }
-  
-  func goToAnimalTypes(selectedAnimalType: AnimalType) {
-    let viewController = Container.shared.animalTypesBuilder().build(comesFrom: .editPost)
-    DispatchQueue.main.async {
-      self.viewController?.push(viewController: viewController)
+    
+    func goBack2Times() {
+        guard let viewControllers = self.viewController?.navigationController?.viewControllers else { return }
+        let viewController = viewControllers[viewControllers.count - 3]
+        DispatchQueue.main.async {
+            self.viewController?.navigationController?.popToViewController(viewController, animated: true)
+        }
     }
-  }
-  
-  func goToWhereCanWeFindYou() {
-    let viewController = Container.shared.whereCanWeFindYou().build(comesFrom: .editPost)
-    DispatchQueue.main.async {
-      self.viewController?.push(viewController: viewController)
+    
+    func goToSelectPhotoPopup(showRemoveOption: Bool) {
+        let viewController = Container.shared.selectPhotoPopupBuilder().build(showRemoveOption: showRemoveOption, comesFrom: .editPost)
+        DispatchQueue.main.async {
+            self.viewController?.present(viewController: viewController, completion: nil)
+        }
     }
-  }
+    
+    func goToAnimalTypes(selectedAnimalType: AnimalType) {
+        let viewController = Container.shared.animalTypesBuilder().build(comesFrom: .editPost)
+        DispatchQueue.main.async {
+            self.viewController?.push(viewController: viewController)
+        }
+    }
+    
+    func goToWhereCanWeFindYou() {
+        let viewController = Container.shared.whereCanWeFindYou().build(comesFrom: .editPost)
+        DispatchQueue.main.async {
+            self.viewController?.push(viewController: viewController)
+        }
+    }
 }

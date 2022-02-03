@@ -9,34 +9,34 @@
 import Foundation
 
 extension SignUpViewController: SignUpStepsDelegate {
-  // MARK: - SignUpStepsDelegate
-  func moveToNextSignUpStep() {
-    moveToNextStep()
-  }
-  
-  func moveToPreviousSignUpStep() {
-    moveToPreviousStep()
-  }
-  
-  func goToWhereDoYouLiveCountries(comesFrom: WhereDoYouLiveComesFrom) {
-    goToWhereDoYouLive(comesFrom: comesFrom)
-  }
-  
-  func goToWhereCanWeFindYou() {
-    goToWhereCanWeFindYouAddress()
-  }
-  
-  func goToTermsAndConditions() {
-    goToTermsAndConditionsVC()
-  }
-  
-  func updateSignUpUserInteraction(isUserInteractionEnabled: Bool) {
-    navigationController?.navigationBar.isUserInteractionEnabled = isUserInteractionEnabled
-    navigationController?.interactivePopGestureRecognizer?.isEnabled = isUserInteractionEnabled
-  }
-  
-  func sendSignUpStep1Data(isAnimalShelter: Bool, firstname: String? = nil, lastname: String? = nil, animalShelterName: String? = nil, birthdate: Date? = nil, location: Location) {
-    print("""
+    // MARK: - SignUpStepsDelegate
+    func moveToNextSignUpStep() {
+        moveToNextStep()
+    }
+    
+    func moveToPreviousSignUpStep() {
+        moveToPreviousStep()
+    }
+    
+    func goToWhereDoYouLiveCountries(comesFrom: WhereDoYouLiveComesFrom) {
+        goToWhereDoYouLive(comesFrom: comesFrom)
+    }
+    
+    func goToWhereCanWeFindYou() {
+        goToWhereCanWeFindYouAddress()
+    }
+    
+    func goToTermsAndConditions() {
+        goToTermsAndConditionsVC()
+    }
+    
+    func updateSignUpUserInteraction(isUserInteractionEnabled: Bool) {
+        navigationController?.navigationBar.isUserInteractionEnabled = isUserInteractionEnabled
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = isUserInteractionEnabled
+    }
+    
+    func sendSignUpStep1Data(isAnimalShelter: Bool, firstname: String? = nil, lastname: String? = nil, animalShelterName: String? = nil, birthdate: Date? = nil, location: Location) {
+        print("""
           SIGNUP STEP1 DATA RECEIVED:
             isAnimalShelter: \(isAnimalShelter),
             firstname: \(firstname == nil || (firstname?.isEmpty ?? true) ? "-" : firstname ?? "-"),
@@ -48,23 +48,23 @@ extension SignUpViewController: SignUpStepsDelegate {
               lat  = \(location.coordinates?.lat ?? 0)
               long = \(location.coordinates?.long ?? 0)
           """)
-  }
-  
-  func sendSignUpStep2Data(mail: String, password: String) {
-    print("""
+    }
+    
+    func sendSignUpStep2Data(mail: String, password: String) {
+        print("""
           SIGNUP STEP2 DATA RECEIVED:
             mail: \(mail),
             password: \(password)
           """)
-  }
-  
-  func sendSignUpStep3Data(phonePrefix: String, phone: String, instagram: String? = nil, twitter: String? = nil) {
-    print("""
+    }
+    
+    func sendSignUpStep3Data(fullPhone: String, whatsapp: String? = nil, instagram: String? = nil, twitter: String? = nil) {
+        print("""
           SIGNUP STEP3 DATA RECEIVED:
-            phonePrefix: \(phonePrefix),
-            phone: \(phone),
+            fullPhone: \(fullPhone),
+            whatsapp: \(whatsapp ?? "-"),
             instagram: \(instagram ?? "-"),
             twitter: \(twitter ?? "-")
           """)
-  }
+    }
 }

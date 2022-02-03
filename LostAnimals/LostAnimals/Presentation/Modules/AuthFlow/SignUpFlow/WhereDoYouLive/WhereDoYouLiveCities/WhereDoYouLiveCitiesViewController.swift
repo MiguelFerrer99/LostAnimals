@@ -9,37 +9,37 @@
 import UIKit
 
 final class WhereDoYouLiveCitiesViewController: ViewController {
-
-  // MARK: - IBOutlets
-  @IBOutlet weak var citiesTableView: UITableView!
-  
-  // MARK: - Properties
-  override var navBarTitle: String {
-    return "Select your city"
-  }
-  private var searchController = UISearchController(searchResultsController: nil)
-  var viewModel: WhereDoYouLiveCitiesViewModel!
-  
-  // MARK: - Life cycle
-  override func viewDidLoad() {
-    super.viewDidLoad()
     
-    viewModel.viewReady()
-    setupUI()
-  }
-  
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
+    // MARK: - IBOutlets
+    @IBOutlet weak var citiesTableView: UITableView!
     
-    viewModel.viewDidAppear()
-    DispatchQueue.main.async {
-      self.searchController.searchBar.becomeFirstResponder()
+    // MARK: - Properties
+    override var navBarTitle: String {
+        return "Select your city"
     }
-  }
-  
-  // MARK: - Functions
-  private func setupUI() {
-    configureSearchController(searchController)
-    configureTableview(citiesTableView)
-  }
+    private var searchController = UISearchController(searchResultsController: nil)
+    var viewModel: WhereDoYouLiveCitiesViewModel!
+    
+    // MARK: - Life cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        viewModel.viewReady()
+        setupUI()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        viewModel.viewDidAppear()
+        DispatchQueue.main.async {
+            self.searchController.searchBar.becomeFirstResponder()
+        }
+    }
+    
+    // MARK: - Functions
+    private func setupUI() {
+        configureSearchController(searchController)
+        configureTableview(citiesTableView)
+    }
 }

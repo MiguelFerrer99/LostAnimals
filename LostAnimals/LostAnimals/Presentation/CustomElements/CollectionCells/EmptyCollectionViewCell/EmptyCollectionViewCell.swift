@@ -9,19 +9,19 @@
 import UIKit
 
 class EmptyCollectionViewCell: UICollectionViewCell, Reusable {
-  
-  // MARK: - IBOutlets
-  @IBOutlet weak var emptyImageView: UIImageView!
-  @IBOutlet weak var emptyTitleLabel: UILabel!
-  
-  // MARK: - Life cycle
-  override func awakeFromNib() {
-    super.awakeFromNib()
-  }
     
-  // MARK: - Functions
-  func display(summary: EmptyCollectionViewCellSummary) {
-    emptyImageView.image = summary.emptyImage
-    emptyTitleLabel.text = summary.emptyTitle
-  }
+    // MARK: - IBOutlets
+    @IBOutlet weak var emptyImageView: UIImageView!
+    @IBOutlet weak var emptyTitleLabel: UILabel!
+    
+    // MARK: - Life cycle
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    // MARK: - Functions
+    func display(summary: EmptyCollectionViewCellSummary) {
+        emptyImageView.image = summary.emptyImage
+        emptyTitleLabel.text = summary.emptyTitle
+    }
 }

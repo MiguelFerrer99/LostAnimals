@@ -9,71 +9,71 @@
 import UIKit
 
 class TextFieldError {
-  let localizedDescription: String
-  let checkCondition: ((String) -> Bool)
-
-  init(localizedDescription: String, checkCondition: @escaping ((String) -> Bool)) {
-    self.localizedDescription = localizedDescription
-    self.checkCondition       = checkCondition
-  }
+    let localizedDescription: String
+    let checkCondition: ((String) -> Bool)
+    
+    init(localizedDescription: String, checkCondition: @escaping ((String) -> Bool)) {
+        self.localizedDescription = localizedDescription
+        self.checkCondition       = checkCondition
+    }
 }
 
 class TextFieldErrorMinimumCharacters: TextFieldError {
-  let minCharacters: Int
-
-  init(_ minCharacters: Int) {
-    self.minCharacters = minCharacters
-
-    super.init(localizedDescription: "Minimum \(minCharacters) characters") { (value) -> Bool in
-      return value.count < minCharacters
+    let minCharacters: Int
+    
+    init(_ minCharacters: Int) {
+        self.minCharacters = minCharacters
+        
+        super.init(localizedDescription: "Minimum \(minCharacters) characters") { (value) -> Bool in
+            return value.count < minCharacters
+        }
     }
-  }
 }
 
 class TextFieldErrorEmailFormat: TextFieldError {
-  init() {
-    super.init(localizedDescription: "Invalid email format") { (value) -> Bool in
-      return !value.isValidEmail()
+    init() {
+        super.init(localizedDescription: "Invalid email format") { (value) -> Bool in
+            return !value.isValidEmail()
+        }
     }
-  }
 }
 
 class TextFieldErrorEmptyValue: TextFieldError {
-  init() {
-    super.init(localizedDescription: "Empty field") { (value) -> Bool in
-      return value.isEmpty
+    init() {
+        super.init(localizedDescription: "Empty field") { (value) -> Bool in
+            return value.isEmpty
+        }
     }
-  }
 }
 
 class TextFieldErrorPasswordFormat: TextFieldError {
-  init() {
-    super.init(localizedDescription: "Invalid password format") { (value) -> Bool in
-      return !value.isValidPassword()
+    init() {
+        super.init(localizedDescription: "Invalid password format") { (value) -> Bool in
+            return !value.isValidPassword()
+        }
     }
-  }
 }
 
 class TextFieldErrorPasswordsAreNotEqual: TextFieldError {
-  init() {
-    super.init(localizedDescription: "Passwords are not equal") { (value) -> Bool in
-      return true
+    init() {
+        super.init(localizedDescription: "Passwords are not equal") { (value) -> Bool in
+            return true
+        }
     }
-  }
 }
 
 class TextFieldErrorOnlyLettersAndSpaces: TextFieldError {
-  init() {
-    super.init(localizedDescription: "The field may contain only letters and spaces") { (value) -> Bool in
-      return !value.areOnlyLettersAndSpaces()
+    init() {
+        super.init(localizedDescription: "The field may contain only letters and spaces") { (value) -> Bool in
+            return !value.areOnlyLettersAndSpaces()
+        }
     }
-  }
 }
 
 class TextFieldErrorPhoneNumber: TextFieldError {
-  init() {
-    super.init(localizedDescription: "Invalid phone number format") { (value) -> Bool in
-      return !value.isValidPhoneNumber()
+    init() {
+        super.init(localizedDescription: "Invalid phone number format") { (value) -> Bool in
+            return !value.isValidPhoneNumber()
+        }
     }
-  }
 }

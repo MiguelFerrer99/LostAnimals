@@ -9,19 +9,19 @@
 import UIKit
 
 class TermTableViewCell: UITableViewCell, Reusable {
-  
-  // MARK: - IBOutlets
-  @IBOutlet weak var termTitle: UILabel!
-  @IBOutlet weak var termDescription: UILabel!
-  
-  // MARK: - Life cycle
-  override func awakeFromNib() {
-    super.awakeFromNib()
-  }
-  
-  // MARK: - Functions
-  func display(summary: TermTableViewCellSummary) {
-    termTitle.text = summary.title
-    termDescription.text = summary.description
-  }
+    
+    // MARK: - IBOutlets
+    @IBOutlet weak var termTitle: UILabel!
+    @IBOutlet weak var termDescription: UILabel!
+    
+    // MARK: - Life cycle
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    // MARK: - Functions
+    func display(summary: TermTableViewCellSummary) {
+        termTitle.text = summary.title
+        termDescription.text = summary.description
+    }
 }

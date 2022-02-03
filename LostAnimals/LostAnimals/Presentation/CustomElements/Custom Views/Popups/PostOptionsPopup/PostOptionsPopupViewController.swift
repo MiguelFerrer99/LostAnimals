@@ -9,64 +9,64 @@
 import UIKit
 
 final class PostOptionsPopupViewController: ViewController {
-  // MARK: - IBOutlets
-  @IBOutlet weak var backgroundView: UIView!
-  @IBOutlet weak var editPostButtonView: UIView!
-  @IBOutlet weak var reportPostButtonView: UIView!
-  
-  // MARK: - Properties
-  var viewModel: PostOptionsPopupViewModel!
-  
-  // MARK: - Life cycle
-  override func viewDidLoad() {
-    super.viewDidLoad()
+    // MARK: - IBOutlets
+    @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var editPostButtonView: UIView!
+    @IBOutlet weak var reportPostButtonView: UIView!
     
-    setupUI()
-    viewModel.viewReady()
-  }
-  
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
+    // MARK: - Properties
+    var viewModel: PostOptionsPopupViewModel!
     
-    viewModel.viewDidAppear()
-  }
-  
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    
-    UIView.animate(withDuration: 0.25) {
-      self.backgroundView.alpha = 0.6
+    // MARK: - Life cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupUI()
+        viewModel.viewReady()
     }
-  }
-  
-  override func viewWillDisappear(_ animated: Bool) {
-    super.viewWillDisappear(animated)
     
-    UIView.animate(withDuration: 0.25) {
-      self.backgroundView.alpha = 0
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        viewModel.viewDidAppear()
     }
-  }
-  
-  // MARK: - Functions
-  private func setupUI() {
-    editPostButtonView.isHidden = (viewModel.comesFrom == .explore) || (viewModel.post.author != User.shared)
-    reportPostButtonView.isHidden = viewModel.post.author == User.shared
-  }
-  
-  // MARK: - IBActions
-  @IBAction func dismissButtonPressed(_ sender: UIButton) {
-    viewModel.didPressDismissButton()
-  }
-  
-  @IBAction func editPostButtonPressed(_ sender: UIButton) {
-    viewModel.didPressEditPostButton()
-  }
-  
-  @IBAction func reportPostButtonPressed(_ sender: UIButton) {
-    viewModel.didPressReportPostButton()
-  }
-  
-  @IBAction func sharePostButtonPressed(_ sender: UIButton) {
-    viewModel.didPressSharePostButton()
-  }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        UIView.animate(withDuration: 0.25) {
+            self.backgroundView.alpha = 0.6
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        UIView.animate(withDuration: 0.25) {
+            self.backgroundView.alpha = 0
+        }
+    }
+    
+    // MARK: - Functions
+    private func setupUI() {
+        editPostButtonView.isHidden = (viewModel.comesFrom == .explore) || (viewModel.post.author != User.shared)
+        reportPostButtonView.isHidden = viewModel.post.author == User.shared
+    }
+    
+    // MARK: - IBActions
+    @IBAction func dismissButtonPressed(_ sender: UIButton) {
+        viewModel.didPressDismissButton()
+    }
+    
+    @IBAction func editPostButtonPressed(_ sender: UIButton) {
+        viewModel.didPressEditPostButton()
+    }
+    
+    @IBAction func reportPostButtonPressed(_ sender: UIButton) {
+        viewModel.didPressReportPostButton()
+    }
+    
+    @IBAction func sharePostButtonPressed(_ sender: UIButton) {
+        viewModel.didPressSharePostButton()
+    }
 }

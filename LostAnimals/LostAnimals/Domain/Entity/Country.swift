@@ -9,9 +9,9 @@
 import Foundation
 
 struct Country {
-  let nameEN: String
-  let nameES: String
-  let dialCode: String
-  let code: String
-  let cities: [String]
+    let nameEN: String
+    let nameES: String
+    let dialCode: String
+    let code: String
+    let cities: [String]
 }

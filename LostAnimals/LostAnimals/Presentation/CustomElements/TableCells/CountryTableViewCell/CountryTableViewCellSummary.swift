@@ -9,7 +9,7 @@
 import UIKit
 
 struct CountryTableViewCellSummary {
-  let countryName: String
-  let dialCode: String
-  let comesFrom: WhereDoYouLiveComesFrom
+    let countryName: String
+    let dialCode: String
+    let comesFrom: WhereDoYouLiveComesFrom
 }

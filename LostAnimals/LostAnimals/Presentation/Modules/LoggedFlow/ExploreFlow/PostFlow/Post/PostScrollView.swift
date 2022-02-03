@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 
 extension PostViewController: UIScrollViewDelegate {
-  // MARK: - Functions
-  func configureScrollView(_ scrollView: UIScrollView) {
-    scrollView.delegate = self
-  }
-  
-  // MARK: - UIScrollViewDelegate
-  func scrollViewDidScroll(_ scrollView: UIScrollView) {
-    self.navigationController?.setNavigationBarHidden(shouldHideNavigationBar, animated: true)
-  }
+    // MARK: - Functions
+    func configureScrollView(_ scrollView: UIScrollView) {
+        scrollView.delegate = self
+    }
+    
+    // MARK: - UIScrollViewDelegate
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        self.navigationController?.setNavigationBarHidden(shouldHideNavigationBar, animated: true)
+    }
 }

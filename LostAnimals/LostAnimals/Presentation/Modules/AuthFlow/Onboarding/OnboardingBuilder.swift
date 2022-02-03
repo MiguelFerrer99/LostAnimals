@@ -9,16 +9,16 @@
 import UIKit
 
 final class OnboardingBuilder {
-  
-  func build() -> OnboardingViewController {
     
-    let viewController = UIViewController.instantiate(viewController: OnboardingViewController.self)
-    
-    let router = OnboardingRouter(viewController: viewController)
-    let viewModel = OnboardingViewModel(router: router)
-    
-    viewController.viewModel = viewModel
-    
-    return viewController
-  }
+    func build() -> OnboardingViewController {
+        
+        let viewController = UIViewController.instantiate(viewController: OnboardingViewController.self)
+        
+        let router = OnboardingRouter(viewController: viewController)
+        let viewModel = OnboardingViewModel(router: router)
+        
+        viewController.viewModel = viewModel
+        
+        return viewController
+    }
 }

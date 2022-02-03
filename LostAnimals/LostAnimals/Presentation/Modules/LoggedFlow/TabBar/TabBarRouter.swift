@@ -9,28 +9,28 @@
 import UIKit
 
 final class TabBarRouter {
-  // MARK: - Properties
-  private weak var viewController: UIViewController?
-  
-  // MARK: - Init
-  required init(viewController: UIViewController?) {
-    self.viewController = viewController
-  }
-  
-  // MARK: - Functions
-  func goToExplore() -> ViewController {
-    return Container.shared.exploreBuilder().build()
-  }
-  
-  func goToNewPost() {
-    let viewController = Container.shared.newPostBuilder().build().embeddedInNavigation()
-    viewController.modalPresentationStyle = .overFullScreen
-    DispatchQueue.main.async {
-      self.viewController?.present(viewController: viewController, completion: nil)
+    // MARK: - Properties
+    private weak var viewController: UIViewController?
+    
+    // MARK: - Init
+    required init(viewController: UIViewController?) {
+        self.viewController = viewController
     }
-  }
-  
-  func goToProfile() -> ViewController {
-    return Container.shared.profileBuilder().build(user: User.shared ?? Constants.emptyUser)
-  }
+    
+    // MARK: - Functions
+    func goToExplore() -> ViewController {
+        return Container.shared.exploreBuilder().build()
+    }
+    
+    func goToNewPost() {
+        let viewController = Container.shared.newPostBuilder().build().embeddedInNavigation()
+        viewController.modalPresentationStyle = .overFullScreen
+        DispatchQueue.main.async {
+            self.viewController?.present(viewController: viewController, completion: nil)
+        }
+    }
+    
+    func goToProfile() -> ViewController {
+        return Container.shared.profileBuilder().build(user: User.shared ?? Constants.emptyUser)
+    }
 }

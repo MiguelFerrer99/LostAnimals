@@ -9,7 +9,7 @@
 import UIKit
 
 struct OnboardingCollectionViewCellSummary {
-  let title: String
-  let description: String
-  let image: UIImage
+    let title: String
+    let description: String
+    let image: UIImage
 }

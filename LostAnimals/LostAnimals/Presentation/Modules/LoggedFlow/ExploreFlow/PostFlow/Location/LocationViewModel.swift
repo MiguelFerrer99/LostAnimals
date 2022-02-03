@@ -10,43 +10,47 @@ import Foundation
 import MapKit
 
 final class LocationViewModel {
-  
-  // MARK: - Properties
-  private let router: LocationRouter
-  let coordinates: Coordinates
-  let animalName: String?
-  let userFirstName: String?
-  
-  // MARK: - Init
-  required init(router: LocationRouter, coordinates: Coordinates, animalName: String? = nil, userFirstName: String? = nil) {
-    self.router = router
-    self.coordinates = coordinates
-    self.animalName = animalName
-    self.userFirstName = userFirstName
-  }
+    
+    // MARK: - Properties
+    private let router: LocationRouter
+    let coordinates: Coordinates
+    let animal: Animal?
+    let userFirstName: String?
+    
+    // MARK: - Init
+    required init(router: LocationRouter, coordinates: Coordinates, animal: Animal? = nil, userFirstName: String? = nil) {
+        self.router = router
+        self.coordinates = coordinates
+        self.animal = animal
+        self.userFirstName = userFirstName
+    }
 }
 
 // MARK: - Life cycle
 extension LocationViewModel {
-  func viewReady() {
-    // Called when view is loaded and ready
-  }
-  
-  func viewDidAppear() {
-    // Called when view has appeared
-  }
+    func viewReady() {
+        // Called when view is loaded and ready
+    }
+    
+    func viewDidAppear() {
+        // Called when view has appeared
+    }
 }
 
 // MARK: - Functions
 extension LocationViewModel {
-  func openLocationInMaps() {
-    let coordinate = CLLocationCoordinate2DMake(coordinates.lat, coordinates.long)
-    let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary: nil))
-    if let animalName = animalName {
-      mapItem.name = animalName
-    } else if let userFirstName = userFirstName {
-      mapItem.name = userFirstName
+    func openLocationInMaps() {
+        let coordinate = CLLocationCoordinate2DMake(coordinates.lat, coordinates.long)
+        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary: nil))
+        if let animal = animal {
+            if let animalName = animal.name {
+                mapItem.name = animalName
+            } else {
+                mapItem.name = "Found animal"
+            }
+        } else if let userFirstName = userFirstName {
+            mapItem.name = userFirstName
+        }
+        mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving])
     }
-    mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving])
-  }
 }

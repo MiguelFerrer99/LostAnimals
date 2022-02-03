@@ -9,25 +9,25 @@
 import Foundation
 
 final class TermsAndConditionsViewModel {
-  
-  // MARK: - Properties
-  private let router: TermsAndConditionsRouter
-  
-  // MARK: - Init
-  required init(router: TermsAndConditionsRouter) {
-    self.router = router
-  }
+    
+    // MARK: - Properties
+    private let router: TermsAndConditionsRouter
+    
+    // MARK: - Init
+    required init(router: TermsAndConditionsRouter) {
+        self.router = router
+    }
 }
 
 // MARK: - Life cycle
 extension TermsAndConditionsViewModel {
-  func viewReady() {
-    // Called when view is loaded and ready
-  }
-  
-  func viewDidAppear() {
+    func viewReady() {
+        // Called when view is loaded and ready
+    }
     
-  }
+    func viewDidAppear() {
+        
+    }
 }
 
 // MARK: - Functions

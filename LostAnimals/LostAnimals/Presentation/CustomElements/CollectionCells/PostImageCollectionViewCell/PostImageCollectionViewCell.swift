@@ -9,17 +9,17 @@
 import UIKit
 
 class PostImageCollectionViewCell: UICollectionViewCell, Reusable {
-  // MARK: - IBOutlets
-  @IBOutlet weak var postImageView: UIImageView!
-  
-  // MARK: - Life cycle
-  override func awakeFromNib() {
-    super.awakeFromNib()
-  }
-  
-  // MARK: - Functions
-  func display(summary: PostImageCollectionViewCellSummary) {
-    postImageView.image = summary.postImage
-    postImageView.contentMode = summary.aspectImage
-  }
+    // MARK: - IBOutlets
+    @IBOutlet weak var postImageView: UIImageView!
+    
+    // MARK: - Life cycle
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    // MARK: - Functions
+    func display(summary: PostImageCollectionViewCellSummary) {
+        postImageView.image = summary.postImage
+        postImageView.contentMode = summary.aspectImage
+    }
 }

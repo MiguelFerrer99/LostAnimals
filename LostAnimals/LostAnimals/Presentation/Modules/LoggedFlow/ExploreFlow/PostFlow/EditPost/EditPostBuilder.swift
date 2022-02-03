@@ -9,16 +9,16 @@
 import UIKit
 
 final class EditPostBuilder {
-  
-  func build(post: Post) -> EditPostViewController {
     
-    let viewController = UIViewController.instantiate(viewController: EditPostViewController.self)
-    
-    let router = EditPostRouter(viewController: viewController)
-    let viewModel = EditPostViewModel(router: router, post: post)
-    
-    viewController.viewModel = viewModel
-    
-    return viewController
-  }
+    func build(post: Post) -> EditPostViewController {
+        
+        let viewController = UIViewController.instantiate(viewController: EditPostViewController.self)
+        
+        let router = EditPostRouter(viewController: viewController)
+        let viewModel = EditPostViewModel(router: router, post: post)
+        
+        viewController.viewModel = viewModel
+        
+        return viewController
+    }
 }

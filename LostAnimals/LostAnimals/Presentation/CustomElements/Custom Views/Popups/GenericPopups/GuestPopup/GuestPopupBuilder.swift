@@ -9,16 +9,16 @@
 import UIKit
 
 final class GuestPopupBuilder {
-  
-  func build() -> GuestPopupViewController {
     
-    let viewController = UIViewController.instantiate(viewController: GuestPopupViewController.self)
-    
-    let router = GuestPopupRouter(viewController: viewController)
-    let viewModel = GuestPopupViewModel(router: router)
-    
-    viewController.viewModel = viewModel
-    
-    return viewController
-  }
+    func build() -> GuestPopupViewController {
+        
+        let viewController = UIViewController.instantiate(viewController: GuestPopupViewController.self)
+        
+        let router = GuestPopupRouter(viewController: viewController)
+        let viewModel = GuestPopupViewModel(router: router)
+        
+        viewController.viewModel = viewModel
+        
+        return viewController
+    }
 }

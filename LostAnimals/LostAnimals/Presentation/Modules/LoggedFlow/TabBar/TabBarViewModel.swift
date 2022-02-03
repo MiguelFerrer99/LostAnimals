@@ -10,39 +10,39 @@ import Foundation
 import UIKit
 
 final class TabBarViewModel {
-  
-  // MARK: - Properties
-  private let router: TabBarRouter
-  
-  // MARK: - Init
-  required init(router: TabBarRouter) {
-    self.router = router
-  }
-  
+    
+    // MARK: - Properties
+    private let router: TabBarRouter
+    
+    // MARK: - Init
+    required init(router: TabBarRouter) {
+        self.router = router
+    }
+    
 }
 
 // MARK: - Life cycle
 extension TabBarViewModel {
-  func viewReady() {
-    // Called when view is loaded and ready
-  }
-  
-  func viewDidAppear() {
+    func viewReady() {
+        // Called when view is loaded and ready
+    }
     
-  }
+    func viewDidAppear() {
+        
+    }
 }
 
 // MARK: - Functions
 extension TabBarViewModel {
-  func didPressExploreTabBarItem() -> ViewController {
-    return router.goToExplore()
-  }
-  
-  func didPressNewPostTabBarItem() {
-    self.router.goToNewPost()
-  }
-  
-  func didPressProfileTabBarItem() -> ViewController {
-    return router.goToProfile()
-  }
+    func didPressExploreTabBarItem() -> ViewController {
+        return router.goToExplore()
+    }
+    
+    func didPressNewPostTabBarItem() {
+        self.router.goToNewPost()
+    }
+    
+    func didPressProfileTabBarItem() -> ViewController {
+        return router.goToProfile()
+    }
 }

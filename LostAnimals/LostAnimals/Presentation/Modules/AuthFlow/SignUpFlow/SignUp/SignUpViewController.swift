@@ -9,91 +9,91 @@
 import UIKit
 
 final class SignUpViewController: ViewController {
-  
-  // MARK: - IBOutlets
-  @IBOutlet weak var progressBarLabel: UILabel!
-  @IBOutlet weak var progressView: UIProgressView!
-  @IBOutlet weak var signupContentsView: CustomView!
-  @IBOutlet weak var stepsCollectionView: UICollectionView!
-  
-  // MARK: - Properties
-  var viewModel: SignUpViewModel!
-  
-  // MARK: - Life cycle
-  override func viewDidLoad() {
-    super.viewDidLoad()
     
-    setupUI()
-    viewModel.viewReady()
-  }
-  
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
+    // MARK: - IBOutlets
+    @IBOutlet weak var progressBarLabel: UILabel!
+    @IBOutlet weak var progressView: UIProgressView!
+    @IBOutlet weak var signupContentsView: CustomView!
+    @IBOutlet weak var stepsCollectionView: UICollectionView!
     
-    viewModel.viewDidAppear()
-  }
-  
-  // MARK: - Functions  
-  private func setupUI() {
-    configureCollectionView(stepsCollectionView)
-    progressView.transform = progressView.transform.scaledBy(x: 1, y: 2)
-    progressView.trackTintColor = .customBlack.withAlphaComponent(0.2)
-    signupContentsView.layer.maskedCorners =  [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-    updateCurrentProgressBarView()
-  }
-  
-  private func updateCurrenCollectionViewItem(direction: MoveDirection) {
-    let indexPath = IndexPath(item: viewModel.currentStep.rawValue, section: 0)
-    stepsCollectionView.scrollToItem(at: indexPath, at: direction == .back ? .left : .right, animated: true)
-  }
-  
-  private func updateCurrentProgressBarView() {
-    let percentageInFloat = (1.0 / Float(self.viewModel.numberOfSteps)) * (Float(self.viewModel.currentStep.rawValue) + 1.0)
-    progressView.setProgress(percentageInFloat, animated: true)
-    UIView.transition(with: progressBarLabel, duration: 0.25, options: .transitionCrossDissolve, animations: { [weak self] in
-      guard let self = self else { return }
-      self.progressBarLabel.text = self.viewModel.currentStepLabel.rawValue
-    })
-  }
-  
-  func moveToPreviousStep() {
-    switch viewModel.currentStep {
-    case .personalDetails: return
-    case .accountDetails:
-      viewModel.currentStep = .personalDetails
-      viewModel.currentStepLabel = .personalDetails
-    case .socialMediaDetails:
-      viewModel.currentStep = .accountDetails
-      viewModel.currentStepLabel = .accountDetails
+    // MARK: - Properties
+    var viewModel: SignUpViewModel!
+    
+    // MARK: - Life cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupUI()
+        viewModel.viewReady()
     }
-    updateCurrenCollectionViewItem(direction: .back)
-    updateCurrentProgressBarView()
-  }
-  
-  func moveToNextStep() {
-    switch viewModel.currentStep {
-    case .personalDetails:
-      viewModel.currentStep = .accountDetails
-      viewModel.currentStepLabel = .accountDetails
-    case .accountDetails:
-      viewModel.currentStep = .socialMediaDetails
-      viewModel.currentStepLabel = .socialMediaDetails
-    case .socialMediaDetails:
-      viewModel.didPressGetStartedButton()
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        viewModel.viewDidAppear()
     }
-    updateCurrenCollectionViewItem(direction: .next)
-    updateCurrentProgressBarView()
-  }
-  
-  func goToWhereDoYouLive(comesFrom: WhereDoYouLiveComesFrom) {
-    viewModel.didPressGoToWhereDoYouLiveCountries(comesFrom: comesFrom)
-  }
-  
-  func goToWhereCanWeFindYouAddress() {
-    viewModel.didPressGoToWhereCanWeFindYou()
-  }
-  
-  func goToTermsAndConditionsVC() {
-    viewModel.didPressGoToTermsAndConditions()
-  }
+    
+    // MARK: - Functions  
+    private func setupUI() {
+        configureCollectionView(stepsCollectionView)
+        progressView.transform = progressView.transform.scaledBy(x: 1, y: 2)
+        progressView.trackTintColor = .customBlack.withAlphaComponent(0.2)
+        signupContentsView.layer.maskedCorners =  [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        updateCurrentProgressBarView()
+    }
+    
+    private func updateCurrenCollectionViewItem(direction: MoveDirection) {
+        let indexPath = IndexPath(item: viewModel.currentStep.rawValue, section: 0)
+        stepsCollectionView.scrollToItem(at: indexPath, at: direction == .back ? .left : .right, animated: true)
+    }
+    
+    private func updateCurrentProgressBarView() {
+        let percentageInFloat = (1.0 / Float(self.viewModel.numberOfSteps)) * (Float(self.viewModel.currentStep.rawValue) + 1.0)
+        progressView.setProgress(percentageInFloat, animated: true)
+        UIView.transition(with: progressBarLabel, duration: 0.25, options: .transitionCrossDissolve, animations: { [weak self] in
+            guard let self = self else { return }
+            self.progressBarLabel.text = self.viewModel.currentStepLabel.rawValue
+        })
+    }
+    
+    func moveToPreviousStep() {
+        switch viewModel.currentStep {
+        case .personalDetails: return
+        case .accountDetails:
+            viewModel.currentStep = .personalDetails
+            viewModel.currentStepLabel = .personalDetails
+        case .socialMediaDetails:
+            viewModel.currentStep = .accountDetails
+            viewModel.currentStepLabel = .accountDetails
+        }
+        updateCurrenCollectionViewItem(direction: .back)
+        updateCurrentProgressBarView()
+    }
+    
+    func moveToNextStep() {
+        switch viewModel.currentStep {
+        case .personalDetails:
+            viewModel.currentStep = .accountDetails
+            viewModel.currentStepLabel = .accountDetails
+        case .accountDetails:
+            viewModel.currentStep = .socialMediaDetails
+            viewModel.currentStepLabel = .socialMediaDetails
+        case .socialMediaDetails:
+            viewModel.didPressGetStartedButton()
+        }
+        updateCurrenCollectionViewItem(direction: .next)
+        updateCurrentProgressBarView()
+    }
+    
+    func goToWhereDoYouLive(comesFrom: WhereDoYouLiveComesFrom) {
+        viewModel.didPressGoToWhereDoYouLiveCountries(comesFrom: comesFrom)
+    }
+    
+    func goToWhereCanWeFindYouAddress() {
+        viewModel.didPressGoToWhereCanWeFindYou()
+    }
+    
+    func goToTermsAndConditionsVC() {
+        viewModel.didPressGoToTermsAndConditions()
+    }
 }

@@ -9,47 +9,47 @@
 import UIKit
 
 final class SignUpRouter {
-  // MARK: - Properties
-  private weak var viewController: ViewController?
-  
-  // MARK: - Init
-  required init(viewController: ViewController?) {
-    self.viewController = viewController
-  }
-  
-  // MARK: - Functions
-  func goToWhereDoYouLiveCountries(comesFrom: WhereDoYouLiveComesFrom) {
-    let viewController = Container.shared.whereDoYouLiveCountriesBuilder().build(comesFrom: comesFrom)
-    DispatchQueue.main.async {
-      self.viewController?.push(viewController: viewController)
+    // MARK: - Properties
+    private weak var viewController: ViewController?
+    
+    // MARK: - Init
+    required init(viewController: ViewController?) {
+        self.viewController = viewController
     }
-  }
-  
-  func goToWhereCanWeFindYou() {
-    let viewController = Container.shared.whereCanWeFindYou().build(comesFrom: .signUp)
-    DispatchQueue.main.async {
-      self.viewController?.push(viewController: viewController)
+    
+    // MARK: - Functions
+    func goToWhereDoYouLiveCountries(comesFrom: WhereDoYouLiveComesFrom) {
+        let viewController = Container.shared.whereDoYouLiveCountriesBuilder().build(comesFrom: comesFrom)
+        DispatchQueue.main.async {
+            self.viewController?.push(viewController: viewController)
+        }
     }
-  }
-  
-  func goToTermsAndConditions() {
-    let viewController = Container.shared.termsAndConditionsBuilder().build()
-    DispatchQueue.main.async {
-      self.viewController?.push(viewController: viewController)
+    
+    func goToWhereCanWeFindYou() {
+        let viewController = Container.shared.whereCanWeFindYou().build(comesFrom: .signUp)
+        DispatchQueue.main.async {
+            self.viewController?.push(viewController: viewController)
+        }
     }
-  }
-  
-  func goToOnboarding() {
-    let viewController = Container.shared.onboardingBuilder().build()
-    DispatchQueue.main.async {
-      self.viewController?.present(viewController: viewController, completion: nil)
+    
+    func goToTermsAndConditions() {
+        let viewController = Container.shared.termsAndConditionsBuilder().build()
+        DispatchQueue.main.async {
+            self.viewController?.push(viewController: viewController)
+        }
     }
-  }
-  
-  func changeRootToTabBar() {
-    let viewController = Container.shared.tabBarBuilder().build()
-    DispatchQueue.main.async {
-      changeRoot(to: viewController)
+    
+    func goToOnboarding() {
+        let viewController = Container.shared.onboardingBuilder().build()
+        DispatchQueue.main.async {
+            self.viewController?.present(viewController: viewController, completion: nil)
+        }
     }
-  }
+    
+    func changeRootToTabBar() {
+        let viewController = Container.shared.tabBarBuilder().build()
+        DispatchQueue.main.async {
+            changeRoot(to: viewController)
+        }
+    }
 }

@@ -9,5 +9,5 @@
 import UIKit
 
 struct CityTableViewCellSummary {
-  let cityName: String
+    let cityName: String
 }

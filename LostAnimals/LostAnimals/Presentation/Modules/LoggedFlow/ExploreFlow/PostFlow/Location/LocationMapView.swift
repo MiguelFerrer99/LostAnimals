@@ -10,29 +10,33 @@ import Foundation
 import MapKit
 
 extension LocationViewController: MKMapViewDelegate {
-  // MARK: - Functions
-  func configureMapView(_ mapView: MKMapView) {
-    mapView.delegate = self
-    let location = CLLocationCoordinate2D(latitude: viewModel.coordinates.lat, longitude: viewModel.coordinates.long)
-    let regionRadius = 500.0
-    let region = MKCoordinateRegion(center: location, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
-    mapView.setRegion(region, animated: false)
-    
-    let annotation = MKPointAnnotation()
-    if let animalName = viewModel.animalName {
-      annotation.title = animalName
-    } else if let userFirstName = viewModel.userFirstName {
-      annotation.title = userFirstName
+    // MARK: - Functions
+    func configureMapView(_ mapView: MKMapView) {
+        mapView.delegate = self
+        let location = CLLocationCoordinate2D(latitude: viewModel.coordinates.lat, longitude: viewModel.coordinates.long)
+        let regionRadius = 500.0
+        let region = MKCoordinateRegion(center: location, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+        mapView.setRegion(region, animated: false)
+        
+        let annotation = MKPointAnnotation()
+        if let animal = viewModel.animal {
+            if let animalName = animal.name {
+                annotation.title = animalName
+            } else {
+                annotation.title = "Found animal"
+            }
+        } else if let userFirstName = viewModel.userFirstName {
+            annotation.title = userFirstName
+        }
+        annotation.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+        mapView.addAnnotation(annotation)
     }
-    annotation.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
-    mapView.addAnnotation(annotation)
-  }
-  
-  func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-    viewModel.openLocationInMaps()
-  }
-  
-  @objc func howToGoButtonPressed() {
-    viewModel.openLocationInMaps()
-  }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        viewModel.openLocationInMaps()
+    }
+    
+    @objc func howToGoButtonPressed() {
+        viewModel.openLocationInMaps()
+    }
 }

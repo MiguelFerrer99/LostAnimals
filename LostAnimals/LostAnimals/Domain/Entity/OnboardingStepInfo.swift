@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 struct OnboardingStepInfo {
-  let title: String
-  let description: String
-  let image: UIImage
+    let title: String
+    let description: String
+    let image: UIImage
 }

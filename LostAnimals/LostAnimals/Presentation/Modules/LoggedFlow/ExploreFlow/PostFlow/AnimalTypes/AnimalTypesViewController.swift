@@ -9,32 +9,32 @@
 import UIKit
 
 final class AnimalTypesViewController: ViewController {
-  
-  // MARK: - IBOutlets
-  @IBOutlet weak var animalTypesTableView: UITableView!
-  
-  // MARK: - Properties
-  override var navBarTitle: String {
-    return "Select an animal type"
-  }
-  var viewModel: AnimalTypesViewModel!
-  
-  // MARK: - Life cycle
-  override func viewDidLoad() {
-    super.viewDidLoad()
     
-    setupUI()
-    viewModel.viewReady()
-  }
-  
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
+    // MARK: - IBOutlets
+    @IBOutlet weak var animalTypesTableView: UITableView!
     
-    viewModel.viewDidAppear()
-  }
-  
-  // MARK: - Functions
-  private func setupUI() {
-    configureTableView(animalTypesTableView)
-  }
+    // MARK: - Properties
+    override var navBarTitle: String {
+        return "Select an animal type"
+    }
+    var viewModel: AnimalTypesViewModel!
+    
+    // MARK: - Life cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupUI()
+        viewModel.viewReady()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        viewModel.viewDidAppear()
+    }
+    
+    // MARK: - Functions
+    private func setupUI() {
+        configureTableView(animalTypesTableView)
+    }
 }

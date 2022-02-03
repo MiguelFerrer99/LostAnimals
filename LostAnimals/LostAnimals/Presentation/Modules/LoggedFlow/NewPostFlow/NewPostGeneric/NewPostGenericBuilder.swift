@@ -9,16 +9,16 @@
 import UIKit
 
 final class NewPostGenericBuilder {
-  
-  func build(postType: PostType) -> NewPostGenericViewController {
     
-    let viewController = UIViewController.instantiate(viewController: NewPostGenericViewController.self)
-    
-    let router = NewPostGenericRouter(viewController: viewController)
-    let viewModel = NewPostGenericViewModel(router: router, postType: postType)
-    
-    viewController.viewModel = viewModel
-    
-    return viewController
-  }
+    func build(postType: PostType) -> NewPostGenericViewController {
+        
+        let viewController = UIViewController.instantiate(viewController: NewPostGenericViewController.self)
+        
+        let router = NewPostGenericRouter(viewController: viewController)
+        let viewModel = NewPostGenericViewModel(router: router, postType: postType)
+        
+        viewController.viewModel = viewModel
+        
+        return viewController
+    }
 }

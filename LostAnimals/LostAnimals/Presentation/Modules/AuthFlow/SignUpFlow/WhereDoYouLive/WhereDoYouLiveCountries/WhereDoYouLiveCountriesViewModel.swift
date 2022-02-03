@@ -9,56 +9,56 @@
 import Foundation
 
 final class WhereDoYouLiveCountriesViewModel {
-  
-  // MARK: - Properties
-  private let router: WhereDoYouLiveCountriesRouter
-  var countries: [Country] = []
-  var filteredCountries: [Country] = []
-  let comesFrom: WhereDoYouLiveComesFrom
-  
-  // MARK: - Init
-  required init(router: WhereDoYouLiveCountriesRouter, comesFrom: WhereDoYouLiveComesFrom) {
-    self.router = router
-    self.comesFrom = comesFrom
-  }
-  
+    
+    // MARK: - Properties
+    private let router: WhereDoYouLiveCountriesRouter
+    var countries: [Country] = []
+    var filteredCountries: [Country] = []
+    let comesFrom: WhereDoYouLiveComesFrom
+    
+    // MARK: - Init
+    required init(router: WhereDoYouLiveCountriesRouter, comesFrom: WhereDoYouLiveComesFrom) {
+        self.router = router
+        self.comesFrom = comesFrom
+    }
+    
 }
 
 // MARK: - Life cycle
 extension WhereDoYouLiveCountriesViewModel {
-  func viewReady() {
-    // Called when view is loaded and ready
-  }
-  
-  func viewDidAppear() {
+    func viewReady() {
+        // Called when view is loaded and ready
+    }
     
-  }
+    func viewDidAppear() {
+        
+    }
 }
 
 // MARK: - Functions
 extension WhereDoYouLiveCountriesViewModel {
-  func getCountriesFromCountriesJson(completion: () -> Void) {
-    guard let path = Bundle.main.path(forResource: "Countries", ofType: "json") else { return }
-    let url = URL(fileURLWithPath: path)
-    do {
-      let jsonData = try Data(contentsOf: url, options: .mappedIfSafe)
-      let countriesDTO = try JSONDecoder().decode([CountryDTO].self, from: jsonData)
-      let countries = countriesDTO.compactMap({$0.map()})
-      self.countries = countries
-      self.filteredCountries = self.countries
-      completion()
-    } catch { print(error) }
-  }
-  
-  func didPressCountryCell(country: Country, cities: [String]) {
-    switch comesFrom {
-    case .personalDetails:
-      self.router.goToWhereDoYouLiveCities(country: country, cities: cities)
-    case .socialMediaDetails:
-      let countryDialCodeString = country.dialCode
-      let userInfo: [String: String] = ["countryDialCodeString": countryDialCodeString]
-      NotificationCenter.default.post(name: .SendCountryDialCode, object: nil, userInfo: userInfo)
-      self.router.goToSignUp()
+    func getCountriesFromCountriesJson(completion: () -> Void) {
+        guard let path = Bundle.main.path(forResource: "Countries", ofType: "json") else { return }
+        let url = URL(fileURLWithPath: path)
+        do {
+            let jsonData = try Data(contentsOf: url, options: .mappedIfSafe)
+            let countriesDTO = try JSONDecoder().decode([CountryDTO].self, from: jsonData)
+            let countries = countriesDTO.compactMap({$0.map()})
+            self.countries = countries
+            self.filteredCountries = self.countries
+            completion()
+        } catch { print(error) }
     }
-  }
+    
+    func didPressCountryCell(country: Country, cities: [String]) {
+        switch comesFrom {
+        case .personalDetails:
+            self.router.goToWhereDoYouLiveCities(country: country, cities: cities)
+        case .socialMediaDetails:
+            let countryDialCodeString = country.dialCode
+            let userInfo: [String: String] = ["countryDialCodeString": countryDialCodeString]
+            NotificationCenter.default.post(name: .SendCountryDialCode, object: nil, userInfo: userInfo)
+            self.router.goToSignUp()
+        }
+    }
 }

@@ -9,34 +9,34 @@
 import Foundation
 
 final class ErrorPopupViewModel {
-  
-  // MARK: - Properties
-  private let router: ErrorPopupRouter
-  let errorTitle: String
-  let action: ()?
-  
-  // MARK: - Init
-  required init(router: ErrorPopupRouter, errorTitle: String, action: ()? = nil) {
-    self.router = router
-    self.errorTitle = errorTitle
-    self.action = action
-  }
+    
+    // MARK: - Properties
+    private let router: ErrorPopupRouter
+    let errorTitle: String
+    let action: ()?
+    
+    // MARK: - Init
+    required init(router: ErrorPopupRouter, errorTitle: String, action: ()? = nil) {
+        self.router = router
+        self.errorTitle = errorTitle
+        self.action = action
+    }
 }
 
 // MARK: - Life cycle
 extension ErrorPopupViewModel {
-  func viewReady() {
-    // Called when view is loaded and ready
-  }
-  
-  func viewDidAppear() {
-    // Called when view has appeared
-  }
+    func viewReady() {
+        // Called when view is loaded and ready
+    }
+    
+    func viewDidAppear() {
+        // Called when view has appeared
+    }
 }
 
 // MARK: - Functions
 extension ErrorPopupViewModel {  
-  func didPressOkButton() {
-    self.router.dismissErrorPopup(action: action)
-  }
+    func didPressOkButton() {
+        self.router.dismissErrorPopup(action: action)
+    }
 }

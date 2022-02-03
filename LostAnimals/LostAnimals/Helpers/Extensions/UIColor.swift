@@ -9,28 +9,25 @@
 import UIKit
 
 extension UIColor {
-  
-  static let customBlack = UIColor(named: "CustomBlack") ?? .black
-  static let customBlue = UIColor(named: "CustomBlue") ?? .blue
-  static let customGreen = UIColor(named: "CustomGreen") ?? .green
-  static let customLightBlue = UIColor(named: "CustomLightBlue") ?? .blue
-  static let customLightGreen = UIColor(named: "CustomLightGreen") ?? .green
-  static let customRed = UIColor(named: "CustomRed") ?? .red
-  static let customWhite = UIColor(named: "CustomWhite") ?? .white
-  
-  convenience init(hex: String, alpha: CGFloat = 1.0) {
-    var hexFormatted: String = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
     
-    if hexFormatted.hasPrefix("#") {
-      hexFormatted = String(hexFormatted.dropFirst())
+    static let customBlack = UIColor(named: "CustomBlack") ?? .black
+    static let customGreen = UIColor(named: "CustomGreen") ?? .green
+    static let customRed = UIColor(named: "CustomRed") ?? .red
+    static let customWhite = UIColor(named: "CustomWhite") ?? .white
+    
+    convenience init(hex: String, alpha: CGFloat = 1.0) {
+        var hexFormatted: String = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
+        
+        if hexFormatted.hasPrefix("#") {
+            hexFormatted = String(hexFormatted.dropFirst())
+        }
+        
+        var rgbValue: UInt64 = 0
+        Scanner(string: hexFormatted).scanHexInt64(&rgbValue)
+        
+        self.init(red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+                  green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+                  blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+                  alpha: alpha)
     }
-    
-    var rgbValue: UInt64 = 0
-    Scanner(string: hexFormatted).scanHexInt64(&rgbValue)
-    
-    self.init(red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
-              green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
-              blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
-              alpha: alpha)
-  }
 }

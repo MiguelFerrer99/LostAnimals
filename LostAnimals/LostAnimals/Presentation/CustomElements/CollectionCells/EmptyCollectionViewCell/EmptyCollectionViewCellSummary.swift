@@ -10,6 +10,6 @@ import Foundation
 import UIKit
 
 struct EmptyCollectionViewCellSummary {
-  let emptyTitle: String
-  let emptyImage: UIImage
+    let emptyTitle: String
+    let emptyImage: UIImage
 }

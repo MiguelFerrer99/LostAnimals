@@ -9,18 +9,18 @@
 import UIKit
 
 class OnboardingCollectionViewCell: UICollectionViewCell, Reusable {
-  // MARK: - IBOutlets
-  @IBOutlet weak var titleLabel: UILabel!
-  @IBOutlet weak var descriptionLabel: UILabel!
-  
-  // MARK: - Life cycle
-  override func awakeFromNib() {
-    super.awakeFromNib()
-  }
-  
-  // MARK: - Functions  
-  func display(summary: OnboardingCollectionViewCellSummary) {
-    titleLabel.text = summary.title
-    descriptionLabel.text = summary.description
-  }
+    // MARK: - IBOutlets
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    // MARK: - Life cycle
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    // MARK: - Functions  
+    func display(summary: OnboardingCollectionViewCellSummary) {
+        titleLabel.text = summary.title
+        descriptionLabel.text = summary.description
+    }
 }

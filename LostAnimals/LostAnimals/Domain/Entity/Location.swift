@@ -9,6 +9,6 @@
 import Foundation
 
 struct Location {
-  let address: String
-  let coordinates: Coordinates?
+    let address: String
+    let coordinates: Coordinates?
 }

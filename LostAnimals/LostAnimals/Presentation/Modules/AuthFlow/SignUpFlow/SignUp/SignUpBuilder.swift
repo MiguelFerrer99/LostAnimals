@@ -9,16 +9,16 @@
 import UIKit
 
 final class SignUpBuilder {
-  
-  func build() -> SignUpViewController {
     
-    let viewController = UIViewController.instantiate(viewController: SignUpViewController.self)
-    
-    let router = SignUpRouter(viewController: viewController)
-    let viewModel = SignUpViewModel(router: router)
-    
-    viewController.viewModel = viewModel
-    
-    return viewController
-  }
+    func build() -> SignUpViewController {
+        
+        let viewController = UIViewController.instantiate(viewController: SignUpViewController.self)
+        
+        let router = SignUpRouter(viewController: viewController)
+        let viewModel = SignUpViewModel(router: router)
+        
+        viewController.viewModel = viewModel
+        
+        return viewController
+    }
 }

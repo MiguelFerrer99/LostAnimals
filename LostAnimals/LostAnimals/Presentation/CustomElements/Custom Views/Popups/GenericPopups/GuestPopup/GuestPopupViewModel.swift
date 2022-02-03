@@ -9,34 +9,34 @@
 import Foundation
 
 final class GuestPopupViewModel {
-  
-  // MARK: - Properties
-  private let router: GuestPopupRouter
-  
-  // MARK: - Init
-  required init(router: GuestPopupRouter) {
-    self.router = router
-  }
+    
+    // MARK: - Properties
+    private let router: GuestPopupRouter
+    
+    // MARK: - Init
+    required init(router: GuestPopupRouter) {
+        self.router = router
+    }
 }
 
 // MARK: - Life cycle
 extension GuestPopupViewModel {
-  func viewReady() {
-    // Called when view is loaded and ready
-  }
-  
-  func viewDidAppear() {
-    // Called when view has appeared
-  }
+    func viewReady() {
+        // Called when view is loaded and ready
+    }
+    
+    func viewDidAppear() {
+        // Called when view has appeared
+    }
 }
 
 // MARK: - Functions
 extension GuestPopupViewModel {
-  func didPressDismissButton() {
-    self.router.dismissGuestPopup()
-  }
-  
-  func didPressGoToStartupButton() {
-    self.router.changeRootToStartup()
-  }
+    func didPressDismissButton() {
+        self.router.dismissGuestPopup()
+    }
+    
+    func didPressGoToStartupButton() {
+        self.router.changeRootToStartup()
+    }
 }

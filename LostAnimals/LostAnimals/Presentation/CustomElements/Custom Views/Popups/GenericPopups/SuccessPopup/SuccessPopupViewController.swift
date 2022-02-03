@@ -9,50 +9,50 @@
 import UIKit
 
 final class SuccessPopupViewController: ViewController {
-  // MARK: - IBOutlets
-  @IBOutlet weak var backgroundView: UIView!
-  @IBOutlet weak var successTitleLabel: UILabel!
-  
-  // MARK: - Properties
-  var viewModel: SuccessPopupViewModel!
-  
-  // MARK: - Life cycle
-  override func viewDidLoad() {
-    super.viewDidLoad()
+    // MARK: - IBOutlets
+    @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var successTitleLabel: UILabel!
     
-    setupUI()
-    viewModel.viewReady()
-  }
-  
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
+    // MARK: - Properties
+    var viewModel: SuccessPopupViewModel!
     
-    viewModel.viewDidAppear()
-  }
-  
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    
-    UIView.animate(withDuration: 0.25) {
-      self.backgroundView.alpha = 0.6
+    // MARK: - Life cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupUI()
+        viewModel.viewReady()
     }
-  }
-  
-  override func viewWillDisappear(_ animated: Bool) {
-    super.viewWillDisappear(animated)
     
-    UIView.animate(withDuration: 0.25) {
-      self.backgroundView.alpha = 0
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        viewModel.viewDidAppear()
     }
-  }
-  
-  // MARK: - Functions
-  private func setupUI() {
-    successTitleLabel.text = viewModel.successTitle
-  }
-  
-  // MARK: - IBActions  
-  @IBAction func okButtonPressed(_ sender: UIButton) {
-    viewModel.didPressOkButton()
-  }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        UIView.animate(withDuration: 0.25) {
+            self.backgroundView.alpha = 0.6
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        UIView.animate(withDuration: 0.25) {
+            self.backgroundView.alpha = 0
+        }
+    }
+    
+    // MARK: - Functions
+    private func setupUI() {
+        successTitleLabel.text = viewModel.successTitle
+    }
+    
+    // MARK: - IBActions  
+    @IBAction func okButtonPressed(_ sender: UIButton) {
+        viewModel.didPressOkButton()
+    }
 }

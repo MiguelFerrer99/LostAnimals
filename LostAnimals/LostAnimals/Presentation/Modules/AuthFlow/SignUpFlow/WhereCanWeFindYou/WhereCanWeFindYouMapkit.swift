@@ -10,16 +10,16 @@ import UIKit
 import MapKit
 
 extension WhereCanWeFindYouViewController: MKLocalSearchCompleterDelegate {
-  func configureMapKit() {
-    searchCompleter.delegate = self
-  }
-  
-  func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
-    viewModel.searchResults = completer.results
-    addressTableView.reloadData()
-  }
-  
-  func completer(_ completer: MKLocalSearchCompleter, didFailWithError error: Error) {
-    print("Error: \(error.localizedDescription)")
-  }
+    func configureMapKit() {
+        searchCompleter.delegate = self
+    }
+    
+    func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
+        viewModel.searchResults = completer.results
+        addressTableView.reloadData()
+    }
+    
+    func completer(_ completer: MKLocalSearchCompleter, didFailWithError error: Error) {
+        print("Error: \(error.localizedDescription)")
+    }
 }

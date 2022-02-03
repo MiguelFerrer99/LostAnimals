@@ -9,16 +9,16 @@
 import UIKit
 
 final class ForgotPasswordBuilder {
-  
-  func build() -> ForgotPasswordViewController {
     
-    let viewController = UIViewController.instantiate(viewController: ForgotPasswordViewController.self)
-    
-    let router = ForgotPasswordRouter(viewController: viewController)
-    let viewModel = ForgotPasswordViewModel(router: router)
-    
-    viewController.viewModel = viewModel
-    
-    return viewController
-  }
+    func build() -> ForgotPasswordViewController {
+        
+        let viewController = UIViewController.instantiate(viewController: ForgotPasswordViewController.self)
+        
+        let router = ForgotPasswordRouter(viewController: viewController)
+        let viewModel = ForgotPasswordViewModel(router: router)
+        
+        viewController.viewModel = viewModel
+        
+        return viewController
+    }
 }

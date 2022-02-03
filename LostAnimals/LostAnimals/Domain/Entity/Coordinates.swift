@@ -9,6 +9,6 @@
 import Foundation
 
 struct Coordinates {
-  let lat: Double
-  let long: Double
+    let lat: Double
+    let long: Double
 }

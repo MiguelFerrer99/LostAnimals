@@ -9,36 +9,33 @@
 import UIKit
 
 class PostCollectionViewCell: UICollectionViewCell, Reusable {
-  
-  // MARK: - IBOutlets
-  @IBOutlet weak var postTypeImageView: UIImageView!
-  @IBOutlet weak var postTypeWhiteImageView: UIImageView!
-  @IBOutlet weak var animalTypeImageView: UIImageView!
-  @IBOutlet weak var animalTypeWhiteImageView: UIImageView!
-  @IBOutlet weak var animalNameLabel: UILabel!
-  @IBOutlet weak var postImageView: UIImageView!
-  @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
-  @IBOutlet weak var trailingConstraint: NSLayoutConstraint!
-  
-  // MARK: - Life cycle
-  override func awakeFromNib() {
-    super.awakeFromNib()
-  }
-  
-  // MARK: - Functions
-  func display(summary: PostCollectionViewCellSummary) {
-    postTypeImageView.image = UIImage(named: summary.postType.rawValue)
-    postTypeWhiteImageView.image = UIImage(named: "\(summary.postType.rawValue)White")
-    animalTypeImageView.image = UIImage(named: summary.animal.type.rawValue)
-    animalTypeWhiteImageView.image = UIImage(named: "\(summary.animal.type.rawValue)White")
-    animalNameLabel.text = summary.animal.name
-    postImageView.image = summary.postImage
     
-    if (summary.index % 2) == 0 {
-      leadingConstraint.constant = 20
-    } else {
-      trailingConstraint.constant = 20
+    // MARK: - IBOutlets
+    @IBOutlet weak var postTypeImageView: UIImageView!
+    @IBOutlet weak var postTypeWhiteImageView: UIImageView!
+    @IBOutlet weak var animalTypeImageView: UIImageView!
+    @IBOutlet weak var animalTypeWhiteImageView: UIImageView!
+    @IBOutlet weak var animalNameLabel: UILabel!
+    @IBOutlet weak var postImageView: UIImageView!
+    @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var trailingConstraint: NSLayoutConstraint!
+    
+    // MARK: - Life cycle
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
-    self.layoutIfNeeded()
-  }
+    
+    // MARK: - Functions
+    func display(summary: PostCollectionViewCellSummary) {
+        postTypeImageView.image = UIImage(named: summary.postType.rawValue)
+        postTypeWhiteImageView.image = UIImage(named: "\(summary.postType.rawValue)White")
+        animalTypeImageView.image = UIImage(named: summary.animal.type.rawValue)
+        animalTypeWhiteImageView.image = UIImage(named: "\(summary.animal.type.rawValue)White")
+        animalNameLabel.text = summary.animal.name
+        postImageView.image = summary.postImage
+        
+        leadingConstraint.constant = summary.leadingPadding
+        trailingConstraint.constant = summary.trailingPadding
+        self.layoutIfNeeded()
+    }
 }

@@ -67,6 +67,14 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vSp-RA-9la" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="51" height="100"/>
                                                         <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CustomRedBackground" translatesAutoresizingMaskIntoConstraints="NO" id="P2e-YS-8Jj" customClass="CustomImageView" customModule="LostAnimals" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="51" height="100"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </imageView>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mail" translatesAutoresizingMaskIntoConstraints="NO" id="JKO-zE-Ijx">
                                                                 <rect key="frame" x="8" y="32.5" width="35" height="35"/>
                                                                 <constraints>
@@ -83,13 +91,17 @@
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" name="CustomRed"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="JKO-zE-Ijx" firstAttribute="centerY" secondItem="vSp-RA-9la" secondAttribute="centerY" id="A6p-KU-GFY"/>
                                                             <constraint firstItem="JKO-zE-Ijx" firstAttribute="centerX" secondItem="vSp-RA-9la" secondAttribute="centerX" id="Csb-fs-xFb"/>
+                                                            <constraint firstItem="P2e-YS-8Jj" firstAttribute="top" secondItem="vSp-RA-9la" secondAttribute="top" id="Is4-Mr-cJq"/>
+                                                            <constraint firstItem="P2e-YS-8Jj" firstAttribute="leading" secondItem="vSp-RA-9la" secondAttribute="leading" id="ckO-tl-gC3"/>
+                                                            <constraint firstAttribute="trailing" secondItem="P2e-YS-8Jj" secondAttribute="trailing" id="dlN-zO-AaC"/>
                                                             <constraint firstAttribute="trailing" secondItem="Gu7-Rn-IWF" secondAttribute="trailing" id="jb9-S3-Kut"/>
                                                             <constraint firstItem="Gu7-Rn-IWF" firstAttribute="leading" secondItem="vSp-RA-9la" secondAttribute="leading" id="kuR-DW-dla"/>
                                                             <constraint firstAttribute="bottom" secondItem="Gu7-Rn-IWF" secondAttribute="bottom" id="pkG-uU-rt0"/>
+                                                            <constraint firstAttribute="bottom" secondItem="P2e-YS-8Jj" secondAttribute="bottom" id="rH8-Mg-Im9"/>
                                                             <constraint firstItem="Gu7-Rn-IWF" firstAttribute="top" secondItem="vSp-RA-9la" secondAttribute="top" id="vZC-sN-wIc"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
@@ -101,6 +113,14 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UXE-0f-vd0" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
                                                         <rect key="frame" x="71" y="0.0" width="50.5" height="100"/>
                                                         <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CustomBlueBackground" translatesAutoresizingMaskIntoConstraints="NO" id="rDT-pe-9ZL" customClass="CustomImageView" customModule="LostAnimals" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50.5" height="100"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </imageView>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Phone" translatesAutoresizingMaskIntoConstraints="NO" id="k34-qK-sLc">
                                                                 <rect key="frame" x="7.5" y="32.5" width="35" height="35"/>
                                                                 <constraints>
@@ -119,11 +139,15 @@
                                                         </subviews>
                                                         <color key="backgroundColor" name="CustomBlue"/>
                                                         <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="rDT-pe-9ZL" secondAttribute="bottom" id="4fx-6S-LCZ"/>
                                                             <constraint firstAttribute="bottom" secondItem="ZeT-7m-ZKs" secondAttribute="bottom" id="6rh-yp-OOV"/>
+                                                            <constraint firstItem="rDT-pe-9ZL" firstAttribute="top" secondItem="UXE-0f-vd0" secondAttribute="top" id="9h4-Zj-814"/>
                                                             <constraint firstItem="k34-qK-sLc" firstAttribute="centerY" secondItem="UXE-0f-vd0" secondAttribute="centerY" id="GCC-wv-agP"/>
+                                                            <constraint firstItem="rDT-pe-9ZL" firstAttribute="leading" secondItem="UXE-0f-vd0" secondAttribute="leading" id="NYV-Y6-786"/>
                                                             <constraint firstItem="ZeT-7m-ZKs" firstAttribute="top" secondItem="UXE-0f-vd0" secondAttribute="top" id="O56-TY-E8b"/>
                                                             <constraint firstItem="k34-qK-sLc" firstAttribute="centerX" secondItem="UXE-0f-vd0" secondAttribute="centerX" id="SBW-P1-KNH"/>
                                                             <constraint firstItem="ZeT-7m-ZKs" firstAttribute="leading" secondItem="UXE-0f-vd0" secondAttribute="leading" id="f2J-7r-4hJ"/>
+                                                            <constraint firstAttribute="trailing" secondItem="rDT-pe-9ZL" secondAttribute="trailing" id="nez-HI-Xia"/>
                                                             <constraint firstAttribute="trailing" secondItem="ZeT-7m-ZKs" secondAttribute="trailing" id="qI6-f6-bHf"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
@@ -135,6 +159,14 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ciF-t9-2wx" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
                                                         <rect key="frame" x="141.5" y="0.0" width="51" height="100"/>
                                                         <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CustomGreenBackground" translatesAutoresizingMaskIntoConstraints="NO" id="cH4-DO-Vgo" customClass="CustomImageView" customModule="LostAnimals" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="51" height="100"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </imageView>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Whatsapp" translatesAutoresizingMaskIntoConstraints="NO" id="pXu-Rp-yiG">
                                                                 <rect key="frame" x="8" y="32.5" width="35" height="35"/>
                                                                 <constraints>
@@ -155,10 +187,14 @@
                                                         <constraints>
                                                             <constraint firstItem="pXu-Rp-yiG" firstAttribute="centerX" secondItem="ciF-t9-2wx" secondAttribute="centerX" id="39E-sx-ZQG"/>
                                                             <constraint firstItem="KB0-ym-9HX" firstAttribute="leading" secondItem="ciF-t9-2wx" secondAttribute="leading" id="9SC-71-2QQ"/>
+                                                            <constraint firstItem="cH4-DO-Vgo" firstAttribute="leading" secondItem="ciF-t9-2wx" secondAttribute="leading" id="IUV-3Q-i8v"/>
                                                             <constraint firstAttribute="trailing" secondItem="KB0-ym-9HX" secondAttribute="trailing" id="Ndj-Rd-pRJ"/>
                                                             <constraint firstItem="pXu-Rp-yiG" firstAttribute="centerY" secondItem="ciF-t9-2wx" secondAttribute="centerY" id="cqb-P2-LnM"/>
+                                                            <constraint firstAttribute="bottom" secondItem="cH4-DO-Vgo" secondAttribute="bottom" id="dso-Bj-OeU"/>
                                                             <constraint firstAttribute="bottom" secondItem="KB0-ym-9HX" secondAttribute="bottom" id="fkn-oF-ueZ"/>
                                                             <constraint firstItem="KB0-ym-9HX" firstAttribute="top" secondItem="ciF-t9-2wx" secondAttribute="top" id="pRc-Lo-nwk"/>
+                                                            <constraint firstItem="cH4-DO-Vgo" firstAttribute="top" secondItem="ciF-t9-2wx" secondAttribute="top" id="swS-l9-Kdr"/>
+                                                            <constraint firstAttribute="trailing" secondItem="cH4-DO-Vgo" secondAttribute="trailing" id="y2z-hH-bD4"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -215,6 +251,14 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WGz-L7-yGb" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
                                                         <rect key="frame" x="283" y="0.0" width="51" height="100"/>
                                                         <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CustomLightBlueBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Wxt-J8-atL" customClass="CustomImageView" customModule="LostAnimals" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="51" height="100"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </imageView>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Twitter" translatesAutoresizingMaskIntoConstraints="NO" id="mt6-N1-ey5">
                                                                 <rect key="frame" x="8" y="32.5" width="35" height="35"/>
                                                                 <constraints>
@@ -234,8 +278,12 @@
                                                         <color key="backgroundColor" name="CustomLightBlue"/>
                                                         <constraints>
                                                             <constraint firstAttribute="bottom" secondItem="4IL-uU-LpB" secondAttribute="bottom" id="0cI-UK-r54"/>
+                                                            <constraint firstItem="Wxt-J8-atL" firstAttribute="top" secondItem="WGz-L7-yGb" secondAttribute="top" id="1Yh-Ef-eTQ"/>
                                                             <constraint firstItem="mt6-N1-ey5" firstAttribute="centerY" secondItem="WGz-L7-yGb" secondAttribute="centerY" id="3pw-LK-Set"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Wxt-J8-atL" secondAttribute="bottom" id="5rY-1p-VRB"/>
+                                                            <constraint firstItem="Wxt-J8-atL" firstAttribute="leading" secondItem="WGz-L7-yGb" secondAttribute="leading" id="6Kl-lZ-tux"/>
                                                             <constraint firstAttribute="trailing" secondItem="4IL-uU-LpB" secondAttribute="trailing" id="EbH-U8-iUW"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Wxt-J8-atL" secondAttribute="trailing" id="J2m-6p-WAo"/>
                                                             <constraint firstItem="4IL-uU-LpB" firstAttribute="top" secondItem="WGz-L7-yGb" secondAttribute="top" id="bVI-VG-5Fj"/>
                                                             <constraint firstItem="4IL-uU-LpB" firstAttribute="leading" secondItem="WGz-L7-yGb" secondAttribute="leading" id="ipB-ie-mM1"/>
                                                             <constraint firstItem="mt6-N1-ey5" firstAttribute="centerX" secondItem="WGz-L7-yGb" secondAttribute="centerX" id="xcn-Q8-ZS6"/>
@@ -318,6 +366,10 @@
         </designable>
     </designables>
     <resources>
+        <image name="CustomBlueBackground" width="57" height="62"/>
+        <image name="CustomGreenBackground" width="57" height="62"/>
+        <image name="CustomLightBlueBackground" width="57" height="62"/>
+        <image name="CustomRedBackground" width="57" height="62"/>
         <image name="Instagram" width="45" height="45"/>
         <image name="InstagramBackground" width="111" height="148"/>
         <image name="Mail" width="39.5" height="33"/>
@@ -335,9 +387,6 @@
         </namedColor>
         <namedColor name="CustomLightBlue">
             <color red="0.0" green="0.76078431372549016" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
-        <namedColor name="CustomRed">
-            <color red="1" green="0.41960784313725491" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="CustomWhite">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

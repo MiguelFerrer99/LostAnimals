@@ -9,34 +9,34 @@
 import Foundation
 
 final class SuccessPopupViewModel {
-  
-  // MARK: - Properties
-  private let router: SuccessPopupRouter
-  let successTitle: String
-  let action: ()?
-  
-  // MARK: - Init
-  required init(router: SuccessPopupRouter, successTitle: String, action: ()? = nil) {
-    self.router = router
-    self.successTitle = successTitle
-    self.action = action
-  }
+    
+    // MARK: - Properties
+    private let router: SuccessPopupRouter
+    let successTitle: String
+    let action: ()?
+    
+    // MARK: - Init
+    required init(router: SuccessPopupRouter, successTitle: String, action: ()? = nil) {
+        self.router = router
+        self.successTitle = successTitle
+        self.action = action
+    }
 }
 
 // MARK: - Life cycle
 extension SuccessPopupViewModel {
-  func viewReady() {
-    // Called when view is loaded and ready
-  }
-  
-  func viewDidAppear() {
-    // Called when view has appeared
-  }
+    func viewReady() {
+        // Called when view is loaded and ready
+    }
+    
+    func viewDidAppear() {
+        // Called when view has appeared
+    }
 }
 
 // MARK: - Functions
 extension SuccessPopupViewModel {  
-  func didPressOkButton() {
-    self.router.dismissSuccessPopup(action: action)
-  }
+    func didPressOkButton() {
+        self.router.dismissSuccessPopup(action: action)
+    }
 }

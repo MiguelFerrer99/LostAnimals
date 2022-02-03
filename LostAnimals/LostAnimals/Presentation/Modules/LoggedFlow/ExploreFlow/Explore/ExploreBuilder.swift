@@ -9,16 +9,16 @@
 import UIKit
 
 final class ExploreBuilder {
-  
-  func build() -> ExploreViewController {
     
-    let viewController = UIViewController.instantiate(viewController: ExploreViewController.self)
-    
-    let router = ExploreRouter(viewController: viewController)
-    let viewModel = ExploreViewModel(router: router)
-    
-    viewController.viewModel = viewModel
-    
-    return viewController
-  }
+    func build() -> ExploreViewController {
+        
+        let viewController = UIViewController.instantiate(viewController: ExploreViewController.self)
+        
+        let router = ExploreRouter(viewController: viewController)
+        let viewModel = ExploreViewModel(router: router)
+        
+        viewController.viewModel = viewModel
+        
+        return viewController
+    }
 }

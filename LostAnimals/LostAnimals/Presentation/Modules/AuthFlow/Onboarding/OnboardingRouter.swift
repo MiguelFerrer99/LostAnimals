@@ -9,19 +9,19 @@
 import UIKit
 
 final class OnboardingRouter {
-  // MARK: - Properties
-  private weak var viewController: ViewController?
-  
-  // MARK: - Init
-  required init(viewController: ViewController?) {
-    self.viewController = viewController
-  }
-  
-  // MARK: - Functions
-  func changeRootToTabBar() {
-    let viewController = Container.shared.tabBarBuilder().build()
-    DispatchQueue.main.async {
-      changeRoot(to: viewController)
+    // MARK: - Properties
+    private weak var viewController: ViewController?
+    
+    // MARK: - Init
+    required init(viewController: ViewController?) {
+        self.viewController = viewController
     }
-  }
+    
+    // MARK: - Functions
+    func changeRootToTabBar() {
+        let viewController = Container.shared.tabBarBuilder().build()
+        DispatchQueue.main.async {
+            changeRoot(to: viewController)
+        }
+    }
 }

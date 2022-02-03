@@ -9,16 +9,16 @@
 import UIKit
 
 final class PostImagesBuilder {
-  
-  func build(postImages: [UIImage?], indexPostImage: Int) -> PostImagesViewController {
     
-    let viewController = UIViewController.instantiate(viewController: PostImagesViewController.self)
-    
-    let router = PostImagesRouter(viewController: viewController)
-    let viewModel = PostImagesViewModel(router: router, postImages: postImages, indexPostImage: indexPostImage)
-    
-    viewController.viewModel = viewModel
-    
-    return viewController
-  }
+    func build(postImages: [UIImage?], indexPostImage: Int) -> PostImagesViewController {
+        
+        let viewController = UIViewController.instantiate(viewController: PostImagesViewController.self)
+        
+        let router = PostImagesRouter(viewController: viewController)
+        let viewModel = PostImagesViewModel(router: router, postImages: postImages, indexPostImage: indexPostImage)
+        
+        viewController.viewModel = viewModel
+        
+        return viewController
+    }
 }

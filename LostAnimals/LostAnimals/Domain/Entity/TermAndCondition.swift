@@ -9,6 +9,6 @@
 import Foundation
 
 struct TermAndCondition {
-  let title: String
-  let description: String
+    let title: String
+    let description: String
 }

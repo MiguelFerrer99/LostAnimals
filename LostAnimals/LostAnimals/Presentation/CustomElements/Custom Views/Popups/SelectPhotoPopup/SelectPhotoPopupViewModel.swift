@@ -9,46 +9,46 @@
 import Foundation
 
 final class SelectPhotoPopupViewModel {
-  
-  // MARK: - Properties
-  private let router: SelectPhotoPopupRouter
-  let showRemoveOption: Bool
-  let comesFrom: SelectPhotoPopupComesFrom
-  
-  // MARK: - Init
-  required init(router: SelectPhotoPopupRouter, showRemoveOption: Bool, comesFrom: SelectPhotoPopupComesFrom) {
-    self.router = router
-    self.showRemoveOption = showRemoveOption
-    self.comesFrom = comesFrom
-  }
+    
+    // MARK: - Properties
+    private let router: SelectPhotoPopupRouter
+    let showRemoveOption: Bool
+    let comesFrom: SelectPhotoPopupComesFrom
+    
+    // MARK: - Init
+    required init(router: SelectPhotoPopupRouter, showRemoveOption: Bool, comesFrom: SelectPhotoPopupComesFrom) {
+        self.router = router
+        self.showRemoveOption = showRemoveOption
+        self.comesFrom = comesFrom
+    }
 }
 
 // MARK: - Life cycle
 extension SelectPhotoPopupViewModel {
-  func viewReady() {
-    // Called when view is loaded and ready
-  }
-  
-  func viewDidAppear() {
-    // Called when view has appeared
-  }
+    func viewReady() {
+        // Called when view is loaded and ready
+    }
+    
+    func viewDidAppear() {
+        // Called when view has appeared
+    }
 }
 
 // MARK: - Functions
 extension SelectPhotoPopupViewModel {
-  func didPressDismissButton() {
-    self.router.dismissSelectPhotoPopup()
-  }
-  
-  func didPressRemovePhotoButton() {
-    self.router.dismissSelectPhotoPopupAndRemovePhoto(comesFrom: comesFrom)
-  }
-  
-  func didPressChooseFromLibraryButton() {
-    self.router.dismissSelectPhotoPopupAndChooseFromLibrary(comesFrom: comesFrom)
-  }
-  
-  func didPressTakeAPhotoButton() {
-    self.router.dismissSelectPhotoPopupAndTakeAPhoto(comesFrom: comesFrom)
-  }
+    func didPressDismissButton() {
+        self.router.dismissSelectPhotoPopup()
+    }
+    
+    func didPressRemovePhotoButton() {
+        self.router.dismissSelectPhotoPopupAndRemovePhoto(comesFrom: comesFrom)
+    }
+    
+    func didPressChooseFromLibraryButton() {
+        self.router.dismissSelectPhotoPopupAndChooseFromLibrary(comesFrom: comesFrom)
+    }
+    
+    func didPressTakeAPhotoButton() {
+        self.router.dismissSelectPhotoPopupAndTakeAPhoto(comesFrom: comesFrom)
+    }
 }

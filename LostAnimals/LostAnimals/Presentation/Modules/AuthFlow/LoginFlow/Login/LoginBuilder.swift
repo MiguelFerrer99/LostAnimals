@@ -9,16 +9,16 @@
 import UIKit
 
 final class LoginBuilder {
-  
-  func build() -> LoginViewController {
     
-    let viewController = UIViewController.instantiate(viewController: LoginViewController.self)
-    
-    let router = LoginRouter(viewController: viewController)
-    let viewModel = LoginViewModel(router: router)
-    
-    viewController.viewModel = viewModel
-    
-    return viewController
-  }
+    func build() -> LoginViewController {
+        
+        let viewController = UIViewController.instantiate(viewController: LoginViewController.self)
+        
+        let router = LoginRouter(viewController: viewController)
+        let viewModel = LoginViewModel(router: router)
+        
+        viewController.viewModel = viewModel
+        
+        return viewController
+    }
 }

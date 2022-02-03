@@ -9,10 +9,10 @@
 import Foundation
 
 extension Int {
-  var asMinutesToHourString: String {
-    let hours = self / 60
-    let minutes = self % 60
-    
-    return String(format:"%02ih %02imin", hours, minutes)
-  }
+    var asMinutesToHourString: String {
+        let hours = self / 60
+        let minutes = self % 60
+        
+        return String(format:"%02ih %02imin", hours, minutes)
+    }
 }

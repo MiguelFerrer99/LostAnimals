@@ -9,34 +9,34 @@
 import UIKit
 
 extension UIImage {
-  func convertedToGrayScale() -> UIImage? {
-    let context = CIContext(options: nil)
-    if let filter = CIFilter(name: "CIPhotoEffectNoir") {
-      filter.setValue(CIImage(image: self), forKey: kCIInputImageKey)
-      if let output = filter.outputImage {
-        if let cgImage = context.createCGImage(output, from: output.extent) {
-          return UIImage(cgImage: cgImage)
+    func convertedToGrayScale() -> UIImage? {
+        let context = CIContext(options: nil)
+        if let filter = CIFilter(name: "CIPhotoEffectNoir") {
+            filter.setValue(CIImage(image: self), forKey: kCIInputImageKey)
+            if let output = filter.outputImage {
+                if let cgImage = context.createCGImage(output, from: output.extent) {
+                    return UIImage(cgImage: cgImage)
+                }
+            }
         }
-      }
+        return nil
     }
-    return nil
-  }
-  
-  func drawImageIn(bgImage: UIImage, position: CGRect) -> UIImage? {
-    UIGraphicsBeginImageContext(bgImage.size)
-    bgImage.draw(in: CGRect(x: 0, y: 0, width: bgImage.size.width, height: bgImage.size.height))
-    self.draw(in: position, blendMode: .normal, alpha: 1)
-    let returnedImage = UIGraphicsGetImageFromCurrentImageContext()
-    UIGraphicsEndImageContext()
     
-    return returnedImage
-  }
-  
-  func isEqualTo(image: UIImage?) -> Bool {
-    guard let nsData1 = self.pngData(),
-          let image = image,
-          let nsData2 = image.pngData()
-    else { return false }
-    return nsData1 == nsData2
-  }
+    func drawImageIn(bgImage: UIImage, position: CGRect) -> UIImage? {
+        UIGraphicsBeginImageContext(bgImage.size)
+        bgImage.draw(in: CGRect(x: 0, y: 0, width: bgImage.size.width, height: bgImage.size.height))
+        self.draw(in: position, blendMode: .normal, alpha: 1)
+        let returnedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return returnedImage
+    }
+    
+    func isEqualTo(image: UIImage?) -> Bool {
+        guard let nsData1 = self.pngData(),
+              let image = image,
+              let nsData2 = image.pngData()
+        else { return false }
+        return nsData1 == nsData2
+    }
 }

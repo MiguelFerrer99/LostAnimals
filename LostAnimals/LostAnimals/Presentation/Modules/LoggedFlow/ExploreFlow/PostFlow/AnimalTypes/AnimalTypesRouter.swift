@@ -9,18 +9,18 @@
 import UIKit
 
 final class AnimalTypesRouter {
-  // MARK: - Properties
-  private weak var viewController: ViewController?
-  
-  // MARK: - Init
-  required init(viewController: ViewController?) {
-    self.viewController = viewController
-  }
-  
-  // MARK: - Functions
-  func goBack() {
-    DispatchQueue.main.async {
-      self.viewController?.pop()
+    // MARK: - Properties
+    private weak var viewController: ViewController?
+    
+    // MARK: - Init
+    required init(viewController: ViewController?) {
+        self.viewController = viewController
     }
-  }
+    
+    // MARK: - Functions
+    func goBack() {
+        DispatchQueue.main.async {
+            self.viewController?.pop()
+        }
+    }
 }

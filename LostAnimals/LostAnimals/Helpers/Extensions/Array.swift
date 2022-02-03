@@ -9,13 +9,13 @@
 import Foundation
 
 extension RangeReplaceableCollection where Element: Equatable {
-  mutating func addOrReplace(contentsOf elements: [Element]) {
-    elements.forEach { element in
-      if let index = self.firstIndex(of: element) {
-        self.replaceSubrange(index...index, with: [element])
-      } else {
-        self.append(element)
-      }
+    mutating func addOrReplace(contentsOf elements: [Element]) {
+        elements.forEach { element in
+            if let index = self.firstIndex(of: element) {
+                self.replaceSubrange(index...index, with: [element])
+            } else {
+                self.append(element)
+            }
+        }
     }
-  }
 }

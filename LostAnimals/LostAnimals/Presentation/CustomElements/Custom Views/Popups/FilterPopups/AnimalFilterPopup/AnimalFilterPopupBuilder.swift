@@ -9,16 +9,16 @@
 import UIKit
 
 final class AnimalFilterPopupBuilder {
-  
-  func build() -> AnimalFilterPopupViewController {
     
-    let viewController = UIViewController.instantiate(viewController: AnimalFilterPopupViewController.self)
-    
-    let router = AnimalFilterPopupRouter(viewController: viewController)
-    let viewModel = AnimalFilterPopupViewModel(router: router)
-    
-    viewController.viewModel = viewModel
-    
-    return viewController
-  }
+    func build() -> AnimalFilterPopupViewController {
+        
+        let viewController = UIViewController.instantiate(viewController: AnimalFilterPopupViewController.self)
+        
+        let router = AnimalFilterPopupRouter(viewController: viewController)
+        let viewModel = AnimalFilterPopupViewModel(router: router)
+        
+        viewController.viewModel = viewModel
+        
+        return viewController
+    }
 }

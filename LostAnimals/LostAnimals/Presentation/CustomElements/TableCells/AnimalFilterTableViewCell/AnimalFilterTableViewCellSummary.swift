@@ -10,6 +10,6 @@ import Foundation
 import UIKit
 
 struct AnimalFilterTableViewCellSummary {
-  let animalTypeTitle: String
-  let animalTypeImage: UIImage
+    let animalTypeTitle: String
+    let animalTypeImage: UIImage
 }

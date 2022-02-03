@@ -9,19 +9,19 @@
 import UIKit
 
 extension WhereCanWeFindYouViewController: UISearchBarDelegate {
-  func configureSearchController(_ searchController: UISearchController) {
-    searchController.hidesNavigationBarDuringPresentation = false
-    searchController.searchBar.delegate = self
-    searchController.searchBar.placeholder = "Search your address..."
-    searchController.searchBar.barStyle = .black
-    searchController.searchBar.searchTextField.tintColor = .customWhite
-    searchController.searchBar.searchTextField.backgroundColor = .customBlack
-    searchController.searchBar.searchTextField.leftView?.tintColor = .customWhite
-    self.navigationItem.searchController = searchController
-    self.navigationItem.hidesSearchBarWhenScrolling = false
-  }
-  
-  func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-    searchCompleter.queryFragment = searchText
-  }
+    func configureSearchController(_ searchController: UISearchController) {
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.delegate = self
+        searchController.searchBar.placeholder = "Search your address..."
+        searchController.searchBar.barStyle = .black
+        searchController.searchBar.searchTextField.tintColor = .customWhite
+        searchController.searchBar.searchTextField.backgroundColor = .customBlack
+        searchController.searchBar.searchTextField.leftView?.tintColor = .customWhite
+        self.navigationItem.searchController = searchController
+        self.navigationItem.hidesSearchBarWhenScrolling = false
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchCompleter.queryFragment = searchText
+    }
 }

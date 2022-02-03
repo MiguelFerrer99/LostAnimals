@@ -9,45 +9,45 @@
 import UIKit
 
 final class ExploreViewModel {
-  
-  // MARK: - Properties
-  private let router: ExploreRouter
-  
-  // MARK: - Init
-  required init(router: ExploreRouter) {
-    self.router = router
-  }
+    
+    // MARK: - Properties
+    private let router: ExploreRouter
+    
+    // MARK: - Init
+    required init(router: ExploreRouter) {
+        self.router = router
+    }
 }
 
 // MARK: - Life cycle
 extension ExploreViewModel {
-  func viewReady() {
-    // Called when view is loaded and ready
-  }
-  
-  func viewDidAppear() {
-    // Called when view has appeared
-    Filters.resetFilters()
-    NotificationCenter.default.post(name: .UpdateFiltersUI, object: nil)
-  }
+    func viewReady() {
+        // Called when view is loaded and ready
+    }
+    
+    func viewDidAppear() {
+        // Called when view has appeared
+        Filters.resetFilters()
+        NotificationCenter.default.post(name: .UpdateFiltersUI, object: nil)
+    }
 }
 
 // MARK: - Functions
 extension ExploreViewModel {
-  func didPressPostsFilterPopup(filterType: FilterType) {
-    self.router.goToFilterPopup(filterType: filterType)
-  }
-  
-  func didPressSavedPosts() {
-    let logged = Cache.get(boolFor: .logged)
-    if logged {
-      self.router.goToSavedPosts()
-    } else {
-      showGuestPopup()
+    func didPressPostsFilterPopup(filterType: FilterType) {
+        self.router.goToFilterPopup(filterType: filterType)
     }
-  }
-  
-  func didPressPost(post: Post) {
-    self.router.goToPost(post: post)
-  }
+    
+    func didPressSavedPosts() {
+        let logged = Cache.get(boolFor: .logged)
+        if logged {
+            self.router.goToSavedPosts()
+        } else {
+            showGuestPopup()
+        }
+    }
+    
+    func didPressPost(post: Post) {
+        self.router.goToPost(post: post)
+    }
 }

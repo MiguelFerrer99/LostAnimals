@@ -9,61 +9,61 @@
 import UIKit
 
 final class PostRouter {
-  // MARK: - Properties
-  private weak var viewController: ViewController?
-  
-  // MARK: - Init
-  required init(viewController: ViewController?) {
-    self.viewController = viewController
-  }
-  
-  // MARK: - Functions
-  func goBack() {
-    DispatchQueue.main.async {
-      self.viewController?.pop()
+    // MARK: - Properties
+    private weak var viewController: ViewController?
+    
+    // MARK: - Init
+    required init(viewController: ViewController?) {
+        self.viewController = viewController
     }
-  }
-  
-  func goToPostImages(postImages: [UIImage?], indexPostImages: Int) {
-    let viewController = Container.shared.postImagesBuilder().build(postImages: postImages, indexPostImage: indexPostImages)
-    DispatchQueue.main.async {
-      self.viewController?.present(viewController: viewController, completion: nil)
+    
+    // MARK: - Functions
+    func goBack() {
+        DispatchQueue.main.async {
+            self.viewController?.pop()
+        }
     }
-  }
-  
-  func goToLocation(coordinates: Coordinates, animalName: String? = nil) {
-    let viewController = Container.shared.locationBuilder().build(coordinates: coordinates, animalName: animalName)
-    DispatchQueue.main.async {
-      self.viewController?.push(viewController: viewController)
+    
+    func goToPostImages(postImages: [UIImage?], indexPostImages: Int) {
+        let viewController = Container.shared.postImagesBuilder().build(postImages: postImages, indexPostImage: indexPostImages)
+        DispatchQueue.main.async {
+            self.viewController?.present(viewController: viewController, completion: nil)
+        }
     }
-  }
-  
-  func goToAuthorProfile(user: User) {
-    let viewController = Container.shared.profileBuilder().build(user: user)
-    viewController.hidesBottomBarWhenPushed = true
-    DispatchQueue.main.async {
-      self.viewController?.push(viewController: viewController)
+    
+    func goToLocation(coordinates: Coordinates, animal: Animal? = nil) {
+        let viewController = Container.shared.locationBuilder().build(coordinates: coordinates, animal: animal)
+        DispatchQueue.main.async {
+            self.viewController?.push(viewController: viewController)
+        }
     }
-  }
-  
-  func showContactWithPopup(authorSocialMedias: SocialMedias) {
-    let viewController = Container.shared.contactWithPopupBuilder().build(authorSocialMedias: authorSocialMedias)
-    DispatchQueue.main.async {
-      self.viewController?.present(viewController: viewController, completion: nil)
+    
+    func goToAuthorProfile(user: User) {
+        let viewController = Container.shared.profileBuilder().build(user: user)
+        viewController.hidesBottomBarWhenPushed = true
+        DispatchQueue.main.async {
+            self.viewController?.push(viewController: viewController)
+        }
     }
-  }
-  
-  func goToPostOptionsPopup(comesFrom: PostComesFrom, post: Post) {
-    let viewController = Container.shared.postOptionsPopupBuilder().build(comesFrom: comesFrom, post: post)
-    DispatchQueue.main.async {
-      self.viewController?.present(viewController: viewController, completion: nil)
+    
+    func showContactWithPopup(authorSocialMedias: [SocialMediaType: String]) {
+        let viewController = Container.shared.contactWithPopupBuilder().build(authorSocialMedias: authorSocialMedias)
+        DispatchQueue.main.async {
+            self.viewController?.present(viewController: viewController, completion: nil)
+        }
     }
-  }
-  
-  func goToEditPost(post: Post) {
-    let viewController = Container.shared.editPostBuilder().build(post: post)
-    DispatchQueue.main.async {
-      self.viewController?.push(viewController: viewController)
+    
+    func goToPostOptionsPopup(comesFrom: PostComesFrom, post: Post) {
+        let viewController = Container.shared.postOptionsPopupBuilder().build(comesFrom: comesFrom, post: post)
+        DispatchQueue.main.async {
+            self.viewController?.present(viewController: viewController, completion: nil)
+        }
     }
-  }
+    
+    func goToEditPost(post: Post) {
+        let viewController = Container.shared.editPostBuilder().build(post: post)
+        DispatchQueue.main.async {
+            self.viewController?.push(viewController: viewController)
+        }
+    }
 }
