@@ -21,6 +21,14 @@ extension Container {
         return AnimalTypesBuilder()
     }
     
+    func blockedUsersBuilder() -> BlockedUsersBuilder {
+        return BlockedUsersBuilder()
+    }
+    
+    func changePasswordBuilder() -> ChangePasswordBuilder {
+        return ChangePasswordBuilder()
+    }
+    
     func contactWithPopupBuilder() -> ContactWithPopupBuilder {
         return ContactWithPopupBuilder()
     }

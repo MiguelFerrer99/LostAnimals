@@ -70,6 +70,14 @@ class TextFieldErrorOnlyLettersAndSpaces: TextFieldError {
     }
 }
 
+class TextFieldErrorMaximumCharacters: TextFieldError {
+    init(_ maximum: Int) {
+        super.init(localizedDescription: "The field can contain maximum \(maximum) characters") { (value) -> Bool in
+            return !value.maximumCharacters(maximum: maximum)
+        }
+    }
+}
+
 class TextFieldErrorPhoneNumber: TextFieldError {
     init() {
         super.init(localizedDescription: "Invalid phone number format") { (value) -> Bool in

@@ -40,11 +40,17 @@ final class ProfileSettingsRouter {
     }
     
     func goToChangePassword() {
-        // TODO: Create ChangePassword module
+        let viewController = Container.shared.changePasswordBuilder().build()
+        DispatchQueue.main.async {
+            self.viewController?.push(viewController: viewController)
+        }
     }
     
     func goToBlockedUsers() {
-        // TODO: Create BlockedUsers module
+        let viewController = Container.shared.blockedUsersBuilder().build()
+        DispatchQueue.main.async {
+            self.viewController?.push(viewController: viewController)
+        }
     }
     
     func goToTermsAndConditions() {

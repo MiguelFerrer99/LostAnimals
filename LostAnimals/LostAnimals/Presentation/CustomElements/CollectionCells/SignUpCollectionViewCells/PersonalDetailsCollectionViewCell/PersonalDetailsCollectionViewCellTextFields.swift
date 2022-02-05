@@ -16,16 +16,20 @@ extension PersonalDetailsCollectionViewCell: CustomTextFieldDelegate {
         firstnameTextfield.delegate = self
         firstnameTextfield.textField.keyboardType = .alphabet
         firstnameTextfield.textField.textContentType = .givenName
+        firstnameTextfield.textField.autocapitalizationType = .words
         firstnameTextfield.textField.returnKeyType = .next
         firstnameTextfield.addErrorsToCheck([TextFieldErrorEmptyValue(),
-                                             TextFieldErrorOnlyLettersAndSpaces()])
+                                             TextFieldErrorOnlyLettersAndSpaces(),
+                                             TextFieldErrorMaximumCharacters(20)])
         
         lastnameTextfield.delegate = self
         lastnameTextfield.textField.keyboardType = .alphabet
         lastnameTextfield.textField.textContentType = .familyName
+        lastnameTextfield.textField.autocapitalizationType = .words
         lastnameTextfield.textField.returnKeyType = .next
         lastnameTextfield.addErrorsToCheck([TextFieldErrorEmptyValue(),
-                                            TextFieldErrorOnlyLettersAndSpaces()])
+                                            TextFieldErrorOnlyLettersAndSpaces(),
+                                            TextFieldErrorMaximumCharacters(20)])
         
         birthdateTexfield.delegate = self
         birthdateTexfield.textField.returnKeyType = .next
@@ -38,9 +42,11 @@ extension PersonalDetailsCollectionViewCell: CustomTextFieldDelegate {
         animalShelterNameTextfield.delegate = self
         animalShelterNameTextfield.textField.keyboardType = .alphabet
         animalShelterNameTextfield.textField.textContentType = .name
+        animalShelterNameTextfield.textField.autocapitalizationType = .none
         animalShelterNameTextfield.textField.returnKeyType = .done
         animalShelterNameTextfield.addErrorsToCheck([TextFieldErrorEmptyValue(),
-                                                     TextFieldErrorOnlyLettersAndSpaces()])
+                                                     TextFieldErrorOnlyLettersAndSpaces(),
+                                                     TextFieldErrorMaximumCharacters(20)])
         
         whereCanWeFindYouTextfield.delegate = self
         whereCanWeFindYouTextfield.textField.returnKeyType = .done

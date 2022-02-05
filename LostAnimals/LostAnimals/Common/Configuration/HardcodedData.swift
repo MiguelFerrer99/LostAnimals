@@ -30,7 +30,7 @@ extension HardcodedData {
                                    isAnimalShelter: false,
                                    socialMedias: exampleSocialMedias,
                                    isBanned: false,
-                                   blockedUsers: [])
+                                   blockedUsers: [1])
     static let exampleUser2 = User(id: 1,
                                    email: "joanferrer41@gmail.com",
                                    firstname: "Joan",
@@ -55,6 +55,7 @@ extension HardcodedData {
                                    socialMedias: exampleSocialMedias,
                                    isBanned: false,
                                    blockedUsers: [])
+    static let exampleUsers: [User] = [exampleUser1, exampleUser2, exampleUser3]
     static let exampleAnimal1 = Animal(name: "Benito", type: .cat, breed: "Gato común europeo", images: [UIImage(named: "CatExample1"), UIImage(named: "CatExample2")])
     static let exampleAnimal2 = Animal(name: nil, type: .dog, breed: "Labrador", images: [UIImage(named: "DogExample1"), UIImage(named: "DogExample2")])
     static let exampleAnimal3 = Animal(name: "Palomo", type: .bird, breed: nil, images: [UIImage(named: "BirdExample1"), UIImage(named: "BirdExample2")])

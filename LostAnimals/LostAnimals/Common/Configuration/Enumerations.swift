@@ -8,53 +8,53 @@
 
 import Foundation
 
-public enum SignUpStep: Int {
+enum SignUpStep: Int {
     case personalDetails
     case accountDetails
     case socialMediaDetails
 }
 
-public enum SignUpStepLabel: String {
+enum SignUpStepLabel: String {
     case personalDetails = "Personal details"
     case accountDetails = "Account details"
     case socialMediaDetails = "Social media details"
 }
 
-public enum MoveDirection: Int {
+enum MoveDirection: Int {
     case back
     case next
 }
 
-public enum WhereDoYouLiveComesFrom: String {
+enum WhereDoYouLiveComesFrom: String {
     case personalDetails
     case socialMediaDetails
 }
 
-public enum WhereCanWeFindYouComesFrom: String {
+enum WhereCanWeFindYouComesFrom: String {
     case signUp
     case editPost
     case newPost
 }
 
-public enum OnboardingStep: Int {
+enum OnboardingStep: Int {
     case share
     case find
     case contact
 }
 
-public enum TabBarItem: Int {
+enum TabBarItem: Int {
     case explore
     case newPost
     case profile
 }
 
-public enum PostType: String {
+enum PostType: String {
     case lost = "Lost"
     case found = "Found"
     case adopt = "Adopt"
 }
 
-public enum AnimalType: String {
+enum AnimalType: String {
     case dog = "Dog"
     case bird = "Bird"
     case cat = "Cat"
@@ -64,7 +64,7 @@ public enum AnimalType: String {
     case other = "Other"
 }
 
-public enum FilterType: Int {
+enum FilterType: Int {
     case all
     case lost
     case found
@@ -74,34 +74,34 @@ public enum FilterType: Int {
     case date
 }
 
-public enum PostComesFrom: String {
+enum PostComesFrom: String {
     case explore
     case profile
 }
 
-public enum AnimalTypesComesFrom: String {
+enum AnimalTypesComesFrom: String {
     case editPost
     case newPost
 }
 
-public enum SelectPhotoPopupComesFrom: String {
+enum SelectPhotoPopupComesFrom: String {
     case editPost
     case newPost
     case profileSettings
 }
 
-public enum BannedPopupComesFrom: String {
+enum BannedPopupComesFrom: String {
     case login
     case tabbar
 }
 
-public enum ProfileSectionType: String {
+enum ProfileSectionType: String {
     case posts
     case savedPosts
     case socialMedias
 }
 
-public enum SocialMediaType: String {
+enum SocialMediaType: String {
     case email
     case phone
     case whatsapp
@@ -109,7 +109,7 @@ public enum SocialMediaType: String {
     case twitter
 }
 
-public enum ProfileSettingsImageType: String {
+enum ProfileSettingsImageType: String {
     case header
     case user
 }

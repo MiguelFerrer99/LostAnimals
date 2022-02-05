@@ -23,3 +23,7 @@ protocol SignUpStepsDelegate: AnyObject {
 protocol PostFiltersDelegate: AnyObject {
     func showPostFilters(filterType: FilterType)
 }
+
+protocol UnblockUserDelegate: AnyObject {
+    func unblockUser(userID: Int)
+}
