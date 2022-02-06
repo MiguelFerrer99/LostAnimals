@@ -9,11 +9,14 @@
 import Foundation
 
 extension Notification.Name {
-    static let SendWhereDoYouLiveCountryAndCities = Notification.Name("SendWhereDoYouLiveCountryAndCities")
+    static let SendWhereDoYouLiveCountryAndCitiesToSignUp = Notification.Name("SendWhereDoYouLiveCountryAndCitiesToSignUp")
+    static let SendWhereDoYouLiveCountryAndCitiesToEditPersonalDetails = Notification.Name("SendWhereDoYouLiveCountryAndCitiesToEditPersonalDetails")
     static let SendWhereCanWeFindYouAddressToSignUp = Notification.Name("SendWhereCanWeFindYouAddressToSignUp")
     static let SendWhereCanWeFindYouAddressToEditPost = Notification.Name("SendWhereCanWeFindYouAddressToEditPost")
     static let SendWhereCanWeFindYouAddressToNewPost = Notification.Name("SendWhereCanWeFindYouAddressToNewPost")
-    static let SendCountryDialCode = Notification.Name("SendCountryDialCode")
+    static let SendWhereCanWeFindYouAddressToEditPersonalDetails = Notification.Name("SendWhereCanWeFindYouAddressToEditPersonalDetails")
+    static let SendCountryDialCodeToSignUp = Notification.Name("SendCountryDialCodeToSignUp")
+    static let SendCountryDialCodeToEditSocialMedias = Notification.Name("SendCountryDialCodeToEditSocialMedias")
     static let SendAnimalToEditPost = Notification.Name("SendAnimalToEditPost")
     static let SendAnimalToNewPost = Notification.Name("SendAnimalToNewPost")
     

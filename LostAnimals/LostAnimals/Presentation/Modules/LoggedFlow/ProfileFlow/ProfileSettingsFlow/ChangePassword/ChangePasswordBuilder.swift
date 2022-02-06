@@ -10,11 +10,11 @@ import UIKit
 
 final class ChangePasswordBuilder {
     
-    func build() -> ChangePasswordViewController {
+    func build(me: User) -> ChangePasswordViewController {
         let viewController = UIViewController.instantiate(viewController: ChangePasswordViewController.self)
         
         let router = ChangePasswordRouter(viewController: viewController)
-        let viewModel = ChangePasswordViewModel(router: router)
+        let viewModel = ChangePasswordViewModel(router: router, me: me)
         
         viewController.viewModel = viewModel
         

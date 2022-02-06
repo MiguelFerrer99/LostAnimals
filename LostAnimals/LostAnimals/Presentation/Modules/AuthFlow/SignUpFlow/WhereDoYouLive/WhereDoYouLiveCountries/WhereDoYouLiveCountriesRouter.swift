@@ -24,8 +24,14 @@ final class WhereDoYouLiveCountriesRouter {
         }
     }
     
-    func goToWhereDoYouLiveCities(country: Country, cities: [String]) {
-        let viewController = Container.shared.whereDoYouLiveCitiesBuilder().build(country: country, cities: cities)
+    func goToEditSocialMedias() {
+        DispatchQueue.main.async {
+            self.viewController?.pop()
+        }
+    }
+    
+    func goToWhereDoYouLiveCities(comesFrom: WhereDoYouLiveComesFrom, country: Country, cities: [String]) {
+        let viewController = Container.shared.whereDoYouLiveCitiesBuilder().build(comesFrom: comesFrom, country: country, cities: cities)
         DispatchQueue.main.async {
             self.viewController?.push(viewController: viewController)
         }

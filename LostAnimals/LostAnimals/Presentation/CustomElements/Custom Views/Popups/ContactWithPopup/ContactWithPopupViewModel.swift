@@ -39,7 +39,9 @@ extension ContactWithPopupViewModel {
     }
     
     func didPressPhoneButton() {
-        self.router.contactByPhone(fullPhoneNumber: authorSocialMedias[.phone])
+        guard let phonePrefix = authorSocialMedias[.phonePrefix], let phoneNumber = authorSocialMedias[.phoneNumber] else { return }
+        let fullPhoneNumber = "+\(phonePrefix)\(phoneNumber)"
+        self.router.contactByPhone(fullPhoneNumber: fullPhoneNumber)
     }
     
     func didPressWhatsappButton() {

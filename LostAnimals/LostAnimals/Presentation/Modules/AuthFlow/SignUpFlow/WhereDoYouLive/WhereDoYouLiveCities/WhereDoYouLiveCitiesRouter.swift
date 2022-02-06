@@ -24,4 +24,11 @@ final class WhereDoYouLiveCitiesRouter {
             self.viewController?.navigationController?.popToViewController(viewController, animated: true)
         }
     }
+    
+    func goToEditPersonalDetails() {
+        guard let viewController = self.viewController?.navigationController?.viewControllers[2] as? EditPersonalDetailsViewController else { return }
+        DispatchQueue.main.async {
+            self.viewController?.navigationController?.popToViewController(viewController, animated: true)
+        }
+    }
 }

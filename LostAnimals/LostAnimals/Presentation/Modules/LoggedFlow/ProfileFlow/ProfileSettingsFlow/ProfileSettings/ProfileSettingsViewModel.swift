@@ -50,15 +50,15 @@ extension ProfileSettingsViewModel {
     }
     
     func didPressedEditPersonalDataButton() {
-        self.router.goToEditPersonalData()
+        self.router.goToEditPersonalDetails(me: me)
     }
     
     func didPressedEditSocialMediaButton() {
-        self.router.goToEditSocialMedias()
+        self.router.goToEditSocialMediaDetails(me: me)
     }
     
     func didPressedChangePasswordButton() {
-        self.router.goToChangePassword()
+        self.router.goToChangePassword(me: me)
     }
     
     func didPressedBlockedUsersButton() {

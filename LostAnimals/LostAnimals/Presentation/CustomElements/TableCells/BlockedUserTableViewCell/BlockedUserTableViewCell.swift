@@ -14,6 +14,7 @@ class BlockedUserTableViewCell: UITableViewCell, ViewModelCell {
     // MARK: - IBOutlets
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var unblockButton: CustomButton!
     
     // MARK: - Properties
     var viewModel: BlockedUserTableViewCellViewModel!

@@ -14,29 +14,30 @@ extension EditPostViewController: CustomTextFieldDelegate {
     // MARK: - Functions
     func configureTextfields() {
         animalTextfield.delegate = self
-        animalTextfield.initEditableTextfield()
         animalTextfield.addErrorsToCheck([TextFieldErrorEmptyValue()])
+        animalTextfield.initEditableTextfield()
         
         nameTextfield.delegate = self
-        nameTextfield.initEditableTextfield()
         nameTextfield.textField.textContentType = .name
         nameTextfield.textField.keyboardType    = .alphabet
         nameTextfield.textField.returnKeyType   = .next
         nameTextfield.addErrorsToCheck([TextFieldErrorEmptyValue(),
                                         TextFieldErrorOnlyLettersAndSpaces()])
+        nameTextfield.initEditableTextfield()
         
         breedTextfield.delegate = self
         breedTextfield.textField.textContentType = .name
         breedTextfield.textField.keyboardType    = .alphabet
         breedTextfield.textField.returnKeyType   = .next
+        breedTextfield.initEditableTextfield()
         
         lastTimeSeenTextfield.delegate = self
-        lastTimeSeenTextfield.initEditableTextfield()
         lastTimeSeenTextfield.addErrorsToCheck([TextFieldErrorEmptyValue()])
+        lastTimeSeenTextfield.initEditableTextfield()
         
         locationTextfield.delegate = self
-        locationTextfield.initEditableTextfield()
         locationTextfield.addErrorsToCheck([TextFieldErrorEmptyValue()])
+        locationTextfield.initEditableTextfield()
         
         switch viewModel.post.postType {
         case .lost:

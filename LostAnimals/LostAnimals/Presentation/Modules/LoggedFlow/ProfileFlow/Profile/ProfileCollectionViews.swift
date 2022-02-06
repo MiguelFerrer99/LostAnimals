@@ -59,7 +59,7 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
                 case .email:
                     socialMediaIcon = UIImage(named: "Mail") ?? UIImage()
                     socialMediaBackgroundImage = UIImage(named: "CustomRedBackground") ?? UIImage()
-                case .phone:
+                case .phonePrefix, .phoneNumber:
                     socialMediaIcon = UIImage(named: "Phone") ?? UIImage()
                     socialMediaBackgroundImage = UIImage(named: "CustomBlueBackground") ?? UIImage()
                 case .whatsapp:
@@ -101,7 +101,7 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
                 switch socialMediaType {
                 case .email:
                     sendEmail(email: socialMediaValue ?? "")
-                case .phone:
+                case .phonePrefix, .phoneNumber:
                     viewModel.didPressPhoneButton()
                 case .whatsapp:
                     viewModel.didPressWhatsappButton()

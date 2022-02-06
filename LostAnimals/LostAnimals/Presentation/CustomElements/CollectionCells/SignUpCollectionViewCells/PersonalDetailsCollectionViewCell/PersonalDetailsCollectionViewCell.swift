@@ -40,7 +40,7 @@ class PersonalDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell {
     
     // MARK: - Functions
     private func subscribeToNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(fillWhereDoYouLive), name: .SendWhereDoYouLiveCountryAndCities, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(fillWhereDoYouLive), name: .SendWhereDoYouLiveCountryAndCitiesToSignUp, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(fillWhereCanWeFindYou), name: .SendWhereCanWeFindYouAddressToSignUp, object: nil)
     }
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class BlockedUsersViewController: ViewController {
+final class BlockedUsersViewController: ViewController, UIGestureRecognizerDelegate {
     // MARK: - IBOutlets
     @IBOutlet weak var blockedUsersTableView: UITableView!
     
@@ -33,7 +33,14 @@ final class BlockedUsersViewController: ViewController {
     }
     
     // MARK: - Functions
+    func updateUserInteraction(to: Bool) {
+        navigationController?.navigationBar.isUserInteractionEnabled = to
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = to
+        blockedUsersTableView.isUserInteractionEnabled = to
+    }
+    
     private func setupUI() {
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         configureTableView(blockedUsersTableView)
     }
 }

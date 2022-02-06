@@ -53,6 +53,9 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="fullRound" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="indicatorColor">
+                                        <color key="value" name="CustomBlack"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="unblockUserButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="W4d-kW-trJ"/>
@@ -84,6 +87,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="unblockButton" destination="CTu-t8-tAT" id="Mxw-R5-PFF"/>
                 <outlet property="userImageView" destination="grp-JX-76J" id="efh-Lb-cb9"/>
                 <outlet property="userNameLabel" destination="nfq-EZ-gTN" id="QdN-eg-VOh"/>
             </connections>

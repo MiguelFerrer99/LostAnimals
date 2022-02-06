@@ -10,7 +10,9 @@ import Foundation
 
 extension BlockedUsersViewController: UnblockUserDelegate {
     func unblockUser(userID: Int) {
+        updateUserInteraction(to: false)
         // TODO: - Call API to unblock user
         blockedUsersTableView.reloadData()
+        updateUserInteraction(to: true)
     }
 }

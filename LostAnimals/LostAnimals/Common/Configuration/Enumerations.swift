@@ -26,14 +26,17 @@ enum MoveDirection: Int {
 }
 
 enum WhereDoYouLiveComesFrom: String {
-    case personalDetails
-    case socialMediaDetails
+    case signUpPersonalDetails
+    case signUpSocialMediaDetails
+    case editPersonalDetails
+    case editSocialMediaDetails
 }
 
 enum WhereCanWeFindYouComesFrom: String {
     case signUp
     case editPost
     case newPost
+    case editPersonalDetails
 }
 
 enum OnboardingStep: Int {
@@ -103,7 +106,8 @@ enum ProfileSectionType: String {
 
 enum SocialMediaType: String {
     case email
-    case phone
+    case phonePrefix
+    case phoneNumber
     case whatsapp
     case instagram
     case twitter

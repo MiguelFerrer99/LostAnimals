@@ -47,7 +47,7 @@ class SocialMediaDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell 
     
     // MARK: - Functions
     private func subscribeToNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(fillPhonePrefix), name: .SendCountryDialCode, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(fillPhonePrefix), name: .SendCountryDialCodeToSignUp, object: nil)
     }
     
     private func unsubscribeToNotifications() {
@@ -68,14 +68,13 @@ class SocialMediaDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell 
     }
     
     private func toggleHaveWhatsAppButton() {
-        viewModel.termsAndContitionsAccepted.toggle()
-        termsAndConditionsRadioButtonImageView.image = UIImage(systemName: viewModel.termsAndContitionsAccepted ? "checkmark.circle.fill" : "circle")
-        checkAllContentsAreOk()
+        viewModel.haveWhatsAppSelected.toggle()
+        haveWhatsAppRadioButtonImageView.image = UIImage(systemName: viewModel.haveWhatsAppSelected ? "checkmark.circle.fill" : "circle")
     }
     
     private func toggleTermsAndConditionsButton() {
-        viewModel.haveWhatsAppSelected.toggle()
-        haveWhatsAppRadioButtonImageView.image = UIImage(systemName: viewModel.haveWhatsAppSelected ? "checkmark.circle.fill" : "circle")
+        viewModel.termsAndContitionsAccepted.toggle()
+        termsAndConditionsRadioButtonImageView.image = UIImage(systemName: viewModel.termsAndContitionsAccepted ? "checkmark.circle.fill" : "circle")
         checkAllContentsAreOk()
     }
     

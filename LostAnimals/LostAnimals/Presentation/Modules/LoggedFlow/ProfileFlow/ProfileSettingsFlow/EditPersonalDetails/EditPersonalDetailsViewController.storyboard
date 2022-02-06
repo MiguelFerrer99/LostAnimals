@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-Bold.ttf">
+            <string>Nunito-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Edit Personal Details View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="EditPersonalDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="EditPersonalDetailsViewController" customModule="LostAnimals" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J6E-6o-VZb">
+                                <rect key="frame" x="40" y="104" width="334" height="738"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Vf9-h8-9Cx">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="738"/>
+                                        <subviews>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kH0-to-6nm" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="-80" width="334" height="80"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="Ghf-9W-9w7"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="capitalizeFirstLetter" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hideContent" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="whiteTheme" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Animal shelter name"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="datePickerEnabled" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="dateAndTimePickerEnabled" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="animalPickerEnabled" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pSX-mZ-KXs" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="334" height="80"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="E9V-R1-GN4"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="capitalizeFirstLetter" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hideContent" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="whiteTheme" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Firstname"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="datePickerEnabled" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="dateAndTimePickerEnabled" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="animalPickerEnabled" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G9R-SV-LZ6" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="100" width="334" height="80"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="ZvJ-Op-Gyq"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="capitalizeFirstLetter" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hideContent" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="whiteTheme" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Lastname"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="datePickerEnabled" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="dateAndTimePickerEnabled" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="animalPickerEnabled" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0B4-Kw-6WF" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="200" width="334" height="80"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="LKI-wZ-cZh"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="capitalizeFirstLetter" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hideContent" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="whiteTheme" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Birthdate"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="datePickerEnabled" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="dateAndTimePickerEnabled" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="animalPickerEnabled" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ckV-da-aoB" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="300" width="334" height="80"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="0U5-Sx-jnn"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="capitalizeFirstLetter" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hideContent" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="whiteTheme" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Where do you live?"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="datePickerEnabled" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="dateAndTimePickerEnabled" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="animalPickerEnabled" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KUd-1i-4tO" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="390" width="334" height="80"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="t6R-O2-ysw"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="capitalizeFirstLetter" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hideContent" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="whiteTheme" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Where can we find you?"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="datePickerEnabled" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="dateAndTimePickerEnabled" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="animalPickerEnabled" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LMC-hR-qkq">
+                                                <rect key="frame" x="0.0" y="400" width="334" height="273"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="zxa-T5-ey3"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLM-Bl-vP4" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="693" width="334" height="45"/>
+                                                <color key="backgroundColor" name="CustomWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="qlU-I2-KfI"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="20"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Save changes">
+                                                    <color key="titleColor" name="CustomBlack"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fullRound" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="indicatorColor">
+                                                        <color key="value" name="CustomBlack"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="saveChangesButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="pzY-CQ-Sve"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Vf9-h8-9Cx" firstAttribute="leading" secondItem="J6E-6o-VZb" secondAttribute="leading" id="0yU-4S-dza"/>
+                                    <constraint firstAttribute="bottom" secondItem="Vf9-h8-9Cx" secondAttribute="bottom" id="8ea-zp-Aul"/>
+                                    <constraint firstAttribute="trailing" secondItem="Vf9-h8-9Cx" secondAttribute="trailing" id="cMz-k3-5ng"/>
+                                    <constraint firstItem="Vf9-h8-9Cx" firstAttribute="top" secondItem="J6E-6o-VZb" secondAttribute="top" id="qVD-N3-iwp"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" name="CustomGreen"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="J6E-6o-VZb" secondAttribute="bottom" constant="20" id="0QS-M2-aIA"/>
+                            <constraint firstItem="J6E-6o-VZb" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="60" id="AR5-xp-Hf8"/>
+                            <constraint firstItem="J6E-6o-VZb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="Usa-6D-R2g"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="J6E-6o-VZb" secondAttribute="trailing" constant="40" id="VvP-Mr-ECw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="animalShelterNameTextfield" destination="kH0-to-6nm" id="2bd-k8-d0P"/>
+                        <outlet property="birthdateTextfield" destination="0B4-Kw-6WF" id="6P6-xA-xrD"/>
+                        <outlet property="firstnameTextfield" destination="pSX-mZ-KXs" id="bGh-NF-jgO"/>
+                        <outlet property="lastnameTextfield" destination="G9R-SV-LZ6" id="cfC-dN-wNs"/>
+                        <outlet property="saveChangesButton" destination="VLM-Bl-vP4" id="uWw-1F-KfH"/>
+                        <outlet property="whereCanWeFindYouTextfield" destination="KUd-1i-4tO" id="6qm-vX-hem"/>
+                        <outlet property="whereDoYouLiveTextfield" destination="ckV-da-aoB" id="gWC-wX-lZL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="97" y="106"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="VLM-Bl-vP4">
+            <size key="intrinsicContentSize" width="127" height="40"/>
+        </designable>
+    </designables>
+    <resources>
+        <namedColor name="CustomBlack">
+            <color red="0.24705882352941178" green="0.24705882352941178" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="CustomGreen">
+            <color red="0.40784313725490196" green="0.72549019607843135" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="CustomWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

@@ -1,0 +1,33 @@
+//
+//  EditSocialMediasRouter.swift
+//  LostAnimals
+//
+//  Created by Miguel Ferrer Fornali on 6/2/22.
+//  Copyright © 2022 Rudo. All rights reserved.
+//
+
+import UIKit
+
+final class EditSocialMediasRouter {
+    // MARK: - Properties
+    private weak var viewController: ViewController?
+    
+    // MARK: - Init
+    required init(viewController: ViewController?) {
+        self.viewController = viewController
+    }
+    
+    // MARK: - Functions
+    func goBack() {
+        DispatchQueue.main.async {
+            self.viewController?.pop()
+        }
+    }
+    
+    func goToWhereDoYouLiveCountries() {
+        let viewController = Container.shared.whereDoYouLiveCountriesBuilder().build(comesFrom: .editSocialMediaDetails)
+        DispatchQueue.main.async {
+            self.viewController?.push(viewController: viewController)
+        }
+    }
+}

@@ -52,13 +52,19 @@ extension WhereDoYouLiveCountriesViewModel {
     
     func didPressCountryCell(country: Country, cities: [String]) {
         switch comesFrom {
-        case .personalDetails:
-            self.router.goToWhereDoYouLiveCities(country: country, cities: cities)
-        case .socialMediaDetails:
+        case .signUpPersonalDetails,
+             .editPersonalDetails:
+            self.router.goToWhereDoYouLiveCities(comesFrom: comesFrom, country: country, cities: cities)
+        case .signUpSocialMediaDetails:
             let countryDialCodeString = country.dialCode
             let userInfo: [String: String] = ["countryDialCodeString": countryDialCodeString]
-            NotificationCenter.default.post(name: .SendCountryDialCode, object: nil, userInfo: userInfo)
+            NotificationCenter.default.post(name: .SendCountryDialCodeToSignUp, object: nil, userInfo: userInfo)
             self.router.goToSignUp()
+        case .editSocialMediaDetails:
+            let countryDialCodeString = country.dialCode
+            let userInfo: [String: String] = ["countryDialCodeString": countryDialCodeString]
+            NotificationCenter.default.post(name: .SendCountryDialCodeToEditSocialMedias, object: nil, userInfo: userInfo)
+            self.router.goToEditSocialMedias()
         }
     }
 }

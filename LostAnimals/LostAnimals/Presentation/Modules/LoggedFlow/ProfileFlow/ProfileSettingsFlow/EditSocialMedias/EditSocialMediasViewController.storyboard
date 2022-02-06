@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-Bold.ttf">
+            <string>Nunito-Bold</string>
+        </array>
+        <array key="Nunito-Regular.ttf">
+            <string>Nunito-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Edit Social Medias View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="EditSocialMediasViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="EditSocialMediasViewController" customModule="LostAnimals" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ijM-Gy-FLb">
+                                <rect key="frame" x="40" y="104" width="334" height="738"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="d18-12-dxl">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="738"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Lnl-dA-xLB">
+                                                <rect key="frame" x="0.0" y="0.0" width="334" height="115"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="h2R-R7-tSp">
+                                                        <rect key="frame" x="0.0" y="0.0" width="334" height="80"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="y7V-gk-guL">
+                                                                <rect key="frame" x="0.0" y="0.0" width="60" height="80"/>
+                                                                <subviews>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Te-jl-ORd" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                                        <subviews>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JVn-Ns-vDd">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                                <state key="normal" title="Button"/>
+                                                                                <connections>
+                                                                                    <action selector="phonePrefixButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="MeH-MB-ngc"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pr" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wf1-6V-LTa">
+                                                                                <rect key="frame" x="20" y="0.0" width="20" height="33"/>
+                                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="33" id="QYu-Tf-qON"/>
+                                                                                </constraints>
+                                                                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
+                                                                                <color key="textColor" systemColor="systemGrayColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fbz-pr-wuP">
+                                                                                <rect key="frame" x="8" y="18" width="44" height="42"/>
+                                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="42" id="AlA-Yh-rAH"/>
+                                                                                </constraints>
+                                                                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
+                                                                                <color key="textColor" name="CustomWhite"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" name="CustomBlack"/>
+                                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <constraints>
+                                                                            <constraint firstItem="Wf1-6V-LTa" firstAttribute="top" secondItem="7Te-jl-ORd" secondAttribute="top" id="3yG-RD-n0o"/>
+                                                                            <constraint firstAttribute="height" constant="60" id="7kl-hp-5iG"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="Fbz-pr-wuP" secondAttribute="bottom" id="8J4-mJ-rNm"/>
+                                                                            <constraint firstItem="JVn-Ns-vDd" firstAttribute="leading" secondItem="7Te-jl-ORd" secondAttribute="leading" id="BUz-eQ-fSb"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="JVn-Ns-vDd" secondAttribute="bottom" id="Ej5-e2-0T0"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="JVn-Ns-vDd" secondAttribute="trailing" id="FxA-Xe-q6v"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="Fbz-pr-wuP" secondAttribute="trailing" constant="8" id="OVe-rp-Lnp"/>
+                                                                            <constraint firstItem="Wf1-6V-LTa" firstAttribute="leading" secondItem="7Te-jl-ORd" secondAttribute="leading" constant="20" id="dwy-7w-TsB"/>
+                                                                            <constraint firstItem="JVn-Ns-vDd" firstAttribute="top" secondItem="7Te-jl-ORd" secondAttribute="top" id="onF-Qp-Pzr"/>
+                                                                            <constraint firstItem="Fbz-pr-wuP" firstAttribute="leading" secondItem="7Te-jl-ORd" secondAttribute="leading" constant="8" id="pec-fZ-Xb5"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="Wf1-6V-LTa" secondAttribute="trailing" constant="20" id="uq7-Y9-4i9"/>
+                                                                        </constraints>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="10"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </view>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IPF-UR-w21">
+                                                                        <rect key="frame" x="0.0" y="66" width="60" height="14"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </view>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="60" id="ias-T1-tAG"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yfh-L2-7Cz" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
+                                                                <rect key="frame" x="70" y="0.0" width="264" height="80"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="80" id="IET-VP-F90"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hideContent" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="capitalizeFirstLetter" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Phone"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="whiteTheme" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="datePickerEnabled" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="birthdatePickerEnabled" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isOptional" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="dateAndTimePickerEnabled" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="animalPickerEnabled" value="NO"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="0Zo-Ep-Wbd">
+                                                        <rect key="frame" x="0.0" y="90" width="334" height="25"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gtf-PW-n5F">
+                                                                <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PxM-Tf-da1">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <connections>
+                                                                            <action selector="haveWhatsappButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="tlu-zZ-7k1"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="RcI-aW-9a7">
+                                                                        <rect key="frame" x="0.0" y="0.5" width="25" height="24"/>
+                                                                        <color key="tintColor" name="CustomBlack"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="25" id="Alb-Fv-Cm7"/>
+                                                                            <constraint firstAttribute="height" constant="25" id="M6t-bM-0zB"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="RcI-aW-9a7" firstAttribute="centerY" secondItem="gtf-PW-n5F" secondAttribute="centerY" id="4xF-o1-RJg"/>
+                                                                    <constraint firstItem="PxM-Tf-da1" firstAttribute="top" secondItem="gtf-PW-n5F" secondAttribute="top" id="AO3-Qh-ENA"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="PxM-Tf-da1" secondAttribute="trailing" id="BMN-FB-ifF"/>
+                                                                    <constraint firstItem="PxM-Tf-da1" firstAttribute="leading" secondItem="gtf-PW-n5F" secondAttribute="leading" id="Bvb-52-aKt"/>
+                                                                    <constraint firstAttribute="width" constant="25" id="CIr-dk-m0f"/>
+                                                                    <constraint firstAttribute="height" constant="25" id="LTT-Ne-4oc"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="PxM-Tf-da1" secondAttribute="bottom" id="NkT-yF-r9g"/>
+                                                                    <constraint firstItem="RcI-aW-9a7" firstAttribute="leading" secondItem="gtf-PW-n5F" secondAttribute="leading" id="rLp-0p-WvC"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I have WhatsApp" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1H5-Jo-8C7">
+                                                                <rect key="frame" x="30" y="0.0" width="304" height="25"/>
+                                                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
+                                                                <color key="textColor" name="CustomBlack"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJH-IM-qRK" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="135" width="334" height="80"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="d2v-0I-Cc8"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hideContent" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="capitalizeFirstLetter" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Twitter"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="whiteTheme" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="datePickerEnabled" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="birthdatePickerEnabled" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isOptional" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="dateAndTimePickerEnabled" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="animalPickerEnabled" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I1H-qy-ci2" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="235" width="334" height="80"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="dXT-q8-eco"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hideContent" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="capitalizeFirstLetter" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Instagram"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="whiteTheme" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="datePickerEnabled" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="birthdatePickerEnabled" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isOptional" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="dateAndTimePickerEnabled" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="animalPickerEnabled" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2aW-Du-4f5">
+                                                <rect key="frame" x="0.0" y="335" width="334" height="338"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="ET0-Qe-jNu"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wbv-0d-Fa5" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="693" width="334" height="45"/>
+                                                <color key="backgroundColor" name="CustomWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="Mla-2c-eGd"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="20"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Save changes">
+                                                    <color key="titleColor" name="CustomBlack"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fullRound" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="saveChangesButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="3ua-YD-zUc"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="d18-12-dxl" firstAttribute="top" secondItem="ijM-Gy-FLb" secondAttribute="top" id="AMS-QB-TKm"/>
+                                    <constraint firstAttribute="trailing" secondItem="d18-12-dxl" secondAttribute="trailing" id="EpJ-Iq-BgB"/>
+                                    <constraint firstAttribute="bottom" secondItem="d18-12-dxl" secondAttribute="bottom" id="Msk-Wi-5zZ"/>
+                                    <constraint firstItem="d18-12-dxl" firstAttribute="leading" secondItem="ijM-Gy-FLb" secondAttribute="leading" id="udz-G7-sHZ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" name="CustomGreen"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ijM-Gy-FLb" secondAttribute="trailing" constant="40" id="2cq-eF-gUR"/>
+                            <constraint firstItem="ijM-Gy-FLb" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="60" id="QQm-KQ-OjN"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ijM-Gy-FLb" secondAttribute="bottom" constant="20" id="ULy-q3-mHr"/>
+                            <constraint firstItem="ijM-Gy-FLb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="Udb-3r-Q5E"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="haveWhatsappButton" destination="PxM-Tf-da1" id="F7I-DB-0H1"/>
+                        <outlet property="haveWhatsappButtonImageView" destination="RcI-aW-9a7" id="3Tc-Wg-Osv"/>
+                        <outlet property="instagramTextfield" destination="BJH-IM-qRK" id="TuY-Ty-adl"/>
+                        <outlet property="phoneNumberTextfield" destination="Yfh-L2-7Cz" id="Qdx-UV-yU0"/>
+                        <outlet property="phonePrefixButton" destination="JVn-Ns-vDd" id="Kjd-fD-3ZR"/>
+                        <outlet property="phonePrefixLabel" destination="Fbz-pr-wuP" id="OGu-Nb-Qvs"/>
+                        <outlet property="saveChangesButton" destination="Wbv-0d-Fa5" id="ADu-HS-VTE"/>
+                        <outlet property="twitterTextfield" destination="I1H-qy-ci2" id="Zpd-Gk-GEc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="72" y="106"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="Wbv-0d-Fa5">
+            <size key="intrinsicContentSize" width="126" height="36"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="circle" catalog="system" width="128" height="121"/>
+        <namedColor name="CustomBlack">
+            <color red="0.24705882352941178" green="0.24705882352941178" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="CustomGreen">
+            <color red="0.40784313725490196" green="0.72549019607843135" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="CustomWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

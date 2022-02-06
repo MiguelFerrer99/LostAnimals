@@ -37,6 +37,14 @@ extension Container {
         return DateFilterPopupBuilder()
     }
     
+    func editPersonalDetailsBuilder() -> EditPersonalDetailsBuilder {
+        return EditPersonalDetailsBuilder()
+    }
+    
+    func editSocialMediasBuilder() -> EditSocialMediasBuilder {
+        return EditSocialMediasBuilder()
+    }
+    
     func editPostBuilder() -> EditPostBuilder {
         return EditPostBuilder()
     }

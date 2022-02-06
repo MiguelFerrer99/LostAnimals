@@ -15,7 +15,8 @@ class HardcodedData {
 
 extension HardcodedData {
     static let exampleSocialMedias: [SocialMediaType: String] = [.email: "militardeaire99@gmail.com",
-                                                                 .phone: "+34606505059",
+                                                                 .phonePrefix: "34",
+                                                                 .phoneNumber: "606505059",
                                                                  .whatsapp: "+34606505059",
                                                                  .instagram: "mgl99_",
                                                                  .twitter: "mgl99_"]

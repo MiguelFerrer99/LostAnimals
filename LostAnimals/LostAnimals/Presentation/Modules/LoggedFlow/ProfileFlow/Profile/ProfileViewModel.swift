@@ -25,7 +25,7 @@ final class ProfileViewModel {
         self.isMyProfile = user == User.shared
         self.isBlocked = User.shared?.blockedUsers.contains(user.id) ?? false
         if user.socialMedias[.email] != nil { self.socialMediaTypes.append(.email) }
-        if user.socialMedias[.phone] != nil { self.socialMediaTypes.append(.phone) }
+        if user.socialMedias[.phonePrefix] != nil && user.socialMedias[.phoneNumber] != nil { self.socialMediaTypes.append(.phoneNumber) }
         if user.socialMedias[.whatsapp] != nil { self.socialMediaTypes.append(.whatsapp) }
         if user.socialMedias[.instagram] != nil { self.socialMediaTypes.append(.instagram) }
         if user.socialMedias[.twitter] != nil { self.socialMediaTypes.append(.twitter) }
@@ -82,11 +82,15 @@ extension ProfileViewModel {
     }
     
     func didPressPhoneButton() {
-        self.router.contactByPhone(fullPhoneNumber: user.socialMedias[.phone])
+        guard let phonePrefix = user.socialMedias[.phonePrefix], let phoneNumber = user.socialMedias[.phoneNumber] else { return }
+        let fullPhoneNumber = "+\(phonePrefix)\(phoneNumber)"
+        self.router.contactByPhone(fullPhoneNumber: fullPhoneNumber)
     }
     
     func didPressWhatsappButton() {
-        self.router.contactByWhatsapp(fullPhoneNumber: user.socialMedias[.phone])
+        guard let phonePrefix = user.socialMedias[.phonePrefix], let phoneNumber = user.socialMedias[.phoneNumber] else { return }
+        let fullPhoneNumber = "+\(phonePrefix)\(phoneNumber)"
+        self.router.contactByWhatsapp(fullPhoneNumber: fullPhoneNumber)
     }
     
     func didPressInstagramButton() {

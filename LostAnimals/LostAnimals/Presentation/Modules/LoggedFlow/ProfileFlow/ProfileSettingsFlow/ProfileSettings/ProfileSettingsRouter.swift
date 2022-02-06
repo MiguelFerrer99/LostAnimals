@@ -31,16 +31,22 @@ final class ProfileSettingsRouter {
         }
     }
     
-    func goToEditPersonalData() {
-        // TODO: Create EditPersonalData module
+    func goToEditPersonalDetails(me: User) {
+        let viewController = Container.shared.editPersonalDetailsBuilder().build(me: me)
+        DispatchQueue.main.async {
+            self.viewController?.push(viewController: viewController)
+        }
     }
     
-    func goToEditSocialMedias() {
-        // TODO: Create EditSocialMedias module
+    func goToEditSocialMediaDetails(me: User) {
+        let viewController = Container.shared.editSocialMediasBuilder().build(me: me)
+        DispatchQueue.main.async {
+            self.viewController?.push(viewController: viewController)
+        }
     }
     
-    func goToChangePassword() {
-        let viewController = Container.shared.changePasswordBuilder().build()
+    func goToChangePassword(me: User) {
+        let viewController = Container.shared.changePasswordBuilder().build(me: me)
         DispatchQueue.main.async {
             self.viewController?.push(viewController: viewController)
         }

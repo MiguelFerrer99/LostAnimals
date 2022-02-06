@@ -25,7 +25,7 @@ class CountryTableViewCell: UITableViewCell, Reusable {
     // MARK: - Functions
     func display(summary: CountryTableViewCellSummary) {
         countryName.text = summary.countryName
-        if summary.comesFrom == .socialMediaDetails {
+        if summary.comesFrom == .signUpSocialMediaDetails {
             rightArrowImageView.isHidden = true
             countryName.text?.append(contentsOf: " (+\(summary.dialCode))")
         }

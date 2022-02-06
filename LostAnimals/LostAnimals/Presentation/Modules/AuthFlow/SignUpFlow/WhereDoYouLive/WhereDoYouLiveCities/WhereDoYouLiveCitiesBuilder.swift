@@ -10,12 +10,12 @@ import UIKit
 
 final class WhereDoYouLiveCitiesBuilder {
     
-    func build(country: Country, cities: [String]) -> WhereDoYouLiveCitiesViewController {
+    func build(comesFrom: WhereDoYouLiveComesFrom, country: Country, cities: [String]) -> WhereDoYouLiveCitiesViewController {
         
         let viewController = UIViewController.instantiate(viewController: WhereDoYouLiveCitiesViewController.self)
         
         let router = WhereDoYouLiveCitiesRouter(viewController: viewController)
-        let viewModel = WhereDoYouLiveCitiesViewModel(router: router, country: country, cities: cities)
+        let viewModel = WhereDoYouLiveCitiesViewModel(router: router, comesFrom: comesFrom, country: country, cities: cities)
         
         viewController.viewModel = viewModel
         

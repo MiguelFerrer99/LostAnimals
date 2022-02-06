@@ -227,8 +227,10 @@ class CustomTextField: UIView, UITextFieldDelegate {
     func initEditableTextfield() {
         self.placeholderLabel.alpha = 1
         self.topTextFieldConstraint.constant = 15
-        self.statusView.isHidden = false
-        self.statusImageView.image = UIImage(named: "TextfieldOk")
+        if !self.errorsToCheck.isEmpty {
+            self.statusView.isHidden = false
+            self.statusImageView.image = UIImage(named: "TextfieldOk")
+        }
     }
     
     // MARK: - IBActions

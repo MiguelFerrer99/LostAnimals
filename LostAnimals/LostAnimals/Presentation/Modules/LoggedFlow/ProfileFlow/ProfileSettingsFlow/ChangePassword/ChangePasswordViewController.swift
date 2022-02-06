@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ChangePasswordViewController: ViewController {
+final class ChangePasswordViewController: ViewController, UIGestureRecognizerDelegate {
     // MARK: - IBOutlets
     @IBOutlet weak var passwordTextfield: CustomTextField!
     @IBOutlet weak var confirmPasswordTextfield: CustomTextField!
@@ -36,6 +36,7 @@ final class ChangePasswordViewController: ViewController {
     
     // MARK: - Functions
     private func setupUI() {
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         configureTextFields()
     }
     

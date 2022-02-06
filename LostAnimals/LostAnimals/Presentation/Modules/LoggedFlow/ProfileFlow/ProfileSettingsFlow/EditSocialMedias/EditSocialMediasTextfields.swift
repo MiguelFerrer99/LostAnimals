@@ -1,63 +1,65 @@
 //
-//  SocialMediaDetailsCollectionViewCellTextFields.swift
+//  EditSocialMediasTextfields.swift
 //  LostAnimals
 //
-//  Created by Miguel Ferrer Fornali on 23/12/21.
-//  Copyright © 2021 Rudo. All rights reserved.
+//  Created by Miguel Ferrer Fornali on 6/2/22.
+//  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-extension SocialMediaDetailsCollectionViewCell: CustomTextFieldDelegate {
+extension EditSocialMediasViewController: CustomTextFieldDelegate {
     // MARK: - Functions
     func configureTextFields() {
-        phoneTextfield.delegate = self
-        phoneTextfield.textField.keyboardType = .numberPad
-        phoneTextfield.textField.textContentType = .telephoneNumber
-        phoneTextfield.textField.returnKeyType = .next
-        phoneTextfield.addErrorsToCheck([TextFieldErrorEmptyValue(),
-                                         TextFieldErrorPhoneNumber()])
+        phoneNumberTextfield.delegate = self
+        phoneNumberTextfield.textField.keyboardType = .numberPad
+        phoneNumberTextfield.textField.textContentType = .telephoneNumber
+        phoneNumberTextfield.textField.returnKeyType = .next
+        phoneNumberTextfield.addErrorsToCheck([TextFieldErrorEmptyValue(),
+                                               TextFieldErrorPhoneNumber()])
+        phoneNumberTextfield.initEditableTextfield()
         
         instagramTextfield.delegate = self
         instagramTextfield.textField.keyboardType = .alphabet
         instagramTextfield.textField.textContentType = .nickname
         instagramTextfield.textField.returnKeyType = .next
+        instagramTextfield.initEditableTextfield()
         
         twitterTextfield.delegate = self
         twitterTextfield.textField.keyboardType = .alphabet
         twitterTextfield.textField.textContentType = .nickname
         twitterTextfield.textField.returnKeyType = .done
+        twitterTextfield.initEditableTextfield()
+        
+        viewModel.editedTextFields = [phoneNumberTextfield]
     }
     
     @objc func fillPhonePrefix(_ notification: NSNotification) {
         if let countryDialCodeString = notification.userInfo?["countryDialCodeString"] as? String {
-            topPrefixPlaceholder.isHidden = false
-            middlePrefixPlaceholder.isHidden = true
             phonePrefixLabel.text = "+\(countryDialCodeString)"
-            viewModel.phonePrefixSelected = true
             errorPhonePrefixLabel.isHidden = true
             checkAllContentsAreOk()
         }
     }
     
     func didPresseddPhonePrefix() {
-        phoneTextfield.textField.endEditing(true)
+        phoneNumberTextfield.textField.endEditing(true)
         instagramTextfield.textField.endEditing(true)
         twitterTextfield.textField.endEditing(true)
-        signUpStepsDelegate?.goToWhereDoYouLiveCountries(comesFrom: .signUpSocialMediaDetails)
+        viewModel.didPressPhonePrefixButton()
     }
     
     func checkAllContentsAreOk() {
         let haveErrors = viewModel.textFieldsHaveErrors()
-        let canMoveToNextStep = !haveErrors && viewModel.numberOfTextFields <= viewModel.editedTextFields.count && viewModel.phonePrefixSelected && viewModel.termsAndContitionsAccepted
-        getStartedButton.alpha = canMoveToNextStep ? 1 : 0.5
-        getStartedButton.isEnabled = canMoveToNextStep
+        let canMoveToNextStep = !haveErrors && viewModel.numberOfTextFields <= viewModel.editedTextFields.count
+        saveChangesButton.alpha = canMoveToNextStep ? 1 : 0.5
+        saveChangesButton.isEnabled = canMoveToNextStep
     }
     
     // MARK: - CustomTextFieldDelegate
     func textFieldShouldReturn(_ customTextField: CustomTextField) -> Bool {
         switch customTextField.textField {
-        case phoneTextfield.textField:
+        case phoneNumberTextfield.textField:
             instagramTextfield.textField.becomeFirstResponder()
         case instagramTextfield.textField:
             twitterTextfield.textField.becomeFirstResponder()
@@ -75,18 +77,10 @@ extension SocialMediaDetailsCollectionViewCell: CustomTextFieldDelegate {
     }
     
     func textFieldDidChange(_ customTextField: CustomTextField) {
-        if customTextField == phoneTextfield {
-            viewModel.phonePrefixSelected = !(phonePrefixLabel.text?.isEmpty ?? true)
-            errorPhonePrefixLabel.isHidden = viewModel.phonePrefixSelected
-        }
         checkAllContentsAreOk()
     }
     
     func textFieldDidEndEditing(_ customTextField: CustomTextField) {
-        if customTextField == phoneTextfield {
-            viewModel.phonePrefixSelected = !(phonePrefixLabel.text?.isEmpty ?? true)
-            errorPhonePrefixLabel.isHidden = viewModel.phonePrefixSelected
-        }
         checkAllContentsAreOk()
     }
 }

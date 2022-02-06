@@ -1,16 +1,16 @@
 //
-//  PersonalDetailsCollectionViewCellTextFields.swift
+//  EditPersonalDetailsTextfields.swift
 //  LostAnimals
 //
-//  Created by Miguel Ferrer Fornali on 9/12/21.
-//  Copyright © 2021 Rudo. All rights reserved.
+//  Created by Miguel Ferrer Fornali on 5/2/22.
+//  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import MapKit
 import CoreLocation
 
-extension PersonalDetailsCollectionViewCell: CustomTextFieldDelegate {
+extension EditPersonalDetailsViewController: CustomTextFieldDelegate {
     // MARK: - Functions
     func configureTextFields() {
         firstnameTextfield.delegate = self
@@ -21,6 +21,7 @@ extension PersonalDetailsCollectionViewCell: CustomTextFieldDelegate {
         firstnameTextfield.addErrorsToCheck([TextFieldErrorEmptyValue(),
                                              TextFieldErrorOnlyLettersAndSpaces(),
                                              TextFieldErrorMaximumCharacters(20)])
+        firstnameTextfield.initEditableTextfield()
         
         lastnameTextfield.delegate = self
         lastnameTextfield.textField.keyboardType = .alphabet
@@ -30,14 +31,17 @@ extension PersonalDetailsCollectionViewCell: CustomTextFieldDelegate {
         lastnameTextfield.addErrorsToCheck([TextFieldErrorEmptyValue(),
                                             TextFieldErrorOnlyLettersAndSpaces(),
                                             TextFieldErrorMaximumCharacters(20)])
+        lastnameTextfield.initEditableTextfield()
         
-        birthdateTexfield.delegate = self
-        birthdateTexfield.textField.returnKeyType = .next
-        birthdateTexfield.addErrorsToCheck([TextFieldErrorEmptyValue()])
+        birthdateTextfield.delegate = self
+        birthdateTextfield.textField.returnKeyType = .next
+        birthdateTextfield.addErrorsToCheck([TextFieldErrorEmptyValue()])
+        birthdateTextfield.initEditableTextfield()
         
         whereDoYouLiveTextfield.delegate = self
         whereDoYouLiveTextfield.textField.returnKeyType = .done
         whereDoYouLiveTextfield.addErrorsToCheck([TextFieldErrorEmptyValue()])
+        whereDoYouLiveTextfield.initEditableTextfield()
         
         animalShelterNameTextfield.delegate = self
         animalShelterNameTextfield.textField.keyboardType = .alphabet
@@ -47,10 +51,14 @@ extension PersonalDetailsCollectionViewCell: CustomTextFieldDelegate {
         animalShelterNameTextfield.addErrorsToCheck([TextFieldErrorEmptyValue(),
                                                      TextFieldErrorOnlyLettersAndSpaces(),
                                                      TextFieldErrorMaximumCharacters(20)])
+        animalShelterNameTextfield.initEditableTextfield()
         
         whereCanWeFindYouTextfield.delegate = self
         whereCanWeFindYouTextfield.textField.returnKeyType = .done
         whereCanWeFindYouTextfield.addErrorsToCheck([TextFieldErrorEmptyValue()])
+        whereCanWeFindYouTextfield.initEditableTextfield()
+        
+        viewModel.editedTextFields = viewModel.me.isAnimalShelter ? [animalShelterNameTextfield, whereCanWeFindYouTextfield] : [firstnameTextfield, lastnameTextfield, birthdateTextfield, whereDoYouLiveTextfield]
     }
     
     @objc func fillWhereDoYouLive(_ notification: NSNotification) {
@@ -86,13 +94,13 @@ extension PersonalDetailsCollectionViewCell: CustomTextFieldDelegate {
     private func checkAllContentsAreOk() {
         let haveErrors = viewModel.textFieldsHaveErrors()
         let canMoveToNextStep = !haveErrors && viewModel.editedTextFields.count == viewModel.numberOfTextFields
-        nextStepButton.alpha = canMoveToNextStep ? 1 : 0.5
-        nextStepButton.isEnabled = canMoveToNextStep
+        saveChangesButton.alpha = canMoveToNextStep ? 1 : 0.5
+        saveChangesButton.isEnabled = canMoveToNextStep
     }
     
     // MARK: - CustomTextFieldDelegate
     func textFieldShouldReturn(_ customTextField: CustomTextField) -> Bool {
-        if viewModel.isAnimalShelter {
+        if viewModel.me.isAnimalShelter {
             switch customTextField.textField {
             case animalShelterNameTextfield.textField:
                 animalShelterNameTextfield.textField.resignFirstResponder()
@@ -105,9 +113,9 @@ extension PersonalDetailsCollectionViewCell: CustomTextFieldDelegate {
             case firstnameTextfield.textField:
                 lastnameTextfield.textField.becomeFirstResponder()
             case lastnameTextfield.textField:
-                birthdateTexfield.textField.becomeFirstResponder()
-            case birthdateTexfield.textField:
-                birthdateTexfield.textField.resignFirstResponder()
+                birthdateTextfield.textField.becomeFirstResponder()
+            case birthdateTextfield.textField:
+                birthdateTextfield.textField.resignFirstResponder()
             case whereDoYouLiveTextfield.textField:
                 customTextField.textField.resignFirstResponder()
             default: customTextField.textField.resignFirstResponder()
@@ -133,9 +141,9 @@ extension PersonalDetailsCollectionViewCell: CustomTextFieldDelegate {
     func textFieldWillSelectCity(_ customTextField: CustomTextField) {
         firstnameTextfield.textField.endEditing(true)
         lastnameTextfield.textField.endEditing(true)
-        birthdateTexfield.textField.endEditing(true)
+        birthdateTextfield.textField.endEditing(true)
         textFieldDidBeginEditing(customTextField)
-        signUpStepsDelegate?.goToWhereDoYouLiveCountries(comesFrom: .signUpPersonalDetails)
+        viewModel.didPressedWhereDoYouLiveButton()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.textFieldDidChange(customTextField)
         }
@@ -144,7 +152,7 @@ extension PersonalDetailsCollectionViewCell: CustomTextFieldDelegate {
     func textFieldWillSelectAddress(_ customTextField: CustomTextField) {
         animalShelterNameTextfield.textField.endEditing(true)
         textFieldDidBeginEditing(customTextField)
-        signUpStepsDelegate?.goToWhereCanWeFindYou()
+        viewModel.didPressedWhereCanWeFindYouButton()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.textFieldDidChange(customTextField)
         }

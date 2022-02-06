@@ -1,5 +1,5 @@
 //
-//  ChangePasswordViewModel.swift
+//  EditPersonalDetailsViewModel.swift
 //  LostAnimals
 //
 //  Created by Miguel Ferrer Fornali on 5/2/22.
@@ -8,22 +8,24 @@
 
 import Foundation
 
-final class ChangePasswordViewModel {
+final class EditPersonalDetailsViewModel {
     // MARK: - Properties
-    private let router: ChangePasswordRouter
+    private let router: EditPersonalDetailsRouter
     let me: User
-    var numberOfTextFields = 2
+    var numberOfTextFields = 0
     var editedTextFields = [CustomTextField]()
+    var location: Location? = nil
     
     // MARK: - Init
-    required init(router: ChangePasswordRouter, me: User) {
+    required init(router: EditPersonalDetailsRouter, me: User) {
         self.router = router
         self.me = me
+        self.numberOfTextFields = me.isAnimalShelter ? 2 : 4
     }
 }
 
 // MARK: - Life cycle
-extension ChangePasswordViewModel {
+extension EditPersonalDetailsViewModel {
     func viewReady() {
         // Called when view is loaded and ready
     }
@@ -34,7 +36,7 @@ extension ChangePasswordViewModel {
 }
 
 // MARK: - Functions
-extension ChangePasswordViewModel {
+extension EditPersonalDetailsViewModel {
     func textFieldsHaveErrors() -> Bool {
         var haveErrors = false
         editedTextFields.forEach { editedTextField in
@@ -45,7 +47,15 @@ extension ChangePasswordViewModel {
         return haveErrors
     }
     
+    func didPressedWhereDoYouLiveButton() {
+        self.router.goToWhereDoYouLive()
+    }
+    
+    func didPressedWhereCanWeFindYouButton() {
+        self.router.goToWhereCanWeFindYou()
+    }
+    
     func didPressedSaveChangesButton() {
-        showSuccessPopup(title: "The password has been changed successfully", action: self.router.goBack())
+        showSuccessPopup(title: "The changes has been saved successfully", action: self.router.goBack())
     }
 }
