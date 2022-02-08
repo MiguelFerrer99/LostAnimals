@@ -33,6 +33,8 @@ final class ProfileViewController: ViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var secondCollectionView: UICollectionView!
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var emptyLabel: UILabel!
+    @IBOutlet weak var blockedUserView: UIView!
+    @IBOutlet weak var blockedUserLabel: UILabel!
     
     // MARK: - Properties
     override var hideBackButton: Bool {
@@ -86,6 +88,13 @@ final class ProfileViewController: ViewController, UIGestureRecognizerDelegate {
         firstCollectionHeaderLabel.text = viewModel.isMyProfile ? "My posts" : "Posts"
         secondCollectionHeaderLabel.text = viewModel.isMyProfile ? "My saved posts" : "Social medias"
         secondCollectionHeaderImageView.isHidden = !viewModel.isMyProfile
+        blockedUserLabel.text = "\(viewModel.user.firstname) has been blocked by you"
+        
+        blockUserButtonImageView.image = UIImage(named: viewModel.isBlocked ? "UnblockUserWhite" : "BlockUserWhite")
+        basicInfoView.isHidden = viewModel.isBlocked
+        firstStackView.isHidden = viewModel.isBlocked
+        secondStackView.isHidden = viewModel.isBlocked
+        blockedUserView.isHidden = !viewModel.isBlocked
     }
     
     private func updateBlockedUserUI() {
@@ -94,6 +103,7 @@ final class ProfileViewController: ViewController, UIGestureRecognizerDelegate {
             self.basicInfoView.isHidden = self.viewModel.isBlocked
             self.firstStackView.isHidden = self.viewModel.isBlocked
             self.secondStackView.isHidden = self.viewModel.isBlocked
+            self.blockedUserView.isHidden = !self.viewModel.isBlocked
         }
     }
     

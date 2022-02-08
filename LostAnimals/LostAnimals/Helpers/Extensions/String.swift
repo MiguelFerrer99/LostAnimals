@@ -39,7 +39,7 @@ extension String {
     }
     
     func isValidPhoneNumber() -> Bool {
-        let regex = try! NSRegularExpression(pattern: "^([0-9]{1,12})$", options: .caseInsensitive)
+        let regex = try! NSRegularExpression(pattern: "^([0-9\\s]{1,12})$", options: .caseInsensitive)
         return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count)) != nil
     }
     

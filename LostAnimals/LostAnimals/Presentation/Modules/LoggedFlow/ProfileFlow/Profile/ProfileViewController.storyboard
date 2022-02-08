@@ -420,6 +420,25 @@
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </stackView>
+                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gOe-Pf-zSz">
+                                                        <rect key="frame" x="0.0" y="943.5" width="414" height="100"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User has been blocked by you" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhd-3T-zC3">
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="18"/>
+                                                                <color key="textColor" name="CustomBlack"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="dhd-3T-zC3" firstAttribute="leading" secondItem="gOe-Pf-zSz" secondAttribute="leading" id="4cj-wL-X5h"/>
+                                                            <constraint firstItem="dhd-3T-zC3" firstAttribute="top" secondItem="gOe-Pf-zSz" secondAttribute="top" id="5il-fO-xxI"/>
+                                                            <constraint firstAttribute="trailing" secondItem="dhd-3T-zC3" secondAttribute="trailing" id="NLw-ZY-9fL"/>
+                                                            <constraint firstAttribute="height" constant="100" id="NiE-eg-jjE"/>
+                                                            <constraint firstAttribute="bottom" secondItem="dhd-3T-zC3" secondAttribute="bottom" id="xMp-gw-TPt"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -465,6 +484,8 @@
                         <outlet property="basicInfoViewSecondLabel" destination="ADk-rs-QbS" id="5b6-Uh-uDd"/>
                         <outlet property="blockUserButtonImageView" destination="Lh7-WW-DNV" id="Td5-Ez-Sp3"/>
                         <outlet property="blockUserButtonView" destination="V0D-7e-vJu" id="Ogj-bz-iPx"/>
+                        <outlet property="blockedUserLabel" destination="dhd-3T-zC3" id="6Ma-NW-4X7"/>
+                        <outlet property="blockedUserView" destination="gOe-Pf-zSz" id="omu-m9-kSm"/>
                         <outlet property="emptyLabel" destination="9DK-gG-gAg" id="Agy-Gy-HQ5"/>
                         <outlet property="emptyView" destination="Sbv-lQ-YsS" id="7Qq-H8-8Bu"/>
                         <outlet property="firstCollectionHeaderLabel" destination="ZuQ-sa-e1b" id="KJN-Ja-IPc"/>

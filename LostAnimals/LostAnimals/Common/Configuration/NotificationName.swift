@@ -9,6 +9,8 @@
 import Foundation
 
 extension Notification.Name {
+    static let UpdateFiltersUI = Notification.Name("UpdateFiltersUI")
+    
     static let SendWhereDoYouLiveCountryAndCitiesToSignUp = Notification.Name("SendWhereDoYouLiveCountryAndCitiesToSignUp")
     static let SendWhereDoYouLiveCountryAndCitiesToEditPersonalDetails = Notification.Name("SendWhereDoYouLiveCountryAndCitiesToEditPersonalDetails")
     static let SendWhereCanWeFindYouAddressToSignUp = Notification.Name("SendWhereCanWeFindYouAddressToSignUp")
@@ -19,8 +21,6 @@ extension Notification.Name {
     static let SendCountryDialCodeToEditSocialMedias = Notification.Name("SendCountryDialCodeToEditSocialMedias")
     static let SendAnimalToEditPost = Notification.Name("SendAnimalToEditPost")
     static let SendAnimalToNewPost = Notification.Name("SendAnimalToNewPost")
-    
-    static let UpdateFiltersUI = Notification.Name("UpdateFiltersUI")
     
     static let GoToEditPostFromPostOptionsPopup = Notification.Name("GoToEditPostFromPostOptionsPopup")
     static let RemovePhotoFromSelectPhotoPopupFromEditPost = Notification.Name("RemovePhotoFromSelectPhotoPopupFromEditPost")
