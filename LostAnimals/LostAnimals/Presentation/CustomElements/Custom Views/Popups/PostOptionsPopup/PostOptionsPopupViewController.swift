@@ -15,6 +15,7 @@ final class PostOptionsPopupViewController: ViewController {
     @IBOutlet weak var reportPostButtonView: UIView!
     
     // MARK: - Properties
+    weak var delegate: ActionAfterPostOptionsDelegate?
     var viewModel: PostOptionsPopupViewModel!
     
     // MARK: - Life cycle

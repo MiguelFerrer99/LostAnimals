@@ -117,3 +117,11 @@ enum ProfileSettingsImageType: String {
     case header
     case user
 }
+
+enum ActionAfterPostOptions: String {
+    case goToEditPost
+    case showGuestPopup
+    case showSuccessPopup
+    case showErrorPopup
+    case showActivityVC
+}

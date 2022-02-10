@@ -10,10 +10,10 @@ import UIKit
 
 final class EditPersonalDetailsRouter {
     // MARK: - Properties
-    private weak var viewController: ViewController?
+    private weak var viewController: EditPersonalDetailsViewController?
     
     // MARK: - Init
-    required init(viewController: ViewController?) {
+    required init(viewController: EditPersonalDetailsViewController?) {
         self.viewController = viewController
     }
     

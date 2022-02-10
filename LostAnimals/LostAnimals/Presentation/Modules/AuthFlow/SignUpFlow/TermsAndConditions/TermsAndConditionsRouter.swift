@@ -10,10 +10,10 @@ import UIKit
 
 final class TermsAndConditionsRouter {
     // MARK: - Properties
-    private weak var viewController: ViewController?
+    private weak var viewController: TermsAndConditionsViewController?
     
     // MARK: - Init
-    required init(viewController: ViewController?) {
+    required init(viewController: TermsAndConditionsViewController?) {
         self.viewController = viewController
     }
     

@@ -10,10 +10,10 @@ import UIKit
 
 final class AnimalTypesRouter {
     // MARK: - Properties
-    private weak var viewController: ViewController?
+    private weak var viewController: AnimalTypesViewController?
     
     // MARK: - Init
-    required init(viewController: ViewController?) {
+    required init(viewController: AnimalTypesViewController?) {
         self.viewController = viewController
     }
     

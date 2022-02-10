@@ -10,10 +10,10 @@ import UIKit
 
 final class OnboardingRouter {
     // MARK: - Properties
-    private weak var viewController: ViewController?
+    private weak var viewController: OnboardingViewController?
     
     // MARK: - Init
-    required init(viewController: ViewController?) {
+    required init(viewController: OnboardingViewController?) {
         self.viewController = viewController
     }
     

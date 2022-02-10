@@ -10,10 +10,10 @@ import UIKit
 
 final class PostRouter {
     // MARK: - Properties
-    private weak var viewController: ViewController?
+    private weak var viewController: PostViewController?
     
     // MARK: - Init
-    required init(viewController: ViewController?) {
+    required init(viewController: PostViewController?) {
         self.viewController = viewController
     }
     
@@ -55,6 +55,7 @@ final class PostRouter {
     
     func goToPostOptionsPopup(comesFrom: PostComesFrom, post: Post) {
         let viewController = Container.shared.postOptionsPopupBuilder().build(comesFrom: comesFrom, post: post)
+        viewController.delegate = self.viewController
         DispatchQueue.main.async {
             self.viewController?.present(viewController: viewController, completion: nil)
         }

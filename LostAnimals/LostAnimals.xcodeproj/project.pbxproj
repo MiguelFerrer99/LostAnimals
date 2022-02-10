@@ -44,6 +44,7 @@
 		410FE67E2770C4D100A390A3 /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410FE67C2770C4D100A390A3 /* AddressTableViewCell.swift */; };
 		410FE67F2770C4D100A390A3 /* AddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 410FE67D2770C4D100A390A3 /* AddressTableViewCell.xib */; };
 		410FE6812770C4E200A390A3 /* AddressTableViewCellSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410FE6802770C4E200A390A3 /* AddressTableViewCellSummary.swift */; };
+		411483AD27B326CA00F994F3 /* PostProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411483AC27B326CA00F994F3 /* PostProtocols.swift */; };
 		4114ABC8275F92C900F1AB01 /* SignUpCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4114ABC7275F92C900F1AB01 /* SignUpCollectionView.swift */; };
 		4114ABCC275F94B400F1AB01 /* PersonalDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4114ABCA275F94B400F1AB01 /* PersonalDetailsCollectionViewCell.swift */; };
 		4114ABCD275F94B400F1AB01 /* PersonalDetailsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4114ABCB275F94B400F1AB01 /* PersonalDetailsCollectionViewCell.xib */; };
@@ -395,6 +396,7 @@
 		410FE67C2770C4D100A390A3 /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
 		410FE67D2770C4D100A390A3 /* AddressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressTableViewCell.xib; sourceTree = "<group>"; };
 		410FE6802770C4E200A390A3 /* AddressTableViewCellSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCellSummary.swift; sourceTree = "<group>"; };
+		411483AC27B326CA00F994F3 /* PostProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostProtocols.swift; sourceTree = "<group>"; };
 		4114ABC7275F92C900F1AB01 /* SignUpCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCollectionView.swift; sourceTree = "<group>"; };
 		4114ABCA275F94B400F1AB01 /* PersonalDetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDetailsCollectionViewCell.swift; sourceTree = "<group>"; };
 		4114ABCB275F94B400F1AB01 /* PersonalDetailsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalDetailsCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -761,6 +763,7 @@
 				4100A0EC278372110049EEF0 /* PostViewModel.swift */,
 				41FEE1D12788855300F11449 /* PostCollectionView.swift */,
 				41DDB2EF279C963000DCCECF /* PostScrollView.swift */,
+				411483AC27B326CA00F994F3 /* PostProtocols.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -1981,6 +1984,7 @@
 				4105456A27A06E0E00527D64 /* ProfileSettingsViewController.swift in Sources */,
 				4108D8DB27624C8600880E0B /* PersonalDetailsCollectionViewCellTextFields.swift in Sources */,
 				41EC16AF2785E24800096B7A /* AnimalTypeTableViewCellSummary.swift in Sources */,
+				411483AD27B326CA00F994F3 /* PostProtocols.swift in Sources */,
 				4108D8D12762276800880E0B /* SignUpProtocols.swift in Sources */,
 				41FEE1E32788B68000F11449 /* LocationBuilder.swift in Sources */,
 				41EC16D327868C2900096B7A /* SuccessPopupRouter.swift in Sources */,

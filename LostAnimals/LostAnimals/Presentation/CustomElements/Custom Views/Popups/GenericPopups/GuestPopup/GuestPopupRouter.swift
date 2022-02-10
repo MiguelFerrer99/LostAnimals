@@ -10,10 +10,10 @@ import UIKit
 
 final class GuestPopupRouter {
     // MARK: - Properties
-    private weak var viewController: ViewController?
+    private weak var viewController: GuestPopupViewController?
     
     // MARK: - Init
-    required init(viewController: ViewController?) {
+    required init(viewController: GuestPopupViewController?) {
         self.viewController = viewController
     }
     

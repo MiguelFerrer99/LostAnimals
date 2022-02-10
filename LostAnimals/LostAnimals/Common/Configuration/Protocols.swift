@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol SignUpStepsDelegate: AnyObject {
     func moveToNextSignUpStep()
@@ -26,4 +27,8 @@ protocol PostFiltersDelegate: AnyObject {
 
 protocol UnblockUserDelegate: AnyObject {
     func unblockUser(userID: Int)
+}
+
+protocol ActionAfterPostOptionsDelegate: AnyObject {
+    func goTo(action: ActionAfterPostOptions, postImageToShare: UIImage?)
 }

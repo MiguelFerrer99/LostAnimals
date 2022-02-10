@@ -10,10 +10,10 @@ import UIKit
 
 final class BlockedUsersRouter {
     // MARK: - Properties
-    private weak var viewController: ViewController?
+    private weak var viewController: BlockedUsersViewController?
     
     // MARK: - Init
-    required init(viewController: ViewController?) {
+    required init(viewController: BlockedUsersViewController?) {
         self.viewController = viewController
     }
     

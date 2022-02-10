@@ -59,7 +59,6 @@ final class PostViewController: ViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        subscribeToNotifications()
         setupUI()
         viewModel.viewReady()
     }
@@ -70,19 +69,7 @@ final class PostViewController: ViewController, UIGestureRecognizerDelegate {
         viewModel.viewDidAppear()
     }
     
-    deinit {
-        unsubscribeToNotifications()
-    }
-    
-    // MARK: - Functions
-    private func subscribeToNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(editPostButtonPressed), name: .GoToEditPostFromPostOptionsPopup, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(showGuestPopupFromPostOptionsPopup), name: .ShowGuestPopupFromPostOptionsPopup, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(showSuccessPopupFromPostOptionsPopup), name: .ShowSuccessPopupFromPostOptionsPopup, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(showErrorPopupFromPostOptionsPopup), name: .ShowErrorPopupFromPostOptionsPopup, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(showActivityViewControllerFromPostOptionsPopup), name: .ShowActivityViewControllerFromPostOptionsPopup, object: nil)
-    }
-    
+    // MARK: - Functions    
     private func unsubscribeToNotifications() {
         NotificationCenter.default.removeObserver(self)
     }
@@ -167,27 +154,9 @@ final class PostViewController: ViewController, UIGestureRecognizerDelegate {
         viewModel.didPressOptionsButton()
     }
     
-    @objc private func editPostButtonPressed() {
-        viewModel.didPressEditPostButton()
-    }
-    
-    @objc private func showGuestPopupFromPostOptionsPopup() {
-        viewModel.showGuestPopupFromPostOptionsPopup()
-    }
-    
-    @objc private func showSuccessPopupFromPostOptionsPopup() {
-        viewModel.showSuccessPopupFromPostOptionsPopup()
-    }
-    
-    @objc private func showErrorPopupFromPostOptionsPopup() {
-        viewModel.showErrorPopupFromPostOptionsPopup()
-    }
-    
-    @objc private func showActivityViewControllerFromPostOptionsPopup(_ notification: NSNotification) {
-        if let postImageToShare = notification.userInfo?["postImageToShare"] as? UIImage {
-            let activityViewController = UIActivityViewController(activityItems: [postImageToShare], applicationActivities: nil)
-            self.present(viewController: activityViewController, completion: nil)
-        }
+    func presentActivityVC(postImageToShare: UIImage) {
+        let activityViewController = UIActivityViewController(activityItems: [postImageToShare], applicationActivities: nil)
+        self.present(viewController: activityViewController, completion: nil)
     }
     
     // MARK: - IBActions

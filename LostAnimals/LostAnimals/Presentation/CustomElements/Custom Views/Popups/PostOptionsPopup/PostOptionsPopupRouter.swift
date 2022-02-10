@@ -10,10 +10,10 @@ import UIKit
 
 final class PostOptionsPopupRouter {
     // MARK: - Properties
-    private weak var viewController: UIViewController?
+    private weak var viewController: PostOptionsPopupViewController?
     
     // MARK: - Init
-    required init(viewController: UIViewController?) {
+    required init(viewController: PostOptionsPopupViewController?) {
         self.viewController = viewController
     }
     
@@ -27,7 +27,7 @@ final class PostOptionsPopupRouter {
     func dismissPostOptionsPopupAndGoToEditPost() {
         DispatchQueue.main.async {
             self.viewController?.dismissCurrentView(completion: {
-                NotificationCenter.default.post(name: .GoToEditPostFromPostOptionsPopup, object: nil)
+                self.viewController?.delegate?.goTo(action: .goToEditPost, postImageToShare: nil)
             })
         }
     }
@@ -35,7 +35,7 @@ final class PostOptionsPopupRouter {
     func dismissPostOptionsPopupAndShowGuestPopup() {
         DispatchQueue.main.async {
             self.viewController?.dismissCurrentView(completion: {
-                NotificationCenter.default.post(name: .ShowGuestPopupFromPostOptionsPopup, object: nil)
+                self.viewController?.delegate?.goTo(action: .showGuestPopup, postImageToShare: nil)
             })
         }
     }
@@ -43,7 +43,7 @@ final class PostOptionsPopupRouter {
     func dismissPostOptionsPopupAndShowSuccessPopup() {
         DispatchQueue.main.async {
             self.viewController?.dismissCurrentView(completion: {
-                NotificationCenter.default.post(name: .ShowSuccessPopupFromPostOptionsPopup, object: nil)
+                self.viewController?.delegate?.goTo(action: .showSuccessPopup, postImageToShare: nil)
             })
         }
     }
@@ -51,7 +51,7 @@ final class PostOptionsPopupRouter {
     func dismissPostOptionsPopupAndShowErrorPopup() {
         DispatchQueue.main.async {
             self.viewController?.dismissCurrentView(completion: {
-                NotificationCenter.default.post(name: .ShowErrorPopupFromPostOptionsPopup, object: nil)
+                self.viewController?.delegate?.goTo(action: .showErrorPopup, postImageToShare: nil)
             })
         }
     }
@@ -59,8 +59,7 @@ final class PostOptionsPopupRouter {
     func dismissPostOptionsAndShowActivityViewController(postImageToShare: UIImage) {
         DispatchQueue.main.async {
             self.viewController?.dismissCurrentView(completion: {
-                let userInfo: [String: UIImage] = ["postImageToShare": postImageToShare]
-                NotificationCenter.default.post(name: .ShowActivityViewControllerFromPostOptionsPopup, object: nil, userInfo: userInfo)
+                self.viewController?.delegate?.goTo(action: .showActivityVC, postImageToShare: postImageToShare)
             })
         }
     }

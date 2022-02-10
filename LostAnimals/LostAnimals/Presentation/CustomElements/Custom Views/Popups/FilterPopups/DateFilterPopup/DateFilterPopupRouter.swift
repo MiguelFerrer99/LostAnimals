@@ -10,10 +10,10 @@ import UIKit
 
 final class DateFilterPopupRouter {
     // MARK: - Properties
-    private weak var viewController: UIViewController?
+    private weak var viewController: DateFilterPopupViewController?
     
     // MARK: - Init
-    required init(viewController: UIViewController?) {
+    required init(viewController: DateFilterPopupViewController?) {
         self.viewController = viewController
     }
     

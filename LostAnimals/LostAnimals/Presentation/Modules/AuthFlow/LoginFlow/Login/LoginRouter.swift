@@ -10,10 +10,10 @@ import UIKit
 
 final class LoginRouter {
     // MARK: - Properties
-    private weak var viewController: ViewController?
+    private weak var viewController: LoginViewController?
     
     // MARK: - Init
-    required init(viewController: ViewController?) {
+    required init(viewController: LoginViewController?) {
         self.viewController = viewController
     }
     

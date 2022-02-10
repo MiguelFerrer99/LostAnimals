@@ -10,10 +10,10 @@ import UIKit
 
 final class NewPostRouter {
     // MARK: - Properties
-    private weak var viewController: ViewController?
+    private weak var viewController: NewPostViewController?
     
     // MARK: - Init
-    required init(viewController: ViewController?) {
+    required init(viewController: NewPostViewController?) {
         self.viewController = viewController
     }
     

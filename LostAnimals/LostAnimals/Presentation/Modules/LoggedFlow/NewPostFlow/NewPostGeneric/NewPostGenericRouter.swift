@@ -10,10 +10,10 @@ import UIKit
 
 final class NewPostGenericRouter {
     // MARK: - Properties
-    private weak var viewController: ViewController?
+    private weak var viewController: NewPostGenericViewController?
     
     // MARK: - Init
-    required init(viewController: ViewController?) {
+    required init(viewController: NewPostGenericViewController?) {
         self.viewController = viewController
     }
     

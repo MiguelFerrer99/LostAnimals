@@ -32,9 +32,4 @@ extension Notification.Name {
     static let RemovePhotoFromSelectPhotoPopupFromProfileSettings = Notification.Name("RemovePhotoFromSelectPhotoPopupFromProfileSettings")
     static let ChooseFromLibraryFromSelectPhotoPopupFromProfileSettings = Notification.Name("ChooseFromLibraryFromSelectPhotoPopupFromProfileSettings")
     static let TakeAPhotoFromSelectPhotoPopupFromProfileSettings = Notification.Name("TakeAPhotoFromSelectPhotoPopupFromProfileSettings")
-    
-    static let ShowGuestPopupFromPostOptionsPopup = Notification.Name("ShowGuestPopupFromPostOptionsPopup")
-    static let ShowSuccessPopupFromPostOptionsPopup = Notification.Name("ShowSuccessPopupFromPostOptionsPopup")
-    static let ShowErrorPopupFromPostOptionsPopup = Notification.Name("ShowErrorPopupFromPostOptionsPopup")
-    static let ShowActivityViewControllerFromPostOptionsPopup = Notification.Name("ShowActivityViewControllerFromPostOptionsPopup")
 }

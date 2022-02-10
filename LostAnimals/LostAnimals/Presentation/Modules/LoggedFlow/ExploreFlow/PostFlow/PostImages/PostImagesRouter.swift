@@ -10,10 +10,10 @@ import UIKit
 
 final class PostImagesRouter {
     // MARK: - Properties
-    private weak var viewController: ViewController?
+    private weak var viewController: PostImagesViewController?
     
     // MARK: - Init
-    required init(viewController: ViewController?) {
+    required init(viewController: PostImagesViewController?) {
         self.viewController = viewController
     }
     

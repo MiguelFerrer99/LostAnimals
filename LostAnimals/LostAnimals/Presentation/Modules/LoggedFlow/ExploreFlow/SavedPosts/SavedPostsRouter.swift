@@ -10,10 +10,10 @@ import UIKit
 
 final class SavedPostsRouter {
     // MARK: - Properties
-    private weak var viewController: ViewController?
+    private weak var viewController: SavedPostsViewController?
     
     // MARK: - Init
-    required init(viewController: ViewController?) {
+    required init(viewController: SavedPostsViewController?) {
         self.viewController = viewController
     }
     

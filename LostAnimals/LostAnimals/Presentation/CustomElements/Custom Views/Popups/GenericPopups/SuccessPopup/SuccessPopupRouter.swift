@@ -10,10 +10,10 @@ import UIKit
 
 final class SuccessPopupRouter {
     // MARK: - Properties
-    private weak var viewController: ViewController?
+    private weak var viewController: SuccessPopupViewController?
     
     // MARK: - Init
-    required init(viewController: ViewController?) {
+    required init(viewController: SuccessPopupViewController?) {
         self.viewController = viewController
     }
     

@@ -10,10 +10,10 @@ import UIKit
 
 final class StartupRouter {
     // MARK: - Properties
-    private weak var viewController: ViewController?
+    private weak var viewController: StartupViewController?
     
     // MARK: - Init
-    required init(viewController: ViewController?) {
+    required init(viewController: StartupViewController?) {
         self.viewController = viewController
     }
     

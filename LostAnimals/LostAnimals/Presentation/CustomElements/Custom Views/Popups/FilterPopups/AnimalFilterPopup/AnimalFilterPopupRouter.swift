@@ -10,10 +10,10 @@ import UIKit
 
 final class AnimalFilterPopupRouter {
     // MARK: - Properties
-    private weak var viewController: UIViewController?
+    private weak var viewController: AnimalFilterPopupViewController?
     
     // MARK: - Init
-    required init(viewController: UIViewController?) {
+    required init(viewController: AnimalFilterPopupViewController?) {
         self.viewController = viewController
     }
     

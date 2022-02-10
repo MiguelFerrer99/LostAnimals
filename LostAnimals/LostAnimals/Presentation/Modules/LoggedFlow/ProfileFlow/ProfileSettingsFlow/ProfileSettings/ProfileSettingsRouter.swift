@@ -10,10 +10,10 @@ import UIKit
 
 final class ProfileSettingsRouter {
     // MARK: - Properties
-    private weak var viewController: ViewController?
+    private weak var viewController: ProfileSettingsViewController?
     
     // MARK: - Init
-    required init(viewController: ViewController?) {
+    required init(viewController: ProfileSettingsViewController?) {
         self.viewController = viewController
     }
     

@@ -10,10 +10,10 @@ import UIKit
 
 final class SignUpRouter {
     // MARK: - Properties
-    private weak var viewController: ViewController?
+    private weak var viewController: SignUpViewController?
     
     // MARK: - Init
-    required init(viewController: ViewController?) {
+    required init(viewController: SignUpViewController?) {
         self.viewController = viewController
     }
     

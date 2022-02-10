@@ -10,10 +10,10 @@ import UIKit
 
 final class SelectPhotoPopupRouter {
     // MARK: - Properties
-    private weak var viewController: ViewController?
+    private weak var viewController: SelectPhotoPopupViewController?
     
     // MARK: - Init
-    required init(viewController: ViewController?) {
+    required init(viewController: SelectPhotoPopupViewController?) {
         self.viewController = viewController
     }
     

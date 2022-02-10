@@ -10,10 +10,10 @@ import UIKit
 
 final class WhereDoYouLiveCitiesRouter {
     // MARK: - Properties
-    private weak var viewController: ViewController?
+    private weak var viewController: WhereDoYouLiveCitiesViewController?
     
     // MARK: - Init
-    required init(viewController: ViewController?) {
+    required init(viewController: WhereDoYouLiveCitiesViewController?) {
         self.viewController = viewController
     }
     

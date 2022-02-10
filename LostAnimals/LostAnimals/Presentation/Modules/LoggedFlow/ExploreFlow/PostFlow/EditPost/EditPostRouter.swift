@@ -10,10 +10,10 @@ import UIKit
 
 final class EditPostRouter {
     // MARK: - Properties
-    private weak var viewController: ViewController?
+    private weak var viewController: EditPostViewController?
     
     // MARK: - Init
-    required init(viewController: ViewController?) {
+    required init(viewController: EditPostViewController?) {
         self.viewController = viewController
     }
     

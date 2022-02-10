@@ -10,10 +10,10 @@ import UIKit
 
 final class ExploreRouter {
     // MARK: - Properties
-    private weak var viewController: ViewController?
+    private weak var viewController: ExploreViewController?
     
     // MARK: - Init
-    required init(viewController: ViewController?) {
+    required init(viewController: ExploreViewController?) {
         self.viewController = viewController
     }
     

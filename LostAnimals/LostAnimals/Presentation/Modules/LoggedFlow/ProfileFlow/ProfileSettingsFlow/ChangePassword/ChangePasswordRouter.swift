@@ -10,10 +10,10 @@ import UIKit
 
 final class ChangePasswordRouter {
     // MARK: - Properties
-    private weak var viewController: ViewController?
+    private weak var viewController: ChangePasswordViewController?
     
     // MARK: - Init
-    required init(viewController: ViewController?) {
+    required init(viewController: ChangePasswordViewController?) {
         self.viewController = viewController
     }
     

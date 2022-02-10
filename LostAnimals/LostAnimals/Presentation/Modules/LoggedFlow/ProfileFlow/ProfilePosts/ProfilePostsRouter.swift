@@ -10,10 +10,10 @@ import UIKit
 
 final class ProfilePostsRouter {
     // MARK: - Properties
-    private weak var viewController: ViewController?
+    private weak var viewController: ProfilePostsViewController?
     
     // MARK: - Init
-    required init(viewController: ViewController?) {
+    required init(viewController: ProfilePostsViewController?) {
         self.viewController = viewController
     }
     

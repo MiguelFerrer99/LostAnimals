@@ -10,10 +10,10 @@ import UIKit
 
 final class ContactWithPopupRouter {
     // MARK: - Properties
-    private weak var viewController: ViewController?
+    private weak var viewController: ContactWithPopupViewController?
     
     // MARK: - Init
-    required init(viewController: ViewController?) {
+    required init(viewController: ContactWithPopupViewController?) {
         self.viewController = viewController
     }
     

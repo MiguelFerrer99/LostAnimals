@@ -10,10 +10,10 @@ import UIKit
 
 final class LocationFilterPopupRouter {
     // MARK: - Properties
-    private weak var viewController: UIViewController?
+    private weak var viewController: LocationFilterPopupViewController?
     
     // MARK: - Init
-    required init(viewController: UIViewController?) {
+    required init(viewController: LocationFilterPopupViewController?) {
         self.viewController = viewController
     }
     

@@ -10,10 +10,10 @@ import UIKit
 
 final class EditSocialMediasRouter {
     // MARK: - Properties
-    private weak var viewController: ViewController?
+    private weak var viewController: EditSocialMediasViewController?
     
     // MARK: - Init
-    required init(viewController: ViewController?) {
+    required init(viewController: EditSocialMediasViewController?) {
         self.viewController = viewController
     }
     
