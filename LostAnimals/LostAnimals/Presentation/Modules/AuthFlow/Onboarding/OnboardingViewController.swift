@@ -8,6 +8,11 @@
 
 import UIKit
 
+enum MoveDirection: Int {
+    case back
+    case next
+}
+
 final class OnboardingViewController: ViewController {
     
     // MARK: - IBOutlets

@@ -27,14 +27,7 @@ final class SelectPhotoPopupRouter {
     func dismissSelectPhotoPopupAndRemovePhoto(comesFrom: SelectPhotoPopupComesFrom) {
         DispatchQueue.main.async {
             self.viewController?.dismissCurrentView(completion: {
-                switch comesFrom {
-                case .editPost:
-                    NotificationCenter.default.post(name: .RemovePhotoFromSelectPhotoPopupFromEditPost, object: nil)
-                case .newPost:
-                    NotificationCenter.default.post(name: .RemovePhotoFromSelectPhotoPopupFromNewPost, object: nil)
-                case .profileSettings:
-                    NotificationCenter.default.post(name: .RemovePhotoFromSelectPhotoPopupFromProfileSettings, object: nil)
-                }
+                self.viewController?.delegate?.goTo(action: .removePhoto)
             })
         }
     }
@@ -42,14 +35,7 @@ final class SelectPhotoPopupRouter {
     func dismissSelectPhotoPopupAndChooseFromLibrary(comesFrom: SelectPhotoPopupComesFrom) {
         DispatchQueue.main.async {
             self.viewController?.dismissCurrentView(completion: {
-                switch comesFrom {
-                case .editPost:
-                    NotificationCenter.default.post(name: .ChooseFromLibraryFromSelectPhotoPopupFromEditPost, object: nil)
-                case .newPost:
-                    NotificationCenter.default.post(name: .ChooseFromLibraryFromSelectPhotoPopupFromNewPost, object: nil)
-                case .profileSettings:
-                    NotificationCenter.default.post(name: .ChooseFromLibraryFromSelectPhotoPopupFromProfileSettings, object: nil)
-                }
+                self.viewController?.delegate?.goTo(action: .choosePhoto)
             })
         }
     }
@@ -57,14 +43,7 @@ final class SelectPhotoPopupRouter {
     func dismissSelectPhotoPopupAndTakeAPhoto(comesFrom: SelectPhotoPopupComesFrom) {
         DispatchQueue.main.async {
             self.viewController?.dismissCurrentView(completion: {
-                switch comesFrom {
-                case .editPost:
-                    NotificationCenter.default.post(name: .TakeAPhotoFromSelectPhotoPopupFromEditPost, object: nil)
-                case .newPost:
-                    NotificationCenter.default.post(name: .TakeAPhotoFromSelectPhotoPopupFromNewPost, object: nil)
-                case .profileSettings:
-                    NotificationCenter.default.post(name: .TakeAPhotoFromSelectPhotoPopupFromProfileSettings, object: nil)
-                }
+                self.viewController?.delegate?.goTo(action: .takePhoto)
             })
         }
     }

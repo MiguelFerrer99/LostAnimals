@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol PostFiltersDelegate: AnyObject {
+    func showPostFilters(filterType: FilterType)
+}
+
 class ExploreFiltersHeader: UICollectionReusableView, Reusable {
     
     // MARK: - IBOutlets

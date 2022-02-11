@@ -9,6 +9,10 @@
 import UIKit
 import MapKit
 
+protocol WhereCanWeFindYouDelegate: AnyObject {
+    func getWhereCanWeFindYou(whereCanWeFindYouSearchResult: MKLocalSearchCompletion)
+}
+
 final class WhereCanWeFindYouViewController: ViewController {
     
     // MARK: - IBOutlets
@@ -20,6 +24,7 @@ final class WhereCanWeFindYouViewController: ViewController {
     }
     private var searchController = UISearchController(searchResultsController: nil)
     var searchCompleter = MKLocalSearchCompleter()
+    weak var delegate: WhereCanWeFindYouDelegate?
     var viewModel: WhereCanWeFindYouViewModel!
     
     // MARK: - Life cycle

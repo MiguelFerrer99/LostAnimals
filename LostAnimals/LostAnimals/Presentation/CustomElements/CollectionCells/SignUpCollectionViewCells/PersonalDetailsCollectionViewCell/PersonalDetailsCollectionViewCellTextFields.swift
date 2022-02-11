@@ -53,26 +53,16 @@ extension PersonalDetailsCollectionViewCell: CustomTextFieldDelegate {
         whereCanWeFindYouTextfield.addErrorsToCheck([TextFieldErrorEmptyValue()])
     }
     
-    @objc func fillWhereDoYouLive(_ notification: NSNotification) {
-        if let whereDoYouLiveString = notification.userInfo?["whereDoYouLiveString"] as? String {
-            whereDoYouLiveTextfield.textField.text = whereDoYouLiveString
-            whereDoYouLiveTextfield.didFinishSelectContentFromOtherVC()
-            convertAddressToLocation(address: whereDoYouLiveString)
-        }
+    func fillWhereCanWeFindYou(searchResult: MKLocalSearchCompletion) {
+        let searchResultString1 = searchResult.title
+        let searchResultString2 = searchResult.subtitle.isEmpty ? "" : ", \(searchResult.subtitle)"
+        let searchResultString = "\(searchResultString1)\(searchResultString2)"
+        whereCanWeFindYouTextfield.textField.text = searchResultString
+        whereCanWeFindYouTextfield.didFinishSelectContentFromOtherVC()
+        convertAddressToLocation(address: searchResultString)
     }
     
-    @objc func fillWhereCanWeFindYou(_ notification: NSNotification) {
-        if let searchResult = notification.userInfo?["searchResult"] as? MKLocalSearchCompletion {
-            let searchResultString1 = searchResult.title
-            let searchResultString2 = searchResult.subtitle.isEmpty ? "" : ", \(searchResult.subtitle)"
-            let searchResultString = "\(searchResultString1)\(searchResultString2)"
-            whereCanWeFindYouTextfield.textField.text = searchResultString
-            whereCanWeFindYouTextfield.didFinishSelectContentFromOtherVC()
-            convertAddressToLocation(address: searchResultString)
-        }
-    }
-    
-    private func convertAddressToLocation(address: String) {
+    func convertAddressToLocation(address: String) {
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(address) { placemarks, error in
             if let placemark = placemarks?.first, let location = placemark.location {

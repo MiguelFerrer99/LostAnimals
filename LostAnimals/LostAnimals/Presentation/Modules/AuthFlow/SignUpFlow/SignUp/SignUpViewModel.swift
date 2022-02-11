@@ -8,6 +8,25 @@
 
 import Foundation
 
+enum SignUpStep: Int {
+    case personalDetails
+    case accountDetails
+    case socialMediaDetails
+}
+
+enum SignUpStepLabel: String {
+    case personalDetails = "Personal details"
+    case accountDetails = "Account details"
+    case socialMediaDetails = "Social media details"
+}
+
+enum WhereDoYouLiveComesFrom: String {
+    case signUpPersonalDetails
+    case signUpSocialMediaDetails
+    case editPersonalDetails
+    case editSocialMediaDetails
+}
+
 final class SignUpViewModel {
     
     // MARK: - Properties

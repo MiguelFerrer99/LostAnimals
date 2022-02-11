@@ -8,6 +8,11 @@
 
 import UIKit
 
+enum BannedPopupComesFrom: String {
+    case login
+    case tabbar
+}
+
 func topMostController() -> UIViewController? {
     guard let window = keyWindow, let rootViewController = window.rootViewController else {
         return nil

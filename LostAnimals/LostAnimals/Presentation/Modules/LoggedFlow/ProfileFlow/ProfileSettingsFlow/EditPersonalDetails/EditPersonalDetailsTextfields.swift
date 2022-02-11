@@ -62,22 +62,20 @@ extension EditPersonalDetailsViewController: CustomTextFieldDelegate {
     }
     
     @objc func fillWhereDoYouLive(_ notification: NSNotification) {
-        if let whereDoYouLiveString = notification.userInfo?["whereDoYouLiveString"] as? String {
-            whereDoYouLiveTextfield.textField.text = whereDoYouLiveString
+        if let whereDoYouLive = notification.userInfo?["whereDoYouLive"] as? String {
+            whereDoYouLiveTextfield.textField.text = whereDoYouLive
             whereDoYouLiveTextfield.didFinishSelectContentFromOtherVC()
-            convertAddressToLocation(address: whereDoYouLiveString)
+            convertAddressToLocation(address: whereDoYouLive)
         }
     }
     
-    @objc func fillWhereCanWeFindYou(_ notification: NSNotification) {
-        if let searchResult = notification.userInfo?["searchResult"] as? MKLocalSearchCompletion {
-            let searchResultString1 = searchResult.title
-            let searchResultString2 = searchResult.subtitle.isEmpty ? "" : ", \(searchResult.subtitle)"
-            let searchResultString = "\(searchResultString1)\(searchResultString2)"
-            whereCanWeFindYouTextfield.textField.text = searchResultString
-            whereCanWeFindYouTextfield.didFinishSelectContentFromOtherVC()
-            convertAddressToLocation(address: searchResultString)
-        }
+    @objc func fillWhereCanWeFindYou(searchResult: MKLocalSearchCompletion) {
+        let searchResultString1 = searchResult.title
+        let searchResultString2 = searchResult.subtitle.isEmpty ? "" : ", \(searchResult.subtitle)"
+        let searchResultString = "\(searchResultString1)\(searchResultString2)"
+        whereCanWeFindYouTextfield.textField.text = searchResultString
+        whereCanWeFindYouTextfield.didFinishSelectContentFromOtherVC()
+        convertAddressToLocation(address: searchResultString)
     }
     
     private func convertAddressToLocation(address: String) {

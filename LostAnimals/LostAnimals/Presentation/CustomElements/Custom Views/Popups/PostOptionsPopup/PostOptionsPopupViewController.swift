@@ -8,6 +8,18 @@
 
 import UIKit
 
+protocol ActionAfterPostOptionsDelegate: AnyObject {
+    func goTo(action: ActionAfterPostOptions, postImageToShare: UIImage?)
+}
+
+enum ActionAfterPostOptions: String {
+    case goToEditPost
+    case showGuestPopup
+    case showSuccessPopup
+    case showErrorPopup
+    case showActivityVC
+}
+
 final class PostOptionsPopupViewController: ViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var backgroundView: UIView!

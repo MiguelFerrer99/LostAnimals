@@ -29,7 +29,6 @@ final class ProfileSettingsViewController: ViewController, UIGestureRecognizerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        subscribeToNotifications()
         setupUI()
         viewModel.viewReady()
     }
@@ -40,21 +39,7 @@ final class ProfileSettingsViewController: ViewController, UIGestureRecognizerDe
         viewModel.viewDidAppear()
     }
     
-    deinit {
-        unsubscribeToNotifications()
-    }
-    
     // MARK: - Functions
-    private func subscribeToNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(removePhoto), name: .RemovePhotoFromSelectPhotoPopupFromProfileSettings, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(chooseFromLibrary), name: .ChooseFromLibraryFromSelectPhotoPopupFromProfileSettings, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(takeAPhoto), name: .TakeAPhotoFromSelectPhotoPopupFromProfileSettings, object: nil)
-    }
-    
-    private func unsubscribeToNotifications() {
-        NotificationCenter.default.removeObserver(self)
-    }
-    
     private func setupUI() {
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         configureImagePickerController()
@@ -68,19 +53,19 @@ final class ProfileSettingsViewController: ViewController, UIGestureRecognizerDe
         blockedUsersView.isHidden = viewModel.me.blockedUsers.isEmpty
     }
     
-    @objc private func removePhoto(_ notification: NSNotification) {
+    func removePhoto() {
         switch viewModel.selectedImageView {
         case .user:   profileImageView.image = UIImage(named: "ProfileImagePlaceholder")
         case .header: headerImageView.image = UIImage(named: "ProfileHeaderPlaceholder")
         }
     }
     
-    @objc private func chooseFromLibrary(_ notification: NSNotification) {
+    func choosePhoto() {
         self.imagePickerController.sourceType = .photoLibrary
         self.present(viewController: imagePickerController, completion: nil)
     }
     
-    @objc private func takeAPhoto(_ notification: NSNotification) {
+    func takePhoto() {
         self.imagePickerController.sourceType = .camera
         self.present(viewController: imagePickerController, completion: nil)
     }

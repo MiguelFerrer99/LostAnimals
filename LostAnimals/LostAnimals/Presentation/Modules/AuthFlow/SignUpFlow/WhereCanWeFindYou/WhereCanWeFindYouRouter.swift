@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 final class WhereCanWeFindYouRouter {
     // MARK: - Properties
@@ -18,8 +19,9 @@ final class WhereCanWeFindYouRouter {
     }
     
     // MARK: - Functions
-    func goBack() {
+    func goBack(comesFrom: WhereCanWeFindYouComesFrom, searchResult: MKLocalSearchCompletion) {
         DispatchQueue.main.async {
+            self.viewController?.delegate?.getWhereCanWeFindYou(whereCanWeFindYouSearchResult: searchResult)
             self.viewController?.pop()
         }
     }

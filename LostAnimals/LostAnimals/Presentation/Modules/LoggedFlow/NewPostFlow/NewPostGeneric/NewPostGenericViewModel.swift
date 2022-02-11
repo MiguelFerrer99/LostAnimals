@@ -9,6 +9,12 @@
 import Foundation
 import UIKit
 
+enum PostType: String {
+    case lost = "Lost"
+    case found = "Found"
+    case adopt = "Adopt"
+}
+
 final class NewPostGenericViewModel {
     
     // MARK: - Properties

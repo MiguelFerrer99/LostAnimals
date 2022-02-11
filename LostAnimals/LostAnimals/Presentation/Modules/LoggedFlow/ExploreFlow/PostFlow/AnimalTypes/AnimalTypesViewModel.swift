@@ -8,6 +8,11 @@
 
 import Foundation
 
+enum AnimalTypesComesFrom: String {
+    case editPost
+    case newPost
+}
+
 final class AnimalTypesViewModel {
     
     // MARK: - Properties
@@ -36,13 +41,6 @@ extension AnimalTypesViewModel {
 // MARK: - Functions
 extension AnimalTypesViewModel {
     func didSelectedAnimalType() {
-        let userInfo: [String: AnimalType] = ["animalType": selectedAnimalType ?? .other]
-        switch comesFrom {
-        case .editPost:
-            NotificationCenter.default.post(name: .SendAnimalToEditPost, object: nil, userInfo: userInfo)
-        case .newPost:
-            NotificationCenter.default.post(name: .SendAnimalToNewPost, object: nil, userInfo: userInfo)
-        }
-        self.router.goBack()
+        self.router.goBack(with: selectedAnimalType ?? .other)
     }
 }

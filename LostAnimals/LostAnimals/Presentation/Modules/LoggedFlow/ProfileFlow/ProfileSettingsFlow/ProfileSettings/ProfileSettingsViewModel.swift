@@ -9,6 +9,11 @@
 import Foundation
 import UIKit
 
+enum ProfileSettingsImageType: String {
+    case header
+    case user
+}
+
 final class ProfileSettingsViewModel {
     // MARK: - Properties
     private let router: ProfileSettingsRouter

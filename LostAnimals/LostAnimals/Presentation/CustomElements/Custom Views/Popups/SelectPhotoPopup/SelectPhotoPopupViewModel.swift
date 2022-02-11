@@ -8,6 +8,12 @@
 
 import Foundation
 
+enum SelectPhotoPopupComesFrom: String {
+    case editPost
+    case newPost
+    case profileSettings
+}
+
 final class SelectPhotoPopupViewModel {
     
     // MARK: - Properties

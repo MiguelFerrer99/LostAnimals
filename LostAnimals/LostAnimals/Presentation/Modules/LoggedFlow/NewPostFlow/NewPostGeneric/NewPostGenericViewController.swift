@@ -47,7 +47,6 @@ final class NewPostGenericViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        subscribeToNotifications()
         setupUI()
         viewModel.viewReady()
     }
@@ -58,23 +57,7 @@ final class NewPostGenericViewController: ViewController {
         viewModel.viewDidAppear()
     }
     
-    deinit {
-        unsubscribeToNotifications()
-    }
-    
     // MARK: - Functions
-    private func subscribeToNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(fillWhereCanWeFindYou), name: .SendWhereCanWeFindYouAddressToNewPost, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(fillAnimal), name: .SendAnimalToNewPost, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(removePhoto), name: .RemovePhotoFromSelectPhotoPopupFromNewPost, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(chooseFromLibrary), name: .ChooseFromLibraryFromSelectPhotoPopupFromNewPost, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(takeAPhoto), name: .TakeAPhotoFromSelectPhotoPopupFromNewPost, object: nil)
-    }
-    
-    private func unsubscribeToNotifications() {
-        NotificationCenter.default.removeObserver(self)
-    }
-    
     private func setupUI() {
         viewModel.selectPhotoImageViews = [selectPhoto1ImageView, selectPhoto2ImageView, selectPhoto3ImageView, selectPhoto4ImageView,
                                            selectPhoto5ImageView, selectPhoto6ImageView, selectPhoto7ImageView, selectPhoto8ImageView]
@@ -97,17 +80,22 @@ final class NewPostGenericViewController: ViewController {
         }
     }
     
-    @objc private func removePhoto(_ notification: NSNotification) {
+    func fillAnimal(animalType: AnimalType) {
+        animalTextfield.textField.text = animalType.rawValue
+        animalTextfield.didFinishSelectContentFromOtherVC()
+    }
+    
+    func removePhoto() {
         viewModel.selectPhotoImageViews[viewModel.selectedIndexImageView].image = UIImage(named: "SelectPhotoPlaceholder")
         checkAllContentsAreOk()
     }
     
-    @objc private func chooseFromLibrary(_ notification: NSNotification) {
+    func choosePhoto() {
         self.imagePickerController.sourceType = .photoLibrary
         self.present(viewController: imagePickerController, completion: nil)
     }
     
-    @objc private func takeAPhoto(_ notification: NSNotification) {
+    func takePhoto() {
         self.imagePickerController.sourceType = .camera
         self.present(viewController: imagePickerController, completion: nil)
     }

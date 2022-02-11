@@ -9,6 +9,13 @@
 import Foundation
 import MapKit
 
+enum WhereCanWeFindYouComesFrom: String {
+    case signUp
+    case editPost
+    case newPost
+    case editPersonalDetails
+}
+
 final class WhereCanWeFindYouViewModel {
     // MARK: - Properties
     private let router: WhereCanWeFindYouRouter
@@ -36,17 +43,6 @@ extension WhereCanWeFindYouViewModel {
 // MARK: - Functions
 extension WhereCanWeFindYouViewModel {
     func didPressAddress(searchResult: MKLocalSearchCompletion) {
-        let userInfo: [String: MKLocalSearchCompletion] = ["searchResult": searchResult]
-        switch comesFrom {
-        case .signUp:
-            NotificationCenter.default.post(name: .SendWhereCanWeFindYouAddressToSignUp, object: nil, userInfo: userInfo)
-        case .editPost:
-            NotificationCenter.default.post(name: .SendWhereCanWeFindYouAddressToEditPost, object: nil, userInfo: userInfo)
-        case .newPost:
-            NotificationCenter.default.post(name: .SendWhereCanWeFindYouAddressToNewPost, object: nil, userInfo: userInfo)
-        case .editPersonalDetails:
-            NotificationCenter.default.post(name: .SendWhereCanWeFindYouAddressToEditPersonalDetails, object: nil, userInfo: userInfo)
-        }
-        self.router.goBack()
+        self.router.goBack(comesFrom: comesFrom, searchResult: searchResult)
     }
 }

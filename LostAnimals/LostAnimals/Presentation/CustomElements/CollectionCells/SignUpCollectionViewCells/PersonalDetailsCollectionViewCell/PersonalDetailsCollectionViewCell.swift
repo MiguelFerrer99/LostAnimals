@@ -29,25 +29,10 @@ class PersonalDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell {
     
     // MARK: - Life cycle
     override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        subscribeToNotifications()
-    }
-    
-    deinit {
-        unsubscribeToNotifications()
+        super.awakeFromNib()        
     }
     
     // MARK: - Functions
-    private func subscribeToNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(fillWhereDoYouLive), name: .SendWhereDoYouLiveCountryAndCitiesToSignUp, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(fillWhereCanWeFindYou), name: .SendWhereCanWeFindYouAddressToSignUp, object: nil)
-    }
-    
-    private func unsubscribeToNotifications() {
-        NotificationCenter.default.removeObserver(self)
-    }
-    
     private func fillUI() {
         configureTextFields()
     }
@@ -78,6 +63,12 @@ class PersonalDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell {
             birthdateTexfield.resetTextfield()
             whereDoYouLiveTextfield.resetTextfield()
         }
+    }
+    
+    func fillWhereDoYouLive(whereDoYouLive: String) {
+        whereDoYouLiveTextfield.textField.text = whereDoYouLive
+        whereDoYouLiveTextfield.didFinishSelectContentFromOtherVC()
+        convertAddressToLocation(address: whereDoYouLive)
     }
     
     // MARK: - IBActions

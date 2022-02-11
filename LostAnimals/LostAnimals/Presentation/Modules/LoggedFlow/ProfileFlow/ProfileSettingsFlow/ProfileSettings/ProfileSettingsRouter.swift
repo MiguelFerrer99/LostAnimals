@@ -26,6 +26,7 @@ final class ProfileSettingsRouter {
     
     func goToSelectPhotoPopup(showRemoveOption: Bool) {
         let viewController = Container.shared.selectPhotoPopupBuilder().build(showRemoveOption: showRemoveOption, comesFrom: .profileSettings)
+        viewController.delegate = self.viewController
         DispatchQueue.main.async {
             self.viewController?.present(viewController: viewController, completion: nil)
         }

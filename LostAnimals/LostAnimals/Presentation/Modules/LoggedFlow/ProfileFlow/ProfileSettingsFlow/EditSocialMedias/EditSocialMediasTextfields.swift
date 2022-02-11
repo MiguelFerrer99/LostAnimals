@@ -34,14 +34,6 @@ extension EditSocialMediasViewController: CustomTextFieldDelegate {
         viewModel.editedTextFields = [phoneNumberTextfield]
     }
     
-    @objc func fillPhonePrefix(_ notification: NSNotification) {
-        if let countryDialCodeString = notification.userInfo?["countryDialCodeString"] as? String {
-            phonePrefixLabel.text = "+\(countryDialCodeString)"
-            errorPhonePrefixLabel.isHidden = true
-            checkAllContentsAreOk()
-        }
-    }
-    
     func didPresseddPhonePrefix() {
         phoneNumberTextfield.textField.endEditing(true)
         instagramTextfield.textField.endEditing(true)

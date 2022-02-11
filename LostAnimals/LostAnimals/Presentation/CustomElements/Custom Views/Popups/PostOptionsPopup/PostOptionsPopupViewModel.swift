@@ -9,6 +9,11 @@
 import Foundation
 import UIKit
 
+enum PostComesFrom: String {
+    case explore
+    case profile
+}
+
 final class PostOptionsPopupViewModel {
     
     // MARK: - Properties

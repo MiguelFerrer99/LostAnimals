@@ -33,6 +33,7 @@ final class EditPersonalDetailsRouter {
     
     func goToWhereCanWeFindYou() {
         let viewController = Container.shared.whereCanWeFindYou().build(comesFrom: .editPersonalDetails)
+        viewController.delegate = self.viewController
         DispatchQueue.main.async {
             self.viewController?.push(viewController: viewController)
         }

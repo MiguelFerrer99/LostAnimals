@@ -26,6 +26,7 @@ final class EditSocialMediasRouter {
     
     func goToWhereDoYouLiveCountries() {
         let viewController = Container.shared.whereDoYouLiveCountriesBuilder().build(comesFrom: .editSocialMediaDetails)
+        viewController.delegate = self.viewController
         DispatchQueue.main.async {
             self.viewController?.push(viewController: viewController)
         }

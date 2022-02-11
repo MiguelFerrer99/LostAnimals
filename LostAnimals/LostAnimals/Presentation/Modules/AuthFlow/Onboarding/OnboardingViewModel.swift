@@ -8,6 +8,12 @@
 
 import UIKit
 
+enum OnboardingStep: Int {
+    case share
+    case find
+    case contact
+}
+
 final class OnboardingViewModel {
     
     // MARK: - Properties

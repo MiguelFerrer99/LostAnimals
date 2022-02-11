@@ -9,6 +9,15 @@
 import Foundation
 import UIKit
 
+enum SocialMediaType: String {
+    case email
+    case phonePrefix
+    case phoneNumber
+    case whatsapp
+    case instagram
+    case twitter
+}
+
 struct User: Equatable {
     static func == (lhs: User, rhs: User) -> Bool {
         return lhs.id == rhs.id

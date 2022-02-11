@@ -29,17 +29,6 @@ extension SocialMediaDetailsCollectionViewCell: CustomTextFieldDelegate {
         twitterTextfield.textField.returnKeyType = .done
     }
     
-    @objc func fillPhonePrefix(_ notification: NSNotification) {
-        if let countryDialCodeString = notification.userInfo?["countryDialCodeString"] as? String {
-            topPrefixPlaceholder.isHidden = false
-            middlePrefixPlaceholder.isHidden = true
-            phonePrefixLabel.text = "+\(countryDialCodeString)"
-            viewModel.phonePrefixSelected = true
-            errorPhonePrefixLabel.isHidden = true
-            checkAllContentsAreOk()
-        }
-    }
-    
     func didPresseddPhonePrefix() {
         phoneTextfield.textField.endEditing(true)
         instagramTextfield.textField.endEditing(true)

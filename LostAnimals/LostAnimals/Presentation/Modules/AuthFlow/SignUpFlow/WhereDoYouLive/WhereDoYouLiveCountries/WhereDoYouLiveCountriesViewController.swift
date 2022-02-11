@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol WhereDoYouLiveCountriesDelegate: AnyObject {
+    func getDialCode(dialCode: String)
+}
+
 final class WhereDoYouLiveCountriesViewController: ViewController {
     
     // MARK: - IBOutlets
@@ -18,6 +22,7 @@ final class WhereDoYouLiveCountriesViewController: ViewController {
         return "Select your country"
     }
     private var searchController = UISearchController(searchResultsController: nil)
+    weak var delegate: WhereDoYouLiveCountriesDelegate?
     var viewModel: WhereDoYouLiveCountriesViewModel!
     
     // MARK: - Life cycle

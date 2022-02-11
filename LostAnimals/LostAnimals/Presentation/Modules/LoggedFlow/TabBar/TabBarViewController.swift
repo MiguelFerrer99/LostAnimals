@@ -8,6 +8,12 @@
 
 import UIKit
 
+enum TabBarItem: Int {
+    case explore
+    case newPost
+    case profile
+}
+
 final class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     
     // MARK: - Properties

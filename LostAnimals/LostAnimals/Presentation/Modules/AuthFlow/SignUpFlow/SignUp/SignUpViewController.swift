@@ -7,6 +7,19 @@
 //
 
 import UIKit
+import MapKit
+
+protocol SignUpStepsDelegate: AnyObject {
+    func moveToNextSignUpStep()
+    func moveToPreviousSignUpStep()
+    func goToWhereDoYouLiveCountries(comesFrom: WhereDoYouLiveComesFrom)
+    func goToWhereCanWeFindYou()
+    func goToTermsAndConditions()
+    func updateSignUpUserInteraction(isUserInteractionEnabled: Bool)
+    func sendSignUpStep1Data(isAnimalShelter: Bool, firstname: String?, lastname: String?, animalShelterName: String?, birthdate: Date?, location: Location)
+    func sendSignUpStep2Data(mail: String, password: String)
+    func sendSignUpStep3Data(fullPhone: String, whatsapp: String?, instagram: String?, twitter: String?)
+}
 
 final class SignUpViewController: ViewController {
     
@@ -23,6 +36,7 @@ final class SignUpViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        subscribeToNotifications()
         setupUI()
         viewModel.viewReady()
     }
@@ -33,7 +47,19 @@ final class SignUpViewController: ViewController {
         viewModel.viewDidAppear()
     }
     
-    // MARK: - Functions  
+    deinit {
+        removeObserver()
+    }
+    
+    // MARK: - Functions
+    private func subscribeToNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(fillWhereDoYouLivePersonalDetails), name: .SendWhereDoYouLiveToSignUp, object: nil)
+    }
+    
+    private func removeObserver() {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     private func setupUI() {
         configureCollectionView(stepsCollectionView)
         progressView.transform = progressView.transform.scaledBy(x: 1, y: 2)
@@ -54,6 +80,26 @@ final class SignUpViewController: ViewController {
             guard let self = self else { return }
             self.progressBarLabel.text = self.viewModel.currentStepLabel.rawValue
         })
+    }
+    
+    @objc private func fillWhereDoYouLivePersonalDetails(_ notification: NSNotification) {
+        if let whereDoYouLive = notification.userInfo?["whereDoYouLive"] as? String {
+            let indexPath = IndexPath(item: 0, section: 0)
+            guard let personalDetailsCollectionViewCell = stepsCollectionView.cellForItem(at: indexPath) as? PersonalDetailsCollectionViewCell else { return }
+            personalDetailsCollectionViewCell.fillWhereDoYouLive(whereDoYouLive: whereDoYouLive)
+        }
+    }
+    
+    func fillWhereCanWeFindYouPersonalDetails(whereCanWeFindYouSearchResult: MKLocalSearchCompletion) {
+        let indexPath = IndexPath(item: 0, section: 0)
+        guard let personalDetailsCollectionViewCell = stepsCollectionView.cellForItem(at: indexPath) as? PersonalDetailsCollectionViewCell else { return }
+        personalDetailsCollectionViewCell.fillWhereCanWeFindYou(searchResult: whereCanWeFindYouSearchResult)
+    }
+    
+    func fillPhonePrefixOfSocialMediaDetails(dialCode: String) {
+        let indexPath = IndexPath(item: 2, section: 0)
+        guard let socialMediaDetailsCollectionViewCell = stepsCollectionView.cellForItem(at: indexPath) as? SocialMediaDetailsCollectionViewCell else { return }
+        socialMediaDetailsCollectionViewCell.fillPhonePrefix(dialCode: dialCode)
     }
     
     func moveToPreviousStep() {

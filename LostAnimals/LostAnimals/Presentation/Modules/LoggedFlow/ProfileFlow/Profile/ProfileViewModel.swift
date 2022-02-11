@@ -8,6 +8,12 @@
 
 import Foundation
 
+enum ProfileSectionType: String {
+    case posts
+    case savedPosts
+    case socialMedias
+}
+
 final class ProfileViewModel {
     
     // MARK: - Properties

@@ -32,6 +32,7 @@ final class EditPostRouter {
     
     func goToSelectPhotoPopup(showRemoveOption: Bool) {
         let viewController = Container.shared.selectPhotoPopupBuilder().build(showRemoveOption: showRemoveOption, comesFrom: .editPost)
+        viewController.delegate = self.viewController
         DispatchQueue.main.async {
             self.viewController?.present(viewController: viewController, completion: nil)
         }
@@ -39,6 +40,7 @@ final class EditPostRouter {
     
     func goToAnimalTypes(selectedAnimalType: AnimalType) {
         let viewController = Container.shared.animalTypesBuilder().build(comesFrom: .editPost)
+        viewController.delegate = self.viewController
         DispatchQueue.main.async {
             self.viewController?.push(viewController: viewController)
         }
@@ -46,6 +48,7 @@ final class EditPostRouter {
     
     func goToWhereCanWeFindYou() {
         let viewController = Container.shared.whereCanWeFindYou().build(comesFrom: .editPost)
+        viewController.delegate = self.viewController
         DispatchQueue.main.async {
             self.viewController?.push(viewController: viewController)
         }

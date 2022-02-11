@@ -45,8 +45,7 @@ final class EditPersonalDetailsViewController: ViewController, UIGestureRecogniz
     
     // MARK: - Functions
     private func subscribeToNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(fillWhereDoYouLive), name: .SendWhereDoYouLiveCountryAndCitiesToEditPersonalDetails, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(fillWhereCanWeFindYou), name: .SendWhereCanWeFindYouAddressToEditPersonalDetails, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(fillWhereDoYouLive), name: .SendWhereDoYouLiveToEditPersonalDetails, object: nil)
     }
     
     private func unsubscribeToNotifications() {

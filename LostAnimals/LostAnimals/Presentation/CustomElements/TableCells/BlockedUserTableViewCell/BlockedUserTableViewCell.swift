@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol UnblockUserDelegate: AnyObject {
+    func unblockUser(userID: Int)
+}
+
 class BlockedUserTableViewCell: UITableViewCell, ViewModelCell {
     typealias T = BlockedUserTableViewCellViewModel
     

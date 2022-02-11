@@ -47,16 +47,13 @@ extension WhereDoYouLiveCitiesViewModel {
     }
     
     func didPressCity(city: String) {
-        let whereDoYouLiveString = "\(city), \(country.nameEN)"
-        let userInfo: [String: String] = ["whereDoYouLiveString": whereDoYouLiveString]
+        let whereDoYouLive = "\(city), \(country.nameEN)"
         switch comesFrom {
         case .signUpPersonalDetails,
              .signUpSocialMediaDetails:
-            NotificationCenter.default.post(name: .SendWhereDoYouLiveCountryAndCitiesToSignUp, object: nil, userInfo: userInfo)
-            self.router.goToSignUp()
+            self.router.goToSignUp(whereDoYouLive: whereDoYouLive)
         case .editPersonalDetails:
-            NotificationCenter.default.post(name: .SendWhereDoYouLiveCountryAndCitiesToEditPersonalDetails, object: nil, userInfo: userInfo)
-            self.router.goToEditPersonalDetails()
+            self.router.goToEditPersonalDetails(whereDoYouLive: whereDoYouLive)
         case .editSocialMediaDetails:
             return
         }

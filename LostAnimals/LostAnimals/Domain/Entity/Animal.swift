@@ -9,6 +9,16 @@
 import Foundation
 import UIKit
 
+enum AnimalType: String {
+    case dog = "Dog"
+    case bird = "Bird"
+    case cat = "Cat"
+    case turtle = "Turtle"
+    case snake = "Snake"
+    case rabbit = "Rabbit"
+    case other = "Other"
+}
+
 struct Animal {
     let name: String?
     let type: AnimalType

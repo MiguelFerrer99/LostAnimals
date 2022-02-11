@@ -8,12 +8,23 @@
 
 import UIKit
 
+protocol ActionAfterSelectPhotoDelegate: AnyObject {
+    func goTo(action: ActionAfterSelectPhoto)
+}
+
+enum ActionAfterSelectPhoto: String {
+    case removePhoto
+    case choosePhoto
+    case takePhoto
+}
+
 final class SelectPhotoPopupViewController: ViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var removePhotoOptionView: UIView!
     
     // MARK: - Properties
+    weak var delegate: ActionAfterSelectPhotoDelegate?
     var viewModel: SelectPhotoPopupViewModel!
     
     // MARK: - Life cycle

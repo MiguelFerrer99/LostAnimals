@@ -37,26 +37,21 @@ class SocialMediaDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell 
     // MARK: - Life cycle
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        subscribeToNotifications()
-    }
-    
-    deinit {
-        unsubscribeToNotifications()
     }
     
     // MARK: - Functions
-    private func subscribeToNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(fillPhonePrefix), name: .SendCountryDialCodeToSignUp, object: nil)
-    }
-    
-    private func unsubscribeToNotifications() {
-        NotificationCenter.default.removeObserver(self)
-    }
-    
     private func fillUI() {
         configureTextFields()
         configureTermsAndConditionsButton()
+    }
+    
+    func fillPhonePrefix(dialCode: String) {
+        topPrefixPlaceholder.isHidden = false
+        middlePrefixPlaceholder.isHidden = true
+        phonePrefixLabel.text = "+\(dialCode)"
+        viewModel.phonePrefixSelected = true
+        errorPhonePrefixLabel.isHidden = true
+        checkAllContentsAreOk()
     }
     
     private func configureTermsAndConditionsButton() {

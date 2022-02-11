@@ -26,6 +26,7 @@ final class NewPostGenericRouter {
     
     func goToSelectPhotoPopup(showRemoveOption: Bool) {
         let viewController = Container.shared.selectPhotoPopupBuilder().build(showRemoveOption: showRemoveOption, comesFrom: .newPost)
+        viewController.delegate = self.viewController
         DispatchQueue.main.async {
             self.viewController?.present(viewController: viewController, completion: nil)
         }
@@ -33,6 +34,7 @@ final class NewPostGenericRouter {
     
     func goToAnimalTypes(comesFrom: AnimalTypesComesFrom) {
         let viewController = Container.shared.animalTypesBuilder().build(comesFrom: comesFrom)
+        viewController.delegate = self.viewController
         DispatchQueue.main.async {
             self.viewController?.push(viewController: viewController)
         }
@@ -40,6 +42,7 @@ final class NewPostGenericRouter {
     
     func goToWhereCanWeFindYou() {
         let viewController = Container.shared.whereCanWeFindYou().build(comesFrom: .newPost)
+        viewController.delegate = self.viewController
         DispatchQueue.main.async {
             self.viewController?.push(viewController: viewController)
         }

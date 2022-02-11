@@ -34,8 +34,6 @@
 		4105456B27A06E0E00527D64 /* ProfileSettingsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4105456627A06E0E00527D64 /* ProfileSettingsBuilder.swift */; };
 		4105456C27A06E0E00527D64 /* ProfileSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4105456727A06E0E00527D64 /* ProfileSettingsViewModel.swift */; };
 		4108D8D12762276800880E0B /* SignUpProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4108D8D02762276800880E0B /* SignUpProtocols.swift */; };
-		4108D8D32762286400880E0B /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4108D8D22762286400880E0B /* Enumerations.swift */; };
-		4108D8D52762287900880E0B /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4108D8D42762287900880E0B /* Protocols.swift */; };
 		4108D8DB27624C8600880E0B /* PersonalDetailsCollectionViewCellTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4108D8DA27624C8600880E0B /* PersonalDetailsCollectionViewCellTextFields.swift */; };
 		4108D8DF2762A45D00880E0B /* CustomStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4108D8DE2762A45D00880E0B /* CustomStackView.swift */; };
 		410B31F3276B32C300CE4180 /* Countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 410B31F2276B32C300CE4180 /* Countries.json */; };
@@ -201,6 +199,11 @@
 		418E234D277CC8F6008BB92E /* TermTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418E234B277CC8F6008BB92E /* TermTableViewCell.swift */; };
 		418E234E277CC8F6008BB92E /* TermTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 418E234C277CC8F6008BB92E /* TermTableViewCell.xib */; };
 		418E2350277CC934008BB92E /* TermTableViewCellSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418E234F277CC934008BB92E /* TermTableViewCellSummary.swift */; };
+		419CE0CE27B5AA76005D009C /* EditPostProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE0CD27B5AA76005D009C /* EditPostProtocols.swift */; };
+		419CE0D027B5ACD7005D009C /* NewPostGenericProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE0CF27B5ACD7005D009C /* NewPostGenericProtocols.swift */; };
+		419CE0D227B5AD76005D009C /* ProfileSettingsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE0D127B5AD76005D009C /* ProfileSettingsProtocols.swift */; };
+		419CE0D427B5BC0A005D009C /* EditSocialMediasProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE0D327B5BC0A005D009C /* EditSocialMediasProtocols.swift */; };
+		419CE0D827B5D559005D009C /* EditPersonalDetailsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE0D727B5D559005D009C /* EditPersonalDetailsProtocols.swift */; };
 		419E507527708ACD007C196B /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419E507427708ACD007C196B /* NotificationName.swift */; };
 		41AC99222787D367001B2F6A /* EditPostImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC99212787D367001B2F6A /* EditPostImagePicker.swift */; };
 		41B75626275EE4CE00C00E03 /* SignUpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B75622275EE4CE00C00E03 /* SignUpRouter.swift */; };
@@ -386,8 +389,6 @@
 		4105456627A06E0E00527D64 /* ProfileSettingsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsBuilder.swift; sourceTree = "<group>"; };
 		4105456727A06E0E00527D64 /* ProfileSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsViewModel.swift; sourceTree = "<group>"; };
 		4108D8D02762276800880E0B /* SignUpProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpProtocols.swift; sourceTree = "<group>"; };
-		4108D8D22762286400880E0B /* Enumerations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumerations.swift; sourceTree = "<group>"; };
-		4108D8D42762287900880E0B /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		4108D8DA27624C8600880E0B /* PersonalDetailsCollectionViewCellTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDetailsCollectionViewCellTextFields.swift; sourceTree = "<group>"; };
 		4108D8DE2762A45D00880E0B /* CustomStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStackView.swift; sourceTree = "<group>"; };
 		410B31F2276B32C300CE4180 /* Countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Countries.json; sourceTree = "<group>"; };
@@ -539,6 +540,11 @@
 		418E234B277CC8F6008BB92E /* TermTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermTableViewCell.swift; sourceTree = "<group>"; };
 		418E234C277CC8F6008BB92E /* TermTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermTableViewCell.xib; sourceTree = "<group>"; };
 		418E234F277CC934008BB92E /* TermTableViewCellSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermTableViewCellSummary.swift; sourceTree = "<group>"; };
+		419CE0CD27B5AA76005D009C /* EditPostProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostProtocols.swift; sourceTree = "<group>"; };
+		419CE0CF27B5ACD7005D009C /* NewPostGenericProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostGenericProtocols.swift; sourceTree = "<group>"; };
+		419CE0D127B5AD76005D009C /* ProfileSettingsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsProtocols.swift; sourceTree = "<group>"; };
+		419CE0D327B5BC0A005D009C /* EditSocialMediasProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSocialMediasProtocols.swift; sourceTree = "<group>"; };
+		419CE0D727B5D559005D009C /* EditPersonalDetailsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPersonalDetailsProtocols.swift; sourceTree = "<group>"; };
 		419E507427708ACD007C196B /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		41AC99212787D367001B2F6A /* EditPostImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostImagePicker.swift; sourceTree = "<group>"; };
 		41B75622275EE4CE00C00E03 /* SignUpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRouter.swift; sourceTree = "<group>"; };
@@ -812,6 +818,7 @@
 				4100A10F27848E240049EEF0 /* EditPostViewModel.swift */,
 				415476BE27849A0300BD684F /* EditPostTextfields.swift */,
 				41AC99212787D367001B2F6A /* EditPostImagePicker.swift */,
+				419CE0CD27B5AA76005D009C /* EditPostProtocols.swift */,
 			);
 			path = EditPost;
 			sourceTree = "<group>";
@@ -846,6 +853,7 @@
 				4105456627A06E0E00527D64 /* ProfileSettingsBuilder.swift */,
 				4105456727A06E0E00527D64 /* ProfileSettingsViewModel.swift */,
 				4119184127AC15DD00F9D68A /* ProfileSettingsImagePicker.swift */,
+				419CE0D127B5AD76005D009C /* ProfileSettingsProtocols.swift */,
 			);
 			path = ProfileSettings;
 			sourceTree = "<group>";
@@ -998,6 +1006,7 @@
 				4119F6CC27958A9A006B665A /* NewPostGenericViewModel.swift */,
 				4183EE2827961AC1005C554E /* NewPostGenericTextfields.swift */,
 				4183EE2627961A8E005C554E /* NewPostGenericImagePicker.swift */,
+				419CE0CF27B5ACD7005D009C /* NewPostGenericProtocols.swift */,
 			);
 			path = NewPostGeneric;
 			sourceTree = "<group>";
@@ -1277,6 +1286,7 @@
 				418B637D27AEF99C00F7DC4B /* EditPersonalDetailsBuilder.swift */,
 				418B637E27AEF99C00F7DC4B /* EditPersonalDetailsViewModel.swift */,
 				418B638427AF01EA00F7DC4B /* EditPersonalDetailsTextfields.swift */,
+				419CE0D727B5D559005D009C /* EditPersonalDetailsProtocols.swift */,
 			);
 			path = EditPersonalDetails;
 			sourceTree = "<group>";
@@ -1290,6 +1300,7 @@
 				418B638A27AF436700F7DC4B /* EditSocialMediasBuilder.swift */,
 				418B638B27AF436700F7DC4B /* EditSocialMediasViewModel.swift */,
 				418B639127AF442000F7DC4B /* EditSocialMediasTextfields.swift */,
+				419CE0D327B5BC0A005D009C /* EditSocialMediasProtocols.swift */,
 			);
 			path = EditSocialMedias;
 			sourceTree = "<group>";
@@ -1769,11 +1780,9 @@
 			isa = PBXGroup;
 			children = (
 				E3D14DCC242D081B00436D51 /* Constants.swift */,
-				4108D8D22762286400880E0B /* Enumerations.swift */,
 				41CD10E22781DF1500257B2B /* Filters.swift */,
 				41CDA4352780E3EC0009AB55 /* HardcodedData.swift */,
 				419E507427708ACD007C196B /* NotificationName.swift */,
-				4108D8D42762287900880E0B /* Protocols.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -1934,6 +1943,7 @@
 				41CD112C27835F6500257B2B /* SavedPostsCollectionView.swift in Sources */,
 				411C7F6E274BA8FE00C9710A /* LoginViewController.swift in Sources */,
 				4186AC91277F77EF009C07E2 /* ExploreFiltersCollectionViewCell.swift in Sources */,
+				419CE0D427B5BC0A005D009C /* EditSocialMediasProtocols.swift in Sources */,
 				41EC16C1278678CE00096B7A /* SelectPhotoPopupViewModel.swift in Sources */,
 				417B8609277D1F1C0051B8CF /* NewPostRouter.swift in Sources */,
 				418C4140275A5E310099BC5B /* ForgotPasswordRouter.swift in Sources */,
@@ -1967,7 +1977,6 @@
 				4100A0EF278372110049EEF0 /* PostViewController.swift in Sources */,
 				4119185827AC30F800F9D68A /* BlockedUserTableViewCellViewModel.swift in Sources */,
 				41CD112627835C2200257B2B /* SavedPostsViewModel.swift in Sources */,
-				4108D8D32762286400880E0B /* Enumerations.swift in Sources */,
 				4114ABD2275F960200F1AB01 /* AccountDetailsCollectionViewCell.swift in Sources */,
 				418E2350277CC934008BB92E /* TermTableViewCellSummary.swift in Sources */,
 				4186AC94277F78FB009C07E2 /* ExploreFiltersCollectionViewCellSummary.swift in Sources */,
@@ -1978,6 +1987,7 @@
 				945B15BD25595DC9003A65E0 /* Cache.swift in Sources */,
 				416D1CE927751BFB00C75546 /* SocialMediaDetailsCollectionViewCellViewModel.swift in Sources */,
 				418B638E27AF436700F7DC4B /* EditSocialMediasViewController.swift in Sources */,
+				419CE0D827B5D559005D009C /* EditPersonalDetailsProtocols.swift in Sources */,
 				4183EE2927961AC1005C554E /* NewPostGenericTextfields.swift in Sources */,
 				31981E4B24191A4500D25074 /* CustomTextField.swift in Sources */,
 				41EC16BF278678CE00096B7A /* SelectPhotoPopupViewController.swift in Sources */,
@@ -2030,7 +2040,6 @@
 				413987102737FA3500C243F4 /* StartupBuilder.swift in Sources */,
 				4160E71A277BA6C200C7066F /* OnboardingCollectionViewCellSummary.swift in Sources */,
 				417B860D277D1F1C0051B8CF /* NewPostViewModel.swift in Sources */,
-				4108D8D52762287900880E0B /* Protocols.swift in Sources */,
 				41CD10FC27822C2500257B2B /* ExploreProtocols.swift in Sources */,
 				4119184227AC15DD00F9D68A /* ProfileSettingsImagePicker.swift in Sources */,
 				418B637427AEB83C00F7DC4B /* ChangePasswordViewController.swift in Sources */,
@@ -2066,6 +2075,7 @@
 				4119183B27ABFAF100F9D68A /* ProfilePostsBuilder.swift in Sources */,
 				4108D8DF2762A45D00880E0B /* CustomStackView.swift in Sources */,
 				418B638127AEF99C00F7DC4B /* EditPersonalDetailsViewController.swift in Sources */,
+				419CE0D227B5AD76005D009C /* ProfileSettingsProtocols.swift in Sources */,
 				418B636A27AEB28500F7DC4B /* BlockedUsersProtocols.swift in Sources */,
 				41DA64F027A4862A0094F55C /* SocialMediaCollectionViewCellSummary.swift in Sources */,
 				41F820C9276FD83B0046B0EA /* WhereCanWeFindYouBuilder.swift in Sources */,
@@ -2100,6 +2110,7 @@
 				41FEE1E42788B68000F11449 /* LocationViewModel.swift in Sources */,
 				41EC16CB2786890600096B7A /* ErrorPopupBuilder.swift in Sources */,
 				4100A11227848E240049EEF0 /* EditPostViewController.swift in Sources */,
+				419CE0CE27B5AA76005D009C /* EditPostProtocols.swift in Sources */,
 				418E234D277CC8F6008BB92E /* TermTableViewCell.swift in Sources */,
 				41CD10ED2782183900257B2B /* AnimalFilterPopupViewController.swift in Sources */,
 				4114ABC8275F92C900F1AB01 /* SignUpCollectionView.swift in Sources */,
@@ -2156,6 +2167,7 @@
 				418C4142275A5E310099BC5B /* ForgotPasswordBuilder.swift in Sources */,
 				413987002737F6F200C243F4 /* UIFont.swift in Sources */,
 				41742223277C815600915233 /* ExploreViewController.swift in Sources */,
+				419CE0D027B5ACD7005D009C /* NewPostGenericProtocols.swift in Sources */,
 				41CD10FA2782232200257B2B /* AnimalFilterTableViewCellSummary.swift in Sources */,
 				415E597D2763EA7E009A013E /* WhereDoYouLiveCountriesViewController.swift in Sources */,
 				41CD1111278336F400257B2B /* DateFilterPopupBuilder.swift in Sources */,

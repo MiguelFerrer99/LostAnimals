@@ -49,22 +49,13 @@ extension EditPostViewController: CustomTextFieldDelegate {
         }
     }
     
-    @objc func fillWhereCanWeFindYou(_ notification: NSNotification) {
-        if let searchResult = notification.userInfo?["searchResult"] as? MKLocalSearchCompletion {
-            let searchResultString1 = searchResult.title
-            let searchResultString2 = searchResult.subtitle.isEmpty ? "" : ", \(searchResult.subtitle)"
-            let searchResultString = "\(searchResultString1)\(searchResultString2)"
-            locationTextfield.textField.text = searchResultString
-            locationTextfield.didFinishSelectContentFromOtherVC()
-            convertAddressToLocation(address: searchResultString)
-        }
-    }
-    
-    @objc func fillAnimal(_ notification: NSNotification) {
-        if let animalType = notification.userInfo?["animalType"] as? AnimalType {
-            animalTextfield.textField.text = animalType.rawValue
-            animalTextfield.didFinishSelectContentFromOtherVC()
-        }
+    func fillWhereCanWeFindYou(searchResult: MKLocalSearchCompletion) {
+        let searchResultString1 = searchResult.title
+        let searchResultString2 = searchResult.subtitle.isEmpty ? "" : ", \(searchResult.subtitle)"
+        let searchResultString = "\(searchResultString1)\(searchResultString2)"
+        locationTextfield.textField.text = searchResultString
+        locationTextfield.didFinishSelectContentFromOtherVC()
+        convertAddressToLocation(address: searchResultString)
     }
     
     private func convertAddressToLocation(address: String) {

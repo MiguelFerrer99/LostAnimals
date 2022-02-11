@@ -56,15 +56,9 @@ extension WhereDoYouLiveCountriesViewModel {
              .editPersonalDetails:
             self.router.goToWhereDoYouLiveCities(comesFrom: comesFrom, country: country, cities: cities)
         case .signUpSocialMediaDetails:
-            let countryDialCodeString = country.dialCode
-            let userInfo: [String: String] = ["countryDialCodeString": countryDialCodeString]
-            NotificationCenter.default.post(name: .SendCountryDialCodeToSignUp, object: nil, userInfo: userInfo)
-            self.router.goToSignUp()
+            self.router.goToSignUp(dialCode: country.dialCode)
         case .editSocialMediaDetails:
-            let countryDialCodeString = country.dialCode
-            let userInfo: [String: String] = ["countryDialCodeString": countryDialCodeString]
-            NotificationCenter.default.post(name: .SendCountryDialCodeToEditSocialMedias, object: nil, userInfo: userInfo)
-            self.router.goToEditSocialMedias()
+            self.router.goToEditSocialMedias(dialCode: country.dialCode)
         }
     }
 }

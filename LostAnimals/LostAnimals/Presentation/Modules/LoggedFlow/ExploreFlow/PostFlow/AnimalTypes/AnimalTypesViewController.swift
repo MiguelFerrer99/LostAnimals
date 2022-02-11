@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol AnimalTypesDelegate: AnyObject {
+    func getAnimalType(animalType: AnimalType)
+}
+
 final class AnimalTypesViewController: ViewController {
     
     // MARK: - IBOutlets
@@ -17,6 +21,7 @@ final class AnimalTypesViewController: ViewController {
     override var navBarTitle: String {
         return "Select an animal type"
     }
+    weak var delegate: AnimalTypesDelegate?
     var viewModel: AnimalTypesViewModel!
     
     // MARK: - Life cycle

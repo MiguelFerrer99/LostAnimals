@@ -11,7 +11,6 @@ import UIKit
 final class EditSocialMediasViewController: ViewController, UIGestureRecognizerDelegate {
     // MARK: - IBOutlets
     @IBOutlet weak var phonePrefixLabel: UILabel!
-    @IBOutlet weak var errorPhonePrefixLabel: UILabel!
     @IBOutlet weak var phonePrefixButton: UIButton!
     @IBOutlet weak var phoneNumberTextfield: CustomTextField!
     @IBOutlet weak var haveWhatsappButton: UIButton!
@@ -30,7 +29,6 @@ final class EditSocialMediasViewController: ViewController, UIGestureRecognizerD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        subscribeToNotifications()
         setupUI()
         viewModel.viewReady()
     }
@@ -41,19 +39,7 @@ final class EditSocialMediasViewController: ViewController, UIGestureRecognizerD
         viewModel.viewDidAppear()
     }
     
-    deinit {
-        unsubscribeToNotifications()
-    }
-    
     // MARK: - Functions
-    private func subscribeToNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(fillPhonePrefix), name: .SendCountryDialCodeToEditSocialMedias, object: nil)
-    }
-    
-    private func unsubscribeToNotifications() {
-        NotificationCenter.default.removeObserver(self)
-    }
-    
     private func setupUI() {
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         configureTextFields()
@@ -72,6 +58,11 @@ final class EditSocialMediasViewController: ViewController, UIGestureRecognizerD
         if let twitter = viewModel.me.socialMedias[.twitter] {
             twitterTextfield.textField.text = twitter
         }
+    }
+    
+    func fillPhonePrefix(dialCode: String) {
+        phonePrefixLabel.text = "+\(dialCode)"
+        checkAllContentsAreOk()
     }
     
     private func toggleHaveWhatsAppButton() {

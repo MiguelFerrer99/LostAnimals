@@ -9,6 +9,16 @@
 import Foundation
 import UIKit
 
+enum FilterType: Int {
+    case all
+    case lost
+    case found
+    case adopt
+    case animal
+    case location
+    case date
+}
+
 struct Filters {
     static var currentFilters: [FilterType: PostsFilter] = [
         .all: PostsFilter(filterTitle: "All", filterType: .all, enabled: true, animalFilterDog: false, animalFilterBird: false, animalFilterCat: false, animalFilterTurtle: false, animalFilterSnake: false, animalFilterRabbit: false, animalFilterOther: false),

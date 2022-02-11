@@ -27,6 +27,7 @@ final class SignUpRouter {
     
     func goToWhereCanWeFindYou() {
         let viewController = Container.shared.whereCanWeFindYou().build(comesFrom: .signUp)
+        viewController.delegate = self.viewController
         DispatchQueue.main.async {
             self.viewController?.push(viewController: viewController)
         }
