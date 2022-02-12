@@ -93,6 +93,7 @@
 		413987112737FA3500C243F4 /* StartupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4139870D2737FA3500C243F4 /* StartupViewModel.swift */; };
 		413987152738052C00C243F4 /* StartupViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 413987142738052C00C243F4 /* StartupViewController.storyboard */; };
 		415476BF27849A0300BD684F /* EditPostTextfields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415476BE27849A0300BD684F /* EditPostTextfields.swift */; };
+		4157D3F327B83B9400F2C8F2 /* ExploreFiltersHeaderProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4157D3F227B83B9400F2C8F2 /* ExploreFiltersHeaderProtocols.swift */; };
 		415E597C2763EA7E009A013E /* WhereDoYouLiveCountriesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E59782763EA7E009A013E /* WhereDoYouLiveCountriesRouter.swift */; };
 		415E597D2763EA7E009A013E /* WhereDoYouLiveCountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E59792763EA7E009A013E /* WhereDoYouLiveCountriesViewController.swift */; };
 		415E597E2763EA7E009A013E /* WhereDoYouLiveCountriesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E597A2763EA7E009A013E /* WhereDoYouLiveCountriesBuilder.swift */; };
@@ -448,6 +449,7 @@
 		4139870D2737FA3500C243F4 /* StartupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupViewModel.swift; sourceTree = "<group>"; };
 		413987142738052C00C243F4 /* StartupViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartupViewController.storyboard; sourceTree = "<group>"; };
 		415476BE27849A0300BD684F /* EditPostTextfields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostTextfields.swift; sourceTree = "<group>"; };
+		4157D3F227B83B9400F2C8F2 /* ExploreFiltersHeaderProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreFiltersHeaderProtocols.swift; sourceTree = "<group>"; };
 		415E59782763EA7E009A013E /* WhereDoYouLiveCountriesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereDoYouLiveCountriesRouter.swift; sourceTree = "<group>"; };
 		415E59792763EA7E009A013E /* WhereDoYouLiveCountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereDoYouLiveCountriesViewController.swift; sourceTree = "<group>"; };
 		415E597A2763EA7E009A013E /* WhereDoYouLiveCountriesBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereDoYouLiveCountriesBuilder.swift; sourceTree = "<group>"; };
@@ -1238,6 +1240,7 @@
 				4186AC85277F6F57009C07E2 /* ExploreFiltersHeader.xib */,
 				4186AC84277F6F57009C07E2 /* ExploreFiltersHeader.swift */,
 				4186AC88277F6FB4009C07E2 /* ExploreFiltersHeaderCollectionView.swift */,
+				4157D3F227B83B9400F2C8F2 /* ExploreFiltersHeaderProtocols.swift */,
 			);
 			path = ExploreFiltersHeader;
 			sourceTree = "<group>";
@@ -2178,6 +2181,7 @@
 				4100A0FA2783AE640049EEF0 /* PostOptionsPopupRouter.swift in Sources */,
 				417B860B277D1F1C0051B8CF /* NewPostViewController.swift in Sources */,
 				41CD10EB2782183900257B2B /* AnimalFilterPopupRouter.swift in Sources */,
+				4157D3F327B83B9400F2C8F2 /* ExploreFiltersHeaderProtocols.swift in Sources */,
 				CCB0202A26A6EE3400214CB9 /* AppDelegate.swift in Sources */,
 				415E59912764F1F8009A013E /* WhereDoYouLiveCitiesViewController.swift in Sources */,
 				4119F6CD27958A9A006B665A /* NewPostGenericRouter.swift in Sources */,

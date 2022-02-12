@@ -19,15 +19,15 @@ final class WhereDoYouLiveCountriesRouter {
     
     // MARK: - Functions
     func goToSignUp(dialCode: String) {
+        self.viewController?.delegate?.getDialCode(dialCode: dialCode)
         DispatchQueue.main.async {
-            self.viewController?.delegate?.getDialCode(dialCode: dialCode)
             self.viewController?.pop()
         }
     }
     
     func goToEditSocialMedias(dialCode: String) {
+        self.viewController?.delegate?.getDialCode(dialCode: dialCode)
         DispatchQueue.main.async {
-            self.viewController?.delegate?.getDialCode(dialCode: dialCode)
             self.viewController?.pop()
         }
     }

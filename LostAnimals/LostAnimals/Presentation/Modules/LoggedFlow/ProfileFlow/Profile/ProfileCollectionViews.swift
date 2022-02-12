@@ -24,7 +24,7 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
             if viewModel.isMyProfile {
                 return HardcodedData.savedPosts.count
             } else {
-                return viewModel.user.socialMedias.count
+                return viewModel.user.socialMedias.count - 1
             }
         }
     }

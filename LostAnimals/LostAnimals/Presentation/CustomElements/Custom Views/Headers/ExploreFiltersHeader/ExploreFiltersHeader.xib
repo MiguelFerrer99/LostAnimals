@@ -15,7 +15,7 @@
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xMm-Bx-SkK">
-                    <rect key="frame" x="0.0" y="10" width="464" height="84"/>
+                    <rect key="frame" x="0.0" y="10" width="464" height="74"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="76t-nR-g51">
                             <rect key="frame" x="0.0" y="0.0" width="464" height="74"/>
@@ -32,7 +32,7 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="76t-nR-g51" secondAttribute="bottom" constant="10" id="LO1-Li-5RX"/>
+                        <constraint firstAttribute="bottom" secondItem="76t-nR-g51" secondAttribute="bottom" id="LO1-Li-5RX"/>
                         <constraint firstItem="76t-nR-g51" firstAttribute="leading" secondItem="xMm-Bx-SkK" secondAttribute="leading" id="NVF-hG-jdk"/>
                         <constraint firstItem="76t-nR-g51" firstAttribute="top" secondItem="xMm-Bx-SkK" secondAttribute="top" id="QTz-wp-zTM"/>
                         <constraint firstAttribute="trailing" secondItem="76t-nR-g51" secondAttribute="trailing" id="VlG-zk-U4m"/>
@@ -45,7 +45,7 @@
             <constraints>
                 <constraint firstItem="xMm-Bx-SkK" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="10" id="45L-RD-mLY"/>
                 <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="xMm-Bx-SkK" secondAttribute="trailing" id="8Ox-0y-jaP"/>
-                <constraint firstAttribute="bottom" secondItem="xMm-Bx-SkK" secondAttribute="bottom" id="Agf-5O-Akd"/>
+                <constraint firstAttribute="bottom" secondItem="xMm-Bx-SkK" secondAttribute="bottom" constant="10" id="Agf-5O-Akd"/>
                 <constraint firstItem="xMm-Bx-SkK" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="oWP-3G-bgt"/>
             </constraints>
             <connections>

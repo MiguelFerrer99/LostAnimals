@@ -62,6 +62,18 @@ class ExploreFiltersHeader: UICollectionReusableView, Reusable {
         filtersCollectionView.deselectItem(at: indexPath, animated: true)
     }
     
+    func showDisableFilterButton(index: Int) {
+        let indexPath = IndexPath(item: index, section: 0)
+        guard let filterCell = filtersCollectionView.cellForItem(at: indexPath) as? ExploreFiltersCollectionViewCell else { return }
+        filterCell.showDisableFilterButton()
+    }
+    
+    func hideDisableFilterButton(index: Int) {
+        let indexPath = IndexPath(item: index, section: 0)
+        guard let filterCell = filtersCollectionView.cellForItem(at: indexPath) as? ExploreFiltersCollectionViewCell else { return }
+        filterCell.hideDisableFilterButton()
+    }
+    
     func disableFilters() {
         Filters.currentFilters.forEach { currentExploreFilter in
             Filters.setFilterValue(filterType: currentExploreFilter.key, enabled: false)
@@ -72,8 +84,10 @@ class ExploreFiltersHeader: UICollectionReusableView, Reusable {
         Filters.currentFilters.forEach { currentFilter in
             if currentFilter.value.enabled {
                 selectFilter(type: currentFilter.key)
+                if currentFilter.key != .all { showDisableFilterButton(index: currentFilter.key.rawValue) }
             } else {
                 deselectFilter(type: currentFilter.key)
+                hideDisableFilterButton(index: currentFilter.key.rawValue)
             }
         }
     }
