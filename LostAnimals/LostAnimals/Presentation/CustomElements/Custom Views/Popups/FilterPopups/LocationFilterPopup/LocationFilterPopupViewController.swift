@@ -12,6 +12,7 @@ final class LocationFilterPopupViewController: ViewController {
     
     // MARK: - IBOutlets
     @IBOutlet weak var sliderValueLabel: UILabel!
+    @IBOutlet weak var rangeSlider: UISlider!
     
     // MARK: - Properties
     var viewModel: LocationFilterPopupViewModel!
@@ -32,7 +33,13 @@ final class LocationFilterPopupViewController: ViewController {
     
     // MARK: - Functions
     private func setupUI() {
-        // Do UI setup
+        if viewModel.loadData {
+            if let locationValue = Filters.currentFilters[.location]?.locationFilterRangeKm {
+                viewModel.selectedRangeOfKm = locationValue
+                sliderValueLabel.text = "\(viewModel.selectedRangeOfKm) Km"
+                rangeSlider.value = Float(viewModel.selectedRangeOfKm)
+            }
+        }
     }
     
     // MARK: - IBActions

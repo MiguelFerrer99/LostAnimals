@@ -34,6 +34,48 @@ final class AnimalFilterPopupViewController: ViewController {
     // MARK: - Functions  
     private func setupUI() {
         configureTableView(animalsFilterTableView)
+        fillUI()
+    }
+    
+    private func fillUI() {
+        if viewModel.loadData {
+            if let animalFilter = Filters.currentFilters[.animal] {
+                if animalFilter.animalFilterDog {
+                    selectAnimalCell(index: 0)
+                    viewModel.selectedAnimalTypes.append(.dog)
+                }
+                if animalFilter.animalFilterBird {
+                    selectAnimalCell(index: 1)
+                    viewModel.selectedAnimalTypes.append(.bird)
+                }
+                if animalFilter.animalFilterCat {
+                    selectAnimalCell(index: 2)
+                    viewModel.selectedAnimalTypes.append(.cat)
+                }
+                if animalFilter.animalFilterTurtle {
+                    selectAnimalCell(index: 3)
+                    viewModel.selectedAnimalTypes.append(.turtle)
+                }
+                if animalFilter.animalFilterSnake {
+                    selectAnimalCell(index: 4)
+                    viewModel.selectedAnimalTypes.append(.snake)
+                }
+                if animalFilter.animalFilterRabbit {
+                    selectAnimalCell(index: 5)
+                    viewModel.selectedAnimalTypes.append(.rabbit)
+                }
+                if animalFilter.animalFilterOther {
+                    selectAnimalCell(index: 6)
+                    viewModel.selectedAnimalTypes.append(.other)
+                }
+            }
+            enableApplyFilterButton()
+        }
+    }
+    
+    private func selectAnimalCell(index: Int) {
+        let indexPath = IndexPath(row: index, section: 0)
+        animalsFilterTableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
     }
     
     func enableApplyFilterButton() {

@@ -26,6 +26,10 @@ class ExploreFiltersCollectionViewCell: UICollectionViewCell, Reusable {
     private var filterType: FilterType?
     
     // MARK: - Life cycle
+    override func prepareForReuse() {
+        disableFilterButton.isHidden = (!(Filters.currentFilters[filterType ?? .all]?.enabled ?? false) && filterType != .all) || (filterType == .all)
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

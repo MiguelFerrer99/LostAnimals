@@ -30,27 +30,33 @@ extension ExploreFiltersHeader: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if indexPath.row == 0 || indexPath.row == Filters.currentFilters.count - 1 { return CGSize(width: 150, height: collectionView.frame.height) }
-        else { return CGSize(width: 130, height: collectionView.frame.height) }
+        if indexPath.row == 0 || indexPath.row == Filters.currentFilters.count - 1 { return CGSize(width: 130, height: collectionView.frame.height) }
+        else { return CGSize(width: 110, height: collectionView.frame.height) }
     }
     
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         guard let unselectedFilter = Filters.getFilter(from: indexPath.row) else { return false }
-        if unselectedFilter.filterType == .all {
+        switch unselectedFilter.filterType {
+        case .all:
             disableFilters()
-            Filters.setFilterValue(filterType: .all, enabled: true)
-            NotificationCenter.default.post(name: .UpdateFiltersUI, object: nil)
-        } else if (unselectedFilter.filterType == .lost) || (unselectedFilter.filterType == .found) || (unselectedFilter.filterType == .adopt) {
+        case .lost, .found, .adopt:
             Filters.setFilterValue(filterType: .all, enabled: false)
             Filters.setFilterValue(filterType: unselectedFilter.filterType, enabled: true)
             NotificationCenter.default.post(name: .UpdateFiltersUI, object: nil)
-        } else {
-            postFiltersDelegate?.showPostFilters(filterType: unselectedFilter.filterType)
+        case .animal, .location, .date:
+            postFiltersDelegate?.showPostFilters(filterType: unselectedFilter.filterType, loadData: false)
         }
         return false
     }
     
     func collectionView(_ collectionView: UICollectionView, shouldDeselectItemAt indexPath: IndexPath) -> Bool {
+        guard let selectedFilter = Filters.getFilter(from: indexPath.row) else { return false }
+        switch selectedFilter.filterType {
+        case .all, .lost, .found, .adopt:
+            return false
+        case .animal, .location, .date:
+            postFiltersDelegate?.showPostFilters(filterType: selectedFilter.filterType, loadData: true)
+        }
         return false
     }
 }

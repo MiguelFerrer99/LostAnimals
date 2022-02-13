@@ -9,7 +9,7 @@
 import UIKit
 
 protocol PostFiltersDelegate: AnyObject {
-    func showPostFilters(filterType: FilterType)
+    func showPostFilters(filterType: FilterType, loadData: Bool)
 }
 
 class ExploreFiltersHeader: UICollectionReusableView, Reusable {
@@ -54,7 +54,7 @@ class ExploreFiltersHeader: UICollectionReusableView, Reusable {
     
     private func selectFilter(type: FilterType) {
         let indexPath = IndexPath(item: type.rawValue, section: 0)
-        filtersCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
+        filtersCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredVertically)
     }
     
     private func deselectFilter(type: FilterType) {
@@ -75,9 +75,17 @@ class ExploreFiltersHeader: UICollectionReusableView, Reusable {
     }
     
     func disableFilters() {
-        Filters.currentFilters.forEach { currentExploreFilter in
-            Filters.setFilterValue(filterType: currentExploreFilter.key, enabled: false)
+        Filters.currentFilters.enumerated().forEach { (index, currentExploreFilter) in
+            Filters.setFilterValue(filterType: currentExploreFilter.key, enabled: currentExploreFilter.key == .all)
         }
+        updateFiltersUI()
+    }
+    
+    func setFilterTitle(index: Int) {
+        let indexPath = IndexPath(item: index, section: 0)
+        guard let filterCell = filtersCollectionView.cellForItem(at: indexPath) as? ExploreFiltersCollectionViewCell,
+              let filterType = Filters.getFilter(from: index)?.filterType else { return }
+        filterCell.filterTitleLabel.text = Filters.currentFilters[filterType]?.filterTitle
     }
     
     @objc private func updateFiltersUI() {
@@ -89,6 +97,7 @@ class ExploreFiltersHeader: UICollectionReusableView, Reusable {
                 deselectFilter(type: currentFilter.key)
                 hideDisableFilterButton(index: currentFilter.key.rawValue)
             }
+            setFilterTitle(index: currentFilter.key.rawValue)
         }
     }
 }

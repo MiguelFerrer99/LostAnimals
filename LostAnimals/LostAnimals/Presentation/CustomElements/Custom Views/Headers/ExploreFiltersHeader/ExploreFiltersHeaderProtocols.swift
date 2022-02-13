@@ -11,6 +11,7 @@ import Foundation
 extension ExploreFiltersHeader: ExploreFilterDelegate {
     // MARK: - ExploreFilterDelegate
     func disableFilter(filterType: FilterType) {
+        Filters.resetFilterTitle(type: filterType)
         Filters.setFilterValue(filterType: filterType, enabled: false)
         if Filters.currentFilters.allSatisfy({ $0.value.enabled == false }) {
             Filters.setFilterValue(filterType: .all, enabled: true)

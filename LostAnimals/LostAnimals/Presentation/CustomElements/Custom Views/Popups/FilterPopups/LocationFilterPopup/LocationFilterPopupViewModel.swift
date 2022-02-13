@@ -12,11 +12,13 @@ final class LocationFilterPopupViewModel {
     
     // MARK: - Properties
     private let router: LocationFilterPopupRouter
+    let loadData: Bool
     var selectedRangeOfKm: Int = 2
     
     // MARK: - Init
-    required init(router: LocationFilterPopupRouter) {
+    required init(router: LocationFilterPopupRouter, loadData: Bool) {
         self.router = router
+        self.loadData = loadData
     }
 }
 
@@ -36,6 +38,7 @@ extension LocationFilterPopupViewModel {
     func didPressApplyFilterButton() {
         Filters.setFilterValue(filterType: .all, enabled: false)
         Filters.setFilterValue(filterType: .location, enabled: true, locationFilterRangeKm: selectedRangeOfKm)
+        Filters.setFilterTitle(type: .location, title: "\(selectedRangeOfKm) km")
         NotificationCenter.default.post(name: .UpdateFiltersUI, object: nil)
         self.router.dismissLocationFilterPopup()
     }

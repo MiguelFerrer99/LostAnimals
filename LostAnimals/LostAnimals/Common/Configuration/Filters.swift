@@ -42,6 +42,18 @@ struct Filters {
         if let animalFilterSnake = animalFilterSnake { currentFilters[filterType]?.animalFilterSnake = animalFilterSnake }
         if let animalFilterRabbit = animalFilterRabbit { currentFilters[filterType]?.animalFilterRabbit = animalFilterRabbit }
         if let animalFilterOther = animalFilterOther { currentFilters[filterType]?.animalFilterOther = animalFilterOther }
+        if let locationFilterRangeKm = locationFilterRangeKm { currentFilters[filterType]?.locationFilterRangeKm = locationFilterRangeKm }
+        if let dateFilterDatesBeforeOf = dateFilterDatesBeforeOf { currentFilters[filterType]?.dateFilterDatesBeforeOf = dateFilterDatesBeforeOf }
+        if let dateFilterDatesAfterOf = dateFilterDatesAfterOf { currentFilters[filterType]?.dateFilterDatesAfterOf = dateFilterDatesAfterOf }
+    }
+    
+    static func setFilterTitle(type: FilterType, title: String) {
+        switch type {
+        case .animal:   currentFilters[.animal]?.filterTitle = title
+        case .location: currentFilters[.location]?.filterTitle = title
+        case .date:     currentFilters[.date]?.filterTitle = title
+        default:        return
+        }
     }
     
     static func getFilter(from position: Int) -> PostsFilter? {
@@ -51,12 +63,22 @@ struct Filters {
         return nil
     }
     
+    static func resetFilterTitle(type: FilterType) {
+        switch type {
+        case .animal:   currentFilters[.animal]?.filterTitle = "Animal"
+        case .location: currentFilters[.location]?.filterTitle = "Location"
+        case .date:     currentFilters[.date]?.filterTitle = "Date"
+        default:        return
+        }
+    }
+    
     static func resetFilters() {
         currentFilters[.all]?.enabled = true
         currentFilters[.lost]?.enabled = false
         currentFilters[.found]?.enabled = false
         currentFilters[.adopt]?.enabled = false
         currentFilters[.animal]?.enabled = false
+        currentFilters[.animal]?.filterTitle = "Animal"
         currentFilters[.animal]?.animalFilterDog = false
         currentFilters[.animal]?.animalFilterBird = false
         currentFilters[.animal]?.animalFilterCat = false
@@ -65,8 +87,10 @@ struct Filters {
         currentFilters[.animal]?.animalFilterRabbit = false
         currentFilters[.animal]?.animalFilterOther = false
         currentFilters[.location]?.enabled = false
+        currentFilters[.location]?.filterTitle = "Location"
         currentFilters[.location]?.locationFilterRangeKm = nil
         currentFilters[.date]?.enabled = false
+        currentFilters[.date]?.filterTitle = "Date"
         currentFilters[.date]?.dateFilterDatesBeforeOf = nil
         currentFilters[.date]?.dateFilterDatesAfterOf = nil
     }

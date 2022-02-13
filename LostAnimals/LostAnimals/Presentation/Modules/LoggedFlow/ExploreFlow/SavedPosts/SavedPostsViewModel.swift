@@ -34,8 +34,8 @@ extension SavedPostsViewModel {
 
 // MARK: - Functions
 extension SavedPostsViewModel {
-    func didPressPostsFilterPopup(filterType: FilterType) {
-        self.router.goToFilterPopup(filterType: filterType)
+    func didPressPostsFilterPopup(filterType: FilterType, loadData: Bool) {
+        self.router.goToFilterPopup(filterType: filterType, loadData: loadData)
     }
     
     func didPressPost(post: Post) {

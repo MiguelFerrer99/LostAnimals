@@ -41,6 +41,31 @@ final class DateFilterPopupViewController: ViewController {
     // MARK: - Functions
     private func setupUI() {
         configureTextfields()
+        fillUI()
+    }
+    
+    
+    private func fillUI() {
+        if viewModel.loadData {
+            if let dateFilter = Filters.currentFilters[.date] {
+                if let previousDate = dateFilter.dateFilterDatesBeforeOf {
+                    postsPreviousToTextfield.text = previousDate.toString(withFormat: DateFormat.dayMonthYearOther)
+                    viewModel.postsPreviousToSelectedDate = previousDate
+                    viewModel.postsPreviousToSelected.toggle()
+                    postsPreviousToImageView.image = UIImage(systemName: viewModel.postsPreviousToSelected ? "checkmark.circle.fill" : "circle")
+                }
+                if let afterDate = dateFilter.dateFilterDatesAfterOf {
+                    postsAfterTextfield.text = afterDate.toString(withFormat: DateFormat.dayMonthYearOther)
+                    viewModel.postsAfterSelectedDate = afterDate
+                    viewModel.postsAfterSelected.toggle()
+                    postsAfterImageView.image = UIImage(systemName: viewModel.postsAfterSelected ? "checkmark.circle.fill" : "circle")
+                }
+                updateApplyFilterButton()
+            }
+        } else {
+            postsPreviousToTextfield.text = Date.today.toString(withFormat: DateFormat.dayMonthYearOther)
+            postsAfterTextfield.text = Date.today.toString(withFormat: DateFormat.dayMonthYearOther)
+        }
     }
     
     private func updateApplyFilterButton() {
@@ -66,6 +91,18 @@ final class DateFilterPopupViewController: ViewController {
     }
     
     @IBAction func applyFilterButtonPressed(_ sender: CustomButton) {
+        if viewModel.postsPreviousToSelected {
+            let date = postsPreviousToTextfield.text?.toDate(withFormat: DateFormat.dayMonthYearOther) ?? Date.today
+            viewModel.postsPreviousToSelectedDate = date
+        } else {
+            viewModel.postsPreviousToSelectedDate = nil
+        }
+        if viewModel.postsAfterSelected {
+            let date = postsAfterTextfield.text?.toDate(withFormat: DateFormat.dayMonthYearOther) ?? Date.today
+            viewModel.postsAfterSelectedDate = date
+        } else {
+            viewModel.postsAfterSelectedDate = nil
+        }
         viewModel.didPressApplyFilterButton()
     }
 }

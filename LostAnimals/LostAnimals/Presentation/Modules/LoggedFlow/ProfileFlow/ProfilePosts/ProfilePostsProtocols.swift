@@ -9,7 +9,7 @@
 import Foundation
 
 extension ProfilePostsViewController: PostFiltersDelegate {
-    func showPostFilters(filterType: FilterType) {
-        viewModel.didPressPostsFilterPopup(filterType: filterType)
+    func showPostFilters(filterType: FilterType, loadData: Bool) {
+        viewModel.didPressPostsFilterPopup(filterType: filterType, loadData: loadData)
     }
 }

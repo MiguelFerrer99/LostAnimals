@@ -9,7 +9,7 @@
 import Foundation
 
 struct PostsFilter {
-    let filterTitle: String
+    var filterTitle: String
     let filterType: FilterType
     var enabled: Bool
     var animalFilterDog: Bool

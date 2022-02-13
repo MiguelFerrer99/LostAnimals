@@ -12,11 +12,13 @@ final class AnimalFilterPopupViewModel {
     
     // MARK: - Properties
     private let router: AnimalFilterPopupRouter
+    let loadData: Bool
     var selectedAnimalTypes: [AnimalType] = []
     
     // MARK: - Init
-    required init(router: AnimalFilterPopupRouter) {
+    required init(router: AnimalFilterPopupRouter, loadData: Bool) {
         self.router = router
+        self.loadData = loadData
     }
 }
 
@@ -35,15 +37,16 @@ extension AnimalFilterPopupViewModel {
 extension AnimalFilterPopupViewModel {
     func didPressApplyFilterButton() {
         Filters.setFilterValue(filterType: .all, enabled: false)
-        selectedAnimalTypes.forEach { selectedAnimalType in
-            Filters.setFilterValue(filterType: .animal, enabled: true,
-                                   animalFilterDog: selectedAnimalType == .dog,
-                                   animalFilterBird: selectedAnimalType == .bird,
-                                   animalFilterCat: selectedAnimalType == .cat,
-                                   animalFilterTurtle: selectedAnimalType == .turtle,
-                                   animalFilterSnake: selectedAnimalType == .snake,
-                                   animalFilterRabbit: selectedAnimalType == .rabbit,
-                                   animalFilterOther: selectedAnimalType == .other)
+        Filters.setFilterValue(filterType: .animal, enabled: true,
+                               animalFilterDog: selectedAnimalTypes.contains(.dog),
+                               animalFilterBird: selectedAnimalTypes.contains(.bird),
+                               animalFilterCat: selectedAnimalTypes.contains(.cat),
+                               animalFilterTurtle: selectedAnimalTypes.contains(.turtle),
+                               animalFilterSnake: selectedAnimalTypes.contains(.snake),
+                               animalFilterRabbit: selectedAnimalTypes.contains(.rabbit),
+                               animalFilterOther: selectedAnimalTypes.contains(.other))
+        if let filterTitle = selectedAnimalTypes.count == 1 ? selectedAnimalTypes.first?.rawValue : "Many" {
+            Filters.setFilterTitle(type: .animal, title: filterTitle)
         }
         NotificationCenter.default.post(name: .UpdateFiltersUI, object: nil)
         self.router.dismissAnimalFilterPopup()

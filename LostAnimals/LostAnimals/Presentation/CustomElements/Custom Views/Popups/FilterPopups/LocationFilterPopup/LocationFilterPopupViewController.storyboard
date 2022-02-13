@@ -136,6 +136,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="rangeSlider" destination="Cov-qt-eGM" id="UpW-vp-A7D"/>
                         <outlet property="sliderValueLabel" destination="iG6-E8-MMZ" id="MAf-8g-W6K"/>
                     </connections>
                 </viewController>

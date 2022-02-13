@@ -13,14 +13,16 @@ final class DateFilterPopupViewModel {
     
     // MARK: - Properties
     private let router: DateFilterPopupRouter
+    let loadData: Bool
     var postsPreviousToSelected = false
     var postsAfterSelected = false
-    var postsPreviousToSelectedDate = Date.today
-    var postsAfterSelectedDate = Date.today
+    var postsPreviousToSelectedDate: Date? = nil
+    var postsAfterSelectedDate: Date? = nil
     
     // MARK: - Init
-    required init(router: DateFilterPopupRouter) {
+    required init(router: DateFilterPopupRouter, loadData: Bool) {
         self.router = router
+        self.loadData = loadData
     }
 }
 
@@ -40,6 +42,13 @@ extension DateFilterPopupViewModel {
     func didPressApplyFilterButton() {
         Filters.setFilterValue(filterType: .all, enabled: false)
         Filters.setFilterValue(filterType: .date, enabled: true, dateFilterDatesBeforeOf: postsPreviousToSelectedDate, dateFilterDatesAfterOf: postsAfterSelectedDate)
+        if postsPreviousToSelected && postsAfterSelected {
+            Filters.setFilterTitle(type: .date, title: "Dates")
+        } else if postsPreviousToSelected {
+            Filters.setFilterTitle(type: .date, title: "Date")
+        } else if postsAfterSelected {
+            Filters.setFilterTitle(type: .date, title: "Date")
+        }
         NotificationCenter.default.post(name: .UpdateFiltersUI, object: nil)
         self.router.dismissDateFilterPopup()
     }
