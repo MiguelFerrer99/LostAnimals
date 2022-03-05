@@ -64,7 +64,7 @@ extension EditPostViewController: CustomTextFieldDelegate {
             if let placemark = placemarks?.first, let location = placemark.location {
                 let lat = location.coordinate.latitude
                 let long = location.coordinate.longitude
-                self.viewModel.newPostLocation = Location(address: address, coordinates: Coordinates(lat: lat, long: long))
+                self.viewModel.newPostLocation = Location(address: address, coordinates: Coordinates(longitude: long, latitude: lat))
             }
         }
     }

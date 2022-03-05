@@ -26,7 +26,7 @@ extension NewPostViewModel {
     }
     
     func viewDidAppear() {
-        
+        // Called when view has appeared
     }
 }
 

@@ -87,7 +87,7 @@ final class PostViewController: ViewController, UIGestureRecognizerDelegate {
                                                    style: .plain,
                                                    target: self,
                                                    action: #selector(optionsBarButtonPressed))
-        savePostBarButtonItem = UIBarButtonItem(image: UIImage(named: viewModel.post.isSaved ? "SavePostFilled" : "SavePost"),
+        savePostBarButtonItem = UIBarButtonItem(image: UIImage(named: viewModel.post.saved ? "SavePostFilled" : "SavePost"),
                                                 style: .plain,
                                                 target: self,
                                                 action: #selector(savePostBarButtonPressed))
@@ -108,27 +108,21 @@ final class PostViewController: ViewController, UIGestureRecognizerDelegate {
         }
         
         animalNameLabel.text = viewModel.post.animal.name
-        animalBreedLabel.text = viewModel.post.animal.breed == nil ? "Not specified" : viewModel.post.animal.breed
-        descriptionTextView.text = viewModel.post.description == nil ? "Without description" : viewModel.post.description
-        authorPhotoImageView.image = viewModel.post.author.profileImage
+        animalBreedLabel.text = viewModel.post.animal.breed
+        descriptionTextView.text = viewModel.post.description
+        authorPhotoImageView.image = viewModel.post.author.userImage
         authorNameLabel.text = "\(viewModel.post.author.firstname) \(viewModel.post.author.lastname)"
         authorAddressLabel.text = viewModel.post.author.location.address
         if let authorAge = viewModel.getAge() { authorAgeLabel.text = "\(authorAge) years old" }
-        
-        if let lastTimeSeen = viewModel.post.lastTimeSeen {
-            lastTimeSeenLabel.text = lastTimeSeen.toString(withFormat: DateFormat.dayMonthYearHourOther)
-        }
-        if let location = viewModel.post.location {
-            locationLabel.text = location.address
-        }
-        
+        lastTimeSeenLabel.text = viewModel.post.lastTimeSeen
+        locationLabel.text = viewModel.post.location.address
         contactWithAuthorButton.setTitle("Contact with \(viewModel.post.author.firstname)", for: .normal)
         
         if let me = User.shared, me.id == viewModel.post.author.id {
             authorView.isHidden = true
             contactWithAuthorButton.isHidden = true
         }
-        animalShelterImageView.isHidden = !viewModel.post.author.isAnimalShelter
+        animalShelterImageView.isHidden = !viewModel.post.author.animalShelter
     }
     
     private func updateSavedPostUI() {

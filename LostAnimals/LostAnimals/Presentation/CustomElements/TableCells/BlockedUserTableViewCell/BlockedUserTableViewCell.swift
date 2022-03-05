@@ -9,7 +9,7 @@
 import UIKit
 
 protocol UnblockUserDelegate: AnyObject {
-    func unblockUser(userID: Int)
+    func unblockUser(userID: String)
 }
 
 class BlockedUserTableViewCell: UITableViewCell, ViewModelCell {
@@ -31,7 +31,7 @@ class BlockedUserTableViewCell: UITableViewCell, ViewModelCell {
     
     // MARK: - Functions
     func display(summary: BlockedUserTableViewCellSummary) {
-        userImageView.image = summary.user.profileImage
+        userImageView.image = summary.user.userImage
         userNameLabel.text = "\(summary.user.firstname) \(summary.user.lastname)"
     }
     

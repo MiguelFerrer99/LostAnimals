@@ -34,7 +34,7 @@ extension OnboardingViewModel {
     }
     
     func viewDidAppear() {
-        
+        // Called when view has appeared
     }
 }
 

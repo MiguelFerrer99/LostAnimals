@@ -19,21 +19,47 @@ enum SocialMediaType: String {
 }
 
 struct User: Equatable {
+    // MARK: - Singleton
+    static var shared: User?
+
+    // MARK: - Properties
+    let id: String
+    var email: String
+    var animalShelter: Bool
+    var firstname: String
+    var lastname: String
+    var birthdate: String?
+    let userImage: UIImage
+    let headerImage: UIImage
+    var location: Location
+    var socialMedias: [SocialMediaType: String]
+    let banned: Bool
+    let blockedUsers: [String]
+    
+    // MARK: - Functions
     static func == (lhs: User, rhs: User) -> Bool {
         return lhs.id == rhs.id
     }
-    static var shared: User?
     
-    let id: Int
-    let email: String
-    let firstname: String
-    let lastname: String
-    let birthdate: Date
-    let headerImage: UIImage
-    let profileImage: UIImage
-    let location: Location
-    let isAnimalShelter: Bool
-    let socialMedias: [SocialMediaType: String]
-    let isBanned: Bool
-    let blockedUsers: [Int]
+    func map(userID: String, userImageString: String, headerImageString: String) -> UserDTO? {
+        guard let phonePrefix = socialMedias[.phonePrefix],
+              let phoneNumber = socialMedias[.phoneNumber] else { return nil }
+        let socialMedias = SocialMedias(phone_prefix: phonePrefix,
+                                        phone_number: phoneNumber,
+                                        whatsapp: socialMedias[.whatsapp],
+                                        instagram: socialMedias[.instagram],
+                                        twitter: socialMedias[.twitter])
+        return UserDTO(id: userID,
+                       email: email,
+                       animal_shelter: animalShelter,
+                       firstname: firstname,
+                       lastname: lastname,
+                       birthdate: birthdate,
+                       user_image: userImageString,
+                       header_image: headerImageString,
+                       location: location,
+                       social_medias: socialMedias,
+                       banned: banned,
+                       blocked_users: blockedUsers)
+    }
 }

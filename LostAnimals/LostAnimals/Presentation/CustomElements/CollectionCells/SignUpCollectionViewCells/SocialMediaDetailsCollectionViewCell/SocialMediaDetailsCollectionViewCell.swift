@@ -73,8 +73,8 @@ class SocialMediaDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell 
         checkAllContentsAreOk()
     }
     
-    private func updateUserInteraction() {
-        signUpStepsDelegate?.updateSignUpUserInteraction(isUserInteractionEnabled: false)
+    func updateUserInteraction() {
+        signUpStepsDelegate?.updateSignUpUserInteraction(isUserInteractionEnabled: getStartedButton.isEnabled)
         phonePrefixButton.isUserInteractionEnabled = getStartedButton.isEnabled
         phoneTextfield.isUserInteractionEnabled = getStartedButton.isEnabled
         haveWhatsAppRadioButton.isUserInteractionEnabled = getStartedButton.isEnabled
@@ -107,13 +107,18 @@ class SocialMediaDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell 
     }
     
     @IBAction func getStartedButtonPressed(_ sender: CustomButton) {
+        guard let phonePrefix = phonePrefixLabel.text,
+              let phoneNumber = phoneTextfield.textField.text?.components(separatedBy: .whitespaces).joined(),
+              let instagram = instagramTextfield.textField.text,
+              let twitter = twitterTextfield.textField.text
+        else { return }
         getStartedButton.showLoading()
         updateUserInteraction()
-        let fullPhone = "\(phonePrefixLabel.text ?? "")\(phoneTextfield.textField.text ?? "")"
-        signUpStepsDelegate?.sendSignUpStep3Data(fullPhone: fullPhone,
-                                                 whatsapp: viewModel.haveWhatsAppSelected ? fullPhone : nil,
-                                                 instagram: instagramTextfield.textField.text,
-                                                 twitter: twitterTextfield.textField.text)
+        signUpStepsDelegate?.sendSignUpStep3Data(phonePrefix: phonePrefix,
+                                                 phoneNumber: phoneNumber,
+                                                 whatsapp: viewModel.haveWhatsAppSelected ? "\(phonePrefix)\(phoneNumber)" : nil,
+                                                 instagram: instagram.isEmpty ? nil : instagram,
+                                                 twitter: twitter.isEmpty ? nil : twitter)
         signUpStepsDelegate?.moveToNextSignUpStep()
     }
 }

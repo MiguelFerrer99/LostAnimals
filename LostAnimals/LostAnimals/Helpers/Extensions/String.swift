@@ -72,4 +72,16 @@ extension String {
         
         return returnedImage
     }
+    
+    func getImage() -> UIImage? {
+        var returnedImage: UIImage? = nil
+        
+        guard let url = URL(string: self) else { return nil }
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data, error == nil, let image = UIImage(data: data) else { return }
+            returnedImage = image
+        }.resume()
+        
+        return returnedImage
+    }
 }

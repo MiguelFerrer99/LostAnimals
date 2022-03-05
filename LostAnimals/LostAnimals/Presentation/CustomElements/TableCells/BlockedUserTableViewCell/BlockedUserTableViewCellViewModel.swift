@@ -10,10 +10,10 @@ import Foundation
 
 class BlockedUserTableViewCellViewModel: ViewModel {
     // MARK: - Properties
-    let userID: Int
+    let userID: String
     
     // MARK: - Init
-    init(userID: Int) {
+    init(userID: String) {
         self.userID = userID
     }
 }

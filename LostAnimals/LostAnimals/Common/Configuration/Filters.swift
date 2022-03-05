@@ -19,7 +19,7 @@ enum FilterType: Int {
     case date
 }
 
-struct Filters {
+class Filters {
     static var currentFilters: [FilterType: PostsFilter] = [
         .all: PostsFilter(filterTitle: "All", filterType: .all, enabled: true, animalFilterDog: false, animalFilterBird: false, animalFilterCat: false, animalFilterTurtle: false, animalFilterSnake: false, animalFilterRabbit: false, animalFilterOther: false),
         .lost: PostsFilter(filterTitle: "Lost", filterType: .lost, enabled: false, animalFilterDog: false, animalFilterBird: false, animalFilterCat: false, animalFilterTurtle: false, animalFilterSnake: false, animalFilterRabbit: false, animalFilterOther: false),

@@ -29,7 +29,7 @@ extension LocationFilterPopupViewModel {
     }
     
     func viewDidAppear() {
-        
+        // Called when view has appeared
     }
 }
 

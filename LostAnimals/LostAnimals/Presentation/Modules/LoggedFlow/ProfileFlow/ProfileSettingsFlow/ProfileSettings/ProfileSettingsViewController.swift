@@ -48,15 +48,15 @@ final class ProfileSettingsViewController: ViewController, UIGestureRecognizerDe
     
     private func fillUI() {
         headerImageView.image = viewModel.me.headerImage
-        profileImageView.image = viewModel.me.profileImage
-        animalShelterImageView.isHidden = !viewModel.me.isAnimalShelter
+        profileImageView.image = viewModel.me.userImage
+        animalShelterImageView.isHidden = !viewModel.me.animalShelter
         blockedUsersView.isHidden = viewModel.me.blockedUsers.isEmpty
     }
     
     func removePhoto() {
         switch viewModel.selectedImageView {
-        case .user:   profileImageView.image = UIImage(named: "ProfileImagePlaceholder")
-        case .header: headerImageView.image = UIImage(named: "ProfileHeaderPlaceholder")
+        case .user:   profileImageView.image = UIImage(named: "DefaultUserImage")
+        case .header: headerImageView.image = UIImage(named: "DefaultHeaderImage")
         }
     }
     

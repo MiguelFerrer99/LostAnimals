@@ -20,7 +20,7 @@ final class EditPersonalDetailsViewModel {
     required init(router: EditPersonalDetailsRouter, me: User) {
         self.router = router
         self.me = me
-        self.numberOfTextFields = me.isAnimalShelter ? 2 : 4
+        self.numberOfTextFields = me.animalShelter ? 2 : 4
     }
 }
 

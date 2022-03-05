@@ -59,20 +59,20 @@ final class EditPersonalDetailsViewController: ViewController, UIGestureRecogniz
     }
     
     private func fillUI() {
-        firstnameTextfield.isHidden = viewModel.me.isAnimalShelter
-        lastnameTextfield.isHidden = viewModel.me.isAnimalShelter
-        birthdateTextfield.isHidden = viewModel.me.isAnimalShelter
-        whereDoYouLiveTextfield.isHidden = viewModel.me.isAnimalShelter
-        animalShelterNameTextfield.isHidden = !viewModel.me.isAnimalShelter
-        whereCanWeFindYouTextfield.isHidden = !viewModel.me.isAnimalShelter
+        firstnameTextfield.isHidden = viewModel.me.animalShelter
+        lastnameTextfield.isHidden = viewModel.me.animalShelter
+        birthdateTextfield.isHidden = viewModel.me.animalShelter
+        whereDoYouLiveTextfield.isHidden = viewModel.me.animalShelter
+        animalShelterNameTextfield.isHidden = !viewModel.me.animalShelter
+        whereCanWeFindYouTextfield.isHidden = !viewModel.me.animalShelter
         
-        if viewModel.me.isAnimalShelter {
+        if viewModel.me.animalShelter {
             animalShelterNameTextfield.textField.text = viewModel.me.firstname
             whereCanWeFindYouTextfield.textField.text = viewModel.me.location.address
         } else {
             firstnameTextfield.textField.text = viewModel.me.firstname
             lastnameTextfield.textField.text = viewModel.me.lastname
-            birthdateTextfield.textField.text = viewModel.me.birthdate.toString(withFormat: DateFormat.dayMonthYearOther)
+            birthdateTextfield.textField.text = viewModel.me.birthdate
             whereDoYouLiveTextfield.textField.text = viewModel.me.location.address
         }
     }

@@ -28,7 +28,7 @@ extension TabBarViewModel {
     }
     
     func viewDidAppear() {
-        
+        // Called when view has appeared
     }
 }
 

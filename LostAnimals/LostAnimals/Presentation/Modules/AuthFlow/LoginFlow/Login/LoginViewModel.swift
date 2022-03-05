@@ -31,7 +31,7 @@ extension LoginViewModel {
     }
     
     func viewDidAppear() {
-        
+        // Called when view has appeared
     }
 }
 
@@ -52,7 +52,7 @@ extension LoginViewModel {
     func didPressLoginButton() {
         User.shared = HardcodedData.exampleUser1
         
-        if User.shared?.isBanned ?? false { showBannedPopup(comesFrom: .login) }
+        if User.shared?.banned ?? false { showBannedPopup(comesFrom: .login) }
         else {
             Cache.set(.logged, true)
             let onboardingDone = Cache.get(boolFor: .onboardingDone)

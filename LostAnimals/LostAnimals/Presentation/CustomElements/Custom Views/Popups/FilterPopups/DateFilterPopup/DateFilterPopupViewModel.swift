@@ -33,7 +33,7 @@ extension DateFilterPopupViewModel {
     }
     
     func viewDidAppear() {
-        
+        // Called when view has appeared
     }
 }
 

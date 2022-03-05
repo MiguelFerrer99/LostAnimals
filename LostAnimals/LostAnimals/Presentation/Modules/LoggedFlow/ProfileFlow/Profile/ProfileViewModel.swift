@@ -52,9 +52,10 @@ extension ProfileViewModel {
 // MARK: - Functions
 extension ProfileViewModel {
     func getAge() -> Int? {
-        let birthdate = DateComponents(year: user.birthdate.year,
-                                       month: user.birthdate.month,
-                                       day: user.birthdate.day)
+        guard let auxBirthdate = user.birthdate?.toDate(withFormat: DateFormat.dayMonthYearOther) else { return nil }
+        let birthdate = DateComponents(year: auxBirthdate.year,
+                                       month: auxBirthdate.month,
+                                       day: auxBirthdate.day)
         let now = Calendar.current.dateComponents([.year, .month, .day], from: Date())
         let ageComponents = Calendar.current.dateComponents([.year], from: birthdate, to: now)
         

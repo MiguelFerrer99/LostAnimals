@@ -76,11 +76,11 @@ final class ProfileViewController: ViewController, UIGestureRecognizerDelegate {
         blockUserButtonView.isHidden = viewModel.isMyProfile
         settingsButtonView.isHidden = !viewModel.isMyProfile
         headerImageView.image = viewModel.user.headerImage
-        userImageView.image = viewModel.user.profileImage
-        animalShelterImageView.isHidden = !viewModel.user.isAnimalShelter
+        userImageView.image = viewModel.user.userImage
+        animalShelterImageView.isHidden = !viewModel.user.animalShelter
         welcomeBackLabel.text = viewModel.isMyProfile ? "Welcome back, \(viewModel.user.firstname)" : "\(viewModel.user.firstname) \(viewModel.user.lastname)"
         basicInfoView.isHidden = viewModel.isMyProfile
-        basicInfoViewFirstLabel.isHidden = viewModel.user.isAnimalShelter
+        basicInfoViewFirstLabel.isHidden = viewModel.user.animalShelter
         if let age = viewModel.getAge() {
             basicInfoViewFirstLabel.text = "\(age) years old"
         }

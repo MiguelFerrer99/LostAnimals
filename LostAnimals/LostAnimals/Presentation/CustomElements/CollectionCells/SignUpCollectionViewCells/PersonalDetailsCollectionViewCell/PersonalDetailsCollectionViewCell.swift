@@ -78,12 +78,15 @@ class PersonalDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell {
     }
     
     @IBAction func nextStepButtonPressed(_ sender: CustomButton) {
+        guard let firstname = viewModel.isAnimalShelter ? animalShelterNameTextfield.textField.text : firstnameTextfield.textField.text,
+              let lastname = viewModel.isAnimalShelter ? "" : lastnameTextfield.textField.text,
+              let birthdate = birthdateTexfield.textField.text else { return }
+        
         signUpStepsDelegate?.sendSignUpStep1Data(isAnimalShelter: viewModel.isAnimalShelter,
-                                                 firstname: firstnameTextfield.textField.text,
-                                                 lastname: lastnameTextfield.textField.text,
-                                                 animalShelterName: animalShelterNameTextfield.textField.text,
-                                                 birthdate: birthdateTexfield.textField.text?.toDate(withFormat: DateFormat.dayMonthYearOther),
-                                                 location: viewModel.location ?? Location(address: "", coordinates: nil))
+                                                 firstname: firstname,
+                                                 lastname: lastname,
+                                                 birthdate: viewModel.isAnimalShelter ? nil : birthdate,
+                                                 location: viewModel.location ?? Location(address: "Not specified", coordinates: nil))
         signUpStepsDelegate?.moveToNextSignUpStep()
     }
 }

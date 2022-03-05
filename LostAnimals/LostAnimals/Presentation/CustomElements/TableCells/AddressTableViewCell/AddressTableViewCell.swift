@@ -23,7 +23,7 @@ class AddressTableViewCell: UITableViewCell, Reusable {
     
     // MARK: - Functions
     func display(summary: AddressTableViewCellSummary) {
-        let searchResultString = "\(summary.searchResult.title), \(summary.searchResult.subtitle)"
+        let searchResultString = summary.searchResult.subtitle.isEmpty ? summary.searchResult.title : "\(summary.searchResult.title), \(summary.searchResult.subtitle)"
         addressName.text = searchResultString
     }
 }

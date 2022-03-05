@@ -46,12 +46,12 @@ extension ProfileSettingsViewModel {
     
     func didPressedChangeHeaderImageButton(headerImage: UIImage) {
         selectedImageView = .header
-        self.router.goToSelectPhotoPopup(showRemoveOption: !headerImage.isEqualTo(image: UIImage(named: "ProfileHeaderPlaceholder")))
+        self.router.goToSelectPhotoPopup(showRemoveOption: !headerImage.isEqualTo(image: UIImage(named: "DefaultHeaderImage")))
     }
     
     func didPressedChangeProfileImageButton(profileImage: UIImage) {
         selectedImageView = .user
-        self.router.goToSelectPhotoPopup(showRemoveOption: !profileImage.isEqualTo(image: UIImage(named: "ProfileImagePlaceholder")))
+        self.router.goToSelectPhotoPopup(showRemoveOption: !profileImage.isEqualTo(image: UIImage(named: "DefaultUserImage")))
     }
     
     func didPressedEditPersonalDataButton() {

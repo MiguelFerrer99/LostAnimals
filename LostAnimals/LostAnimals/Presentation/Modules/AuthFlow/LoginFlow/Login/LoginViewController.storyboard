@@ -26,13 +26,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9Z-NB-VOJ">
-                                <rect key="frame" x="147" y="44" width="120.5" height="55"/>
+                                <rect key="frame" x="151" y="64" width="112" height="47"/>
                                 <fontDescription key="fontDescription" name="Nunito-Black" family="Nunito" pointSize="40"/>
                                 <color key="textColor" name="CustomBlack"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Uij-Sy-9cP">
-                                <rect key="frame" x="40" y="302.5" width="334" height="263"/>
+                                <rect key="frame" x="40" y="305" width="334" height="258"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LWY-sy-TEg" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="80"/>
@@ -69,7 +69,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFj-SD-LHa">
-                                        <rect key="frame" x="0.0" y="220" width="334" height="43"/>
+                                        <rect key="frame" x="0.0" y="220" width="334" height="38"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="22"/>
                                         <color key="tintColor" name="CustomBlack"/>
@@ -108,7 +108,7 @@
                             <constraint firstItem="Uij-Sy-9cP" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" constant="-14" id="jal-9g-BmX"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Uij-Sy-9cP" secondAttribute="trailing" constant="40" id="kRR-0I-4e3"/>
                             <constraint firstItem="P9Z-NB-VOJ" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="vJC-0d-Mco"/>
-                            <constraint firstItem="P9Z-NB-VOJ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="yHj-Ls-9N3"/>
+                            <constraint firstItem="P9Z-NB-VOJ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="yHj-Ls-9N3"/>
                         </constraints>
                     </view>
                     <connections>
@@ -125,7 +125,7 @@
     </scenes>
     <designables>
         <designable name="RDN-TM-gf9">
-            <size key="intrinsicContentSize" width="58" height="40"/>
+            <size key="intrinsicContentSize" width="56" height="36"/>
         </designable>
     </designables>
     <color key="tintColor" name="CustomBlack"/>

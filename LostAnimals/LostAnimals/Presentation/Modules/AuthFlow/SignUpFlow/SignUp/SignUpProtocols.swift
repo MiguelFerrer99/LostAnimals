@@ -36,37 +36,25 @@ extension SignUpViewController: SignUpStepsDelegate, WhereDoYouLiveCountriesDele
         navigationController?.interactivePopGestureRecognizer?.isEnabled = isUserInteractionEnabled
     }
     
-    func sendSignUpStep1Data(isAnimalShelter: Bool, firstname: String? = nil, lastname: String? = nil, animalShelterName: String? = nil, birthdate: Date? = nil, location: Location) {
-        print("""
-          SIGNUP STEP1 DATA RECEIVED:
-            isAnimalShelter: \(isAnimalShelter),
-            firstname: \(firstname == nil || (firstname?.isEmpty ?? true) ? "-" : firstname ?? "-"),
-            lastname: \(lastname == nil || (lastname?.isEmpty ?? true) ? "-" : lastname ?? "-"),
-            animalShelterName: \(animalShelterName == nil || (animalShelterName?.isEmpty ?? true) ? "-" : animalShelterName ?? "-"),
-            birthdate: \(birthdate?.toString(withFormat: DateFormat.dayMonthYearOther) ?? "-"),
-            address: \(location.address),
-            location:
-              lat  = \(location.coordinates?.lat ?? 0)
-              long = \(location.coordinates?.long ?? 0)
-          """)
+    func sendSignUpStep1Data(isAnimalShelter: Bool, firstname: String, lastname: String, birthdate: String?, location: Location) {
+        viewModel.user.animalShelter = isAnimalShelter
+        viewModel.user.firstname = firstname
+        viewModel.user.lastname = lastname
+        viewModel.user.birthdate = birthdate
+        viewModel.user.location = location
     }
     
     func sendSignUpStep2Data(mail: String, password: String) {
-        print("""
-          SIGNUP STEP2 DATA RECEIVED:
-            mail: \(mail),
-            password: \(password)
-          """)
+        viewModel.user.email = mail
+        viewModel.userPassword = password
     }
     
-    func sendSignUpStep3Data(fullPhone: String, whatsapp: String? = nil, instagram: String? = nil, twitter: String? = nil) {
-        print("""
-          SIGNUP STEP3 DATA RECEIVED:
-            fullPhone: \(fullPhone),
-            whatsapp: \(whatsapp ?? "-"),
-            instagram: \(instagram ?? "-"),
-            twitter: \(twitter ?? "-")
-          """)
+    func sendSignUpStep3Data(phonePrefix: String, phoneNumber: String, whatsapp: String?, instagram: String?, twitter: String?) {
+        viewModel.user.socialMedias[.phonePrefix] = phonePrefix
+        viewModel.user.socialMedias[.phoneNumber] = phoneNumber
+        viewModel.user.socialMedias[.whatsapp] = whatsapp
+        viewModel.user.socialMedias[.instagram] = instagram
+        viewModel.user.socialMedias[.twitter] = twitter
     }
     
     // MARK: - WhereDoYouLiveCountriesDelegate

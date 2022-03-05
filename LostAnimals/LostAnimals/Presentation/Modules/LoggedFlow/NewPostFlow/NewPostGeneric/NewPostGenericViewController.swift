@@ -124,21 +124,20 @@ final class NewPostGenericViewController: ViewController {
               let animalNameText = animalTextfield.textField.text,
               let animalBreedText = breedTextfield.textField.text,
               let lastTimeSeenText = lastTimeSeenTextfield.textField.text,
-              let lastTimeSeenDate = lastTimeSeenText.toDate(withFormat: DateFormat.dayMonthYearHourOther),
               let newPostLocation = viewModel.newPostLocation,
               let me = User.shared
         else { return nil }
         
         let newPost = Post(postType: viewModel.postType,
-                           animal: Animal(name: animalNameText.isEmpty ? nil : animalNameText,
+                           animal: Animal(name: animalNameText,
                                           type: selectedAnimalType,
-                                          breed: animalBreedText.isEmpty ? nil : animalBreedText,
+                                          breed: animalBreedText,
                                           images: viewModel.sortNilImagesFromImageViewsToFinal()),
-                           lastTimeSeen: lastTimeSeenDate,
+                           lastTimeSeen: lastTimeSeenText,
                            location: newPostLocation,
-                           description: descriptionTextview.text.isEmpty ? nil : descriptionTextview.text,
+                           description: descriptionTextview.text,
                            author: me,
-                           isSaved: false)
+                           saved: false)
         
         return newPost
     }

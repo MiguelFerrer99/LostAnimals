@@ -27,6 +27,10 @@ enum WhereDoYouLiveComesFrom: String {
     case editSocialMediaDetails
 }
 
+typealias PersonalDetails = (animalShelter: Bool, firstname: String, lastname: String, birthdate: String?, location: Location)
+typealias AccountDetails = (email: String, password: String)
+typealias UserDetails = (personalDetails: PersonalDetails, accountDetails: AccountDetails, socialMedias: [SocialMediaType: String])
+
 final class SignUpViewModel {
     
     // MARK: - Properties
@@ -35,11 +39,17 @@ final class SignUpViewModel {
     var currentStep: SignUpStep = .personalDetails
     var currentStepLabel: SignUpStepLabel = .personalDetails
     
+    // MARK: - AuthenticationService properties
+    var user = Constants.emptyUser
+    var userPassword = ""
+    
+    // MARK: - Services
+    let authenticationService = AuthenticationService()
+    
     // MARK: - Init
     required init(router: SignUpRouter) {
         self.router = router
     }
-    
 }
 
 // MARK: - Life cycle
@@ -49,7 +59,7 @@ extension SignUpViewModel {
     }
     
     func viewDidAppear() {
-        
+        // Called when view has appeared
     }
 }
 
@@ -67,14 +77,22 @@ extension SignUpViewModel {
         self.router.goToTermsAndConditions()
     }
     
-    func didPressGetStartedButton() {
-        User.shared = HardcodedData.exampleUser1
-        Cache.set(.logged, true)
-        let onboardingDone = Cache.get(boolFor: .onboardingDone)
-        if onboardingDone {
-            self.router.changeRootToTabBar()
-        } else {
-            self.router.goToOnboarding()
+    func didPressGetStartedButton(completion: @escaping (() -> Void)) {
+        authenticationService.signUp(user: user, userPassword: userPassword) { result in
+            switch result {
+            case .success(let user):
+                User.shared = user
+                Cache.set(.logged, true)
+                if Cache.get(boolFor: .onboardingDone) {
+                    self.router.changeRootToTabBar()
+                } else {
+                    self.router.goToOnboarding()
+                }
+                completion()
+            case .error(let error):
+                showErrorPopup(title: error, action: nil)
+                completion()
+            }
         }
     }
 }

@@ -31,7 +31,7 @@ extension WhereDoYouLiveCountriesViewModel {
     }
     
     func viewDidAppear() {
-        
+        // Called when view has appeared
     }
 }
 

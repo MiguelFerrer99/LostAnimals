@@ -21,7 +21,7 @@ final class PostViewModel {
         self.router = router
         self.comesFrom = comesFrom
         self.post = post
-        self.isSaved = post.isSaved
+        self.isSaved = post.saved
     }
 }
 
@@ -39,9 +39,10 @@ extension PostViewModel {
 // MARK: - Functions
 extension PostViewModel {
     func getAge() -> Int? {
-        let birthdate = DateComponents(year: post.author.birthdate.year,
-                                       month: post.author.birthdate.month,
-                                       day: post.author.birthdate.day)
+        guard let auxBirthdate = post.author.birthdate?.toDate(withFormat: DateFormat.dayMonthYearOther) else { return nil }
+        let birthdate = DateComponents(year: auxBirthdate.year,
+                                       month: auxBirthdate.month,
+                                       day: auxBirthdate.day)
         let now = Calendar.current.dateComponents([.year, .month, .day], from: Date())
         let ageComponents = Calendar.current.dateComponents([.year], from: birthdate, to: now)
         
@@ -57,8 +58,7 @@ extension PostViewModel {
     }
     
     func didPressLocation() {
-        guard let location = post.location,
-              let coordinates = location.coordinates else { return }
+        guard let coordinates = post.location.coordinates else { return }
         self.router.goToLocation(coordinates: coordinates, animal: post.animal)
     }
     

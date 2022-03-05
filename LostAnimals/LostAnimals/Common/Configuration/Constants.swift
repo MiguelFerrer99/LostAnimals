@@ -11,17 +11,17 @@ import UIKit
 
 // MARK: - Constants
 struct Constants {
-    static let emptyUser = User(id: -1,
+    static let emptyUser = User(id: "",
                                 email: "",
+                                animalShelter: false,
                                 firstname: "",
                                 lastname: "",
-                                birthdate: Date.today,
-                                headerImage: UIImage(),
-                                profileImage: UIImage(),
-                                location: Location(address: "", coordinates: nil),
-                                isAnimalShelter: false,
+                                birthdate: Date.today.toString(withFormat: DateFormat.dayMonthYearOther),
+                                userImage: UIImage(named: "DefaultUserImage") ?? UIImage(),
+                                headerImage: UIImage(named: "DefaultHeaderImage") ?? UIImage(),
+                                location: Location(address: "Not specified", coordinates: nil),
                                 socialMedias: [:],
-                                isBanned: false,
+                                banned: false,
                                 blockedUsers: [])
     
     static let onboardingStepsInfo = [

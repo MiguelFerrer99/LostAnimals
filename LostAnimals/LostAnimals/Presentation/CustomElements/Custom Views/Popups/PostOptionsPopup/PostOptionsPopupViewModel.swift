@@ -88,12 +88,12 @@ extension PostOptionsPopupViewModel {
         switch post.postType {
         case .lost:
             bgImage = UIImage(named: "LostAnimalImageToShare")
-            firstText = post.location?.address ?? "Not specified"
-            secondText = post.lastTimeSeen?.toString(withFormat: DateFormat.dayMonthYearHourOther) ?? "Not specified"
+            firstText = post.location.address
+            secondText = post.lastTimeSeen
         case .found:
             bgImage = UIImage(named: "FoundAnimalImageToShare")
-            firstText = post.location?.address ?? "Not specified"
-            secondText = post.lastTimeSeen?.toString(withFormat: DateFormat.dayMonthYearHourOther) ?? "Not specified"
+            firstText = post.location.address
+            secondText = post.lastTimeSeen
         case .adopt:
             bgImage = UIImage(named: "ToAdoptAnimalImageToShare")
             firstText = post.author.firstname

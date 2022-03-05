@@ -42,10 +42,10 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="irm-4F-XJr">
                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="286.5"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfileHeaderPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="UE6-hy-l66">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultHeaderImage" translatesAutoresizingMaskIntoConstraints="NO" id="UE6-hy-l66">
                                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="214.5"/>
                                                                     </imageView>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfileImagePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="OdU-2w-JUY" customClass="CustomImageView" customModule="LostAnimals" customModuleProvider="target">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultUserImage" translatesAutoresizingMaskIntoConstraints="NO" id="OdU-2w-JUY" customClass="CustomImageView" customModule="LostAnimals" customModuleProvider="target">
                                                                         <rect key="frame" x="147" y="154.5" width="120" height="120"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="120" id="0Qi-yT-d92"/>
@@ -515,9 +515,9 @@
     <resources>
         <image name="AnimalShelter" width="45.5" height="43.5"/>
         <image name="BlockUserWhite" width="381" height="381"/>
+        <image name="DefaultHeaderImage" width="413.5" height="283"/>
+        <image name="DefaultUserImage" width="120" height="120"/>
         <image name="Other" width="256" height="256"/>
-        <image name="ProfileHeaderPlaceholder" width="413.5" height="283"/>
-        <image name="ProfileImagePlaceholder" width="120" height="120"/>
         <image name="ProfileSettings" width="350" height="350"/>
         <image name="chevron.left.circle.fill" catalog="system" width="128" height="121"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>

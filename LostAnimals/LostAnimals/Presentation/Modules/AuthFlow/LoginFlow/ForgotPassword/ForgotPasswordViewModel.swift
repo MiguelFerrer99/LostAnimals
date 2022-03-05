@@ -29,7 +29,7 @@ extension ForgotPasswordViewModel {
     }
     
     func viewDidAppear() {
-        
+        // Called when view has appeared
     }
 }
 

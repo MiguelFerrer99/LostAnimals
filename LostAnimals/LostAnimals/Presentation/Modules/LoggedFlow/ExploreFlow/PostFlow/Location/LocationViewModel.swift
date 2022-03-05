@@ -40,7 +40,7 @@ extension LocationViewModel {
 // MARK: - Functions
 extension LocationViewModel {
     func openLocationInMaps() {
-        let coordinate = CLLocationCoordinate2DMake(coordinates.lat, coordinates.long)
+        let coordinate = CLLocationCoordinate2DMake(coordinates.latitude, coordinates.longitude)
         let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary: nil))
         if let animal = animal {
             if let animalName = animal.name {

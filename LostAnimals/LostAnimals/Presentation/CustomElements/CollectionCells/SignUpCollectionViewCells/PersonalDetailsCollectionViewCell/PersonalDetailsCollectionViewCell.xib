@@ -27,10 +27,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="657"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8CX-ve-MNp">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="657"/>
+                                <rect key="frame" x="40" y="0.0" width="334" height="657"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fill your personal details to let us know something about you" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvr-8t-FPC">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="49.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="49.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="18"/>
@@ -38,16 +38,16 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGo-u9-9IY">
-                                        <rect key="frame" x="0.0" y="69.5" width="414" height="472.5"/>
+                                        <rect key="frame" x="0.0" y="69.5" width="334" height="472.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cRB-lb-ZPX">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="380"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="334" height="380"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Wb9-vK-sth">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="380"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="334" height="380"/>
                                                         <subviews>
                                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CyT-FT-CF6" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="-80" width="414" height="80"/>
+                                                                <rect key="frame" x="0.0" y="-80" width="334" height="80"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
@@ -66,7 +66,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rIi-ry-qv7" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="-80" width="414" height="80"/>
+                                                                <rect key="frame" x="0.0" y="-80" width="334" height="80"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
@@ -86,7 +86,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="REz-jd-agT" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="334" height="80"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
@@ -106,7 +106,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ASv-7o-1p3" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="100" width="414" height="80"/>
+                                                                <rect key="frame" x="0.0" y="100" width="334" height="80"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
@@ -126,7 +126,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xka-Tg-2gE" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="200" width="414" height="80"/>
+                                                                <rect key="frame" x="0.0" y="200" width="334" height="80"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
@@ -146,7 +146,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qPy-Pp-Rnd" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="300" width="414" height="80"/>
+                                                                <rect key="frame" x="0.0" y="300" width="334" height="80"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
@@ -193,10 +193,10 @@
                                         <viewLayoutGuide key="frameLayoutGuide" id="Biz-GJ-LGe"/>
                                     </scrollView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jNQ-0i-fDA">
-                                        <rect key="frame" x="0.0" y="562" width="414" height="30"/>
+                                        <rect key="frame" x="0.0" y="562" width="334" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jIn-6Z-sHW">
-                                                <rect key="frame" x="95.5" y="-3.5" width="223" height="37"/>
+                                                <rect key="frame" x="55.5" y="-3.5" width="223" height="37"/>
                                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="18"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Are you an animal shelter?">
@@ -215,15 +215,15 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="n88-zv-xfa">
-                                        <rect key="frame" x="0.0" y="612" width="414" height="45"/>
+                                        <rect key="frame" x="0.0" y="612" width="334" height="45"/>
                                         <subviews>
                                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Syx-33-12e">
-                                                <rect key="frame" x="0.0" y="0.0" width="187" height="45"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="147" height="45"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ct8-rw-mPz" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
-                                                <rect key="frame" x="227" y="0.0" width="187" height="45"/>
+                                                <rect key="frame" x="187" y="0.0" width="147" height="45"/>
                                                 <color key="backgroundColor" name="CustomWhite"/>
                                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="20"/>
                                                 <state key="normal" title="Next">
@@ -247,8 +247,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="8CX-ve-MNp" firstAttribute="leading" secondItem="G62-2G-KFw" secondAttribute="leading" id="9Gi-7D-wn2"/>
-                            <constraint firstAttribute="trailing" secondItem="8CX-ve-MNp" secondAttribute="trailing" id="X6J-pK-g3o"/>
+                            <constraint firstItem="8CX-ve-MNp" firstAttribute="leading" secondItem="G62-2G-KFw" secondAttribute="leading" constant="40" id="9Gi-7D-wn2"/>
+                            <constraint firstAttribute="trailing" secondItem="8CX-ve-MNp" secondAttribute="trailing" constant="40" id="X6J-pK-g3o"/>
                             <constraint firstItem="8CX-ve-MNp" firstAttribute="top" secondItem="G62-2G-KFw" secondAttribute="top" id="gZD-AD-dLy"/>
                             <constraint firstAttribute="bottom" secondItem="8CX-ve-MNp" secondAttribute="bottom" id="iNO-lP-ykK"/>
                         </constraints>

@@ -91,16 +91,10 @@ final class EditPostViewController: ViewController {
         
         nameTextfield.textField.text = viewModel.post.animal.name
         animalTextfield.textField.text = viewModel.post.animal.type.rawValue
-        breedTextfield.textField.text = viewModel.post.animal.breed == nil ? "Not specified" : viewModel.post.animal.breed
-        descriptionTextview.text = viewModel.post.description == nil ? "Without description" : viewModel.post.description
-        
-        if let lastTimeSeen = viewModel.post.lastTimeSeen {
-            lastTimeSeenTextfield.textField.text = lastTimeSeen.toString(withFormat: DateFormat.dayMonthYearOther)
-        }
-        
-        if let location = viewModel.post.location {
-            locationTextfield.textField.text = location.address
-        }
+        breedTextfield.textField.text = viewModel.post.animal.breed
+        descriptionTextview.text = viewModel.post.description
+        lastTimeSeenTextfield.textField.text = viewModel.post.lastTimeSeen
+        locationTextfield.textField.text = viewModel.post.location.address
     }
     
     func fillAnimal(animalType: AnimalType) {

@@ -29,7 +29,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B0k-Zy-6X0">
                                         <rect key="frame" x="0.0" y="0.0" width="428" height="324"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfileHeaderPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="Rc1-aG-NkL">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultHeaderImage" translatesAutoresizingMaskIntoConstraints="NO" id="Rc1-aG-NkL">
                                                 <rect key="frame" x="0.0" y="0.0" width="428" height="243"/>
                                             </imageView>
                                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QDf-ls-fA6">
@@ -69,7 +69,7 @@
                                                     <constraint firstItem="EzH-Ye-S3r" firstAttribute="leading" secondItem="QDf-ls-fA6" secondAttribute="leading" id="fHh-Sr-dYF"/>
                                                 </constraints>
                                             </view>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfileImagePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="qZ7-Y8-1sy" customClass="CustomImageView" customModule="LostAnimals" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultUserImage" translatesAutoresizingMaskIntoConstraints="NO" id="qZ7-Y8-1sy" customClass="CustomImageView" customModule="LostAnimals" customModuleProvider="target">
                                                 <rect key="frame" x="154" y="183" width="120" height="120"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="120" id="1uI-bS-jUF"/>
@@ -457,8 +457,8 @@
     </designables>
     <resources>
         <image name="AnimalShelter" width="30.333333969116211" height="29"/>
-        <image name="ProfileHeaderPlaceholder" width="275.66665649414062" height="188.66667175292969"/>
-        <image name="ProfileImagePlaceholder" width="80" height="80"/>
+        <image name="DefaultHeaderImage" width="275.66665649414062" height="188.66667175292969"/>
+        <image name="DefaultUserImage" width="80" height="80"/>
         <image name="camera.fill" catalog="system" width="128" height="94"/>
         <image name="chevron.left.circle.fill" catalog="system" width="128" height="121"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>

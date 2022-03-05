@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "ProfileHeaderPlaceholder.png",
+      "filename" : "DefaultUserHeader1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "ProfileHeaderPlaceholder-1.png",
+      "filename" : "DefaultUserHeader2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "ProfileHeaderPlaceholder-2.png",
+      "filename" : "DefaultUserHeader3.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

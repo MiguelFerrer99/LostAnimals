@@ -16,9 +16,9 @@ protocol SignUpStepsDelegate: AnyObject {
     func goToWhereCanWeFindYou()
     func goToTermsAndConditions()
     func updateSignUpUserInteraction(isUserInteractionEnabled: Bool)
-    func sendSignUpStep1Data(isAnimalShelter: Bool, firstname: String?, lastname: String?, animalShelterName: String?, birthdate: Date?, location: Location)
+    func sendSignUpStep1Data(isAnimalShelter: Bool, firstname: String, lastname: String, birthdate: String?, location: Location)
     func sendSignUpStep2Data(mail: String, password: String)
-    func sendSignUpStep3Data(fullPhone: String, whatsapp: String?, instagram: String?, twitter: String?)
+    func sendSignUpStep3Data(phonePrefix: String, phoneNumber: String, whatsapp: String?, instagram: String?, twitter: String?)
 }
 
 final class SignUpViewController: ViewController {
@@ -102,6 +102,13 @@ final class SignUpViewController: ViewController {
         socialMediaDetailsCollectionViewCell.fillPhonePrefix(dialCode: dialCode)
     }
     
+    func stopLoadingGetStartedButton() {
+        let indexPath = IndexPath(item: 2, section: 0)
+        guard let socialMediaDetailsCollectionViewCell = stepsCollectionView.cellForItem(at: indexPath) as? SocialMediaDetailsCollectionViewCell else { return }
+        socialMediaDetailsCollectionViewCell.getStartedButton.hideLoading()
+        socialMediaDetailsCollectionViewCell.updateUserInteraction()
+    }
+    
     func moveToPreviousStep() {
         switch viewModel.currentStep {
         case .personalDetails: return
@@ -125,7 +132,9 @@ final class SignUpViewController: ViewController {
             viewModel.currentStep = .socialMediaDetails
             viewModel.currentStepLabel = .socialMediaDetails
         case .socialMediaDetails:
-            viewModel.didPressGetStartedButton()
+            viewModel.didPressGetStartedButton {
+                self.stopLoadingGetStartedButton()
+            }
         }
         updateCurrenCollectionViewItem(direction: .next)
         updateCurrentProgressBarView()
