@@ -73,15 +73,13 @@ extension String {
         return returnedImage
     }
     
-    func getImage() -> UIImage? {
-        var returnedImage: UIImage? = nil
-        
-        guard let url = URL(string: self) else { return nil }
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data, error == nil, let image = UIImage(data: data) else { return }
-            returnedImage = image
-        }.resume()
-        
-        return returnedImage
+    func getURLImage(completion: @escaping ((UIImage?) -> ())) {
+        if let url = URL(string: self) {
+            URLSession.shared.dataTask(with: url) { data, _, error in
+                if let data = data, error == nil, let image = UIImage(data: data) {
+                    completion(image)
+                } else { completion(nil) }
+            }.resume()
+        } else { completion(nil) }
     }
 }

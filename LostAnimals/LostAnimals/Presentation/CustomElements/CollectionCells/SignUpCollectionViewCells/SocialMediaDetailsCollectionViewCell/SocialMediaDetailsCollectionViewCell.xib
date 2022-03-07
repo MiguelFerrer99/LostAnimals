@@ -45,13 +45,13 @@
                                         <rect key="frame" x="0.0" y="94" width="299" height="391"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zMr-TY-Z8e">
-                                                <rect key="frame" x="0.0" y="0.0" width="299" height="315"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="299" height="325"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fRw-n0-7FG">
-                                                        <rect key="frame" x="0.0" y="0.0" width="299" height="315"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="299" height="325"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jn8-qk-GZo">
-                                                                <rect key="frame" x="0.0" y="0.0" width="299" height="115"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="299" height="125"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vjy-Fp-Ms7">
                                                                         <rect key="frame" x="0.0" y="0.0" width="299" height="80"/>
@@ -169,20 +169,12 @@
                                                                             </view>
                                                                         </subviews>
                                                                     </stackView>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VyU-xz-v6L">
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="edc-Ud-rTy">
                                                                         <rect key="frame" x="0.0" y="90" width="299" height="25"/>
                                                                         <subviews>
-                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Orq-m7-PJY">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="tZ6-GZ-RZ8">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="124.5" height="25"/>
                                                                                 <subviews>
-                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhs-oP-DwB">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
-                                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                                        <state key="normal" title="Button"/>
-                                                                                        <connections>
-                                                                                            <action selector="haveWhatsAppButtonPressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="hZ6-jh-Z8Z"/>
-                                                                                        </connections>
-                                                                                    </button>
                                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Tnh-yh-MRg">
                                                                                         <rect key="frame" x="0.0" y="0.5" width="25" height="24"/>
                                                                                         <color key="tintColor" name="CustomWhite"/>
@@ -191,32 +183,46 @@
                                                                                             <constraint firstAttribute="width" constant="25" id="pcZ-p4-vQX"/>
                                                                                         </constraints>
                                                                                     </imageView>
+                                                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I have WhatsApp" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJS-oj-7y0">
+                                                                                        <rect key="frame" x="30" y="4.5" width="94.5" height="16.5"/>
+                                                                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
+                                                                                        <color key="textColor" name="CustomWhite"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
                                                                                 </subviews>
-                                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                <constraints>
-                                                                                    <constraint firstAttribute="bottom" secondItem="nhs-oP-DwB" secondAttribute="bottom" id="BG8-TX-c3c"/>
-                                                                                    <constraint firstAttribute="height" constant="25" id="EuE-op-Xkf"/>
-                                                                                    <constraint firstItem="nhs-oP-DwB" firstAttribute="top" secondItem="Orq-m7-PJY" secondAttribute="top" id="FaK-bz-aSa"/>
-                                                                                    <constraint firstAttribute="trailing" secondItem="nhs-oP-DwB" secondAttribute="trailing" id="PpI-yv-VPb"/>
-                                                                                    <constraint firstItem="nhs-oP-DwB" firstAttribute="leading" secondItem="Orq-m7-PJY" secondAttribute="leading" id="QFt-aB-VQU"/>
-                                                                                    <constraint firstItem="Tnh-yh-MRg" firstAttribute="leading" secondItem="Orq-m7-PJY" secondAttribute="leading" id="Tho-0E-Ekg"/>
-                                                                                    <constraint firstAttribute="width" constant="25" id="gqr-P5-You"/>
-                                                                                    <constraint firstItem="Tnh-yh-MRg" firstAttribute="centerY" secondItem="Orq-m7-PJY" secondAttribute="centerY" id="r1a-rQ-CwG"/>
-                                                                                </constraints>
-                                                                            </view>
-                                                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I have WhatsApp" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJS-oj-7y0">
-                                                                                <rect key="frame" x="30" y="0.0" width="269" height="25"/>
-                                                                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
-                                                                                <color key="textColor" name="CustomWhite"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
+                                                                            </stackView>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gbi-xZ-4yh">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="124.5" height="25"/>
+                                                                                <state key="normal" title="Button"/>
+                                                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                                                <connections>
+                                                                                    <action selector="haveWhatsAppButtonPressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="f0L-ki-dhj"/>
+                                                                                </connections>
+                                                                            </button>
                                                                         </subviews>
-                                                                    </stackView>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="25" id="Jyz-11-mjd"/>
+                                                                            <constraint firstItem="tZ6-GZ-RZ8" firstAttribute="leading" secondItem="edc-Ud-rTy" secondAttribute="leading" id="KRm-jN-x8I"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="tZ6-GZ-RZ8" secondAttribute="bottom" id="Zoo-Q0-tqU"/>
+                                                                            <constraint firstItem="Gbi-xZ-4yh" firstAttribute="leading" secondItem="tZ6-GZ-RZ8" secondAttribute="leading" id="eFq-uY-E9Z"/>
+                                                                            <constraint firstItem="Gbi-xZ-4yh" firstAttribute="bottom" secondItem="tZ6-GZ-RZ8" secondAttribute="bottom" id="gkJ-MK-qd0"/>
+                                                                            <constraint firstItem="Gbi-xZ-4yh" firstAttribute="top" secondItem="tZ6-GZ-RZ8" secondAttribute="top" id="qFb-Mk-8qh"/>
+                                                                            <constraint firstItem="tZ6-GZ-RZ8" firstAttribute="top" secondItem="edc-Ud-rTy" secondAttribute="top" id="uHA-0p-0Zz"/>
+                                                                            <constraint firstItem="Gbi-xZ-4yh" firstAttribute="trailing" secondItem="tZ6-GZ-RZ8" secondAttribute="trailing" id="wjv-BA-hOW"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Yc-tz-LlR">
+                                                                        <rect key="frame" x="0.0" y="125" width="299" height="0.0"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" id="fEz-TR-iqM"/>
+                                                                        </constraints>
+                                                                    </view>
                                                                 </subviews>
                                                             </stackView>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v2V-Ev-j9Q" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="135" width="299" height="80"/>
+                                                                <rect key="frame" x="0.0" y="145" width="299" height="80"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
@@ -236,7 +242,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TAj-bp-F4V" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="235" width="299" height="80"/>
+                                                                <rect key="frame" x="0.0" y="245" width="299" height="80"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
@@ -288,45 +294,50 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="waV-jT-fdX">
                                                 <rect key="frame" x="0.0" y="0.0" width="299" height="25"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yrm-BO-dRz">
-                                                        <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jp0-VK-qot">
+                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="25"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwL-zs-6Jb">
-                                                                <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
-                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8ME-Ow-OdA">
+                                                                <rect key="frame" x="0.0" y="0.0" width="150" height="25"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hB9-2R-5Vw">
+                                                                        <rect key="frame" x="0.0" y="0.5" width="25" height="24"/>
+                                                                        <color key="tintColor" name="CustomWhite"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="25" id="KqU-SO-ptz"/>
+                                                                            <constraint firstAttribute="height" constant="25" id="YP7-uG-5mr"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I have read and accept" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfb-p6-Jvx">
+                                                                        <rect key="frame" x="30" y="0.0" width="120" height="25"/>
+                                                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
+                                                                        <color key="textColor" name="CustomWhite"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sQc-k7-Drn">
+                                                                <rect key="frame" x="0.0" y="0.0" width="150" height="25"/>
                                                                 <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                                                 <connections>
-                                                                    <action selector="termsAndConditionsRadioButtonPressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="A8d-TF-lCW"/>
+                                                                    <action selector="termsAndConditionsRadioButtonPressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="G1y-5U-7z6"/>
                                                                 </connections>
                                                             </button>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hB9-2R-5Vw">
-                                                                <rect key="frame" x="0.0" y="0.5" width="25" height="24"/>
-                                                                <color key="tintColor" name="CustomWhite"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="25" id="KqU-SO-ptz"/>
-                                                                    <constraint firstAttribute="height" constant="25" id="YP7-uG-5mr"/>
-                                                                </constraints>
-                                                            </imageView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstItem="hB9-2R-5Vw" firstAttribute="leading" secondItem="yrm-BO-dRz" secondAttribute="leading" id="3Ol-5G-zP7"/>
-                                                            <constraint firstItem="fwL-zs-6Jb" firstAttribute="leading" secondItem="yrm-BO-dRz" secondAttribute="leading" id="Dsn-S0-gSL"/>
-                                                            <constraint firstItem="fwL-zs-6Jb" firstAttribute="top" secondItem="yrm-BO-dRz" secondAttribute="top" id="VA5-Na-dZF"/>
-                                                            <constraint firstItem="hB9-2R-5Vw" firstAttribute="centerY" secondItem="yrm-BO-dRz" secondAttribute="centerY" id="VDJ-kI-Way"/>
-                                                            <constraint firstAttribute="height" constant="25" id="XkT-DI-m8q"/>
-                                                            <constraint firstAttribute="bottom" secondItem="fwL-zs-6Jb" secondAttribute="bottom" id="ZY8-eB-sCG"/>
-                                                            <constraint firstAttribute="trailing" secondItem="fwL-zs-6Jb" secondAttribute="trailing" id="ah1-99-Sl4"/>
-                                                            <constraint firstAttribute="width" constant="25" id="v91-Fb-Wig"/>
+                                                            <constraint firstAttribute="trailing" secondItem="8ME-Ow-OdA" secondAttribute="trailing" id="5Am-F1-cxx"/>
+                                                            <constraint firstItem="8ME-Ow-OdA" firstAttribute="top" secondItem="jp0-VK-qot" secondAttribute="top" id="AwD-b4-BPr"/>
+                                                            <constraint firstItem="sQc-k7-Drn" firstAttribute="top" secondItem="jp0-VK-qot" secondAttribute="top" id="G8a-6k-Wzk"/>
+                                                            <constraint firstAttribute="bottom" secondItem="8ME-Ow-OdA" secondAttribute="bottom" id="TRK-67-kI1"/>
+                                                            <constraint firstItem="sQc-k7-Drn" firstAttribute="leading" secondItem="jp0-VK-qot" secondAttribute="leading" id="awu-mk-0f5"/>
+                                                            <constraint firstItem="8ME-Ow-OdA" firstAttribute="leading" secondItem="jp0-VK-qot" secondAttribute="leading" id="bgD-Nd-YSX"/>
+                                                            <constraint firstAttribute="trailing" secondItem="sQc-k7-Drn" secondAttribute="trailing" id="c9K-TL-4Np"/>
+                                                            <constraint firstAttribute="bottom" secondItem="sQc-k7-Drn" secondAttribute="bottom" id="gTq-Xf-gzY"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I have read and accept" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGW-mG-Nk9">
-                                                        <rect key="frame" x="30" y="0.0" width="120" height="25"/>
-                                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
-                                                        <color key="textColor" name="CustomWhite"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qd-cT-U3Z">
                                                         <rect key="frame" x="155" y="0.0" width="144" height="25"/>
                                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
@@ -407,7 +418,7 @@
                 <outlet property="backStepButton" destination="Ieb-1D-Y6a" id="FhB-Kp-kIa"/>
                 <outlet property="errorPhonePrefixLabel" destination="cnM-le-bg3" id="cco-Iz-eUc"/>
                 <outlet property="getStartedButton" destination="ju7-bT-tuV" id="6JU-yM-kec"/>
-                <outlet property="haveWhatsAppRadioButton" destination="nhs-oP-DwB" id="HGM-fw-b5B"/>
+                <outlet property="haveWhatsAppRadioButton" destination="Gbi-xZ-4yh" id="okT-yP-cxH"/>
                 <outlet property="haveWhatsAppRadioButtonImageView" destination="Tnh-yh-MRg" id="R4U-43-0lp"/>
                 <outlet property="instagramTextfield" destination="v2V-Ev-j9Q" id="vdm-GW-PaP"/>
                 <outlet property="middlePrefixPlaceholder" destination="Ojb-L7-kav" id="NbH-4B-vq9"/>
@@ -415,12 +426,12 @@
                 <outlet property="phonePrefixLabel" destination="ZGb-bx-nNu" id="zHa-Vo-GD6"/>
                 <outlet property="phoneTextfield" destination="iTR-O4-n8b" id="gmX-lL-jpi"/>
                 <outlet property="termsAndConditionsButton" destination="2qd-cT-U3Z" id="luK-ok-QAB"/>
-                <outlet property="termsAndConditionsRadioButton" destination="fwL-zs-6Jb" id="XRq-jN-0gc"/>
+                <outlet property="termsAndConditionsRadioButton" destination="sQc-k7-Drn" id="zJy-c6-iFH"/>
                 <outlet property="termsAndConditionsRadioButtonImageView" destination="hB9-2R-5Vw" id="ZIY-Jg-ad0"/>
                 <outlet property="topPrefixPlaceholder" destination="Vjn-wB-8K7" id="XOh-iL-UX7"/>
                 <outlet property="twitterTextfield" destination="TAj-bp-F4V" id="2XR-qb-x1F"/>
             </connections>
-            <point key="canvasLocation" x="393" y="290"/>
+            <point key="canvasLocation" x="392.02898550724643" y="289.62053571428572"/>
         </collectionViewCell>
     </objects>
     <designables>
