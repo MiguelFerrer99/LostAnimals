@@ -8,17 +8,15 @@
 
 import UIKit
 
-final class PostOptionsPopupBuilder {
-    
+final class PostOptionsPopupBuilder {}
+
+// MARK: - Functions
+extension PostOptionsPopupBuilder {
     func build(comesFrom: PostComesFrom, post: Post) -> PostOptionsPopupViewController {
-        
         let viewController = UIViewController.instantiate(viewController: PostOptionsPopupViewController.self)
-        
         let router = PostOptionsPopupRouter(viewController: viewController)
         let viewModel = PostOptionsPopupViewModel(router: router, comesFrom: comesFrom, post: post)
-        
         viewController.viewModel = viewModel
-        
         return viewController
     }
 }

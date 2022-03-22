@@ -9,9 +9,8 @@
 import UIKit
 
 final class TermsAndConditionsViewController: ViewController {
-    
     // MARK: - IBOutlets
-    @IBOutlet weak var termsAndConditionsTableView: UITableView!
+    @IBOutlet private weak var termsAndConditionsTableView: UITableView!
     
     // MARK: - Properties
     override var navBarTitle: String {
@@ -32,9 +31,11 @@ final class TermsAndConditionsViewController: ViewController {
         
         viewModel.viewDidAppear()
     }
-    
-    // MARK: - Functions
-    private func setupUI() {
+}
+
+// MARK: - Functions
+private extension TermsAndConditionsViewController {
+    func setupUI() {
         configureTableView(termsAndConditionsTableView)
     }
 }

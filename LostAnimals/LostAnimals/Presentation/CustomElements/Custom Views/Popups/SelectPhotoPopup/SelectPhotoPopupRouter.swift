@@ -16,8 +16,10 @@ final class SelectPhotoPopupRouter {
     required init(viewController: SelectPhotoPopupViewController?) {
         self.viewController = viewController
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension SelectPhotoPopupRouter {
     func dismissSelectPhotoPopup() {
         DispatchQueue.main.async {
             self.viewController?.dismissCurrentView(completion: nil)

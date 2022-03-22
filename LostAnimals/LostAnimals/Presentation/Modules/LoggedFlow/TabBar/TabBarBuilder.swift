@@ -8,17 +8,15 @@
 
 import UIKit
 
-final class TabBarBuilder {
-    
+final class TabBarBuilder {}
+
+// MARK: - TabBarBuilder
+extension TabBarBuilder {
     func build() -> TabBarViewController {
-        
         let viewController = UIViewController.instantiate(viewController: TabBarViewController.self)
-        
         let router = TabBarRouter(viewController: viewController)
         let viewModel = TabBarViewModel(router: router)
-        
         viewController.viewModel = viewModel
-        
         return viewController
     }
 }

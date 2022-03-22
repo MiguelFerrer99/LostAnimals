@@ -6,11 +6,9 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
 import MapKit
 
 final class LocationViewModel {
-    
     // MARK: - Properties
     private let router: LocationRouter
     let coordinates: Coordinates

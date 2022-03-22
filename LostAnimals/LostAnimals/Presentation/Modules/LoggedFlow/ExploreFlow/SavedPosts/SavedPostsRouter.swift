@@ -16,8 +16,10 @@ final class SavedPostsRouter {
     required init(viewController: SavedPostsViewController?) {
         self.viewController = viewController
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension SavedPostsRouter {
     func goToFilterPopup(filterType: FilterType, loadData: Bool) {
         let viewController: ViewController!
         

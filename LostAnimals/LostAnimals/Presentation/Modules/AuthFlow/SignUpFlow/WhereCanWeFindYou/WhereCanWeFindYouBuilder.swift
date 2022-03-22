@@ -8,17 +8,15 @@
 
 import UIKit
 
-final class WhereCanWeFindYouBuilder {
-    
+final class WhereCanWeFindYouBuilder {}
+
+// MARK: - Functions
+extension WhereCanWeFindYouBuilder {
     func build(comesFrom: WhereCanWeFindYouComesFrom) -> WhereCanWeFindYouViewController {
-        
         let viewController = UIViewController.instantiate(viewController: WhereCanWeFindYouViewController.self)
-        
         let router = WhereCanWeFindYouRouter(viewController: viewController)
         let viewModel = WhereCanWeFindYouViewModel(router: router, comesFrom: comesFrom)
-        
         viewController.viewModel = viewModel
-        
         return viewController
     }
 }

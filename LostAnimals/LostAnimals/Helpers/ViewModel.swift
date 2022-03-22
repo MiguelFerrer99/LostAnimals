@@ -6,6 +6,5 @@
 //  Copyright © 2020 Miguel Ferrer Fornali. All rights reserved.
 //
 
-import Foundation
-
+// MARK: - Protocols
 protocol ViewModel {}

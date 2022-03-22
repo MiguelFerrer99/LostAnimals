@@ -9,56 +9,51 @@
 import UIKit
 
 @IBDesignable class CustomView: UIView {
-    // MARK: - Inspectables
+    // MARK: - IBInspectables
     @IBInspectable var fullRound: Bool = false {
         willSet {
             round(newValue)
         }
     }
-    
     @IBInspectable var cornerRadius: CGFloat = 0 {
         willSet {
             setCornerRadius(of: newValue)
         }
     }
-    
     @IBInspectable var borderWidth: CGFloat = 0 {
         willSet {
             setBorderWidth(newValue)
         }
     }
-    
     @IBInspectable var borderColor: UIColor = .clear {
         willSet {
             setBorderColor(newValue)
         }
     }
-    
     @IBInspectable var shadowColor: UIColor = .clear {
         willSet {
             setBorderColor(newValue)
         }
     }
-    
     @IBInspectable var shadowOffset: CGSize = .zero {
         willSet {
             setShadowOffset(newValue)
         }
     }
-    
     @IBInspectable var shadowRadius: CGFloat = .zero {
         willSet {
             setShadowRadius(newValue)
         }
     }
-    
     @IBInspectable var shadowOpacity: Float = .zero {
         willSet {
             setShadowOpacity(newValue)
         }
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension CustomView {
     func round(_ round: Bool) {
         self.layer.cornerRadius = round ? self.frame.width / 2 : cornerRadius
     }

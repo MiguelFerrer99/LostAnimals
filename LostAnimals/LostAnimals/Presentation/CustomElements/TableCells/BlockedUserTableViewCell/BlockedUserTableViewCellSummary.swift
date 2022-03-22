@@ -6,9 +6,7 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
-import UIKit
-
 struct BlockedUserTableViewCellSummary {
+    // MARK: - Properties
     let user: User
 }

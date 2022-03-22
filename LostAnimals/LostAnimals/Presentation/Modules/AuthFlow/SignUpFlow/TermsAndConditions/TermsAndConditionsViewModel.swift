@@ -6,10 +6,7 @@
 //  Copyright © 2021 Rudo. All rights reserved.
 //
 
-import Foundation
-
 final class TermsAndConditionsViewModel {
-    
     // MARK: - Properties
     private let router: TermsAndConditionsRouter
     
@@ -31,5 +28,4 @@ extension TermsAndConditionsViewModel {
 }
 
 // MARK: - Functions
-extension TermsAndConditionsViewModel {
-}
+extension TermsAndConditionsViewModel {}

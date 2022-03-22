@@ -6,8 +6,7 @@
 //  Copyright © 2020 Miguel Ferrer Fornali. All rights reserved.
 //
 
-import Foundation
-
+// MARK: - Functions
 extension RangeReplaceableCollection where Element: Equatable {
     mutating func addOrReplace(contentsOf elements: [Element]) {
         elements.forEach { element in

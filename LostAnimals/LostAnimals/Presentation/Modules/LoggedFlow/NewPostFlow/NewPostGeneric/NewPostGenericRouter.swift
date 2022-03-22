@@ -16,8 +16,10 @@ final class NewPostGenericRouter {
     required init(viewController: NewPostGenericViewController?) {
         self.viewController = viewController
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension NewPostGenericRouter {
     func goBackToTabBar() {
         DispatchQueue.main.async {
             self.viewController?.dismissCurrentView(completion: nil)

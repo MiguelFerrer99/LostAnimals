@@ -6,10 +6,7 @@
 //  Copyright © 2021 Rudo. All rights reserved.
 //
 
-import Foundation
-
 final class StartupViewModel {
-    
     // MARK: - Properties
     private let router: StartupRouter
     
@@ -21,9 +18,13 @@ final class StartupViewModel {
 
 // MARK: - Life cycle
 extension StartupViewModel {
-    func viewReady() {}
+    func viewReady() {
+        // Called when view is loaded and ready
+    }
     
-    func viewDidAppear() {}
+    func viewDidAppear() {
+        // Called when view has appeared
+    }
 }
 
 // MARK: - Functions

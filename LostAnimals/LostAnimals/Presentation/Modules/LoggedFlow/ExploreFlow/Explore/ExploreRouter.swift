@@ -16,8 +16,10 @@ final class ExploreRouter {
     required init(viewController: ExploreViewController?) {
         self.viewController = viewController
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension ExploreRouter {
     func goToFilterPopup(filterType: FilterType, loadData: Bool) {
         let viewController: ViewController!
         

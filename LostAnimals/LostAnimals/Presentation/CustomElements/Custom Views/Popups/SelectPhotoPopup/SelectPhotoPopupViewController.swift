@@ -8,10 +8,12 @@
 
 import UIKit
 
+// MARK: - Protocols
 protocol ActionAfterSelectPhotoDelegate: AnyObject {
     func goTo(action: ActionAfterSelectPhoto)
 }
 
+// MARK: - Enums
 enum ActionAfterSelectPhoto: String {
     case removePhoto
     case choosePhoto
@@ -20,8 +22,8 @@ enum ActionAfterSelectPhoto: String {
 
 final class SelectPhotoPopupViewController: ViewController {
     // MARK: - IBOutlets
-    @IBOutlet weak var backgroundView: UIView!
-    @IBOutlet weak var removePhotoOptionView: UIView!
+    @IBOutlet private weak var backgroundView: UIView!
+    @IBOutlet private weak var removePhotoOptionView: UIView!
     
     // MARK: - Properties
     weak var delegate: ActionAfterSelectPhotoDelegate?
@@ -56,13 +58,17 @@ final class SelectPhotoPopupViewController: ViewController {
             self.backgroundView.alpha = 0
         }
     }
-    
-    // MARK: - Functions
-    private func setupUI() {
+}
+
+// MARK: - Functions
+private extension SelectPhotoPopupViewController {
+    func setupUI() {
         removePhotoOptionView.isHidden = !viewModel.showRemoveOption
     }
-    
-    // MARK: - IBActions
+}
+
+// MARK: - IBActions
+private extension SelectPhotoPopupViewController {
     @IBAction func dismissButtonPressed(_ sender: UIButton) {
         viewModel.didPressDismissButton()
     }

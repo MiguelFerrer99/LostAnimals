@@ -6,8 +6,6 @@
 //  Copyright © 2021 Rudo. All rights reserved.
 //
 
-import UIKit
-
 class PersonalDetailsCollectionViewCellViewModel: ViewModel {
     // MARK: - Properties
     var isAnimalShelter = false {
@@ -22,8 +20,10 @@ class PersonalDetailsCollectionViewCellViewModel: ViewModel {
     
     // MARK: - Init
     init() {}
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension PersonalDetailsCollectionViewCellViewModel {
     func textFieldsHaveErrors() -> Bool {
         var haveErrors = false
         editedTextFields.forEach { editedTextField in

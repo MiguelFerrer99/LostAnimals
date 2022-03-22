@@ -10,8 +10,8 @@ import UIKit
 
 class AnimalTypeTableViewCell: UITableViewCell, Reusable {
     // MARK: - IBOutlets
-    @IBOutlet weak var animalTypeImageView: UIImageView!
-    @IBOutlet weak var animalTypeLabel: UILabel!
+    @IBOutlet private weak var animalTypeImageView: UIImageView!
+    @IBOutlet private weak var animalTypeLabel: UILabel!
     
     // MARK: - Life cycle
     override func awakeFromNib() {
@@ -21,8 +21,10 @@ class AnimalTypeTableViewCell: UITableViewCell, Reusable {
         bgView.backgroundColor = .customWhite.withAlphaComponent(0.3)
         self.selectedBackgroundView = bgView
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension AnimalTypeTableViewCell {
     func display(summary: AnimalTypeTableViewCellSummary) {
         animalTypeImageView.image = summary.animalTypeImage
         animalTypeLabel.text = summary.animalTypeTitle

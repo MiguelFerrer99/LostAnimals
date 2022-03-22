@@ -17,8 +17,10 @@ final class WhereCanWeFindYouRouter {
     required init(viewController: WhereCanWeFindYouViewController?) {
         self.viewController = viewController
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension WhereCanWeFindYouRouter {
     func goBack(comesFrom: WhereCanWeFindYouComesFrom, searchResult: MKLocalSearchCompletion) {
         DispatchQueue.main.async {
             self.viewController?.delegate?.getWhereCanWeFindYou(whereCanWeFindYouSearchResult: searchResult)

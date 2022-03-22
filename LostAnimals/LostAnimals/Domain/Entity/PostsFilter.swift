@@ -6,9 +6,10 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct PostsFilter {
+    // MARK: - Properties
     var filterTitle: String
     let filterType: FilterType
     var enabled: Bool

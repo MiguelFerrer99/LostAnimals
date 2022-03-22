@@ -6,10 +6,10 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 struct PostAuthor {
+    // MARK: - Properties
     let firstname: String
     let lastname: String
     let birthdate: String

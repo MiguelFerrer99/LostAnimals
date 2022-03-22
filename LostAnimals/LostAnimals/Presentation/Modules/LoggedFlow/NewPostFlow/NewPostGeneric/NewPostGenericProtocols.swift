@@ -9,8 +9,8 @@
 import Foundation
 import MapKit
 
-extension NewPostGenericViewController: ActionAfterSelectPhotoDelegate, AnimalTypesDelegate, WhereCanWeFindYouDelegate {
-    // MARK: - ActionAfterSelectPhotoDelegate
+// MARK: - ActionAfterSelectPhotoDelegate
+extension NewPostGenericViewController: ActionAfterSelectPhotoDelegate {
     func goTo(action: ActionAfterSelectPhoto) {
         switch action {
         case .removePhoto: removePhoto()
@@ -18,13 +18,17 @@ extension NewPostGenericViewController: ActionAfterSelectPhotoDelegate, AnimalTy
         case .takePhoto:   takePhoto()
         }
     }
-    
-    // MARK: - AnimalTypesDelegate
+}
+
+// MARK: - AnimalTypesDelegate
+extension NewPostGenericViewController: AnimalTypesDelegate {
     func getAnimalType(animalType: AnimalType) {
         fillAnimal(animalType: animalType)
     }
-    
-    // MARK: - WhereCanWeFindYouDelegate
+}
+
+// MARK: - WhereCanWeFindYouDelegate
+extension NewPostGenericViewController: WhereCanWeFindYouDelegate {
     func getWhereCanWeFindYou(whereCanWeFindYouSearchResult: MKLocalSearchCompletion) {
         fillWhereCanWeFindYou(searchResult: whereCanWeFindYouSearchResult)
     }

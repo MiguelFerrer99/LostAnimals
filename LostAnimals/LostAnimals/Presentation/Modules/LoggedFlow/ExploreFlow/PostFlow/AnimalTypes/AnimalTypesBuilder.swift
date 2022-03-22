@@ -8,17 +8,15 @@
 
 import UIKit
 
-final class AnimalTypesBuilder {
-    
+final class AnimalTypesBuilder {}
+
+// MARK: - Functions
+extension AnimalTypesBuilder {
     func build(comesFrom: AnimalTypesComesFrom) -> AnimalTypesViewController {
-        
         let viewController = UIViewController.instantiate(viewController: AnimalTypesViewController.self)
-        
         let router = AnimalTypesRouter(viewController: viewController)
         let viewModel = AnimalTypesViewModel(router: router, comesFrom: comesFrom)
-        
         viewController.viewModel = viewModel
-        
         return viewController
     }
 }

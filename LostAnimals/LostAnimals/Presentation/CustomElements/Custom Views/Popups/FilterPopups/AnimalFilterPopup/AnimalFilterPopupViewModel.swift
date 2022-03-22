@@ -6,10 +6,9 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 final class AnimalFilterPopupViewModel {
-    
     // MARK: - Properties
     private let router: AnimalFilterPopupRouter
     let loadData: Bool

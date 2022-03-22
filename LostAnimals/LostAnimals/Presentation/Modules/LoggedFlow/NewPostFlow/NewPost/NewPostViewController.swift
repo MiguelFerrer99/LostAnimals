@@ -9,7 +9,6 @@
 import UIKit
 
 final class NewPostViewController: ViewController {
-    
     // MARK: - IBOutlets
     @IBOutlet weak var newPostView: CustomView!
     
@@ -32,13 +31,17 @@ final class NewPostViewController: ViewController {
         
         viewModel.viewDidAppear()
     }
-    
-    // MARK: - Functions
-    private func setupUI() {
+}
+
+// MARK: - Functions
+private extension NewPostViewController {
+    func setupUI() {
         newPostView.layer.maskedCorners =  [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
-    
-    // MARK: - IBActions
+}
+
+// MARK: - IBActions
+private extension NewPostViewController {
     @IBAction func dismissButtonPressed(_ sender: UIButton) {
         viewModel.didPressDismissButton()
     }

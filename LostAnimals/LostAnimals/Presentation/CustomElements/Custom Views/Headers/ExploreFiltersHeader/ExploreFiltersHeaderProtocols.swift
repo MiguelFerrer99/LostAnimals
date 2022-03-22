@@ -8,8 +8,8 @@
 
 import Foundation
 
+// MARK: - ExploreFilterDelegate
 extension ExploreFiltersHeader: ExploreFilterDelegate {
-    // MARK: - ExploreFilterDelegate
     func disableFilter(filterType: FilterType) {
         Filters.resetFilterTitle(type: filterType)
         Filters.setFilterValue(filterType: filterType, enabled: false)

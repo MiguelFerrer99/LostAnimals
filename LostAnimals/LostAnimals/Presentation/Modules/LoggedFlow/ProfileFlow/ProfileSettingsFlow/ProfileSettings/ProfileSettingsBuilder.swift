@@ -8,17 +8,15 @@
 
 import UIKit
 
-final class ProfileSettingsBuilder {
-    
+final class ProfileSettingsBuilder {}
+
+// MARK: - Functions
+extension ProfileSettingsBuilder {
     func build(me: User) -> ProfileSettingsViewController {
-        
         let viewController = UIViewController.instantiate(viewController: ProfileSettingsViewController.self)
-        
         let router = ProfileSettingsRouter(viewController: viewController)
         let viewModel = ProfileSettingsViewModel(router: router, me: me)
-        
         viewController.viewModel = viewModel
-        
         return viewController
     }
 }

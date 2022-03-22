@@ -16,8 +16,10 @@ final class WhereDoYouLiveCitiesRouter {
     required init(viewController: WhereDoYouLiveCitiesViewController?) {
         self.viewController = viewController
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension WhereDoYouLiveCitiesRouter {
     func goToSignUp(whereDoYouLive: String) {
         guard let viewController = self.viewController?.navigationController?.viewControllers[1] as? SignUpViewController else { return }
         DispatchQueue.main.async {

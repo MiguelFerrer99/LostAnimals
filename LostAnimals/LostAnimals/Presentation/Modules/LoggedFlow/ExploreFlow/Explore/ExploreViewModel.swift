@@ -9,7 +9,6 @@
 import UIKit
 
 final class ExploreViewModel {
-    
     // MARK: - Properties
     private let router: ExploreRouter
     

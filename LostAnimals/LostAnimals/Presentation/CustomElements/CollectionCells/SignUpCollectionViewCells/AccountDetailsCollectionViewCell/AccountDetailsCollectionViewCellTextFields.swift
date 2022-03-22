@@ -6,10 +6,8 @@
 //  Copyright © 2021 Rudo. All rights reserved.
 //
 
-import UIKit
-
-extension AccountDetailsCollectionViewCell: CustomTextFieldDelegate {
-    // MARK: - Functions
+// MARK: - Functions
+extension AccountDetailsCollectionViewCell {
     func configureTextFields() {
         mailTextfield.delegate = self
         mailTextfield.textField.textContentType = .username
@@ -30,8 +28,11 @@ extension AccountDetailsCollectionViewCell: CustomTextFieldDelegate {
         repeatPasswordTextfield.addErrorsToCheck([TextFieldErrorEmptyValue(),
                                                   TextFieldErrorPasswordFormat()])
     }
-    
-    private func checkPasswordsAreEqual() -> Bool {
+}
+
+// MARK: - Private functions
+private extension AccountDetailsCollectionViewCell {
+    func checkPasswordsAreEqual() -> Bool {
         if passwordTextfield.textField.text == repeatPasswordTextfield.textField.text {
             return true
         } else if viewModel.editedTextFields.contains(passwordTextfield) && viewModel.editedTextFields.contains(repeatPasswordTextfield) {
@@ -42,15 +43,17 @@ extension AccountDetailsCollectionViewCell: CustomTextFieldDelegate {
         return true
     }
     
-    private func checkAllContentsAreOk() {
+    func checkAllContentsAreOk() {
         let haveErrors = viewModel.textFieldsHaveErrors()
         let passwordsAreEqual = checkPasswordsAreEqual()
         let canMoveToNextStep = !haveErrors && passwordsAreEqual && viewModel.editedTextFields.count == viewModel.numberOfTextFields
         nextStepButton.alpha = canMoveToNextStep ? 1 : 0.5
         nextStepButton.isEnabled = canMoveToNextStep
     }
-    
-    // MARK: - CustomTextFieldDelegate
+}
+
+// MARK: - CustomTextFieldDelegate
+extension AccountDetailsCollectionViewCell: CustomTextFieldDelegate {
     func textFieldShouldReturn(_ customTextField: CustomTextField) -> Bool {
         switch customTextField.textField {
         case mailTextfield.textField:

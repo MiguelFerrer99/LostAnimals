@@ -16,8 +16,10 @@ final class ErrorPopupRouter {
     required init(viewController: ErrorPopupViewController?) {
         self.viewController = viewController
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension ErrorPopupRouter {
     func dismissErrorPopup(action: ()? = nil) {
         DispatchQueue.main.async {
             self.viewController?.dismissCurrentView(completion: {

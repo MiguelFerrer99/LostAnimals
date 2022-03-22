@@ -9,15 +9,16 @@
 import UIKit
 
 @IBDesignable class CustomStackView: UIStackView {
-    // MARK: - Inspectables
-    
+    // MARK: - IBInspectables
     @IBInspectable var cornerRadius: CGFloat = 0 {
         willSet {
             setCornerRadius(of: newValue)
         }
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension CustomStackView {
     func setCornerRadius(of radius: CGFloat) {
         self.layer.cornerRadius = radius
     }

@@ -9,31 +9,30 @@
 import UIKit
 
 final class NewPostGenericViewController: ViewController {
-    
     // MARK: - IBOutlets
-    @IBOutlet weak var postTypeLabel: UILabel!
-    @IBOutlet weak var selectPhoto1ImageView: UIImageView!
-    @IBOutlet weak var selectPhoto2ImageView: UIImageView!
-    @IBOutlet weak var selectPhoto3ImageView: UIImageView!
-    @IBOutlet weak var selectPhoto4ImageView: UIImageView!
-    @IBOutlet weak var selectPhoto5ImageView: UIImageView!
-    @IBOutlet weak var selectPhoto6ImageView: UIImageView!
-    @IBOutlet weak var selectPhoto7ImageView: UIImageView!
-    @IBOutlet weak var selectPhoto8ImageView: UIImageView!
-    @IBOutlet weak var selectPhoto1Button: UIButton!
-    @IBOutlet weak var selectPhoto2Button: UIButton!
-    @IBOutlet weak var selectPhoto3Button: UIButton!
-    @IBOutlet weak var selectPhoto4Button: UIButton!
-    @IBOutlet weak var selectPhoto5Button: UIButton!
-    @IBOutlet weak var selectPhoto6Button: UIButton!
-    @IBOutlet weak var selectPhoto7Button: UIButton!
-    @IBOutlet weak var selectPhoto8Button: UIButton!
+    @IBOutlet private weak var postTypeLabel: UILabel!
+    @IBOutlet private weak var selectPhoto1ImageView: UIImageView!
+    @IBOutlet private weak var selectPhoto2ImageView: UIImageView!
+    @IBOutlet private weak var selectPhoto3ImageView: UIImageView!
+    @IBOutlet private weak var selectPhoto4ImageView: UIImageView!
+    @IBOutlet private weak var selectPhoto5ImageView: UIImageView!
+    @IBOutlet private weak var selectPhoto6ImageView: UIImageView!
+    @IBOutlet private weak var selectPhoto7ImageView: UIImageView!
+    @IBOutlet private weak var selectPhoto8ImageView: UIImageView!
+    @IBOutlet private weak var selectPhoto1Button: UIButton!
+    @IBOutlet private weak var selectPhoto2Button: UIButton!
+    @IBOutlet private weak var selectPhoto3Button: UIButton!
+    @IBOutlet private weak var selectPhoto4Button: UIButton!
+    @IBOutlet private weak var selectPhoto5Button: UIButton!
+    @IBOutlet private weak var selectPhoto6Button: UIButton!
+    @IBOutlet private weak var selectPhoto7Button: UIButton!
+    @IBOutlet private weak var selectPhoto8Button: UIButton!
+    @IBOutlet private weak var descriptionTextview: UITextView!
     @IBOutlet weak var nameTextfield: CustomTextField!
     @IBOutlet weak var animalTextfield: CustomTextField!
     @IBOutlet weak var breedTextfield: CustomTextField!
     @IBOutlet weak var lastTimeSeenTextfield: CustomTextField!
     @IBOutlet weak var locationTextfield: CustomTextField!
-    @IBOutlet weak var descriptionTextview: UITextView!
     @IBOutlet weak var publishPostButton: CustomButton!
     
     // MARK: - Properties
@@ -56,30 +55,10 @@ final class NewPostGenericViewController: ViewController {
         
         viewModel.viewDidAppear()
     }
-    
-    // MARK: - Functions
-    private func setupUI() {
-        viewModel.selectPhotoImageViews = [selectPhoto1ImageView, selectPhoto2ImageView, selectPhoto3ImageView, selectPhoto4ImageView,
-                                           selectPhoto5ImageView, selectPhoto6ImageView, selectPhoto7ImageView, selectPhoto8ImageView]
-        configureTextfields()
-        configureImagePickerController()
-        fillUI()
-    }
-    
-    private func fillUI() {
-        switch viewModel.postType {
-        case .lost:
-            postTypeLabel.text = "Lost animal"
-        case .found:
-            postTypeLabel.text = "Found animal"
-            nameTextfield.isHidden = true
-        case .adopt:
-            postTypeLabel.text = "To adopt animal"
-            lastTimeSeenTextfield.isHidden = true
-            locationTextfield.isHidden = true
-        }
-    }
-    
+}
+
+// MARK: - Functions
+extension NewPostGenericViewController {
     func fillAnimal(animalType: AnimalType) {
         animalTextfield.textField.text = animalType.rawValue
         animalTextfield.didFinishSelectContentFromOtherVC()
@@ -99,8 +78,33 @@ final class NewPostGenericViewController: ViewController {
         self.imagePickerController.sourceType = .camera
         self.present(viewController: imagePickerController, completion: nil)
     }
+}
+
+// MARK: - Private functions
+private extension NewPostGenericViewController {
+    func setupUI() {
+        viewModel.selectPhotoImageViews = [selectPhoto1ImageView, selectPhoto2ImageView, selectPhoto3ImageView, selectPhoto4ImageView,
+                                           selectPhoto5ImageView, selectPhoto6ImageView, selectPhoto7ImageView, selectPhoto8ImageView]
+        configureTextfields()
+        configureImagePickerController()
+        fillUI()
+    }
     
-    private func updateUserInteraction() {
+    func fillUI() {
+        switch viewModel.postType {
+        case .lost:
+            postTypeLabel.text = "Lost animal"
+        case .found:
+            postTypeLabel.text = "Found animal"
+            nameTextfield.isHidden = true
+        case .adopt:
+            postTypeLabel.text = "To adopt animal"
+            lastTimeSeenTextfield.isHidden = true
+            locationTextfield.isHidden = true
+        }
+    }
+    
+    func updateUserInteraction() {
         navigationController?.navigationBar.isUserInteractionEnabled = publishPostButton.isEnabled
         navigationController?.interactivePopGestureRecognizer?.isEnabled = publishPostButton.isEnabled
         nameTextfield.isUserInteractionEnabled = publishPostButton.isEnabled
@@ -119,7 +123,7 @@ final class NewPostGenericViewController: ViewController {
         selectPhoto8Button.isUserInteractionEnabled = publishPostButton.isEnabled
     }
     
-    private func buildNewPost() -> Post? {
+    func buildNewPost() -> Post? {
         guard let selectedAnimalType = viewModel.selectedAnimalType,
               let animalNameText = animalTextfield.textField.text,
               let animalBreedText = breedTextfield.textField.text,
@@ -141,8 +145,10 @@ final class NewPostGenericViewController: ViewController {
         
         return newPost
     }
-    
-    // MARK: - IBAction
+}
+
+// MARK: - IBActions
+private extension NewPostGenericViewController {
     @IBAction func selectPhoto1ButtonPressed(_ sender: UIButton) {
         viewModel.selectedIndexImageView = 0
         viewModel.didPressSelectPhotoButton()

@@ -9,15 +9,14 @@
 import UIKit
 
 final class DateFilterPopupViewController: ViewController {
-    
     // MARK: - IBOutlets
-    @IBOutlet weak var postsPreviousToButton: UIButton!
-    @IBOutlet weak var postsAfterButton: UIButton!
-    @IBOutlet weak var postsPreviousToImageView: UIImageView!
-    @IBOutlet weak var postsAfterImageView: UIImageView!
+    @IBOutlet private weak var postsPreviousToButton: UIButton!
+    @IBOutlet private weak var postsAfterButton: UIButton!
+    @IBOutlet private weak var postsPreviousToImageView: UIImageView!
+    @IBOutlet private weak var postsAfterImageView: UIImageView!
+    @IBOutlet private weak var applyFilterButton: CustomButton!
     @IBOutlet weak var postsPreviousToTextfield: UITextField!
     @IBOutlet weak var postsAfterTextfield: UITextField!
-    @IBOutlet weak var applyFilterButton: CustomButton!
     
     // MARK: - Properties
     var viewModel: DateFilterPopupViewModel!
@@ -37,15 +36,16 @@ final class DateFilterPopupViewController: ViewController {
         
         viewModel.viewDidAppear()
     }
-    
-    // MARK: - Functions
-    private func setupUI() {
+}
+
+// MARK: - Private functions
+private extension DateFilterPopupViewController {
+    func setupUI() {
         configureTextfields()
         fillUI()
     }
     
-    
-    private func fillUI() {
+    func fillUI() {
         if viewModel.loadData {
             if let dateFilter = Filters.currentFilters[.date] {
                 if let previousDate = dateFilter.dateFilterDatesBeforeOf {
@@ -68,12 +68,14 @@ final class DateFilterPopupViewController: ViewController {
         }
     }
     
-    private func updateApplyFilterButton() {
+    func updateApplyFilterButton() {
         applyFilterButton.alpha = (viewModel.postsPreviousToSelected || viewModel.postsAfterSelected) ? 1 : 0.5
         applyFilterButton.isEnabled = viewModel.postsPreviousToSelected || viewModel.postsAfterSelected
     }
-    
-    // MARK: - IBActions
+}
+
+// MARK: - IBActions
+private extension DateFilterPopupViewController {
     @IBAction func postsPreviousToButtonPressed(_ sender: UIButton) {
         viewModel.postsPreviousToSelected.toggle()
         postsPreviousToImageView.image = UIImage(systemName: viewModel.postsPreviousToSelected ? "checkmark.circle.fill" : "circle")

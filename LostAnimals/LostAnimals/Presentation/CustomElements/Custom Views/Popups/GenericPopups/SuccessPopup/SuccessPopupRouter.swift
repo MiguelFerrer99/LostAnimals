@@ -16,8 +16,10 @@ final class SuccessPopupRouter {
     required init(viewController: SuccessPopupViewController?) {
         self.viewController = viewController
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension SuccessPopupRouter {
     func dismissSuccessPopup(action: ()? = nil) {
         DispatchQueue.main.async {
             self.viewController?.dismissCurrentView(completion: {

@@ -6,12 +6,11 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
 import MapKit
 import CoreLocation
 
-extension EditPersonalDetailsViewController: CustomTextFieldDelegate {
-    // MARK: - Functions
+// MARK: - Functions
+extension EditPersonalDetailsViewController {
     func configureTextFields() {
         firstnameTextfield.delegate = self
         firstnameTextfield.textField.keyboardType = .alphabet
@@ -77,8 +76,11 @@ extension EditPersonalDetailsViewController: CustomTextFieldDelegate {
         whereCanWeFindYouTextfield.didFinishSelectContentFromOtherVC()
         convertAddressToLocation(address: searchResultString)
     }
-    
-    private func convertAddressToLocation(address: String) {
+}
+
+// MARK: - Private functions
+private extension EditPersonalDetailsViewController {
+    func convertAddressToLocation(address: String) {
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(address) { placemarks, error in
             if let placemark = placemarks?.first, let location = placemark.location {
@@ -89,14 +91,16 @@ extension EditPersonalDetailsViewController: CustomTextFieldDelegate {
         }
     }
     
-    private func checkAllContentsAreOk() {
+    func checkAllContentsAreOk() {
         let haveErrors = viewModel.textFieldsHaveErrors()
         let canMoveToNextStep = !haveErrors && viewModel.editedTextFields.count == viewModel.numberOfTextFields
         saveChangesButton.alpha = canMoveToNextStep ? 1 : 0.5
         saveChangesButton.isEnabled = canMoveToNextStep
     }
-    
-    // MARK: - CustomTextFieldDelegate
+}
+
+// MARK: - CustomTextFieldDelegate
+extension EditPersonalDetailsViewController: CustomTextFieldDelegate {
     func textFieldShouldReturn(_ customTextField: CustomTextField) -> Bool {
         if viewModel.me.animalShelter {
             switch customTextField.textField {

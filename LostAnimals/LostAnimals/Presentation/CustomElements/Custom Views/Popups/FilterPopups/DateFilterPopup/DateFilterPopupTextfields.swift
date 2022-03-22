@@ -6,9 +6,9 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
+// MARK: - Functions
 extension DateFilterPopupViewController {
     func configureTextfields() {
         // postsPreviousToTextfield
@@ -46,13 +46,16 @@ extension DateFilterPopupViewController {
         postsAfterTextfield.inputView = postsAfterDatePicker
         postsAfterTextfield.text = Date.today.toString(withFormat: DateFormat.dayMonthYearOther)
     }
-    
-    @objc private func postsPreviousToDoneDatePickerPressed() {
+}
+
+// MARK: - Private functions
+private extension DateFilterPopupViewController {
+    @objc func postsPreviousToDoneDatePickerPressed() {
         postsPreviousToTextfield.text = postsPreviousToDatePicker.date.toString(withFormat: DateFormat.dayMonthYearOther)
         postsPreviousToTextfield.endEditing(true)
     }
     
-    @objc private func postsAfterDoneDatePickerPressed() {
+    @objc func postsAfterDoneDatePickerPressed() {
         postsAfterTextfield.text = postsAfterDatePicker.date.toString(withFormat: DateFormat.dayMonthYearOther)
         postsAfterTextfield.endEditing(true)
     }

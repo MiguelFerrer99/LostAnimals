@@ -6,9 +6,9 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
+// MARK: - Enums
 enum SocialMediaType: String {
     case email
     case phonePrefix

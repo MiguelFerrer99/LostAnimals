@@ -6,16 +6,22 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-extension BlockedUsersViewController: UITableViewDelegate, UITableViewDataSource {
+// MARK: - Functions
+extension BlockedUsersViewController {
     func configureTableView(_ tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(BlockedUserTableViewCell.self)
     }
-    
+}
+
+// MARK: - UITableViewDelegate
+extension BlockedUsersViewController: UITableViewDelegate {}
+
+// MARK: - UITableViewDataSource
+extension BlockedUsersViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return HardcodedData.exampleUsers.count
     }

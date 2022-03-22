@@ -8,13 +8,17 @@
 
 import UIKit
 
-extension WhereDoYouLiveCitiesViewController: UITableViewDelegate, UITableViewDataSource {
+// MARK: - Functions
+extension WhereDoYouLiveCitiesViewController {
     func configureTableview(_ tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(CityTableViewCell.self)
     }
-    
+}
+
+// MARK: - UITableViewDataSource
+extension WhereDoYouLiveCitiesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.filteredCities.count
     }
@@ -24,7 +28,10 @@ extension WhereDoYouLiveCitiesViewController: UITableViewDelegate, UITableViewDa
         cell.display(summary: CityTableViewCellSummary(cityName: viewModel.filteredCities[indexPath.row]))
         return cell
     }
-    
+}
+
+// MARK: - UITableViewDelegate
+extension WhereDoYouLiveCitiesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let selectedIndexPath = tableView.indexPathForSelectedRow else { return }
         tableView.deselectRow(at: selectedIndexPath, animated: true)

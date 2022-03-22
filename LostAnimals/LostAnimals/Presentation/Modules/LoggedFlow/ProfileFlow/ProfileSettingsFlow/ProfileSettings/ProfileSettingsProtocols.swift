@@ -6,10 +6,8 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
-
+// MARK: - ActionAfterSelectPhotoDelegate
 extension ProfileSettingsViewController: ActionAfterSelectPhotoDelegate {
-    // MARK: - ActionAfterSelectPhotoDelegate
     func goTo(action: ActionAfterSelectPhoto) {
         switch action {
         case .removePhoto: removePhoto()

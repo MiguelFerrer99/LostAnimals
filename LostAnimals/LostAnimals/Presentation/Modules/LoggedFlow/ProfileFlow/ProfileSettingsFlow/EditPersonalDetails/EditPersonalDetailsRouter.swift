@@ -16,8 +16,10 @@ final class EditPersonalDetailsRouter {
     required init(viewController: EditPersonalDetailsViewController?) {
         self.viewController = viewController
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension EditPersonalDetailsRouter {
     func goBack() {
         DispatchQueue.main.async {
             self.viewController?.pop()

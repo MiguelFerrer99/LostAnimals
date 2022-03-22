@@ -9,7 +9,6 @@
 import Foundation
 
 final class SavedPostsViewModel {
-    
     // MARK: - Properties
     private let router: SavedPostsRouter
     

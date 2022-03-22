@@ -6,9 +6,9 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
 import MapKit
 
+// MARK: - WhereCanWeFindYouDelegate
 extension EditPersonalDetailsViewController: WhereCanWeFindYouDelegate {
     func getWhereCanWeFindYou(whereCanWeFindYouSearchResult: MKLocalSearchCompletion) {
         fillWhereCanWeFindYou(searchResult: whereCanWeFindYouSearchResult)

@@ -6,8 +6,6 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
-
 final class EditSocialMediasViewModel {
     // MARK: - Properties
     private let router: EditSocialMediasRouter

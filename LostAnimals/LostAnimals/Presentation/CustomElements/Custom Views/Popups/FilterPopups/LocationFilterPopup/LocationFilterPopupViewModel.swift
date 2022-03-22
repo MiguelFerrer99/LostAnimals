@@ -9,7 +9,6 @@
 import Foundation
 
 final class LocationFilterPopupViewModel {
-    
     // MARK: - Properties
     private let router: LocationFilterPopupRouter
     let loadData: Bool

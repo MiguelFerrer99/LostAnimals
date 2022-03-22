@@ -6,8 +6,6 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
-
 class BlockedUserTableViewCellViewModel: ViewModel {
     // MARK: - Properties
     let userID: String

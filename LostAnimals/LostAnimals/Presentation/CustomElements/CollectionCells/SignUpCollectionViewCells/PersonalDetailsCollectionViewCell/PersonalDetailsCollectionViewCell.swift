@@ -10,15 +10,14 @@ import UIKit
 
 class PersonalDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell {
     typealias T = PersonalDetailsCollectionViewCellViewModel
-    
     // MARK: - IBOutlets
+    @IBOutlet private weak var personalDetailsModeButton: UIButton!
     @IBOutlet weak var firstnameTextfield: CustomTextField!
     @IBOutlet weak var lastnameTextfield: CustomTextField!
     @IBOutlet weak var birthdateTexfield: CustomTextField!
     @IBOutlet weak var whereDoYouLiveTextfield: CustomTextField!
     @IBOutlet weak var animalShelterNameTextfield: CustomTextField!
     @IBOutlet weak var whereCanWeFindYouTextfield: CustomTextField!
-    @IBOutlet weak var personalDetailsModeButton: UIButton!
     @IBOutlet weak var nextStepButton: CustomButton!
     
     // MARK: - Properties
@@ -31,13 +30,24 @@ class PersonalDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell {
     override func awakeFromNib() {
         super.awakeFromNib()        
     }
-    
-    // MARK: - Functions
-    private func fillUI() {
+}
+
+// MARK: - Functions
+extension PersonalDetailsCollectionViewCell {
+    func fillWhereDoYouLive(whereDoYouLive: String) {
+        whereDoYouLiveTextfield.textField.text = whereDoYouLive
+        whereDoYouLiveTextfield.didFinishSelectContentFromOtherVC()
+        convertAddressToLocation(address: whereDoYouLive)
+    }
+}
+
+// MARK: - Private functions
+private extension PersonalDetailsCollectionViewCell {
+    func fillUI() {
         configureTextFields()
     }
     
-    private func updatePersonalDetailsMode() {
+    func updatePersonalDetailsMode() {
         nextStepButton.alpha = 0.5
         nextStepButton.isEnabled = false
         if viewModel.isAnimalShelter {
@@ -64,14 +74,10 @@ class PersonalDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell {
             whereDoYouLiveTextfield.resetTextfield()
         }
     }
-    
-    func fillWhereDoYouLive(whereDoYouLive: String) {
-        whereDoYouLiveTextfield.textField.text = whereDoYouLive
-        whereDoYouLiveTextfield.didFinishSelectContentFromOtherVC()
-        convertAddressToLocation(address: whereDoYouLive)
-    }
-    
-    // MARK: - IBActions
+}
+
+// MARK: - IBActions
+private extension PersonalDetailsCollectionViewCell {
     @IBAction func areYouAnAnimalShelterButton(_ sender: UIButton) {
         viewModel.isAnimalShelter.toggle()
         updatePersonalDetailsMode()

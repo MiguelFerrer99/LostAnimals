@@ -16,8 +16,10 @@ final class PostRouter {
     required init(viewController: PostViewController?) {
         self.viewController = viewController
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension PostRouter {
     func goBack() {
         DispatchQueue.main.async {
             self.viewController?.pop()

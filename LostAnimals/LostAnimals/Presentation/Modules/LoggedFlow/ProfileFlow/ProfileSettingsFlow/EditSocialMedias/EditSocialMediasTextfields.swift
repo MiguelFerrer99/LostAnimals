@@ -6,10 +6,8 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
-
-extension EditSocialMediasViewController: CustomTextFieldDelegate {
-    // MARK: - Functions
+// MARK: - Functions
+extension EditSocialMediasViewController {
     func configureTextFields() {
         phoneNumberTextfield.delegate = self
         phoneNumberTextfield.textField.keyboardType = .numberPad
@@ -47,8 +45,10 @@ extension EditSocialMediasViewController: CustomTextFieldDelegate {
         saveChangesButton.alpha = canMoveToNextStep ? 1 : 0.5
         saveChangesButton.isEnabled = canMoveToNextStep
     }
-    
-    // MARK: - CustomTextFieldDelegate
+}
+
+// MARK: - CustomTextFieldDelegate
+extension EditSocialMediasViewController: CustomTextFieldDelegate {
     func textFieldShouldReturn(_ customTextField: CustomTextField) -> Bool {
         switch customTextField.textField {
         case phoneNumberTextfield.textField:

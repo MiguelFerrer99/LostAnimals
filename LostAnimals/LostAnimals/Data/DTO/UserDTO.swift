@@ -6,9 +6,7 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
-import UIKit
-
+// MARK: - Aditional structs
 struct SocialMedias: Codable {
     let phone_prefix: String
     let phone_number: String
@@ -18,6 +16,7 @@ struct SocialMedias: Codable {
 }
 
 struct UserDTO: Codable {
+    // MARK: - Properties
     let id: String
     let email: String
     let animal_shelter: Bool
@@ -31,6 +30,7 @@ struct UserDTO: Codable {
     let banned: Bool
     let blocked_users: [String]?
     
+    // MARK: - Functions
     func map(completion: @escaping ((User?) -> ())) {
         user_image.getURLImage { userURLImage in
             header_image.getURLImage { headerURLImage in

@@ -9,38 +9,36 @@
 import UIKit
 
 @IBDesignable class CustomImageView: UIImageView {
-    // MARK: - Inspectables
+    // MARK: - IBInspectables
     @IBInspectable var color: UIColor = .black {
         willSet {
             setColor(newValue)
         }
     }
-    
     @IBInspectable var fullRound: Bool = false {
         willSet {
             round(newValue)
         }
     }
-    
     @IBInspectable var cornerRadius: CGFloat = 0 {
         willSet {
             setCornerRadius(of: newValue)
         }
     }
-    
     @IBInspectable var borderWidth: CGFloat = 0 {
         willSet {
             setBorderWidth(newValue)
         }
     }
-    
     @IBInspectable var borderColor: UIColor = .clear {
         willSet {
             setBorderColor(newValue)
         }
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension CustomImageView {
     func setColor(_ color: UIColor) {
         let image = self.image?.withRenderingMode(.alwaysTemplate)
         self.image = image

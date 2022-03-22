@@ -6,12 +6,10 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
-import UIKit
 import MapKit
 
-extension EditPostViewController: ActionAfterSelectPhotoDelegate, AnimalTypesDelegate, WhereCanWeFindYouDelegate {
-    // MARK: - ActionAfterSelectPhotoDelegate
+// MARK: - ActionAfterSelectPhotoDelegate
+extension EditPostViewController: ActionAfterSelectPhotoDelegate {
     func goTo(action: ActionAfterSelectPhoto) {
         switch action {
         case .removePhoto: removePhoto()
@@ -19,13 +17,17 @@ extension EditPostViewController: ActionAfterSelectPhotoDelegate, AnimalTypesDel
         case .takePhoto:   takePhoto()
         }
     }
-    
-    // MARK: - AnimalTypesDelegate
+}
+
+// MARK: - AnimalTypesDelegate
+extension EditPostViewController: AnimalTypesDelegate {
     func getAnimalType(animalType: AnimalType) {
         fillAnimal(animalType: animalType)
     }
-    
-    // MARK: - WhereCanWeFindYouDelegate
+}
+
+// MARK: - WhereCanWeFindYouDelegate
+extension EditPostViewController: WhereCanWeFindYouDelegate {
     func getWhereCanWeFindYou(whereCanWeFindYouSearchResult: MKLocalSearchCompletion) {
         fillWhereCanWeFindYou(searchResult: whereCanWeFindYouSearchResult)
     }

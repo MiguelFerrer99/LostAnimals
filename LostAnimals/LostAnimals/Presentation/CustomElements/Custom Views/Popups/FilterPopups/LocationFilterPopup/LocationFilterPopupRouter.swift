@@ -16,8 +16,10 @@ final class LocationFilterPopupRouter {
     required init(viewController: LocationFilterPopupViewController?) {
         self.viewController = viewController
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension LocationFilterPopupRouter {
     func dismissLocationFilterPopup() {
         DispatchQueue.main.async {
             self.viewController?.dismissCurrentView(completion: nil)

@@ -6,9 +6,8 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
-
 struct Location: Codable {
+    // MARK: - Properties
     let address: String
     let coordinates: Coordinates?
 }

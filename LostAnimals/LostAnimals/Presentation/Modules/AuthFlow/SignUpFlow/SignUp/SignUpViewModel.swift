@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: - Enums
 enum SignUpStep: Int {
     case personalDetails
     case accountDetails
@@ -27,19 +28,17 @@ enum WhereDoYouLiveComesFrom: String {
     case editSocialMediaDetails
 }
 
+// MARK: - Typealias
 typealias PersonalDetails = (animalShelter: Bool, firstname: String, lastname: String, birthdate: String?, location: Location)
 typealias AccountDetails = (email: String, password: String)
 typealias UserDetails = (personalDetails: PersonalDetails, accountDetails: AccountDetails, socialMedias: [SocialMediaType: String])
 
 final class SignUpViewModel {
-    
     // MARK: - Properties
     private let router: SignUpRouter
     let numberOfSteps: Int = 3
     var currentStep: SignUpStep = .personalDetails
     var currentStepLabel: SignUpStepLabel = .personalDetails
-    
-    // MARK: - AuthenticationService properties
     var user = Constants.emptyUser
     var userPassword = ""
     

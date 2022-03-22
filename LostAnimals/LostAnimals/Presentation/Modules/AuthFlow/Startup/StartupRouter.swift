@@ -16,8 +16,10 @@ final class StartupRouter {
     required init(viewController: StartupViewController?) {
         self.viewController = viewController
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension StartupRouter {
     func goToLogin() {
         let viewController = Container.shared.loginBuilder().build()
         DispatchQueue.main.async {

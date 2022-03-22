@@ -8,16 +8,15 @@
 
 import UIKit
 
-final class BlockedUsersBuilder {
-    
+final class BlockedUsersBuilder {}
+
+// MARK: - Functions
+extension BlockedUsersBuilder {
     func build() -> BlockedUsersViewController {
         let viewController = UIViewController.instantiate(viewController: BlockedUsersViewController.self)
-        
         let router = BlockedUsersRouter(viewController: viewController)
         let viewModel = BlockedUsersViewModel(router: router)
-        
         viewController.viewModel = viewModel
-        
         return viewController
     }
 }

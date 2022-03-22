@@ -16,8 +16,10 @@ final class ProfilePostsRouter {
     required init(viewController: ProfilePostsViewController?) {
         self.viewController = viewController
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension ProfilePostsRouter {
     func goToFilterPopup(filterType: FilterType, loadData: Bool) {
         let viewController: ViewController!
         

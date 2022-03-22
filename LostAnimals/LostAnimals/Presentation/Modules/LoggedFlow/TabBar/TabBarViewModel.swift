@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 final class TabBarViewModel {
-    
     // MARK: - Properties
     private let router: TabBarRouter
     
@@ -18,7 +17,6 @@ final class TabBarViewModel {
     required init(router: TabBarRouter) {
         self.router = router
     }
-    
 }
 
 // MARK: - Life cycle

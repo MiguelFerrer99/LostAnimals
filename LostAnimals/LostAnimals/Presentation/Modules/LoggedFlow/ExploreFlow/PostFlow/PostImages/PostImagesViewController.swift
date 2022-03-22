@@ -9,7 +9,6 @@
 import UIKit
 
 final class PostImagesViewController: ViewController {
-    
     // MARK: - IBOutlets
     @IBOutlet weak var postImagesCollectionView: UICollectionView!
     
@@ -29,14 +28,16 @@ final class PostImagesViewController: ViewController {
         
         viewModel.viewDidAppear()
     }
-    
-    // MARK: - Functions
-    private func setupUI() {
+}
+
+// MARK: - Functions
+extension PostImagesViewController {
+    func setupUI() {
         configureCollectionView(postImagesCollectionView)
         scrollToInitItem()
     }
     
-    private func scrollToInitItem() {
+    func scrollToInitItem() {
         postImagesCollectionView.performBatchUpdates(nil) { result in
             if result {
                 let indexPath = IndexPath(item: self.viewModel.indexPostImage, section: 0)
@@ -44,8 +45,10 @@ final class PostImagesViewController: ViewController {
             }
         }
     }
-    
-    // MARK: - IBActions
+}
+
+// MARK: - IBActions
+private extension PostImagesViewController {
     @IBAction func dismissButtonPressed(_ sender: UIButton) {
         viewModel.didPressDismissButton()
     }

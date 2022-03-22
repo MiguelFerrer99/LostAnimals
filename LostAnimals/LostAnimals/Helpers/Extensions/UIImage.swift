@@ -8,6 +8,7 @@
 
 import UIKit
 
+// MARK: - Functions
 extension UIImage {
     func convertedToGrayScale() -> UIImage? {
         let context = CIContext(options: nil)

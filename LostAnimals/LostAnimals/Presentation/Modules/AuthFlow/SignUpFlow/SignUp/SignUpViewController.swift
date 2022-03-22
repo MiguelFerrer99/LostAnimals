@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 
+// MARK: - Protocols
 protocol SignUpStepsDelegate: AnyObject {
     func moveToNextSignUpStep()
     func moveToPreviousSignUpStep()
@@ -22,11 +23,10 @@ protocol SignUpStepsDelegate: AnyObject {
 }
 
 final class SignUpViewController: ViewController {
-    
     // MARK: - IBOutlets
-    @IBOutlet weak var progressBarLabel: UILabel!
-    @IBOutlet weak var progressView: UIProgressView!
-    @IBOutlet weak var signupContentsView: CustomView!
+    @IBOutlet private weak var progressBarLabel: UILabel!
+    @IBOutlet private weak var progressView: UIProgressView!
+    @IBOutlet private weak var signupContentsView: CustomView!
     @IBOutlet weak var stepsCollectionView: UICollectionView!
     
     // MARK: - Properties
@@ -50,17 +50,19 @@ final class SignUpViewController: ViewController {
     deinit {
         removeObserver()
     }
-    
-    // MARK: - Functions
-    private func subscribeToNotifications() {
+}
+
+// MARK: - Private functions
+private extension SignUpViewController {
+    func subscribeToNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(fillWhereDoYouLivePersonalDetails), name: .SendWhereDoYouLiveToSignUp, object: nil)
     }
     
-    private func removeObserver() {
+    func removeObserver() {
         NotificationCenter.default.removeObserver(self)
     }
     
-    private func setupUI() {
+    func setupUI() {
         configureCollectionView(stepsCollectionView)
         progressView.transform = progressView.transform.scaledBy(x: 1, y: 2)
         progressView.trackTintColor = .customBlack.withAlphaComponent(0.2)
@@ -68,12 +70,12 @@ final class SignUpViewController: ViewController {
         updateCurrentProgressBarView()
     }
     
-    private func updateCurrenCollectionViewItem(direction: MoveDirection) {
+    func updateCurrenCollectionViewItem(direction: MoveDirection) {
         let indexPath = IndexPath(item: viewModel.currentStep.rawValue, section: 0)
         stepsCollectionView.scrollToItem(at: indexPath, at: direction == .back ? .left : .right, animated: true)
     }
     
-    private func updateCurrentProgressBarView() {
+    func updateCurrentProgressBarView() {
         let percentageInFloat = (1.0 / Float(self.viewModel.numberOfSteps)) * (Float(self.viewModel.currentStep.rawValue) + 1.0)
         progressView.setProgress(percentageInFloat, animated: true)
         UIView.transition(with: progressBarLabel, duration: 0.25, options: .transitionCrossDissolve, animations: { [weak self] in
@@ -82,14 +84,17 @@ final class SignUpViewController: ViewController {
         })
     }
     
-    @objc private func fillWhereDoYouLivePersonalDetails(_ notification: NSNotification) {
+    @objc func fillWhereDoYouLivePersonalDetails(_ notification: NSNotification) {
         if let whereDoYouLive = notification.userInfo?["whereDoYouLive"] as? String {
             let indexPath = IndexPath(item: 0, section: 0)
             guard let personalDetailsCollectionViewCell = stepsCollectionView.cellForItem(at: indexPath) as? PersonalDetailsCollectionViewCell else { return }
             personalDetailsCollectionViewCell.fillWhereDoYouLive(whereDoYouLive: whereDoYouLive)
         }
     }
-    
+}
+
+// MARK: - Functions
+extension SignUpViewController {
     func fillWhereCanWeFindYouPersonalDetails(whereCanWeFindYouSearchResult: MKLocalSearchCompletion) {
         let indexPath = IndexPath(item: 0, section: 0)
         guard let personalDetailsCollectionViewCell = stepsCollectionView.cellForItem(at: indexPath) as? PersonalDetailsCollectionViewCell else { return }

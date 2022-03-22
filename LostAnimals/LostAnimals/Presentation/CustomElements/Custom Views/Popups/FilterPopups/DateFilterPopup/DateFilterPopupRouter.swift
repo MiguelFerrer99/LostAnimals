@@ -16,8 +16,10 @@ final class DateFilterPopupRouter {
     required init(viewController: DateFilterPopupViewController?) {
         self.viewController = viewController
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension DateFilterPopupRouter {
     func dismissDateFilterPopup() {
         DispatchQueue.main.async {
             self.viewController?.dismissCurrentView(completion: nil)

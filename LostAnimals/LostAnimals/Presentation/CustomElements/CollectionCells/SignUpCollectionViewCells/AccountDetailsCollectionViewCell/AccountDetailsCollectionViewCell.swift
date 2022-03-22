@@ -10,12 +10,11 @@ import UIKit
 
 class AccountDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell {
     typealias T = AccountDetailsCollectionViewCellViewModel
-    
     // MARK: - IBOutlets
+    @IBOutlet private weak var backStepButton: CustomButton!
     @IBOutlet weak var mailTextfield: CustomTextField!
     @IBOutlet weak var passwordTextfield: CustomTextField!
     @IBOutlet weak var repeatPasswordTextfield: CustomTextField!
-    @IBOutlet weak var backStepButton: CustomButton!
     @IBOutlet weak var nextStepButton: CustomButton!
     
     // MARK: - Properties
@@ -28,13 +27,17 @@ class AccountDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
-    // MARK: - Functions
-    private func fillUI() {
+}
+
+// MARK: - Private functions
+private extension AccountDetailsCollectionViewCell {
+    func fillUI() {
         configureTextFields()
     }
-    
-    // MARK: - IBActions
+}
+
+// MARK: - IBActions
+private extension AccountDetailsCollectionViewCell {
     @IBAction func backStepButtonPressed(_ sender: CustomButton) {
         signUpStepsDelegate?.moveToPreviousSignUpStep()
     }

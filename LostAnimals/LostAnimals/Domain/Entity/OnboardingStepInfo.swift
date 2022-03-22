@@ -6,10 +6,10 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 struct OnboardingStepInfo {
+    // MARK: - Properties
     let title: String
     let description: String
     let image: UIImage

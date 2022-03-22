@@ -8,7 +8,8 @@
 
 import UIKit
 
-extension WhereCanWeFindYouViewController: UISearchBarDelegate {
+// MARK: - Functions
+extension WhereCanWeFindYouViewController {
     func configureSearchController(_ searchController: UISearchController) {
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.delegate = self
@@ -20,7 +21,10 @@ extension WhereCanWeFindYouViewController: UISearchBarDelegate {
         self.navigationItem.searchController = searchController
         self.navigationItem.hidesSearchBarWhenScrolling = false
     }
-    
+}
+
+// MARK: - UISearchBarDelegate
+extension WhereCanWeFindYouViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchCompleter.queryFragment = searchText
     }

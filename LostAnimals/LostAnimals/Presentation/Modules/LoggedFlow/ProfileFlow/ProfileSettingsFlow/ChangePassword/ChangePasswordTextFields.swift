@@ -6,10 +6,8 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
-
-extension ChangePasswordViewController: CustomTextFieldDelegate {
-    // MARK: - Functions
+// MARK: - Functions
+extension ChangePasswordViewController {
     func configureTextFields() {
         passwordTextfield.delegate = self
         passwordTextfield.textField.textContentType = .oneTimeCode
@@ -23,8 +21,11 @@ extension ChangePasswordViewController: CustomTextFieldDelegate {
         confirmPasswordTextfield.addErrorsToCheck([TextFieldErrorEmptyValue(),
                                                    TextFieldErrorPasswordFormat()])
     }
-    
-    private func checkPasswordsAreEqual() -> Bool {
+}
+
+// MARK: - Private functions
+private extension ChangePasswordViewController {
+    func checkPasswordsAreEqual() -> Bool {
         if passwordTextfield.textField.text == confirmPasswordTextfield.textField.text {
             return true
         } else if viewModel.editedTextFields.contains(passwordTextfield) && viewModel.editedTextFields.contains(confirmPasswordTextfield) {
@@ -35,15 +36,17 @@ extension ChangePasswordViewController: CustomTextFieldDelegate {
         return true
     }
     
-    private func checkAllContentsAreOk() {
+    func checkAllContentsAreOk() {
         let haveErrors = viewModel.textFieldsHaveErrors()
         let passwordsAreEqual = checkPasswordsAreEqual()
         let canMoveToNextStep = !haveErrors && passwordsAreEqual && viewModel.editedTextFields.count == viewModel.numberOfTextFields
         saveChangesButton.alpha = canMoveToNextStep ? 1 : 0.5
         saveChangesButton.isEnabled = canMoveToNextStep
     }
-    
-    // MARK: - CustomTextFieldDelegate
+}
+
+// MARK: - CustomTextFieldDelegate
+extension ChangePasswordViewController: CustomTextFieldDelegate {
     func textFieldShouldReturn(_ customTextField: CustomTextField) -> Bool {
         switch customTextField.textField {
         case passwordTextfield.textField:

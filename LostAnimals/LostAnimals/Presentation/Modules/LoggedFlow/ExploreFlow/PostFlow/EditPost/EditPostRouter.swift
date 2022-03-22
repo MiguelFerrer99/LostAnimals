@@ -16,8 +16,10 @@ final class EditPostRouter {
     required init(viewController: EditPostViewController?) {
         self.viewController = viewController
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension EditPostRouter {
     func goBack() {
         self.viewController?.pop()
     }

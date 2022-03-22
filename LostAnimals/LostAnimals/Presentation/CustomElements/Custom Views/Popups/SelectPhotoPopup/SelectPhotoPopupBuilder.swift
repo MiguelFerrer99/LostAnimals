@@ -8,17 +8,15 @@
 
 import UIKit
 
-final class SelectPhotoPopupBuilder {
-    
+final class SelectPhotoPopupBuilder {}
+
+// MARK: - Functions
+extension SelectPhotoPopupBuilder {
     func build(showRemoveOption: Bool, comesFrom: SelectPhotoPopupComesFrom) -> SelectPhotoPopupViewController {
-        
         let viewController = UIViewController.instantiate(viewController: SelectPhotoPopupViewController.self)
-        
         let router = SelectPhotoPopupRouter(viewController: viewController)
         let viewModel = SelectPhotoPopupViewModel(router: router, showRemoveOption: showRemoveOption, comesFrom: comesFrom)
-        
         viewController.viewModel = viewModel
-        
         return viewController
     }
 }

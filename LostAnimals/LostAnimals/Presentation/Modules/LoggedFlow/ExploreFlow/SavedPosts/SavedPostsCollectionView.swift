@@ -8,7 +8,8 @@
 
 import UIKit
 
-extension SavedPostsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+// MARK: - Functions
+extension SavedPostsViewController {
     func configureCollectionView(_ collectionView: UICollectionView) {
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -16,7 +17,20 @@ extension SavedPostsViewController: UICollectionViewDelegate, UICollectionViewDa
         collectionView.register(EmptyCollectionViewCell.self)
         collectionView.register(PostCollectionViewCell.self)
     }
-    
+}
+
+// MARK: - UICollectionViewDelegate
+extension SavedPostsViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if (collectionView.cellForItem(at: indexPath) as? PostCollectionViewCell) != nil {
+            let post = HardcodedData.savedPosts[indexPath.row]
+            viewModel.didPressPost(post: post)
+        }
+    }
+}
+
+// MARK: - UICollectionViewDataSource
+extension SavedPostsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
@@ -50,21 +64,13 @@ extension SavedPostsViewController: UICollectionViewDelegate, UICollectionViewDa
             return cell
         }
     }
-    
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+extension SavedPostsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let statusBarHeight = view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
-        let navBarHeight = self.navigationController?.navigationBar.frame.height ?? 0
-        let headerHeight = CGFloat(integerLiteral: 50)
-        let tabBarHeight = self.tabBarController?.tabBar.frame.height ?? 0
-        let collectionViewRealHeight = collectionView.frame.height - statusBarHeight - navBarHeight - headerHeight - tabBarHeight
+        let collectionViewRealHeight = collectionView.frame.height - statusBarHeight - navBarHeight - 50.0 - tabBarHeight
         if HardcodedData.savedPosts.isEmpty { return CGSize(width: collectionView.frame.width, height: collectionViewRealHeight) }
         else { return CGSize(width: collectionView.frame.width/2, height: collectionView.frame.height/3) }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if (collectionView.cellForItem(at: indexPath) as? PostCollectionViewCell) != nil {
-            let post = HardcodedData.savedPosts[indexPath.row]
-            viewModel.didPressPost(post: post)
-        }
     }
 }

@@ -9,46 +9,35 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
     // MARK: - Properties
     var useLargeTitle: Bool {
         return false
     }
-    
     var viewDidAppear = false
-    
     var hideNavigationBar: Bool {
         return false
     }
-    
     var navigationBarTitleColor: UIColor {
         return .customBlack
     }
-    
     var navigationBarTintColor: UIColor {
         return .customGreen
     }
-    
     var navigationTintColor: UIColor {
         return .customBlack
     }
-    
     var navBarTitle: String {
         return ""
     }
-    
     var navBarRightButtons: [UIBarButtonItem] {
         return []
     }
-    
     var navBarLeftButtons: [UIBarButtonItem] {
         return []
     }
-    
     var hideBackButton: Bool {
         return false
     }
-    
     var dismissGestureEnabled: Bool = true {
         willSet {
             self.isModalInPresentation = !newValue
@@ -96,15 +85,16 @@ class ViewController: UIViewController {
     deinit {
         unsubscribeToNotifications()
     }
-    
-    // MARK: - Functions
-    @objc func didBecomeActive() {
-        navigationController?.setNavigationBarHidden(hideNavigationBar, animated: true)
-        navigationItem.largeTitleDisplayMode = useLargeTitle ? .always : .never
+}
+
+// MARK: - Functions
+extension ViewController {
+    func showTabBar() {
+        self.tabBarController?.tabBar.isHidden = false
+        var frame = self.tabBarController?.tabBar.frame
+        frame!.origin.y = self.view.frame.size.height - (frame?.size.height)!
+        self.tabBarController?.tabBar.frame = frame!
     }
-    
-    @objc func keyboardWillShow(notification: NSNotification) { }
-    @objc func keyboardWillHide(notification: NSNotification) { }
     
     func hideTabBar() {
         var frame = self.tabBarController?.tabBar.frame
@@ -114,6 +104,17 @@ class ViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = true
     }
     
+    @objc func didBecomeActive() {
+        navigationController?.setNavigationBarHidden(hideNavigationBar, animated: true)
+        navigationItem.largeTitleDisplayMode = useLargeTitle ? .always : .never
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {}
+    @objc func keyboardWillHide(notification: NSNotification) {}
+}
+
+// MARK: - Private functions
+private extension ViewController {
     private func subscribeToNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(didBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -123,21 +124,17 @@ class ViewController: UIViewController {
     private func unsubscribeToNotifications() {
         NotificationCenter.default.removeObserver(self)
     }
-    
-    func showTabBar() {
-        self.tabBarController?.tabBar.isHidden = false
-        var frame = self.tabBarController?.tabBar.frame
-        frame!.origin.y = self.view.frame.size.height - (frame?.size.height)!
-        self.tabBarController?.tabBar.frame = frame!
-    }
 }
 
+// MARK: - UIViewController
 extension UIViewController {
+    // MARK: - Properties
     var topbarHeight: CGFloat {
         return (view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0.0) +
         (self.navigationController?.navigationBar.frame.height ?? 0.0)
     }
     
+    // MARK: - Functions
     private class func getStoryboardName() -> String {
         return "\(self)"
     }
@@ -164,5 +161,36 @@ extension UIViewController {
     func embeddedInNavigation() -> UINavigationController {
         let navigationVC = UINavigationController(rootViewController: self)
         return navigationVC
+    }
+    
+    /// Present a UIViewController.
+    /// - Parameter viewController: The ViewController to present.
+    func present(viewController: UIViewController, completion: (() -> Void)? = nil) {
+        DispatchQueue.main.async {
+            self.present(viewController, animated: true, completion: completion)
+        }
+    }
+    
+    func presentWithNavBar(viewController: UIViewController, completion: (() -> Void)?) {
+        let navigation = UINavigationController(rootViewController: viewController)
+        navigation.modalPresentationStyle = .overFullScreen
+        present(navigation, animated: true, completion: completion)
+    }
+    
+    /// Push a UIViewController if it has navigation.
+    /// - Parameter viewController: The ViewController to push.
+    func push(viewController: UIViewController) {
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    func pop() {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    /// Dismiss the current presented view.
+    func dismissCurrentView(completion: (() -> Void)? = nil) {
+        dismiss(animated: true) {
+            if let completion = completion { completion() }
+        }
     }
 }

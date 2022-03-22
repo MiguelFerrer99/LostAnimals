@@ -31,9 +31,11 @@ final class ProfilePostsViewController: ViewController {
         
         viewModel.viewDidAppear()
     }
-    
-    // MARK: - Functions
-    private func setupUI() {
+}
+
+// MARK: - Private functions
+private extension ProfilePostsViewController {
+    func setupUI() {
         configureCollectionView(profilePostsCollectionView)
     }
 }

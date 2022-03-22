@@ -9,8 +9,8 @@
 import Foundation
 import MapKit
 
-extension SignUpViewController: SignUpStepsDelegate, WhereDoYouLiveCountriesDelegate, WhereCanWeFindYouDelegate {
-    // MARK: - SignUpStepsDelegate
+// MARK: - SignUpStepsDelegate
+extension SignUpViewController: SignUpStepsDelegate {
     func moveToNextSignUpStep() {
         moveToNextStep()
     }
@@ -56,13 +56,17 @@ extension SignUpViewController: SignUpStepsDelegate, WhereDoYouLiveCountriesDele
         viewModel.user.socialMedias[.instagram] = instagram
         viewModel.user.socialMedias[.twitter] = twitter
     }
-    
-    // MARK: - WhereDoYouLiveCountriesDelegate
+}
+
+// MARK: - WhereDoYouLiveCountriesDelegate
+extension SignUpViewController: WhereDoYouLiveCountriesDelegate {
     func getDialCode(dialCode: String) {
         fillPhonePrefixOfSocialMediaDetails(dialCode: dialCode)
     }
-    
-    // MARK: - WhereCanWeFindYouDelegate
+}
+
+// MARK: - WhereCanWeFindYouDelegate
+extension SignUpViewController: WhereCanWeFindYouDelegate {
     func getWhereCanWeFindYou(whereCanWeFindYouSearchResult: MKLocalSearchCompletion) {
         fillWhereCanWeFindYouPersonalDetails(whereCanWeFindYouSearchResult: whereCanWeFindYouSearchResult)
     }

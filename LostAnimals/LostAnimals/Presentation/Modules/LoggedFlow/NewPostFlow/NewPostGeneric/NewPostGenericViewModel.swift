@@ -6,9 +6,9 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
+// MARK: - Enums
 enum PostType: String {
     case lost = "Lost"
     case found = "Found"
@@ -16,7 +16,6 @@ enum PostType: String {
 }
 
 final class NewPostGenericViewModel {
-    
     // MARK: - Properties
     private let router: NewPostGenericRouter
     var numberOfTextFields = 0

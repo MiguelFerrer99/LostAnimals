@@ -8,12 +8,12 @@
 
 import UIKit
 
+// MARK: - Protocols
 protocol WhereDoYouLiveCountriesDelegate: AnyObject {
     func getDialCode(dialCode: String)
 }
 
 final class WhereDoYouLiveCountriesViewController: ViewController {
-    
     // MARK: - IBOutlets
     @IBOutlet weak var countriesTableView: UITableView!
     
@@ -41,9 +41,11 @@ final class WhereDoYouLiveCountriesViewController: ViewController {
             self.searchController.searchBar.becomeFirstResponder()
         }
     }
-    
-    // MARK: - Functions
-    private func setupUI() {
+}
+
+// MARK: - Private functions
+private extension WhereDoYouLiveCountriesViewController {
+    func setupUI() {
         configureSearchController(searchController)
         viewModel.getCountriesFromCountriesJson {
             configureTableview(countriesTableView)

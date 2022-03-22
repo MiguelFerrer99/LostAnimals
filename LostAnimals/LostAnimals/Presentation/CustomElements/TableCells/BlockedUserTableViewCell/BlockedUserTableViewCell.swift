@@ -8,17 +8,17 @@
 
 import UIKit
 
+// MARK: - Protocols
 protocol UnblockUserDelegate: AnyObject {
     func unblockUser(userID: String)
 }
 
 class BlockedUserTableViewCell: UITableViewCell, ViewModelCell {
     typealias T = BlockedUserTableViewCellViewModel
-    
     // MARK: - IBOutlets
-    @IBOutlet weak var userImageView: UIImageView!
-    @IBOutlet weak var userNameLabel: UILabel!
-    @IBOutlet weak var unblockButton: CustomButton!
+    @IBOutlet private weak var userImageView: UIImageView!
+    @IBOutlet private weak var userNameLabel: UILabel!
+    @IBOutlet private weak var unblockButton: CustomButton!
     
     // MARK: - Properties
     var viewModel: BlockedUserTableViewCellViewModel!
@@ -28,13 +28,18 @@ class BlockedUserTableViewCell: UITableViewCell, ViewModelCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension BlockedUserTableViewCell {
     func display(summary: BlockedUserTableViewCellSummary) {
         userImageView.image = summary.user.userImage
         userNameLabel.text = "\(summary.user.firstname) \(summary.user.lastname)"
     }
-    
+}
+
+// MARK: - IBActions
+private extension BlockedUserTableViewCell {
     @IBAction func unblockUserButtonPressed(_ sender: CustomButton) {
         delegate?.unblockUser(userID: viewModel.userID)
     }

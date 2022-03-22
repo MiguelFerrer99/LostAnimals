@@ -10,22 +10,21 @@ import UIKit
 
 class SocialMediaDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell {
     typealias T = SocialMediaDetailsCollectionViewCellViewModel
-    
     // MARK: - IBOutlets
-    @IBOutlet weak var topPrefixPlaceholder: UILabel!
-    @IBOutlet weak var middlePrefixPlaceholder: UILabel!
+    @IBOutlet private weak var topPrefixPlaceholder: UILabel!
+    @IBOutlet private weak var middlePrefixPlaceholder: UILabel!
+    @IBOutlet private weak var phonePrefixButton: UIButton!
+    @IBOutlet private weak var haveWhatsAppRadioButton: UIButton!
+    @IBOutlet private weak var haveWhatsAppRadioButtonImageView: UIImageView!
+    @IBOutlet private weak var termsAndConditionsRadioButton: UIButton!
+    @IBOutlet private weak var termsAndConditionsRadioButtonImageView: UIImageView!
+    @IBOutlet private weak var termsAndConditionsButton: UIButton!
+    @IBOutlet private weak var backStepButton: CustomButton!
     @IBOutlet weak var phonePrefixLabel: UILabel!
     @IBOutlet weak var errorPhonePrefixLabel: UILabel!
-    @IBOutlet weak var phonePrefixButton: UIButton!
     @IBOutlet weak var phoneTextfield: CustomTextField!
-    @IBOutlet weak var haveWhatsAppRadioButton: UIButton!
-    @IBOutlet weak var haveWhatsAppRadioButtonImageView: UIImageView!
     @IBOutlet weak var instagramTextfield: CustomTextField!
     @IBOutlet weak var twitterTextfield: CustomTextField!
-    @IBOutlet weak var termsAndConditionsRadioButton: UIButton!
-    @IBOutlet weak var termsAndConditionsRadioButtonImageView: UIImageView!
-    @IBOutlet weak var termsAndConditionsButton: UIButton!
-    @IBOutlet weak var backStepButton: CustomButton!
     @IBOutlet weak var getStartedButton: CustomButton!
     
     // MARK: - Properties
@@ -38,38 +37,16 @@ class SocialMediaDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell 
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
-    // MARK: - Functions
-    private func fillUI() {
-        configureTextFields()
-        configureTermsAndConditionsButton()
-    }
-    
+}
+
+// MARK: - Functions
+extension SocialMediaDetailsCollectionViewCell {
     func fillPhonePrefix(dialCode: String) {
         topPrefixPlaceholder.isHidden = false
         middlePrefixPlaceholder.isHidden = true
         phonePrefixLabel.text = "+\(dialCode)"
         viewModel.phonePrefixSelected = true
         errorPhonePrefixLabel.isHidden = true
-        checkAllContentsAreOk()
-    }
-    
-    private func configureTermsAndConditionsButton() {
-        let attributes: [NSAttributedString.Key: Any] = [
-            .underlineStyle: NSUnderlineStyle.thick.rawValue
-        ]
-        let attributedString = NSAttributedString(string: "Terms and Conditions", attributes: attributes)
-        termsAndConditionsButton.setAttributedTitle(attributedString, for: .normal)
-    }
-    
-    private func toggleHaveWhatsAppButton() {
-        viewModel.haveWhatsAppSelected.toggle()
-        haveWhatsAppRadioButtonImageView.image = UIImage(systemName: viewModel.haveWhatsAppSelected ? "checkmark.circle.fill" : "circle")
-    }
-    
-    private func toggleTermsAndConditionsButton() {
-        viewModel.termsAndContitionsAccepted.toggle()
-        termsAndConditionsRadioButtonImageView.image = UIImage(systemName: viewModel.termsAndContitionsAccepted ? "checkmark.circle.fill" : "circle")
         checkAllContentsAreOk()
     }
     
@@ -84,8 +61,37 @@ class SocialMediaDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell 
         termsAndConditionsButton.isUserInteractionEnabled = getStartedButton.isEnabled
         backStepButton.isUserInteractionEnabled = getStartedButton.isEnabled
     }
+}
+
+// MARK: - Private functions
+private extension SocialMediaDetailsCollectionViewCell {
+    func fillUI() {
+        configureTextFields()
+        configureTermsAndConditionsButton()
+    }
     
-    // MARK: - IBActions
+    func configureTermsAndConditionsButton() {
+        let attributes: [NSAttributedString.Key: Any] = [
+            .underlineStyle: NSUnderlineStyle.thick.rawValue
+        ]
+        let attributedString = NSAttributedString(string: "Terms and Conditions", attributes: attributes)
+        termsAndConditionsButton.setAttributedTitle(attributedString, for: .normal)
+    }
+    
+    func toggleHaveWhatsAppButton() {
+        viewModel.haveWhatsAppSelected.toggle()
+        haveWhatsAppRadioButtonImageView.image = UIImage(systemName: viewModel.haveWhatsAppSelected ? "checkmark.circle.fill" : "circle")
+    }
+    
+    func toggleTermsAndConditionsButton() {
+        viewModel.termsAndContitionsAccepted.toggle()
+        termsAndConditionsRadioButtonImageView.image = UIImage(systemName: viewModel.termsAndContitionsAccepted ? "checkmark.circle.fill" : "circle")
+        checkAllContentsAreOk()
+    }
+}
+
+// MARK: - IBActions
+private extension SocialMediaDetailsCollectionViewCell {
     @IBAction func phonePrefixButtonPressed(_ sender: UIButton) {
         didPresseddPhonePrefix()
     }

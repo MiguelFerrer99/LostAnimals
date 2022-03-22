@@ -8,18 +8,15 @@
 
 import UIKit
 
-final class WhereDoYouLiveCountriesBuilder {
-    
+final class WhereDoYouLiveCountriesBuilder {}
+
+// MARK: - Functions
+extension WhereDoYouLiveCountriesBuilder {
     func build(comesFrom: WhereDoYouLiveComesFrom) -> WhereDoYouLiveCountriesViewController {
-        
         let viewController = UIViewController.instantiate(viewController: WhereDoYouLiveCountriesViewController.self)
-        
         let router = WhereDoYouLiveCountriesRouter(viewController: viewController)
-        
         let viewModel = WhereDoYouLiveCountriesViewModel(router: router, comesFrom: comesFrom)
-        
         viewController.viewModel = viewModel
-        
         return viewController
     }
 }

@@ -6,9 +6,8 @@
 //  Copyright © 2021 Rudo. All rights reserved.
 //
 
-import Foundation
-
 struct Country {
+    // MARK: - Properties
     let nameEN: String
     let nameES: String
     let dialCode: String

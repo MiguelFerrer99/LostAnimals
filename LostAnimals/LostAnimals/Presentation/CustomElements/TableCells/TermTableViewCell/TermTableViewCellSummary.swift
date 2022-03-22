@@ -6,9 +6,8 @@
 //  Copyright © 2021 Rudo. All rights reserved.
 //
 
-import Foundation
-
 struct TermTableViewCellSummary {
+    // MARK: - Properties
     let title: String
     let description: String
 }

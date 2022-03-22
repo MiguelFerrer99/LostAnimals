@@ -6,16 +6,28 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-extension AnimalTypesViewController: UITableViewDelegate, UITableViewDataSource {
+// MARK: - Functions
+extension AnimalTypesViewController {
     func configureTableView(_ tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(AnimalTypeTableViewCell.self)
     }
-    
+}
+
+// MARK: - UITableViewDelegate
+extension AnimalTypesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedAnimalType = Constants.animalTypes[indexPath.row]
+        viewModel.selectedAnimalType = selectedAnimalType
+        viewModel.didSelectedAnimalType()
+    }
+}
+
+// MARK: - UITableViewDataSource
+extension AnimalTypesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Constants.animalTypes.count
     }
@@ -30,11 +42,5 @@ extension AnimalTypesViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedAnimalType = Constants.animalTypes[indexPath.row]
-        viewModel.selectedAnimalType = selectedAnimalType
-        viewModel.didSelectedAnimalType()
     }
 }

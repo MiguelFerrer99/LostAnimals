@@ -8,17 +8,15 @@
 
 import UIKit
 
-final class DateFilterPopupBuilder {
-    
+final class DateFilterPopupBuilder {}
+
+// MARK: - Functions
+extension DateFilterPopupBuilder {
     func build(loadData: Bool) -> DateFilterPopupViewController {
-        
         let viewController = UIViewController.instantiate(viewController: DateFilterPopupViewController.self)
-        
         let router = DateFilterPopupRouter(viewController: viewController)
         let viewModel = DateFilterPopupViewModel(router: router, loadData: loadData)
-        
         viewController.viewModel = viewModel
-        
         return viewController
     }
 }

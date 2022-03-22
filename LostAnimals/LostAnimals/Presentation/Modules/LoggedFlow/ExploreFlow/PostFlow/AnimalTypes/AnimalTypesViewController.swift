@@ -8,12 +8,12 @@
 
 import UIKit
 
+// MARK: - Protocols
 protocol AnimalTypesDelegate: AnyObject {
     func getAnimalType(animalType: AnimalType)
 }
 
 final class AnimalTypesViewController: ViewController {
-    
     // MARK: - IBOutlets
     @IBOutlet weak var animalTypesTableView: UITableView!
     
@@ -37,9 +37,11 @@ final class AnimalTypesViewController: ViewController {
         
         viewModel.viewDidAppear()
     }
-    
-    // MARK: - Functions
-    private func setupUI() {
+}
+
+// MARK: - Private functions
+extension AnimalTypesViewController {
+    func setupUI() {
         configureTableView(animalTypesTableView)
     }
 }

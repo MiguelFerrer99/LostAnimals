@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: - Notifications
 extension Notification.Name {
     static let UpdateFiltersUI = Notification.Name("UpdateFiltersUI")
     

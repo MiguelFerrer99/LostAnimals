@@ -8,13 +8,17 @@
 
 import UIKit
 
-extension WhereDoYouLiveCountriesViewController: UITableViewDelegate, UITableViewDataSource {
+// MARK: - Functions
+extension WhereDoYouLiveCountriesViewController {
     func configureTableview(_ tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(CountryTableViewCell.self)
     }
-    
+}
+
+// MARK: - UITableViewDataSource
+extension WhereDoYouLiveCountriesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.filteredCountries.count
     }
@@ -24,7 +28,10 @@ extension WhereDoYouLiveCountriesViewController: UITableViewDelegate, UITableVie
         cell.display(summary: CountryTableViewCellSummary(countryName: viewModel.filteredCountries[indexPath.row].nameEN, dialCode: viewModel.filteredCountries[indexPath.row].dialCode, comesFrom: viewModel.comesFrom))
         return cell
     }
-    
+}
+
+// MARK: - UITableViewDelegate
+extension WhereDoYouLiveCountriesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let selectedIndexPath = tableView.indexPathForSelectedRow else { return }
         tableView.deselectRow(at: selectedIndexPath, animated: true)

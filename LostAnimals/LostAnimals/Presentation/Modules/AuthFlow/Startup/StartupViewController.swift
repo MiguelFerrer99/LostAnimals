@@ -9,9 +9,8 @@
 import UIKit
 
 final class StartupViewController: ViewController {
-    
     // MARK: - IBOutlets
-    @IBOutlet weak var welcomeView: CustomView!
+    @IBOutlet private weak var welcomeView: CustomView!
     
     // MARK: - Properties
     override var hideNavigationBar: Bool {
@@ -32,13 +31,17 @@ final class StartupViewController: ViewController {
         
         viewModel.viewDidAppear()
     }
-    
-    // MARK: - Functions
-    private func setupUI() {
+}
+
+// MARK: - Private functions
+private extension StartupViewController {
+    func setupUI() {
         welcomeView.layer.maskedCorners =  [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
-    
-    // MARK: - IBActions
+}
+
+// MARK: - IBActions
+private extension StartupViewController {
     @IBAction func continueAsGuestButtonPressed(_ sender: UIButton) {
         viewModel.didPressContinueAsGuestButton()
     }

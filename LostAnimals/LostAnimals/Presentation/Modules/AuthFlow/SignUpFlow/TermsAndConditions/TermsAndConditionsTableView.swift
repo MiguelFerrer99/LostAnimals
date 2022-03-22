@@ -8,13 +8,17 @@
 
 import UIKit
 
-extension TermsAndConditionsViewController: UITableViewDelegate, UITableViewDataSource {
+// MARK: - Functions
+extension TermsAndConditionsViewController {
     func configureTableView(_ tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(TermTableViewCell.self)
     }
-    
+}
+
+// MARK: - UITableViewDelegate & UITableViewDataSource
+extension TermsAndConditionsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Constants.termsAndConditions.count
     }

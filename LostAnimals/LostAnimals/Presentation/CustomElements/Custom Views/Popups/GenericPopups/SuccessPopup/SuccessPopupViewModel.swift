@@ -9,7 +9,6 @@
 import Foundation
 
 final class SuccessPopupViewModel {
-    
     // MARK: - Properties
     private let router: SuccessPopupRouter
     let successTitle: String

@@ -8,13 +8,20 @@
 
 import UIKit
 
-extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+// MARK: - Functions
+extension OnboardingViewController {
     func configureCollectionView(_ collectionView: UICollectionView) {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(OnboardingCollectionViewCell.self)
     }
-    
+}
+
+// MARK: - UICollectionViewDelegate
+extension OnboardingViewController: UICollectionViewDelegate {}
+
+// MARK: - UICollectionViewDataSource
+extension OnboardingViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return Constants.onboardingStepsInfo.count
     }
@@ -26,7 +33,10 @@ extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDa
         cell.display(summary: summary)
         return cell
     }
-    
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+extension OnboardingViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }

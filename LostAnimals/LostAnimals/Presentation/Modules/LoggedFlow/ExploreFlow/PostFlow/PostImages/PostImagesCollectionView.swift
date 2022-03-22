@@ -6,16 +6,22 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-extension PostImagesViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+// MARK: - Functions
+extension PostImagesViewController {
     func configureCollectionView(_ collectionView: UICollectionView) {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(PostImageCollectionViewCell.self)
     }
-    
+}
+
+// MARK: - UICollectionViewDelegate
+extension PostImagesViewController: UICollectionViewDelegate {}
+
+// MARK: - UICollectionViewDataSource
+extension PostImagesViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.postImages.count
     }
@@ -27,7 +33,10 @@ extension PostImagesViewController: UICollectionViewDelegate, UICollectionViewDa
         cell.display(summary: summary)
         return cell
     }
-    
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+extension PostImagesViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }

@@ -16,8 +16,10 @@ final class EditSocialMediasRouter {
     required init(viewController: EditSocialMediasViewController?) {
         self.viewController = viewController
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension EditSocialMediasRouter {
     func goBack() {
         DispatchQueue.main.async {
             self.viewController?.pop()

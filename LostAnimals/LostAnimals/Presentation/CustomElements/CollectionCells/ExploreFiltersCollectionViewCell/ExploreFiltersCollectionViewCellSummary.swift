@@ -6,9 +6,8 @@
 //  Copyright © 2021 Rudo. All rights reserved.
 //
 
-import Foundation
-
 struct ExploreFiltersCollectionViewCellSummary {
+    // MARK: - Properties
     let filterTitle: String
     let filterType: FilterType
     let index: Int

@@ -9,12 +9,12 @@
 import UIKit
 import MapKit
 
+// MARK: - Protocols
 protocol WhereCanWeFindYouDelegate: AnyObject {
     func getWhereCanWeFindYou(whereCanWeFindYouSearchResult: MKLocalSearchCompletion)
 }
 
 final class WhereCanWeFindYouViewController: ViewController {
-    
     // MARK: - IBOutlets
     @IBOutlet weak var addressTableView: UITableView!
     
@@ -23,8 +23,8 @@ final class WhereCanWeFindYouViewController: ViewController {
         return "Select your address"
     }
     private var searchController = UISearchController(searchResultsController: nil)
-    var searchCompleter = MKLocalSearchCompleter()
     weak var delegate: WhereCanWeFindYouDelegate?
+    var searchCompleter = MKLocalSearchCompleter()
     var viewModel: WhereCanWeFindYouViewModel!
     
     // MARK: - Life cycle
@@ -43,9 +43,11 @@ final class WhereCanWeFindYouViewController: ViewController {
             self.searchController.searchBar.becomeFirstResponder()
         }
     }
-    
-    // MARK: - Functions
-    private func setupUI() {
+}
+
+// MARK: - Functions
+private extension WhereCanWeFindYouViewController {
+    func setupUI() {
         configureMapKit()
         configureSearchController(searchController)
         configureTableView(addressTableView)

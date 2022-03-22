@@ -16,8 +16,10 @@ final class SignUpRouter {
     required init(viewController: SignUpViewController?) {
         self.viewController = viewController
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension SignUpRouter {
     func goToWhereDoYouLiveCountries(comesFrom: WhereDoYouLiveComesFrom) {
         let viewController = Container.shared.whereDoYouLiveCountriesBuilder().build(comesFrom: comesFrom)
         viewController.delegate = self.viewController

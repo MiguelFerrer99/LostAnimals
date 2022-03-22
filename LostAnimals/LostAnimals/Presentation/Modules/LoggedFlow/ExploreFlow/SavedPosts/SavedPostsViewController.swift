@@ -9,7 +9,6 @@
 import UIKit
 
 final class SavedPostsViewController: ViewController {
-    
     // MARK: - IBOutlets
     @IBOutlet weak var savedPostsCollectionView: UICollectionView!
     
@@ -33,9 +32,11 @@ final class SavedPostsViewController: ViewController {
         
         viewModel.viewDidAppear()
     }
-    
-    // MARK: - Functions
-    private func setupUI() {
+}
+
+// MARK: - Functions
+extension SavedPostsViewController {
+    func setupUI() {
         configureCollectionView(savedPostsCollectionView)
         configureRefreshControl(refreshControl)
     }

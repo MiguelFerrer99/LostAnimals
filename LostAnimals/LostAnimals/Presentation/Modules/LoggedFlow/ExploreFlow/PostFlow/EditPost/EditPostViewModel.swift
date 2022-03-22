@@ -6,11 +6,9 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 final class EditPostViewModel {
-    
     // MARK: - Properties
     private let router: EditPostRouter
     var numberOfTextFields = 0

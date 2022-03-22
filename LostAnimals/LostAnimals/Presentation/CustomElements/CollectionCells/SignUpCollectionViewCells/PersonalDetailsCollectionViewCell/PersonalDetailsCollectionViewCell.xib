@@ -98,11 +98,12 @@
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Firstname"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="whiteTheme" value="YES"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="datePickerEnabled" value="NO"/>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="birthdatePickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isOptional" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="animalPickerEnabled" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="dateAndTimePickerEnabled" value="NO"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ASv-7o-1p3" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
@@ -118,11 +119,12 @@
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Lastname"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="whiteTheme" value="YES"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="datePickerEnabled" value="NO"/>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="birthdatePickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isOptional" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="animalPickerEnabled" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="dateAndTimePickerEnabled" value="NO"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xka-Tg-2gE" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
@@ -138,11 +140,12 @@
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Birthdate"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="whiteTheme" value="YES"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="datePickerEnabled" value="YES"/>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="birthdatePickerEnabled" value="YES"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isOptional" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="animalPickerEnabled" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="dateAndTimePickerEnabled" value="NO"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qPy-Pp-Rnd" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
@@ -157,12 +160,13 @@
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="hideContent" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="whiteTheme" value="YES"/>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Where do you live?"/>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="birthdatePickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="YES"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="datePickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isOptional" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="animalPickerEnabled" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="dateAndTimePickerEnabled" value="NO"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                         </subviews>

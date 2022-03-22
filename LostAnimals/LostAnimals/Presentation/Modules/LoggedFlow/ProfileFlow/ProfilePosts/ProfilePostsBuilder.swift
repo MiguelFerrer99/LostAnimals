@@ -8,16 +8,15 @@
 
 import UIKit
 
-final class ProfilePostsBuilder {
-    
+final class ProfilePostsBuilder {}
+
+// MARK: - Functions
+extension ProfilePostsBuilder {
     func build(user: User) -> ProfilePostsViewController {
         let viewController = UIViewController.instantiate(viewController: ProfilePostsViewController.self)
-        
         let router = ProfilePostsRouter(viewController: viewController)
         let viewModel = ProfilePostsViewModel(router: router, user: user)
-        
         viewController.viewModel = viewModel
-        
         return viewController
     }
 }

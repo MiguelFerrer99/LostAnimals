@@ -6,10 +6,10 @@
 //  Copyright © 2021 Rudo. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-extension SignUpViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+// MARK: - Functions
+extension SignUpViewController {
     func configureCollectionView(_ collectionView: UICollectionView) {
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -17,12 +17,15 @@ extension SignUpViewController: UICollectionViewDelegate, UICollectionViewDataSo
         collectionView.register(AccountDetailsCollectionViewCell.self)
         collectionView.register(SocialMediaDetailsCollectionViewCell.self)
     }
-    
-    internal func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+}
+
+// MARK: - UICollectionViewDelegate & UICollectionViewDataSource
+extension SignUpViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numberOfSteps
     }
     
-    internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.row {
         case 0:
             let personalDetailsCellVM = PersonalDetailsCollectionViewCellViewModel()
@@ -46,8 +49,11 @@ extension SignUpViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }
-    
-    internal func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+extension SignUpViewController: UICollectionViewDelegateFlowLayout {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let center = CGPoint(x: scrollView.contentOffset.x + (scrollView.frame.width / 2), y: (scrollView.frame.height / 2))
         if let ip = stepsCollectionView.indexPathForItem(at: center) {
             switch ip.row {

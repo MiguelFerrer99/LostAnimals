@@ -6,8 +6,7 @@
 //  Copyright © 2021 Rudo. All rights reserved.
 //
 
-import UIKit
-
 struct CityTableViewCellSummary {
+    // MARK: - Properties
     let cityName: String
 }

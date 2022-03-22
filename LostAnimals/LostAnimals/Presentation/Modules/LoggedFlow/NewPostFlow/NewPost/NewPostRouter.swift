@@ -16,8 +16,10 @@ final class NewPostRouter {
     required init(viewController: NewPostViewController?) {
         self.viewController = viewController
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension NewPostRouter {
     func dismissNewPost() {
         DispatchQueue.main.async {
             self.viewController?.dismissCurrentView(completion: nil)

@@ -16,8 +16,10 @@ final class TabBarRouter {
     required init(viewController: UIViewController?) {
         self.viewController = viewController
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension TabBarRouter {
     func goToExplore() -> ViewController {
         return Container.shared.exploreBuilder().build()
     }

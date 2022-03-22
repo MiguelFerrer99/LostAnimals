@@ -8,6 +8,7 @@
 
 import UIKit
 
+// MARK: - Protocols
 @objc protocol CustomTextFieldDelegate: AnyObject {
     func textFieldShouldReturn(_ customTextField: CustomTextField) -> Bool
     func textFieldDidChange(_ customTextField: CustomTextField)
@@ -19,19 +20,17 @@ import UIKit
 }
 
 @IBDesignable
-class CustomTextField: UIView, UITextFieldDelegate {
+class CustomTextField: UIView {
     // MARK: - IBInspectables
     @IBInspectable var capitalizeFirstLetter: Bool = false {
         willSet { textField.autocapitalizationType = newValue ? .words : .none }
     }
-    
     @IBInspectable var hideContent: Bool = false {
         willSet {
             textField.isSecureTextEntry = newValue
             hideContentView.isHidden = !newValue
         }
     }
-    
     @IBInspectable var whiteTheme: Bool = false {
         willSet {
             addStackView.backgroundColor = newValue ? .customWhite : .customBlack
@@ -45,7 +44,6 @@ class CustomTextField: UIView, UITextFieldDelegate {
             hideContentButton.imageView?.tintColor = newValue ? .customBlack : .customWhite
         }
     }
-    
     @IBInspectable var placeholder: String = "" {
         willSet {
             textField.attributedPlaceholder = NSAttributedString(
@@ -55,37 +53,31 @@ class CustomTextField: UIView, UITextFieldDelegate {
             placeholderLabel.attributedText = textField.attributedPlaceholder
         }
     }
-    
     @IBInspectable var datePickerEnabled: Bool = false {
         willSet {
             if newValue { createDatePicker(datePickerMode: .date) }
         }
     }
-    
     @IBInspectable var dateAndTimePickerEnabled: Bool = false {
         willSet {
             if newValue { createDatePicker(datePickerMode: .dateAndTime) }
         }
     }
-    
     @IBInspectable var cityPickerEnabled: Bool = false {
         willSet {
             selectCityButton.isHidden = !newValue
         }
     }
-    
     @IBInspectable var addressPickerEnabled: Bool = false {
         willSet {
             selectAddressButton.isHidden = !newValue
         }
     }
-    
     @IBInspectable var isNumberPad: Bool = false {
         willSet {
             if newValue { createNumberPadToolbar() }
         }
     }
-    
     @IBInspectable var animalPickerEnabled: Bool = false {
         willSet {
             selectAnimalButton.isHidden = !newValue
@@ -93,25 +85,25 @@ class CustomTextField: UIView, UITextFieldDelegate {
     }
     
     // MARK: - IBOutlets
-    @IBOutlet var customView: UIView!
-    @IBOutlet weak var addStackView: UIStackView!
+    @IBOutlet private weak var customView: UIView!
+    @IBOutlet private weak var addStackView: UIStackView!
+    @IBOutlet private weak var placeholderLabel: UILabel!
+    @IBOutlet private weak var topTextFieldConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var hideContentView: UIView!
+    @IBOutlet private weak var hideContentButton: UIButton!
+    @IBOutlet private weak var statusView: UIView!
+    @IBOutlet private weak var statusImageView: UIImageView!
+    @IBOutlet private weak var errorLabel: UILabel!
+    @IBOutlet private weak var selectCityButton: UIButton!
+    @IBOutlet private weak var selectAddressButton: UIButton!
+    @IBOutlet private weak var selectAnimalButton: UIButton!
     @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var placeholderLabel: UILabel!
-    @IBOutlet weak var topTextFieldConstraint: NSLayoutConstraint!
-    @IBOutlet weak var hideContentView: UIView!
-    @IBOutlet weak var hideContentButton: UIButton!
-    @IBOutlet weak var statusView: UIView!
-    @IBOutlet weak var statusImageView: UIImageView!
-    @IBOutlet weak var errorLabel: UILabel!
-    @IBOutlet weak var selectCityButton: UIButton!
-    @IBOutlet weak var selectAddressButton: UIButton!
-    @IBOutlet weak var selectAnimalButton: UIButton!
     
     // MARK: - Properties
-    var delegate: CustomTextFieldDelegate?
-    var errorsToCheck = [TextFieldError]()
-    let datePicker = UIDatePicker()
-    let passwordsAreNotEqualError = TextFieldErrorPasswordsAreNotEqual()
+    private var errorsToCheck = [TextFieldError]()
+    private let datePicker = UIDatePicker()
+    private let passwordsAreNotEqualError = TextFieldErrorPasswordsAreNotEqual()
+    weak var delegate: CustomTextFieldDelegate?
     
     var hasError: Bool {
         for error in errorsToCheck {
@@ -129,7 +121,7 @@ class CustomTextField: UIView, UITextFieldDelegate {
         return textField.text ?? ""
     }
     
-    // MARK: - Init
+    // MARK: - Inits
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -139,65 +131,10 @@ class CustomTextField: UIView, UITextFieldDelegate {
         super.init(coder: aDecoder)
         setup()
     }
-    
-    // MARK: - Functions
-    private func setup() {
-        customView = loadViewFromNib()
-        customView.frame = bounds
-        customView.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth,
-                                       UIView.AutoresizingMask.flexibleHeight]
-        addStackView.layer.cornerRadius = 10
-        textField.keyboardAppearance = .light
-        textField.delegate = self
-        addSubview(customView)
-    }
-    
-    private func loadViewFromNib() -> UIView! {
-        let bundle = Bundle(for: type(of: self))
-        let nib = UINib(nibName: String(describing: type(of: self)), bundle: bundle)
-        let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
-        return view
-    }
-    
-    private func createDatePicker(datePickerMode: UIDatePicker.Mode) {
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(doneDatePickerPressed))
-        let spacerItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        toolbar.setItems([spacerItem, doneButton], animated: true)
-        toolbar.tintColor = .customBlack
-        toolbar.backgroundColor = .customWhite
-        textField.inputAccessoryView = toolbar
-        datePicker.maximumDate = .today
-        datePicker.datePickerMode = datePickerMode
-        if #available(iOS 13.4, *) {
-            datePicker.preferredDatePickerStyle = .wheels
-        }
-        textField.inputView = datePicker
-    }
-    
-    @objc private func doneDatePickerPressed() {
-        textField.text = datePicker.date.toString(withFormat: datePickerEnabled ? DateFormat.dayMonthYearOther : DateFormat.dayMonthYearHourOther)
-        textFieldDidChangeEditing(textField)
-        textField.endEditing(true)
-    }
-    
-    private func createNumberPadToolbar() {
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(doneNumberPadPressed))
-        let spacerItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        toolbar.setItems([spacerItem, doneButton], animated: true)
-        toolbar.tintColor = .customBlack
-        toolbar.backgroundColor = .customWhite
-        textField.inputAccessoryView = toolbar
-    }
-    
-    @objc private func doneNumberPadPressed() {
-        textField.endEditing(true)
-        let _ = textFieldShouldReturn(self.textField)
-    }
-    
+}
+
+// MARK: - Functions
+extension CustomTextField {
     func didFinishSelectContentFromOtherVC() {
         textFieldDidChangeEditing(textField)
     }
@@ -232,24 +169,73 @@ class CustomTextField: UIView, UITextFieldDelegate {
             self.statusImageView.image = UIImage(named: "TextfieldOk")
         }
     }
+}
+
+// MARK: - Private functions
+private extension CustomTextField {
+    func setup() {
+        customView = loadViewFromNib()
+        customView.frame = bounds
+        customView.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth,
+                                       UIView.AutoresizingMask.flexibleHeight]
+        addStackView.layer.cornerRadius = 10
+        textField.keyboardAppearance = .light
+        textField.delegate = self
+        addSubview(customView)
+    }
     
-    // MARK: - IBActions
+    func loadViewFromNib() -> UIView! {
+        let bundle = Bundle(for: type(of: self))
+        let nib = UINib(nibName: String(describing: type(of: self)), bundle: bundle)
+        let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
+        return view
+    }
+    
+    func createDatePicker(datePickerMode: UIDatePicker.Mode) {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(doneDatePickerPressed))
+        let spacerItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        toolbar.setItems([spacerItem, doneButton], animated: true)
+        toolbar.tintColor = .customBlack
+        toolbar.backgroundColor = .customWhite
+        textField.inputAccessoryView = toolbar
+        datePicker.maximumDate = .today
+        datePicker.datePickerMode = datePickerMode
+        if #available(iOS 13.4, *) {
+            datePicker.preferredDatePickerStyle = .wheels
+        }
+        textField.inputView = datePicker
+    }
+    
+    func createNumberPadToolbar() {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(doneNumberPadPressed))
+        let spacerItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        toolbar.setItems([spacerItem, doneButton], animated: true)
+        toolbar.tintColor = .customBlack
+        toolbar.backgroundColor = .customWhite
+        textField.inputAccessoryView = toolbar
+    }
+    
+    @objc func doneDatePickerPressed() {
+        textField.text = datePicker.date.toString(withFormat: datePickerEnabled ? DateFormat.dayMonthYearOther : DateFormat.dayMonthYearHourOther)
+        textFieldDidChangeEditing(textField)
+        textField.endEditing(true)
+    }
+    
+    @objc func doneNumberPadPressed() {
+        textField.endEditing(true)
+        let _ = textFieldShouldReturn(self.textField)
+    }
+}
+
+// MARK: - IBActions
+private extension CustomTextField {
     @IBAction func hideContentButtonPressed(_ sender: UIButton) {
         hideContentButton.setImage(UIImage(systemName: textField.isSecureTextEntry ? "eye.slash.fill" : "eye.fill"), for: .normal)
         textField.isSecureTextEntry.toggle()
-    }
-    
-    // MARK: - UITextFieldDelegate
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        return ((delegate?.textFieldShouldReturn(self)) != nil)
-    }
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        delegate?.textFieldDidBeginEditing?(self)
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        delegate?.textFieldDidEndEditing(self)
     }
     
     @IBAction func textFieldDidChangeEditing(_ textField: UITextField) {
@@ -271,5 +257,20 @@ class CustomTextField: UIView, UITextFieldDelegate {
     
     @IBAction func selectAnimalButtonPressed(_ sender: UIButton) {
         delegate?.textFieldWillSelectAnimal?(self)
+    }
+}
+
+// MARK: - UITextFieldDelegate
+extension CustomTextField: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return ((delegate?.textFieldShouldReturn(self)) != nil)
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        delegate?.textFieldDidBeginEditing?(self)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        delegate?.textFieldDidEndEditing(self)
     }
 }

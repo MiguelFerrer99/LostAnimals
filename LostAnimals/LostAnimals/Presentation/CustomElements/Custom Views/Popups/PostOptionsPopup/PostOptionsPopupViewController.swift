@@ -8,10 +8,12 @@
 
 import UIKit
 
+// MARK: - Protocols
 protocol ActionAfterPostOptionsDelegate: AnyObject {
     func goTo(action: ActionAfterPostOptions, postImageToShare: UIImage?)
 }
 
+// MARK: - Enums
 enum ActionAfterPostOptions: String {
     case goToEditPost
     case showGuestPopup
@@ -22,9 +24,9 @@ enum ActionAfterPostOptions: String {
 
 final class PostOptionsPopupViewController: ViewController {
     // MARK: - IBOutlets
-    @IBOutlet weak var backgroundView: UIView!
-    @IBOutlet weak var editPostButtonView: UIView!
-    @IBOutlet weak var reportPostButtonView: UIView!
+    @IBOutlet private weak var backgroundView: UIView!
+    @IBOutlet private weak var editPostButtonView: UIView!
+    @IBOutlet private weak var reportPostButtonView: UIView!
     
     // MARK: - Properties
     weak var delegate: ActionAfterPostOptionsDelegate?
@@ -59,14 +61,18 @@ final class PostOptionsPopupViewController: ViewController {
             self.backgroundView.alpha = 0
         }
     }
-    
-    // MARK: - Functions
-    private func setupUI() {
+}
+
+// MARK: - Functions
+private extension PostOptionsPopupViewController {
+    func setupUI() {
         editPostButtonView.isHidden = (viewModel.comesFrom == .explore) || (viewModel.post.author != User.shared)
         reportPostButtonView.isHidden = viewModel.post.author == User.shared
     }
-    
-    // MARK: - IBActions
+}
+
+// MARK: - IBActions
+private extension PostOptionsPopupViewController {
     @IBAction func dismissButtonPressed(_ sender: UIButton) {
         viewModel.didPressDismissButton()
     }

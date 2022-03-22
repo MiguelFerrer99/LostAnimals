@@ -6,13 +6,14 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class HardcodedData {
+    // MARK: - Singleton
     static let shared = HardcodedData()
 }
 
+// MARK: - Properties
 extension HardcodedData {
     static let exampleSocialMedias: [SocialMediaType: String] = [.email: "militardeaire99@gmail.com",
                                                                  .phonePrefix: "34",

@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: - Enums
 enum SelectPhotoPopupComesFrom: String {
     case editPost
     case newPost
@@ -15,7 +16,6 @@ enum SelectPhotoPopupComesFrom: String {
 }
 
 final class SelectPhotoPopupViewModel {
-    
     // MARK: - Properties
     private let router: SelectPhotoPopupRouter
     let showRemoveOption: Bool

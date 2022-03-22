@@ -6,9 +6,8 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
-
 struct TermAndCondition {
+    // MARK: - Properties
     let title: String
     let description: String
 }

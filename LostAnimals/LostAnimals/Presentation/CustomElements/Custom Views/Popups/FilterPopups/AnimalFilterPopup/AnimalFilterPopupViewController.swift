@@ -9,10 +9,9 @@
 import UIKit
 
 final class AnimalFilterPopupViewController: ViewController {
-    
     // MARK: - IBOutlets
-    @IBOutlet weak var animalsFilterTableView: UITableView!
-    @IBOutlet weak var applyFilterButton: CustomButton!
+    @IBOutlet private weak var animalsFilterTableView: UITableView!
+    @IBOutlet private weak var applyFilterButton: CustomButton!
     
     // MARK: - Properties
     var viewModel: AnimalFilterPopupViewModel!
@@ -30,14 +29,29 @@ final class AnimalFilterPopupViewController: ViewController {
         
         viewModel.viewDidAppear()
     }
+}
+
+// MARK: - Functions
+extension AnimalFilterPopupViewController {
+    func enableApplyFilterButton() {
+        applyFilterButton.alpha = 1
+        applyFilterButton.isEnabled = true
+    }
     
-    // MARK: - Functions  
-    private func setupUI() {
+    func disableApplyFilterButton() {
+        applyFilterButton.alpha = 0.5
+        applyFilterButton.isEnabled = false
+    }
+}
+
+// MARK: - Private functions
+private extension AnimalFilterPopupViewController {
+    func setupUI() {
         configureTableView(animalsFilterTableView)
         fillUI()
     }
     
-    private func fillUI() {
+    func fillUI() {
         if viewModel.loadData {
             if let animalFilter = Filters.currentFilters[.animal] {
                 if animalFilter.animalFilterDog {
@@ -73,22 +87,14 @@ final class AnimalFilterPopupViewController: ViewController {
         }
     }
     
-    private func selectAnimalCell(index: Int) {
+    func selectAnimalCell(index: Int) {
         let indexPath = IndexPath(row: index, section: 0)
         animalsFilterTableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
     }
-    
-    func enableApplyFilterButton() {
-        applyFilterButton.alpha = 1
-        applyFilterButton.isEnabled = true
-    }
-    
-    func disableApplyFilterButton() {
-        applyFilterButton.alpha = 0.5
-        applyFilterButton.isEnabled = false
-    }
-    
-    // MARK: - IBActions
+}
+
+// MARK: - IBActions
+private extension AnimalFilterPopupViewController {
     @IBAction func applyFilterButtonPressed(_ sender: CustomButton) {
         viewModel.didPressApplyFilterButton()
     }

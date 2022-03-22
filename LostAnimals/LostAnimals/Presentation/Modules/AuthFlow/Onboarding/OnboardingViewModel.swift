@@ -8,6 +8,7 @@
 
 import UIKit
 
+// MARK: - Enums
 enum OnboardingStep: Int {
     case share
     case find
@@ -15,7 +16,6 @@ enum OnboardingStep: Int {
 }
 
 final class OnboardingViewModel {
-    
     // MARK: - Properties
     private let router: OnboardingRouter
     var currentOnboardingStep: OnboardingStep = .share
@@ -24,7 +24,6 @@ final class OnboardingViewModel {
     required init(router: OnboardingRouter) {
         self.router = router
     }
-    
 }
 
 // MARK: - Life cycle

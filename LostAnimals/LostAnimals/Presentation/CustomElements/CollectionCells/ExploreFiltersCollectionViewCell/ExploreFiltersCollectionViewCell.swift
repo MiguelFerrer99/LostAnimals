@@ -8,18 +8,18 @@
 
 import UIKit
 
+// MARK: - Protocols
 protocol ExploreFilterDelegate: AnyObject {
     func disableFilter(filterType: FilterType)
 }
 
 class ExploreFiltersCollectionViewCell: UICollectionViewCell, Reusable {
-    
     // MARK: - IBOutlets
-    @IBOutlet weak var filterView: CustomView!
+    @IBOutlet private weak var filterView: CustomView!
+    @IBOutlet private weak var disableFilterButton: UIButton!
+    @IBOutlet private weak var leadingConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var trailingConstraint: NSLayoutConstraint!
     @IBOutlet weak var filterTitleLabel: UILabel!
-    @IBOutlet weak var disableFilterButton: UIButton!
-    @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
-    @IBOutlet weak var trailingConstraint: NSLayoutConstraint!
     
     // MARK: - Properties
     weak var delegate: ExploreFilterDelegate?
@@ -39,8 +39,10 @@ class ExploreFiltersCollectionViewCell: UICollectionViewCell, Reusable {
             filterView.alpha = isSelected ? 1 : 0.5
         }
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension ExploreFiltersCollectionViewCell {
     func showDisableFilterButton() {
         self.disableFilterButton.isHidden = false
     }
@@ -56,8 +58,10 @@ class ExploreFiltersCollectionViewCell: UICollectionViewCell, Reusable {
         trailingConstraint.constant = summary.index == Filters.currentFilters.count - 1 ? 20 : 5
         self.layoutIfNeeded()
     }
-    
-    // MARK: - IBActions
+}
+
+// MARK: - IBActions
+private extension ExploreFiltersCollectionViewCell {
     @IBAction func disableFilterButtonPressed(_ sender: UIButton) {
         guard let filterType = filterType else { return }
         hideDisableFilterButton()

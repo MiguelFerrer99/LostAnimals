@@ -16,8 +16,10 @@ final class LoginRouter {
     required init(viewController: LoginViewController?) {
         self.viewController = viewController
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension LoginRouter {
     func goToForgotPassword() {
         let viewController = Container.shared.forgotPasswordBuilder().build()
         DispatchQueue.main.async {

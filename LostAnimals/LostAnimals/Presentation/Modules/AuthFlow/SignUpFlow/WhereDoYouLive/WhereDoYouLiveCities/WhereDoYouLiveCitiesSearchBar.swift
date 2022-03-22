@@ -8,7 +8,8 @@
 
 import UIKit
 
-extension WhereDoYouLiveCitiesViewController: UISearchBarDelegate {
+// MARK: - Functions
+extension WhereDoYouLiveCitiesViewController {
     func configureSearchController(_ searchController: UISearchController) {
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.delegate = self
@@ -20,7 +21,10 @@ extension WhereDoYouLiveCitiesViewController: UISearchBarDelegate {
         self.navigationItem.searchController = searchController
         self.navigationItem.hidesSearchBarWhenScrolling = false
     }
-    
+}
+
+// MARK: - UISearchBarDelegate
+extension WhereDoYouLiveCitiesViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
             self.viewModel.filteredCities = self.viewModel.cities

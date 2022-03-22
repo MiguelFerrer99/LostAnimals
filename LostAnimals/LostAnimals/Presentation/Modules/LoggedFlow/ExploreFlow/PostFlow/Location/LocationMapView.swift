@@ -6,11 +6,10 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
 import MapKit
 
-extension LocationViewController: MKMapViewDelegate {
-    // MARK: - Functions
+// MARK: - Functions
+extension LocationViewController {
     func configureMapView(_ mapView: MKMapView) {
         mapView.delegate = self
         let location = CLLocationCoordinate2D(latitude: viewModel.coordinates.latitude, longitude: viewModel.coordinates.longitude)
@@ -31,12 +30,11 @@ extension LocationViewController: MKMapViewDelegate {
         annotation.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
         mapView.addAnnotation(annotation)
     }
-    
+}
+
+// MARK: - MKMapViewDelegate
+extension LocationViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        viewModel.openLocationInMaps()
-    }
-    
-    @objc func howToGoButtonPressed() {
         viewModel.openLocationInMaps()
     }
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 
+// MARK: - Functions
 extension ExploreViewController {
     func configureRefreshControl(_ refreshControl: UIRefreshControl) {
         refreshControl.tintColor = .customBlack

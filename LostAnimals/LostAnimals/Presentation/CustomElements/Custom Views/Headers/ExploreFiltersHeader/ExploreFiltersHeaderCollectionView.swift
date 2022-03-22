@@ -8,32 +8,18 @@
 
 import UIKit
 
-extension ExploreFiltersHeader: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+// MARK: - Functions
+extension ExploreFiltersHeader {
     func configureCollectionView(_ collectionView: UICollectionView) {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.allowsMultipleSelection = true
         collectionView.register(ExploreFiltersCollectionViewCell.self)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Filters.currentFilters.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let currentExploreFilter = Filters.currentFilters[FilterType(rawValue: indexPath.row) ?? .all] else { return UICollectionViewCell() }
-        let summary = ExploreFiltersCollectionViewCellSummary(filterTitle: currentExploreFilter.filterTitle, filterType: currentExploreFilter.filterType, index: indexPath.row)
-        let cell = collectionView.dequeue(ExploreFiltersCollectionViewCell.self, for: indexPath)
-        cell.display(summary: summary)
-        cell.delegate = self
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if indexPath.row == 0 || indexPath.row == Filters.currentFilters.count - 1 { return CGSize(width: 130, height: collectionView.frame.height) }
-        else { return CGSize(width: 110, height: collectionView.frame.height) }
-    }
-    
+}
+
+// MARK: - UICollectionViewDelegate
+extension ExploreFiltersHeader: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         guard let unselectedFilter = Filters.getFilter(from: indexPath.row) else { return false }
         switch unselectedFilter.filterType {
@@ -58,5 +44,29 @@ extension ExploreFiltersHeader: UICollectionViewDelegate, UICollectionViewDataSo
             postFiltersDelegate?.showPostFilters(filterType: selectedFilter.filterType, loadData: true)
         }
         return false
+    }
+}
+
+// MARK: - UICollectionViewDataSource
+extension ExploreFiltersHeader: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return Filters.currentFilters.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let currentExploreFilter = Filters.currentFilters[FilterType(rawValue: indexPath.row) ?? .all] else { return UICollectionViewCell() }
+        let summary = ExploreFiltersCollectionViewCellSummary(filterTitle: currentExploreFilter.filterTitle, filterType: currentExploreFilter.filterType, index: indexPath.row)
+        let cell = collectionView.dequeue(ExploreFiltersCollectionViewCell.self, for: indexPath)
+        cell.display(summary: summary)
+        cell.delegate = self
+        return cell
+    }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+extension ExploreFiltersHeader: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.row == 0 || indexPath.row == Filters.currentFilters.count - 1 { return CGSize(width: 130, height: collectionView.frame.height) }
+        else { return CGSize(width: 110, height: collectionView.frame.height) }
     }
 }

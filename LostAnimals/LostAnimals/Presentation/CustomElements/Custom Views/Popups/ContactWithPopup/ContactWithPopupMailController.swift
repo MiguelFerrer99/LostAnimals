@@ -6,12 +6,11 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import MessageUI
 
-extension ContactWithPopupViewController: MFMailComposeViewControllerDelegate {
-    // MARK: - Functions
+// MARK: - Functions
+extension ContactWithPopupViewController {
     func configureMailController(mailController: MFMailComposeViewController) {
         mailController.mailComposeDelegate = self
     }
@@ -29,8 +28,10 @@ extension ContactWithPopupViewController: MFMailComposeViewControllerDelegate {
             }
         }
     }
-    
-    // MARK: - MFMailComposeViewControllerDelegate
+}
+
+// MARK: - MFMailComposeViewControllerDelegate
+extension ContactWithPopupViewController: MFMailComposeViewControllerDelegate {
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         if error != nil {
             controller.dismiss(animated: true) {

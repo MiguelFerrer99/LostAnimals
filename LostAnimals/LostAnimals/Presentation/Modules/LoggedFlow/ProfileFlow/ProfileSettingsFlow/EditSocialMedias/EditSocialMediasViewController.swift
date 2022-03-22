@@ -10,11 +10,11 @@ import UIKit
 
 final class EditSocialMediasViewController: ViewController, UIGestureRecognizerDelegate {
     // MARK: - IBOutlets
-    @IBOutlet weak var phonePrefixLabel: UILabel!
-    @IBOutlet weak var phonePrefixButton: UIButton!
+    @IBOutlet private weak var phonePrefixLabel: UILabel!
+    @IBOutlet private weak var phonePrefixButton: UIButton!
+    @IBOutlet private weak var haveWhatsappButton: UIButton!
+    @IBOutlet private weak var haveWhatsappButtonImageView: UIImageView!
     @IBOutlet weak var phoneNumberTextfield: CustomTextField!
-    @IBOutlet weak var haveWhatsappButton: UIButton!
-    @IBOutlet weak var haveWhatsappButtonImageView: UIImageView!
     @IBOutlet weak var instagramTextfield: CustomTextField!
     @IBOutlet weak var twitterTextfield: CustomTextField!
     @IBOutlet weak var saveChangesButton: CustomButton!
@@ -38,15 +38,25 @@ final class EditSocialMediasViewController: ViewController, UIGestureRecognizerD
         
         viewModel.viewDidAppear()
     }
-    
-    // MARK: - Functions
-    private func setupUI() {
+}
+
+// MARK: - Functions
+extension EditSocialMediasViewController {
+    func fillPhonePrefix(dialCode: String) {
+        phonePrefixLabel.text = "+\(dialCode)"
+        checkAllContentsAreOk()
+    }
+}
+
+// MARK: - Private functions
+private extension EditSocialMediasViewController {
+    func setupUI() {
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         configureTextFields()
         fillUI()
     }
     
-    private func fillUI() {
+    func fillUI() {
         if let phonePrefix = viewModel.me.socialMedias[.phonePrefix] {
             phonePrefixLabel.text = "+\(phonePrefix)"
         }
@@ -60,17 +70,12 @@ final class EditSocialMediasViewController: ViewController, UIGestureRecognizerD
         }
     }
     
-    func fillPhonePrefix(dialCode: String) {
-        phonePrefixLabel.text = "+\(dialCode)"
-        checkAllContentsAreOk()
-    }
-    
-    private func toggleHaveWhatsAppButton() {
+    func toggleHaveWhatsAppButton() {
         viewModel.haveWhatsAppSelected.toggle()
         haveWhatsappButtonImageView.image = UIImage(systemName: viewModel.haveWhatsAppSelected ? "checkmark.circle.fill" : "circle")
     }
     
-    private func updateUserInteraction() {
+    func updateUserInteraction() {
         navigationController?.navigationBar.isUserInteractionEnabled = saveChangesButton.isEnabled
         navigationController?.interactivePopGestureRecognizer?.isEnabled = saveChangesButton.isEnabled
         phonePrefixButton.isUserInteractionEnabled = saveChangesButton.isEnabled
@@ -79,8 +84,10 @@ final class EditSocialMediasViewController: ViewController, UIGestureRecognizerD
         instagramTextfield.isUserInteractionEnabled = saveChangesButton.isEnabled
         twitterTextfield.isUserInteractionEnabled = saveChangesButton.isEnabled
     }
-    
-    // MARK: - IBActions
+}
+
+// MARK: - IBActions
+private extension EditSocialMediasViewController {
     @IBAction func phonePrefixButtonPressed(_ sender: UIButton) {
         didPresseddPhonePrefix()
     }

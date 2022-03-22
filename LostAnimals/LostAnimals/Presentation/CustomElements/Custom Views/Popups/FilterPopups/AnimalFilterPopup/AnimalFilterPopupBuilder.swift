@@ -8,17 +8,15 @@
 
 import UIKit
 
-final class AnimalFilterPopupBuilder {
-    
+final class AnimalFilterPopupBuilder {}
+
+// MARK: - Functions
+extension AnimalFilterPopupBuilder {
     func build(loadData: Bool) -> AnimalFilterPopupViewController {
-        
         let viewController = UIViewController.instantiate(viewController: AnimalFilterPopupViewController.self)
-        
         let router = AnimalFilterPopupRouter(viewController: viewController)
         let viewModel = AnimalFilterPopupViewModel(router: router, loadData: loadData)
-        
         viewController.viewModel = viewModel
-        
         return viewController
     }
 }

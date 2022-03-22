@@ -42,23 +42,25 @@ final class EditPersonalDetailsViewController: ViewController, UIGestureRecogniz
     deinit {
         unsubscribeToNotifications()
     }
-    
-    // MARK: - Functions
-    private func subscribeToNotifications() {
+}
+
+// MARK: - Private functions
+private extension EditPersonalDetailsViewController {
+    func subscribeToNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(fillWhereDoYouLive), name: .SendWhereDoYouLiveToEditPersonalDetails, object: nil)
     }
     
-    private func unsubscribeToNotifications() {
+    func unsubscribeToNotifications() {
         NotificationCenter.default.removeObserver(self)
     }
     
-    private func setupUI() {
+    func setupUI() {
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         configureTextFields()
         fillUI()
     }
     
-    private func fillUI() {
+    func fillUI() {
         firstnameTextfield.isHidden = viewModel.me.animalShelter
         lastnameTextfield.isHidden = viewModel.me.animalShelter
         birthdateTextfield.isHidden = viewModel.me.animalShelter
@@ -77,7 +79,7 @@ final class EditPersonalDetailsViewController: ViewController, UIGestureRecogniz
         }
     }
     
-    private func updateUserInteraction() {
+    func updateUserInteraction() {
         navigationController?.navigationBar.isUserInteractionEnabled = saveChangesButton.isEnabled
         navigationController?.interactivePopGestureRecognizer?.isEnabled = saveChangesButton.isEnabled
         firstnameTextfield.isUserInteractionEnabled = saveChangesButton.isEnabled
@@ -87,8 +89,10 @@ final class EditPersonalDetailsViewController: ViewController, UIGestureRecogniz
         animalShelterNameTextfield.isUserInteractionEnabled = saveChangesButton.isEnabled
         whereCanWeFindYouTextfield.isUserInteractionEnabled = saveChangesButton.isEnabled
     }
-    
-    // MARK: - IBActions
+}
+
+// MARK: - IBActions
+private extension EditPersonalDetailsViewController {
     @IBAction func saveChangesButtonPressed(_ sender: CustomButton) {
         saveChangesButton.showLoading()
         updateUserInteraction()

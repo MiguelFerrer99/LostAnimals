@@ -16,8 +16,10 @@ final class ProfileRouter {
     required init(viewController: ProfileViewController?) {
         self.viewController = viewController
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension ProfileRouter {
     func goBack() {
         DispatchQueue.main.async {
             self.viewController?.pop()

@@ -9,7 +9,6 @@
 import Foundation
 
 final class WhereDoYouLiveCountriesViewModel {
-    
     // MARK: - Properties
     private let router: WhereDoYouLiveCountriesRouter
     var countries: [Country] = []
@@ -21,7 +20,6 @@ final class WhereDoYouLiveCountriesViewModel {
         self.router = router
         self.comesFrom = comesFrom
     }
-    
 }
 
 // MARK: - Life cycle

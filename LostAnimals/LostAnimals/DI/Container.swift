@@ -6,150 +6,150 @@
 //  Copyright © 2020 Miguel Ferrer Fornali. All rights reserved.
 //
 
-import Foundation
-
 class Container {
+    // MARK: - Singleton
     static let shared = Container()
 }
 
+// MARK: - Functions
 extension Container {
     func animalFilterPopupBuilder() -> AnimalFilterPopupBuilder {
-        return AnimalFilterPopupBuilder()
+        AnimalFilterPopupBuilder()
     }
     
     func animalTypesBuilder() -> AnimalTypesBuilder {
-        return AnimalTypesBuilder()
+        AnimalTypesBuilder()
     }
     
     func blockedUsersBuilder() -> BlockedUsersBuilder {
-        return BlockedUsersBuilder()
+        BlockedUsersBuilder()
     }
     
     func changePasswordBuilder() -> ChangePasswordBuilder {
-        return ChangePasswordBuilder()
+        ChangePasswordBuilder()
     }
     
     func contactWithPopupBuilder() -> ContactWithPopupBuilder {
-        return ContactWithPopupBuilder()
+        ContactWithPopupBuilder()
     }
     
     func dateFilterPopupBuilder() -> DateFilterPopupBuilder {
-        return DateFilterPopupBuilder()
+        DateFilterPopupBuilder()
     }
     
     func editPersonalDetailsBuilder() -> EditPersonalDetailsBuilder {
-        return EditPersonalDetailsBuilder()
+        EditPersonalDetailsBuilder()
     }
     
     func editSocialMediasBuilder() -> EditSocialMediasBuilder {
-        return EditSocialMediasBuilder()
+        EditSocialMediasBuilder()
     }
     
     func editPostBuilder() -> EditPostBuilder {
-        return EditPostBuilder()
+        EditPostBuilder()
     }
     
     func errorPopupBuilder() -> ErrorPopupBuilder {
-        return ErrorPopupBuilder()
+        ErrorPopupBuilder()
     }
     
     func exploreBuilder() -> ExploreBuilder {
-        return ExploreBuilder()
+        ExploreBuilder()
     }
     
     func forgotPasswordBuilder() -> ForgotPasswordBuilder {
-        return ForgotPasswordBuilder()
+        ForgotPasswordBuilder()
     }
     
     func guestPopupBuilder() -> GuestPopupBuilder {
-        return GuestPopupBuilder()
+        GuestPopupBuilder()
     }
     
     func locationBuilder() -> LocationBuilder {
-        return LocationBuilder()
+        LocationBuilder()
     }
     
     func locationFilterPopupBuilder() -> LocationFilterPopupBuilder {
-        return LocationFilterPopupBuilder()
+        LocationFilterPopupBuilder()
     }
     
     func loginBuilder() -> LoginBuilder {
-        return LoginBuilder()
+        LoginBuilder()
     }
     
     func newPostBuilder() -> NewPostBuilder {
-        return NewPostBuilder()
+        NewPostBuilder()
     }
     
     func newPostGenericBuilder() -> NewPostGenericBuilder {
-        return NewPostGenericBuilder()
+        NewPostGenericBuilder()
     }
     
     func onboardingBuilder() -> OnboardingBuilder {
-        return OnboardingBuilder()
+        OnboardingBuilder()
     }
     
     func postBuilder() -> PostBuilder {
-        return PostBuilder()
+        PostBuilder()
     }
     
     func postImagesBuilder() -> PostImagesBuilder {
-        return PostImagesBuilder()
+        PostImagesBuilder()
     }
     
     func postOptionsPopupBuilder() -> PostOptionsPopupBuilder {
-        return PostOptionsPopupBuilder()
+        PostOptionsPopupBuilder()
     }
     
     func profileBuilder() -> ProfileBuilder {
-        return ProfileBuilder()
+        ProfileBuilder()
     }
     
     func profilePostsBuilder() -> ProfilePostsBuilder {
-        return ProfilePostsBuilder()
+        ProfilePostsBuilder()
     }
     
     func profileSettingsBuilder() -> ProfileSettingsBuilder {
-        return ProfileSettingsBuilder()
+        ProfileSettingsBuilder()
     }
     
     func savedPostsBuilder() -> SavedPostsBuilder {
-        return SavedPostsBuilder()
+        SavedPostsBuilder()
     }
     
     func selectPhotoPopupBuilder() -> SelectPhotoPopupBuilder {
-        return SelectPhotoPopupBuilder()
+        SelectPhotoPopupBuilder()
     }
     
     func signupBuilder() -> SignUpBuilder {
-        return SignUpBuilder()
+        SignUpBuilder()
     }
     
     func startupBuilder() -> StartupBuilder {
-        return StartupBuilder()
+        StartupBuilder()
     }
     
     func successPopupBuilder() -> SuccessPopupBuilder {
-        return SuccessPopupBuilder()
+        SuccessPopupBuilder()
     }
     
     func tabBarBuilder() -> TabBarBuilder {
-        return TabBarBuilder()
+        TabBarBuilder()
     }
     
     func termsAndConditionsBuilder() -> TermsAndConditionsBuilder {
-        return TermsAndConditionsBuilder()
+        TermsAndConditionsBuilder()
     }
     
     func whereCanWeFindYou() -> WhereCanWeFindYouBuilder {
-        return WhereCanWeFindYouBuilder()
+        WhereCanWeFindYouBuilder()
     }
     
     func whereDoYouLiveCitiesBuilder() -> WhereDoYouLiveCitiesBuilder {
-        return WhereDoYouLiveCitiesBuilder()
+        WhereDoYouLiveCitiesBuilder()
     }
     
     func whereDoYouLiveCountriesBuilder() -> WhereDoYouLiveCountriesBuilder {
-        return WhereDoYouLiveCountriesBuilder()
+        WhereDoYouLiveCountriesBuilder()
     }
 }

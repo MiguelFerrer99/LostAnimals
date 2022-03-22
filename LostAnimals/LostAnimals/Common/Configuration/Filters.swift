@@ -6,9 +6,9 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
+// MARK: - Enums
 enum FilterType: Int {
     case all
     case lost
@@ -20,6 +20,7 @@ enum FilterType: Int {
 }
 
 class Filters {
+    // MARK: - Properties
     static var currentFilters: [FilterType: PostsFilter] = [
         .all: PostsFilter(filterTitle: "All", filterType: .all, enabled: true, animalFilterDog: false, animalFilterBird: false, animalFilterCat: false, animalFilterTurtle: false, animalFilterSnake: false, animalFilterRabbit: false, animalFilterOther: false),
         .lost: PostsFilter(filterTitle: "Lost", filterType: .lost, enabled: false, animalFilterDog: false, animalFilterBird: false, animalFilterCat: false, animalFilterTurtle: false, animalFilterSnake: false, animalFilterRabbit: false, animalFilterOther: false),

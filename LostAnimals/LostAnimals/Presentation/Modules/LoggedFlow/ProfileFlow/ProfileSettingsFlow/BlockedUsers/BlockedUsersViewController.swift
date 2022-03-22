@@ -31,15 +31,20 @@ final class BlockedUsersViewController: ViewController, UIGestureRecognizerDeleg
         
         viewModel.viewDidAppear()
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension BlockedUsersViewController {
     func updateUserInteraction(to: Bool) {
         navigationController?.navigationBar.isUserInteractionEnabled = to
         navigationController?.interactivePopGestureRecognizer?.isEnabled = to
         blockedUsersTableView.isUserInteractionEnabled = to
     }
-    
-    private func setupUI() {
+}
+
+// MARK: - Private functions
+private extension BlockedUsersViewController {
+    func setupUI() {
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         configureTableView(blockedUsersTableView)
     }

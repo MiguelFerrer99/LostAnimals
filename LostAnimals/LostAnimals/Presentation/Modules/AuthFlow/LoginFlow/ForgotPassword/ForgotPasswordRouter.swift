@@ -16,7 +16,4 @@ final class ForgotPasswordRouter {
     required init(viewController: ForgotPasswordViewController?) {
         self.viewController = viewController
     }
-    
-    // MARK: - Functions
-    
 }

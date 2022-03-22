@@ -10,31 +10,30 @@ import UIKit
 import MessageUI
 
 final class ProfileViewController: ViewController, UIGestureRecognizerDelegate {
-    
     // MARK: - IBOutlets
-    @IBOutlet weak var profileScrollView: UIScrollView!
-    @IBOutlet weak var backButtonView: UIView!
-    @IBOutlet weak var blockUserButtonImageView: UIImageView!
-    @IBOutlet weak var blockUserButtonView: UIView!
-    @IBOutlet weak var settingsButtonView: UIView!
-    @IBOutlet weak var headerImageView: UIImageView!
-    @IBOutlet weak var userImageView: UIImageView!
-    @IBOutlet weak var animalShelterImageView: UIImageView!
-    @IBOutlet weak var welcomeBackLabel: UILabel!
-    @IBOutlet weak var basicInfoView: UIView!
-    @IBOutlet weak var basicInfoViewFirstLabel: UILabel!
-    @IBOutlet weak var basicInfoViewSecondLabel: UILabel!
-    @IBOutlet weak var firstStackView: UIStackView!
-    @IBOutlet weak var firstCollectionHeaderLabel: UILabel!
+    @IBOutlet private weak var profileScrollView: UIScrollView!
+    @IBOutlet private weak var backButtonView: UIView!
+    @IBOutlet private weak var blockUserButtonImageView: UIImageView!
+    @IBOutlet private weak var blockUserButtonView: UIView!
+    @IBOutlet private weak var settingsButtonView: UIView!
+    @IBOutlet private weak var headerImageView: UIImageView!
+    @IBOutlet private weak var userImageView: UIImageView!
+    @IBOutlet private weak var animalShelterImageView: UIImageView!
+    @IBOutlet private weak var welcomeBackLabel: UILabel!
+    @IBOutlet private weak var basicInfoView: UIView!
+    @IBOutlet private weak var basicInfoViewFirstLabel: UILabel!
+    @IBOutlet private weak var basicInfoViewSecondLabel: UILabel!
+    @IBOutlet private weak var firstStackView: UIStackView!
+    @IBOutlet private weak var firstCollectionHeaderLabel: UILabel!
+    @IBOutlet private weak var secondStackView: UIStackView!
+    @IBOutlet private weak var secondCollectionHeaderLabel: UILabel!
+    @IBOutlet private weak var secondCollectionHeaderImageView: UIImageView!
+    @IBOutlet private weak var emptyView: UIView!
+    @IBOutlet private weak var emptyLabel: UILabel!
+    @IBOutlet private weak var blockedUserView: UIView!
+    @IBOutlet private weak var blockedUserLabel: UILabel!
     @IBOutlet weak var firstCollectionView: UICollectionView!
-    @IBOutlet weak var secondStackView: UIStackView!
-    @IBOutlet weak var secondCollectionHeaderLabel: UILabel!
-    @IBOutlet weak var secondCollectionHeaderImageView: UIImageView!
     @IBOutlet weak var secondCollectionView: UICollectionView!
-    @IBOutlet weak var emptyView: UIView!
-    @IBOutlet weak var emptyLabel: UILabel!
-    @IBOutlet weak var blockedUserView: UIView!
-    @IBOutlet weak var blockedUserLabel: UILabel!
     
     // MARK: - Properties
     override var hideBackButton: Bool {
@@ -59,9 +58,11 @@ final class ProfileViewController: ViewController, UIGestureRecognizerDelegate {
         
         viewModel.viewDidAppear()
     }
-    
-    // MARK: - Functions
-    private func setupUI() {
+}
+
+// MARK: - Private functions
+private extension ProfileViewController {
+    func setupUI() {
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         configureCollectionView(firstCollectionView)
         configureCollectionView(secondCollectionView)
@@ -71,7 +72,7 @@ final class ProfileViewController: ViewController, UIGestureRecognizerDelegate {
         fillUI()
     }
     
-    private func fillUI() {
+    func fillUI() {
         backButtonView.isHidden = viewModel.isMyProfile
         blockUserButtonView.isHidden = viewModel.isMyProfile
         settingsButtonView.isHidden = !viewModel.isMyProfile
@@ -97,7 +98,7 @@ final class ProfileViewController: ViewController, UIGestureRecognizerDelegate {
         blockedUserView.isHidden = !viewModel.isBlocked
     }
     
-    private func updateBlockedUserUI() {
+    func updateBlockedUserUI() {
         UIView.animate(withDuration: 0.25) {
             self.blockUserButtonImageView.image = UIImage(named: self.viewModel.isBlocked ? "UnblockUserWhite" : "BlockUserWhite")
             self.basicInfoView.isHidden = self.viewModel.isBlocked
@@ -107,13 +108,15 @@ final class ProfileViewController: ViewController, UIGestureRecognizerDelegate {
         }
     }
     
-    private func blockUser() {
+    func blockUser() {
         viewModel.didPressBlockUserButton { allowed in
             if allowed { updateBlockedUserUI() }
         }
     }
-    
-    // MARK: - IBActions
+}
+
+// MARK: - IBActions
+private extension ProfileViewController {
     @IBAction func backButtonPressed(_ sender: UIButton) {
         viewModel.didPressBackButton()
     }

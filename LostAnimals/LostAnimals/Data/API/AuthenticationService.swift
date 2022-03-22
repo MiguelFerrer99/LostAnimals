@@ -6,14 +6,29 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
 import Firebase
 import CodableFirebase
-import UIKit
 
+// MARK: - Enums
 enum SignUpResult {
     case success(User)
     case error(String)
+}
+enum LoginResult {
+    case success(User)
+    case error(String)
+}
+enum ForgotPasswordResult {
+    case success(String)
+    case error(String)
+}
+enum DeleteAccountResult {
+    case success(String)
+    case error(String)
+}
+enum FirebaseError: String {
+    case emailAlreadyInUse = "The email address is already in use by another account."
+    case networkError = "Network error (such as timeout, interrupted connection or unreachable host) has occurred."
 }
 
 class AuthenticationService {
@@ -26,15 +41,15 @@ class AuthenticationService {
         databaseRef = Database.database().reference()
         storageRef = Storage.storage().reference()
     }
-    
-    // MARK: - AuthenticationService Functions
+}
+
+// MARK: - Functions
+extension AuthenticationService {
     func signUp(user: User, userPassword: String, completion: @escaping (SignUpResult) -> Void) {
         Auth.auth().createUser(withEmail: user.email, password: userPassword) { authResult, error in
             if let authResult = authResult {
-                self.uploadImagesAndGetURLs(userImageRef: self.storageRef.child("users").child(authResult.user.uid).child("images").child("user_image.png"),
-                                            headerImageRef: self.storageRef.child("users").child(authResult.user.uid).child("images").child("user_image.png"),
-                                            userImage: user.userImage,
-                                            headerImage: user.headerImage) { userImageURLString, headerImageURLString in
+                self.uploadImagesAndGetURLs(userImageRef: self.storageRef.child("default_images").child("user_image.png"),
+                                            headerImageRef: self.storageRef.child("default_images").child("header_image.png")) { userImageURLString, headerImageURLString in
                     if let userImageURLString = userImageURLString, let headerImageURLString = headerImageURLString {
                         if let newUserDTO = user.map(userID: authResult.user.uid,
                                                      userImageString: userImageURLString,
@@ -48,32 +63,47 @@ class AuthenticationService {
                         } else { completion(.error("An unexpected error occured. Please, try again later")) }
                     } else { completion(.error("An unexpected error occured. Please, try again later")) }
                 }
-            } else if let error = error { completion(.error(error.localizedDescription)) }
-        }
-    }
-    
-    // MARK: - Private functions
-    private func uploadImagesAndGetURLs(userImageRef: StorageReference, headerImageRef: StorageReference, userImage: UIImage, headerImage: UIImage, completion: @escaping ((String?, String?) -> ())) {
-        guard let userImageData = userImage.pngData(), let headerImageData = headerImage.pngData() else { return }
-        userImageRef.putData(userImageData, metadata: nil) { (_, error) in
-            if error != nil { completion(nil,nil) }
-            else {
-                userImageRef.downloadURL { (userImageURL, _) in
-                    if let userImageURL = userImageURL {
-                        headerImageRef.putData(headerImageData, metadata: nil) { (_, error) in
-                            headerImageRef.downloadURL { (headerImageURL, _) in
-                                if let headerImageURL = headerImageURL {
-                                    completion(userImageURL.absoluteString, headerImageURL.absoluteString)
-                                } else { completion(nil,nil) }
-                            }
-                        }
-                    } else { completion(nil,nil) }
+            } else if let error = error {
+                switch error.localizedDescription {
+                case FirebaseError.emailAlreadyInUse.rawValue:
+                    completion(.error("The email address is already in use by another account"))
+                case FirebaseError.networkError.rawValue:
+                    completion(.error("You don't have an internet connection"))
+                default:
+                    completion(.error(error.localizedDescription))
                 }
             }
         }
     }
     
-    private func saveUserDataAndGetUser(newUserRef: DatabaseReference, newUserDTO: UserDTO, completion: @escaping ((User?) -> ())) {
+    func logIn(email: String, password: String, completion: @escaping (LoginResult) -> Void) {
+        // TODO: Finish logIn
+    }
+    
+    func forgotPassword(email: String, completion: @escaping (ForgotPasswordResult) -> Void) {
+        // TODO: Finish forgotPassword
+    }
+    
+    func deleteAccount(id: String, completion: @escaping (DeleteAccountResult) -> Void) {
+        // TODO: Finish deleteAccount (UI too)
+    }
+}
+
+// MARK: - Private functions
+private extension AuthenticationService {
+    func uploadImagesAndGetURLs(userImageRef: StorageReference, headerImageRef: StorageReference, completion: @escaping ((String?, String?) -> ())) {
+        userImageRef.downloadURL { (userImageURL, _) in
+            if let userImageURL = userImageURL {
+                headerImageRef.downloadURL { (headerImageURL, _) in
+                    if let headerImageURL = headerImageURL {
+                        completion(userImageURL.absoluteString, headerImageURL.absoluteString)
+                    } else { completion(nil,nil) }
+                }
+            } else { completion(nil,nil) }
+        }
+    }
+    
+    func saveUserDataAndGetUser(newUserRef: DatabaseReference, newUserDTO: UserDTO, completion: @escaping ((User?) -> ())) {
         do {
             let userObject = try FirebaseEncoder().encode(newUserDTO)
             newUserRef.setValue(userObject) { (error, _) in

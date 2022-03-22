@@ -6,17 +6,18 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-extension EditPostViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    // MARK: - Functions
+// MARK: - Functions
+extension EditPostViewController {
     func configureImagePickerController() {
         imagePickerController.delegate = self
         imagePickerController.modalPresentationStyle = .overFullScreen
         imagePickerController.allowsEditing = true
     }
-    
+}
+
+extension EditPostViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     // MARK: - UIImagePickerControllerDelegate
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)

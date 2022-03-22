@@ -7,45 +7,43 @@
 //
 
 import UIKit
+
 @IBDesignable class CustomButton: UIButton {
-    // MARK: - IBInspectable
+    // MARK: - IBInspectables
     @IBInspectable var fullRound: Bool = false {
         willSet {
             round(newValue)
         }
     }
-    
     @IBInspectable var cornerRadius: CGFloat = 0 {
         willSet {
             setCornerRadius(of: newValue)
         }
     }
-    
     @IBInspectable var borderWidth: CGFloat = 0 {
         willSet {
             setBorderWidth(newValue)
         }
     }
-    
     @IBInspectable var borderColor: UIColor = .clear {
         willSet {
             setBorderColor(newValue)
         }
     }
-    
     @IBInspectable var tintedImage: UIImage? = nil {
         willSet {
             setTitedImage(newValue)
         }
     }
-    
     @IBInspectable var indicatorColor: UIColor = .white
     
     // MARK: - Properties
     var originalButtonText: String?
     var activityIndicator: UIActivityIndicatorView!
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension CustomButton {
     func round(_ round: Bool) {
         layer.cornerRadius = round ? frame.height / 2 : cornerRadius
     }
@@ -87,9 +85,11 @@ import UIKit
         activityIndicator = nil
         isEnabled = true
     }
+}
     
-    // MARK: - Private functions
-    private func createActivityIndicator() -> UIActivityIndicatorView {
+// MARK: - Private functions
+private extension CustomButton {
+    func createActivityIndicator() -> UIActivityIndicatorView {
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
@@ -97,13 +97,13 @@ import UIKit
         return activityIndicator
     }
     
-    private func showSpinning() {
+    func showSpinning() {
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         addSubview(activityIndicator)
         centerActivityIndicatorInButton()
     }
     
-    private func centerActivityIndicatorInButton() {
+    func centerActivityIndicatorInButton() {
         let xCenterConstraint = NSLayoutConstraint(item: self,
                                                    attribute: .centerX,
                                                    relatedBy: .equal,

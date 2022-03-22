@@ -9,7 +9,6 @@
 import Foundation
 
 final class ForgotPasswordViewModel {
-    
     // MARK: - Properties
     private let router: ForgotPasswordRouter
     let numberOfTextFields = 1
@@ -19,7 +18,6 @@ final class ForgotPasswordViewModel {
     required init(router: ForgotPasswordRouter) {
         self.router = router
     }
-    
 }
 
 // MARK: - Life cycle

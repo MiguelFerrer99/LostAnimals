@@ -16,7 +16,4 @@ final class TermsAndConditionsRouter {
     required init(viewController: TermsAndConditionsViewController?) {
         self.viewController = viewController
     }
-    
-    // MARK: - Functions
-    
 }

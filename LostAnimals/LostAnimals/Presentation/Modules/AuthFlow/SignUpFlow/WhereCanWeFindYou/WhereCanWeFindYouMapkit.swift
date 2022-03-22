@@ -9,11 +9,15 @@
 import UIKit
 import MapKit
 
-extension WhereCanWeFindYouViewController: MKLocalSearchCompleterDelegate {
+// MARK: - Functions
+extension WhereCanWeFindYouViewController {
     func configureMapKit() {
         searchCompleter.delegate = self
     }
-    
+}
+
+// MARK: - MKLocalSearchCompleterDelegate
+extension WhereCanWeFindYouViewController: MKLocalSearchCompleterDelegate {
     func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
         viewModel.searchResults = completer.results
         addressTableView.reloadData()

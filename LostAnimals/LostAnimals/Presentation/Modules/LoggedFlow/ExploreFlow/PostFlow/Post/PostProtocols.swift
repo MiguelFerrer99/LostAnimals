@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
+// MARK: - ActionAfterPostOptionsDelegate
 extension PostViewController: ActionAfterPostOptionsDelegate {
-    // MARK: - ActionAfterPostOptionsDelegate
     func goTo(action: ActionAfterPostOptions, postImageToShare: UIImage?) {
         switch action {
         case .goToEditPost:

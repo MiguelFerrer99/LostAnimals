@@ -6,10 +6,10 @@
 //  Copyright © 2021 Rudo. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 struct PostCollectionViewCellSummary {
+    // MARK: - Properties
     let postType: PostType
     let animal: Animal
     let postImage: UIImage?

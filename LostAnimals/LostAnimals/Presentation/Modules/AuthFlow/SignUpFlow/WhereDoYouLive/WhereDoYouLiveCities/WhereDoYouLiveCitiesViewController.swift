@@ -9,7 +9,6 @@
 import UIKit
 
 final class WhereDoYouLiveCitiesViewController: ViewController {
-    
     // MARK: - IBOutlets
     @IBOutlet weak var citiesTableView: UITableView!
     
@@ -36,9 +35,11 @@ final class WhereDoYouLiveCitiesViewController: ViewController {
             self.searchController.searchBar.becomeFirstResponder()
         }
     }
-    
-    // MARK: - Functions
-    private func setupUI() {
+}
+
+// MARK: - Private functions
+private extension WhereDoYouLiveCitiesViewController {
+    func setupUI() {
         configureSearchController(searchController)
         configureTableview(citiesTableView)
     }

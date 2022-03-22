@@ -6,8 +6,8 @@
 //  Copyright © 2021 Rudo. All rights reserved.
 //
 
-extension LoginViewController: CustomTextFieldDelegate {
-    // MARK: - Functions
+// MARK: - Functions
+extension LoginViewController {
     func configureTextFields() {
         mailTextField.delegate = self
         mailTextField.textField.textContentType = .username
@@ -22,15 +22,20 @@ extension LoginViewController: CustomTextFieldDelegate {
         passwordTextField.addErrorsToCheck([TextFieldErrorEmptyValue(),
                                             TextFieldErrorPasswordFormat()])
     }
-    
-    private func checkAllContentsAreOk() {
+}
+
+// MARK: - Private functions
+private extension LoginViewController {
+    func checkAllContentsAreOk() {
         let haveErrors = viewModel.textFieldsHaveErrors()
         let canMoveToNextStep = !haveErrors && viewModel.editedTextFields.count == viewModel.numberOfTextFields
         logInButton.alpha = canMoveToNextStep ? 1 : 0.5
         logInButton.isEnabled = canMoveToNextStep
     }
-    
-    // MARK: - CustomTextFieldDelegate
+}
+
+// MARK: - CustomTextFieldDelegate
+extension LoginViewController: CustomTextFieldDelegate {
     func textFieldShouldReturn(_ customTextField: CustomTextField) -> Bool {
         switch customTextField.textField {
         case mailTextField.textField:

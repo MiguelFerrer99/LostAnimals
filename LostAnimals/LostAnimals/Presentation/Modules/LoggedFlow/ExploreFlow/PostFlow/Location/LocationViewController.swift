@@ -10,7 +10,6 @@ import UIKit
 import MapKit
 
 final class LocationViewController: ViewController {
-    
     // MARK: - IBOutlets
     @IBOutlet weak var locationMapView: MKMapView!
     
@@ -40,9 +39,18 @@ final class LocationViewController: ViewController {
         
         viewModel.viewDidAppear()
     }
-    
-    // MARK: - Functions
-    private func setupUI() {
+}
+
+// MARK: - Private functions
+private extension LocationViewController {
+    @objc func howToGoButtonPressed() {
+        viewModel.openLocationInMaps()
+    }
+}
+
+// MARK: - Functions
+extension LocationViewController {
+    func setupUI() {
         configureMapView(locationMapView)
     }
 }

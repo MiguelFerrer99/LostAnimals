@@ -10,7 +10,7 @@ import UIKit
 
 final class GuestPopupViewController: ViewController {
     // MARK: - IBOutlets
-    @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet private weak var backgroundView: UIView!
     
     // MARK: - Properties
     var viewModel: GuestPopupViewModel!
@@ -19,7 +19,6 @@ final class GuestPopupViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupUI()
         viewModel.viewReady()
     }
     
@@ -44,13 +43,10 @@ final class GuestPopupViewController: ViewController {
             self.backgroundView.alpha = 0
         }
     }
-    
-    // MARK: - Functions
-    private func setupUI() {
-        // Do UI setup
-    }
-    
-    // MARK: - IBActions
+}
+
+// MARK: - IBActions
+private extension GuestPopupViewController {
     @IBAction func dismissButtonPressed(_ sender: UIButton) {
         viewModel.didPressDismissButton()
     }

@@ -10,17 +10,19 @@ import UIKit
 
 class SocialMediaCollectionViewCell: UICollectionViewCell, Reusable {
     // MARK: - IBOutlets
-    @IBOutlet weak var socialMediaIconImageView: UIImageView!
-    @IBOutlet weak var socialMediaBackgroundImageView: CustomImageView!
-    @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
-    @IBOutlet weak var trailingConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var socialMediaIconImageView: UIImageView!
+    @IBOutlet private weak var socialMediaBackgroundImageView: CustomImageView!
+    @IBOutlet private weak var leadingConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var trailingConstraint: NSLayoutConstraint!
     
     // MARK: - Life cycle
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension SocialMediaCollectionViewCell {
     func display(summary: SocialMediaCollectionViewCellSummary) {
         socialMediaIconImageView.image = summary.icon
         socialMediaBackgroundImageView.image = summary.backgroundImage

@@ -8,17 +8,15 @@
 
 import UIKit
 
-final class NewPostBuilder {
-    
+final class NewPostBuilder {}
+
+// MARK: - NewPostBuilder
+extension NewPostBuilder {
     func build() -> NewPostViewController {
-        
         let viewController = UIViewController.instantiate(viewController: NewPostViewController.self)
-        
         let router = NewPostRouter(viewController: viewController)
         let viewModel = NewPostViewModel(router: router)
-        
         viewController.viewModel = viewModel
-        
         return viewController
     }
 }

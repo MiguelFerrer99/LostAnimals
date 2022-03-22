@@ -8,6 +8,7 @@
 
 import UIKit
 
+// MARK: - Protocols
 protocol Reusable: AnyObject {
     static var identifier: String { get }
     static var nib: UINib { get }
@@ -19,6 +20,7 @@ protocol ViewModelCell: Reusable {
     var viewModel: T! { get set }
 }
 
+// MARK: - Reusable
 extension Reusable {
     static var identifier: String {
         return String(describing: self)
@@ -29,6 +31,7 @@ extension Reusable {
     }
 }
 
+// MARK: - UITableView
 extension UITableView {
     func register(_ cell: Reusable.Type) {
         self.register(cell.nib, forCellReuseIdentifier: cell.identifier)
@@ -59,6 +62,7 @@ extension UITableView {
     }
 }
 
+// MARK: - UICollectionView
 extension UICollectionView {
     func register(_ cell: Reusable.Type) {
         self.register(cell.nib, forCellWithReuseIdentifier: cell.identifier)

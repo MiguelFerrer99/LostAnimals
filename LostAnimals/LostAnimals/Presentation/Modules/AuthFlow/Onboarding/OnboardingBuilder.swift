@@ -8,17 +8,15 @@
 
 import UIKit
 
-final class OnboardingBuilder {
-    
+final class OnboardingBuilder {}
+
+// MARK: - Functions
+extension OnboardingBuilder {
     func build() -> OnboardingViewController {
-        
         let viewController = UIViewController.instantiate(viewController: OnboardingViewController.self)
-        
         let router = OnboardingRouter(viewController: viewController)
         let viewModel = OnboardingViewModel(router: router)
-        
         viewController.viewModel = viewModel
-        
         return viewController
     }
 }

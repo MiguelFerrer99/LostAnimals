@@ -8,17 +8,15 @@
 
 import UIKit
 
-final class SavedPostsBuilder {
-    
+final class SavedPostsBuilder {}
+
+// MARK: - Functions
+extension SavedPostsBuilder {
     func build() -> SavedPostsViewController {
-        
         let viewController = UIViewController.instantiate(viewController: SavedPostsViewController.self)
-        
         let router = SavedPostsRouter(viewController: viewController)
         let viewModel = SavedPostsViewModel(router: router)
-        
         viewController.viewModel = viewModel
-        
         return viewController
     }
 }

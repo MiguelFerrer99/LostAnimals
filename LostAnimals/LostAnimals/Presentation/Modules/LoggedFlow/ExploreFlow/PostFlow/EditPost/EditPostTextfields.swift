@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 import MapKit
 
-extension EditPostViewController: CustomTextFieldDelegate {
-    // MARK: - Functions
+// MARK: - Functions
+extension EditPostViewController {
     func configureTextfields() {
         animalTextfield.delegate = self
         animalTextfield.addErrorsToCheck([TextFieldErrorEmptyValue()])
@@ -58,17 +58,6 @@ extension EditPostViewController: CustomTextFieldDelegate {
         convertAddressToLocation(address: searchResultString)
     }
     
-    private func convertAddressToLocation(address: String) {
-        let geocoder = CLGeocoder()
-        geocoder.geocodeAddressString(address) { placemarks, error in
-            if let placemark = placemarks?.first, let location = placemark.location {
-                let lat = location.coordinate.latitude
-                let long = location.coordinate.longitude
-                self.viewModel.newPostLocation = Location(address: address, coordinates: Coordinates(longitude: long, latitude: lat))
-            }
-        }
-    }
-    
     func checkAllContentsAreOk() {
         let haveErrors = viewModel.textFieldsHaveErrors()
         let hasAtLeastOnePhoto = viewModel.selectPhotoImageViews.contains(where: {
@@ -79,8 +68,25 @@ extension EditPostViewController: CustomTextFieldDelegate {
         saveChangesButton.alpha = canMoveToNextStep ? 1 : 0.5
         saveChangesButton.isEnabled = canMoveToNextStep
     }
-    
-    // MARK: - CustomTextFieldDelegate
+}
+
+
+// MARK: - Private functions
+private extension EditPostViewController {
+    func convertAddressToLocation(address: String) {
+        let geocoder = CLGeocoder()
+        geocoder.geocodeAddressString(address) { placemarks, error in
+            if let placemark = placemarks?.first, let location = placemark.location {
+                let lat = location.coordinate.latitude
+                let long = location.coordinate.longitude
+                self.viewModel.newPostLocation = Location(address: address, coordinates: Coordinates(longitude: long, latitude: lat))
+            }
+        }
+    }
+}
+
+// MARK: - CustomTextFieldDelegate
+extension EditPostViewController: CustomTextFieldDelegate {
     func textFieldShouldReturn(_ customTextField: CustomTextField) -> Bool {
         switch customTextField.textField {
         case nameTextfield.textField:

@@ -16,8 +16,10 @@ final class ContactWithPopupRouter {
     required init(viewController: ContactWithPopupViewController?) {
         self.viewController = viewController
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension ContactWithPopupRouter {
     func dismissContactWithPopup() {
         self.viewController?.dismissCurrentView(completion: nil)
     }

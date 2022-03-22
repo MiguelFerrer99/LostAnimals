@@ -16,8 +16,10 @@ final class PostOptionsPopupRouter {
     required init(viewController: PostOptionsPopupViewController?) {
         self.viewController = viewController
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension PostOptionsPopupRouter {
     func dismissPostOptionsPopup() {
         DispatchQueue.main.async {
             self.viewController?.dismissCurrentView(completion: nil)

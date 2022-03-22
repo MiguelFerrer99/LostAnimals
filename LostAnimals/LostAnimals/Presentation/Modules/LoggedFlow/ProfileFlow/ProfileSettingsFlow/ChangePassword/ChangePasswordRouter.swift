@@ -16,8 +16,10 @@ final class ChangePasswordRouter {
     required init(viewController: ChangePasswordViewController?) {
         self.viewController = viewController
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension ChangePasswordRouter {
     func goBack() {
         DispatchQueue.main.async {
             self.viewController?.pop()

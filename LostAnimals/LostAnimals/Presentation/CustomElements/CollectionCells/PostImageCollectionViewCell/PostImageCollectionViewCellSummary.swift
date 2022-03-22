@@ -6,10 +6,10 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 struct PostImageCollectionViewCellSummary {
+    // MARK: - Properties
     let postImage: UIImage
     let aspectImage: UIView.ContentMode
 }

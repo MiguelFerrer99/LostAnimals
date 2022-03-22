@@ -6,8 +6,6 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
-
 final class BlockedUsersViewModel {
     // MARK: - Properties
     private let router: BlockedUsersRouter

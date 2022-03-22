@@ -6,15 +6,13 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
-
+// MARK: - Enums
 enum AnimalTypesComesFrom: String {
     case editPost
     case newPost
 }
 
 final class AnimalTypesViewModel {
-    
     // MARK: - Properties
     private let router: AnimalTypesRouter
     let comesFrom: AnimalTypesComesFrom

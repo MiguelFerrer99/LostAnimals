@@ -6,9 +6,10 @@
 //  Copyright © 2020 Miguel Ferrer Fornali. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension Date {
+    // MARK: - Init
     init(day: Int, month: Int, year: Int, hour: Int, minute: Int) {
         self.init()
         
@@ -24,35 +25,46 @@ extension Date {
         self = gregorianCalendar.date(from: dateComponents)!
     }
     
+    // MARK: - Properties
     static let today = Date()
-    
     var day: Int {
         let calendar = Calendar.current
         return calendar.component(.day, from: self)
     }
-    
     var month: Int {
         let calendar = Calendar.current
         return calendar.component(.month, from: self)
     }
-    
     var year: Int {
         let calendar = Calendar.current
         return calendar.component(.year, from: self)
     }
-    
     var stringMonth: String {
         let dateFormatter = DateFormatter()
         dateFormatter.setLocalizedDateFormatFromTemplate("MMMM")
         return dateFormatter.string(from: self)
     }
-    
     var monthStringCode: String {
         let dateFormatter = DateFormatter()
         dateFormatter.setLocalizedDateFormatFromTemplate("MMM")
         return dateFormatter.string(from: self)
     }
-    
+    var isCurrentMonth: Bool {
+        return year == Date().year && month == Date().month
+    }
+    var isToday: Bool {
+        return year == Date().year && month == Date().month && day == Date().day
+    }
+    var isYesterday: Bool {
+        return year == Date().year && month == Date().month && day == Date().day - 1
+    }
+    var isTomorrow: Bool {
+        return year == Date().year && month == Date().month && day == Date().day + 1
+    }
+}
+
+// MARK: - Functions
+extension Date {
     func toString(withFormat format: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
@@ -65,20 +77,9 @@ extension Date {
         formatter.locale = Locale(identifier: Locale.preferredLanguages.first ?? "en-EN")
         return formatter.localizedString(for: self, relativeTo: Date())
     }
-    
-    var isCurrentMonth: Bool {
-        return year == Date().year && month == Date().month
-    }
-    
-    var isToday: Bool {
-        return year == Date().year && month == Date().month && day == Date().day
-    }
-    
-    var isYesterday: Bool {
-        return year == Date().year && month == Date().month && day == Date().day - 1
-    }
 }
 
+// MARK: - DateFormat
 struct DateFormat {
     static let backend = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
     static let full = "yyyy/MM/dd HH:mm:ss"

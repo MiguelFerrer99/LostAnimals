@@ -6,8 +6,6 @@
 //  Copyright © 2021 Rudo. All rights reserved.
 //
 
-import UIKit
-
 class AccountDetailsCollectionViewCellViewModel: ViewModel {
     // MARK: - Properties
     var numberOfTextFields = 3
@@ -15,8 +13,10 @@ class AccountDetailsCollectionViewCellViewModel: ViewModel {
     
     // MARK: - Init
     init() {}
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension AccountDetailsCollectionViewCellViewModel {
     func textFieldsHaveErrors() -> Bool {
         var haveErrors = false
         editedTextFields.forEach { editedTextField in

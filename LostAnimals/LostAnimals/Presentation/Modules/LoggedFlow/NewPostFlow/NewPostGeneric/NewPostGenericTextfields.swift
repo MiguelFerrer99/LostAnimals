@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 import MapKit
 
-extension NewPostGenericViewController: CustomTextFieldDelegate {
-    // MARK: - Functions
+// MARK: - Functions
+extension NewPostGenericViewController {
     func configureTextfields() {
         nameTextfield.delegate = self
         nameTextfield.textField.textContentType = .name
@@ -44,17 +44,6 @@ extension NewPostGenericViewController: CustomTextFieldDelegate {
         convertAddressToLocation(address: searchResultString)
     }
     
-    private func convertAddressToLocation(address: String) {
-        let geocoder = CLGeocoder()
-        geocoder.geocodeAddressString(address) { placemarks, error in
-            if let placemark = placemarks?.first, let location = placemark.location {
-                let lat = location.coordinate.latitude
-                let long = location.coordinate.longitude
-                self.viewModel.newPostLocation = Location(address: address, coordinates: Coordinates(longitude: long, latitude: lat))
-            }
-        }
-    }
-    
     func checkAllContentsAreOk() {
         let haveErrors = viewModel.textFieldsHaveErrors()
         let hasAtLeastOnePhoto = viewModel.selectPhotoImageViews.contains(where: {
@@ -65,8 +54,24 @@ extension NewPostGenericViewController: CustomTextFieldDelegate {
         publishPostButton.alpha = canMoveToNextStep ? 1 : 0.5
         publishPostButton.isEnabled = canMoveToNextStep
     }
-    
-    // MARK: - CustomTextFieldDelegate
+}
+
+// MARK: - Private functions
+extension NewPostGenericViewController {
+    func convertAddressToLocation(address: String) {
+        let geocoder = CLGeocoder()
+        geocoder.geocodeAddressString(address) { placemarks, error in
+            if let placemark = placemarks?.first, let location = placemark.location {
+                let lat = location.coordinate.latitude
+                let long = location.coordinate.longitude
+                self.viewModel.newPostLocation = Location(address: address, coordinates: Coordinates(longitude: long, latitude: lat))
+            }
+        }
+    }
+}
+
+// MARK: - CustomTextFieldDelegate
+extension NewPostGenericViewController: CustomTextFieldDelegate {
     func textFieldShouldReturn(_ customTextField: CustomTextField) -> Bool {
         switch customTextField.textField {
         case nameTextfield.textField:

@@ -9,7 +9,6 @@
 import Foundation
 
 final class WhereDoYouLiveCitiesViewModel {
-    
     // MARK: - Properties
     private let router: WhereDoYouLiveCitiesRouter
     private let comesFrom: WhereDoYouLiveComesFrom
@@ -25,7 +24,6 @@ final class WhereDoYouLiveCitiesViewModel {
         self.cities = cities
         self.filteredCities = self.cities
     }
-    
 }
 
 // MARK: - Life cycle

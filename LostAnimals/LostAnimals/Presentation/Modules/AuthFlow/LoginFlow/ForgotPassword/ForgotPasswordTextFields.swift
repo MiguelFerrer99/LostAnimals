@@ -6,8 +6,8 @@
 //  Copyright © 2021 Rudo. All rights reserved.
 //
 
-extension ForgotPasswordViewController: CustomTextFieldDelegate {
-    // MARK: - Functions
+// MARK: - Functions
+extension ForgotPasswordViewController {
     func configureTextFields() {
         mailTexfield.delegate = self
         mailTexfield.textField.textContentType = .emailAddress
@@ -16,15 +16,20 @@ extension ForgotPasswordViewController: CustomTextFieldDelegate {
         mailTexfield.addErrorsToCheck([TextFieldErrorEmptyValue(),
                                        TextFieldErrorEmailFormat()])
     }
-    
-    private func checkAllContentsAreOk() {
+}
+
+// MARK: - Private functions
+private extension ForgotPasswordViewController {
+    func checkAllContentsAreOk() {
         let haveErrors = viewModel.textFieldsHaveErrors()
         let canMoveToNextStep = !haveErrors && viewModel.editedTextFields.count == viewModel.numberOfTextFields
         forgotPasswordButton.alpha = canMoveToNextStep ? 1 : 0.5
         forgotPasswordButton.isEnabled = canMoveToNextStep
     }
-    
-    // MARK: - CustomTextFieldDelegate
+}
+
+// MARK: - CustomTextFieldDelegate
+extension ForgotPasswordViewController: CustomTextFieldDelegate {
     func textFieldShouldReturn(_ customTextField: CustomTextField) -> Bool {
         switch customTextField.textField {
         case mailTexfield.textField:

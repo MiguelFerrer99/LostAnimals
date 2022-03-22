@@ -9,7 +9,6 @@
 import UIKit
 
 final class ExploreViewController: ViewController {
-    
     // MARK: - IBOutlets
     @IBOutlet weak var postsCollectionView: UICollectionView!
     
@@ -46,14 +45,16 @@ final class ExploreViewController: ViewController {
         
         viewModel.viewDidAppear()
     }
-    
-    // MARK: - Functions
-    private func setupUI() {
+}
+
+// MARK: - Private functions
+extension ExploreViewController {
+    func setupUI() {
         configureCollectionView(postsCollectionView)
         configureRefreshControl(refreshControl)
     }
     
-    @objc private func savedPostsButtonPressed() {
+    @objc func savedPostsButtonPressed() {
         viewModel.didPressSavedPosts()
     }
 }

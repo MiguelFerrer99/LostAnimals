@@ -6,11 +6,9 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 final class PostImagesViewModel {
-    
     // MARK: - Properties
     private let router: PostImagesRouter
     let postImages: [UIImage?]

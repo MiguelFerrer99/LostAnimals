@@ -6,10 +6,7 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
-
 final class ContactWithPopupViewModel {
-    
     // MARK: - Properties
     private let router: ContactWithPopupRouter
     let authorSocialMedias:  [SocialMediaType: String]

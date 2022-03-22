@@ -6,8 +6,6 @@
 //  Copyright © 2021 Rudo. All rights reserved.
 //
 
-import Foundation
-
 final class NewPostViewModel {
     
     // MARK: - Properties

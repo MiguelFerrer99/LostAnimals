@@ -9,11 +9,10 @@
 import UIKit
 
 class AnimalFilterTableViewCell: UITableViewCell, Reusable {
-    
     // MARK: - IBOutlets
-    @IBOutlet weak var animalTypeImageView: UIImageView!
-    @IBOutlet weak var animalTypeTitleLabel: UILabel!
-    @IBOutlet weak var checkmarkView: UIView!
+    @IBOutlet private weak var animalTypeImageView: UIImageView!
+    @IBOutlet private weak var animalTypeTitleLabel: UILabel!
+    @IBOutlet private weak var checkmarkView: UIView!
     
     // MARK: - Life cycle
     override func awakeFromNib() {
@@ -29,8 +28,10 @@ class AnimalFilterTableViewCell: UITableViewCell, Reusable {
         
         checkmarkView.isHidden = !selected
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension AnimalFilterTableViewCell {
     func display(summary: AnimalFilterTableViewCellSummary) {
         animalTypeImageView.image = summary.animalTypeImage
         animalTypeTitleLabel.text = summary.animalTypeTitle

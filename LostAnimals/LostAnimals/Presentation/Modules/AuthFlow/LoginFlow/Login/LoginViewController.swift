@@ -9,7 +9,6 @@
 import UIKit
 
 final class LoginViewController: ViewController {
-    
     // MARK: - IBOutlets
     @IBOutlet weak var mailTextField: CustomTextField!
     @IBOutlet weak var passwordTextField: CustomTextField!
@@ -32,22 +31,26 @@ final class LoginViewController: ViewController {
         
         viewModel.viewDidAppear()
     }
-    
-    // MARK: - Functions
-    private func setupUI() {
+}
+
+// MARK: - Private functions
+private extension LoginViewController {
+    func setupUI() {
         configureTextFields()
         forgotPasswordButton.setTitleColor(.customBlack, for: .disabled)
     }
     
-    private func updateUserInteraction() {
+    func updateUserInteraction() {
         navigationController?.navigationBar.isUserInteractionEnabled = logInButton.isEnabled
         navigationController?.interactivePopGestureRecognizer?.isEnabled = logInButton.isEnabled
         mailTextField.isUserInteractionEnabled = logInButton.isEnabled
         passwordTextField.isUserInteractionEnabled = logInButton.isEnabled
         forgotPasswordButton.isUserInteractionEnabled = logInButton.isEnabled
     }
-    
-    // MARK: - IBActions
+}
+
+// MARK: - IBActions
+private extension LoginViewController {
     @IBAction func forgotPasswordButtonPressed(_ sender: UIButton) {
         viewModel.didPressForgotPasswordButton()
     }

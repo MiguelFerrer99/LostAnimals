@@ -457,6 +457,14 @@
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Name"/>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="capitalizeFirstLetter" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="hideContent" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="whiteTheme" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="datePickerEnabled" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="dateAndTimePickerEnabled" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="animalPickerEnabled" value="NO"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Odk-9P-JAG" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
@@ -468,6 +476,14 @@
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Animal"/>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="animalPickerEnabled" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="capitalizeFirstLetter" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="hideContent" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="whiteTheme" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="datePickerEnabled" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="dateAndTimePickerEnabled" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u3s-op-BJQ" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
@@ -479,6 +495,14 @@
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Breed"/>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="capitalizeFirstLetter" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="hideContent" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="whiteTheme" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="datePickerEnabled" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="dateAndTimePickerEnabled" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="animalPickerEnabled" value="NO"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="31u-Fn-2JT" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
@@ -490,6 +514,14 @@
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Last time seen"/>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="dateAndTimePickerEnabled" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="datePickerEnabled" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="animalPickerEnabled" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="capitalizeFirstLetter" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="hideContent" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="whiteTheme" value="NO"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2TV-8q-wcR" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
@@ -501,6 +533,14 @@
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Location"/>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="animalPickerEnabled" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="dateAndTimePickerEnabled" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="datePickerEnabled" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="whiteTheme" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="hideContent" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="capitalizeFirstLetter" value="NO"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IP3-BL-fdJ" customClass="CustomStackView" customModule="LostAnimals" customModuleProvider="target">

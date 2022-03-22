@@ -10,30 +10,29 @@ import Foundation
 import UIKit
 
 final class PostViewController: ViewController, UIGestureRecognizerDelegate {
-    
     // MARK: - IBOutlets
-    @IBOutlet weak var savePostImageView: UIImageView!
-    @IBOutlet weak var postScrollView: UIScrollView!
+    @IBOutlet private weak var savePostImageView: UIImageView!
+    @IBOutlet private weak var postScrollView: UIScrollView!
+    @IBOutlet private weak var postTypeImageView: UIImageView!
+    @IBOutlet private weak var postTypeLabel: UILabel!
+    @IBOutlet private weak var animalNameView: CustomView!
+    @IBOutlet private weak var animalNameLabel: UILabel!
+    @IBOutlet private weak var animalBreedLabel: UILabel!
+    @IBOutlet private weak var animalBreedView: CustomView!
+    @IBOutlet private weak var lastTimeSeenAndLocationStackView: UIStackView!
+    @IBOutlet private weak var lastTimeSeenLabel: UILabel!
+    @IBOutlet private weak var locationLabel: UILabel!
+    @IBOutlet private weak var descriptionTextView: UITextView!
+    @IBOutlet private weak var descriptionView: CustomView!
+    @IBOutlet private weak var authorView: CustomView!
+    @IBOutlet private weak var animalShelterImageView: UIImageView!
+    @IBOutlet private weak var authorPhotoImageView: UIImageView!
+    @IBOutlet private weak var authorNameLabel: UILabel!
+    @IBOutlet private weak var authorAgeLabel: UILabel!
+    @IBOutlet private weak var authorAddressLabel: UILabel!
+    @IBOutlet private weak var contactWithAuthorButton: UIButton!
     @IBOutlet weak var postImagesCollectionView: UICollectionView!
     @IBOutlet weak var postImagesPageControl: UIPageControl!
-    @IBOutlet weak var postTypeImageView: UIImageView!
-    @IBOutlet weak var postTypeLabel: UILabel!
-    @IBOutlet weak var animalNameView: CustomView!
-    @IBOutlet weak var animalNameLabel: UILabel!
-    @IBOutlet weak var animalBreedLabel: UILabel!
-    @IBOutlet weak var animalBreedView: CustomView!
-    @IBOutlet weak var lastTimeSeenAndLocationStackView: UIStackView!
-    @IBOutlet weak var lastTimeSeenLabel: UILabel!
-    @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var descriptionTextView: UITextView!
-    @IBOutlet weak var descriptionView: CustomView!
-    @IBOutlet weak var authorView: CustomView!
-    @IBOutlet weak var animalShelterImageView: UIImageView!
-    @IBOutlet weak var authorPhotoImageView: UIImageView!
-    @IBOutlet weak var authorNameLabel: UILabel!
-    @IBOutlet weak var authorAgeLabel: UILabel!
-    @IBOutlet weak var authorAddressLabel: UILabel!
-    @IBOutlet weak var contactWithAuthorButton: UIButton!
     
     // MARK: - Properties
     override var navBarTitle: String {
@@ -68,13 +67,23 @@ final class PostViewController: ViewController, UIGestureRecognizerDelegate {
         
         viewModel.viewDidAppear()
     }
-    
-    // MARK: - Functions    
-    private func unsubscribeToNotifications() {
+}
+
+// MARK: - Functions
+extension PostViewController {
+    func presentActivityVC(postImageToShare: UIImage) {
+        let activityViewController = UIActivityViewController(activityItems: [postImageToShare], applicationActivities: nil)
+        self.present(viewController: activityViewController, completion: nil)
+    }
+}
+
+// MARK: - Private functions
+private extension PostViewController {
+    func unsubscribeToNotifications() {
         NotificationCenter.default.removeObserver(self)
     }
     
-    private func setupUI() {
+    func setupUI() {
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         setNavBarButtons()
         configureScrollView(postScrollView)
@@ -82,7 +91,7 @@ final class PostViewController: ViewController, UIGestureRecognizerDelegate {
         fillUI()
     }
     
-    private func setNavBarButtons() {
+    func setNavBarButtons() {
         let optionsBarButtonItem = UIBarButtonItem(image: UIImage(named: "PostOptions"),
                                                    style: .plain,
                                                    target: self,
@@ -94,7 +103,7 @@ final class PostViewController: ViewController, UIGestureRecognizerDelegate {
         self.navigationItem.rightBarButtonItems = [optionsBarButtonItem, savePostBarButtonItem]
     }
     
-    private func fillUI() {
+    func fillUI() {
         postTypeImageView.image = UIImage(named: "\(viewModel.post.animal.type.rawValue)")
         switch viewModel.post.postType {
         case .lost:
@@ -125,7 +134,7 @@ final class PostViewController: ViewController, UIGestureRecognizerDelegate {
         animalShelterImageView.isHidden = !viewModel.post.author.animalShelter
     }
     
-    private func updateSavedPostUI() {
+    func updateSavedPostUI() {
         guard let savePostBarButtonItemImage = savePostBarButtonItem.image,
               let savePostImageViewImage = savePostImageView.image
         else { return }
@@ -134,26 +143,23 @@ final class PostViewController: ViewController, UIGestureRecognizerDelegate {
         savePostImageView.image = savePostImageViewImage.isEqualTo(image: UIImage(named: "SavePostWhite")) ? UIImage(named: "SavePostFilled") : UIImage(named: "SavePostWhite")
     }
     
-    private func savePost() {
+    func savePost() {
         viewModel.didPressSavePostButton { allowed in
             if allowed { updateSavedPostUI() }
         }
     }
     
-    @objc private func savePostBarButtonPressed() {
+    @objc func savePostBarButtonPressed() {
         savePost()
     }
     
-    @objc private func optionsBarButtonPressed() {
+    @objc func optionsBarButtonPressed() {
         viewModel.didPressOptionsButton()
     }
-    
-    func presentActivityVC(postImageToShare: UIImage) {
-        let activityViewController = UIActivityViewController(activityItems: [postImageToShare], applicationActivities: nil)
-        self.present(viewController: activityViewController, completion: nil)
-    }
-    
-    // MARK: - IBActions
+}
+
+// MARK: - IBActions
+private extension PostViewController {
     @IBAction func backButtonPressed(_ sender: UIButton) {
         viewModel.didPressBackButton()
     }

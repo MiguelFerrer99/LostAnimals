@@ -9,14 +9,49 @@
 import Foundation
 import UIKit
 
-extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+// MARK: - Functions
+extension ProfileViewController {
     func configureCollectionView(_ collectionView: UICollectionView) {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(PostCollectionViewCell.self)
         collectionView.register(SocialMediaCollectionViewCell.self)
     }
-    
+}
+
+// MARK: - UICollectionViewDelegate
+extension ProfileViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == firstCollectionView {
+            let post = HardcodedData.explorePosts[indexPath.row]
+            viewModel.didPressPost(post: post)
+        } else if collectionView == secondCollectionView {
+            if viewModel.isMyProfile {
+                let post = HardcodedData.savedPosts[indexPath.row]
+                viewModel.didPressPost(post: post)
+            } else {
+                let socialMediaType = viewModel.socialMediaTypes[indexPath.row]
+                let socialMediaValue = viewModel.user.socialMedias[socialMediaType]
+                switch socialMediaType {
+                case .email:
+                    sendEmail(email: socialMediaValue ?? "")
+                case .phonePrefix, .phoneNumber:
+                    viewModel.didPressPhoneButton()
+                case .whatsapp:
+                    viewModel.didPressWhatsappButton()
+                case .instagram:
+                    viewModel.didPressInstagramButton()
+                case .twitter:
+                    viewModel.didPressTwitterButton()
+                }
+            }
+        }
+    }
+}
+
+
+// MARK: - UICollectionViewDataSource
+extension ProfileViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == firstCollectionView {
             return HardcodedData.explorePosts.count
@@ -82,35 +117,11 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
             }
         }
     }
-    
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+extension ProfileViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width / 2.8, height: collectionView.frame.height)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if collectionView == firstCollectionView {
-            let post = HardcodedData.explorePosts[indexPath.row]
-            viewModel.didPressPost(post: post)
-        } else if collectionView == secondCollectionView {
-            if viewModel.isMyProfile {
-                let post = HardcodedData.savedPosts[indexPath.row]
-                viewModel.didPressPost(post: post)
-            } else {
-                let socialMediaType = viewModel.socialMediaTypes[indexPath.row]
-                let socialMediaValue = viewModel.user.socialMedias[socialMediaType]
-                switch socialMediaType {
-                case .email:
-                    sendEmail(email: socialMediaValue ?? "")
-                case .phonePrefix, .phoneNumber:
-                    viewModel.didPressPhoneButton()
-                case .whatsapp:
-                    viewModel.didPressWhatsappButton()
-                case .instagram:
-                    viewModel.didPressInstagramButton()
-                case .twitter:
-                    viewModel.didPressTwitterButton()
-                }
-            }
-        }
     }
 }

@@ -6,12 +6,11 @@
 //  Copyright © 2021 Rudo. All rights reserved.
 //
 
-import UIKit
 import MapKit
 import CoreLocation
 
+// MARK: - Functions
 extension PersonalDetailsCollectionViewCell: CustomTextFieldDelegate {
-    // MARK: - Functions
     func configureTextFields() {
         firstnameTextfield.delegate = self
         firstnameTextfield.textField.keyboardType = .alphabet
@@ -72,15 +71,20 @@ extension PersonalDetailsCollectionViewCell: CustomTextFieldDelegate {
             }
         }
     }
-    
-    private func checkAllContentsAreOk() {
+}
+
+// MARK: - Private functions
+private extension PersonalDetailsCollectionViewCell {
+    func checkAllContentsAreOk() {
         let haveErrors = viewModel.textFieldsHaveErrors()
         let canMoveToNextStep = !haveErrors && viewModel.editedTextFields.count == viewModel.numberOfTextFields
         nextStepButton.alpha = canMoveToNextStep ? 1 : 0.5
         nextStepButton.isEnabled = canMoveToNextStep
     }
-    
-    // MARK: - CustomTextFieldDelegate
+}
+
+// MARK: - CustomTextFieldDelegate
+extension PersonalDetailsCollectionViewCell {
     func textFieldShouldReturn(_ customTextField: CustomTextField) -> Bool {
         if viewModel.isAnimalShelter {
             switch customTextField.textField {

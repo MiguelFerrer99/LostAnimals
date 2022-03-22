@@ -6,10 +6,8 @@
 //  Copyright © 2021 Rudo. All rights reserved.
 //
 
-import UIKit
-
-extension SocialMediaDetailsCollectionViewCell: CustomTextFieldDelegate {
-    // MARK: - Functions
+// MARK: - Functions
+extension SocialMediaDetailsCollectionViewCell {
     func configureTextFields() {
         phoneTextfield.delegate = self
         phoneTextfield.textField.keyboardType = .numberPad
@@ -42,8 +40,10 @@ extension SocialMediaDetailsCollectionViewCell: CustomTextFieldDelegate {
         getStartedButton.alpha = canMoveToNextStep ? 1 : 0.5
         getStartedButton.isEnabled = canMoveToNextStep
     }
-    
-    // MARK: - CustomTextFieldDelegate
+}
+
+// MARK: - CustomTextFieldDelegate
+extension SocialMediaDetailsCollectionViewCell: CustomTextFieldDelegate {
     func textFieldShouldReturn(_ customTextField: CustomTextField) -> Bool {
         switch customTextField.textField {
         case phoneTextfield.textField:

@@ -9,7 +9,6 @@
 import Foundation
 
 final class GuestPopupViewModel {
-    
     // MARK: - Properties
     private let router: GuestPopupRouter
     

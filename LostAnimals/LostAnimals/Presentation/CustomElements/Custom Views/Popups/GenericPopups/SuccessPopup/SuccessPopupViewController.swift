@@ -10,8 +10,8 @@ import UIKit
 
 final class SuccessPopupViewController: ViewController {
     // MARK: - IBOutlets
-    @IBOutlet weak var backgroundView: UIView!
-    @IBOutlet weak var successTitleLabel: UILabel!
+    @IBOutlet private weak var backgroundView: UIView!
+    @IBOutlet private weak var successTitleLabel: UILabel!
     
     // MARK: - Properties
     var viewModel: SuccessPopupViewModel!
@@ -45,13 +45,17 @@ final class SuccessPopupViewController: ViewController {
             self.backgroundView.alpha = 0
         }
     }
-    
-    // MARK: - Functions
-    private func setupUI() {
+}
+
+// MARK: - Private functions
+private extension SuccessPopupViewController {
+    func setupUI() {
         successTitleLabel.text = viewModel.successTitle
     }
-    
-    // MARK: - IBActions  
+}
+
+// MARK: - IBActions
+private extension SuccessPopupViewController {
     @IBAction func okButtonPressed(_ sender: UIButton) {
         viewModel.didPressOkButton()
     }

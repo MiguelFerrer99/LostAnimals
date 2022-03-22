@@ -26,13 +26,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9Z-NB-VOJ">
-                                <rect key="frame" x="151" y="64" width="112" height="47"/>
+                                <rect key="frame" x="147" y="64" width="120.5" height="55"/>
                                 <fontDescription key="fontDescription" name="Nunito-Black" family="Nunito" pointSize="40"/>
                                 <color key="textColor" name="CustomBlack"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Uij-Sy-9cP">
-                                <rect key="frame" x="40" y="305" width="334" height="258"/>
+                                <rect key="frame" x="40" y="302.5" width="334" height="263"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LWY-sy-TEg" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="80"/>
@@ -47,8 +47,11 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="capitalizeFirstLetter" value="NO"/>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="whiteTheme" value="NO"/>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="birthdatePickerEnabled" value="NO"/>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="animalPickerEnabled" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="dateAndTimePickerEnabled" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="datePickerEnabled" value="NO"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DvV-CO-43e" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
@@ -63,13 +66,16 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="hideContent" value="YES"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Password"/>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="whiteTheme" value="NO"/>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="birthdatePickerEnabled" value="NO"/>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="animalPickerEnabled" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="dateAndTimePickerEnabled" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="datePickerEnabled" value="NO"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFj-SD-LHa">
-                                        <rect key="frame" x="0.0" y="220" width="334" height="38"/>
+                                        <rect key="frame" x="0.0" y="220" width="334" height="43"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="22"/>
                                         <color key="tintColor" name="CustomBlack"/>
@@ -125,7 +131,7 @@
     </scenes>
     <designables>
         <designable name="RDN-TM-gf9">
-            <size key="intrinsicContentSize" width="56" height="36"/>
+            <size key="intrinsicContentSize" width="58" height="40"/>
         </designable>
     </designables>
     <color key="tintColor" name="CustomBlack"/>

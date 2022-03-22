@@ -6,8 +6,6 @@
 //  Copyright © 2021 Rudo. All rights reserved.
 //
 
-import UIKit
-
 class SocialMediaDetailsCollectionViewCellViewModel: ViewModel {
     // MARK: - Properties
     var numberOfTextFields = 1
@@ -18,8 +16,10 @@ class SocialMediaDetailsCollectionViewCellViewModel: ViewModel {
     
     // MARK: - Init
     init() {}
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension SocialMediaDetailsCollectionViewCellViewModel {
     func textFieldsHaveErrors() -> Bool {
         var haveErrors = false
         editedTextFields.forEach { editedTextField in

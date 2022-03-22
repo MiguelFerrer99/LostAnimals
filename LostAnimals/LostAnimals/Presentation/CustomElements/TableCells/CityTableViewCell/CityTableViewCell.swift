@@ -10,7 +10,7 @@ import UIKit
 
 class CityTableViewCell: UITableViewCell, Reusable {
     // MARK: - IBOutlets
-    @IBOutlet weak var cityName: UILabel!
+    @IBOutlet private weak var cityName: UILabel!
     
     // MARK: - Life cycle
     override func awakeFromNib() {
@@ -20,8 +20,10 @@ class CityTableViewCell: UITableViewCell, Reusable {
         bgView.backgroundColor = .customWhite.withAlphaComponent(0.3)
         self.selectedBackgroundView = bgView
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension CityTableViewCell {
     func display(summary: CityTableViewCellSummary) {
         cityName.text = summary.cityName
     }

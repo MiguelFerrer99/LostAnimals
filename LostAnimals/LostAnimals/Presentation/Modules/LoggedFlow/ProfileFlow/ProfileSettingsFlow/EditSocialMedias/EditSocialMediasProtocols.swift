@@ -6,10 +6,8 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
-
+// MARK: - WhereDoYouLiveCountriesDelegate
 extension EditSocialMediasViewController: WhereDoYouLiveCountriesDelegate {
-    // MARK: - WhereDoYouLiveCountriesDelegate
     func getDialCode(dialCode: String) {
         fillPhonePrefix(dialCode: dialCode)
     }

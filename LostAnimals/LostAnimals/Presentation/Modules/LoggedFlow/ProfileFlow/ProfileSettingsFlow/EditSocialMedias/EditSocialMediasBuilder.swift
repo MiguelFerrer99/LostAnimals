@@ -8,16 +8,15 @@
 
 import UIKit
 
-final class EditSocialMediasBuilder {
-    
+final class EditSocialMediasBuilder {}
+
+// MARK: - Functions
+extension EditSocialMediasBuilder {
     func build(me: User) -> EditSocialMediasViewController {
         let viewController = UIViewController.instantiate(viewController: EditSocialMediasViewController.self)
-        
         let router = EditSocialMediasRouter(viewController: viewController)
         let viewModel = EditSocialMediasViewModel(router: router, me: me)
-        
         viewController.viewModel = viewModel
-        
         return viewController
     }
 }

@@ -6,9 +6,8 @@
 //  Copyright © 2021 Rudo. All rights reserved.
 //
 
-import UIKit
-
 struct CountryTableViewCellSummary {
+    // MARK: - Properties
     let countryName: String
     let dialCode: String
     let comesFrom: WhereDoYouLiveComesFrom

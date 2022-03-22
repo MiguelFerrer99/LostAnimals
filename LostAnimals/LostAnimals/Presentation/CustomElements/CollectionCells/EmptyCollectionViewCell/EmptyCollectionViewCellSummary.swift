@@ -6,10 +6,10 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 struct EmptyCollectionViewCellSummary {
+    // MARK: - Properties
     let emptyTitle: String
     let emptyImage: UIImage
 }

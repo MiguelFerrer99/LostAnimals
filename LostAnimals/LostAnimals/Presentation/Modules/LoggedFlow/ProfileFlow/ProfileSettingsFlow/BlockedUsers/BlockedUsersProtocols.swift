@@ -6,8 +6,7 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
-
+// MARK: - UnblockUserDelegate
 extension BlockedUsersViewController: UnblockUserDelegate {
     func unblockUser(userID: String) {
         updateUserInteraction(to: false)

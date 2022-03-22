@@ -10,15 +10,14 @@ import UIKit
 import MessageUI
 
 final class ContactWithPopupViewController: ViewController {
-    
     // MARK: - IBOutlets
-    @IBOutlet weak var backgroundView: UIView!
-    @IBOutlet weak var contactWithPopupView: CustomView!
-    @IBOutlet weak var mailView: CustomView!
-    @IBOutlet weak var phoneView: CustomView!
-    @IBOutlet weak var whatsappView: CustomView!
-    @IBOutlet weak var instagramView: CustomView!
-    @IBOutlet weak var twitterView: CustomView!
+    @IBOutlet private weak var backgroundView: UIView!
+    @IBOutlet private weak var contactWithPopupView: CustomView!
+    @IBOutlet private weak var mailView: CustomView!
+    @IBOutlet private weak var phoneView: CustomView!
+    @IBOutlet private weak var whatsappView: CustomView!
+    @IBOutlet private weak var instagramView: CustomView!
+    @IBOutlet private weak var twitterView: CustomView!
     
     // MARK: - Properties
     var viewModel: ContactWithPopupViewModel!
@@ -53,16 +52,20 @@ final class ContactWithPopupViewController: ViewController {
             self.backgroundView.alpha = 0
         }
     }
-    
-    // MARK: - Functions  
-    private func setupUI() {
+}
+
+// MARK: - Functions
+private extension ContactWithPopupViewController {
+    func setupUI() {
         contactWithPopupView.layer.maskedCorners =  [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         instagramView.isHidden = viewModel.authorSocialMedias[.instagram] == nil
         twitterView.isHidden = viewModel.authorSocialMedias[.twitter] == nil
         configureMailController(mailController: mailController)
     }
-    
-    // MARK: - IBActions
+}
+
+// MARK: - IBActions
+private extension ContactWithPopupViewController {
     @IBAction func backgroundButtonPressed(_ sender: UIButton) {
         viewModel.dismissButtonPressed()
     }

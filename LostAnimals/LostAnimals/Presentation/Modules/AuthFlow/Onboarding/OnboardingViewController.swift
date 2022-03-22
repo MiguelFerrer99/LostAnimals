@@ -8,18 +8,18 @@
 
 import UIKit
 
+// MARK: - Enums
 enum MoveDirection: Int {
     case back
     case next
 }
 
 final class OnboardingViewController: ViewController {
-    
     // MARK: - IBOutlets
-    @IBOutlet weak var onboardingCollectionView: UICollectionView!
-    @IBOutlet weak var onboardingImageView: UIImageView!
-    @IBOutlet weak var previousOnboardingStepView: UIView!
-    @IBOutlet weak var nextOnboardingStepImageView: UIImageView!
+    @IBOutlet private weak var onboardingCollectionView: UICollectionView!
+    @IBOutlet private weak var onboardingImageView: UIImageView!
+    @IBOutlet private weak var previousOnboardingStepView: UIView!
+    @IBOutlet private weak var nextOnboardingStepImageView: UIImageView!
     
     // MARK: - Properties
     override var hideNavigationBar: Bool {
@@ -40,27 +40,29 @@ final class OnboardingViewController: ViewController {
         
         viewModel.viewDidAppear()
     }
-    
-    // MARK: - Functions
-    private func setupUI() {
+}
+
+// MARK: - Private functions
+private extension OnboardingViewController {
+    func setupUI() {
         configureCollectionView(onboardingCollectionView)
     }
     
-    private func updateCollectionViewItem(direction: MoveDirection) {
+    func updateCollectionViewItem(direction: MoveDirection) {
         let indexPath = IndexPath(item: viewModel.currentOnboardingStep.rawValue, section: 0)
         onboardingCollectionView.scrollToItem(at: indexPath, at: direction == .next ? .right : .left, animated: true)
     }
     
-    private func updateOnboardingStepButtons() {
+    func updateOnboardingStepButtons() {
         previousOnboardingStepView.isHidden = viewModel.currentOnboardingStep == .share
         nextOnboardingStepImageView.image = viewModel.currentOnboardingStep == .contact ? UIImage(systemName: "checkmark.circle.fill") : UIImage(systemName: "chevron.right.circle.fill")
     }
     
-    private func updateOnboardingStepImage() {
+    func updateOnboardingStepImage() {
         onboardingImageView.image = Constants.onboardingStepsInfo[viewModel.currentOnboardingStep.rawValue].image
     }
     
-    private func moveToNextOnboardingStep() {
+    func moveToNextOnboardingStep() {
         switch viewModel.currentOnboardingStep {
         case .share:
             viewModel.currentOnboardingStep = .find
@@ -74,7 +76,7 @@ final class OnboardingViewController: ViewController {
         updateOnboardingStepImage()
     }
     
-    private func moveToPreviousOnboardingStep() {
+    func moveToPreviousOnboardingStep() {
         switch viewModel.currentOnboardingStep {
         case .share: return
         case .find:
@@ -86,7 +88,10 @@ final class OnboardingViewController: ViewController {
         updateOnboardingStepButtons()
         updateOnboardingStepImage()
     }
-    
+}
+
+// MARK: - IBActions
+private extension OnboardingViewController {
     @IBAction func previousOnboardingStepButtonPressed(_ sender: UIButton) {
         moveToPreviousOnboardingStep()
     }

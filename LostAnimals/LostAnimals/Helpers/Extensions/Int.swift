@@ -6,13 +6,11 @@
 //  Copyright © 2020 Miguel Ferrer Fornali. All rights reserved.
 //
 
-import Foundation
-
 extension Int {
+    // MARK: - Properties
     var asMinutesToHourString: String {
         let hours = self / 60
         let minutes = self % 60
-        
         return String(format:"%02ih %02imin", hours, minutes)
     }
 }

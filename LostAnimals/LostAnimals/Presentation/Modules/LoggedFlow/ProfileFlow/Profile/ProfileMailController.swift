@@ -6,12 +6,11 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import MessageUI
 
-extension ProfileViewController: MFMailComposeViewControllerDelegate {
-    // MARK: - Functions
+// MARK: - Functions
+extension ProfileViewController {
     func configureMailController(mailController: MFMailComposeViewController) {
         mailController.mailComposeDelegate = self
     }
@@ -27,8 +26,10 @@ extension ProfileViewController: MFMailComposeViewControllerDelegate {
             showErrorPopup(title: "Error opening Mail. Please, try again later", action: nil)
         }
     }
-    
-    // MARK: - MFMailComposeViewControllerDelegate
+}
+
+// MARK: - MFMailComposeViewControllerDelegate
+extension ProfileViewController: MFMailComposeViewControllerDelegate {
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         if error != nil {
             controller.dismiss(animated: true) {
@@ -44,8 +45,7 @@ extension ProfileViewController: MFMailComposeViewControllerDelegate {
                 controller.dismiss(animated: true) {
                     showErrorPopup(title: "Error sending mail. Please, try again later", action: nil)
                 }
-            default:
-                controller.dismiss(animated: true, completion: nil)
+            default: controller.dismiss(animated: true, completion: nil)
             }
         }
     }

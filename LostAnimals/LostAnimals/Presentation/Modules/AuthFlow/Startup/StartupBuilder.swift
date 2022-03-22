@@ -8,17 +8,15 @@
 
 import UIKit
 
-final class StartupBuilder {
-    
+final class StartupBuilder {}
+
+// MARK: - Functions
+extension StartupBuilder {
     func build() -> StartupViewController {
-        
         let viewController = UIViewController.instantiate(viewController: StartupViewController.self)
-        
         let router = StartupRouter(viewController: viewController)
         let viewModel = StartupViewModel(router: router)
-        
         viewController.viewModel = viewModel
-        
         return viewController
     }
 }

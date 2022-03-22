@@ -8,13 +8,17 @@
 
 import UIKit
 
-extension WhereCanWeFindYouViewController: UITableViewDelegate, UITableViewDataSource {
+// MARK: - Functions
+extension WhereCanWeFindYouViewController {
     func configureTableView(_ tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(AddressTableViewCell.self)
     }
-    
+}
+
+// MARK: - UITableViewDataSource
+extension WhereCanWeFindYouViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.searchResults.count
     }
@@ -25,7 +29,10 @@ extension WhereCanWeFindYouViewController: UITableViewDelegate, UITableViewDataS
         cell.display(summary: AddressTableViewCellSummary(searchResult: searchResult))
         return cell
     }
-    
+}
+
+// MARK: - UITableViewDelegate
+extension WhereCanWeFindYouViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let selectedIndexPath = tableView.indexPathForSelectedRow else { return }
         tableView.deselectRow(at: selectedIndexPath, animated: true)

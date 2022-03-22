@@ -16,8 +16,10 @@ final class GuestPopupRouter {
     required init(viewController: GuestPopupViewController?) {
         self.viewController = viewController
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension GuestPopupRouter {
     func dismissGuestPopup() {
         DispatchQueue.main.async {
             self.viewController?.dismissCurrentView(completion: nil)

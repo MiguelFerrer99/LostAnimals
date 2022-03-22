@@ -119,7 +119,6 @@
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Phone"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="whiteTheme" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="datePickerEnabled" value="NO"/>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="birthdatePickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isOptional" value="NO"/>
@@ -130,50 +129,42 @@
                                                             </view>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="0Zo-Ep-Wbd">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ub8-LU-Owe">
                                                         <rect key="frame" x="0.0" y="90" width="334" height="25"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gtf-PW-n5F">
-                                                                <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
-                                                                <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PxM-Tf-da1">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
-                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="Button"/>
-                                                                        <connections>
-                                                                            <action selector="haveWhatsappButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="tlu-zZ-7k1"/>
-                                                                        </connections>
-                                                                    </button>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="RcI-aW-9a7">
-                                                                        <rect key="frame" x="0.0" y="0.5" width="25" height="24"/>
-                                                                        <color key="tintColor" name="CustomBlack"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="width" constant="25" id="Alb-Fv-Cm7"/>
-                                                                            <constraint firstAttribute="height" constant="25" id="M6t-bM-0zB"/>
-                                                                        </constraints>
-                                                                    </imageView>
-                                                                </subviews>
-                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="RcI-aW-9a7">
+                                                                <rect key="frame" x="0.0" y="0.5" width="25" height="24"/>
+                                                                <color key="tintColor" name="CustomBlack"/>
                                                                 <constraints>
-                                                                    <constraint firstItem="RcI-aW-9a7" firstAttribute="centerY" secondItem="gtf-PW-n5F" secondAttribute="centerY" id="4xF-o1-RJg"/>
-                                                                    <constraint firstItem="PxM-Tf-da1" firstAttribute="top" secondItem="gtf-PW-n5F" secondAttribute="top" id="AO3-Qh-ENA"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="PxM-Tf-da1" secondAttribute="trailing" id="BMN-FB-ifF"/>
-                                                                    <constraint firstItem="PxM-Tf-da1" firstAttribute="leading" secondItem="gtf-PW-n5F" secondAttribute="leading" id="Bvb-52-aKt"/>
-                                                                    <constraint firstAttribute="width" constant="25" id="CIr-dk-m0f"/>
-                                                                    <constraint firstAttribute="height" constant="25" id="LTT-Ne-4oc"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="PxM-Tf-da1" secondAttribute="bottom" id="NkT-yF-r9g"/>
-                                                                    <constraint firstItem="RcI-aW-9a7" firstAttribute="leading" secondItem="gtf-PW-n5F" secondAttribute="leading" id="rLp-0p-WvC"/>
+                                                                    <constraint firstAttribute="width" constant="25" id="Alb-Fv-Cm7"/>
+                                                                    <constraint firstAttribute="height" constant="25" id="M6t-bM-0zB"/>
                                                                 </constraints>
-                                                            </view>
+                                                            </imageView>
                                                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I have WhatsApp" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1H5-Jo-8C7">
-                                                                <rect key="frame" x="30" y="0.0" width="304" height="25"/>
+                                                                <rect key="frame" x="30" y="0.0" width="94.5" height="25"/>
                                                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
                                                                 <color key="textColor" name="CustomBlack"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOj-b3-qVg">
+                                                                <rect key="frame" x="0.0" y="0.0" width="124.5" height="25"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                            </button>
                                                         </subviews>
-                                                    </stackView>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="iOj-b3-qVg" firstAttribute="top" secondItem="ub8-LU-Owe" secondAttribute="top" id="14V-iu-TGx"/>
+                                                            <constraint firstItem="RcI-aW-9a7" firstAttribute="top" secondItem="ub8-LU-Owe" secondAttribute="top" id="89x-LX-IpZ"/>
+                                                            <constraint firstAttribute="bottom" secondItem="1H5-Jo-8C7" secondAttribute="bottom" id="DvQ-Bo-K8O"/>
+                                                            <constraint firstItem="RcI-aW-9a7" firstAttribute="leading" secondItem="ub8-LU-Owe" secondAttribute="leading" id="GO4-qd-kpG"/>
+                                                            <constraint firstItem="1H5-Jo-8C7" firstAttribute="leading" secondItem="RcI-aW-9a7" secondAttribute="trailing" constant="5" id="WBP-5d-uxo"/>
+                                                            <constraint firstItem="iOj-b3-qVg" firstAttribute="leading" secondItem="ub8-LU-Owe" secondAttribute="leading" id="ZFB-ra-okz"/>
+                                                            <constraint firstAttribute="bottom" secondItem="RcI-aW-9a7" secondAttribute="bottom" id="hcv-dD-8wO"/>
+                                                            <constraint firstAttribute="bottom" secondItem="iOj-b3-qVg" secondAttribute="bottom" id="ofC-jJ-hip"/>
+                                                            <constraint firstItem="iOj-b3-qVg" firstAttribute="trailing" secondItem="1H5-Jo-8C7" secondAttribute="trailing" id="yea-gr-hSO"/>
+                                                            <constraint firstItem="1H5-Jo-8C7" firstAttribute="top" secondItem="ub8-LU-Owe" secondAttribute="top" id="za4-f0-fyj"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJH-IM-qRK" customClass="CustomTextField" customModule="LostAnimals" customModuleProvider="target">
@@ -189,7 +180,6 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Twitter"/>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="whiteTheme" value="NO"/>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="datePickerEnabled" value="NO"/>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="birthdatePickerEnabled" value="NO"/>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isOptional" value="YES"/>
@@ -211,7 +201,6 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Instagram"/>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="whiteTheme" value="NO"/>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="datePickerEnabled" value="NO"/>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="birthdatePickerEnabled" value="NO"/>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isOptional" value="YES"/>
@@ -268,7 +257,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="haveWhatsappButton" destination="PxM-Tf-da1" id="F7I-DB-0H1"/>
+                        <outlet property="haveWhatsappButton" destination="iOj-b3-qVg" id="jnM-bY-Sda"/>
                         <outlet property="haveWhatsappButtonImageView" destination="RcI-aW-9a7" id="3Tc-Wg-Osv"/>
                         <outlet property="instagramTextfield" destination="BJH-IM-qRK" id="TuY-Ty-adl"/>
                         <outlet property="phoneNumberTextfield" destination="Yfh-L2-7Cz" id="Qdx-UV-yU0"/>
@@ -280,7 +269,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="72" y="106"/>
+            <point key="canvasLocation" x="71.014492753623188" y="105.80357142857143"/>
         </scene>
     </scenes>
     <designables>

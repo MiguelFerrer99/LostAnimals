@@ -6,11 +6,9 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 final class DateFilterPopupViewModel {
-    
     // MARK: - Properties
     private let router: DateFilterPopupRouter
     let loadData: Bool

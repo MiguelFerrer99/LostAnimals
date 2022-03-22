@@ -6,18 +6,19 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-extension NewPostGenericViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    // MARK: - Functions
+// MARK: - Functions
+extension NewPostGenericViewController {
     func configureImagePickerController() {
         imagePickerController.delegate = self
         imagePickerController.modalPresentationStyle = .overFullScreen
         imagePickerController.allowsEditing = true
     }
-    
-    // MARK: - UIImagePickerControllerDelegate
+}
+
+// MARK: - UIImagePickerControllerDelegate & UINavigationControllerDelegate
+extension NewPostGenericViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }

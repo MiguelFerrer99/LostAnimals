@@ -16,6 +16,4 @@ final class BlockedUsersRouter {
     required init(viewController: BlockedUsersViewController?) {
         self.viewController = viewController
     }
-    
-    // MARK: - Functions
 }

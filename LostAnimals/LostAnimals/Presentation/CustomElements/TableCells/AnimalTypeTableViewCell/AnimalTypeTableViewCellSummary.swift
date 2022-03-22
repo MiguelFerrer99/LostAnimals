@@ -6,10 +6,10 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 struct AnimalTypeTableViewCellSummary {
+    // MARK: - Properties
     let animalTypeTitle: String
     let animalTypeImage: UIImage
 }

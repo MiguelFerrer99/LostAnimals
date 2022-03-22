@@ -8,14 +8,18 @@
 
 import UIKit
 
+// MARK: - Functions
 extension SavedPostsViewController {
     func configureRefreshControl(_ refreshControl: UIRefreshControl) {
         refreshControl.tintColor = .customBlack
         refreshControl.addTarget(self, action: #selector(refreshPosts), for: .valueChanged)
         savedPostsCollectionView.addSubview(refreshControl)
     }
-    
-    @objc private func refreshPosts() {
+}
+
+// MARK: - Private functions
+extension SavedPostsViewController {
+    @objc func refreshPosts() {
         refreshControl.beginRefreshing()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.refreshControl.endRefreshing()

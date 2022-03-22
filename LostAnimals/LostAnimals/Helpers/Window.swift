@@ -8,30 +8,31 @@
 
 import UIKit
 
+// MARK: - Enums
 enum BannedPopupComesFrom: String {
     case login
     case tabbar
 }
 
-func topMostController() -> UIViewController? {
-    guard let window = keyWindow, let rootViewController = window.rootViewController else {
-        return nil
-    }
-    
-    var topController = rootViewController
-    
-    while let newTopController = topController.presentedViewController {
-        topController = newTopController
-    }
-    
-    return topController
-}
-
-let keyWindow       = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+// MARK: - Properties
+let keyWindow       = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
 let safeAreaHeight  = keyWindow?.safeAreaLayoutGuide.layoutFrame.height ?? 0
 let safeAreaWidth   = keyWindow?.safeAreaLayoutGuide.layoutFrame.width ?? 0
 let screenHeight    = keyWindow?.frame.height ?? 0
 let screenWidth     = keyWindow?.frame.width ?? 0
+let statusBarHeight = keyWindow?.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+let navBarHeight    = keyWindow?.window?.rootViewController?.navigationController?.navigationBar.frame.height ?? 0
+let tabBarHeight    = keyWindow?.window?.rootViewController?.tabBarController?.tabBar.frame.height ?? 0
+
+// MARK: - Functions
+func topMostController() -> UIViewController? {
+    guard let window = keyWindow, let rootViewController = window.rootViewController else { return nil }
+    var topController = rootViewController
+    while let newTopController = topController.presentedViewController {
+        topController = newTopController
+    }
+    return topController
+}
 
 func changeRoot(to viewController: UIViewController) {
     let overlayView = UIScreen.main.snapshotView(afterScreenUpdates: false)

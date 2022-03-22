@@ -6,16 +6,15 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
+// MARK: - Enums
 enum PostComesFrom: String {
     case explore
     case profile
 }
 
 final class PostOptionsPopupViewModel {
-    
     // MARK: - Properties
     private let router: PostOptionsPopupRouter
     let comesFrom: PostComesFrom

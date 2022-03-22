@@ -6,9 +6,9 @@
 //  Copyright © 2021 Rudo. All rights reserved.
 //
 
-import UIKit
 import MapKit
 
 struct AddressTableViewCellSummary {
+    // MARK: - Properties
     let searchResult: MKLocalSearchCompletion
 }

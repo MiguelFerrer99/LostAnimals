@@ -16,8 +16,10 @@ final class WhereDoYouLiveCountriesRouter {
     required init(viewController: WhereDoYouLiveCountriesViewController?) {
         self.viewController = viewController
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension WhereDoYouLiveCountriesRouter {
     func goToSignUp(dialCode: String) {
         self.viewController?.delegate?.getDialCode(dialCode: dialCode)
         DispatchQueue.main.async {

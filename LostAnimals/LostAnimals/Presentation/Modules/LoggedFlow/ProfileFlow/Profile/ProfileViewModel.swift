@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: - Enums
 enum ProfileSectionType: String {
     case posts
     case savedPosts
@@ -15,7 +16,6 @@ enum ProfileSectionType: String {
 }
 
 final class ProfileViewModel {
-    
     // MARK: - Properties
     private let router: ProfileRouter
     var collectionSections: [ProfileSectionType] = [.posts]

@@ -16,8 +16,10 @@ final class PostImagesRouter {
     required init(viewController: PostImagesViewController?) {
         self.viewController = viewController
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension PostImagesRouter {
     func dismissPostImages() {
         self.viewController?.dismissCurrentView(completion: nil)
     }

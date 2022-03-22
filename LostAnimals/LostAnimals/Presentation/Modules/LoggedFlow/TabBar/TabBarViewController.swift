@@ -8,14 +8,14 @@
 
 import UIKit
 
+// MARK: - Enums
 enum TabBarItem: Int {
     case explore
     case newPost
     case profile
 }
 
-final class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
-    
+final class TabBarViewController: UITabBarController {
     // MARK: - Properties
     var viewModel: TabBarViewModel!
     var lastTabBarIndex = TabBarItem.explore.rawValue
@@ -23,8 +23,8 @@ final class TabBarViewController: UITabBarController, UITabBarControllerDelegate
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.delegate = self
         
+        self.delegate = self
         setupUI()
         viewModel.viewReady()
     }
@@ -33,13 +33,10 @@ final class TabBarViewController: UITabBarController, UITabBarControllerDelegate
         super.viewWillAppear(animated)
         
         navigationController?.setNavigationBarHidden(true, animated: false)
-        
         let tabBarItems = tabBar.items! as [UITabBarItem]
-        
         for (index, _) in tabBarItems.enumerated() {
             setNavigation(index)
         }
-        
         self.selectedIndex = TabBarItem.explore.rawValue
     }
     
@@ -47,15 +44,15 @@ final class TabBarViewController: UITabBarController, UITabBarControllerDelegate
         super.viewDidAppear(animated)
         
         viewModel.viewDidAppear()
-        
         if User.shared?.banned ?? false { showBannedPopup(comesFrom: .tabbar) }
     }
+}
     
-    // MARK: - Functions
+// MARK: - Functions
+extension TabBarViewController {
     private func setupUI() {
         let titleAttributes = [NSAttributedString.Key.foregroundColor: UIColor.customBlack, NSAttributedString.Key.font: UIFont.nunitoSmallBold]
         let largeTitleAttributes = [NSAttributedString.Key.font: UIFont.nunitoBigBold]
-        
         UINavigationBar.appearance().titleTextAttributes = titleAttributes
         UINavigationBar.appearance().largeTitleTextAttributes = largeTitleAttributes
         UINavigationBar.appearance().tintColor = .customBlack
@@ -64,7 +61,6 @@ final class TabBarViewController: UITabBarController, UITabBarControllerDelegate
     
     func setNavigation(_ index: Int) {
         guard let nav = viewControllers?[index] as? UINavigationController else { return }
-        
         switch TabBarItem(rawValue: index) {
         case .explore:
             nav.viewControllers = [viewModel.didPressExploreTabBarItem()]
@@ -73,8 +69,10 @@ final class TabBarViewController: UITabBarController, UITabBarControllerDelegate
         default: return
         }
     }
+}
     
-    // MARK: - UITabBarControllerDelegate
+// MARK: - UITabBarControllerDelegate
+extension TabBarViewController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         switch tabBarController.selectedIndex {
         case TabBarItem.explore.rawValue:

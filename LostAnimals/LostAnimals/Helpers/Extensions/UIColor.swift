@@ -9,12 +9,13 @@
 import UIKit
 
 extension UIColor {
-    
+    // MARK: - Properties
     static let customBlack = UIColor(named: "CustomBlack") ?? .black
     static let customGreen = UIColor(named: "CustomGreen") ?? .green
     static let customRed = UIColor(named: "CustomRed") ?? .red
     static let customWhite = UIColor(named: "CustomWhite") ?? .white
     
+    // MARK: - Init
     convenience init(hex: String, alpha: CGFloat = 1.0) {
         var hexFormatted: String = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
         

@@ -6,10 +6,8 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
-import UIKit
-
 struct Post {
+    // MARK: - Properties
     let postType: PostType
     let animal: Animal
     let lastTimeSeen: String

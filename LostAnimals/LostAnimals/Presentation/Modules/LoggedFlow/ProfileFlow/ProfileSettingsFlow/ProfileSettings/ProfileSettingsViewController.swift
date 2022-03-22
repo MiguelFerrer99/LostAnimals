@@ -9,14 +9,13 @@
 import UIKit
 
 final class ProfileSettingsViewController: ViewController, UIGestureRecognizerDelegate {
-    
     // MARK: - IBOutlets
-    @IBOutlet weak var headerImageView: UIImageView!
-    @IBOutlet weak var changeHeaderImageView: UIView!
+    @IBOutlet private weak var changeHeaderImageView: UIView!
+    @IBOutlet private weak var changeProfileImageView: CustomView!
+    @IBOutlet private weak var animalShelterImageView: UIImageView!
+    @IBOutlet private weak var blockedUsersView: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
-    @IBOutlet weak var changeProfileImageView: CustomView!
-    @IBOutlet weak var animalShelterImageView: UIImageView!
-    @IBOutlet weak var blockedUsersView: UIView!
+    @IBOutlet weak var headerImageView: UIImageView!
     
     // MARK: - Properties
     override var hideNavigationBar: Bool {
@@ -38,21 +37,10 @@ final class ProfileSettingsViewController: ViewController, UIGestureRecognizerDe
         
         viewModel.viewDidAppear()
     }
-    
-    // MARK: - Functions
-    private func setupUI() {
-        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
-        configureImagePickerController()
-        fillUI()
-    }
-    
-    private func fillUI() {
-        headerImageView.image = viewModel.me.headerImage
-        profileImageView.image = viewModel.me.userImage
-        animalShelterImageView.isHidden = !viewModel.me.animalShelter
-        blockedUsersView.isHidden = viewModel.me.blockedUsers.isEmpty
-    }
-    
+}
+
+// MARK: - Functions
+extension ProfileSettingsViewController {
     func removePhoto() {
         switch viewModel.selectedImageView {
         case .user:   profileImageView.image = UIImage(named: "DefaultUserImage")
@@ -69,8 +57,26 @@ final class ProfileSettingsViewController: ViewController, UIGestureRecognizerDe
         self.imagePickerController.sourceType = .camera
         self.present(viewController: imagePickerController, completion: nil)
     }
+}
+
+// MARK: - Functions
+private extension ProfileSettingsViewController {
+    func setupUI() {
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+        configureImagePickerController()
+        fillUI()
+    }
     
-    // MARK: - IBActions
+    func fillUI() {
+        headerImageView.image = viewModel.me.headerImage
+        profileImageView.image = viewModel.me.userImage
+        animalShelterImageView.isHidden = !viewModel.me.animalShelter
+        blockedUsersView.isHidden = viewModel.me.blockedUsers.isEmpty
+    }
+}
+
+// MARK: - IBActions
+private extension ProfileSettingsViewController {
     @IBAction func backButtonPressed(_ sender: UIButton) {
         viewModel.didPressedBackButton()
     }

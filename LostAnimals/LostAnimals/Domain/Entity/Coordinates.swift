@@ -6,9 +6,8 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
-
 struct Coordinates: Codable {
+    // MARK: - Properties
     let longitude: Double
     let latitude: Double
 }

@@ -6,10 +6,10 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 struct SocialMediaCollectionViewCellSummary {
+    // MARK: - Properties
     let icon: UIImage
     let backgroundImage: UIImage
     let leadingPadding: CGFloat

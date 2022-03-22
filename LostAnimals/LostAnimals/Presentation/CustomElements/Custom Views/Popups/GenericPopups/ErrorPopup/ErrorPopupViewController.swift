@@ -10,8 +10,8 @@ import UIKit
 
 final class ErrorPopupViewController: ViewController {
     // MARK: - IBOutlets
-    @IBOutlet weak var errorTitleLabel: UILabel!
-    @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet private weak var errorTitleLabel: UILabel!
+    @IBOutlet private weak var backgroundView: UIView!
     
     // MARK: - Properties
     var viewModel: ErrorPopupViewModel!
@@ -45,13 +45,17 @@ final class ErrorPopupViewController: ViewController {
             self.backgroundView.alpha = 0
         }
     }
-    
-    // MARK: - Functions
-    private func setupUI() {
+}
+
+// MARK: - Private functions
+private extension ErrorPopupViewController {
+    func setupUI() {
         errorTitleLabel.text = viewModel.errorTitle
     }
-    
-    // MARK: - IBActions  
+}
+
+// MARK: - IBActions
+private extension ErrorPopupViewController {
     @IBAction func okButtonPressed(_ sender: UIButton) {
         viewModel.didPressOkButton()
     }

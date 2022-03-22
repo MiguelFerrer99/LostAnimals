@@ -16,8 +16,10 @@ final class AnimalFilterPopupRouter {
     required init(viewController: AnimalFilterPopupViewController?) {
         self.viewController = viewController
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension AnimalFilterPopupRouter {
     func dismissAnimalFilterPopup() {
         DispatchQueue.main.async {
             self.viewController?.dismissCurrentView(completion: nil)

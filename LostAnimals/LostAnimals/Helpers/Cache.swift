@@ -9,11 +9,13 @@
 import Foundation
 
 struct Cache {
+    // MARK: - Enums
     enum key: String {
         case logged,
              onboardingDone
     }
     
+    // MARK: - Static functions
     static func set(_ key: key, _ value: Any?) {
         UserDefaults.standard.set(value, forKey: key.rawValue)
     }

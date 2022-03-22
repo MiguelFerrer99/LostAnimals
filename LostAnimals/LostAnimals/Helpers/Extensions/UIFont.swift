@@ -9,6 +9,7 @@
 import UIKit
 
 extension UIFont {
+    // MARK: - Properties
     static let nunitoBigBlack = UIFont(name: "Nunito-Black", size: 40) ?? .systemFont(ofSize: 40, weight: .black)
     static let nunitoBigBold = UIFont(name: "Nunito-Bold", size: 40) ?? .systemFont(ofSize: 40, weight: .bold)
     static let nunitoBigExtraBold = UIFont(name: "Nunito-ExtraBold", size: 40) ?? .systemFont(ofSize: 40, weight: .bold)

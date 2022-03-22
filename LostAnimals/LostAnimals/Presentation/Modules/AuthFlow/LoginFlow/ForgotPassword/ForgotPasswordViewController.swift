@@ -9,7 +9,6 @@
 import UIKit
 
 final class ForgotPasswordViewController: ViewController {
-    
     // MARK: - IBOutlets
     @IBOutlet weak var mailTexfield: CustomTextField!
     @IBOutlet weak var forgotPasswordButton: CustomButton!
@@ -30,19 +29,22 @@ final class ForgotPasswordViewController: ViewController {
         
         viewModel.viewDidAppear()
     }
-    
-    // MARK: - Functions
-    private func setupUI() {
+}
+
+private extension ForgotPasswordViewController {
+    func setupUI() {
         configureTextFields()
     }
     
-    private func updateUserInteraction() {
+    func updateUserInteraction() {
         navigationController?.navigationBar.isUserInteractionEnabled = forgotPasswordButton.isEnabled
         navigationController?.interactivePopGestureRecognizer?.isEnabled = forgotPasswordButton.isEnabled
         mailTexfield.isUserInteractionEnabled = forgotPasswordButton.isEnabled
     }
-    
-    // MARK: - IBActions
+}
+
+// MARK: - IBActions
+private extension ForgotPasswordViewController {
     @IBAction func recoverPasswordButtonPressed(_ sender: CustomButton) {
         forgotPasswordButton.showLoading()
         updateUserInteraction()

@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: - PostFiltersDelegate
 extension ExploreViewController: PostFiltersDelegate {
     func showPostFilters(filterType: FilterType, loadData: Bool) {
         viewModel.didPressPostsFilterPopup(filterType: filterType, loadData: loadData)

@@ -10,8 +10,8 @@ import UIKit
 
 class CountryTableViewCell: UITableViewCell, Reusable {
     // MARK: - IBOutlets
-    @IBOutlet weak var countryName: UILabel!
-    @IBOutlet weak var rightArrowImageView: UIImageView!
+    @IBOutlet private weak var countryName: UILabel!
+    @IBOutlet private weak var rightArrowImageView: UIImageView!
     
     // MARK: - Life cycle
     override func awakeFromNib() {
@@ -21,8 +21,10 @@ class CountryTableViewCell: UITableViewCell, Reusable {
         bgView.backgroundColor = .customWhite.withAlphaComponent(0.3)
         self.selectedBackgroundView = bgView
     }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Functions
+extension CountryTableViewCell {
     func display(summary: CountryTableViewCellSummary) {
         countryName.text = summary.countryName
         switch summary.comesFrom {

@@ -8,17 +8,15 @@
 
 import UIKit
 
-final class ProfileBuilder {
-    
+final class ProfileBuilder {}
+
+// MARK: - Functions
+extension ProfileBuilder {
     func build(user: User) -> ProfileViewController {
-        
         let viewController = UIViewController.instantiate(viewController: ProfileViewController.self)
-        
         let router = ProfileRouter(viewController: viewController)
         let viewModel = ProfileViewModel(router: router, user: user)
-        
         viewController.viewModel = viewModel
-        
         return viewController
     }
 }

@@ -33,21 +33,25 @@ final class ChangePasswordViewController: ViewController, UIGestureRecognizerDel
         
         viewModel.viewDidAppear()
     }
-    
-    // MARK: - Functions
-    private func setupUI() {
+}
+
+// MARK: - Private functions
+private extension ChangePasswordViewController {
+    func setupUI() {
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         configureTextFields()
     }
     
-    private func updateUserInteraction() {
+    func updateUserInteraction() {
         navigationController?.navigationBar.isUserInteractionEnabled = saveChangesButton.isEnabled
         navigationController?.interactivePopGestureRecognizer?.isEnabled = saveChangesButton.isEnabled
         passwordTextfield.isUserInteractionEnabled = saveChangesButton.isEnabled
         confirmPasswordTextfield.isUserInteractionEnabled = saveChangesButton.isEnabled
     }
-    
-    // MARK: - IBActions
+}
+
+// MARK: - IBActions
+private extension ChangePasswordViewController {
     @IBAction func saveChangesButtonPressed(_ sender: CustomButton) {
         saveChangesButton.showLoading()
         updateUserInteraction()

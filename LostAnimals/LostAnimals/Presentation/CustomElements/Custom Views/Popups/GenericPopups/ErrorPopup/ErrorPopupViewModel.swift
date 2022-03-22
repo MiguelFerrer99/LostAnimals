@@ -6,10 +6,7 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
-
 final class ErrorPopupViewModel {
-    
     // MARK: - Properties
     private let router: ErrorPopupRouter
     let errorTitle: String

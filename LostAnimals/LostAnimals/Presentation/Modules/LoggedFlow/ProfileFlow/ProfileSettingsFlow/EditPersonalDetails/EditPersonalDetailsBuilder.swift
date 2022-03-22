@@ -8,16 +8,15 @@
 
 import UIKit
 
-final class EditPersonalDetailsBuilder {
-    
+final class EditPersonalDetailsBuilder {}
+
+// MARK: - Functions
+extension EditPersonalDetailsBuilder {
     func build(me: User) -> EditPersonalDetailsViewController {
         let viewController = UIViewController.instantiate(viewController: EditPersonalDetailsViewController.self)
-        
         let router = EditPersonalDetailsRouter(viewController: viewController)
         let viewModel = EditPersonalDetailsViewModel(router: router, me: me)
-        
         viewController.viewModel = viewModel
-        
         return viewController
     }
 }
