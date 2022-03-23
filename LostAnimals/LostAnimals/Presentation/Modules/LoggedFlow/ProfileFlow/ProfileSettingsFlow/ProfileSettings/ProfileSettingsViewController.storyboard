@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Cnc-0R-BRa">
-                                <rect key="frame" x="0.0" y="0.0" width="428" height="714"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="779"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B0k-Zy-6X0">
                                         <rect key="frame" x="0.0" y="0.0" width="428" height="324"/>
@@ -394,8 +394,36 @@
                                             <constraint firstAttribute="bottom" secondItem="KKt-wt-Gx1" secondAttribute="bottom" id="qFl-2V-PmY"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k5w-4U-hbh">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x5r-Nz-eOC">
                                         <rect key="frame" x="0.0" y="654" width="428" height="60"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete account" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4d-6P-3vQ">
+                                                <rect key="frame" x="20" y="16.333333333333371" width="139" height="27.333333333333329"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="20"/>
+                                                <color key="textColor" name="CustomBlack"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Okx-RO-vly">
+                                                <rect key="frame" x="0.0" y="0.0" width="428" height="60"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="deleteAccountButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="55T-AN-swW"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="Okx-RO-vly" firstAttribute="leading" secondItem="x5r-Nz-eOC" secondAttribute="leading" id="bC7-zH-og9"/>
+                                            <constraint firstItem="R4d-6P-3vQ" firstAttribute="centerY" secondItem="x5r-Nz-eOC" secondAttribute="centerY" id="cBh-LR-n3W"/>
+                                            <constraint firstAttribute="trailing" secondItem="Okx-RO-vly" secondAttribute="trailing" id="dhh-bO-0oR"/>
+                                            <constraint firstItem="R4d-6P-3vQ" firstAttribute="leading" secondItem="x5r-Nz-eOC" secondAttribute="leading" constant="20" id="hct-H2-PZw"/>
+                                            <constraint firstAttribute="bottom" secondItem="Okx-RO-vly" secondAttribute="bottom" id="ipx-DN-wML"/>
+                                            <constraint firstAttribute="height" constant="60" id="sYe-dc-NiE"/>
+                                            <constraint firstItem="Okx-RO-vly" firstAttribute="top" secondItem="x5r-Nz-eOC" secondAttribute="top" id="zJt-io-DIy"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k5w-4U-hbh">
+                                        <rect key="frame" x="0.0" y="719" width="428" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log out" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogf-7e-g0q">
                                                 <rect key="frame" x="20" y="16.333333333333371" width="71" height="27.333333333333329"/>

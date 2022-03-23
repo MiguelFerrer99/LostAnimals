@@ -171,6 +171,11 @@
 		41871967275BFA6D00C993BC /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8CF273848AA00F5946B /* Nunito-Regular.ttf */; };
 		41871968275BFA6D00C993BC /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8D7273848AB00F5946B /* Nunito-SemiBold.ttf */; };
 		41871969275BFA6D00C993BC /* Nunito-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8D5273848AB00F5946B /* Nunito-SemiBoldItalic.ttf */; };
+		418A331C27EA77CA00F9E278 /* ConfirmationPopupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418A331727EA77CA00F9E278 /* ConfirmationPopupRouter.swift */; };
+		418A331D27EA77CA00F9E278 /* ConfirmationPopupViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 418A331827EA77CA00F9E278 /* ConfirmationPopupViewController.storyboard */; };
+		418A331E27EA77CA00F9E278 /* ConfirmationPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418A331927EA77CA00F9E278 /* ConfirmationPopupViewController.swift */; };
+		418A331F27EA77CA00F9E278 /* ConfirmationPopupBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418A331A27EA77CA00F9E278 /* ConfirmationPopupBuilder.swift */; };
+		418A332027EA77CA00F9E278 /* ConfirmationPopupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418A331B27EA77CA00F9E278 /* ConfirmationPopupViewModel.swift */; };
 		418AD20A275A6A51005AFE3C /* ForgotPasswordTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418AD209275A6A51005AFE3C /* ForgotPasswordTextFields.swift */; };
 		418B636A27AEB28500F7DC4B /* BlockedUsersProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418B636927AEB28500F7DC4B /* BlockedUsersProtocols.swift */; };
 		418B637227AEB83C00F7DC4B /* ChangePasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418B636D27AEB83C00F7DC4B /* ChangePasswordRouter.swift */; };
@@ -512,6 +517,11 @@
 		4186AC8F277F77EF009C07E2 /* ExploreFiltersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreFiltersCollectionViewCell.swift; sourceTree = "<group>"; };
 		4186AC90277F77EF009C07E2 /* ExploreFiltersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExploreFiltersCollectionViewCell.xib; sourceTree = "<group>"; };
 		4186AC93277F78FB009C07E2 /* ExploreFiltersCollectionViewCellSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreFiltersCollectionViewCellSummary.swift; sourceTree = "<group>"; };
+		418A331727EA77CA00F9E278 /* ConfirmationPopupRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationPopupRouter.swift; sourceTree = "<group>"; };
+		418A331827EA77CA00F9E278 /* ConfirmationPopupViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConfirmationPopupViewController.storyboard; sourceTree = "<group>"; };
+		418A331927EA77CA00F9E278 /* ConfirmationPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationPopupViewController.swift; sourceTree = "<group>"; };
+		418A331A27EA77CA00F9E278 /* ConfirmationPopupBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationPopupBuilder.swift; sourceTree = "<group>"; };
+		418A331B27EA77CA00F9E278 /* ConfirmationPopupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationPopupViewModel.swift; sourceTree = "<group>"; };
 		418AD209275A6A51005AFE3C /* ForgotPasswordTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordTextFields.swift; sourceTree = "<group>"; };
 		418B636927AEB28500F7DC4B /* BlockedUsersProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedUsersProtocols.swift; sourceTree = "<group>"; };
 		418B636D27AEB83C00F7DC4B /* ChangePasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordRouter.swift; sourceTree = "<group>"; };
@@ -1175,6 +1185,7 @@
 		4163B2682787754B00C83245 /* GenericPopups */ = {
 			isa = PBXGroup;
 			children = (
+				418A331627EA77AB00F9E278 /* ConfirmationPopup */,
 				41EC16C2278688EB00096B7A /* ErrorPopup */,
 				41EC16D827868FE500096B7A /* GuestPopup */,
 				41EC16CD27868C1400096B7A /* SuccessPopup */,
@@ -1251,6 +1262,18 @@
 				4186AC93277F78FB009C07E2 /* ExploreFiltersCollectionViewCellSummary.swift */,
 			);
 			path = ExploreFiltersCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		418A331627EA77AB00F9E278 /* ConfirmationPopup */ = {
+			isa = PBXGroup;
+			children = (
+				418A331827EA77CA00F9E278 /* ConfirmationPopupViewController.storyboard */,
+				418A331727EA77CA00F9E278 /* ConfirmationPopupRouter.swift */,
+				418A331927EA77CA00F9E278 /* ConfirmationPopupViewController.swift */,
+				418A331A27EA77CA00F9E278 /* ConfirmationPopupBuilder.swift */,
+				418A331B27EA77CA00F9E278 /* ConfirmationPopupViewModel.swift */,
+			);
+			path = ConfirmationPopup;
 			sourceTree = "<group>";
 		};
 		418B636B27AEB81300F7DC4B /* ProfileSettingsFlow */ = {
@@ -1926,6 +1949,7 @@
 				410B31F3276B32C300CE4180 /* Countries.json in Resources */,
 				41CD10F8278222F200257B2B /* AnimalFilterTableViewCell.xib in Resources */,
 				41EC16A32785E08700096B7A /* AnimalTypesViewController.storyboard in Resources */,
+				418A331D27EA77CA00F9E278 /* ConfirmationPopupViewController.storyboard in Resources */,
 				411C7F72274BA91300C9710A /* LoginViewController.storyboard in Resources */,
 				417B8620277D27380051B8CF /* ProfileViewController.storyboard in Resources */,
 			);
@@ -1972,6 +1996,7 @@
 				4100A11027848E240049EEF0 /* EditPostRouter.swift in Sources */,
 				4160E70C277B9E9B00C7066F /* OnboardingRouter.swift in Sources */,
 				41B75627275EE4CE00C00E03 /* SignUpViewController.swift in Sources */,
+				418A331E27EA77CA00F9E278 /* ConfirmationPopupViewController.swift in Sources */,
 				4160E713277BA00400C7066F /* OnboardingCollectionView.swift in Sources */,
 				4160E70F277B9E9B00C7066F /* OnboardingViewModel.swift in Sources */,
 				417E58FF274D9CCD00447ED3 /* LoginTextFields.swift in Sources */,
@@ -1997,6 +2022,7 @@
 				419CE0D827B5D559005D009C /* EditPersonalDetailsProtocols.swift in Sources */,
 				4183EE2927961AC1005C554E /* NewPostGenericTextfields.swift in Sources */,
 				31981E4B24191A4500D25074 /* CustomTextField.swift in Sources */,
+				418A332027EA77CA00F9E278 /* ConfirmationPopupViewModel.swift in Sources */,
 				41EC16BF278678CE00096B7A /* SelectPhotoPopupViewController.swift in Sources */,
 				4105456A27A06E0E00527D64 /* ProfileSettingsViewController.swift in Sources */,
 				4108D8DB27624C8600880E0B /* PersonalDetailsCollectionViewCellTextFields.swift in Sources */,
@@ -2080,6 +2106,7 @@
 				41FEE1D22788855300F11449 /* PostCollectionView.swift in Sources */,
 				4119183B27ABFAF100F9D68A /* ProfilePostsBuilder.swift in Sources */,
 				4108D8DF2762A45D00880E0B /* CustomStackView.swift in Sources */,
+				418A331C27EA77CA00F9E278 /* ConfirmationPopupRouter.swift in Sources */,
 				418B638127AEF99C00F7DC4B /* EditPersonalDetailsViewController.swift in Sources */,
 				419CE0D227B5AD76005D009C /* ProfileSettingsProtocols.swift in Sources */,
 				418B636A27AEB28500F7DC4B /* BlockedUsersProtocols.swift in Sources */,
@@ -2129,6 +2156,7 @@
 				415E599D27650C7C009A013E /* CountryDTO.swift in Sources */,
 				41FEE1E02788B68000F11449 /* LocationRouter.swift in Sources */,
 				31981E4D24191C2F00D25074 /* CustomTextField-Models.swift in Sources */,
+				418A331F27EA77CA00F9E278 /* ConfirmationPopupBuilder.swift in Sources */,
 				416D29D42772558800CDD277 /* AccountDetailsCollectionViewCellTextFields.swift in Sources */,
 				945B15B425595DC9003A65E0 /* Int.swift in Sources */,
 				41B9CE6D277F403000966509 /* ExploreCollectionView.swift in Sources */,

@@ -109,6 +109,10 @@ private extension ProfileSettingsViewController {
         viewModel.didPressedTermsAndConditionsButton()
     }
     
+    @IBAction func deleteAccountButtonPressed(_ sender: UIButton) {
+        viewModel.didPressedDeleteAccountButton()
+    }
+    
     @IBAction func logoutButtonPressed(_ sender: UIButton) {
         viewModel.didPressedLogoutButton()
     }

@@ -73,6 +73,10 @@ extension ProfileSettingsViewModel {
         self.router.goToTermsAndConditions()
     }
     
+    func didPressedDeleteAccountButton() {
+        // TODO: Delete account
+    }
+    
     func didPressedLogoutButton() {
         Cache.logOut()
         self.router.changeRootToStartup()
