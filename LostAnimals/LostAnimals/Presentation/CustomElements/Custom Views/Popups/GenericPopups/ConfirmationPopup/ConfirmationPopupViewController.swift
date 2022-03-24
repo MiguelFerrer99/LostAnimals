@@ -61,7 +61,7 @@ private extension ConfirmationPopupViewController {
 // MARK: - IBActions
 private extension ConfirmationPopupViewController {
     @IBAction func noButtonPressed(_ sender: CustomButton) {
-        viewModel.didPressNoButton()
+        viewModel.didPressDismissButton()
     }
     
     @IBAction func yesButtonPressed(_ sender: CustomButton) {

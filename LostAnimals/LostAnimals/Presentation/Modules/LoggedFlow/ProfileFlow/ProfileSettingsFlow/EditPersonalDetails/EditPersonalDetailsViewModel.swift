@@ -54,6 +54,8 @@ extension EditPersonalDetailsViewModel {
     }
     
     func didPressedSaveChangesButton() {
-        showSuccessPopup(title: "The changes has been saved successfully", action: self.router.goBack())
+        showSuccessPopup(title: "The changes has been saved successfully") {
+            self.router.goBack()
+        }
     }
 }

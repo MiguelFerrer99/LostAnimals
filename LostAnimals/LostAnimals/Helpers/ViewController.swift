@@ -99,7 +99,6 @@ extension ViewController {
     func hideTabBar() {
         var frame = self.tabBarController?.tabBar.frame
         frame!.origin.y = self.view.frame.size.height + (frame?.size.height)!
-        
         self.tabBarController?.tabBar.frame = frame!
         self.tabBarController?.tabBar.isHidden = true
     }
@@ -147,14 +146,11 @@ extension UIViewController {
     /// - Parameters:
     ///   - viewController: The viewController type to present.
     internal static func instantiate<T: UIViewController>(viewController: T.Type, function: String = #function, line: Int = #line, file: String = #file) -> T {
-        
         let storyboardID = viewController.getStoryboardName()
-        
         guard let storyboard = UIStoryboard(name: viewController.getStoryboardName(),
                                             bundle: nil).instantiateViewController(withIdentifier: "\(viewController)") as? T else {
             fatalError("ViewController with identifier \(storyboardID), not found in \(viewController) Storyboard.\nFile : \(file) \nLine Number : \(line) \nFunction : \(function)") // swiftlint:disable:this line_length
         }
-        
         return storyboard
     }
     

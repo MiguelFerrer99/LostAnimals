@@ -12,6 +12,9 @@ final class LoginViewModel {
     let numberOfTextFields = 2
     var editedTextFields = [CustomTextField]()
         
+    // MARK: - Services
+    let authenticationService = AuthenticationService()
+    
     // MARK: - Init
     required init(router: LoginRouter) {
         self.router = router
@@ -43,17 +46,25 @@ extension LoginViewModel {
         self.router.goToForgotPassword()
     }
     
-    func didPressLoginButton() {
-        User.shared = HardcodedData.exampleUser1
-        
-        if User.shared?.banned ?? false { showBannedPopup(comesFrom: .login) }
-        else {
-            Cache.set(.logged, true)
-            let onboardingDone = Cache.get(boolFor: .onboardingDone)
-            if onboardingDone {
-                self.router.changeRootToTabBar()
-            } else {
-                self.router.goToOnboarding()
+    func didPressLoginButton(email: String, password: String, completion: @escaping (() -> Void)) {
+        authenticationService.logIn(email: email, password: password) { result in
+            switch result {
+            case .success(let loggedUser):
+                if loggedUser.banned {
+                    showBannedPopup(comesFrom: .login)
+                } else {
+                    User.shared = loggedUser
+                    Cache.set(.logged, true)
+                    if Cache.get(boolFor: .onboardingDone) {
+                        self.router.changeRootToTabBar()
+                    } else {
+                        self.router.goToOnboarding()
+                    }
+                }
+                completion()
+            case .error(let error):
+                showErrorPopup(title: error)
+                completion()
             }
         }
     }

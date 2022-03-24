@@ -14,13 +14,11 @@ enum SignUpStep: Int {
     case accountDetails
     case socialMediaDetails
 }
-
 enum SignUpStepLabel: String {
     case personalDetails = "Personal details"
     case accountDetails = "Account details"
     case socialMediaDetails = "Social media details"
 }
-
 enum WhereDoYouLiveComesFrom: String {
     case signUpPersonalDetails
     case signUpSocialMediaDetails
@@ -89,7 +87,7 @@ extension SignUpViewModel {
                 }
                 completion()
             case .error(let error):
-                showErrorPopup(title: error, action: nil)
+                showErrorPopup(title: error)
                 completion()
             }
         }

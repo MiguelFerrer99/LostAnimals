@@ -91,26 +91,27 @@ private extension ProfileViewController {
         secondCollectionHeaderImageView.isHidden = !viewModel.isMyProfile
         blockedUserLabel.text = "\(viewModel.user.firstname) has been blocked by you"
         
-        blockUserButtonImageView.image = UIImage(named: viewModel.isBlocked ? "UnblockUserWhite" : "BlockUserWhite")
-        basicInfoView.isHidden = viewModel.isBlocked
-        firstStackView.isHidden = viewModel.isBlocked
-        secondStackView.isHidden = viewModel.isBlocked
-        blockedUserView.isHidden = !viewModel.isBlocked
+        let isUserBlocked = User.shared?.blockedUsers.contains(viewModel.user.id) ?? false
+        blockUserButtonImageView.image = UIImage(named: isUserBlocked ? "UnblockUserWhite" : "BlockUserWhite")
+        basicInfoView.isHidden = isUserBlocked
+        firstStackView.isHidden = isUserBlocked
+        secondStackView.isHidden = isUserBlocked
+        blockedUserView.isHidden = !isUserBlocked
     }
     
-    func updateBlockedUserUI() {
+    func updateBlockedUserUI(isBlocked: Bool) {
         UIView.animate(withDuration: 0.25) {
-            self.blockUserButtonImageView.image = UIImage(named: self.viewModel.isBlocked ? "UnblockUserWhite" : "BlockUserWhite")
-            self.basicInfoView.isHidden = self.viewModel.isBlocked
-            self.firstStackView.isHidden = self.viewModel.isBlocked
-            self.secondStackView.isHidden = self.viewModel.isBlocked
-            self.blockedUserView.isHidden = !self.viewModel.isBlocked
+            self.blockUserButtonImageView.image = UIImage(named: isBlocked ? "UnblockUserWhite" : "BlockUserWhite")
+            self.basicInfoView.isHidden = isBlocked
+            self.firstStackView.isHidden = isBlocked
+            self.secondStackView.isHidden = isBlocked
+            self.blockedUserView.isHidden = !isBlocked
         }
     }
     
     func blockUser() {
-        viewModel.didPressBlockUserButton { allowed in
-            if allowed { updateBlockedUserUI() }
+        viewModel.didPressBlockUserButton { isBlocked in
+            self.updateBlockedUserUI(isBlocked: isBlocked)
         }
     }
 }

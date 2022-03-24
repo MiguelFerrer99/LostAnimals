@@ -17,7 +17,7 @@
         <!--Confirmation Popup View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="ConfirmationPopupViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="ConfirmationPopupViewController" customModule="LostAnimals" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConfirmationPopupViewController" modalPresentationStyle="overFullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="ConfirmationPopupViewController" customModule="LostAnimals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,10 +30,6 @@
                                     <constraint firstAttribute="height" constant="2000" id="0jw-xd-L9D"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Py-Tu-CLJ">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WSu-1F-6UX" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
                                 <rect key="frame" x="20" y="717" width="374" height="125"/>
                                 <subviews>
@@ -110,14 +106,10 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="ce6-hV-IIY" secondAttribute="bottom" id="7UP-7D-rl5"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="WSu-1F-6UX" secondAttribute="bottom" constant="20" id="B1A-bw-WCx"/>
-                            <constraint firstItem="6Py-Tu-CLJ" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="KEF-Wi-0GY"/>
                             <constraint firstItem="ce6-hV-IIY" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="PzY-ub-2vC"/>
                             <constraint firstItem="WSu-1F-6UX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Ygj-63-gtp"/>
                             <constraint firstItem="ce6-hV-IIY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ep9-LY-p0m"/>
-                            <constraint firstItem="6Py-Tu-CLJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="gAl-CW-OT8"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="WSu-1F-6UX" secondAttribute="trailing" constant="20" id="gQG-26-TXm"/>
-                            <constraint firstItem="6Py-Tu-CLJ" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="qzw-TS-iKy"/>
-                            <constraint firstAttribute="bottom" secondItem="6Py-Tu-CLJ" secondAttribute="bottom" id="zc5-If-96T"/>
                         </constraints>
                     </view>
                     <connections>

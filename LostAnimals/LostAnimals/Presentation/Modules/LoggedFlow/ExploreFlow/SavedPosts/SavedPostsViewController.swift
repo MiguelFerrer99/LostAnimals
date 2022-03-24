@@ -14,7 +14,7 @@ final class SavedPostsViewController: ViewController {
     
     // MARK: - Properties
     override var navBarTitle: String {
-        return "Saved posts"
+        return "My saved posts"
     }
     var refreshControl = UIRefreshControl()
     var viewModel: SavedPostsViewModel!

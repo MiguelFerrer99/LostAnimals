@@ -10,14 +10,12 @@ final class ConfirmationPopupViewModel {
     // MARK: - Properties
     private let router: ConfirmationPopupRouter
     let titleText: String
-    let noAction: ()?
-    let yesAction: ()?
+    let yesAction: (() -> Void)?
     
     // MARK: - Init
-    required init(router: ConfirmationPopupRouter, titleText: String, noAction: ()? = nil, yesAction: ()? = nil) {
+    required init(router: ConfirmationPopupRouter, titleText: String, yesAction: (() -> Void)? = nil) {
         self.router = router
         self.titleText = titleText
-        self.noAction = noAction
         self.yesAction = yesAction
     }
 }
@@ -41,9 +39,5 @@ extension ConfirmationPopupViewModel {
     
     func didPressYesButton() {
         self.router.dismissConfirmationPopup(yesAction: yesAction)
-    }
-    
-    func didPressNoButton() {
-        self.router.dismissConfirmationPopup(noAction: noAction)
     }
 }

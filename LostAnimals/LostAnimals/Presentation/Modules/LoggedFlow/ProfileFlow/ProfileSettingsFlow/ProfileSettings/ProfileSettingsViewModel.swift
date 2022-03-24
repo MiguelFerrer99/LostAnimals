@@ -74,11 +74,16 @@ extension ProfileSettingsViewModel {
     }
     
     func didPressedDeleteAccountButton() {
-        // TODO: Delete account
+        showConfirmationPopup(title: "Are you sure you want to delete your account?") {
+            // TODO: - Call API delete account
+            self.router.changeRootToStartup()
+        }
     }
     
     func didPressedLogoutButton() {
-        Cache.logOut()
-        self.router.changeRootToStartup()
+        showConfirmationPopup(title: "Are you sure you want to logout?") {
+            Cache.logOut()
+            self.router.changeRootToStartup()
+        }
     }
 }

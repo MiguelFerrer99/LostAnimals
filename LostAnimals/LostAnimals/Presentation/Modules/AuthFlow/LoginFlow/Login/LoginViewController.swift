@@ -47,6 +47,11 @@ private extension LoginViewController {
         passwordTextField.isUserInteractionEnabled = logInButton.isEnabled
         forgotPasswordButton.isUserInteractionEnabled = logInButton.isEnabled
     }
+    
+    func stopLoadingLogInButton() {
+        logInButton.hideLoading()
+        updateUserInteraction()
+    }
 }
 
 // MARK: - IBActions
@@ -56,8 +61,12 @@ private extension LoginViewController {
     }
     
     @IBAction func logInButtonPressed(_ sender: CustomButton) {
+        guard let email = mailTextField.textField.text,
+              let password = passwordTextField.textField.text else { return }
         logInButton.showLoading()
         updateUserInteraction()
-        viewModel.didPressLoginButton()
+        viewModel.didPressLoginButton(email: email, password: password) {
+            self.stopLoadingLogInButton()
+        }
     }
 }

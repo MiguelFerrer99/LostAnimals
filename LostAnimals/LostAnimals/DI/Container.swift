@@ -29,6 +29,10 @@ extension Container {
         ChangePasswordBuilder()
     }
     
+    func confirmationPopupBuilder() -> ConfirmationPopupBuilder {
+        ConfirmationPopupBuilder()
+    }
+    
     func contactWithPopupBuilder() -> ContactWithPopupBuilder {
         ContactWithPopupBuilder()
     }

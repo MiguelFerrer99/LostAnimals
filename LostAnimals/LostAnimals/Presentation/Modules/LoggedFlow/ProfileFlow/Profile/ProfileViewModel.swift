@@ -21,7 +21,6 @@ final class ProfileViewModel {
     var collectionSections: [ProfileSectionType] = [.posts]
     let user: User
     let isMyProfile: Bool
-    var isBlocked: Bool
     var socialMediaTypes: [SocialMediaType] = []
     
     // MARK: - Init
@@ -29,7 +28,6 @@ final class ProfileViewModel {
         self.router = router
         self.user = user
         self.isMyProfile = user == User.shared
-        self.isBlocked = User.shared?.blockedUsers.contains(user.id) ?? false
         if user.socialMedias[.email] != nil { self.socialMediaTypes.append(.email) }
         if user.socialMedias[.phonePrefix] != nil && user.socialMedias[.phoneNumber] != nil { self.socialMediaTypes.append(.phoneNumber) }
         if user.socialMedias[.whatsapp] != nil { self.socialMediaTypes.append(.whatsapp) }
@@ -66,12 +64,19 @@ extension ProfileViewModel {
         self.router.goBack()
     }
     
-    func didPressBlockUserButton(allowed: ((Bool) -> ())) {
-        isBlocked.toggle()
-        if isBlocked {
-            showSuccessPopup(title: "The user has been blocked successfully", action: allowed(true))
+    func didPressBlockUserButton(isBlocked: @escaping ((Bool) -> ())) {
+        let isUserBlocked = User.shared?.blockedUsers.contains(user.id) ?? false
+        let userFullName = user.lastname.isEmpty ? user.firstname : user.firstname + user.lastname
+        if isUserBlocked {
+            showConfirmationPopup(title: "Are you sure you want to unblock \(userFullName)?") {
+                isBlocked(false)
+            }
         } else {
-            allowed(true)
+            showConfirmationPopup(title: "Are you sure you want to block \(userFullName)?") {
+                showSuccessPopup(title: "The user has been blocked successfully") {
+                    isBlocked(true)
+                }
+            }
         }
     }
     

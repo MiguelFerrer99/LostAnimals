@@ -80,10 +80,12 @@ extension CustomButton {
     }
     
     func hideLoading() {
-        setTitle(originalButtonText, for: .normal)
-        activityIndicator.stopAnimating()
-        activityIndicator = nil
-        isEnabled = true
+        DispatchQueue.main.async {
+            self.setTitle(self.originalButtonText, for: .normal)
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator = nil
+            self.isEnabled = true
+        }
     }
 }
     

@@ -44,6 +44,8 @@ extension ChangePasswordViewModel {
     }
     
     func didPressedSaveChangesButton() {
-        showSuccessPopup(title: "The password has been changed successfully", action: self.router.goBack())
+        showSuccessPopup(title: "The password has been changed successfully") {
+            self.router.goBack()
+        }
     }
 }

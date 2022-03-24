@@ -12,10 +12,10 @@ final class ConfirmationPopupBuilder {}
 
 // MARK: - Functions
 extension ConfirmationPopupBuilder {
-    func build() -> ConfirmationPopupViewController {
+    func build(title: String, yesAction: (() -> Void)? = nil) -> ConfirmationPopupViewController {
         let viewController = UIViewController.instantiate(viewController: ConfirmationPopupViewController.self)
         let router = ConfirmationPopupRouter(viewController: viewController)
-        let viewModel = ConfirmationPopupViewModel(router: router)
+        let viewModel = ConfirmationPopupViewModel(router: router, titleText: title, yesAction: yesAction)
         viewController.viewModel = viewModel
         return viewController
     }

@@ -108,10 +108,12 @@ extension SignUpViewController {
     }
     
     func stopLoadingGetStartedButton() {
-        let indexPath = IndexPath(item: 2, section: 0)
-        guard let socialMediaDetailsCollectionViewCell = stepsCollectionView.cellForItem(at: indexPath) as? SocialMediaDetailsCollectionViewCell else { return }
-        socialMediaDetailsCollectionViewCell.getStartedButton.hideLoading()
-        socialMediaDetailsCollectionViewCell.updateUserInteraction()
+        DispatchQueue.main.async {
+            let indexPath = IndexPath(item: 2, section: 0)
+            guard let socialMediaDetailsCollectionViewCell = self.stepsCollectionView.cellForItem(at: indexPath) as? SocialMediaDetailsCollectionViewCell else { return }
+            socialMediaDetailsCollectionViewCell.getStartedButton.hideLoading()
+            socialMediaDetailsCollectionViewCell.updateUserInteraction()
+        }
     }
     
     func moveToPreviousStep() {
