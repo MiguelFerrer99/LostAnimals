@@ -11,20 +11,24 @@ import CodableFirebase
 import UIKit
 
 // MARK: - Enums
-enum LoginResult {
-    case success(User)
-    case error(String)
-}
-enum SignUpResult {
+enum LogInResult {
     case success(User)
     case error(String)
 }
 enum ForgotPasswordResult {
-    case success(String)
+    case success
+    case error(String)
+}
+enum SignUpResult {
+    case success
     case error(String)
 }
 enum DeleteAccountResult {
-    case success(String)
+    case success
+    case error(String)
+}
+enum LogOutResult {
+    case success
     case error(String)
 }
 enum FirebaseError: String {
@@ -36,8 +40,8 @@ enum FirebaseError: String {
 
 class AuthenticationService {
     // MARK: - Properties
-    var databaseRef: DatabaseReference
-    var storageRef: StorageReference
+    let databaseRef: DatabaseReference
+    let storageRef: StorageReference
     
     // MARK: - Init
     init() {
@@ -48,14 +52,21 @@ class AuthenticationService {
 
 // MARK: - Functions
 extension AuthenticationService {
-    func logIn(email: String, password: String, completion: @escaping (LoginResult) -> Void) {
+    func logIn(email: String, password: String, completion: @escaping (LogInResult) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
             if let authResult = authResult {
-                self.getUser(userRef: self.databaseRef.child("users").child(authResult.user.uid)) { loggedUser in
-                    if let loggedUser = loggedUser {
-                        completion(.success(loggedUser))
-                    } else {
-                        completion(.error("An unexpected error occured. Please, try again later"))
+                if authResult.user.isEmailVerified {
+                    self.getUser(userRef: self.databaseRef.child("users").child(authResult.user.uid)) { loggedUser in
+                        if let loggedUser = loggedUser {
+                            completion(.success(loggedUser))
+                        } else {
+                            completion(.error("An unexpected error occured. Please, try again later"))
+                        }
+                    }
+                } else {
+                    self.sendVerificationEmail(user: authResult.user) { ok in
+                        if ok { completion(.error("Verify your account before log in. We have sent you an email")) }
+                        else { completion(.error("An unexpected error occured. Please, try again later")) }
                     }
                 }
             } else if let error = error {
@@ -72,22 +83,39 @@ extension AuthenticationService {
         }
     }
     
+    func forgotPassword(email: String, completion: @escaping (ForgotPasswordResult) -> Void) {
+        Auth.auth().sendPasswordReset(withEmail: email) { error in
+            if let error = error {
+                switch error.localizedDescription {
+                case FirebaseError.networkError.rawValue:
+                    completion(.error("You don't have an internet connection"))
+                default:
+                    completion(.error("An unexpected error occured. Please, try again later"))
+                }
+            } else { completion(.success) }
+        }
+    }
+    
     func signUp(user: User, userPassword: String, completion: @escaping (SignUpResult) -> Void) {
-        Auth.auth().createUser(withEmail: user.email, password: userPassword) { authResult, error in
+        Auth.auth().createUser(withEmail: user.email, password: userPassword) { (authResult, error) in
             if let authResult = authResult {
                 self.uploadImagesAndGetURLs(userImageRef: self.storageRef.child("users").child(authResult.user.uid).child("user_image.png"),
                                             headerImageRef: self.storageRef.child("users").child(authResult.user.uid).child("header_image.png"),
                                             userImage: user.userImage,
-                                            headerImage: user.headerImage) { userImageURLString, headerImageURLString in
+                                            headerImage: user.headerImage) { (userImageURLString, headerImageURLString) in
                     if let userImageURLString = userImageURLString, let headerImageURLString = headerImageURLString {
                         if let newUserDTO = user.map(userID: authResult.user.uid,
                                                      userImageString: userImageURLString,
                                                      headerImageString: headerImageURLString) {
-                            self.saveUserDataAndGetUser(newUserRef: self.databaseRef.child("users").child(authResult.user.uid),
-                                                           newUserDTO: newUserDTO) { registeredUser in
-                                if let registeredUser = registeredUser {
-                                    completion(.success(registeredUser))
-                                } else { completion(.error("An unexpected error occured. Please, try again later")) }
+                            let userObject = try FirebaseEncoder().encode(newUserDTO)
+                            newUserRef.setValue(userObject) { (error, _) in
+                                if error != nil { completion(.error("An unexpected error occured. Please, try again later")) }
+                                else {
+                                    self.sendVerificationEmail(user: authResult.user) { ok in
+                                        if ok { completion(.success) }
+                                        else { completion(.error("An unexpected error occured. Please, try again later")) }
+                                    }
+                                }
                             }
                         } else { completion(.error("An unexpected error occured. Please, try again later")) }
                     } else { completion(.error("An unexpected error occured. Please, try again later")) }
@@ -105,12 +133,49 @@ extension AuthenticationService {
         }
     }
     
-    func forgotPassword(email: String, completion: @escaping (ForgotPasswordResult) -> Void) {
-        // TODO: Finish forgotPassword
+    func deleteAccount(id: String, completion: @escaping (DeleteAccountResult) -> Void) {
+        guard let loggedUser = Auth.auth().currentUser else { return }
+        databaseRef.child("users").child(id).removeValue { (error, _) in
+            if let error = error {
+                switch error.localizedDescription {
+                case FirebaseError.networkError.rawValue:
+                    completion(.error("You don't have an internet connection"))
+                default:
+                    completion(.error("An unexpected error occured. Please, try again later"))
+                }
+            } else {
+                self.storageRef.child("users").child(id).delete { error in
+                    if let error = error {
+                        switch error.localizedDescription {
+                        case FirebaseError.networkError.rawValue:
+                            completion(.error("You don't have an internet connection"))
+                        default:
+                            completion(.error("An unexpected error occured. Please, try again later"))
+                        }
+                    } else {
+                        loggedUser.delete { error in
+                            if let error = error {
+                                switch error.localizedDescription {
+                                case FirebaseError.networkError.rawValue:
+                                    completion(.error("You don't have an internet connection"))
+                                default:
+                                    completion(.error("An unexpected error occured. Please, try again later"))
+                                }
+                            } else { completion(.success) }
+                        }
+                    }
+                }
+            }
+        }
     }
     
-    func deleteAccount(id: String, completion: @escaping (DeleteAccountResult) -> Void) {
-        // TODO: Finish deleteAccount (UI too)
+    func logOut(completion: @escaping (LogOutResult) -> Void) {
+        do {
+            try Auth.auth().signOut()
+            completion(.success)
+        } catch {
+            completion(.error(error.localizedDescription))
+        }
     }
 }
 
@@ -140,20 +205,6 @@ private extension AuthenticationService {
         }
     }
     
-    func saveUserDataAndGetUser(newUserRef: DatabaseReference, newUserDTO: UserDTO, completion: @escaping ((User?) -> ())) {
-        do {
-            let userObject = try FirebaseEncoder().encode(newUserDTO)
-            newUserRef.setValue(userObject) { (error, _) in
-                if error != nil { completion(nil) }
-                else {
-                    self.getUser(userRef: newUserRef) { registeredUser in
-                        completion(registeredUser)
-                    }
-                }
-            }
-        } catch { completion(nil) }
-    }
-    
     func getUser(userRef: DatabaseReference, completion: @escaping ((User?) -> ())) {
         userRef.getData { error, snapshot in
             if error != nil { completion(nil) }
@@ -162,12 +213,23 @@ private extension AuthenticationService {
                     do {
                         let userDTO = try FirebaseDecoder().decode(UserDTO.self, from: snapshotValue)
                         userDTO.map { user in
-                            if let user = user {
-                                completion(user)
-                            } else { completion(nil) }
+                            if let user = user { completion(user) }
+                            else { completion(nil) }
                         }
                     } catch { completion(nil) }
                 } else { completion(nil) }
+            }
+        }
+    }
+    
+    func sendVerificationEmail(user: Firebase.User, completion: @escaping ((Bool) -> ())) {
+        user.sendEmailVerification { error in
+            if error != nil { completion(false) }
+            else {
+                do {
+                    try Auth.auth().signOut()
+                    completion(true)
+                } catch { completion(false) }
             }
         }
     }

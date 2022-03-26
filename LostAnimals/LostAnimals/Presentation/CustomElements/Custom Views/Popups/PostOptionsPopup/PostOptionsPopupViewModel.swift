@@ -49,9 +49,8 @@ extension PostOptionsPopupViewModel {
         self.router.dismissPostOptionsPopupAndGoToEditPost()
     }
     
-    func didPressReportPostButton() {
-        let logged = Cache.get(boolFor: .logged)
-        if logged {
+    func didPressBlockUserButton() {
+        if Cache.get(boolFor: .logged) {
             self.router.dismissPostOptionsPopupAndShowSuccessPopup()
         } else {
             self.router.dismissPostOptionsPopupAndShowGuestPopup()

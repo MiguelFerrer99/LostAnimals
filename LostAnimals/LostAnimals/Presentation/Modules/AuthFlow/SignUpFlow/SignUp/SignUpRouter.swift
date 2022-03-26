@@ -20,6 +20,12 @@ final class SignUpRouter {
 
 // MARK: - Functions
 extension SignUpRouter {
+    func goBack() {
+        DispatchQueue.main.async {
+            self.viewController?.pop()
+        }
+    }
+    
     func goToWhereDoYouLiveCountries(comesFrom: WhereDoYouLiveComesFrom) {
         let viewController = Container.shared.whereDoYouLiveCountriesBuilder().build(comesFrom: comesFrom)
         viewController.delegate = self.viewController

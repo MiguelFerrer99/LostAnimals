@@ -97,7 +97,7 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zUe-Xj-y1R">
                                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Report post" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ON-jz-0cM">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Block user" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ON-jz-0cM">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="59"/>
                                                                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="20"/>
                                                                                 <color key="textColor" name="CustomBlack"/>
@@ -116,7 +116,7 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <connections>
-                                                                            <action selector="reportPostButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="rZM-Cm-QKI"/>
+                                                                            <action selector="blockUserButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="BOQ-4F-At9"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -258,7 +258,6 @@
                     <connections>
                         <outlet property="backgroundView" destination="Opd-w4-trW" id="Os9-L5-9qz"/>
                         <outlet property="editPostButtonView" destination="0qa-Pq-M2p" id="U1i-yo-eTt"/>
-                        <outlet property="reportPostButtonView" destination="Atz-nX-dXd" id="btp-WX-9HA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -8,6 +8,7 @@
 
 import UIKit
 
+// MARK: - Enums
 enum ProfileSettingsImageType: String {
     case header
     case user
@@ -18,6 +19,9 @@ final class ProfileSettingsViewModel {
     private let router: ProfileSettingsRouter
     var selectedImageView: ProfileSettingsImageType = .user
     let me: User
+    
+    // MARK: - AuthenticationService
+    let authenticationService = AuthenticationService()
     
     // MARK: - Init
     required init(router: ProfileSettingsRouter, me: User) {
@@ -75,15 +79,28 @@ extension ProfileSettingsViewModel {
     
     func didPressedDeleteAccountButton() {
         showConfirmationPopup(title: "Are you sure you want to delete your account?") {
-            // TODO: - Call API delete account
-            self.router.changeRootToStartup()
+            self.authenticationService.deleteAccount(id: self.me.id) { result in
+                switch result {
+                case .success:
+                    self.router.changeRootToStartup()
+                case .error(let error):
+                    showErrorPopup(title: error)
+                }
+            }
         }
     }
     
     func didPressedLogoutButton() {
         showConfirmationPopup(title: "Are you sure you want to logout?") {
-            Cache.logOut()
-            self.router.changeRootToStartup()
+            self.authenticationService.logOut { result in
+                switch result {
+                case .success:
+                    Cache.logOut()
+                    self.router.changeRootToStartup()
+                case .error(let error):
+                    showErrorPopup(title: error)
+                }
+            }
         }
     }
 }

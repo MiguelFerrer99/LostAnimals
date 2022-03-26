@@ -77,18 +77,14 @@ extension SignUpViewModel {
     func didPressGetStartedButton(completion: @escaping (() -> Void)) {
         authenticationService.signUp(user: user, userPassword: userPassword) { result in
             switch result {
-            case .success(let user):
-                User.shared = user
-                Cache.set(.logged, true)
-                if Cache.get(boolFor: .onboardingDone) {
-                    self.router.changeRootToTabBar()
-                } else {
-                    self.router.goToOnboarding()
+            case .success:
+                completion()
+                showSuccessPopup(title: "Congrats, you are already user of LostAnimals! Now verify your account in your email to log in") {
+                    self.router.goBack()
                 }
-                completion()
             case .error(let error):
-                showErrorPopup(title: error)
                 completion()
+                showErrorPopup(title: error)
             }
         }
     }

@@ -14,6 +14,9 @@ final class ForgotPasswordViewModel {
     let numberOfTextFields = 1
     var editedTextFields = [CustomTextField]()
     
+    // MARK: - AuthenticationService
+    let authenticationService = AuthenticationService()
+    
     // MARK: - Init
     required init(router: ForgotPasswordRouter) {
         self.router = router
@@ -41,7 +44,15 @@ extension ForgotPasswordViewModel {
         return haveErrors
     }
     
-    func didPressForgotPasswordButton() {
-        showSuccessPopup(title: "We have sent an email to recover your password", action: nil)
+    func didPressForgotPasswordButton(email: String, completion: @escaping (() -> Void)) {
+        authenticationService.forgotPassword(email: email) { result in
+            switch result {
+            case .success:
+                showSuccessPopup(title: "We have sent an email to recover your password", action: nil)
+            case .error(let error):
+                showErrorPopup(title: error)
+            }
+            completion()
+        }
     }
 }

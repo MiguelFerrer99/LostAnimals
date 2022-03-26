@@ -41,13 +41,21 @@ private extension ForgotPasswordViewController {
         navigationController?.interactivePopGestureRecognizer?.isEnabled = forgotPasswordButton.isEnabled
         mailTexfield.isUserInteractionEnabled = forgotPasswordButton.isEnabled
     }
+    
+    func stopLoadingForgotPasswordButton() {
+        forgotPasswordButton.hideLoading()
+        updateUserInteraction()
+    }
 }
 
 // MARK: - IBActions
 private extension ForgotPasswordViewController {
     @IBAction func recoverPasswordButtonPressed(_ sender: CustomButton) {
+        guard let email = mailTexfield.textField.text else { return }
         forgotPasswordButton.showLoading()
         updateUserInteraction()
-        viewModel.didPressForgotPasswordButton()
+        viewModel.didPressForgotPasswordButton(email: email) {
+            self.stopLoadingForgotPasswordButton()
+        }
     }
 }
