@@ -52,7 +52,7 @@ final class TabBarViewController: UITabBarController {
 extension TabBarViewController {
     private func setupUI() {
         let titleAttributes = [NSAttributedString.Key.foregroundColor: UIColor.customBlack, NSAttributedString.Key.font: UIFont.nunitoSmallBold]
-        let largeTitleAttributes = [NSAttributedString.Key.font: UIFont.nunitoBigBold]
+        let largeTitleAttributes = [NSAttributedString.Key.foregroundColor: UIColor.customBlack, NSAttributedString.Key.font: UIFont.nunitoBigBold]
         UINavigationBar.appearance().titleTextAttributes = titleAttributes
         UINavigationBar.appearance().largeTitleTextAttributes = largeTitleAttributes
         UINavigationBar.appearance().tintColor = .customBlack

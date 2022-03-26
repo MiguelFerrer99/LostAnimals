@@ -90,6 +90,7 @@
 		413987102737FA3500C243F4 /* StartupBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4139870C2737FA3500C243F4 /* StartupBuilder.swift */; };
 		413987112737FA3500C243F4 /* StartupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4139870D2737FA3500C243F4 /* StartupViewModel.swift */; };
 		413987152738052C00C243F4 /* StartupViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 413987142738052C00C243F4 /* StartupViewController.storyboard */; };
+		414903B727EF796F0037EE4E /* ProfileScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414903B627EF796F0037EE4E /* ProfileScrollView.swift */; };
 		415476BF27849A0300BD684F /* EditPostTextfields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415476BE27849A0300BD684F /* EditPostTextfields.swift */; };
 		4157D3F327B83B9400F2C8F2 /* ExploreFiltersHeaderProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4157D3F227B83B9400F2C8F2 /* ExploreFiltersHeaderProtocols.swift */; };
 		415E597C2763EA7E009A013E /* WhereDoYouLiveCountriesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E59782763EA7E009A013E /* WhereDoYouLiveCountriesRouter.swift */; };
@@ -454,6 +455,7 @@
 		4139870C2737FA3500C243F4 /* StartupBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupBuilder.swift; sourceTree = "<group>"; };
 		4139870D2737FA3500C243F4 /* StartupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupViewModel.swift; sourceTree = "<group>"; };
 		413987142738052C00C243F4 /* StartupViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartupViewController.storyboard; sourceTree = "<group>"; };
+		414903B627EF796F0037EE4E /* ProfileScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScrollView.swift; sourceTree = "<group>"; };
 		415476BE27849A0300BD684F /* EditPostTextfields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostTextfields.swift; sourceTree = "<group>"; };
 		4157D3F227B83B9400F2C8F2 /* ExploreFiltersHeaderProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreFiltersHeaderProtocols.swift; sourceTree = "<group>"; };
 		415E59782763EA7E009A013E /* WhereDoYouLiveCountriesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereDoYouLiveCountriesRouter.swift; sourceTree = "<group>"; };
@@ -1229,6 +1231,7 @@
 				417B861D277D27380051B8CF /* ProfileBuilder.swift */,
 				417B861E277D27380051B8CF /* ProfileViewModel.swift */,
 				417025772799FEF200AEB373 /* ProfileCollectionViews.swift */,
+				414903B627EF796F0037EE4E /* ProfileScrollView.swift */,
 				41DA64F127A492240094F55C /* ProfileMailController.swift */,
 			);
 			path = Profile;
@@ -2169,6 +2172,7 @@
 				418B638C27AF436700F7DC4B /* EditSocialMediasRouter.swift in Sources */,
 				417B860C277D1F1C0051B8CF /* NewPostBuilder.swift in Sources */,
 				41EC16D627868C2900096B7A /* SuccessPopupBuilder.swift in Sources */,
+				414903B727EF796F0037EE4E /* ProfileScrollView.swift in Sources */,
 				943CE5FE2546DFBC00CA93AA /* CustomButton.swift in Sources */,
 				4119183C27ABFAF100F9D68A /* ProfilePostsViewModel.swift in Sources */,
 				415E59902764F1F8009A013E /* WhereDoYouLiveCitiesRouter.swift in Sources */,

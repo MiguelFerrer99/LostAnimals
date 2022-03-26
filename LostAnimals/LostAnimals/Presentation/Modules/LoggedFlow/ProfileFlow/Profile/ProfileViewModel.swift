@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 // MARK: - Enums
 enum ProfileSectionType: String {
@@ -73,9 +74,7 @@ extension ProfileViewModel {
             }
         } else {
             showConfirmationPopup(title: "Are you sure you want to block \(userFullName)?") {
-                showSuccessPopup(title: "The user has been blocked successfully") {
-                    isBlocked(true)
-                }
+                isBlocked(true)
             }
         }
     }
@@ -121,5 +120,13 @@ extension ProfileViewModel {
         if isMyProfile {
             self.router.goToMySavedPosts()
         }
+    }
+    
+    func didPressHeaderImage(headerImage: UIImage) {
+        self.router.goToPostImages(image: headerImage)
+    }
+    
+    func didPressUserImage(userImage: UIImage) {
+        self.router.goToPostImages(image: userImage)
     }
 }

@@ -114,4 +114,11 @@ extension ProfileRouter {
             self.viewController?.push(viewController: viewController)
         }
     }
+    
+    func goToPostImages(image: UIImage) {
+        let viewController = Container.shared.postImagesBuilder().build(postImages: [image], indexPostImage: 0)
+        DispatchQueue.main.async {
+            self.viewController?.present(viewController: viewController)
+        }
+    }
 }

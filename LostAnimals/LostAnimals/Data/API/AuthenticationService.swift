@@ -107,15 +107,19 @@ extension AuthenticationService {
                         if let newUserDTO = user.map(userID: authResult.user.uid,
                                                      userImageString: userImageURLString,
                                                      headerImageString: headerImageURLString) {
-                            let userObject = try FirebaseEncoder().encode(newUserDTO)
-                            newUserRef.setValue(userObject) { (error, _) in
-                                if error != nil { completion(.error("An unexpected error occured. Please, try again later")) }
-                                else {
-                                    self.sendVerificationEmail(user: authResult.user) { ok in
-                                        if ok { completion(.success) }
-                                        else { completion(.error("An unexpected error occured. Please, try again later")) }
+                            do {
+                                let userObject = try FirebaseEncoder().encode(newUserDTO)
+                                self.databaseRef.child("users").child(newUserDTO.id).setValue(userObject) { (error, _) in
+                                    if error != nil { completion(.error("An unexpected error occured. Please, try again later")) }
+                                    else {
+                                        self.sendVerificationEmail(user: authResult.user) { ok in
+                                            if ok { completion(.success) }
+                                            else { completion(.error("An unexpected error occured. Please, try again later")) }
+                                        }
                                     }
                                 }
+                            } catch {
+                                completion(.error("An unexpected error occured. Please, try again later"))
                             }
                         } else { completion(.error("An unexpected error occured. Please, try again later")) }
                     } else { completion(.error("An unexpected error occured. Please, try again later")) }
@@ -225,12 +229,7 @@ private extension AuthenticationService {
     func sendVerificationEmail(user: Firebase.User, completion: @escaping ((Bool) -> ())) {
         user.sendEmailVerification { error in
             if error != nil { completion(false) }
-            else {
-                do {
-                    try Auth.auth().signOut()
-                    completion(true)
-                } catch { completion(false) }
-            }
+            else { completion(true) }
         }
     }
 }

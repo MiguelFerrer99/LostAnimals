@@ -1,22 +1,22 @@
 //
-//  PostScrollView.swift
+//  ProfileScrollView.swift
 //  LostAnimals
 //
-//  Created by Miguel Ferrer Fornali on 13/1/22.
+//  Created by Miguel Ferrer Fornali on 26/3/22.
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
 import UIKit
 
 // MARK: - Functions
-extension PostViewController {
+extension ProfileViewController {
     func configureScrollView(_ scrollView: UIScrollView) {
         scrollView.delegate = self
     }
 }
 
 // MARK: - UIScrollViewDelegate
-extension PostViewController: UIScrollViewDelegate {
+extension ProfileViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         self.navigationController?.setNavigationBarHidden(shouldHideNavigationBar, animated: true)
     }

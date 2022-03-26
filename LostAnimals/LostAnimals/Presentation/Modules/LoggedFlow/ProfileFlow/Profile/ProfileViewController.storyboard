@@ -44,9 +44,14 @@
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultHeaderImage" translatesAutoresizingMaskIntoConstraints="NO" id="UE6-hy-l66">
                                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="214.5"/>
+                                                                        <gestureRecognizers/>
+                                                                        <connections>
+                                                                            <outletCollection property="gestureRecognizers" destination="doE-Zv-Gb8" appends="YES" id="vHR-by-dpW"/>
+                                                                        </connections>
                                                                     </imageView>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultUserImage" translatesAutoresizingMaskIntoConstraints="NO" id="OdU-2w-JUY" customClass="CustomImageView" customModule="LostAnimals" customModuleProvider="target">
                                                                         <rect key="frame" x="147" y="154.5" width="120" height="120"/>
+                                                                        <gestureRecognizers/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="120" id="0Qi-yT-d92"/>
                                                                             <constraint firstAttribute="width" constant="120" id="v2T-R4-l4F"/>
@@ -54,6 +59,9 @@
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="fullRound" value="YES"/>
                                                                         </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <outletCollection property="gestureRecognizers" destination="1nY-8q-ySw" appends="YES" id="OyF-ZO-QdI"/>
+                                                                        </connections>
                                                                     </imageView>
                                                                     <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AnimalShelter" translatesAutoresizingMaskIntoConstraints="NO" id="g8t-rU-knB">
                                                                         <rect key="frame" x="237" y="244.5" width="30" height="30"/>
@@ -389,6 +397,10 @@
                                                                         </collectionViewFlowLayout>
                                                                         <cells/>
                                                                     </collectionView>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pY5-FZ-W3G">
+                                                                        <rect key="frame" x="0.0" y="240" width="414" height="0.0"/>
+                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                    </view>
                                                                 </subviews>
                                                             </stackView>
                                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sbv-lQ-YsS">
@@ -503,6 +515,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="doE-Zv-Gb8">
+                    <connections>
+                        <action selector="headerImagePressed:" destination="Y6W-OH-hqX" id="Xoo-Du-rv8"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="1nY-8q-ySw">
+                    <connections>
+                        <action selector="userImagePressed:" destination="Y6W-OH-hqX" id="kSK-GA-spB"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="5.7971014492753632" y="105.80357142857143"/>
         </scene>
@@ -530,6 +552,9 @@
         <namedColor name="CustomWhite">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

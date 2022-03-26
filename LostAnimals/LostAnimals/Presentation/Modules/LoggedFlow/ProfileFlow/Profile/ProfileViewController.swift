@@ -36,13 +36,20 @@ final class ProfileViewController: ViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var secondCollectionView: UICollectionView!
     
     // MARK: - Properties
+    override var navBarTitle: String {
+        return "\(viewModel.user.firstname) \(viewModel.user.lastname)"
+    }
     override var hideBackButton: Bool {
         return viewModel.isMyProfile
     }
     override var hideNavigationBar: Bool {
-        return true
+        return shouldHideNavigationBar
+    }
+    var shouldHideNavigationBar: Bool {
+        return profileScrollView.contentOffset.y < 20
     }
     var viewModel: ProfileViewModel!
+    var blockUserBarButtonItem = UIBarButtonItem()
     let mailController = MFMailComposeViewController()
     
     // MARK: - Life cycle
@@ -64,12 +71,23 @@ final class ProfileViewController: ViewController, UIGestureRecognizerDelegate {
 private extension ProfileViewController {
     func setupUI() {
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+        setNavBarButtons()
+        configureScrollView(profileScrollView)
         configureCollectionView(firstCollectionView)
         configureCollectionView(secondCollectionView)
         if !viewModel.isMyProfile {
             configureMailController(mailController: mailController)
         }
         fillUI()
+    }
+    
+    func setNavBarButtons() {
+        let isUserBlocked = User.shared?.blockedUsers.contains(viewModel.user.id) ?? false
+        blockUserBarButtonItem = UIBarButtonItem(image: UIImage(named: isUserBlocked ? "UnblockUserWhite" : "BlockUserWhite"),
+                                                 style: .plain,
+                                                 target: self,
+                                                 action: #selector(blockOrUnblockUser))
+        self.navigationItem.rightBarButtonItems = [blockUserBarButtonItem]
     }
     
     func fillUI() {
@@ -101,6 +119,7 @@ private extension ProfileViewController {
     
     func updateBlockedUserUI(isBlocked: Bool) {
         UIView.animate(withDuration: 0.25) {
+            self.blockUserBarButtonItem.image = UIImage(named: isBlocked ? "UnblockUserWhite" : "BlockUserWhite")
             self.blockUserButtonImageView.image = UIImage(named: isBlocked ? "UnblockUserWhite" : "BlockUserWhite")
             self.basicInfoView.isHidden = isBlocked
             self.firstStackView.isHidden = isBlocked
@@ -109,9 +128,10 @@ private extension ProfileViewController {
         }
     }
     
-    func blockUser() {
+    @objc func blockOrUnblockUser() {
         viewModel.didPressBlockUserButton { isBlocked in
             self.updateBlockedUserUI(isBlocked: isBlocked)
+            if isBlocked { showSuccessPopup(title: "The user has been blocked successfully") }
         }
     }
 }
@@ -123,11 +143,19 @@ private extension ProfileViewController {
     }
     
     @IBAction func blockUserButtonPressed(_ sender: UIButton) {
-        blockUser()
+        blockOrUnblockUser()
     }
     
     @IBAction func settingsButtonPressed(_ sender: UIButton) {
         viewModel.didPressSettingsButton()
+    }
+    
+    @IBAction func headerImagePressed(_ sender: UITapGestureRecognizer) {
+        viewModel.didPressHeaderImage(headerImage: viewModel.user.headerImage)
+    }
+    
+    @IBAction func userImagePressed(_ sender: UITapGestureRecognizer) {
+        viewModel.didPressUserImage(userImage: viewModel.user.userImage)
     }
     
     @IBAction func locationButtonPressed(_ sender: UIButton) {
