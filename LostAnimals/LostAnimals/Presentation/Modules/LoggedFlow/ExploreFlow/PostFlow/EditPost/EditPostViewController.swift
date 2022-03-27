@@ -184,14 +184,16 @@ private extension EditPostViewController {
     }
 
     @IBAction func deletePostButtonPressed(_ sender: CustomButton) {
-        deletePostButton.showLoading()
-        updateUserInteraction()
+        deletePostButton.showLoading {
+            self.updateUserInteraction()
+        }
         viewModel.didPressDeletePostButton()
     }
 
     @IBAction func saveChangesButtonPressed(_ sender: CustomButton) {
-        saveChangesButton.showLoading()
-        updateUserInteraction()
+        saveChangesButton.showLoading {
+            self.updateUserInteraction()
+        }
         viewModel.didPressSaveChangesButton()
     }
 

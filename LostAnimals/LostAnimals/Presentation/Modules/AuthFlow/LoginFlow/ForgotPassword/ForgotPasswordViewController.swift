@@ -53,8 +53,9 @@ private extension ForgotPasswordViewController {
 private extension ForgotPasswordViewController {
     @IBAction func recoverPasswordButtonPressed(_ sender: CustomButton) {
         guard let email = mailTexfield.textField.text else { return }
-        forgotPasswordButton.showLoading()
-        updateUserInteraction()
+        forgotPasswordButton.showLoading {
+            self.updateUserInteraction()
+        }
         viewModel.didPressForgotPasswordButton(email: email) {
             self.stopLoadingForgotPasswordButton()
         }

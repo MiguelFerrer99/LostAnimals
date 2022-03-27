@@ -53,8 +53,9 @@ private extension ChangePasswordViewController {
 // MARK: - IBActions
 private extension ChangePasswordViewController {
     @IBAction func saveChangesButtonPressed(_ sender: CustomButton) {
-        saveChangesButton.showLoading()
-        updateUserInteraction()
+        saveChangesButton.showLoading {
+            self.updateUserInteraction()
+        }
         viewModel.didPressedSaveChangesButton()
     }
 }

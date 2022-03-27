@@ -16,6 +16,17 @@ final class ProfileSettingsViewController: ViewController, UIGestureRecognizerDe
     @IBOutlet private weak var blockedUsersView: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var headerImageView: UIImageView!
+    @IBOutlet weak var loadingView: CustomView!
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var changeHeaderImageButton: UIButton!
+    @IBOutlet weak var changeUserImageButton: UIButton!
+    @IBOutlet weak var editPersonalDetailsButton: UIButton!
+    @IBOutlet weak var editSocialMediasButton: UIButton!
+    @IBOutlet weak var changePasswordButton: UIButton!
+    @IBOutlet weak var blockedUsersButton: UIButton!
+    @IBOutlet weak var termsAndConditionsButton: UIButton!
+    @IBOutlet weak var deleteAccountButton: UIButton!
+    @IBOutlet weak var logOutButton: UIButton!
     
     // MARK: - Properties
     override var hideNavigationBar: Bool {
@@ -73,6 +84,24 @@ private extension ProfileSettingsViewController {
         animalShelterImageView.isHidden = !viewModel.me.animalShelter
         blockedUsersView.isHidden = viewModel.me.blockedUsers.isEmpty
     }
+    
+    func updateUserInteraction() {
+        backButton.isUserInteractionEnabled = loadingView.isHidden
+        changeHeaderImageButton.isUserInteractionEnabled = loadingView.isHidden
+        changeUserImageButton.isUserInteractionEnabled = loadingView.isHidden
+        editPersonalDetailsButton.isUserInteractionEnabled = loadingView.isHidden
+        editSocialMediasButton.isUserInteractionEnabled = loadingView.isHidden
+        changePasswordButton.isUserInteractionEnabled = loadingView.isHidden
+        blockedUsersButton.isUserInteractionEnabled = loadingView.isHidden
+        termsAndConditionsButton.isUserInteractionEnabled = loadingView.isHidden
+        deleteAccountButton.isUserInteractionEnabled = loadingView.isHidden
+        logOutButton.isUserInteractionEnabled = loadingView.isHidden
+    }
+    
+    func showLoading() {
+        loadingView.isHidden = false
+        updateUserInteraction()
+    }
 }
 
 // MARK: - IBActions
@@ -85,7 +114,7 @@ private extension ProfileSettingsViewController {
         viewModel.didPressedChangeHeaderImageButton(headerImage: headerImageView.image ?? UIImage())
     }
     
-    @IBAction func changeProfileImageViewButtonPressed(_ sender: UIButton) {
+    @IBAction func changeUserImageViewButtonPressed(_ sender: UIButton) {
         viewModel.didPressedChangeProfileImageButton(profileImage: profileImageView.image ?? UIImage())
     }
     
@@ -110,10 +139,14 @@ private extension ProfileSettingsViewController {
     }
     
     @IBAction func deleteAccountButtonPressed(_ sender: UIButton) {
-        viewModel.didPressedDeleteAccountButton()
+        viewModel.didPressedDeleteAccountButton {
+            self.showLoading()
+        }
     }
     
     @IBAction func logoutButtonPressed(_ sender: UIButton) {
-        viewModel.didPressedLogoutButton()
+        viewModel.didPressedLogoutButton {
+            self.showLoading()
+        }
     }
 }

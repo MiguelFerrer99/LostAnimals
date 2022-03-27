@@ -94,8 +94,9 @@ private extension EditPersonalDetailsViewController {
 // MARK: - IBActions
 private extension EditPersonalDetailsViewController {
     @IBAction func saveChangesButtonPressed(_ sender: CustomButton) {
-        saveChangesButton.showLoading()
-        updateUserInteraction()
+        saveChangesButton.showLoading {
+            self.updateUserInteraction()
+        }
         viewModel.didPressedSaveChangesButton()
     }
 }

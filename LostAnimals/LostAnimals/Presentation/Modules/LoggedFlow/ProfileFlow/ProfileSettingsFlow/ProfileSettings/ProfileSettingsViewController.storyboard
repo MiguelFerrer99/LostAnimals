@@ -102,8 +102,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <connections>
-                                                            <action selector="changeHeaderImageViewButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="xd5-zt-sla"/>
-                                                            <action selector="changeProfileImageViewButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="0G2-Wo-Xo7"/>
+                                                            <action selector="changeUserImageViewButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="0n2-Yx-A4E"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -167,13 +166,37 @@
                                                             <constraint firstAttribute="bottom" secondItem="dWW-ZI-fxl" secondAttribute="bottom" constant="5" id="l8A-qE-RiK"/>
                                                         </constraints>
                                                     </view>
+                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J8s-LH-IiK" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
+                                                        <rect key="frame" x="388" y="15" width="30" height="30"/>
+                                                        <subviews>
+                                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="CkG-HT-zfI">
+                                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="color" name="CustomBlack"/>
+                                                            </activityIndicatorView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" name="CustomWhite"/>
+                                                        <constraints>
+                                                            <constraint firstItem="CkG-HT-zfI" firstAttribute="leading" secondItem="J8s-LH-IiK" secondAttribute="leading" id="3h1-kk-5Pl"/>
+                                                            <constraint firstItem="CkG-HT-zfI" firstAttribute="top" secondItem="J8s-LH-IiK" secondAttribute="top" id="BCn-yg-Auq"/>
+                                                            <constraint firstAttribute="trailing" secondItem="CkG-HT-zfI" secondAttribute="trailing" id="DRb-bV-YHh"/>
+                                                            <constraint firstAttribute="width" constant="30" id="Fuo-wY-n4f"/>
+                                                            <constraint firstAttribute="bottom" secondItem="CkG-HT-zfI" secondAttribute="bottom" id="cN2-NV-JqH"/>
+                                                            <constraint firstAttribute="height" constant="30" id="paS-eu-fAk"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="fullRound" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="S29-1c-uQJ" firstAttribute="leading" secondItem="CAT-FZ-F9I" secondAttribute="leading" constant="10" id="RPY-uk-KSN"/>
                                                     <constraint firstAttribute="height" constant="60" id="alb-HU-n1i"/>
+                                                    <constraint firstItem="J8s-LH-IiK" firstAttribute="centerY" secondItem="CAT-FZ-F9I" secondAttribute="centerY" id="eer-U5-ptR"/>
                                                     <constraint firstAttribute="bottom" secondItem="S29-1c-uQJ" secondAttribute="bottom" constant="10" id="kn6-Pk-M1a"/>
                                                     <constraint firstItem="S29-1c-uQJ" firstAttribute="top" secondItem="CAT-FZ-F9I" secondAttribute="top" constant="10" id="pvU-1q-uDY"/>
+                                                    <constraint firstAttribute="trailing" secondItem="J8s-LH-IiK" secondAttribute="trailing" constant="10" id="r4V-Rt-oPt"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -394,62 +417,58 @@
                                             <constraint firstAttribute="bottom" secondItem="KKt-wt-Gx1" secondAttribute="bottom" id="qFl-2V-PmY"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x5r-Nz-eOC">
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j8S-I2-JOr">
                                         <rect key="frame" x="0.0" y="654" width="428" height="60"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete account" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4d-6P-3vQ">
-                                                <rect key="frame" x="20" y="16.333333333333371" width="139" height="27.333333333333329"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JRZ-NK-g4i">
+                                                <rect key="frame" x="0.0" y="0.0" width="20" height="60"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="20" id="tMZ-5J-9OM"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9d0-uU-rY9">
+                                                <rect key="frame" x="20" y="0.0" width="408" height="60"/>
                                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="20"/>
-                                                <color key="textColor" name="CustomBlack"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Okx-RO-vly">
-                                                <rect key="frame" x="0.0" y="0.0" width="428" height="60"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Delete account">
+                                                    <color key="titleColor" name="CustomBlack"/>
+                                                </state>
                                                 <connections>
-                                                    <action selector="deleteAccountButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="55T-AN-swW"/>
+                                                    <action selector="deleteAccountButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ON6-8p-ywZ"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="Okx-RO-vly" firstAttribute="leading" secondItem="x5r-Nz-eOC" secondAttribute="leading" id="bC7-zH-og9"/>
-                                            <constraint firstItem="R4d-6P-3vQ" firstAttribute="centerY" secondItem="x5r-Nz-eOC" secondAttribute="centerY" id="cBh-LR-n3W"/>
-                                            <constraint firstAttribute="trailing" secondItem="Okx-RO-vly" secondAttribute="trailing" id="dhh-bO-0oR"/>
-                                            <constraint firstItem="R4d-6P-3vQ" firstAttribute="leading" secondItem="x5r-Nz-eOC" secondAttribute="leading" constant="20" id="hct-H2-PZw"/>
-                                            <constraint firstAttribute="bottom" secondItem="Okx-RO-vly" secondAttribute="bottom" id="ipx-DN-wML"/>
-                                            <constraint firstAttribute="height" constant="60" id="sYe-dc-NiE"/>
-                                            <constraint firstItem="Okx-RO-vly" firstAttribute="top" secondItem="x5r-Nz-eOC" secondAttribute="top" id="zJt-io-DIy"/>
+                                            <constraint firstAttribute="height" constant="60" id="Btw-rg-rGb"/>
                                         </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k5w-4U-hbh">
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Zb-lL-L8r">
                                         <rect key="frame" x="0.0" y="719" width="428" height="60"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log out" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogf-7e-g0q">
-                                                <rect key="frame" x="20" y="16.333333333333371" width="71" height="27.333333333333329"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bt7-pu-wVL">
+                                                <rect key="frame" x="0.0" y="0.0" width="20" height="60"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="20" id="XnE-ke-AIb"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1b-0X-QXp">
+                                                <rect key="frame" x="20" y="0.0" width="408" height="60"/>
                                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="20"/>
-                                                <color key="textColor" name="CustomBlack"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6i-Qa-ATN">
-                                                <rect key="frame" x="0.0" y="0.0" width="428" height="60"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Log out">
+                                                    <color key="titleColor" name="CustomBlack"/>
+                                                </state>
                                                 <connections>
-                                                    <action selector="logoutButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="AW5-F7-XZd"/>
+                                                    <action selector="logoutButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="dDK-Yj-mBY"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="H6i-Qa-ATN" secondAttribute="trailing" id="1ad-yO-VaN"/>
-                                            <constraint firstAttribute="bottom" secondItem="H6i-Qa-ATN" secondAttribute="bottom" id="TxN-Ej-WEA"/>
-                                            <constraint firstItem="H6i-Qa-ATN" firstAttribute="top" secondItem="k5w-4U-hbh" secondAttribute="top" id="VVE-Fj-nWq"/>
-                                            <constraint firstItem="ogf-7e-g0q" firstAttribute="centerY" secondItem="k5w-4U-hbh" secondAttribute="centerY" id="euz-89-6KG"/>
-                                            <constraint firstItem="ogf-7e-g0q" firstAttribute="leading" secondItem="k5w-4U-hbh" secondAttribute="leading" constant="20" id="p09-1q-rdF"/>
-                                            <constraint firstAttribute="height" constant="60" id="q6A-uc-aTk"/>
-                                            <constraint firstItem="H6i-Qa-ATN" firstAttribute="leading" secondItem="k5w-4U-hbh" secondAttribute="leading" id="rn9-Uk-mnH"/>
+                                            <constraint firstAttribute="height" constant="60" id="NgL-ia-eLX"/>
                                         </constraints>
-                                    </view>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -466,11 +485,22 @@
                     </view>
                     <connections>
                         <outlet property="animalShelterImageView" destination="Wg7-lL-HFq" id="Uq6-yU-frF"/>
+                        <outlet property="backButton" destination="Waq-HX-GVN" id="ghJ-mp-APf"/>
+                        <outlet property="blockedUsersButton" destination="Hxz-0T-rFO" id="eTe-zn-kH6"/>
                         <outlet property="blockedUsersView" destination="7qh-Yb-wAt" id="KfV-Yu-jBA"/>
+                        <outlet property="changeHeaderImageButton" destination="EzH-Ye-S3r" id="j4r-4k-Wz2"/>
                         <outlet property="changeHeaderImageView" destination="QDf-ls-fA6" id="qRN-g1-hje"/>
+                        <outlet property="changePasswordButton" destination="uyc-Jz-66c" id="7dE-2R-P71"/>
                         <outlet property="changeProfileImageView" destination="b4V-XY-0Mz" id="mBw-8x-AcC"/>
+                        <outlet property="changeUserImageButton" destination="xDw-Gc-GI1" id="6me-ae-tE9"/>
+                        <outlet property="deleteAccountButton" destination="9d0-uU-rY9" id="jZG-vE-NHd"/>
+                        <outlet property="editPersonalDetailsButton" destination="wPn-lo-3J4" id="lge-Of-JhY"/>
+                        <outlet property="editSocialMediasButton" destination="kui-3X-13L" id="q6o-cQ-Zju"/>
                         <outlet property="headerImageView" destination="Rc1-aG-NkL" id="0UY-rb-i6l"/>
+                        <outlet property="loadingView" destination="J8s-LH-IiK" id="e3h-tT-QFE"/>
+                        <outlet property="logOutButton" destination="J1b-0X-QXp" id="xMc-Q0-YJY"/>
                         <outlet property="profileImageView" destination="qZ7-Y8-1sy" id="9Aj-db-q4E"/>
+                        <outlet property="termsAndConditionsButton" destination="KKt-wt-Gx1" id="MeP-Ay-5xf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

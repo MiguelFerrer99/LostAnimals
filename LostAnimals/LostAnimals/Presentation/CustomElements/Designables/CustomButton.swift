@@ -67,16 +67,15 @@ extension CustomButton {
         setImage(tintedImage, for: .normal)
     }
     
-    func showLoading() {
+    func showLoading(completion: @escaping (() -> ())) {
         isEnabled = false
         setTitle("", for: .normal)
         originalButtonText = titleLabel?.text
-        
         if (activityIndicator == nil) {
             activityIndicator = createActivityIndicator()
         }
-        
         showSpinning()
+        completion()
     }
     
     func hideLoading(completion: @escaping (() -> ())) {

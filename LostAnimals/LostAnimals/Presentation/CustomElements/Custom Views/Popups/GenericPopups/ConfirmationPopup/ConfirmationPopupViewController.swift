@@ -12,6 +12,8 @@ final class ConfirmationPopupViewController: ViewController {
     // MARK: - IBOutlets
     @IBOutlet private weak var backgroundView: UIView!
     @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var noButton: CustomButton!
+    @IBOutlet private weak var yesButton: CustomButton!
     
     // MARK: - Properties
     var viewModel: ConfirmationPopupViewModel!
@@ -56,6 +58,11 @@ private extension ConfirmationPopupViewController {
     func fillUI() {
         titleLabel.text = viewModel.titleText
     }
+    
+    func updateUserInteraction() {
+        noButton.isUserInteractionEnabled = yesButton.isEnabled
+        yesButton.isUserInteractionEnabled = yesButton.isEnabled
+    }
 }
 
 // MARK: - IBActions
@@ -65,6 +72,9 @@ private extension ConfirmationPopupViewController {
     }
     
     @IBAction func yesButtonPressed(_ sender: CustomButton) {
+        yesButton.showLoading {
+            self.updateUserInteraction()
+        }
         viewModel.didPressYesButton()
     }
 }

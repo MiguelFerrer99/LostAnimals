@@ -47,11 +47,7 @@ extension SocialMediaDetailsCollectionViewCell: CustomTextFieldDelegate {
     func textFieldShouldReturn(_ customTextField: CustomTextField) -> Bool {
         switch customTextField.textField {
         case phoneTextfield.textField:
-            instagramTextfield.textField.becomeFirstResponder()
-        case instagramTextfield.textField:
-            twitterTextfield.textField.becomeFirstResponder()
-        case twitterTextfield.textField:
-            customTextField.textField.resignFirstResponder()
+            phoneTextfield.textField.becomeFirstResponder()
         default: customTextField.textField.resignFirstResponder()
         }
         return true

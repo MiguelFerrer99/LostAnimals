@@ -190,8 +190,9 @@ private extension NewPostGenericViewController {
     }
     
     @IBAction func publishPostButtonPressed(_ sender: CustomButton) {
-        publishPostButton.showLoading()
-        updateUserInteraction()
+        publishPostButton.showLoading {
+            self.updateUserInteraction()
+        }
         let newPost = buildNewPost()
         viewModel.didPressPublishPostButton(newPost: newPost)
     }
