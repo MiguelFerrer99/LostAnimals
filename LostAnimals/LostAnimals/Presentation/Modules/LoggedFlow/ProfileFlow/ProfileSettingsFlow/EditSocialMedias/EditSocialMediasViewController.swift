@@ -58,7 +58,7 @@ private extension EditSocialMediasViewController {
     
     func fillUI() {
         if let phonePrefix = viewModel.me.socialMedias[.phonePrefix] {
-            phonePrefixLabel.text = "+\(phonePrefix)"
+            phonePrefixLabel.text = phonePrefix
         }
         phoneNumberTextfield.textField.text = viewModel.me.socialMedias[.phoneNumber]
         haveWhatsappButtonImageView.image = UIImage(systemName: viewModel.haveWhatsAppSelected ? "checkmark.circle.fill" : "circle")

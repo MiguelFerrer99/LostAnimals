@@ -162,8 +162,8 @@ extension CustomTextField {
     }
     
     func initEditableTextfield() {
-        self.placeholderLabel.alpha = 1
-        self.topTextFieldConstraint.constant = 15
+        self.placeholderLabel.alpha = value.isEmpty ? 0 : 1
+        self.topTextFieldConstraint.constant = value.isEmpty ? 0 : 15
         if !self.errorsToCheck.isEmpty {
             self.statusView.isHidden = false
             self.statusImageView.image = UIImage(named: "TextfieldOk")

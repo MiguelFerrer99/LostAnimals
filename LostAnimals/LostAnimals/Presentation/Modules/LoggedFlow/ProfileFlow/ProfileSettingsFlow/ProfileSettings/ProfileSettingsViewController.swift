@@ -86,6 +86,7 @@ private extension ProfileSettingsViewController {
     }
     
     func updateUserInteraction() {
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = loadingView.isHidden
         backButton.isUserInteractionEnabled = loadingView.isHidden
         changeHeaderImageButton.isUserInteractionEnabled = loadingView.isHidden
         changeUserImageButton.isUserInteractionEnabled = loadingView.isHidden
@@ -100,6 +101,11 @@ private extension ProfileSettingsViewController {
     
     func showLoading() {
         loadingView.isHidden = false
+        updateUserInteraction()
+    }
+    
+    func hideLoading() {
+        loadingView.isHidden = true
         updateUserInteraction()
     }
 }
@@ -141,12 +147,18 @@ private extension ProfileSettingsViewController {
     @IBAction func deleteAccountButtonPressed(_ sender: UIButton) {
         viewModel.didPressedDeleteAccountButton {
             self.showLoading()
+        } completion: {
+            self.hideLoading()
         }
+
     }
     
     @IBAction func logoutButtonPressed(_ sender: UIButton) {
         viewModel.didPressedLogoutButton {
             self.showLoading()
+        } completion: {
+            self.hideLoading()
         }
+
     }
 }

@@ -52,11 +52,7 @@ extension EditSocialMediasViewController: CustomTextFieldDelegate {
     func textFieldShouldReturn(_ customTextField: CustomTextField) -> Bool {
         switch customTextField.textField {
         case phoneNumberTextfield.textField:
-            instagramTextfield.textField.becomeFirstResponder()
-        case instagramTextfield.textField:
-            twitterTextfield.textField.becomeFirstResponder()
-        case twitterTextfield.textField:
-            customTextField.textField.resignFirstResponder()
+            instagramTextfield.textField.resignFirstResponder()
         default: customTextField.textField.resignFirstResponder()
         }
         return true

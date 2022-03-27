@@ -77,10 +77,11 @@ extension ProfileSettingsViewModel {
         self.router.goToTermsAndConditions()
     }
     
-    func didPressedDeleteAccountButton(yesButtonPressed: @escaping (() -> ())) {
+    func didPressedDeleteAccountButton(yesButtonPressed: @escaping (() -> ()), completion: @escaping (() -> ())) {
         showConfirmationPopup(title: "Are you sure you want to delete your account?") {
             yesButtonPressed()
             self.authenticationService.deleteAccount(id: self.me.id) { result in
+                completion()
                 switch result {
                 case .success:
                     Cache.logOut()
@@ -92,10 +93,11 @@ extension ProfileSettingsViewModel {
         }
     }
     
-    func didPressedLogoutButton(yesButtonPressed: @escaping (() -> ())) {
+    func didPressedLogoutButton(yesButtonPressed: @escaping (() -> ()), completion: @escaping (() -> ())) {
         showConfirmationPopup(title: "Are you sure you want to logout?") {
             yesButtonPressed()
             self.authenticationService.logOut { result in
+                completion()
                 switch result {
                 case .success:
                     Cache.logOut()
