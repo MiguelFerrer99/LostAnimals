@@ -48,9 +48,7 @@ extension ExploreFiltersHeader {
     }
     
     func disableFilters() {
-        Filters.currentFilters.enumerated().forEach { (index, currentExploreFilter) in
-            Filters.setFilterValue(filterType: currentExploreFilter.key, enabled: currentExploreFilter.key == .all)
-        }
+        Filters.resetFilters()
         updateFiltersUI()
     }
     

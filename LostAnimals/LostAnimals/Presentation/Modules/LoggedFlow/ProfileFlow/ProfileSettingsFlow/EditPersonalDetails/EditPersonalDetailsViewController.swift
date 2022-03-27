@@ -56,8 +56,8 @@ private extension EditPersonalDetailsViewController {
     
     func setupUI() {
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
-        configureTextFields()
         fillUI()
+        configureTextFields()
     }
     
     func fillUI() {
@@ -67,7 +67,6 @@ private extension EditPersonalDetailsViewController {
         whereDoYouLiveTextfield.isHidden = viewModel.me.animalShelter
         animalShelterNameTextfield.isHidden = !viewModel.me.animalShelter
         whereCanWeFindYouTextfield.isHidden = !viewModel.me.animalShelter
-        
         if viewModel.me.animalShelter {
             animalShelterNameTextfield.textField.text = viewModel.me.firstname
             whereCanWeFindYouTextfield.textField.text = viewModel.me.location.address

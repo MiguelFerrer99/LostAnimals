@@ -24,10 +24,14 @@ extension SavedPostsViewModel {
         // Called when view is loaded and ready
     }
     
-    func viewDidAppear() {
-        // Called when view has appeared
+    func viewWillAppear() {
+        // Called when view will appear
         Filters.resetFilters()
         NotificationCenter.default.post(name: .UpdateFiltersUI, object: nil)
+    }
+    
+    func viewDidAppear() {
+        // Called when view has appeared
     }
 }
 

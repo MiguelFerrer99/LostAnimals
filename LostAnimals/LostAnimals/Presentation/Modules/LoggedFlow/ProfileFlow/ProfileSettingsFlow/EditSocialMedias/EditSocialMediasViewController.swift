@@ -52,8 +52,8 @@ extension EditSocialMediasViewController {
 private extension EditSocialMediasViewController {
     func setupUI() {
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
-        configureTextFields()
         fillUI()
+        configureTextFields()
     }
     
     func fillUI() {
