@@ -61,6 +61,10 @@ extension Container {
         ExploreBuilder()
     }
     
+    func fakeSplashBuilder() -> FakeSplashBuilder {
+        FakeSplashBuilder()
+    }
+    
     func forgotPasswordBuilder() -> ForgotPasswordBuilder {
         ForgotPasswordBuilder()
     }

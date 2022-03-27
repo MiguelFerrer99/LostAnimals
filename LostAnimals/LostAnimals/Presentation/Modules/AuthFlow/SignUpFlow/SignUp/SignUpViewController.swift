@@ -111,8 +111,9 @@ extension SignUpViewController {
         DispatchQueue.main.async {
             let indexPath = IndexPath(item: 2, section: 0)
             guard let socialMediaDetailsCollectionViewCell = self.stepsCollectionView.cellForItem(at: indexPath) as? SocialMediaDetailsCollectionViewCell else { return }
-            socialMediaDetailsCollectionViewCell.getStartedButton.hideLoading()
-            socialMediaDetailsCollectionViewCell.updateUserInteraction()
+            socialMediaDetailsCollectionViewCell.getStartedButton.hideLoading {
+                socialMediaDetailsCollectionViewCell.updateUserInteraction()
+            }
         }
     }
     

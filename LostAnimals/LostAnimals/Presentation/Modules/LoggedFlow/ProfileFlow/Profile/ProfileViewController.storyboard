@@ -42,14 +42,14 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="irm-4F-XJr">
                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="286.5"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultHeaderImage" translatesAutoresizingMaskIntoConstraints="NO" id="UE6-hy-l66">
+                                                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultHeaderImage" translatesAutoresizingMaskIntoConstraints="NO" id="UE6-hy-l66">
                                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="214.5"/>
                                                                         <gestureRecognizers/>
                                                                         <connections>
                                                                             <outletCollection property="gestureRecognizers" destination="doE-Zv-Gb8" appends="YES" id="vHR-by-dpW"/>
                                                                         </connections>
                                                                     </imageView>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultUserImage" translatesAutoresizingMaskIntoConstraints="NO" id="OdU-2w-JUY" customClass="CustomImageView" customModule="LostAnimals" customModuleProvider="target">
+                                                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultUserImage" translatesAutoresizingMaskIntoConstraints="NO" id="OdU-2w-JUY" customClass="CustomImageView" customModule="LostAnimals" customModuleProvider="target">
                                                                         <rect key="frame" x="147" y="154.5" width="120" height="120"/>
                                                                         <gestureRecognizers/>
                                                                         <constraints>
@@ -153,7 +153,7 @@
                                                                                         <rect key="frame" x="5" y="5" width="30" height="30"/>
                                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                         <color key="tintColor" name="CustomBlack"/>
-                                                                                        <imageReference key="image" image="ProfileSettings" symbolScale="default" renderingMode="hierarchical">
+                                                                                        <imageReference key="image" image="ProfileSettingsWhite" symbolScale="default" renderingMode="hierarchical">
                                                                                             <hierarchicalColors>
                                                                                                 <color name="CustomBlack"/>
                                                                                                 <color white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -435,8 +435,8 @@
                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gOe-Pf-zSz">
                                                         <rect key="frame" x="0.0" y="943.5" width="414" height="100"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User has been blocked by you" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhd-3T-zC3">
-                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User has been blocked by you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhd-3T-zC3">
+                                                                <rect key="frame" x="40" y="0.0" width="334" height="100"/>
                                                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="18"/>
                                                                 <color key="textColor" name="CustomBlack"/>
                                                                 <nil key="highlightedColor"/>
@@ -444,9 +444,9 @@
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstItem="dhd-3T-zC3" firstAttribute="leading" secondItem="gOe-Pf-zSz" secondAttribute="leading" id="4cj-wL-X5h"/>
+                                                            <constraint firstItem="dhd-3T-zC3" firstAttribute="leading" secondItem="gOe-Pf-zSz" secondAttribute="leading" constant="40" id="4cj-wL-X5h"/>
                                                             <constraint firstItem="dhd-3T-zC3" firstAttribute="top" secondItem="gOe-Pf-zSz" secondAttribute="top" id="5il-fO-xxI"/>
-                                                            <constraint firstAttribute="trailing" secondItem="dhd-3T-zC3" secondAttribute="trailing" id="NLw-ZY-9fL"/>
+                                                            <constraint firstAttribute="trailing" secondItem="dhd-3T-zC3" secondAttribute="trailing" constant="40" id="NLw-ZY-9fL"/>
                                                             <constraint firstAttribute="height" constant="100" id="NiE-eg-jjE"/>
                                                             <constraint firstAttribute="bottom" secondItem="dhd-3T-zC3" secondAttribute="bottom" id="xMp-gw-TPt"/>
                                                         </constraints>
@@ -540,7 +540,7 @@
         <image name="DefaultHeaderImage" width="413.5" height="283"/>
         <image name="DefaultUserImage" width="120" height="120"/>
         <image name="Other" width="256" height="256"/>
-        <image name="ProfileSettings" width="350" height="350"/>
+        <image name="ProfileSettingsWhite" width="350" height="350"/>
         <image name="chevron.left.circle.fill" catalog="system" width="128" height="121"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <namedColor name="CustomBlack">

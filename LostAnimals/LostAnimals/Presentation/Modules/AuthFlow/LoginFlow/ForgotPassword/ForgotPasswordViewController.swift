@@ -43,8 +43,9 @@ private extension ForgotPasswordViewController {
     }
     
     func stopLoadingForgotPasswordButton() {
-        forgotPasswordButton.hideLoading()
-        updateUserInteraction()
+        forgotPasswordButton.hideLoading {
+            self.updateUserInteraction()
+        }
     }
 }
 

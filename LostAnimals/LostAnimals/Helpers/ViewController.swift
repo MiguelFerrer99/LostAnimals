@@ -8,6 +8,15 @@
 
 import UIKit
 
+// MARK: - Alternative classes
+class BackBarButtonItem: UIBarButtonItem {
+    @available(iOS 14.0, *)
+    override var menu: UIMenu? {
+        set {}
+        get { return super.menu }
+    }
+}
+
 class ViewController: UIViewController {
     // MARK: - Properties
     var useLargeTitle: Bool {
@@ -38,11 +47,6 @@ class ViewController: UIViewController {
     var hideBackButton: Bool {
         return false
     }
-    var dismissGestureEnabled: Bool = true {
-        willSet {
-            self.isModalInPresentation = !newValue
-        }
-    }
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -50,6 +54,7 @@ class ViewController: UIViewController {
         
         navigationItem.title = navBarTitle
         navigationItem.backButtonTitle = ""
+        navigationItem.backBarButtonItem = BackBarButtonItem(title: nil, style: .plain, target: nil, action: nil)
         navigationItem.setHidesBackButton(hideBackButton, animated: true)
         navigationItem.leftBarButtonItems = navBarLeftButtons
         navigationItem.rightBarButtonItems = navBarRightButtons
@@ -162,9 +167,7 @@ extension UIViewController {
     /// Present a UIViewController.
     /// - Parameter viewController: The ViewController to present.
     func present(viewController: UIViewController, completion: (() -> Void)? = nil) {
-        DispatchQueue.main.async {
-            self.present(viewController, animated: true, completion: completion)
-        }
+        self.present(viewController, animated: true, completion: completion)
     }
     
     func presentWithNavBar(viewController: UIViewController, completion: (() -> Void)?) {

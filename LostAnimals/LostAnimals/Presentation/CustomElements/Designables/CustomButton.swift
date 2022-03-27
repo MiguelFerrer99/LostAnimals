@@ -79,12 +79,13 @@ extension CustomButton {
         showSpinning()
     }
     
-    func hideLoading() {
+    func hideLoading(completion: @escaping (() -> ())) {
         DispatchQueue.main.async {
             self.setTitle(self.originalButtonText, for: .normal)
             self.activityIndicator.stopAnimating()
             self.activityIndicator = nil
             self.isEnabled = true
+            completion()
         }
     }
 }

@@ -37,7 +37,7 @@ final class ProfileViewController: ViewController, UIGestureRecognizerDelegate {
     
     // MARK: - Properties
     override var navBarTitle: String {
-        return "\(viewModel.user.firstname) \(viewModel.user.lastname)"
+        return viewModel.isMyProfile ? "\(viewModel.user.firstname) \(viewModel.user.lastname)" : "My profile"
     }
     override var hideBackButton: Bool {
         return viewModel.isMyProfile
@@ -50,6 +50,7 @@ final class ProfileViewController: ViewController, UIGestureRecognizerDelegate {
     }
     var viewModel: ProfileViewModel!
     var blockUserBarButtonItem = UIBarButtonItem()
+    var profileSettingsBarButtonItem = UIBarButtonItem()
     let mailController = MFMailComposeViewController()
     
     // MARK: - Life cycle
@@ -83,11 +84,15 @@ private extension ProfileViewController {
     
     func setNavBarButtons() {
         let isUserBlocked = User.shared?.blockedUsers.contains(viewModel.user.id) ?? false
-        blockUserBarButtonItem = UIBarButtonItem(image: UIImage(named: isUserBlocked ? "UnblockUserWhite" : "BlockUserWhite"),
+        blockUserBarButtonItem = UIBarButtonItem(image: UIImage(named: isUserBlocked ? "UnblockUser" : "BlockUser"),
                                                  style: .plain,
                                                  target: self,
                                                  action: #selector(blockOrUnblockUser))
-        self.navigationItem.rightBarButtonItems = [blockUserBarButtonItem]
+        profileSettingsBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gearshape.fill"),
+                                                       style: .plain,
+                                                       target: self,
+                                                       action: #selector(profileSettingsBarButtonItemPressed))
+        self.navigationItem.rightBarButtonItems = viewModel.isMyProfile ? [profileSettingsBarButtonItem] : [blockUserBarButtonItem]
     }
     
     func fillUI() {
@@ -119,7 +124,7 @@ private extension ProfileViewController {
     
     func updateBlockedUserUI(isBlocked: Bool) {
         UIView.animate(withDuration: 0.25) {
-            self.blockUserBarButtonItem.image = UIImage(named: isBlocked ? "UnblockUserWhite" : "BlockUserWhite")
+            self.blockUserBarButtonItem.image = UIImage(named: isBlocked ? "UnblockUser" : "BlockUser")
             self.blockUserButtonImageView.image = UIImage(named: isBlocked ? "UnblockUserWhite" : "BlockUserWhite")
             self.basicInfoView.isHidden = isBlocked
             self.firstStackView.isHidden = isBlocked
@@ -133,6 +138,10 @@ private extension ProfileViewController {
             self.updateBlockedUserUI(isBlocked: isBlocked)
             if isBlocked { showSuccessPopup(title: "The user has been blocked successfully") }
         }
+    }
+    
+    @objc func profileSettingsBarButtonItemPressed() {
+        viewModel.didPressSettingsButton()
     }
 }
 

@@ -49,8 +49,9 @@ private extension LoginViewController {
     }
     
     func stopLoadingLogInButton() {
-        logInButton.hideLoading()
-        updateUserInteraction()
+        logInButton.hideLoading {
+            self.updateUserInteraction()
+        }
     }
 }
 

@@ -217,6 +217,11 @@
 		419CE0D427B5BC0A005D009C /* EditSocialMediasProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE0D327B5BC0A005D009C /* EditSocialMediasProtocols.swift */; };
 		419CE0D827B5D559005D009C /* EditPersonalDetailsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE0D727B5D559005D009C /* EditPersonalDetailsProtocols.swift */; };
 		419E507527708ACD007C196B /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419E507427708ACD007C196B /* NotificationName.swift */; };
+		41A7CF5C27F080EE002BFD6F /* FakeSplashRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A7CF5727F080EE002BFD6F /* FakeSplashRouter.swift */; };
+		41A7CF5D27F080EE002BFD6F /* FakeSplashViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41A7CF5827F080EE002BFD6F /* FakeSplashViewController.storyboard */; };
+		41A7CF5E27F080EE002BFD6F /* FakeSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A7CF5927F080EE002BFD6F /* FakeSplashViewController.swift */; };
+		41A7CF5F27F080EE002BFD6F /* FakeSplashBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A7CF5A27F080EE002BFD6F /* FakeSplashBuilder.swift */; };
+		41A7CF6027F080EE002BFD6F /* FakeSplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A7CF5B27F080EE002BFD6F /* FakeSplashViewModel.swift */; };
 		41AC99222787D367001B2F6A /* EditPostImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC99212787D367001B2F6A /* EditPostImagePicker.swift */; };
 		41B75626275EE4CE00C00E03 /* SignUpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B75622275EE4CE00C00E03 /* SignUpRouter.swift */; };
 		41B75627275EE4CE00C00E03 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B75623275EE4CE00C00E03 /* SignUpViewController.swift */; };
@@ -564,6 +569,11 @@
 		419CE0D327B5BC0A005D009C /* EditSocialMediasProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSocialMediasProtocols.swift; sourceTree = "<group>"; };
 		419CE0D727B5D559005D009C /* EditPersonalDetailsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPersonalDetailsProtocols.swift; sourceTree = "<group>"; };
 		419E507427708ACD007C196B /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
+		41A7CF5727F080EE002BFD6F /* FakeSplashRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeSplashRouter.swift; sourceTree = "<group>"; };
+		41A7CF5827F080EE002BFD6F /* FakeSplashViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FakeSplashViewController.storyboard; sourceTree = "<group>"; };
+		41A7CF5927F080EE002BFD6F /* FakeSplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeSplashViewController.swift; sourceTree = "<group>"; };
+		41A7CF5A27F080EE002BFD6F /* FakeSplashBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeSplashBuilder.swift; sourceTree = "<group>"; };
+		41A7CF5B27F080EE002BFD6F /* FakeSplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeSplashViewModel.swift; sourceTree = "<group>"; };
 		41AC99212787D367001B2F6A /* EditPostImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostImagePicker.swift; sourceTree = "<group>"; };
 		41B75622275EE4CE00C00E03 /* SignUpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRouter.swift; sourceTree = "<group>"; };
 		41B75623275EE4CE00C00E03 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -1026,6 +1036,7 @@
 		414096432794A83A00E6A781 /* AuthFlow */ = {
 			isa = PBXGroup;
 			children = (
+				41A7CF5627F080CC002BFD6F /* FakeSplash */,
 				414096442794A89D00E6A781 /* LoginFlow */,
 				4160E707277B9E8400C7066F /* Onboarding */,
 				414096452794A8AE00E6A781 /* SignUpFlow */,
@@ -1365,6 +1376,18 @@
 				418E234F277CC934008BB92E /* TermTableViewCellSummary.swift */,
 			);
 			path = TermTableViewCell;
+			sourceTree = "<group>";
+		};
+		41A7CF5627F080CC002BFD6F /* FakeSplash */ = {
+			isa = PBXGroup;
+			children = (
+				41A7CF5827F080EE002BFD6F /* FakeSplashViewController.storyboard */,
+				41A7CF5727F080EE002BFD6F /* FakeSplashRouter.swift */,
+				41A7CF5927F080EE002BFD6F /* FakeSplashViewController.swift */,
+				41A7CF5A27F080EE002BFD6F /* FakeSplashBuilder.swift */,
+				41A7CF5B27F080EE002BFD6F /* FakeSplashViewModel.swift */,
+			);
+			path = FakeSplash;
 			sourceTree = "<group>";
 		};
 		41B75621275EE4B000C00E03 /* SignUp */ = {
@@ -1903,6 +1926,7 @@
 				4160E711277B9EA700C7066F /* OnboardingViewController.storyboard in Resources */,
 				4183EE2B27962005005C554E /* NewPostGenericViewController.storyboard in Resources */,
 				4186AC87277F6F57009C07E2 /* ExploreFiltersHeader.xib in Resources */,
+				41A7CF5D27F080EE002BFD6F /* FakeSplashViewController.storyboard in Resources */,
 				41BFE175276618C900AC5570 /* CityTableViewCell.xib in Resources */,
 				41FEE1D72788926E00F11449 /* PostImageCollectionViewCell.xib in Resources */,
 				41871966275BFA6D00C993BC /* Nunito-LightItalic.ttf in Resources */,
@@ -1994,6 +2018,7 @@
 				41BFE177276618E400AC5570 /* CityTableViewCellSummary.swift in Sources */,
 				411C7F6F274BA8FE00C9710A /* LoginBuilder.swift in Sources */,
 				418B637627AEB83C00F7DC4B /* ChangePasswordViewModel.swift in Sources */,
+				41A7CF5C27F080EE002BFD6F /* FakeSplashRouter.swift in Sources */,
 				41EC16A52785E08700096B7A /* AnimalTypesBuilder.swift in Sources */,
 				41F820C7276FD83B0046B0EA /* WhereCanWeFindYouRouter.swift in Sources */,
 				4100A11027848E240049EEF0 /* EditPostRouter.swift in Sources */,
@@ -2102,6 +2127,7 @@
 				413987112737FA3500C243F4 /* StartupViewModel.swift in Sources */,
 				4105456C27A06E0E00527D64 /* ProfileSettingsViewModel.swift in Sources */,
 				4119185627AC2CFF00F9D68A /* BlockedUserTableViewCellSummary.swift in Sources */,
+				41A7CF6027F080EE002BFD6F /* FakeSplashViewModel.swift in Sources */,
 				41742222277C815600915233 /* ExploreRouter.swift in Sources */,
 				4119183A27ABFAF100F9D68A /* ProfilePostsViewController.swift in Sources */,
 				4119184B27AC2B7600F9D68A /* BlockedUsersViewController.swift in Sources */,
@@ -2179,6 +2205,7 @@
 				41CD112827835F0600257B2B /* SavedPostsRefreshControl.swift in Sources */,
 				945B15B525595DC9003A65E0 /* UITableViewCell.swift in Sources */,
 				41EC16AC2785E20800096B7A /* AnimalTypeTableViewCell.swift in Sources */,
+				41A7CF5F27F080EE002BFD6F /* FakeSplashBuilder.swift in Sources */,
 				41742224277C815600915233 /* ExploreBuilder.swift in Sources */,
 				418AD20A275A6A51005AFE3C /* ForgotPasswordTextFields.swift in Sources */,
 				41CDA4362780E3EC0009AB55 /* HardcodedData.swift in Sources */,
@@ -2214,6 +2241,7 @@
 				CCB0205326A6EF6500214CB9 /* Container.swift in Sources */,
 				4100A0FA2783AE640049EEF0 /* PostOptionsPopupRouter.swift in Sources */,
 				417B860B277D1F1C0051B8CF /* NewPostViewController.swift in Sources */,
+				41A7CF5E27F080EE002BFD6F /* FakeSplashViewController.swift in Sources */,
 				41CD10EB2782183900257B2B /* AnimalFilterPopupRouter.swift in Sources */,
 				4157D3F327B83B9400F2C8F2 /* ExploreFiltersHeaderProtocols.swift in Sources */,
 				CCB0202A26A6EE3400214CB9 /* AppDelegate.swift in Sources */,

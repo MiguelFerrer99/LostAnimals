@@ -11,21 +11,14 @@ import IQKeyboardManagerSwift
 import Firebase
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
-    // MARK: AppDelegate lifecycle
+final class AppDelegate: UIResponder {}
+
+// MARK: - UIApplicationDelegate
+extension AppDelegate: UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         configureKeyboard()
         FirebaseApp.configure()
         return true
-    }
-    
-    // MARK: - Functions
-    private func configureKeyboard() {
-        IQKeyboardManager.shared.enable                        = true
-        IQKeyboardManager.shared.shouldShowToolbarPlaceholder  = false
-        IQKeyboardManager.shared.enableAutoToolbar             = false
-        IQKeyboardManager.shared.shouldResignOnTouchOutside    = true
-        IQKeyboardManager.shared.keyboardDistanceFromTextField = 30
     }
     
     // MARK: UISceneSession lifecycle
@@ -39,5 +32,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    }
+}
+
+// MARK: - Private functions
+private extension AppDelegate {
+    func configureKeyboard() {
+        IQKeyboardManager.shared.enable                        = true
+        IQKeyboardManager.shared.shouldShowToolbarPlaceholder  = false
+        IQKeyboardManager.shared.enableAutoToolbar             = false
+        IQKeyboardManager.shared.shouldResignOnTouchOutside    = true
+        IQKeyboardManager.shared.keyboardDistanceFromTextField = 30
     }
 }

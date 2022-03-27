@@ -63,8 +63,8 @@ extension LoginViewModel {
                 }
                 completion()
             case .error(let error):
-                showErrorPopup(title: error)
                 completion()
+                showErrorPopup(title: error)
             }
         }
     }

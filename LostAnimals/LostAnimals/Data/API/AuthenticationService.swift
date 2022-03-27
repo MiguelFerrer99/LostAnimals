@@ -56,19 +56,14 @@ extension AuthenticationService {
         Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
             if let authResult = authResult {
                 if authResult.user.isEmailVerified {
-                    self.getUser(userRef: self.databaseRef.child("users").child(authResult.user.uid)) { loggedUser in
+                    self.getUser(id: authResult.user.uid) { loggedUser in
                         if let loggedUser = loggedUser {
                             completion(.success(loggedUser))
                         } else {
                             completion(.error("An unexpected error occured. Please, try again later"))
                         }
                     }
-                } else {
-                    self.sendVerificationEmail(user: authResult.user) { ok in
-                        if ok { completion(.error("Verify your account before log in. We have sent you an email")) }
-                        else { completion(.error("An unexpected error occured. Please, try again later")) }
-                    }
-                }
+                } else { completion(.error("Verify your account before log in")) }
             } else if let error = error {
                 switch error.localizedDescription {
                 case FirebaseError.userNotExists.rawValue,
@@ -139,7 +134,7 @@ extension AuthenticationService {
     
     func deleteAccount(id: String, completion: @escaping (DeleteAccountResult) -> Void) {
         guard let loggedUser = Auth.auth().currentUser else { return }
-        databaseRef.child("users").child(id).removeValue { (error, _) in
+        storageRef.child("users").child(id).child("user_image.png").delete { error in
             if let error = error {
                 switch error.localizedDescription {
                 case FirebaseError.networkError.rawValue:
@@ -148,7 +143,7 @@ extension AuthenticationService {
                     completion(.error("An unexpected error occured. Please, try again later"))
                 }
             } else {
-                self.storageRef.child("users").child(id).delete { error in
+                self.storageRef.child("users").child(id).child("header_image.png").delete { error in
                     if let error = error {
                         switch error.localizedDescription {
                         case FirebaseError.networkError.rawValue:
@@ -157,7 +152,7 @@ extension AuthenticationService {
                             completion(.error("An unexpected error occured. Please, try again later"))
                         }
                     } else {
-                        loggedUser.delete { error in
+                        self.databaseRef.child("users").child(id).removeValue { (error, _) in
                             if let error = error {
                                 switch error.localizedDescription {
                                 case FirebaseError.networkError.rawValue:
@@ -165,7 +160,18 @@ extension AuthenticationService {
                                 default:
                                     completion(.error("An unexpected error occured. Please, try again later"))
                                 }
-                            } else { completion(.success) }
+                            } else {
+                                loggedUser.delete { error in
+                                    if let error = error {
+                                        switch error.localizedDescription {
+                                        case FirebaseError.networkError.rawValue:
+                                            completion(.error("You don't have an internet connection"))
+                                        default:
+                                            completion(.error("An unexpected error occured. Please, try again later"))
+                                        }
+                                    } else { completion(.success) }
+                                }
+                            }
                         }
                     }
                 }
@@ -179,6 +185,23 @@ extension AuthenticationService {
             completion(.success)
         } catch {
             completion(.error(error.localizedDescription))
+        }
+    }
+    
+    func getUser(id: String, completion: @escaping ((User?) -> ())) {
+        databaseRef.child("users").child(id).getData { error, snapshot in
+            if error != nil { completion(nil) }
+            else {
+                if let snapshotValue = snapshot.value {
+                    do {
+                        let userDTO = try FirebaseDecoder().decode(UserDTO.self, from: snapshotValue)
+                        userDTO.map { user in
+                            if let user = user { completion(user) }
+                            else { completion(nil) }
+                        }
+                    } catch { completion(nil) }
+                } else { completion(nil) }
+            }
         }
     }
 }
@@ -205,23 +228,6 @@ private extension AuthenticationService {
                         }
                     } else { completion(nil,nil) }
                 }
-            }
-        }
-    }
-    
-    func getUser(userRef: DatabaseReference, completion: @escaping ((User?) -> ())) {
-        userRef.getData { error, snapshot in
-            if error != nil { completion(nil) }
-            else {
-                if let snapshotValue = snapshot.value {
-                    do {
-                        let userDTO = try FirebaseDecoder().decode(UserDTO.self, from: snapshotValue)
-                        userDTO.map { user in
-                            if let user = user { completion(user) }
-                            else { completion(nil) }
-                        }
-                    } catch { completion(nil) }
-                } else { completion(nil) }
             }
         }
     }
