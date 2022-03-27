@@ -21,8 +21,8 @@ final class OnboardingRouter {
 // MARK: - Functions
 extension OnboardingRouter {
     func changeRootToTabBar() {
-        let viewController = Container.shared.tabBarBuilder().build()
         DispatchQueue.main.async {
+            let viewController = Container.shared.tabBarBuilder().build()
             changeRoot(to: viewController)
         }
     }

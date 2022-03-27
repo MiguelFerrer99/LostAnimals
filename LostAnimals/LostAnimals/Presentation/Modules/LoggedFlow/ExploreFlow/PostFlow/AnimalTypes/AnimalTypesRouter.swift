@@ -21,9 +21,7 @@ final class AnimalTypesRouter {
 // MARK: - Functions
 extension AnimalTypesRouter {
     func goBack(with animalType: AnimalType) {
-        DispatchQueue.main.async {
-            self.viewController?.delegate?.getAnimalType(animalType: animalType)
-            self.viewController?.pop()
-        }
+        self.viewController?.delegate?.getAnimalType(animalType: animalType)
+        self.viewController?.pop()
     }
 }

@@ -21,22 +21,20 @@ final class EditPersonalDetailsRouter {
 // MARK: - Functions
 extension EditPersonalDetailsRouter {
     func goBack() {
-        DispatchQueue.main.async {
-            self.viewController?.pop()
-        }
+        self.viewController?.pop()
     }
     
     func goToWhereDoYouLive() {
-        let viewController = Container.shared.whereDoYouLiveCountriesBuilder().build(comesFrom: .editPersonalDetails)
         DispatchQueue.main.async {
+            let viewController = Container.shared.whereDoYouLiveCountriesBuilder().build(comesFrom: .editPersonalDetails)
             self.viewController?.push(viewController: viewController)
         }
     }
     
     func goToWhereCanWeFindYou() {
-        let viewController = Container.shared.whereCanWeFindYou().build(comesFrom: .editPersonalDetails)
-        viewController.delegate = self.viewController
         DispatchQueue.main.async {
+            let viewController = Container.shared.whereCanWeFindYou().build(comesFrom: .editPersonalDetails)
+            viewController.delegate = self.viewController
             self.viewController?.push(viewController: viewController)
         }
     }

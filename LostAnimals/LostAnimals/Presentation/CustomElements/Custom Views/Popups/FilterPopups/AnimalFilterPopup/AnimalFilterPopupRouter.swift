@@ -21,8 +21,6 @@ final class AnimalFilterPopupRouter {
 // MARK: - Functions
 extension AnimalFilterPopupRouter {
     func dismissAnimalFilterPopup() {
-        DispatchQueue.main.async {
-            self.viewController?.dismissCurrentView(completion: nil)
-        }
+        self.viewController?.dismissCurrentView(completion: nil)
     }
 }

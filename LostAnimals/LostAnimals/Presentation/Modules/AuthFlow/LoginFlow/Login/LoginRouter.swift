@@ -21,22 +21,22 @@ final class LoginRouter {
 // MARK: - Functions
 extension LoginRouter {
     func goToForgotPassword() {
-        let viewController = Container.shared.forgotPasswordBuilder().build()
         DispatchQueue.main.async {
+            let viewController = Container.shared.forgotPasswordBuilder().build()
             self.viewController?.push(viewController: viewController)
         }
     }
     
     func goToOnboarding() {
-        let viewController = Container.shared.onboardingBuilder().build()
         DispatchQueue.main.async {
+            let viewController = Container.shared.onboardingBuilder().build()
             self.viewController?.present(viewController: viewController, completion: nil)
         }
     }
     
     func changeRootToTabBar() {
-        let viewController = Container.shared.tabBarBuilder().build()
         DispatchQueue.main.async {
+            let viewController = Container.shared.tabBarBuilder().build()
             changeRoot(to: viewController)
         }
     }

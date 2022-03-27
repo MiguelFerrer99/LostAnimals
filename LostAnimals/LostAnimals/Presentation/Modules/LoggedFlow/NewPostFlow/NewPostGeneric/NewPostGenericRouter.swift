@@ -21,31 +21,29 @@ final class NewPostGenericRouter {
 // MARK: - Functions
 extension NewPostGenericRouter {
     func goBackToTabBar() {
-        DispatchQueue.main.async {
-            self.viewController?.dismissCurrentView(completion: nil)
-        }
+        self.viewController?.dismissCurrentView(completion: nil)
     }
     
     func goToSelectPhotoPopup(showRemoveOption: Bool) {
-        let viewController = Container.shared.selectPhotoPopupBuilder().build(showRemoveOption: showRemoveOption, comesFrom: .newPost)
-        viewController.delegate = self.viewController
         DispatchQueue.main.async {
+            let viewController = Container.shared.selectPhotoPopupBuilder().build(showRemoveOption: showRemoveOption, comesFrom: .newPost)
+            viewController.delegate = self.viewController
             self.viewController?.present(viewController: viewController, completion: nil)
         }
     }
     
     func goToAnimalTypes(comesFrom: AnimalTypesComesFrom) {
-        let viewController = Container.shared.animalTypesBuilder().build(comesFrom: comesFrom)
-        viewController.delegate = self.viewController
         DispatchQueue.main.async {
+            let viewController = Container.shared.animalTypesBuilder().build(comesFrom: comesFrom)
+            viewController.delegate = self.viewController
             self.viewController?.push(viewController: viewController)
         }
     }
     
     func goToWhereCanWeFindYou() {
-        let viewController = Container.shared.whereCanWeFindYou().build(comesFrom: .newPost)
-        viewController.delegate = self.viewController
         DispatchQueue.main.async {
+            let viewController = Container.shared.whereCanWeFindYou().build(comesFrom: .newPost)
+            viewController.delegate = self.viewController
             self.viewController?.push(viewController: viewController)
         }
     }

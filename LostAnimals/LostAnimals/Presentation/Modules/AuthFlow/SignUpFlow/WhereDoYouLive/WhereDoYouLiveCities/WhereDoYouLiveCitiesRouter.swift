@@ -21,19 +21,17 @@ final class WhereDoYouLiveCitiesRouter {
 // MARK: - Functions
 extension WhereDoYouLiveCitiesRouter {
     func goToSignUp(whereDoYouLive: String) {
-        guard let viewController = self.viewController?.navigationController?.viewControllers[1] as? SignUpViewController else { return }
         DispatchQueue.main.async {
-            let userInfo: [String: String] = ["whereDoYouLive": whereDoYouLive]
-            NotificationCenter.default.post(name: .SendWhereDoYouLiveToSignUp, object: nil, userInfo: userInfo)
+            guard let viewController = self.viewController?.navigationController?.viewControllers[1] as? SignUpViewController else { return }
+            NotificationCenter.default.post(name: .SendWhereDoYouLiveToSignUp, object: nil, userInfo: ["whereDoYouLive": whereDoYouLive])
             self.viewController?.navigationController?.popToViewController(viewController, animated: true)
         }
     }
     
     func goToEditPersonalDetails(whereDoYouLive: String) {
-        guard let viewController = self.viewController?.navigationController?.viewControllers[2] as? EditPersonalDetailsViewController else { return }
         DispatchQueue.main.async {
-            let userInfo: [String: String] = ["whereDoYouLive": whereDoYouLive]
-            NotificationCenter.default.post(name: .SendWhereDoYouLiveToEditPersonalDetails, object: nil, userInfo: userInfo)
+            guard let viewController = self.viewController?.navigationController?.viewControllers[2] as? EditPersonalDetailsViewController else { return }
+            NotificationCenter.default.post(name: .SendWhereDoYouLiveToEditPersonalDetails, object: nil, userInfo: ["whereDoYouLive": whereDoYouLive])
             self.viewController?.navigationController?.popToViewController(viewController, animated: true)
         }
     }

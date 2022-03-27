@@ -27,45 +27,45 @@ extension PostRouter {
     }
     
     func goToPostImages(postImages: [UIImage?], indexPostImages: Int) {
-        let viewController = Container.shared.postImagesBuilder().build(postImages: postImages, indexPostImage: indexPostImages)
         DispatchQueue.main.async {
+            let viewController = Container.shared.postImagesBuilder().build(postImages: postImages, indexPostImage: indexPostImages)
             self.viewController?.present(viewController: viewController, completion: nil)
         }
     }
     
     func goToLocation(coordinates: Coordinates, animal: Animal? = nil) {
-        let viewController = Container.shared.locationBuilder().build(coordinates: coordinates, animal: animal)
         DispatchQueue.main.async {
+            let viewController = Container.shared.locationBuilder().build(coordinates: coordinates, animal: animal)
             self.viewController?.push(viewController: viewController)
         }
     }
     
     func goToAuthorProfile(user: User) {
-        let viewController = Container.shared.profileBuilder().build(user: user)
-        viewController.hidesBottomBarWhenPushed = true
         DispatchQueue.main.async {
+            let viewController = Container.shared.profileBuilder().build(user: user)
+            viewController.hidesBottomBarWhenPushed = true
             self.viewController?.push(viewController: viewController)
         }
     }
     
     func showContactWithPopup(authorSocialMedias: [SocialMediaType: String]) {
-        let viewController = Container.shared.contactWithPopupBuilder().build(authorSocialMedias: authorSocialMedias)
         DispatchQueue.main.async {
+            let viewController = Container.shared.contactWithPopupBuilder().build(authorSocialMedias: authorSocialMedias)
             self.viewController?.present(viewController: viewController, completion: nil)
         }
     }
     
     func goToPostOptionsPopup(comesFrom: PostComesFrom, post: Post) {
-        let viewController = Container.shared.postOptionsPopupBuilder().build(comesFrom: comesFrom, post: post)
-        viewController.delegate = self.viewController
         DispatchQueue.main.async {
+            let viewController = Container.shared.postOptionsPopupBuilder().build(comesFrom: comesFrom, post: post)
+            viewController.delegate = self.viewController
             self.viewController?.present(viewController: viewController, completion: nil)
         }
     }
     
     func goToEditPost(post: Post) {
-        let viewController = Container.shared.editPostBuilder().build(post: post)
         DispatchQueue.main.async {
+            let viewController = Container.shared.editPostBuilder().build(post: post)
             self.viewController?.push(viewController: viewController)
         }
     }

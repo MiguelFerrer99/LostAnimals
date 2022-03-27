@@ -31,10 +31,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yvg-9H-3NC">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="943.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="983.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="IUm-gd-hlh">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="943.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="983.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="NlW-No-rxg">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="286.5"/>
@@ -215,14 +215,26 @@
                                                             </view>
                                                         </subviews>
                                                     </stackView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome back, User" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rP3-ON-n1O">
-                                                        <rect key="frame" x="0.0" y="306.5" width="414" height="33"/>
-                                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="24"/>
-                                                        <color key="textColor" name="CustomBlack"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wOi-Do-Nvd">
+                                                        <rect key="frame" x="0.0" y="306.5" width="414" height="73"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome back, User" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rP3-ON-n1O">
+                                                                <rect key="frame" x="40" y="0.0" width="334" height="73"/>
+                                                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="24"/>
+                                                                <color key="textColor" name="CustomBlack"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="rP3-ON-n1O" secondAttribute="trailing" constant="40" id="1ch-6r-zsq"/>
+                                                            <constraint firstItem="rP3-ON-n1O" firstAttribute="top" secondItem="wOi-Do-Nvd" secondAttribute="top" id="AFF-f9-S2x"/>
+                                                            <constraint firstItem="rP3-ON-n1O" firstAttribute="leading" secondItem="wOi-Do-Nvd" secondAttribute="leading" constant="40" id="cLz-BE-DvW"/>
+                                                            <constraint firstAttribute="bottom" secondItem="rP3-ON-n1O" secondAttribute="bottom" id="gAt-k8-E58"/>
+                                                        </constraints>
+                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9zx-HY-k4o">
-                                                        <rect key="frame" x="0.0" y="359.5" width="414" height="64"/>
+                                                        <rect key="frame" x="0.0" y="399.5" width="414" height="64"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goH-bO-P57" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
                                                                 <rect key="frame" x="20" y="0.0" width="374" height="64"/>
@@ -279,7 +291,7 @@
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Lrx-wC-bO3">
-                                                        <rect key="frame" x="0.0" y="443.5" width="414" height="500"/>
+                                                        <rect key="frame" x="0.0" y="483.5" width="414" height="500"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="f0c-86-xBM">
                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="240"/>
@@ -433,7 +445,7 @@
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </stackView>
                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gOe-Pf-zSz">
-                                                        <rect key="frame" x="0.0" y="943.5" width="414" height="100"/>
+                                                        <rect key="frame" x="0.0" y="983.5" width="414" height="100"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User has been blocked by you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhd-3T-zC3">
                                                                 <rect key="frame" x="40" y="0.0" width="334" height="100"/>

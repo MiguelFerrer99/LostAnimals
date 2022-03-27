@@ -21,48 +21,36 @@ final class PostOptionsPopupRouter {
 // MARK: - Functions
 extension PostOptionsPopupRouter {
     func dismissPostOptionsPopup() {
-        DispatchQueue.main.async {
-            self.viewController?.dismissCurrentView(completion: nil)
-        }
+        self.viewController?.dismissCurrentView(completion: nil)
     }
     
     func dismissPostOptionsPopupAndGoToEditPost() {
-        DispatchQueue.main.async {
-            self.viewController?.dismissCurrentView(completion: {
-                self.viewController?.delegate?.goTo(action: .goToEditPost, postImageToShare: nil)
-            })
-        }
+        self.viewController?.dismissCurrentView(completion: {
+            self.viewController?.delegate?.goTo(action: .goToEditPost, postImageToShare: nil)
+        })
     }
     
     func dismissPostOptionsPopupAndShowGuestPopup() {
-        DispatchQueue.main.async {
-            self.viewController?.dismissCurrentView(completion: {
-                self.viewController?.delegate?.goTo(action: .showGuestPopup, postImageToShare: nil)
-            })
-        }
+        self.viewController?.dismissCurrentView(completion: {
+            self.viewController?.delegate?.goTo(action: .showGuestPopup, postImageToShare: nil)
+        })
     }
     
     func dismissPostOptionsPopupAndShowSuccessPopup() {
-        DispatchQueue.main.async {
-            self.viewController?.dismissCurrentView(completion: {
-                self.viewController?.delegate?.goTo(action: .showSuccessPopup, postImageToShare: nil)
-            })
-        }
+        self.viewController?.dismissCurrentView(completion: {
+            self.viewController?.delegate?.goTo(action: .showSuccessPopup, postImageToShare: nil)
+        })
     }
     
     func dismissPostOptionsPopupAndShowErrorPopup() {
-        DispatchQueue.main.async {
-            self.viewController?.dismissCurrentView(completion: {
-                self.viewController?.delegate?.goTo(action: .showErrorPopup, postImageToShare: nil)
-            })
-        }
+        self.viewController?.dismissCurrentView(completion: {
+            self.viewController?.delegate?.goTo(action: .showErrorPopup, postImageToShare: nil)
+        })
     }
     
     func dismissPostOptionsAndShowActivityViewController(postImageToShare: UIImage) {
-        DispatchQueue.main.async {
-            self.viewController?.dismissCurrentView(completion: {
-                self.viewController?.delegate?.goTo(action: .showActivityVC, postImageToShare: postImageToShare)
-            })
-        }
+        self.viewController?.dismissCurrentView(completion: {
+            self.viewController?.delegate?.goTo(action: .showActivityVC, postImageToShare: postImageToShare)
+        })
     }
 }

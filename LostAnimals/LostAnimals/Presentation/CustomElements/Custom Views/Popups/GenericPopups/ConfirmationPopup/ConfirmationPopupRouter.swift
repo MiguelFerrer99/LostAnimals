@@ -21,10 +21,8 @@ final class ConfirmationPopupRouter {
 // MARK: - Functions
 extension ConfirmationPopupRouter {
     func dismissConfirmationPopup(yesAction: (() -> Void)? = nil) {
-        DispatchQueue.main.async {
-            self.viewController?.dismissCurrentView(completion: {
-                if let yesAction = yesAction { yesAction() }
-            })
-        }
+        self.viewController?.dismissCurrentView(completion: {
+            if let yesAction = yesAction { yesAction() }
+        })
     }
 }

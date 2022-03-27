@@ -21,8 +21,6 @@ final class LocationFilterPopupRouter {
 // MARK: - Functions
 extension LocationFilterPopupRouter {
     func dismissLocationFilterPopup() {
-        DispatchQueue.main.async {
-            self.viewController?.dismissCurrentView(completion: nil)
-        }
+        self.viewController?.dismissCurrentView(completion: nil)
     }
 }

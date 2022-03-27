@@ -21,15 +21,13 @@ final class EditSocialMediasRouter {
 // MARK: - Functions
 extension EditSocialMediasRouter {
     func goBack() {
-        DispatchQueue.main.async {
-            self.viewController?.pop()
-        }
+        self.viewController?.pop()
     }
     
     func goToWhereDoYouLiveCountries() {
-        let viewController = Container.shared.whereDoYouLiveCountriesBuilder().build(comesFrom: .editSocialMediaDetails)
-        viewController.delegate = self.viewController
         DispatchQueue.main.async {
+            let viewController = Container.shared.whereDoYouLiveCountriesBuilder().build(comesFrom: .editSocialMediaDetails)
+            viewController.delegate = self.viewController
             self.viewController?.push(viewController: viewController)
         }
     }

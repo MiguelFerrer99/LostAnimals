@@ -22,21 +22,17 @@ final class WhereDoYouLiveCountriesRouter {
 extension WhereDoYouLiveCountriesRouter {
     func goToSignUp(dialCode: String) {
         self.viewController?.delegate?.getDialCode(dialCode: dialCode)
-        DispatchQueue.main.async {
-            self.viewController?.pop()
-        }
+        self.viewController?.pop()
     }
     
     func goToEditSocialMedias(dialCode: String) {
         self.viewController?.delegate?.getDialCode(dialCode: dialCode)
-        DispatchQueue.main.async {
-            self.viewController?.pop()
-        }
+        self.viewController?.pop()
     }
     
     func goToWhereDoYouLiveCities(comesFrom: WhereDoYouLiveComesFrom, country: Country, cities: [String]) {
-        let viewController = Container.shared.whereDoYouLiveCitiesBuilder().build(comesFrom: comesFrom, country: country, cities: cities)
         DispatchQueue.main.async {
+            let viewController = Container.shared.whereDoYouLiveCitiesBuilder().build(comesFrom: comesFrom, country: country, cities: cities)
             self.viewController?.push(viewController: viewController)
         }
     }

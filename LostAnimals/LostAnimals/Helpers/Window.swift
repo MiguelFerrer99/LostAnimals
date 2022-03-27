@@ -48,57 +48,63 @@ func changeRoot(to viewController: UIViewController) {
 }
 
 func showAlert(title: String, message: String  = "", completion: (() -> Void)? = nil) {
-    if topMostController() is UIAlertController { return }
-    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-    let accept = UIAlertAction(title: "Aceptar", style: .default) { _ in
-        if let completion = completion { completion() }
-    }
-    alert.addAction(accept)
     DispatchQueue.main.async {
-        topMostController()?.present(viewController: alert)
+        let topMostController = topMostController()
+        if topMostController is UIAlertController { return }
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let accept = UIAlertAction(title: "Aceptar", style: .default) { _ in
+            if let completion = completion { completion() }
+        }
+        alert.addAction(accept)
+        topMostController?.present(viewController: alert)
     }
 }
 
 func showGuestPopup() {
-    if topMostController() is UIAlertController { return }
-    let viewController = Container.shared.guestPopupBuilder().build()
     DispatchQueue.main.async {
-        topMostController()?.present(viewController: viewController)
+        let topMostController = topMostController()
+        if topMostController is UIAlertController { return }
+        let viewController = Container.shared.guestPopupBuilder().build()
+        topMostController?.present(viewController: viewController)
     }
 }
 
 func showErrorPopup(title: String, action: (() -> Void)? = nil) {
-    if topMostController() is UIAlertController { return }
-    let viewController = Container.shared.errorPopupBuilder().build(errorTitle: title, action: action)
     DispatchQueue.main.async {
-        topMostController()?.present(viewController: viewController)
+        let topMostController = topMostController()
+        if topMostController is UIAlertController { return }
+        let viewController = Container.shared.errorPopupBuilder().build(errorTitle: title, action: action)
+        topMostController?.present(viewController: viewController)
     }
 }
 
 func showSuccessPopup(title: String, action: (() -> Void)? = nil) {
-    if topMostController() is UIAlertController { return }
-    let viewController = Container.shared.successPopupBuilder().build(successTitle: title, action: action)
     DispatchQueue.main.async {
-        topMostController()?.present(viewController: viewController)
+        let topMostController = topMostController()
+        if topMostController is UIAlertController { return }
+        let viewController = Container.shared.successPopupBuilder().build(successTitle: title, action: action)
+        topMostController?.present(viewController: viewController)
     }
 }
 
 func showBannedPopup(comesFrom: BannedPopupComesFrom) {
-    if topMostController() is UIAlertController { return }
-    Cache.logOut()
-    let startupViewController = Container.shared.startupBuilder().build().embeddedInNavigation()
-    let viewController = Container.shared.errorPopupBuilder().build(errorTitle: "You has been banned of LostAnimals. Please contact with the administrator to solve this situation") {
-        if comesFrom != .login { changeRoot(to: startupViewController) }
-    }
     DispatchQueue.main.async {
-        topMostController()?.present(viewController: viewController)
+        let topMostController = topMostController()
+        if topMostController is UIAlertController { return }
+        Cache.logOut()
+        let startupViewController = Container.shared.startupBuilder().build().embeddedInNavigation()
+        let viewController = Container.shared.errorPopupBuilder().build(errorTitle: "You has been banned of LostAnimals. Please contact with the administrator to solve this situation") {
+            if comesFrom != .login { changeRoot(to: startupViewController) }
+        }
+        topMostController?.present(viewController: viewController)
     }
 }
 
 func showConfirmationPopup(title: String, yesAction: (() -> Void)? = nil) {
-    if topMostController() is UIAlertController { return }
-    let viewController = Container.shared.confirmationPopupBuilder().build(title: title, yesAction: yesAction)
     DispatchQueue.main.async {
-        topMostController()?.present(viewController: viewController)
+        let topMostController = topMostController()
+        if topMostController is UIAlertController { return }
+        let viewController = Container.shared.confirmationPopupBuilder().build(title: title, yesAction: yesAction)
+        topMostController?.present(viewController: viewController)
     }
 }

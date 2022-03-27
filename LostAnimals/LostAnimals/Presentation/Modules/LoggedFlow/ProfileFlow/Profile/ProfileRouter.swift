@@ -21,36 +21,34 @@ final class ProfileRouter {
 // MARK: - Functions
 extension ProfileRouter {
     func goBack() {
-        DispatchQueue.main.async {
-            self.viewController?.pop()
-        }
+        self.viewController?.pop()
     }
     
     func goToProfileSettings() {
-        guard let me = User.shared else { return }
-        let viewController = Container.shared.profileSettingsBuilder().build(me: me)
         DispatchQueue.main.async {
+            guard let me = User.shared else { return }
+            let viewController = Container.shared.profileSettingsBuilder().build(me: me)
             self.viewController?.push(viewController: viewController)
         }
     }
     
     func goToLocation(coordinates: Coordinates, userFirstName: String? = nil) {
-        let viewController = Container.shared.locationBuilder().build(coordinates: coordinates, userFirstName: userFirstName)
         DispatchQueue.main.async {
+            let viewController = Container.shared.locationBuilder().build(coordinates: coordinates, userFirstName: userFirstName)
             self.viewController?.push(viewController: viewController)
         }
     }
     
     func changeRootToStartup() {
-        let viewController = Container.shared.startupBuilder().build().embeddedInNavigation()
         DispatchQueue.main.async {
+            let viewController = Container.shared.startupBuilder().build().embeddedInNavigation()
             changeRoot(to: viewController)
         }
     }
     
     func goToPost(post: Post) {
-        let viewController = Container.shared.postBuilder().build(comesFrom: .profile, post: post)
         DispatchQueue.main.async {
+            let viewController = Container.shared.postBuilder().build(comesFrom: .profile, post: post)
             self.viewController?.push(viewController: viewController)
         }
     }
@@ -102,22 +100,22 @@ extension ProfileRouter {
     }
     
     func goToMySavedPosts() {
-        let viewController = Container.shared.savedPostsBuilder().build()
         DispatchQueue.main.async {
+            let viewController = Container.shared.savedPostsBuilder().build()
             self.viewController?.push(viewController: viewController)
         }
     }
     
     func goToProfilePosts(user: User) {
-        let viewController = Container.shared.profilePostsBuilder().build(user: user)
         DispatchQueue.main.async {
+            let viewController = Container.shared.profilePostsBuilder().build(user: user)
             self.viewController?.push(viewController: viewController)
         }
     }
     
     func goToPostImages(image: UIImage) {
-        let viewController = Container.shared.postImagesBuilder().build(postImages: [image], indexPostImage: 0)
         DispatchQueue.main.async {
+            let viewController = Container.shared.postImagesBuilder().build(postImages: [image], indexPostImage: 0)
             self.viewController?.present(viewController: viewController)
         }
     }

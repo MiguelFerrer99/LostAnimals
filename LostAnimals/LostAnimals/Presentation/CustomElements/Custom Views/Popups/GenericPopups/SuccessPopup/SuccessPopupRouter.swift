@@ -21,10 +21,8 @@ final class SuccessPopupRouter {
 // MARK: - Functions
 extension SuccessPopupRouter {
     func dismissSuccessPopup(action: (() -> Void)? = nil) {
-        DispatchQueue.main.async {
-            self.viewController?.dismissCurrentView(completion: {
-                if let action = action { action() }
-            })
-        }
+        self.viewController?.dismissCurrentView(completion: {
+            if let action = action { action() }
+        })
     }
 }

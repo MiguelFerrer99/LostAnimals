@@ -21,32 +21,24 @@ final class SelectPhotoPopupRouter {
 // MARK: - Functions
 extension SelectPhotoPopupRouter {
     func dismissSelectPhotoPopup() {
-        DispatchQueue.main.async {
-            self.viewController?.dismissCurrentView(completion: nil)
-        }
+        self.viewController?.dismissCurrentView(completion: nil)
     }
     
     func dismissSelectPhotoPopupAndRemovePhoto(comesFrom: SelectPhotoPopupComesFrom) {
-        DispatchQueue.main.async {
-            self.viewController?.dismissCurrentView(completion: {
-                self.viewController?.delegate?.goTo(action: .removePhoto)
-            })
-        }
+        self.viewController?.dismissCurrentView(completion: {
+            self.viewController?.delegate?.goTo(action: .removePhoto)
+        })
     }
     
     func dismissSelectPhotoPopupAndChooseFromLibrary(comesFrom: SelectPhotoPopupComesFrom) {
-        DispatchQueue.main.async {
-            self.viewController?.dismissCurrentView(completion: {
-                self.viewController?.delegate?.goTo(action: .choosePhoto)
-            })
-        }
+        self.viewController?.dismissCurrentView(completion: {
+            self.viewController?.delegate?.goTo(action: .choosePhoto)
+        })
     }
     
     func dismissSelectPhotoPopupAndTakeAPhoto(comesFrom: SelectPhotoPopupComesFrom) {
-        DispatchQueue.main.async {
-            self.viewController?.dismissCurrentView(completion: {
-                self.viewController?.delegate?.goTo(action: .takePhoto)
-            })
-        }
+        self.viewController?.dismissCurrentView(completion: {
+            self.viewController?.delegate?.goTo(action: .takePhoto)
+        })
     }
 }

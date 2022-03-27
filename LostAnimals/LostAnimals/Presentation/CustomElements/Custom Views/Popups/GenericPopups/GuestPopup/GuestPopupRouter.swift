@@ -21,14 +21,12 @@ final class GuestPopupRouter {
 // MARK: - Functions
 extension GuestPopupRouter {
     func dismissGuestPopup() {
-        DispatchQueue.main.async {
-            self.viewController?.dismissCurrentView(completion: nil)
-        }
+        self.viewController?.dismissCurrentView(completion: nil)
     }
     
     func changeRootToStartup() {
-        let viewController = Container.shared.startupBuilder().build().embeddedInNavigation()
         DispatchQueue.main.async {
+            let viewController = Container.shared.startupBuilder().build().embeddedInNavigation()
             changeRoot(to: viewController)
         }
     }

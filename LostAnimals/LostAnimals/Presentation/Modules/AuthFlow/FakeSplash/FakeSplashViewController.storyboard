@@ -4,8 +4,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,29 +17,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UiS-eh-bHm">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="TgU-In-zBY">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LostAnimals" translatesAutoresizingMaskIntoConstraints="NO" id="s0V-Xc-P3n">
+                                <rect key="frame" x="132" y="378" width="150" height="150"/>
                                 <constraints>
-                                    <constraint firstItem="TgU-In-zBY" firstAttribute="top" secondItem="UiS-eh-bHm" secondAttribute="top" id="PwR-g4-1xl"/>
-                                    <constraint firstAttribute="bottom" secondItem="TgU-In-zBY" secondAttribute="bottom" id="UAd-b2-4cN"/>
-                                    <constraint firstItem="TgU-In-zBY" firstAttribute="leading" secondItem="UiS-eh-bHm" secondAttribute="leading" id="nhy-7e-sF0"/>
-                                    <constraint firstAttribute="trailing" secondItem="TgU-In-zBY" secondAttribute="trailing" id="x9L-EX-ssc"/>
+                                    <constraint firstAttribute="height" constant="150" id="XQU-k8-OZ6"/>
+                                    <constraint firstAttribute="width" secondItem="s0V-Xc-P3n" secondAttribute="height" multiplier="1:1" id="xCK-4h-gay"/>
                                 </constraints>
-                            </view>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="CustomGreen"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="UiS-eh-bHm" secondAttribute="trailing" id="jJf-l0-qkZ"/>
-                            <constraint firstItem="UiS-eh-bHm" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="mGf-aC-pJN"/>
-                            <constraint firstItem="UiS-eh-bHm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="nef-9H-NS4"/>
-                            <constraint firstAttribute="bottom" secondItem="UiS-eh-bHm" secondAttribute="bottom" id="t5N-oS-exh"/>
+                            <constraint firstItem="s0V-Xc-P3n" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="4fC-5N-v8t"/>
+                            <constraint firstItem="s0V-Xc-P3n" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="hQZ-I9-m9g"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -49,9 +40,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LaunchScreen" width="375" height="812"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="LostAnimals" width="453" height="412"/>
+        <namedColor name="CustomGreen">
+            <color red="0.40784313725490196" green="0.72549019607843135" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
     </resources>
 </document>

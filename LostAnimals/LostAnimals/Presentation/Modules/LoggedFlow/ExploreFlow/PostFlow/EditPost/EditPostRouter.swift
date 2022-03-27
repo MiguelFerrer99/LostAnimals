@@ -25,33 +25,33 @@ extension EditPostRouter {
     }
     
     func goBack2Times() {
-        guard let viewControllers = self.viewController?.navigationController?.viewControllers else { return }
-        let viewController = viewControllers[viewControllers.count - 3]
         DispatchQueue.main.async {
+            guard let viewControllers = self.viewController?.navigationController?.viewControllers else { return }
+            let viewController = viewControllers[viewControllers.count - 3]
             self.viewController?.navigationController?.popToViewController(viewController, animated: true)
         }
     }
     
     func goToSelectPhotoPopup(showRemoveOption: Bool) {
-        let viewController = Container.shared.selectPhotoPopupBuilder().build(showRemoveOption: showRemoveOption, comesFrom: .editPost)
-        viewController.delegate = self.viewController
         DispatchQueue.main.async {
+            let viewController = Container.shared.selectPhotoPopupBuilder().build(showRemoveOption: showRemoveOption, comesFrom: .editPost)
+            viewController.delegate = self.viewController
             self.viewController?.present(viewController: viewController, completion: nil)
         }
     }
     
     func goToAnimalTypes(selectedAnimalType: AnimalType) {
-        let viewController = Container.shared.animalTypesBuilder().build(comesFrom: .editPost)
-        viewController.delegate = self.viewController
         DispatchQueue.main.async {
+            let viewController = Container.shared.animalTypesBuilder().build(comesFrom: .editPost)
+            viewController.delegate = self.viewController
             self.viewController?.push(viewController: viewController)
         }
     }
     
     func goToWhereCanWeFindYou() {
-        let viewController = Container.shared.whereCanWeFindYou().build(comesFrom: .editPost)
-        viewController.delegate = self.viewController
         DispatchQueue.main.async {
+            let viewController = Container.shared.whereCanWeFindYou().build(comesFrom: .editPost)
+            viewController.delegate = self.viewController
             self.viewController?.push(viewController: viewController)
         }
     }

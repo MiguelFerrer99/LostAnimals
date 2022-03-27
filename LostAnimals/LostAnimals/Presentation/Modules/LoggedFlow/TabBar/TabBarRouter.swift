@@ -21,18 +21,18 @@ final class TabBarRouter {
 // MARK: - Functions
 extension TabBarRouter {
     func goToExplore() -> ViewController {
-        return Container.shared.exploreBuilder().build()
+        Container.shared.exploreBuilder().build()
     }
     
     func goToNewPost() {
-        let viewController = Container.shared.newPostBuilder().build().embeddedInNavigation()
-        viewController.modalPresentationStyle = .overFullScreen
         DispatchQueue.main.async {
+            let viewController = Container.shared.newPostBuilder().build().embeddedInNavigation()
+            viewController.modalPresentationStyle = .overFullScreen
             self.viewController?.present(viewController: viewController, completion: nil)
         }
     }
     
     func goToProfile() -> ViewController {
-        return Container.shared.profileBuilder().build(user: User.shared ?? Constants.emptyUser)
+        Container.shared.profileBuilder().build(user: User.shared ?? Constants.emptyUser)
     }
 }

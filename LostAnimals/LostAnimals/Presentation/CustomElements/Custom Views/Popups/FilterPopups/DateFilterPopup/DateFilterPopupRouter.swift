@@ -21,8 +21,6 @@ final class DateFilterPopupRouter {
 // MARK: - Functions
 extension DateFilterPopupRouter {
     func dismissDateFilterPopup() {
-        DispatchQueue.main.async {
-            self.viewController?.dismissCurrentView(completion: nil)
-        }
+        self.viewController?.dismissCurrentView(completion: nil)
     }
 }

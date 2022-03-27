@@ -21,26 +21,24 @@ final class ProfilePostsRouter {
 // MARK: - Functions
 extension ProfilePostsRouter {
     func goToFilterPopup(filterType: FilterType, loadData: Bool) {
-        let viewController: ViewController!
-        
-        switch filterType {
-        case .animal:
-            viewController = Container.shared.animalFilterPopupBuilder().build(loadData: loadData)
-        case .location:
-            viewController = Container.shared.locationFilterPopupBuilder().build(loadData: loadData)
-        case .date:
-            viewController = Container.shared.dateFilterPopupBuilder().build(loadData: loadData)
-        default: return
-        }
-        
         DispatchQueue.main.async {
+            let viewController: ViewController!
+            switch filterType {
+            case .animal:
+                viewController = Container.shared.animalFilterPopupBuilder().build(loadData: loadData)
+            case .location:
+                viewController = Container.shared.locationFilterPopupBuilder().build(loadData: loadData)
+            case .date:
+                viewController = Container.shared.dateFilterPopupBuilder().build(loadData: loadData)
+            default: return
+            }
             self.viewController?.present(viewController: viewController, completion: nil)
         }
     }
     
     func goToPost(post: Post) {
-        let viewController = Container.shared.postBuilder().build(comesFrom: .explore, post: post)
         DispatchQueue.main.async {
+            let viewController = Container.shared.postBuilder().build(comesFrom: .explore, post: post)
             self.viewController?.push(viewController: viewController)
         }
     }

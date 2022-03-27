@@ -21,57 +21,55 @@ final class ProfileSettingsRouter {
 // MARK: - Functions
 extension ProfileSettingsRouter {
     func goBack() {
-        DispatchQueue.main.async {
-            self.viewController?.pop()
-        }
+        self.viewController?.pop()
     }
     
     func goToSelectPhotoPopup(showRemoveOption: Bool) {
-        let viewController = Container.shared.selectPhotoPopupBuilder().build(showRemoveOption: showRemoveOption, comesFrom: .profileSettings)
-        viewController.delegate = self.viewController
         DispatchQueue.main.async {
+            let viewController = Container.shared.selectPhotoPopupBuilder().build(showRemoveOption: showRemoveOption, comesFrom: .profileSettings)
+            viewController.delegate = self.viewController
             self.viewController?.present(viewController: viewController, completion: nil)
         }
     }
     
     func goToEditPersonalDetails(me: User) {
-        let viewController = Container.shared.editPersonalDetailsBuilder().build(me: me)
         DispatchQueue.main.async {
+            let viewController = Container.shared.editPersonalDetailsBuilder().build(me: me)
             self.viewController?.push(viewController: viewController)
         }
     }
     
     func goToEditSocialMediaDetails(me: User) {
-        let viewController = Container.shared.editSocialMediasBuilder().build(me: me)
         DispatchQueue.main.async {
+            let viewController = Container.shared.editSocialMediasBuilder().build(me: me)
             self.viewController?.push(viewController: viewController)
         }
     }
     
     func goToChangePassword(me: User) {
-        let viewController = Container.shared.changePasswordBuilder().build(me: me)
         DispatchQueue.main.async {
+            let viewController = Container.shared.changePasswordBuilder().build(me: me)
             self.viewController?.push(viewController: viewController)
         }
     }
     
     func goToBlockedUsers() {
-        let viewController = Container.shared.blockedUsersBuilder().build()
         DispatchQueue.main.async {
+            let viewController = Container.shared.blockedUsersBuilder().build()
             self.viewController?.push(viewController: viewController)
         }
     }
     
     func goToTermsAndConditions() {
-        let viewController = Container.shared.termsAndConditionsBuilder().build()
         DispatchQueue.main.async {
+            let viewController = Container.shared.termsAndConditionsBuilder().build()
             self.viewController?.push(viewController: viewController)
         }
     }
     
     func changeRootToStartup() {
-        let viewController = Container.shared.startupBuilder().build().embeddedInNavigation()
         DispatchQueue.main.async {
+            let viewController = Container.shared.startupBuilder().build().embeddedInNavigation()
             changeRoot(to: viewController)
         }
     }

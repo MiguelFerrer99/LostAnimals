@@ -21,44 +21,42 @@ final class SignUpRouter {
 // MARK: - Functions
 extension SignUpRouter {
     func goBack() {
-        DispatchQueue.main.async {
-            self.viewController?.pop()
-        }
+        self.viewController?.pop()
     }
     
     func goToWhereDoYouLiveCountries(comesFrom: WhereDoYouLiveComesFrom) {
-        let viewController = Container.shared.whereDoYouLiveCountriesBuilder().build(comesFrom: comesFrom)
-        viewController.delegate = self.viewController
         DispatchQueue.main.async {
+            let viewController = Container.shared.whereDoYouLiveCountriesBuilder().build(comesFrom: comesFrom)
+            viewController.delegate = self.viewController
             self.viewController?.push(viewController: viewController)
         }
     }
     
     func goToWhereCanWeFindYou() {
-        let viewController = Container.shared.whereCanWeFindYou().build(comesFrom: .signUp)
-        viewController.delegate = self.viewController
         DispatchQueue.main.async {
+            let viewController = Container.shared.whereCanWeFindYou().build(comesFrom: .signUp)
+            viewController.delegate = self.viewController
             self.viewController?.push(viewController: viewController)
         }
     }
     
     func goToTermsAndConditions() {
-        let viewController = Container.shared.termsAndConditionsBuilder().build()
         DispatchQueue.main.async {
+            let viewController = Container.shared.termsAndConditionsBuilder().build()
             self.viewController?.push(viewController: viewController)
         }
     }
     
     func goToOnboarding() {
-        let viewController = Container.shared.onboardingBuilder().build()
         DispatchQueue.main.async {
+            let viewController = Container.shared.onboardingBuilder().build()
             self.viewController?.present(viewController: viewController, completion: nil)
         }
     }
     
     func changeRootToTabBar() {
-        let viewController = Container.shared.tabBarBuilder().build()
         DispatchQueue.main.async {
+            let viewController = Container.shared.tabBarBuilder().build()
             changeRoot(to: viewController)
         }
     }

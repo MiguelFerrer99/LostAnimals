@@ -22,9 +22,7 @@ final class WhereCanWeFindYouRouter {
 // MARK: - Functions
 extension WhereCanWeFindYouRouter {
     func goBack(comesFrom: WhereCanWeFindYouComesFrom, searchResult: MKLocalSearchCompletion) {
-        DispatchQueue.main.async {
-            self.viewController?.delegate?.getWhereCanWeFindYou(whereCanWeFindYouSearchResult: searchResult)
-            self.viewController?.pop()
-        }
+        self.viewController?.delegate?.getWhereCanWeFindYou(whereCanWeFindYouSearchResult: searchResult)
+        self.viewController?.pop()
     }
 }

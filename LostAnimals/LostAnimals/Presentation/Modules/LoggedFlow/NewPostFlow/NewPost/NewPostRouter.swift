@@ -21,14 +21,12 @@ final class NewPostRouter {
 // MARK: - Functions
 extension NewPostRouter {
     func dismissNewPost() {
-        DispatchQueue.main.async {
-            self.viewController?.dismissCurrentView(completion: nil)
-        }
+        self.viewController?.dismissCurrentView(completion: nil)
     }
     
     func goToNewPostGeneric(postType: PostType) {
-        let viewController = Container.shared.newPostGenericBuilder().build(postType: postType)
         DispatchQueue.main.async {
+            let viewController = Container.shared.newPostGenericBuilder().build(postType: postType)
             self.viewController?.push(viewController: viewController)
         }
     }

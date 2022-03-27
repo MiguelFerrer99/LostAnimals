@@ -21,8 +21,6 @@ final class ChangePasswordRouter {
 // MARK: - Functions
 extension ChangePasswordRouter {
     func goBack() {
-        DispatchQueue.main.async {
-            self.viewController?.pop()
-        }
+        self.viewController?.pop()
     }
 }
