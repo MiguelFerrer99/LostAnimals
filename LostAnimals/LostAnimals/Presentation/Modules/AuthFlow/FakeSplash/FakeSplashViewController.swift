@@ -32,22 +32,24 @@ final class FakeSplashViewController: ViewController {
 // MARK: - Private functions
 private extension FakeSplashViewController {
     func setupUI() {
-        if Cache.get(boolFor: .logged) {
-            viewModel.getMe { me in
-                if let me = me {
-                    User.shared = me
-                    if Cache.get(boolFor: .onboardingDone) {
-                        self.viewModel.goToTabBar()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            if Cache.get(boolFor: .logged) {
+                self.viewModel.getMe { me in
+                    if let me = me {
+                        User.shared = me
+                        if Cache.get(boolFor: .onboardingDone) {
+                            self.viewModel.goToTabBar()
+                        } else {
+                            self.viewModel.goToOnboarding()
+                        }
                     } else {
-                        self.viewModel.goToOnboarding()
+                        Cache.logOut()
+                        self.viewModel.goToStartup()
                     }
-                } else {
-                    Cache.logOut()
-                    self.viewModel.goToStartup()
                 }
+            } else {
+                self.viewModel.goToStartup()
             }
-        } else {
-            viewModel.goToStartup()
         }
     }
 }
