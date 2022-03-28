@@ -37,7 +37,7 @@ extension SavedPostsViewController: UICollectionViewDataSource {
             let exploreFiltersHeader = collectionView.dequeue(supplementaryView: ExploreFiltersHeader.self, for: indexPath)
             exploreFiltersHeader.postFiltersDelegate = self
             return exploreFiltersHeader
-        default: assert(false, "Unexpected element kind")
+        default: return UICollectionReusableView()
         }
     }
     
