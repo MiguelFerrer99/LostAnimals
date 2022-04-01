@@ -1,6 +1,6 @@
 # LostAnimals
 
-![AppIcon](https://user-images.githubusercontent.com/56566735/161316737-b4ee16fe-3826-44dc-90c3-b1bc7e0c276b.png)
+![Header](https://user-images.githubusercontent.com/56566735/161317149-1abb07bf-3c39-4b5b-aec5-23fc957c7204.png)
 
 * (promotional text)
 
