@@ -4,11 +4,11 @@
 
 
 ## Why you would want to use LostAnimals?
-(Add promotional text)
+LostAnimals is the perfect app to spread the word about the loss of any pet. Plus many more features!
 
 
 ## Description
-(Add description)
+Have you lost your pet and want to share it to help find it? LostAnimals is your option, in addition to helping you with your lost pet, it also allows you to share found pets and adopt or give one up for adoption.
 
 
 ## Screenshots
