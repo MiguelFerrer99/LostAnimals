@@ -10,7 +10,7 @@
 extension ForgotPasswordViewController {
     func configureTextFields() {
         mailTexfield.delegate = self
-        mailTexfield.textField.textContentType = .emailAddress
+        mailTexfield.textField.textContentType = .username
         mailTexfield.textField.keyboardType    = .emailAddress
         mailTexfield.textField.returnKeyType = .done
         mailTexfield.addErrorsToCheck([TextFieldErrorEmptyValue(),

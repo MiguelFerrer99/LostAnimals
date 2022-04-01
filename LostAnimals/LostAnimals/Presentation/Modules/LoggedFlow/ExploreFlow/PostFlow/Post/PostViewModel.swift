@@ -93,10 +93,10 @@ extension PostViewModel {
     }
     
     func showSuccessPopupFromPostOptionsPopup() {
-        showSuccessPopup(title: "The post has been reported successfully", action: nil)
+        showSuccessPopup(title: "The user has been blocked successfully", action: nil)
     }
     
     func showErrorPopupFromPostOptionsPopup() {
-        showErrorPopup(title: "Error reporting post. Please, try again later", action: nil)
+        showErrorPopup(title: "An unexpected error occured. Please, try again later", action: nil)
     }
 }

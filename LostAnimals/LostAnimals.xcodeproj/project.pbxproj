@@ -223,6 +223,7 @@
 		41A7CF5F27F080EE002BFD6F /* FakeSplashBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A7CF5A27F080EE002BFD6F /* FakeSplashBuilder.swift */; };
 		41A7CF6027F080EE002BFD6F /* FakeSplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A7CF5B27F080EE002BFD6F /* FakeSplashViewModel.swift */; };
 		41AC99222787D367001B2F6A /* EditPostImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC99212787D367001B2F6A /* EditPostImagePicker.swift */; };
+		41B2F4C227F783D000B0C72D /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B2F4C127F783D000B0C72D /* UserService.swift */; };
 		41B75626275EE4CE00C00E03 /* SignUpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B75622275EE4CE00C00E03 /* SignUpRouter.swift */; };
 		41B75627275EE4CE00C00E03 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B75623275EE4CE00C00E03 /* SignUpViewController.swift */; };
 		41B75628275EE4CE00C00E03 /* SignUpBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B75624275EE4CE00C00E03 /* SignUpBuilder.swift */; };
@@ -575,6 +576,7 @@
 		41A7CF5A27F080EE002BFD6F /* FakeSplashBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeSplashBuilder.swift; sourceTree = "<group>"; };
 		41A7CF5B27F080EE002BFD6F /* FakeSplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeSplashViewModel.swift; sourceTree = "<group>"; };
 		41AC99212787D367001B2F6A /* EditPostImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostImagePicker.swift; sourceTree = "<group>"; };
+		41B2F4C127F783D000B0C72D /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		41B75622275EE4CE00C00E03 /* SignUpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRouter.swift; sourceTree = "<group>"; };
 		41B75623275EE4CE00C00E03 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		41B75624275EE4CE00C00E03 /* SignUpBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpBuilder.swift; sourceTree = "<group>"; };
@@ -1572,6 +1574,7 @@
 			isa = PBXGroup;
 			children = (
 				4176D21827C12F99008B0830 /* AuthenticationService.swift */,
+				41B2F4C127F783D000B0C72D /* UserService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -2215,6 +2218,7 @@
 				41B9CE71277F421300966509 /* PostCollectionViewCell.swift in Sources */,
 				41EC16C0278678CE00096B7A /* SelectPhotoPopupBuilder.swift in Sources */,
 				41BFE174276618C900AC5570 /* CityTableViewCell.swift in Sources */,
+				41B2F4C227F783D000B0C72D /* UserService.swift in Sources */,
 				419E507527708ACD007C196B /* NotificationName.swift in Sources */,
 				41BFE16B276539BC00AC5570 /* CountryTableViewCell.swift in Sources */,
 				418B637227AEB83C00F7DC4B /* ChangePasswordRouter.swift in Sources */,

@@ -20,8 +20,8 @@ final class ProfileSettingsViewModel {
     var selectedImageView: ProfileSettingsImageType = .user
     let me: User
     
-    // MARK: - AuthenticationService
-    let authenticationService = AuthenticationService()
+    // MARK: - UserService
+    let userService = UserService()
     
     // MARK: - Init
     required init(router: ProfileSettingsRouter, me: User) {
@@ -80,7 +80,7 @@ extension ProfileSettingsViewModel {
     func didPressedDeleteAccountButton(yesButtonPressed: @escaping (() -> ()), completion: @escaping (() -> ())) {
         showConfirmationPopup(title: "Are you sure you want to delete your account?") {
             yesButtonPressed()
-            self.authenticationService.deleteAccount(id: self.me.id) { result in
+            self.userService.deleteAccount(id: self.me.id) { result in
                 completion()
                 switch result {
                 case .success:
@@ -96,7 +96,7 @@ extension ProfileSettingsViewModel {
     func didPressedLogoutButton(yesButtonPressed: @escaping (() -> ()), completion: @escaping (() -> ())) {
         showConfirmationPopup(title: "Are you sure you want to logout?") {
             yesButtonPressed()
-            self.authenticationService.logOut { result in
+            self.userService.logOut { result in
                 completion()
                 switch result {
                 case .success:

@@ -10,20 +10,20 @@
 extension AccountDetailsCollectionViewCell {
     func configureTextFields() {
         mailTextfield.delegate = self
-        mailTextfield.textField.textContentType = .username
+        mailTextfield.textField.textContentType = .emailAddress
         mailTextfield.textField.keyboardType = .emailAddress
         mailTextfield.textField.returnKeyType = .next
         mailTextfield.addErrorsToCheck([TextFieldErrorEmptyValue(),
                                         TextFieldErrorEmailFormat()])
         
         passwordTextfield.delegate = self
-        passwordTextfield.textField.textContentType = .oneTimeCode
+        passwordTextfield.textField.textContentType = .newPassword
         passwordTextfield.textField.returnKeyType = .next
         passwordTextfield.addErrorsToCheck([TextFieldErrorEmptyValue(),
                                             TextFieldErrorPasswordFormat()])
         
         repeatPasswordTextfield.delegate = self
-        repeatPasswordTextfield.textField.textContentType = .oneTimeCode
+        repeatPasswordTextfield.textField.textContentType = .newPassword
         repeatPasswordTextfield.textField.returnKeyType = .done
         repeatPasswordTextfield.addErrorsToCheck([TextFieldErrorEmptyValue(),
                                                   TextFieldErrorPasswordFormat()])

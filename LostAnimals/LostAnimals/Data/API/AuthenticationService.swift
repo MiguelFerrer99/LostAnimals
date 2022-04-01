@@ -23,14 +23,6 @@ enum SignUpResult {
     case success
     case error(String)
 }
-enum DeleteAccountResult {
-    case success
-    case error(String)
-}
-enum LogOutResult {
-    case success
-    case error(String)
-}
 enum FirebaseError: String {
     case emailOrPasswordIncorrect = "The password is invalid or the user does not have a password."
     case userNotExists = "There is no user record corresponding to this identifier. The user may have been deleted."
@@ -38,7 +30,7 @@ enum FirebaseError: String {
     case networkError = "Network error (such as timeout, interrupted connection or unreachable host) has occurred."
 }
 
-class AuthenticationService {
+final class AuthenticationService {
     // MARK: - Properties
     let databaseRef: DatabaseReference
     let storageRef: StorageReference
@@ -129,62 +121,6 @@ extension AuthenticationService {
                     completion(.error(error.localizedDescription))
                 }
             }
-        }
-    }
-    
-    func deleteAccount(id: String, completion: @escaping (DeleteAccountResult) -> Void) {
-        guard let loggedUser = Auth.auth().currentUser else { return }
-        storageRef.child("users").child(id).child("user_image.png").delete { error in
-            if let error = error {
-                switch error.localizedDescription {
-                case FirebaseError.networkError.rawValue:
-                    completion(.error("You don't have an internet connection"))
-                default:
-                    completion(.error("An unexpected error occured. Please, try again later"))
-                }
-            } else {
-                self.storageRef.child("users").child(id).child("header_image.png").delete { error in
-                    if let error = error {
-                        switch error.localizedDescription {
-                        case FirebaseError.networkError.rawValue:
-                            completion(.error("You don't have an internet connection"))
-                        default:
-                            completion(.error("An unexpected error occured. Please, try again later"))
-                        }
-                    } else {
-                        self.databaseRef.child("users").child(id).removeValue { (error, _) in
-                            if let error = error {
-                                switch error.localizedDescription {
-                                case FirebaseError.networkError.rawValue:
-                                    completion(.error("You don't have an internet connection"))
-                                default:
-                                    completion(.error("An unexpected error occured. Please, try again later"))
-                                }
-                            } else {
-                                loggedUser.delete { error in
-                                    if let error = error {
-                                        switch error.localizedDescription {
-                                        case FirebaseError.networkError.rawValue:
-                                            completion(.error("You don't have an internet connection"))
-                                        default:
-                                            completion(.error("An unexpected error occured. Please, try again later"))
-                                        }
-                                    } else { completion(.success) }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    
-    func logOut(completion: @escaping (LogOutResult) -> Void) {
-        do {
-            try Auth.auth().signOut()
-            completion(.success)
-        } catch {
-            completion(.error(error.localizedDescription))
         }
     }
     
