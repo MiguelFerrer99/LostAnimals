@@ -3,16 +3,20 @@
 ![Header](https://user-images.githubusercontent.com/56566735/161317149-1abb07bf-3c39-4b5b-aec5-23fc957c7204.png)
 
 
-## Promotional text
-(promotional text)
+## Why you would want to use LostAnimals?
+(Add promotional text)
 
 
 ## Description
-(description)
+(Add description)
+
+
+## Screenshots
+(Add screenhots)
 
 
 ## Status of the app
-(status of the app)
+Right now LostAnimals is not in production. I'm developing the app yet, but counting each week to see my app on AppStore :)
 
 
 ## Do you want to try LostAnimals beta before its release?
