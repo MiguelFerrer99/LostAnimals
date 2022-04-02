@@ -14,7 +14,7 @@ final class ForgotPasswordViewModel {
     let numberOfTextFields = 1
     var editedTextFields = [CustomTextField]()
     
-    // MARK: - AuthenticationService
+    // MARK: - Services
     let authenticationService = AuthenticationService()
     
     // MARK: - Init

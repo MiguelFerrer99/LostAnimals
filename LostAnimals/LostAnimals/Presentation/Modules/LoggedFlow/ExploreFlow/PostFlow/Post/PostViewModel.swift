@@ -14,6 +14,7 @@ final class PostViewModel {
     let comesFrom: PostComesFrom
     let post: Post
     var isSaved: Bool
+    var user: User?
     
     // MARK: - Init
     required init(router: PostRouter, comesFrom: PostComesFrom, post: Post) {
@@ -38,7 +39,10 @@ extension PostViewModel {
 // MARK: - Functions
 extension PostViewModel {
     func getAge() -> Int? {
-        guard let auxBirthdate = post.author.birthdate?.toDate(withFormat: DateFormat.dayMonthYearOther) else { return nil }
+        guard let user = user,
+              let auxBirthdateString = user.birthdate,
+              let auxBirthdate = auxBirthdateString.toDate(withFormat: DateFormat.dayMonthYearOther)
+        else { return nil }
         let birthdate = DateComponents(year: auxBirthdate.year,
                                        month: auxBirthdate.month,
                                        day: auxBirthdate.day)
@@ -53,20 +57,22 @@ extension PostViewModel {
     }
     
     func didPressPostImage(indexPostImage: Int) {
-        self.router.goToPostImages(postImages: post.animal.images, indexPostImages: indexPostImage)
+        self.router.goToPostImages(postImages: post.images, indexPostImages: indexPostImage)
     }
     
     func didPressLocation() {
         guard let coordinates = post.location.coordinates else { return }
-        self.router.goToLocation(coordinates: coordinates, animal: post.animal)
+        self.router.goToLocation(coordinates: coordinates, animalName: post.animalName)
     }
     
     func didPressAuthor() {
-        self.router.goToAuthorProfile(user: post.author)
+        guard let user = user else { return }
+        self.router.goToAuthorProfile(user: user)
     }
     
     func didPressContactWithAuthor() {
-        self.router.showContactWithPopup(authorSocialMedias: post.author.socialMedias)
+        guard let user = user else { return }
+        self.router.showContactWithPopup(authorSocialMedias: user.socialMedias)
     }
     
     func didPressSavePostButton(allowed: ((Bool) -> ())) {
@@ -81,7 +87,8 @@ extension PostViewModel {
     }
     
     func didPressOptionsButton() {
-        self.router.goToPostOptionsPopup(comesFrom: comesFrom, post: post)
+        guard let user = user else { return }
+        self.router.goToPostOptionsPopup(comesFrom: comesFrom, post: post, user: user)
     }
     
     func didPressEditPostButton() {

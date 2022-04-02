@@ -11,10 +11,6 @@ import CodableFirebase
 import UIKit
 
 // MARK: - Enums
-enum UploadPostResult {
-    case success
-    case error(String)
-}
 enum DeleteAccountResult {
     case success
     case error(String)
@@ -38,8 +34,21 @@ final class UserService {
 
 // MARK: - Functions
 extension UserService {
-    func uploadPost(post: Post, completion: @escaping (UploadPostResult) -> Void) {
-        // TODO: Do UploadPost API call
+    func getUser(id: String, completion: @escaping ((User?) -> ())) {
+        databaseRef.child("users").child(id).getData { error, snapshot in
+            if error != nil { completion(nil) }
+            else {
+                if let snapshotValue = snapshot.value {
+                    do {
+                        let userDTO = try FirebaseDecoder().decode(UserDTO.self, from: snapshotValue)
+                        userDTO.map { user in
+                            if let user = user { completion(user) }
+                            else { completion(nil) }
+                        }
+                    } catch { completion(nil) }
+                } else { completion(nil) }
+            }
+        }
     }
     
     func deleteAccount(id: String, completion: @escaping (DeleteAccountResult) -> Void) {

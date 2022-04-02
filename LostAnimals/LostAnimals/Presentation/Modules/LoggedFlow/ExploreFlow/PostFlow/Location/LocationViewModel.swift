@@ -12,14 +12,14 @@ final class LocationViewModel {
     // MARK: - Properties
     private let router: LocationRouter
     let coordinates: Coordinates
-    let animal: Animal?
+    let animalName: String?
     let userFirstName: String?
     
     // MARK: - Init
-    required init(router: LocationRouter, coordinates: Coordinates, animal: Animal? = nil, userFirstName: String? = nil) {
+    required init(router: LocationRouter, coordinates: Coordinates, animalName: String? = nil, userFirstName: String? = nil) {
         self.router = router
         self.coordinates = coordinates
-        self.animal = animal
+        self.animalName = animalName
         self.userFirstName = userFirstName
     }
 }
@@ -40,14 +40,12 @@ extension LocationViewModel {
     func openLocationInMaps() {
         let coordinate = CLLocationCoordinate2DMake(coordinates.latitude, coordinates.longitude)
         let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary: nil))
-        if let animal = animal {
-            if let animalName = animal.name {
-                mapItem.name = animalName
-            } else {
-                mapItem.name = "Found animal"
-            }
-        } else if let userFirstName = userFirstName {
+        if let userFirstName = userFirstName {
             mapItem.name = userFirstName
+        } else if let animalName = animalName {
+            mapItem.name = animalName
+        } else {
+            mapItem.name = "Found animal"
         }
         mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving])
     }

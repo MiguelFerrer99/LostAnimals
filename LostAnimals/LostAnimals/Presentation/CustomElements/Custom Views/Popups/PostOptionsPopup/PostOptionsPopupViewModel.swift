@@ -19,12 +19,14 @@ final class PostOptionsPopupViewModel {
     private let router: PostOptionsPopupRouter
     let comesFrom: PostComesFrom
     let post: Post
+    let user: User
     
     // MARK: - Init
-    required init(router: PostOptionsPopupRouter, comesFrom: PostComesFrom, post: Post) {
+    required init(router: PostOptionsPopupRouter, comesFrom: PostComesFrom, post: Post, user: User) {
         self.router = router
         self.comesFrom = comesFrom
         self.post = post
+        self.user = user
     }
 }
 
@@ -94,18 +96,18 @@ extension PostOptionsPopupViewModel {
             secondText = post.lastTimeSeen
         case .adopt:
             bgImage = UIImage(named: "ToAdoptAnimalImageToShare")
-            firstText = post.author.firstname
-            secondText = post.author.location.address
+            firstText = user.firstname
+            secondText = user.location.address
         }
         
         // Basic images
         guard let clearBg = UIImage(named: "ClearBackgroundImageToShare"),
-              let postImage = post.animal.images.first, let animalImage = postImage,
+              let postImage = post.images.first,
               let bgImage = bgImage
         else { return nil }
         
         // Clear background
-        guard let returnedImage1 = animalImage.drawImageIn(bgImage: clearBg,
+        guard let returnedImage1 = postImage.drawImageIn(bgImage: clearBg,
                                                            position: CGRect(x: clearBg.size.width/2 - 180, y: clearBg.size.height/2 - 313, width: 360, height: 360))
         else { return nil }
         
@@ -115,7 +117,7 @@ extension PostOptionsPopupViewModel {
         else { return nil }
         
         // Animal name
-        let name: String = post.animal.name ?? ""
+        let name: String = post.animalName ?? ""
         guard let returnedImage3 = name.drawTextIn(bgImage: returnedImage2,
                                                    position: CGRect(x: 70, y: 215, width: returnedImage2.size.width - 140, height: returnedImage2.size.height),
                                                    textAttributes: mainTextAttributes)

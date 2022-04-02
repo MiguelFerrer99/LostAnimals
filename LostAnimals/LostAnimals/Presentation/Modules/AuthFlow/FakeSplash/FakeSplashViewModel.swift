@@ -13,7 +13,7 @@ final class FakeSplashViewModel {
     private let router: FakeSplashRouter
     
     // MARK: - Services
-    let authenticationService = AuthenticationService()
+    let userService = UserService()
     
     // MARK: - Init
     required init(router: FakeSplashRouter) {
@@ -36,9 +36,8 @@ extension FakeSplashViewModel {
 extension FakeSplashViewModel {
     func getMe(completion: @escaping ((User?) -> ())) {
         if let currentUser = Auth.auth().currentUser {
-            self.authenticationService.getUser(id: currentUser.uid) { user in
-                if let user = user {
-                    completion(user)
+            self.userService.getUser(id: currentUser.uid) { user in
+                if let user = user { completion(user)
                 } else {
                     completion(nil)
                     return

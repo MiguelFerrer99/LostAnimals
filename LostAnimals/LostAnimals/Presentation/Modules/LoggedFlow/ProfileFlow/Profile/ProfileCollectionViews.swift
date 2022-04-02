@@ -23,10 +23,12 @@ extension ProfileViewController {
 extension ProfileViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == firstCollectionView {
-            let post = HardcodedData.explorePosts[indexPath.row]
-            viewModel.didPressPost(post: post)
+            // TODO: Get post from viewModel
+            /*let post = HardcodedData.explorePosts[indexPath.row]
+            viewModel.didPressPost(post: post)*/
         } else if collectionView == secondCollectionView {
-            if viewModel.isMyProfile {
+            // TODO: Get post from viewModel
+            /*if viewModel.isMyProfile {
                 let post = HardcodedData.savedPosts[indexPath.row]
                 viewModel.didPressPost(post: post)
             } else {
@@ -44,7 +46,7 @@ extension ProfileViewController: UICollectionViewDelegate {
                 case .twitter:
                     viewModel.didPressTwitterButton()
                 }
-            }
+            }*/
         }
     }
 }
@@ -53,7 +55,7 @@ extension ProfileViewController: UICollectionViewDelegate {
 // MARK: - UICollectionViewDataSource
 extension ProfileViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == firstCollectionView {
+        /*if collectionView == firstCollectionView {
             return HardcodedData.explorePosts.count
         } else {
             if viewModel.isMyProfile {
@@ -61,11 +63,12 @@ extension ProfileViewController: UICollectionViewDataSource {
             } else {
                 return viewModel.user.socialMedias.count - 1
             }
-        }
+        }*/
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == firstCollectionView {
+        /*if collectionView == firstCollectionView {
             let post = HardcodedData.explorePosts[indexPath.row]
             let summary = PostCollectionViewCellSummary(postType: post.postType,
                                                         animal: post.animal,
@@ -115,7 +118,8 @@ extension ProfileViewController: UICollectionViewDataSource {
                 cell.display(summary: summary)
                 return cell
             }
-        }
+        }*/
+        return UICollectionViewCell()
     }
 }
 

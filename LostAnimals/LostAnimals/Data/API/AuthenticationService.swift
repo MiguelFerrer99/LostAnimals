@@ -48,7 +48,7 @@ extension AuthenticationService {
         Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
             if let authResult = authResult {
                 if authResult.user.isEmailVerified {
-                    self.getUser(id: authResult.user.uid) { loggedUser in
+                    self.getMe(id: authResult.user.uid) { loggedUser in
                         if let loggedUser = loggedUser {
                             completion(.success(loggedUser))
                         } else {
@@ -123,8 +123,11 @@ extension AuthenticationService {
             }
         }
     }
-    
-    func getUser(id: String, completion: @escaping ((User?) -> ())) {
+}
+
+// MARK: - Private functions
+private extension AuthenticationService {
+    func getMe(id: String, completion: @escaping ((User?) -> ())) {
         databaseRef.child("users").child(id).getData { error, snapshot in
             if error != nil { completion(nil) }
             else {
@@ -140,10 +143,7 @@ extension AuthenticationService {
             }
         }
     }
-}
-
-// MARK: - Private functions
-private extension AuthenticationService {
+    
     func uploadImagesAndGetURLs(userImageRef: StorageReference, headerImageRef: StorageReference, userImage: UIImage, headerImage: UIImage, completion: @escaping ((String?, String?) -> ())) {
         guard let userImageData = userImage.pngData(),
               let headerImageData = headerImage.pngData() else { return }

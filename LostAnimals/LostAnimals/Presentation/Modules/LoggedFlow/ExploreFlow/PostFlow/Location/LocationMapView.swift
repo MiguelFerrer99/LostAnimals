@@ -18,14 +18,12 @@ extension LocationViewController {
         mapView.setRegion(region, animated: false)
         
         let annotation = MKPointAnnotation()
-        if let animal = viewModel.animal {
-            if let animalName = animal.name {
-                annotation.title = animalName
-            } else {
-                annotation.title = "Found animal"
-            }
-        } else if let userFirstName = viewModel.userFirstName {
+        if let userFirstName = viewModel.userFirstName {
             annotation.title = userFirstName
+        } else if let animalName = viewModel.animalName {
+            annotation.title = animalName
+        } else {
+            annotation.title = "Found animal"
         }
         annotation.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
         mapView.addAnnotation(annotation)

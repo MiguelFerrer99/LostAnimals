@@ -65,7 +65,7 @@ final class PostOptionsPopupViewController: ViewController {
 // MARK: - Functions
 private extension PostOptionsPopupViewController {
     func setupUI() {
-        editPostButtonView.isHidden = (viewModel.comesFrom == .explore) || (viewModel.post.author != User.shared)
+        editPostButtonView.isHidden = (viewModel.comesFrom == .explore) || (viewModel.user != User.shared)
     }
 }
 

@@ -26,6 +26,9 @@ final class NewPostGenericViewModel {
     var newPostLocation: Location? = nil
     var selectedAnimalType: AnimalType? = nil
     
+    // MARK: - PostService
+    let postService = PostService()
+    
     // MARK: - Init
     required init(router: NewPostGenericRouter, postType: PostType) {
         self.router = router
@@ -100,12 +103,19 @@ extension NewPostGenericViewModel {
     }
     
     func didPressPublishPostButton(newPost: Post?) {
-        if let _ = newPost {
-            showSuccessPopup(title: "The post has been published successfully") {
-                self.router.goBackToTabBar()
+        if let newPost = newPost {
+            self.postService.uploadPost(post: newPost) { result in
+                switch result {
+                case .success:
+                    showSuccessPopup(title: "The post has been published successfully") {
+                        self.router.goBackToTabBar()
+                    }
+                case .error(let error):
+                    showErrorPopup(title: error)
+                }
             }
         } else {
-            showErrorPopup(title: "The post couldn't be created successfully")
+            showErrorPopup(title: "An unexpected error occured. Please, try again later")
         }
     }
 }

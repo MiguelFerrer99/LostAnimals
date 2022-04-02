@@ -38,11 +38,11 @@ final class PostViewController: ViewController, UIGestureRecognizerDelegate {
     override var navBarTitle: String {
         switch viewModel.post.postType {
         case .lost:
-            return viewModel.post.animal.name ?? "Lost animal"
+            return viewModel.post.animalName ?? "Lost animal"
         case .found:
             return "Found animal"
         case .adopt:
-            return viewModel.post.animal.name ?? "To adopt animal"
+            return viewModel.post.animalName ?? "To adopt animal"
         }
     }
     override var hideNavigationBar: Bool {
@@ -104,7 +104,9 @@ private extension PostViewController {
     }
     
     func fillUI() {
-        postTypeImageView.image = UIImage(named: "\(viewModel.post.animal.type.rawValue)")
+        guard let user = viewModel.user else { return }
+        
+        postTypeImageView.image = UIImage(named: "\(viewModel.post.animalType.rawValue)")
         switch viewModel.post.postType {
         case .lost:
             postTypeLabel.text = "Lost animal"
@@ -116,22 +118,22 @@ private extension PostViewController {
             lastTimeSeenAndLocationStackView.isHidden = true
         }
         
-        animalNameLabel.text = viewModel.post.animal.name
-        animalBreedLabel.text = viewModel.post.animal.breed
+        animalNameLabel.text = viewModel.post.animalName
+        animalBreedLabel.text = viewModel.post.animalBreed
         descriptionTextView.text = viewModel.post.description
-        authorPhotoImageView.image = viewModel.post.author.userImage
-        authorNameLabel.text = "\(viewModel.post.author.firstname) \(viewModel.post.author.lastname)"
-        authorAddressLabel.text = viewModel.post.author.location.address
+        authorPhotoImageView.image = user.userImage
+        authorNameLabel.text = "\(user.firstname) \(user.lastname)"
+        authorAddressLabel.text = user.location.address
         if let authorAge = viewModel.getAge() { authorAgeLabel.text = "\(authorAge) years old" }
         lastTimeSeenLabel.text = viewModel.post.lastTimeSeen
         locationLabel.text = viewModel.post.location.address
-        contactWithAuthorButton.setTitle("Contact with \(viewModel.post.author.firstname)", for: .normal)
+        contactWithAuthorButton.setTitle("Contact with \(user.firstname)", for: .normal)
         
-        if let me = User.shared, me.id == viewModel.post.author.id {
+        if User.shared == user {
             authorView.isHidden = true
             contactWithAuthorButton.isHidden = true
         }
-        animalShelterImageView.isHidden = !viewModel.post.author.animalShelter
+        animalShelterImageView.isHidden = !user.animalShelter
     }
     
     func updateSavedPostUI() {

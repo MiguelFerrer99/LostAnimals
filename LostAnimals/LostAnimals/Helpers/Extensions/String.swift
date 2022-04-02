@@ -65,6 +65,14 @@ extension String {
         return date
     }
     
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).capitalized + dropFirst()
+    }
+    
+    mutating func capitalizeFirstLetter() {
+        self = self.capitalizingFirstLetter()
+    }
+    
     func drawTextIn(bgImage: UIImage, position: CGRect, textAttributes: [NSAttributedString.Key: Any]) -> UIImage? {
         let nsString = NSString(string: self)
         UIGraphicsBeginImageContext(bgImage.size)

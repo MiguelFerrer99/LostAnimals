@@ -60,7 +60,7 @@ extension EditPostViewModel {
     }
     
     func didPressAnimalTypeButton() {
-        self.router.goToAnimalTypes(selectedAnimalType: post.animal.type)
+        self.router.goToAnimalTypes(selectedAnimalType: post.animalType)
     }
     
     func didPressLocationButton() {

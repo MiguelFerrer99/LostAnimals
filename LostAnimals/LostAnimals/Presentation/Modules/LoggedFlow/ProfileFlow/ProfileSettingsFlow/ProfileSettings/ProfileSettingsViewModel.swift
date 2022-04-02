@@ -20,7 +20,7 @@ final class ProfileSettingsViewModel {
     var selectedImageView: ProfileSettingsImageType = .user
     let me: User
     
-    // MARK: - UserService
+    // MARK: - Services
     let userService = UserService()
     
     // MARK: - Init

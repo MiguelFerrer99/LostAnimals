@@ -101,17 +101,17 @@ private extension EditPostViewController {
         }
         
         viewModel.selectPhotoImageViews.enumerated().forEach { selectPhotoImageView in
-            if selectPhotoImageView.offset <= viewModel.post.animal.images.count - 1 {
-                let postImage = viewModel.post.animal.images[selectPhotoImageView.offset]
+            if selectPhotoImageView.offset <= viewModel.post.images.count - 1 {
+                let postImage = viewModel.post.images[selectPhotoImageView.offset]
                 selectPhotoImageView.element.image = postImage
             } else {
                 selectPhotoImageView.element.image = UIImage(named: "SelectPhotoPlaceholder")
             }
         }
         
-        nameTextfield.textField.text = viewModel.post.animal.name
-        animalTextfield.textField.text = viewModel.post.animal.type.rawValue
-        breedTextfield.textField.text = viewModel.post.animal.breed
+        nameTextfield.textField.text = viewModel.post.animalName
+        animalTextfield.textField.text = viewModel.post.animalType.rawValue
+        breedTextfield.textField.text = viewModel.post.animalBreed
         descriptionTextview.text = viewModel.post.description
         lastTimeSeenTextfield.textField.text = viewModel.post.lastTimeSeen
         locationTextfield.textField.text = viewModel.post.location.address

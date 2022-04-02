@@ -132,15 +132,21 @@ private extension NewPostGenericViewController {
               let me = User.shared
         else { return nil }
         
-        let newPost = Post(postType: viewModel.postType,
-                           animal: Animal(name: animalNameText,
-                                          type: selectedAnimalType,
-                                          breed: animalBreedText,
-                                          images: viewModel.sortNilImagesFromImageViewsToFinal()),
+        var postImages: [UIImage] = []
+        viewModel.sortNilImagesFromImageViewsToFinal().forEach { image in
+            if let image = image { postImages.append(image) }
+        }
+        
+        let newPost = Post(id: UUID().uuidString,
+                           postType: viewModel.postType,
+                           animalName: animalNameText,
+                           animalType: selectedAnimalType,
+                           animalBreed: animalBreedText,
+                           images: postImages,
                            lastTimeSeen: lastTimeSeenText,
                            location: newPostLocation,
                            description: descriptionTextview.text,
-                           author: me,
+                           userID: me.id,
                            saved: false)
         
         return newPost

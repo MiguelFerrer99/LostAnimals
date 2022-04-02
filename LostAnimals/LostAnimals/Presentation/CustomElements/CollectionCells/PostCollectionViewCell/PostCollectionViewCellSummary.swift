@@ -11,7 +11,10 @@ import UIKit
 struct PostCollectionViewCellSummary {
     // MARK: - Properties
     let postType: PostType
-    let animal: Animal
+    let animalName: String?
+    let animalType: AnimalType
+    let animalBreed: String
+    let animalImages: [UIImage]
     let postImage: UIImage?
     let leadingPadding: CGFloat
     let trailingPadding: CGFloat

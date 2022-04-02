@@ -30,9 +30,9 @@ extension PostCollectionViewCell {
     func display(summary: PostCollectionViewCellSummary) {
         postTypeImageView.image = UIImage(named: summary.postType.rawValue)
         postTypeWhiteImageView.image = UIImage(named: "\(summary.postType.rawValue)White")
-        animalTypeImageView.image = UIImage(named: summary.animal.type.rawValue)
-        animalTypeWhiteImageView.image = UIImage(named: "\(summary.animal.type.rawValue)White")
-        animalNameLabel.text = summary.animal.name
+        animalTypeImageView.image = UIImage(named: summary.animalType.rawValue)
+        animalTypeWhiteImageView.image = UIImage(named: "\(summary.animalType.rawValue)White")
+        animalNameLabel.text = summary.animalName
         postImageView.image = summary.postImage
         
         leadingConstraint.constant = summary.leadingPadding

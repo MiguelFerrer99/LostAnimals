@@ -22,10 +22,9 @@ extension ExploreViewController {
 // MARK: - UICollectionViewDelegate
 extension ExploreViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if (collectionView.cellForItem(at: indexPath) as? PostCollectionViewCell) != nil {
-            let post = HardcodedData.explorePosts[indexPath.row]
-            viewModel.didPressPost(post: post)
-        }
+        // TODO: - Get post from viewModel
+        /*let post = HardcodedData.explorePosts[indexPath.row]
+        viewModel.didPressPost(post: post)*/
     }
 }
 
@@ -46,12 +45,13 @@ extension ExploreViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if HardcodedData.explorePosts.isEmpty { return 1 }
-        else { return HardcodedData.explorePosts.count }
+        return 0
+        /*if HardcodedData.explorePosts.isEmpty { return 1 }
+        else { return HardcodedData.explorePosts.count }*/
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if HardcodedData.explorePosts.isEmpty {
+        /*if HardcodedData.explorePosts.isEmpty {
             let summary = EmptyCollectionViewCellSummary(emptyTitle: "There are not available posts", emptyImage: UIImage(named: "Other") ?? UIImage())
             let cell = collectionView.dequeue(EmptyCollectionViewCell.self, for: indexPath)
             cell.display(summary: summary)
@@ -62,15 +62,17 @@ extension ExploreViewController: UICollectionViewDataSource {
             let cell = collectionView.dequeue(PostCollectionViewCell.self, for: indexPath)
             cell.display(summary: summary)
             return cell
-        }
+        }*/
+        return UICollectionViewCell()
     }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
 extension ExploreViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let collectionViewRealHeight = collectionView.frame.height - statusBarHeight - navBarHeight - 50.0 - tabBarHeight
+        /*let collectionViewRealHeight = collectionView.frame.height - statusBarHeight - navBarHeight - 50.0 - tabBarHeight
         if HardcodedData.explorePosts.isEmpty { return CGSize(width: collectionView.frame.width, height: collectionViewRealHeight) }
-        else { return CGSize(width: collectionView.frame.width/2, height: collectionView.frame.height/3) }
+        else { return CGSize(width: collectionView.frame.width/2, height: collectionView.frame.height/3) }*/
+        return CGSize(width: collectionView.frame.width/2, height: collectionView.frame.height/3)
     }
 }

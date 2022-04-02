@@ -33,9 +33,9 @@ extension PostRouter {
         }
     }
     
-    func goToLocation(coordinates: Coordinates, animal: Animal? = nil) {
+    func goToLocation(coordinates: Coordinates, animalName: String? = nil) {
         DispatchQueue.main.async {
-            let viewController = Container.shared.locationBuilder().build(coordinates: coordinates, animal: animal)
+            let viewController = Container.shared.locationBuilder().build(coordinates: coordinates, animalName: animalName)
             self.viewController?.push(viewController: viewController)
         }
     }
@@ -55,9 +55,9 @@ extension PostRouter {
         }
     }
     
-    func goToPostOptionsPopup(comesFrom: PostComesFrom, post: Post) {
+    func goToPostOptionsPopup(comesFrom: PostComesFrom, post: Post, user: User) {
         DispatchQueue.main.async {
-            let viewController = Container.shared.postOptionsPopupBuilder().build(comesFrom: comesFrom, post: post)
+            let viewController = Container.shared.postOptionsPopupBuilder().build(comesFrom: comesFrom, post: post, user: user)
             viewController.delegate = self.viewController
             self.viewController?.present(viewController: viewController, completion: nil)
         }
