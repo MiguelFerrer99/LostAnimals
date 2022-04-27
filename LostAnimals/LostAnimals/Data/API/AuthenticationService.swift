@@ -86,29 +86,23 @@ extension AuthenticationService {
     func signUp(user: User, userPassword: String, completion: @escaping (SignUpResult) -> Void) {
         Auth.auth().createUser(withEmail: user.email, password: userPassword) { (authResult, error) in
             if let authResult = authResult {
-                self.uploadImagesAndGetURLs(userImageRef: self.storageRef.child("users").child(authResult.user.uid).child("user_image.png"),
-                                            headerImageRef: self.storageRef.child("users").child(authResult.user.uid).child("header_image.png"),
-                                            userImage: user.userImage,
-                                            headerImage: user.headerImage) { (userImageURLString, headerImageURLString) in
-                    if let userImageURLString = userImageURLString, let headerImageURLString = headerImageURLString {
-                        if let newUserDTO = user.map(userID: authResult.user.uid,
-                                                     userImageString: userImageURLString,
-                                                     headerImageString: headerImageURLString) {
-                            do {
-                                let userObject = try FirebaseEncoder().encode(newUserDTO)
-                                self.databaseRef.child("users").child(newUserDTO.id).setValue(userObject) { (error, _) in
-                                    if error != nil { completion(.error("An unexpected error occured. Please, try again later")) }
-                                    else {
-                                        self.sendVerificationEmail(user: authResult.user) { ok in
-                                            if ok { completion(.success) }
-                                            else { completion(.error("An unexpected error occured. Please, try again later")) }
-                                        }
+                self.uploadImagesAndGetURLs() { (userImageURLString, headerImageURLString) in
+                    var newUser = user
+                    if let userImageURLString = userImageURLString { newUser.userURLImage = userImageURLString }
+                    if let headerImageURLString = headerImageURLString { newUser.headerURLImage = headerImageURLString }
+                    if let newUserDTO = newUser.map(userID: authResult.user.uid) {
+                        do {
+                            let userObject = try FirebaseEncoder().encode(newUserDTO)
+                            self.databaseRef.child("users").child(newUserDTO.id).setValue(userObject) { (error, _) in
+                                if error != nil { completion(.error("An unexpected error occured. Please, try again later")) }
+                                else {
+                                    self.sendVerificationEmail(user: authResult.user) { ok in
+                                        if ok { completion(.success) }
+                                        else { completion(.error("An unexpected error occured. Please, try again later")) }
                                     }
                                 }
-                            } catch {
-                                completion(.error("An unexpected error occured. Please, try again later"))
                             }
-                        } else { completion(.error("An unexpected error occured. Please, try again later")) }
+                        } catch { completion(.error("An unexpected error occured. Please, try again later")) }
                     } else { completion(.error("An unexpected error occured. Please, try again later")) }
                 }
             } else if let error = error {
@@ -134,37 +128,23 @@ private extension AuthenticationService {
                 if let snapshotValue = snapshot.value {
                     do {
                         let userDTO = try FirebaseDecoder().decode(UserDTO.self, from: snapshotValue)
-                        userDTO.map { user in
-                            if let user = user { completion(user) }
-                            else { completion(nil) }
-                        }
+                        let user = userDTO.map()
+                        completion(user)
                     } catch { completion(nil) }
                 } else { completion(nil) }
             }
         }
     }
     
-    func uploadImagesAndGetURLs(userImageRef: StorageReference, headerImageRef: StorageReference, userImage: UIImage, headerImage: UIImage, completion: @escaping ((String?, String?) -> ())) {
-        guard let userImageData = userImage.pngData(),
-              let headerImageData = headerImage.pngData() else { return }
-        userImageRef.putData(userImageData, metadata: nil) { (_, error) in
-            if error != nil { completion(nil, nil) }
-            else {
-                userImageRef.downloadURL { (userImageURL, _) in
-                    if let userImageURL = userImageURL {
-                        headerImageRef.putData(headerImageData, metadata: nil) { (_, error) in
-                            if error != nil { completion(nil, nil) }
-                            else {
-                                headerImageRef.downloadURL { (headerImageURL, _) in
-                                    if let headerImageURL = headerImageURL {
-                                        completion(userImageURL.absoluteString, headerImageURL.absoluteString)
-                                    } else { completion(nil,nil) }
-                                }
-                            }
-                        }
-                    } else { completion(nil,nil) }
+    func uploadImagesAndGetURLs(completion: @escaping ((String?, String?) -> ())) {
+        self.storageRef.child("default_images").child("user_image.png").downloadURL { (userImageURL, _) in
+            if let userImageURL = userImageURL {
+                self.storageRef.child("default_images").child("header_image.png").downloadURL { (headerImageURL, _) in
+                    if let headerImageURL = headerImageURL {
+                        completion(userImageURL.absoluteString, headerImageURL.absoluteString)
+                    } else { completion(userImageURL.absoluteString, nil) }
                 }
-            }
+            } else { completion(nil, nil) }
         }
     }
     

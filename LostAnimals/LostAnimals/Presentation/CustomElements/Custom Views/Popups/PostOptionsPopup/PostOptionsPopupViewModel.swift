@@ -20,6 +20,7 @@ final class PostOptionsPopupViewModel {
     let comesFrom: PostComesFrom
     let post: Post
     let user: User
+    var postImages: [UIImage] = []
     
     // MARK: - Init
     required init(router: PostOptionsPopupRouter, comesFrom: PostComesFrom, post: Post, user: User) {
@@ -102,7 +103,7 @@ extension PostOptionsPopupViewModel {
         
         // Basic images
         guard let clearBg = UIImage(named: "ClearBackgroundImageToShare"),
-              let postImage = post.images.first,
+              let postImage = postImages.first,
               let bgImage = bgImage
         else { return nil }
         

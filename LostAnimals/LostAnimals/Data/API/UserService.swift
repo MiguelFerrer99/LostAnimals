@@ -41,10 +41,8 @@ extension UserService {
                 if let snapshotValue = snapshot.value {
                     do {
                         let userDTO = try FirebaseDecoder().decode(UserDTO.self, from: snapshotValue)
-                        userDTO.map { user in
-                            if let user = user { completion(user) }
-                            else { completion(nil) }
-                        }
+                        let user = userDTO.map()
+                        completion(user)
                     } catch { completion(nil) }
                 } else { completion(nil) }
             }

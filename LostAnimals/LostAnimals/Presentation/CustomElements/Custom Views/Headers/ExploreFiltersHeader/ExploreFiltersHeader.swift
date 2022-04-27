@@ -58,6 +58,10 @@ extension ExploreFiltersHeader {
               let filterType = Filters.getFilter(from: index)?.filterType else { return }
         filterCell.filterTitleLabel.text = Filters.currentFilters[filterType]?.filterTitle
     }
+    
+    func updateUserInteraction(enabled: Bool) {
+        filtersCollectionView.allowsSelection = enabled
+    }
 }
 
 // MARK: - Private functions

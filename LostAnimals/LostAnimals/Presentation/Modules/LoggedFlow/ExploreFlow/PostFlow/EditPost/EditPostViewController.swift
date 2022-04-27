@@ -100,15 +100,6 @@ private extension EditPostViewController {
             locationTextfield.isHidden = true
         }
         
-        viewModel.selectPhotoImageViews.enumerated().forEach { selectPhotoImageView in
-            if selectPhotoImageView.offset <= viewModel.post.images.count - 1 {
-                let postImage = viewModel.post.images[selectPhotoImageView.offset]
-                selectPhotoImageView.element.image = postImage
-            } else {
-                selectPhotoImageView.element.image = UIImage(named: "SelectPhotoPlaceholder")
-            }
-        }
-        
         nameTextfield.textField.text = viewModel.post.animalName
         animalTextfield.textField.text = viewModel.post.animalType.rawValue
         breedTextfield.textField.text = viewModel.post.animalBreed

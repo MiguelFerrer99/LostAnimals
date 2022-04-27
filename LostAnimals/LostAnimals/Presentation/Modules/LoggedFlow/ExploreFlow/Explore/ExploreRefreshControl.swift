@@ -17,9 +17,6 @@ extension ExploreViewController {
     }
     
     @objc private func refreshPosts() {
-        refreshControl.beginRefreshing()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.refreshControl.endRefreshing()
-        }
+        getPosts()
     }
 }

@@ -33,10 +33,20 @@ extension PostCollectionViewCell {
         animalTypeImageView.image = UIImage(named: summary.animalType.rawValue)
         animalTypeWhiteImageView.image = UIImage(named: "\(summary.animalType.rawValue)White")
         animalNameLabel.text = summary.animalName
-        postImageView.image = summary.postImage
+        getPostImage(from: summary.postURLImage)
         
         leadingConstraint.constant = summary.leadingPadding
         trailingConstraint.constant = summary.trailingPadding
         self.layoutIfNeeded()
+    }
+    
+    func getPostImage(from url: String) {
+        url.getURLImage { image in
+            if let image = image {
+                UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseIn) {
+                    self.postImageView.image = image
+                }
+            }
+        }
     }
 }

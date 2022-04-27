@@ -33,7 +33,7 @@ class BlockedUserTableViewCell: UITableViewCell, ViewModelCell {
 // MARK: - Functions
 extension BlockedUserTableViewCell {
     func display(summary: BlockedUserTableViewCellSummary) {
-        userImageView.image = summary.user.userImage
+        userImageView.image = UIImage()
         userNameLabel.text = "\(summary.user.firstname) \(summary.user.lastname)"
     }
 }

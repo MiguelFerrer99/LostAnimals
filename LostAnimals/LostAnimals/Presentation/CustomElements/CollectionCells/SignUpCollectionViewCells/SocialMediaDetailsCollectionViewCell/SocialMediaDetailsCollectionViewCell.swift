@@ -11,7 +11,6 @@ import UIKit
 class SocialMediaDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell {
     typealias T = SocialMediaDetailsCollectionViewCellViewModel
     // MARK: - IBOutlets
-    @IBOutlet weak var socialMediaDetailsScrollView: UIScrollView!
     @IBOutlet private weak var topPrefixPlaceholder: UILabel!
     @IBOutlet private weak var middlePrefixPlaceholder: UILabel!
     @IBOutlet private weak var phonePrefixButton: UIButton!
@@ -53,7 +52,6 @@ extension SocialMediaDetailsCollectionViewCell {
     
     func updateUserInteraction() {
         signUpStepsDelegate?.updateSignUpUserInteraction(isUserInteractionEnabled: getStartedButton.isEnabled)
-        socialMediaDetailsScrollView.isUserInteractionEnabled = getStartedButton.isEnabled
         phonePrefixButton.isUserInteractionEnabled = getStartedButton.isEnabled
         phoneTextfield.isUserInteractionEnabled = getStartedButton.isEnabled
         haveWhatsAppRadioButton.isUserInteractionEnabled = getStartedButton.isEnabled

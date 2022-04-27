@@ -79,11 +79,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ExploreSelected" width="40" height="39.5"/>
-        <image name="ExploreUnselected" width="40" height="39.5"/>
-        <image name="NewPost" width="40" height="40"/>
-        <image name="ProfileSelected" width="40" height="39.5"/>
-        <image name="ProfileUnselected" width="40" height="39.5"/>
+        <image name="ExploreSelected" width="25" height="24.5"/>
+        <image name="ExploreUnselected" width="25" height="24.5"/>
+        <image name="NewPost" width="25" height="25"/>
+        <image name="ProfileSelected" width="25" height="24.5"/>
+        <image name="ProfileUnselected" width="25" height="24.5"/>
         <namedColor name="CustomBlack">
             <color red="0.24705882352941178" green="0.24705882352941178" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

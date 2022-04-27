@@ -11,6 +11,11 @@ import UIKit
 final class ExploreViewModel {
     // MARK: - Properties
     private let router: ExploreRouter
+    var posts: [Post] = []
+    var isLoading = true
+    
+    // MARK: - Services
+    let postService = PostService()
     
     // MARK: - Init
     required init(router: ExploreRouter) {
@@ -37,6 +42,19 @@ extension ExploreViewModel {
 
 // MARK: - Functions
 extension ExploreViewModel {
+    func getPosts(completion: @escaping (() -> ())) {
+        postService.getPosts { result in
+            switch result {
+            case .success(let posts):
+                self.posts = posts
+                completion()
+            case .error(let error):
+                showErrorPopup(title: error, action: nil)
+                completion()
+            }
+        }
+    }
+    
     func didPressPostsFilterPopup(filterType: FilterType, loadData: Bool) {
         self.router.goToFilterPopup(filterType: filterType, loadData: loadData)
     }

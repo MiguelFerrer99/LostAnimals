@@ -79,8 +79,8 @@ private extension ProfileSettingsViewController {
     }
     
     func fillUI() {
-        headerImageView.image = viewModel.me.headerImage
-        profileImageView.image = viewModel.me.userImage
+        headerImageView.image = viewModel.headerImage
+        profileImageView.image = viewModel.userImage
         animalShelterImageView.isHidden = !viewModel.me.animalShelter
         blockedUsersView.isHidden = viewModel.me.blockedUsers.isEmpty
     }

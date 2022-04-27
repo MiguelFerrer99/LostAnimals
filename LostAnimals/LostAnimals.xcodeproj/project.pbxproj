@@ -751,7 +751,7 @@
 				CCB0203B26A6EE9D00214CB9 /* Common */,
 				CCB0203D26A6EEC700214CB9 /* Data */,
 				CCB0205126A6EF6500214CB9 /* DI */,
-				41E0005D275A5B69003CAF90 /* Domain */,
+				411EDEB42810381E003E9D9D /* Domain */,
 				945B159825595DC9003A65E0 /* Helpers */,
 				CCB0201126A6EE3400214CB9 /* Presentation */,
 				3147D62E2419074F00E741D3 /* Resources */,
@@ -982,6 +982,14 @@
 				417E58FE274D9CCD00447ED3 /* LoginTextFields.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		411EDEB42810381E003E9D9D /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				41E0005E275A5B6E003CAF90 /* Entities */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		411EF7C42788E09B00725B73 /* PostImages */ = {
@@ -1543,15 +1551,7 @@
 			path = Headers;
 			sourceTree = "<group>";
 		};
-		41E0005D275A5B69003CAF90 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				41E0005E275A5B6E003CAF90 /* Entity */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		41E0005E275A5B6E003CAF90 /* Entity */ = {
+		41E0005E275A5B6E003CAF90 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
 				41F2DA7B278B8DF600E582E8 /* Coordinates.swift */,
@@ -1563,7 +1563,7 @@
 				41CDA4392780E59B0009AB55 /* TermAndCondition.swift */,
 				41F2DA77278B887300E582E8 /* User.swift */,
 			);
-			path = Entity;
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		41E0005F275A5B79003CAF90 /* API */ = {

@@ -6,8 +6,6 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import UIKit
-
 struct PostDTO: Codable {
     // MARK: - Properties
     let id: String
@@ -15,41 +13,36 @@ struct PostDTO: Codable {
     let animal_name: String?
     let animal_type: String
     let animal_breed: String
-    let url_images: [String]
+    let url_image1, url_image2, url_image3, url_image4, url_image5, url_image6, url_image7, url_image8: String?
     let last_time_seen: String
     let location: Location
     let description: String
     let userID: String
-    let saved: Bool
     
     // MARK: - Functions
-    func map(completion: @escaping ((Post?) -> ())) {
+    func map() -> Post? {
         guard let postType = PostType(rawValue: post_type.capitalizingFirstLetter()),
               let animalType = AnimalType(rawValue: animal_type.capitalizingFirstLetter())
-        else {
-            completion(nil)
-            return
-        }
-        
-        var images: [UIImage] = []
-        url_images.forEach { urlImage in
-            urlImage.getURLImage { image in
-                if let image = image { images.append(image) }
-            }
-        }
+        else { return nil }
         
         let post = Post(id: id,
                         postType: postType,
                         animalName: animal_name,
                         animalType: animalType,
                         animalBreed: animal_breed,
-                        images: images,
+                        urlImage1: url_image1,
+                        urlImage2: url_image2,
+                        urlImage3: url_image3,
+                        urlImage4: url_image4,
+                        urlImage5: url_image5,
+                        urlImage6: url_image6,
+                        urlImage7: url_image7,
+                        urlImage8: url_image8,
                         lastTimeSeen: last_time_seen,
                         location: location,
                         description: description,
-                        userID: userID,
-                        saved: saved)
+                        userID: userID)
         
-        completion(post)
+        return post
     }
 }

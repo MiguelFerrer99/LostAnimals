@@ -13,9 +13,7 @@ struct PostCollectionViewCellSummary {
     let postType: PostType
     let animalName: String?
     let animalType: AnimalType
-    let animalBreed: String
-    let animalImages: [UIImage]
-    let postImage: UIImage?
+    let postURLImage: String
     let leadingPadding: CGFloat
     let trailingPadding: CGFloat
 }

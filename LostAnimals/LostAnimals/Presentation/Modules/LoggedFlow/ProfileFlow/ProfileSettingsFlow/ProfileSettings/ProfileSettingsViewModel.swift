@@ -18,6 +18,8 @@ final class ProfileSettingsViewModel {
     // MARK: - Properties
     private let router: ProfileSettingsRouter
     var selectedImageView: ProfileSettingsImageType = .user
+    var userImage = UIImage()
+    var headerImage = UIImage()
     let me: User
     
     // MARK: - Services
@@ -43,6 +45,21 @@ extension ProfileSettingsViewModel {
 
 // MARK: - Functions
 extension ProfileSettingsViewModel {
+    func getImagesFromURLImages(completion: @escaping (() -> ())) {
+        me.userURLImage.getURLImage { userImage in
+            if let userImage = userImage {
+                self.userImage = userImage
+                
+                self.me.headerURLImage.getURLImage { headerImage in
+                    if let headerImage = headerImage {
+                        self.headerImage = headerImage
+                        completion()
+                    }
+                }
+            }
+        }
+    }
+    
     func didPressedBackButton() {
         self.router.goBack()
     }

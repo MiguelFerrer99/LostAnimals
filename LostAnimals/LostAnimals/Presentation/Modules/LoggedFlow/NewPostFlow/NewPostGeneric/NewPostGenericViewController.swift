@@ -62,6 +62,7 @@ extension NewPostGenericViewController {
     func fillAnimal(animalType: AnimalType) {
         animalTextfield.textField.text = animalType.rawValue
         animalTextfield.didFinishSelectContentFromOtherVC()
+        viewModel.selectedAnimalType = animalType
     }
     
     func removePhoto() {
@@ -125,29 +126,30 @@ private extension NewPostGenericViewController {
     
     func buildNewPost() -> Post? {
         guard let selectedAnimalType = viewModel.selectedAnimalType,
-              let animalNameText = animalTextfield.textField.text,
+              let animalNameText = nameTextfield.textField.text,
               let animalBreedText = breedTextfield.textField.text,
               let lastTimeSeenText = lastTimeSeenTextfield.textField.text,
               let newPostLocation = viewModel.newPostLocation,
               let me = User.shared
         else { return nil }
-        
-        var postImages: [UIImage] = []
-        viewModel.sortNilImagesFromImageViewsToFinal().forEach { image in
-            if let image = image { postImages.append(image) }
-        }
-        
+                
         let newPost = Post(id: UUID().uuidString,
                            postType: viewModel.postType,
-                           animalName: animalNameText,
+                           animalName: animalNameText.isEmpty ? "Not specified" : animalNameText,
                            animalType: selectedAnimalType,
                            animalBreed: animalBreedText,
-                           images: postImages,
+                           urlImage1: nil,
+                           urlImage2: nil,
+                           urlImage3: nil,
+                           urlImage4: nil,
+                           urlImage5: nil,
+                           urlImage6: nil,
+                           urlImage7: nil,
+                           urlImage8: nil,
                            lastTimeSeen: lastTimeSeenText,
                            location: newPostLocation,
                            description: descriptionTextview.text,
-                           userID: me.id,
-                           saved: false)
+                           userID: me.id)
         
         return newPost
     }
@@ -199,7 +201,10 @@ private extension NewPostGenericViewController {
         publishPostButton.showLoading {
             self.updateUserInteraction()
         }
-        let newPost = buildNewPost()
-        viewModel.didPressPublishPostButton(newPost: newPost)
+        viewModel.didPressPublishPostButton(newPost: buildNewPost()) {
+            self.publishPostButton.hideLoading {
+                self.updateUserInteraction()
+            }
+        }
     }
 }

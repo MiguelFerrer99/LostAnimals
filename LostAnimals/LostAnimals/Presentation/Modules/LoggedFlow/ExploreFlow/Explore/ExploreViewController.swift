@@ -37,6 +37,7 @@ final class ExploreViewController: ViewController {
         super.viewDidLoad()
         
         setupUI()
+        fillUI()
         viewModel.viewReady()
     }
     
@@ -58,6 +59,20 @@ extension ExploreViewController {
     func setupUI() {
         configureCollectionView(postsCollectionView)
         configureRefreshControl(refreshControl)
+    }
+    
+    func fillUI() {
+        getPosts()
+    }
+    
+    func getPosts() {
+        viewModel.isLoading = true
+        refreshControl.beginRefreshing()
+        viewModel.getPosts {
+            self.viewModel.isLoading = false
+            self.refreshControl.endRefreshing()
+            self.postsCollectionView.reloadData()
+        }
     }
     
     @objc func savedPostsButtonPressed() {

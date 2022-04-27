@@ -96,7 +96,7 @@ private extension PostViewController {
                                                    style: .plain,
                                                    target: self,
                                                    action: #selector(optionsBarButtonPressed))
-        savePostBarButtonItem = UIBarButtonItem(image: UIImage(named: viewModel.post.saved ? "SavePostFilled" : "SavePost"),
+        savePostBarButtonItem = UIBarButtonItem(image: UIImage(named: "SavePost"),
                                                 style: .plain,
                                                 target: self,
                                                 action: #selector(savePostBarButtonPressed))
@@ -121,7 +121,7 @@ private extension PostViewController {
         animalNameLabel.text = viewModel.post.animalName
         animalBreedLabel.text = viewModel.post.animalBreed
         descriptionTextView.text = viewModel.post.description
-        authorPhotoImageView.image = user.userImage
+        authorPhotoImageView.image = UIImage()
         authorNameLabel.text = "\(user.firstname) \(user.lastname)"
         authorAddressLabel.text = user.location.address
         if let authorAge = viewModel.getAge() { authorAgeLabel.text = "\(authorAge) years old" }

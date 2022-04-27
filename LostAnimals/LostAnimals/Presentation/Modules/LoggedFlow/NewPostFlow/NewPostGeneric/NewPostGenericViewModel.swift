@@ -13,20 +13,24 @@ enum PostType: String {
     case lost = "Lost"
     case found = "Found"
     case adopt = "Adopt"
+    
+    func toDTO() -> String {
+        self.rawValue.lowercased()
+    }
 }
 
 final class NewPostGenericViewModel {
     // MARK: - Properties
     private let router: NewPostGenericRouter
     var numberOfTextFields = 0
-    let postType: PostType
     var editedTextFields = [CustomTextField]()
+    let postType: PostType
     var selectPhotoImageViews: [UIImageView] = []
     var selectedIndexImageView = 0
     var newPostLocation: Location? = nil
     var selectedAnimalType: AnimalType? = nil
     
-    // MARK: - PostService
+    // MARK: - Services
     let postService = PostService()
     
     // MARK: - Init
@@ -65,28 +69,14 @@ extension NewPostGenericViewModel {
         return haveErrors
     }
     
-    func sortNilImagesFromImageViewsToFinal() -> [UIImage?] {
-        var imagesArray: [UIImage?] = []
-        var sortedImagesArray: [UIImage?] = []
-        
-        selectPhotoImageViews.forEach { selectPhotoImageView in
-            imagesArray.append(selectPhotoImageView.image)
-        }
-        
-        sortedImagesArray = imagesArray
-        
-        for _ in 0...7 {
-            sortedImagesArray.enumerated().forEach { image in
-                if image.element == nil {
-                    let nextImageCopy = sortedImagesArray[image.offset + 1]
-                    sortedImagesArray[image.offset + 1] = image.element
-                    sortedImagesArray[image.offset] = nextImageCopy
-                    return
-                }
+    func getImagesFromImageViews() -> [UIImage?] {
+        var images: [UIImage] = []
+        selectPhotoImageViews.forEach { imageView in
+            if let image = imageView.image, !image.isEqualTo(image: UIImage(named: "SelectPhotoPlaceholder")) {
+                images.append(image)
             }
         }
-        
-        return sortedImagesArray
+        return images
     }
     
     func didPressSelectPhotoButton() {
@@ -102,20 +92,23 @@ extension NewPostGenericViewModel {
         self.router.goToWhereCanWeFindYou()
     }
     
-    func didPressPublishPostButton(newPost: Post?) {
+    func didPressPublishPostButton(newPost: Post?, completion: @escaping (() -> Void)) {
         if let newPost = newPost {
-            self.postService.uploadPost(post: newPost) { result in
+            self.postService.uploadPost(post: newPost, images: getImagesFromImageViews()) { result in
                 switch result {
                 case .success:
                     showSuccessPopup(title: "The post has been published successfully") {
                         self.router.goBackToTabBar()
                     }
+                    completion()
                 case .error(let error):
                     showErrorPopup(title: error)
+                    completion()
                 }
             }
         } else {
             showErrorPopup(title: "An unexpected error occured. Please, try again later")
+            completion()
         }
     }
 }

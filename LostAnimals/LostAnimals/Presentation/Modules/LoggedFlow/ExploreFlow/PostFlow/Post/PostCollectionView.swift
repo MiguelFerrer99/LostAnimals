@@ -14,7 +14,7 @@ extension PostViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(PostImageCollectionViewCell.self)
-        postImagesPageControl.numberOfPages = viewModel.post.images.count
+        postImagesPageControl.numberOfPages = viewModel.postImages.count
     }
 }
 
@@ -35,11 +35,11 @@ extension PostViewController: UICollectionViewDelegate {
 // MARK: - UICollectionViewDataSource
 extension PostViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.post.images.count
+        return viewModel.postImages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let postImage = viewModel.post.images[indexPath.row]
+        let postImage = viewModel.postImages[indexPath.row]
         let summary = PostImageCollectionViewCellSummary(postImage: postImage, aspectImage: .scaleAspectFill)
         let cell = collectionView.dequeue(PostImageCollectionViewCell.self, for: indexPath)
         cell.display(summary: summary)

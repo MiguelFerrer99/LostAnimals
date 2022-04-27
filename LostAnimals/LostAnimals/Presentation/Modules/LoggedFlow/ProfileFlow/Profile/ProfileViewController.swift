@@ -99,8 +99,8 @@ private extension ProfileViewController {
         backButtonView.isHidden = viewModel.isMyProfile
         blockUserButtonView.isHidden = viewModel.isMyProfile
         settingsButtonView.isHidden = !viewModel.isMyProfile
-        headerImageView.image = viewModel.user.headerImage
-        userImageView.image = viewModel.user.userImage
+        headerImageView.image = UIImage()
+        userImageView.image = UIImage()
         animalShelterImageView.isHidden = !viewModel.user.animalShelter
         welcomeBackLabel.text = viewModel.isMyProfile ? "Welcome back, \(viewModel.user.firstname)" : "\(viewModel.user.firstname) \(viewModel.user.lastname)"
         basicInfoView.isHidden = viewModel.isMyProfile
@@ -160,11 +160,11 @@ private extension ProfileViewController {
     }
     
     @IBAction func headerImagePressed(_ sender: UITapGestureRecognizer) {
-        viewModel.didPressHeaderImage(headerImage: viewModel.user.headerImage)
+        viewModel.didPressHeaderImage(headerImage: UIImage())
     }
     
     @IBAction func userImagePressed(_ sender: UITapGestureRecognizer) {
-        viewModel.didPressUserImage(userImage: viewModel.user.userImage)
+        viewModel.didPressUserImage(userImage: UIImage())
     }
     
     @IBAction func locationButtonPressed(_ sender: UIButton) {

@@ -6,8 +6,6 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import UIKit
-
 // MARK: - Enums
 enum SocialMediaType: String {
     case email
@@ -21,7 +19,7 @@ enum SocialMediaType: String {
 struct User: Equatable {
     // MARK: - Singleton
     static var shared: User?
-
+    
     // MARK: - Properties
     let id: String
     var email: String
@@ -29,8 +27,8 @@ struct User: Equatable {
     var firstname: String
     var lastname: String
     var birthdate: String?
-    let userImage: UIImage
-    let headerImage: UIImage
+    var userURLImage: String
+    var headerURLImage: String
     var location: Location
     var socialMedias: [SocialMediaType: String]
     let banned: Bool
@@ -41,25 +39,30 @@ struct User: Equatable {
         return lhs.id == rhs.id
     }
     
-    func map(userID: String, userImageString: String, headerImageString: String) -> UserDTO? {
+    func map(userID: String) -> UserDTO? {
         guard let phonePrefix = socialMedias[.phonePrefix],
-              let phoneNumber = socialMedias[.phoneNumber] else { return nil }
+              let phoneNumber = socialMedias[.phoneNumber]
+        else { return nil }
+        
         let socialMedias = SocialMedias(phone_prefix: phonePrefix,
                                         phone_number: phoneNumber,
                                         whatsapp: socialMedias[.whatsapp],
                                         instagram: socialMedias[.instagram],
                                         twitter: socialMedias[.twitter])
-        return UserDTO(id: userID,
-                       email: email,
-                       animal_shelter: animalShelter,
-                       firstname: firstname,
-                       lastname: lastname,
-                       birthdate: birthdate,
-                       user_image: userImageString,
-                       header_image: headerImageString,
-                       location: location,
-                       social_medias: socialMedias,
-                       banned: banned,
-                       blocked_users: blockedUsers)
+        
+        let userDTO = UserDTO(id: userID,
+                              email: email,
+                              animal_shelter: animalShelter,
+                              firstname: firstname,
+                              lastname: lastname,
+                              birthdate: birthdate,
+                              user_url_image: userURLImage,
+                              header_url_image: userURLImage,
+                              location: location,
+                              social_medias: socialMedias,
+                              banned: banned,
+                              blocked_users: blockedUsers)
+        
+        return userDTO
     }
 }
