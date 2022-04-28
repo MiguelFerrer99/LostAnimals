@@ -23,12 +23,13 @@ struct UserDTO: Codable {
     let firstname: String
     let lastname: String
     let birthdate: String?
-    let user_url_image: String
-    let header_url_image: String
+    let user_url_image: String?
+    let header_url_image: String?
     let location: Location
     let social_medias: SocialMedias
     let banned: Bool
     let blocked_users: [String]?
+    let saved_posts: [String]?
     
     // MARK: - Functions
     func map() -> User {
@@ -51,8 +52,8 @@ struct UserDTO: Codable {
                         location: location,
                         socialMedias: socialMedias,
                         banned: banned,
-                        blockedUsers: blocked_users ?? [])
-        
+                        blockedUsers: blocked_users ?? [],
+                        savedPosts: saved_posts ?? [])
         return user
     }
 }

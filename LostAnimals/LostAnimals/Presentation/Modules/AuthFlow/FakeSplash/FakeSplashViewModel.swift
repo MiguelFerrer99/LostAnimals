@@ -34,18 +34,28 @@ extension FakeSplashViewModel {
 
 // MARK: - Functions
 extension FakeSplashViewModel {
-    func getMe(completion: @escaping ((User?) -> ())) {
-        if let currentUser = Auth.auth().currentUser {
-            self.userService.getUser(id: currentUser.uid) { user in
-                if let user = user { completion(user)
+    func manageLogInNavigator() {
+        if Cache.get(boolFor: .logged) {
+            getMe { me in
+                if let me = me {
+                    User.shared = me
+                    if Cache.get(boolFor: .onboardingDone) { self.goToTabBar() }
+                    else { self.goToOnboarding() }
                 } else {
-                    completion(nil)
-                    return
+                    Cache.logOut()
+                    self.goToStartup()
                 }
             }
-        } else {
-            completion(nil)
-            return
+        } else { goToStartup() }
+    }
+    
+    func getMe(completion: @escaping ((User?) -> ())) {
+        self.userService.getMe { me in
+            if let me = me { completion(me)
+            } else {
+                completion(nil)
+                return
+            }
         }
     }
     

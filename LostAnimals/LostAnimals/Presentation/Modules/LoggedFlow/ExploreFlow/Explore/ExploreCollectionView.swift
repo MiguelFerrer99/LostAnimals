@@ -74,8 +74,10 @@ extension ExploreViewController: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegateFlowLayout
 extension ExploreViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let collectionViewRealHeight = collectionView.frame.height - statusBarHeight - navBarHeight - 50.0 - tabBarHeight
-        if viewModel.isLoading || viewModel.posts.isEmpty { return CGSize(width: collectionView.frame.width, height: collectionViewRealHeight) }
+        let collectionViewRealHeight = collectionView.frame.height - 50.0 - currentBarsHeight
+        if viewModel.posts.isEmpty {
+            return CGSize(width: collectionView.frame.width, height: collectionViewRealHeight)
+        }
         else { return CGSize(width: collectionView.frame.width/2, height: collectionView.frame.height/3) }
     }
 }

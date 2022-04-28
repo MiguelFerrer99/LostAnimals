@@ -21,25 +21,26 @@ struct User: Equatable {
     static var shared: User?
     
     // MARK: - Properties
-    let id: String
+    var id: String
     var email: String
     var animalShelter: Bool
     var firstname: String
     var lastname: String
     var birthdate: String?
-    var userURLImage: String
-    var headerURLImage: String
+    let userURLImage: String?
+    let headerURLImage: String?
     var location: Location
     var socialMedias: [SocialMediaType: String]
-    let banned: Bool
+    var banned: Bool
     let blockedUsers: [String]
+    let savedPosts: [String]
     
     // MARK: - Functions
     static func == (lhs: User, rhs: User) -> Bool {
         return lhs.id == rhs.id
     }
     
-    func map(userID: String) -> UserDTO? {
+    func map() -> UserDTO? {
         guard let phonePrefix = socialMedias[.phonePrefix],
               let phoneNumber = socialMedias[.phoneNumber]
         else { return nil }
@@ -50,7 +51,7 @@ struct User: Equatable {
                                         instagram: socialMedias[.instagram],
                                         twitter: socialMedias[.twitter])
         
-        let userDTO = UserDTO(id: userID,
+        let userDTO = UserDTO(id: id,
                               email: email,
                               animal_shelter: animalShelter,
                               firstname: firstname,
@@ -61,8 +62,8 @@ struct User: Equatable {
                               location: location,
                               social_medias: socialMedias,
                               banned: banned,
-                              blocked_users: blockedUsers)
-        
+                              blocked_users: blockedUsers,
+                              saved_posts: savedPosts)
         return userDTO
     }
 }

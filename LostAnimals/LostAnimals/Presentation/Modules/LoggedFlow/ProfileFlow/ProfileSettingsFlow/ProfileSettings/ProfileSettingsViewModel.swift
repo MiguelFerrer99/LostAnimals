@@ -46,11 +46,11 @@ extension ProfileSettingsViewModel {
 // MARK: - Functions
 extension ProfileSettingsViewModel {
     func getImagesFromURLImages(completion: @escaping (() -> ())) {
-        me.userURLImage.getURLImage { userImage in
+        me.userURLImage?.getURLImage { userImage in
             if let userImage = userImage {
                 self.userImage = userImage
                 
-                self.me.headerURLImage.getURLImage { headerImage in
+                self.me.headerURLImage?.getURLImage { headerImage in
                     if let headerImage = headerImage {
                         self.headerImage = headerImage
                         completion()
@@ -97,7 +97,7 @@ extension ProfileSettingsViewModel {
     func didPressedDeleteAccountButton(yesButtonPressed: @escaping (() -> ()), completion: @escaping (() -> ())) {
         showConfirmationPopup(title: "Are you sure you want to delete your account?") {
             yesButtonPressed()
-            self.userService.deleteAccount(id: self.me.id) { result in
+            self.userService.deleteAccount() { result in
                 completion()
                 switch result {
                 case .success:

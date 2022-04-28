@@ -17,12 +17,13 @@ struct Constants {
                                 firstname: "",
                                 lastname: "",
                                 birthdate: Date.today.toString(withFormat: DateFormat.dayMonthYearOther),
-                                userURLImage: "",
-                                headerURLImage: "",
+                                userURLImage: nil,
+                                headerURLImage: nil,
                                 location: Location(address: "Not specified", coordinates: nil),
                                 socialMedias: [:],
                                 banned: false,
-                                blockedUsers: [])
+                                blockedUsers: [],
+                                savedPosts: [])
     
     static let onboardingStepsInfo = [
         OnboardingStepInfo(title: "Share",

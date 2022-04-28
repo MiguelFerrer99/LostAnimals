@@ -46,10 +46,6 @@ final class SignUpViewController: ViewController {
         
         viewModel.viewDidAppear()
     }
-    
-    deinit {
-        removeObserver()
-    }
 }
 
 // MARK: - Private functions

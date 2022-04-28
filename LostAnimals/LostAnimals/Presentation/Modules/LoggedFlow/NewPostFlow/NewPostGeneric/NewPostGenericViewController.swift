@@ -129,7 +129,6 @@ private extension NewPostGenericViewController {
               let animalNameText = nameTextfield.textField.text,
               let animalBreedText = breedTextfield.textField.text,
               let lastTimeSeenText = lastTimeSeenTextfield.textField.text,
-              let newPostLocation = viewModel.newPostLocation,
               let me = User.shared
         else { return nil }
                 
@@ -147,7 +146,7 @@ private extension NewPostGenericViewController {
                            urlImage7: nil,
                            urlImage8: nil,
                            lastTimeSeen: lastTimeSeenText,
-                           location: newPostLocation,
+                           location: viewModel.newPostLocation,
                            description: descriptionTextview.text,
                            userID: me.id)
         

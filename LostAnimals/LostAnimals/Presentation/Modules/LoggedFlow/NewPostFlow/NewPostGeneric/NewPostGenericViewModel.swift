@@ -27,7 +27,7 @@ final class NewPostGenericViewModel {
     let postType: PostType
     var selectPhotoImageViews: [UIImageView] = []
     var selectedIndexImageView = 0
-    var newPostLocation: Location? = nil
+    var newPostLocation = Location(address: "Not specified", coordinates: nil)
     var selectedAnimalType: AnimalType? = nil
     
     // MARK: - Services

@@ -44,11 +44,10 @@ extension PostService {
                 default:
                     completion(.error("An unexpected error occured. Please, try again later"))
                 }
-            } else if let snapshotValue = snapshot.value {
+            } else if let snapshotValue = snapshot.value as? [String: Any] {
                 do {
-                    let postsDTO = try FirebaseDecoder().decode([PostDTO].self, from: snapshotValue)
-                    var posts: [Post] = []
-                    postsDTO.forEach { if let post = $0.map() { posts.append(post) } }
+                    let postsDTO = try FirebaseDecoder().decode([PostDTO].self, from: Array(snapshotValue.values))
+                    let posts = postsDTO.compactMap { $0.map() }
                     completion(.success(posts))
                 } catch { completion(.error("An unexpected error occured. Please, try again later")) }
             }
@@ -59,15 +58,16 @@ extension PostService {
         self.uploadPostImagesAndGetURLs(postID: post.id, images: images) { urlImages in
             do {
                 var newPost = post
-                newPost.urlImage1 = urlImages[0]
-                newPost.urlImage2 = urlImages[1]
-                newPost.urlImage3 = urlImages[2]
-                newPost.urlImage4 = urlImages[3]
-                newPost.urlImage5 = urlImages[4]
-                newPost.urlImage6 = urlImages[5]
-                newPost.urlImage7 = urlImages[6]
-                newPost.urlImage8 = urlImages[7]
-                let postObject = try FirebaseEncoder().encode(newPost.map())
+                if let urlImage1 = urlImages[safe: 0] { newPost.urlImage1 = urlImage1 }
+                if let urlImage2 = urlImages[safe: 1] { newPost.urlImage2 = urlImage2 }
+                if let urlImage3 = urlImages[safe: 2] { newPost.urlImage3 = urlImage3 }
+                if let urlImage4 = urlImages[safe: 3] { newPost.urlImage4 = urlImage4 }
+                if let urlImage5 = urlImages[safe: 4] { newPost.urlImage5 = urlImage5 }
+                if let urlImage6 = urlImages[safe: 5] { newPost.urlImage6 = urlImage6 }
+                if let urlImage7 = urlImages[safe: 6] { newPost.urlImage7 = urlImage7 }
+                if let urlImage8 = urlImages[safe: 7] { newPost.urlImage8 = urlImage8 }
+                let newPostDTO = newPost.map()
+                let postObject = try FirebaseEncoder().encode(newPostDTO)
                 self.databaseRef.child("posts").child(post.id).setValue(postObject) { (error, _) in
                     if let error = error {
                         switch error.localizedDescription {
@@ -90,42 +90,42 @@ private extension PostService {
     func uploadPostImagesAndGetURLs(postID: String, images: [UIImage?], completion: @escaping (([String?]) -> ())) {
         var urlImages: [String?] = []
         
-        if let dataImage1 = images[0]?.pngData() {
+        if let image1Aux = images[safe: 0], let image1 = image1Aux, let dataImage1 = image1.pngData() {
             self.storageRef.child("posts").child(postID).child("post_image1").putData(dataImage1, metadata: nil) { (_, error) in
                 self.storageRef.child("posts").child(postID).child("post_image1").downloadURL { (url1, error) in
                     urlImages.append(url1?.absoluteString)
-
-                    if let dataImage2 = images[1]?.pngData() {
+                    
+                    if let image2Aux = images[safe: 1], let image2 = image2Aux, let dataImage2 = image2.pngData() {
                         self.storageRef.child("posts").child(postID).child("post_image2").putData(dataImage2, metadata: nil) { (_, error) in
                             self.storageRef.child("posts").child(postID).child("post_image2").downloadURL { (url2, error) in
                                 urlImages.append(url2?.absoluteString)
                                 
-                                if let dataImage3 = images[2]?.pngData() {
+                                if let image3Aux = images[safe: 2], let image3 = image3Aux, let dataImage3 = image3.pngData() {
                                     self.storageRef.child("posts").child(postID).child("post_image3").putData(dataImage3, metadata: nil) { (_, error) in
                                         self.storageRef.child("posts").child(postID).child("post_image3").downloadURL { (url3, error) in
                                             urlImages.append(url3?.absoluteString)
                                             
-                                            if let dataImage4 = images[3]?.pngData() {
+                                            if let image4Aux = images[safe: 3], let image4 = image4Aux, let dataImage4 = image4.pngData() {
                                                 self.storageRef.child("posts").child(postID).child("post_image4").putData(dataImage4, metadata: nil) { (_, error) in
                                                     self.storageRef.child("posts").child(postID).child("post_image4").downloadURL { (url4, error) in
                                                         urlImages.append(url4?.absoluteString)
                                                         
-                                                        if let dataImage5 = images[4]?.pngData() {
+                                                        if let image5Aux = images[safe: 4], let image5 = image5Aux, let dataImage5 = image5.pngData() {
                                                             self.storageRef.child("posts").child(postID).child("post_image5").putData(dataImage5, metadata: nil) { (_, error) in
                                                                 self.storageRef.child("posts").child(postID).child("post_image5").downloadURL { (url5, error) in
                                                                     urlImages.append(url5?.absoluteString)
                                                                     
-                                                                    if let dataImage6 = images[5]?.pngData() {
+                                                                    if let image6Aux = images[safe: 5], let image6 = image6Aux, let dataImage6 = image6.pngData() {
                                                                         self.storageRef.child("posts").child(postID).child("post_image6").putData(dataImage6, metadata: nil) { (_, error) in
                                                                             self.storageRef.child("posts").child(postID).child("post_image6").downloadURL { (url6, error) in
                                                                                 urlImages.append(url6?.absoluteString)
                                                                                 
-                                                                                if let dataImage7 = images[6]?.pngData() {
+                                                                                if let image7Aux = images[safe: 6], let image7 = image7Aux, let dataImage7 = image7.pngData() {
                                                                                     self.storageRef.child("posts").child(postID).child("post_image7").putData(dataImage7, metadata: nil) { (_, error) in
                                                                                         self.storageRef.child("posts").child(postID).child("post_image7").downloadURL { (url7, error) in
                                                                                             urlImages.append(url7?.absoluteString)
                                                                                             
-                                                                                            if let dataImage8 = images[7]?.pngData() {
+                                                                                            if let image8Aux = images[safe: 7], let image8 = image8Aux, let dataImage8 = image8.pngData() {
                                                                                                 self.storageRef.child("posts").child(postID).child("post_image8").putData(dataImage8, metadata: nil) { (_, error) in
                                                                                                     self.storageRef.child("posts").child(postID).child("post_image8").downloadURL { (url8, error) in
                                                                                                         urlImages.append(url8?.absoluteString)

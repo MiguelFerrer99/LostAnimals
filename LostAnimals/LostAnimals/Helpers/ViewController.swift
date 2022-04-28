@@ -8,7 +8,7 @@
 
 import UIKit
 
-// MARK: - Alternative classes
+// MARK: - Alternative class
 class BackBarButtonItem: UIBarButtonItem {
     @available(iOS 14.0, *)
     override var menu: UIMenu? {
@@ -46,6 +46,9 @@ class ViewController: UIViewController {
     }
     var hideBackButton: Bool {
         return false
+    }
+    var barHeights: CGFloat {
+        return getStatusBarHeight() + getNavBarHeight() + getTabBarHeight()
     }
     
     // MARK: - Life cycle
@@ -87,13 +90,24 @@ class ViewController: UIViewController {
         viewDidAppear = true
     }
     
-    deinit {
-        unsubscribeToNotifications()
-    }
+    deinit { unsubscribeToNotifications() }
 }
 
 // MARK: - Functions
 extension ViewController {
+    func getStatusBarHeight() -> CGFloat {
+        let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+        return window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+    }
+    
+    func getNavBarHeight() -> CGFloat {
+        self.navigationController?.navigationBar.frame.size.height ?? 0
+    }
+    
+    func getTabBarHeight() -> CGFloat {
+        self.tabBarController?.tabBar.frame.size.height ?? 0
+    }
+    
     func showTabBar() {
         self.tabBarController?.tabBar.isHidden = false
         var frame = self.tabBarController?.tabBar.frame

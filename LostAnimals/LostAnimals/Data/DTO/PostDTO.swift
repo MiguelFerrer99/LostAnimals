@@ -6,6 +6,11 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
+// MARK: - Alternative struct
+struct PostsDTO: Decodable {
+    let postsDTO: [PostDTO]
+}
+
 struct PostDTO: Codable {
     // MARK: - Properties
     let id: String
@@ -17,7 +22,7 @@ struct PostDTO: Codable {
     let last_time_seen: String
     let location: Location
     let description: String
-    let userID: String
+    let user_id: String
     
     // MARK: - Functions
     func map() -> Post? {
@@ -41,7 +46,7 @@ struct PostDTO: Codable {
                         lastTimeSeen: last_time_seen,
                         location: location,
                         description: description,
-                        userID: userID)
+                        userID: user_id)
         
         return post
     }

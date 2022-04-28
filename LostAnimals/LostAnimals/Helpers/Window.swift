@@ -20,9 +20,6 @@ let safeAreaHeight  = keyWindow?.safeAreaLayoutGuide.layoutFrame.height ?? 0
 let safeAreaWidth   = keyWindow?.safeAreaLayoutGuide.layoutFrame.width ?? 0
 let screenHeight    = keyWindow?.frame.height ?? 0
 let screenWidth     = keyWindow?.frame.width ?? 0
-let statusBarHeight = keyWindow?.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
-let navBarHeight    = keyWindow?.window?.rootViewController?.navigationController?.navigationBar.frame.height ?? 0
-let tabBarHeight    = keyWindow?.window?.rootViewController?.tabBarController?.tabBar.frame.height ?? 0
 
 // MARK: - Functions
 func topMostController() -> UIViewController? {

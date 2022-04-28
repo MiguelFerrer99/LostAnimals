@@ -27,10 +27,6 @@ class ExploreFiltersHeader: UICollectionReusableView, Reusable {
         subscribeToNotifications()
         setupUI()
     }
-    
-    deinit {
-        unsubscribeToNotifications()
-    }
 }
 
 // MARK: - Functions

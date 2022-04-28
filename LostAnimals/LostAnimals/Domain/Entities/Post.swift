@@ -52,7 +52,7 @@ struct Post {
                               last_time_seen: lastTimeSeen,
                               location: location,
                               description: description,
-                              userID: userID)
+                              user_id: userID)
         return postDTO
     }
 }

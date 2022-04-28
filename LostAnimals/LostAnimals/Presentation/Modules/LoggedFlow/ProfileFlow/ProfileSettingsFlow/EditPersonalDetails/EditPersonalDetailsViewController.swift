@@ -38,10 +38,6 @@ final class EditPersonalDetailsViewController: ViewController, UIGestureRecogniz
         
         viewModel.viewDidAppear()
     }
-    
-    deinit {
-        unsubscribeToNotifications()
-    }
 }
 
 // MARK: - Private functions

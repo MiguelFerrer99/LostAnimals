@@ -7,14 +7,9 @@
 //
 
 // MARK: - Functions
-extension RangeReplaceableCollection where Element: Equatable {
-    mutating func addOrReplace(contentsOf elements: [Element]) {
-        elements.forEach { element in
-            if let index = self.firstIndex(of: element) {
-                self.replaceSubrange(index...index, with: [element])
-            } else {
-                self.append(element)
-            }
-        }
+extension Collection {
+    /// Returns the element at the specified index if it is within bounds, otherwise nil.
+    subscript (safe index: Index) -> Element? {
+        return indices.contains(index) ? self[index] : nil
     }
 }

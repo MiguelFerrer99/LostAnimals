@@ -30,6 +30,7 @@ final class ExploreViewController: ViewController {
         return [UIBarButtonItem(customView: savedPosts)]
     }
     var refreshControl = UIRefreshControl()
+    var currentBarsHeight = 0.0
     var viewModel: ExploreViewModel!
     
     // MARK: - Life cycle
@@ -57,6 +58,7 @@ final class ExploreViewController: ViewController {
 // MARK: - Private functions
 extension ExploreViewController {
     func setupUI() {
+        currentBarsHeight = self.barHeights
         configureCollectionView(postsCollectionView)
         configureRefreshControl(refreshControl)
     }
