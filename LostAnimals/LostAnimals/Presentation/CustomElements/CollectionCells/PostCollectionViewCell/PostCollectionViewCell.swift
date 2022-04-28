@@ -43,9 +43,9 @@ extension PostCollectionViewCell {
     func getPostImage(from url: String) {
         url.getURLImage { image in
             if let image = image {
-                UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseIn) {
-                    self.postImageView.image = image
-                }
+                UIView.transition(with: self.postImageView, duration: 0.3, options: .transitionCrossDissolve, animations: {
+                    DispatchQueue.main.async { self.postImageView.image = image }
+                }, completion: nil)
             }
         }
     }

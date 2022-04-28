@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,7 +26,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lAN-bt-fcf" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
                         <rect key="frame" x="10" y="10" width="159" height="240"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tah-1e-Tbn" customClass="CustomImageView" customModule="LostAnimals" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultHeaderImage" translatesAutoresizingMaskIntoConstraints="NO" id="Tah-1e-Tbn" customClass="CustomImageView" customModule="LostAnimals" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="159" height="240"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -137,7 +137,13 @@
             <point key="canvasLocation" x="231.15942028985509" y="176.78571428571428"/>
         </collectionViewCell>
     </objects>
+    <designables>
+        <designable name="Tah-1e-Tbn">
+            <size key="intrinsicContentSize" width="413.5" height="283"/>
+        </designable>
+    </designables>
     <resources>
+        <image name="DefaultHeaderImage" width="413.5" height="283"/>
         <image name="Lost" width="25" height="25"/>
         <image name="LostWhite" width="25" height="25"/>
         <image name="Other" width="256" height="256"/>

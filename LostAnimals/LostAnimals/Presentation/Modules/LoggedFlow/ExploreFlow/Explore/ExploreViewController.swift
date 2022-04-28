@@ -69,7 +69,7 @@ extension ExploreViewController {
     
     func getPosts() {
         viewModel.isLoading = true
-        refreshControl.beginRefreshing()
+        postsCollectionView.reloadData()
         viewModel.getPosts {
             self.viewModel.isLoading = false
             self.refreshControl.endRefreshing()

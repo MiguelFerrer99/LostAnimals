@@ -242,6 +242,9 @@
 		41BFE175276618C900AC5570 /* CityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41BFE173276618C900AC5570 /* CityTableViewCell.xib */; };
 		41BFE177276618E400AC5570 /* CityTableViewCellSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BFE176276618E400AC5570 /* CityTableViewCellSummary.swift */; };
 		41BFE17927661A2D00AC5570 /* WhereDoYouLiveCitiesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BFE17827661A2D00AC5570 /* WhereDoYouLiveCitiesTableView.swift */; };
+		41C06A0A281B3449009547CF /* LoadingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C06A08281B3449009547CF /* LoadingCollectionViewCell.swift */; };
+		41C06A0B281B3449009547CF /* LoadingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41C06A09281B3449009547CF /* LoadingCollectionViewCell.xib */; };
+		41C06A0D281B42AB009547CF /* ExploreRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C06A0C281B42AB009547CF /* ExploreRefreshControl.swift */; };
 		41CD10E32781DF1500257B2B /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CD10E22781DF1500257B2B /* Filters.swift */; };
 		41CD10EB2782183900257B2B /* AnimalFilterPopupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CD10E62782183900257B2B /* AnimalFilterPopupRouter.swift */; };
 		41CD10EC2782183900257B2B /* AnimalFilterPopupViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41CD10E72782183900257B2B /* AnimalFilterPopupViewController.storyboard */; };
@@ -275,7 +278,6 @@
 		41CD112827835F0600257B2B /* SavedPostsRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CD112727835F0600257B2B /* SavedPostsRefreshControl.swift */; };
 		41CD112A27835F3F00257B2B /* SavedPostsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CD112927835F3F00257B2B /* SavedPostsProtocols.swift */; };
 		41CD112C27835F6500257B2B /* SavedPostsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CD112B27835F6500257B2B /* SavedPostsCollectionView.swift */; };
-		41CDA4302780DD000009AB55 /* ExploreRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CDA42F2780DD000009AB55 /* ExploreRefreshControl.swift */; };
 		41CDA4322780E0D60009AB55 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CDA4312780E0D60009AB55 /* Post.swift */; };
 		41CDA4382780E4400009AB55 /* OnboardingStepInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CDA4372780E4400009AB55 /* OnboardingStepInfo.swift */; };
 		41CDA43A2780E59B0009AB55 /* TermAndCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CDA4392780E59B0009AB55 /* TermAndCondition.swift */; };
@@ -594,6 +596,9 @@
 		41BFE173276618C900AC5570 /* CityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityTableViewCell.xib; sourceTree = "<group>"; };
 		41BFE176276618E400AC5570 /* CityTableViewCellSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCellSummary.swift; sourceTree = "<group>"; };
 		41BFE17827661A2D00AC5570 /* WhereDoYouLiveCitiesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereDoYouLiveCitiesTableView.swift; sourceTree = "<group>"; };
+		41C06A08281B3449009547CF /* LoadingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCollectionViewCell.swift; sourceTree = "<group>"; };
+		41C06A09281B3449009547CF /* LoadingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCollectionViewCell.xib; sourceTree = "<group>"; };
+		41C06A0C281B42AB009547CF /* ExploreRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreRefreshControl.swift; sourceTree = "<group>"; };
 		41CD10E22781DF1500257B2B /* Filters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
 		41CD10E62782183900257B2B /* AnimalFilterPopupRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalFilterPopupRouter.swift; sourceTree = "<group>"; };
 		41CD10E72782183900257B2B /* AnimalFilterPopupViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AnimalFilterPopupViewController.storyboard; sourceTree = "<group>"; };
@@ -627,7 +632,6 @@
 		41CD112727835F0600257B2B /* SavedPostsRefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPostsRefreshControl.swift; sourceTree = "<group>"; };
 		41CD112927835F3F00257B2B /* SavedPostsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPostsProtocols.swift; sourceTree = "<group>"; };
 		41CD112B27835F6500257B2B /* SavedPostsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPostsCollectionView.swift; sourceTree = "<group>"; };
-		41CDA42F2780DD000009AB55 /* ExploreRefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreRefreshControl.swift; sourceTree = "<group>"; };
 		41CDA4312780E0D60009AB55 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		41CDA4372780E4400009AB55 /* OnboardingStepInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStepInfo.swift; sourceTree = "<group>"; };
 		41CDA4392780E59B0009AB55 /* TermAndCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermAndCondition.swift; sourceTree = "<group>"; };
@@ -904,6 +908,7 @@
 			children = (
 				41CD1115278350CA00257B2B /* EmptyCollectionViewCell */,
 				4186AC8E277F7769009C07E2 /* ExploreFiltersCollectionViewCell */,
+				41C06A07281B3414009547CF /* LoadingCollectionViewCell */,
 				4160E714277BA36500C7066F /* OnboardingCollectionViewCell */,
 				41B9CE6E277F41B700966509 /* PostCollectionViewCell */,
 				41FEE1D32788924D00F11449 /* PostImageCollectionViewCell */,
@@ -1223,8 +1228,8 @@
 				41742220277C815600915233 /* ExploreBuilder.swift */,
 				41742221277C815600915233 /* ExploreViewModel.swift */,
 				41B9CE6C277F403000966509 /* ExploreCollectionView.swift */,
-				41CDA42F2780DD000009AB55 /* ExploreRefreshControl.swift */,
 				41CD10FB27822C2500257B2B /* ExploreProtocols.swift */,
+				41C06A0C281B42AB009547CF /* ExploreRefreshControl.swift */,
 			);
 			path = Explore;
 			sourceTree = "<group>";
@@ -1448,6 +1453,15 @@
 				41BFE176276618E400AC5570 /* CityTableViewCellSummary.swift */,
 			);
 			path = CityTableViewCell;
+			sourceTree = "<group>";
+		};
+		41C06A07281B3414009547CF /* LoadingCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				41C06A09281B3449009547CF /* LoadingCollectionViewCell.xib */,
+				41C06A08281B3449009547CF /* LoadingCollectionViewCell.swift */,
+			);
+			path = LoadingCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		41CD10E4278217FC00257B2B /* FilterPopups */ = {
@@ -1959,6 +1973,7 @@
 				415E59812763EA94009A013E /* WhereDoYouLiveCountriesViewController.storyboard in Resources */,
 				418C4145275A5F3F0099BC5B /* ForgotPasswordViewController.storyboard in Resources */,
 				4160E706277B9A5D00C7066F /* TermsAndConditionsViewController.storyboard in Resources */,
+				41C06A0B281B3449009547CF /* LoadingCollectionViewCell.xib in Resources */,
 				41742227277C816100915233 /* ExploreViewController.storyboard in Resources */,
 				41CD110F278336F400257B2B /* DateFilterPopupViewController.storyboard in Resources */,
 				41EC16AD2785E20800096B7A /* AnimalTypeTableViewCell.xib in Resources */,
@@ -2077,7 +2092,6 @@
 				4139870E2737FA3500C243F4 /* StartupRouter.swift in Sources */,
 				415476BF27849A0300BD684F /* EditPostTextfields.swift in Sources */,
 				4183EE2727961A8E005C554E /* NewPostGenericImagePicker.swift in Sources */,
-				41CDA4302780DD000009AB55 /* ExploreRefreshControl.swift in Sources */,
 				41FEE1E62788B6FD00F11449 /* LocationMapView.swift in Sources */,
 				41EC16A22785E08700096B7A /* AnimalTypesRouter.swift in Sources */,
 				4100A0FE2783AE640049EEF0 /* PostOptionsPopupViewModel.swift in Sources */,
@@ -2112,6 +2126,7 @@
 				41CD112527835C2200257B2B /* SavedPostsBuilder.swift in Sources */,
 				41EC16E127868FF900096B7A /* GuestPopupBuilder.swift in Sources */,
 				418B637527AEB83C00F7DC4B /* ChangePasswordBuilder.swift in Sources */,
+				41C06A0A281B3449009547CF /* LoadingCollectionViewCell.swift in Sources */,
 				418B639227AF442000F7DC4B /* EditSocialMediasTextfields.swift in Sources */,
 				41EC16A42785E08700096B7A /* AnimalTypesViewController.swift in Sources */,
 				4105456827A06E0E00527D64 /* ProfileSettingsRouter.swift in Sources */,
@@ -2128,6 +2143,7 @@
 				4105456C27A06E0E00527D64 /* ProfileSettingsViewModel.swift in Sources */,
 				4119185627AC2CFF00F9D68A /* BlockedUserTableViewCellSummary.swift in Sources */,
 				41A7CF6027F080EE002BFD6F /* FakeSplashViewModel.swift in Sources */,
+				41C06A0D281B42AB009547CF /* ExploreRefreshControl.swift in Sources */,
 				41742222277C815600915233 /* ExploreRouter.swift in Sources */,
 				4119183A27ABFAF100F9D68A /* ProfilePostsViewController.swift in Sources */,
 				4119184B27AC2B7600F9D68A /* BlockedUsersViewController.swift in Sources */,
