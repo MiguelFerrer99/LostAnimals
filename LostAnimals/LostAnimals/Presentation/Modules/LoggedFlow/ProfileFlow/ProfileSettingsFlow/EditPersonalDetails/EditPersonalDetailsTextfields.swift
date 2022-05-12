@@ -127,7 +127,7 @@ extension EditPersonalDetailsViewController: CustomTextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ customTextField: CustomTextField) {
-        if viewModel.editedTextFields.first(where: {$0 == customTextField}) == nil {
+        if !customTextField.errorsToCheck.isEmpty && viewModel.editedTextFields.first(where: {$0 == customTextField}) == nil {
             viewModel.editedTextFields.append(customTextField)
         }
     }

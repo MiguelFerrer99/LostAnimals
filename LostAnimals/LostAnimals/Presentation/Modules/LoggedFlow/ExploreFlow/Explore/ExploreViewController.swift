@@ -29,17 +29,16 @@ final class ExploreViewController: ViewController {
         savedPosts.addTarget(self, action: #selector(savedPostsButtonPressed), for: .touchUpInside)
         return [UIBarButtonItem(customView: savedPosts)]
     }
-    var refreshControl = UIRefreshControl()
     var currentBarsHeight = 0.0
     var viewModel: ExploreViewModel!
     
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        viewModel.viewReady()
         setupUI()
         fillUI()
-        viewModel.viewReady()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,28 +55,29 @@ final class ExploreViewController: ViewController {
 }
 
 // MARK: - Private functions
-extension ExploreViewController {
+private extension ExploreViewController {
     func setupUI() {
         currentBarsHeight = self.barHeights
         configureCollectionView(postsCollectionView)
-        configureRefreshControl(refreshControl)
     }
     
     func fillUI() {
         getPosts()
     }
     
+    @objc func savedPostsButtonPressed() {
+        viewModel.didPressSavedPosts()
+    }
+}
+
+// MARK: - Functions
+extension ExploreViewController {
     func getPosts() {
         viewModel.isLoading = true
         postsCollectionView.reloadData()
         viewModel.getPosts {
             self.viewModel.isLoading = false
-            self.refreshControl.endRefreshing()
             self.postsCollectionView.reloadData()
         }
-    }
-    
-    @objc func savedPostsButtonPressed() {
-        viewModel.didPressSavedPosts()
     }
 }

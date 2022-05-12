@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
 final class LocationFilterPopupViewController: ViewController {
     // MARK: - IBOutlets
@@ -15,6 +17,7 @@ final class LocationFilterPopupViewController: ViewController {
     
     // MARK: - Properties
     var viewModel: LocationFilterPopupViewModel!
+    let locationManager = CLLocationManager()
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -34,6 +37,7 @@ final class LocationFilterPopupViewController: ViewController {
 // MARK: - Private functions
 private extension LocationFilterPopupViewController {
     func setupUI() {
+        configureLocationManager()
         if viewModel.loadData {
             if let locationValue = Filters.currentFilters[.location]?.locationFilterRangeKm {
                 viewModel.selectedRangeOfKm = locationValue
@@ -56,6 +60,6 @@ private extension LocationFilterPopupViewController {
     }
     
     @IBAction func applyFilterButtonPressed(_ sender: CustomButton) {
-        viewModel.didPressApplyFilterButton()
+        CLLocationManager.locationServicesEnabled() ? locationManager.startUpdatingLocation() : locationManager.requestWhenInUseAuthorization()
     }
 }

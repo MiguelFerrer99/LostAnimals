@@ -6,9 +6,9 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
+import UIKit
 import Firebase
 import CodableFirebase
-import UIKit
 
 // MARK: - Enums
 enum UploadPostResult {
@@ -50,7 +50,7 @@ extension PostService {
                     let posts = postsDTO.compactMap { $0.map() }
                     completion(.success(posts))
                 } catch { completion(.error("An unexpected error occured. Please, try again later")) }
-            }
+            } else { completion(.success([])) }
         }
     }
     
@@ -90,42 +90,42 @@ private extension PostService {
     func uploadPostImagesAndGetURLs(postID: String, images: [UIImage?], completion: @escaping (([String?]) -> ())) {
         var urlImages: [String?] = []
         
-        if let image1Aux = images[safe: 0], let image1 = image1Aux, let dataImage1 = image1.pngData() {
+        if let image1Aux = images[safe: 0], let image1 = image1Aux, let dataImage1 = image1.jpegData(compressionQuality: 0.5) {
             self.storageRef.child("posts").child(postID).child("post_image1").putData(dataImage1, metadata: nil) { (_, error) in
                 self.storageRef.child("posts").child(postID).child("post_image1").downloadURL { (url1, error) in
                     urlImages.append(url1?.absoluteString)
                     
-                    if let image2Aux = images[safe: 1], let image2 = image2Aux, let dataImage2 = image2.pngData() {
+                    if let image2Aux = images[safe: 1], let image2 = image2Aux, let dataImage2 = image2.jpegData(compressionQuality: 0.5) {
                         self.storageRef.child("posts").child(postID).child("post_image2").putData(dataImage2, metadata: nil) { (_, error) in
                             self.storageRef.child("posts").child(postID).child("post_image2").downloadURL { (url2, error) in
                                 urlImages.append(url2?.absoluteString)
                                 
-                                if let image3Aux = images[safe: 2], let image3 = image3Aux, let dataImage3 = image3.pngData() {
+                                if let image3Aux = images[safe: 2], let image3 = image3Aux, let dataImage3 = image3.jpegData(compressionQuality: 0.5) {
                                     self.storageRef.child("posts").child(postID).child("post_image3").putData(dataImage3, metadata: nil) { (_, error) in
                                         self.storageRef.child("posts").child(postID).child("post_image3").downloadURL { (url3, error) in
                                             urlImages.append(url3?.absoluteString)
                                             
-                                            if let image4Aux = images[safe: 3], let image4 = image4Aux, let dataImage4 = image4.pngData() {
+                                            if let image4Aux = images[safe: 3], let image4 = image4Aux, let dataImage4 = image4.jpegData(compressionQuality: 0.5) {
                                                 self.storageRef.child("posts").child(postID).child("post_image4").putData(dataImage4, metadata: nil) { (_, error) in
                                                     self.storageRef.child("posts").child(postID).child("post_image4").downloadURL { (url4, error) in
                                                         urlImages.append(url4?.absoluteString)
                                                         
-                                                        if let image5Aux = images[safe: 4], let image5 = image5Aux, let dataImage5 = image5.pngData() {
+                                                        if let image5Aux = images[safe: 4], let image5 = image5Aux, let dataImage5 = image5.jpegData(compressionQuality: 0.5) {
                                                             self.storageRef.child("posts").child(postID).child("post_image5").putData(dataImage5, metadata: nil) { (_, error) in
                                                                 self.storageRef.child("posts").child(postID).child("post_image5").downloadURL { (url5, error) in
                                                                     urlImages.append(url5?.absoluteString)
                                                                     
-                                                                    if let image6Aux = images[safe: 5], let image6 = image6Aux, let dataImage6 = image6.pngData() {
+                                                                    if let image6Aux = images[safe: 5], let image6 = image6Aux, let dataImage6 = image6.jpegData(compressionQuality: 0.5) {
                                                                         self.storageRef.child("posts").child(postID).child("post_image6").putData(dataImage6, metadata: nil) { (_, error) in
                                                                             self.storageRef.child("posts").child(postID).child("post_image6").downloadURL { (url6, error) in
                                                                                 urlImages.append(url6?.absoluteString)
                                                                                 
-                                                                                if let image7Aux = images[safe: 6], let image7 = image7Aux, let dataImage7 = image7.pngData() {
+                                                                                if let image7Aux = images[safe: 6], let image7 = image7Aux, let dataImage7 = image7.jpegData(compressionQuality: 0.5) {
                                                                                     self.storageRef.child("posts").child(postID).child("post_image7").putData(dataImage7, metadata: nil) { (_, error) in
                                                                                         self.storageRef.child("posts").child(postID).child("post_image7").downloadURL { (url7, error) in
                                                                                             urlImages.append(url7?.absoluteString)
                                                                                             
-                                                                                            if let image8Aux = images[safe: 7], let image8 = image8Aux, let dataImage8 = image8.pngData() {
+                                                                                            if let image8Aux = images[safe: 7], let image8 = image8Aux, let dataImage8 = image8.jpegData(compressionQuality: 0.5) {
                                                                                                 self.storageRef.child("posts").child(postID).child("post_image8").putData(dataImage8, metadata: nil) { (_, error) in
                                                                                                     self.storageRef.child("posts").child(postID).child("post_image8").downloadURL { (url8, error) in
                                                                                                         urlImages.append(url8?.absoluteString)

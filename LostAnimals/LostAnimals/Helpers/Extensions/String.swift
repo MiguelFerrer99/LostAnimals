@@ -62,12 +62,11 @@ extension String {
         return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count)) != nil
     }
     
-    func toDate(withFormat format: String)-> Date? {
+    func toDate(withFormat format: String) -> Date {
         let dateFormatter = DateFormatter()
         dateFormatter.calendar = Calendar(identifier: .gregorian)
         dateFormatter.dateFormat = format
-        let date = dateFormatter.date(from: self)
-        
+        let date = dateFormatter.date(from: self) ?? Date.today
         return date
     }
     

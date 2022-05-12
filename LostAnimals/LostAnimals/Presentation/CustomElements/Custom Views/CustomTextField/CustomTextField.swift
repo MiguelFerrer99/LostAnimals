@@ -100,7 +100,7 @@ class CustomTextField: UIView {
     @IBOutlet weak var textField: UITextField!
     
     // MARK: - Properties
-    private var errorsToCheck = [TextFieldError]()
+    var errorsToCheck = [TextFieldError]()
     private let datePicker = UIDatePicker()
     private let passwordsAreNotEqualError = TextFieldErrorPasswordsAreNotEqual()
     weak var delegate: CustomTextFieldDelegate?

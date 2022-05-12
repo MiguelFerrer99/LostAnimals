@@ -30,7 +30,7 @@ class Filters {
         .location: PostsFilter(filterTitle: "Location", filterType: .location, enabled: false, animalFilterDog: false, animalFilterBird: false, animalFilterCat: false, animalFilterTurtle: false, animalFilterSnake: false, animalFilterRabbit: false, animalFilterOther: false),
         .date: PostsFilter(filterTitle: "Date", filterType: .date, enabled: false, animalFilterDog: false, animalFilterBird: false, animalFilterCat: false, animalFilterTurtle: false, animalFilterSnake: false, animalFilterRabbit: false, animalFilterOther: false)
     ] {
-        didSet { /*printCurrentExploreFilterValues()*/ }
+        didSet { printCurrentExploreFilterValues() }
     }
     
     // MARK: - Functions

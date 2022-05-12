@@ -8,7 +8,6 @@
 
 import Firebase
 import CodableFirebase
-import UIKit
 
 // MARK: - Enums
 enum GetUserResult {
@@ -25,13 +24,13 @@ enum LogOutResult {
     case error(String)
 }
 
-final class UserService {
+final class UserService: NSObject {
     // MARK: - Properties
     let databaseRef: DatabaseReference
     let storageRef: StorageReference
     
     // MARK: - Init
-    init() {
+    override init() {
         databaseRef = Database.database().reference()
         storageRef = Storage.storage().reference()
     }

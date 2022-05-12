@@ -72,6 +72,7 @@ extension NewPostGenericViewModel {
     func getImagesFromImageViews() -> [UIImage?] {
         var images: [UIImage] = []
         selectPhotoImageViews.forEach { imageView in
+            imageView.transform.rotated(by: .pi / 2)
             if let image = imageView.image, !image.isEqualTo(image: UIImage(named: "SelectPhotoPlaceholder")) {
                 images.append(image)
             }

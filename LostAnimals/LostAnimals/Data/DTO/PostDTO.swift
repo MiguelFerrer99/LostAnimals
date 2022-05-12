@@ -23,6 +23,7 @@ struct PostDTO: Codable {
     let location: Location
     let description: String
     let user_id: String
+    let created_at: String
     
     // MARK: - Functions
     func map() -> Post? {
@@ -46,7 +47,8 @@ struct PostDTO: Codable {
                         lastTimeSeen: last_time_seen,
                         location: location,
                         description: description,
-                        userID: user_id)
+                        userID: user_id,
+                        createdAt: created_at.toDate(withFormat: DateFormat.dayMonthYearHourOther))
         
         return post
     }

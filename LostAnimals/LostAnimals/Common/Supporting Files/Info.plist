@@ -29,9 +29,11 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>LostAnimals needs to access the camera to take photos of your animals</string>
+	<string>LostAnimals needs to access the camera</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>LostAnimals needs to access the photo library to choose photos of your animals</string>
+	<string>LostAnimals needs to access the photo library</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>LostAnimals needs to access to your location to search posts near you</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

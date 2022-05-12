@@ -6,6 +6,8 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
+import UIKit
+
 // MARK: - Enums
 enum AnimalType: String {
     case dog = "Dog"
@@ -33,6 +35,7 @@ struct Post {
     let location: Location
     let description: String
     let userID: String
+    let createdAt: Date
     
     // MARK: - Functions
     func map() -> PostDTO {
@@ -52,7 +55,8 @@ struct Post {
                               last_time_seen: lastTimeSeen,
                               location: location,
                               description: description,
-                              user_id: userID)
+                              user_id: userID,
+                              created_at: createdAt.toString(withFormat: DateFormat.dayMonthYearHourOther))
         return postDTO
     }
 }

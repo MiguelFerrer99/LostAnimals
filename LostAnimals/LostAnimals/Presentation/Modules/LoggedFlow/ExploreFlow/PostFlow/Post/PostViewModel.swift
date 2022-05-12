@@ -98,10 +98,8 @@ extension PostViewModel {
     }
     
     func getAge() -> Int? {
-        guard let user = user,
-              let auxBirthdateString = user.birthdate,
-              let auxBirthdate = auxBirthdateString.toDate(withFormat: DateFormat.dayMonthYearOther)
-        else { return nil }
+        guard let user = user, let auxBirthdateString = user.birthdate else { return nil }
+        let auxBirthdate = auxBirthdateString.toDate(withFormat: DateFormat.dayMonthYearOther)
         let birthdate = DateComponents(year: auxBirthdate.year,
                                        month: auxBirthdate.month,
                                        day: auxBirthdate.day)

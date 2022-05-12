@@ -22,17 +22,18 @@ final class ExploreRouter {
 extension ExploreRouter {
     func goToFilterPopup(filterType: FilterType, loadData: Bool) {
         DispatchQueue.main.async {
-            let viewController: ViewController!
             switch filterType {
             case .animal:
-                viewController = Container.shared.animalFilterPopupBuilder().build(loadData: loadData)
+                let viewController = Container.shared.animalFilterPopupBuilder().build(loadData: loadData)
+                self.viewController?.present(viewController: viewController, completion: nil)
             case .location:
-                viewController = Container.shared.locationFilterPopupBuilder().build(loadData: loadData)
+                let viewController = Container.shared.locationFilterPopupBuilder().build(loadData: loadData)
+                self.viewController?.present(viewController: viewController, completion: nil)
             case .date:
-                viewController = Container.shared.dateFilterPopupBuilder().build(loadData: loadData)
+                let viewController = Container.shared.dateFilterPopupBuilder().build(loadData: loadData)
+                self.viewController?.present(viewController: viewController, completion: nil)
             default: return
             }
-            self.viewController?.present(viewController: viewController, completion: nil)
         }
     }
     

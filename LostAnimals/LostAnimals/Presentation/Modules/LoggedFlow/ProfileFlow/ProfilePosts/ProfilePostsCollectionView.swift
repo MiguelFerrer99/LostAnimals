@@ -13,7 +13,6 @@ extension ProfilePostsViewController {
     func configureCollectionView(_ collectionView: UICollectionView) {
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(supplementaryView: ExploreFiltersHeader.self)
         collectionView.register(EmptyCollectionViewCell.self)
         collectionView.register(PostCollectionViewCell.self)
     }
@@ -30,20 +29,6 @@ extension ProfilePostsViewController: UICollectionViewDelegate {
 
 // MARK: - UICollectionViewDataSource
 extension ProfilePostsViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        switch kind {
-        case UICollectionView.elementKindSectionHeader:
-            let exploreFiltersHeader = collectionView.dequeue(supplementaryView: ExploreFiltersHeader.self, for: indexPath)
-            exploreFiltersHeader.postFiltersDelegate = self
-            return exploreFiltersHeader
-        default: return UICollectionReusableView()
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 50)
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         /*if HardcodedData.savedPosts.isEmpty { return 1 }
         else { return HardcodedData.savedPosts.count }*/

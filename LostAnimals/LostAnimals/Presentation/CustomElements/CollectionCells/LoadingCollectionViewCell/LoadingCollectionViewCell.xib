@@ -20,8 +20,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rnH-P0-xdF">
                         <rect key="frame" x="0.0" y="0.0" width="267" height="315"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="9fr-8E-sAT">
-                                <rect key="frame" x="123.5" y="147.5" width="20" height="20"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="9fr-8E-sAT">
+                                <rect key="frame" x="115" y="139" width="37" height="37"/>
                                 <color key="color" name="CustomBlack"/>
                             </activityIndicatorView>
                         </subviews>

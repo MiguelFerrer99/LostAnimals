@@ -8,7 +8,6 @@
 
 import Firebase
 import CodableFirebase
-import UIKit
 
 // MARK: - Enums
 enum LogInResult {

@@ -13,7 +13,6 @@ extension ExploreViewController {
     func configureCollectionView(_ collectionView: UICollectionView) {
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(supplementaryView: ExploreFiltersHeader.self)
         collectionView.register(LoadingCollectionViewCell.self)
         collectionView.register(EmptyCollectionViewCell.self)
         collectionView.register(PostCollectionViewCell.self)
@@ -22,6 +21,10 @@ extension ExploreViewController {
 
 // MARK: - UICollectionViewDelegate
 extension ExploreViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        return !(viewModel.isLoading || viewModel.posts.isEmpty)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let post = viewModel.posts[indexPath.item]
         viewModel.didPressPost(post: post)
@@ -30,21 +33,6 @@ extension ExploreViewController: UICollectionViewDelegate {
 
 // MARK: - UICollectionViewDataSource
 extension ExploreViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        switch kind {
-        case UICollectionView.elementKindSectionHeader:
-            let exploreFiltersHeader = collectionView.dequeue(supplementaryView: ExploreFiltersHeader.self, for: indexPath)
-            exploreFiltersHeader.postFiltersDelegate = self
-            exploreFiltersHeader.updateUserInteraction(enabled: !viewModel.isLoading)
-            return exploreFiltersHeader
-        default: return UICollectionReusableView()
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 50)
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if viewModel.isLoading || viewModel.posts.isEmpty { return 1 }
         else { return viewModel.posts.count }
@@ -77,7 +65,7 @@ extension ExploreViewController: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegateFlowLayout
 extension ExploreViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let collectionViewRealHeight = collectionView.frame.height - 50.0 - currentBarsHeight
+        let collectionViewRealHeight = collectionView.frame.height - currentBarsHeight
         if viewModel.isLoading || viewModel.posts.isEmpty {
             return CGSize(width: collectionView.frame.width, height: collectionViewRealHeight)
         }

@@ -13,7 +13,6 @@ extension SavedPostsViewController {
     func configureCollectionView(_ collectionView: UICollectionView) {
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(supplementaryView: ExploreFiltersHeader.self)
         collectionView.register(EmptyCollectionViewCell.self)
         collectionView.register(PostCollectionViewCell.self)
     }
@@ -29,21 +28,7 @@ extension SavedPostsViewController: UICollectionViewDelegate {
 }
 
 // MARK: - UICollectionViewDataSource
-extension SavedPostsViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        switch kind {
-        case UICollectionView.elementKindSectionHeader:
-            let exploreFiltersHeader = collectionView.dequeue(supplementaryView: ExploreFiltersHeader.self, for: indexPath)
-            exploreFiltersHeader.postFiltersDelegate = self
-            return exploreFiltersHeader
-        default: return UICollectionReusableView()
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 50)
-    }
-    
+extension SavedPostsViewController: UICollectionViewDataSource {    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 0
     }

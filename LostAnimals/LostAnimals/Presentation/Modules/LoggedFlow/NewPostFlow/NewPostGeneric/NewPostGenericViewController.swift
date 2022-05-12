@@ -148,7 +148,8 @@ private extension NewPostGenericViewController {
                            lastTimeSeen: lastTimeSeenText,
                            location: viewModel.newPostLocation,
                            description: descriptionTextview.text,
-                           userID: me.id)
+                           userID: me.id,
+                           createdAt: Date.today)
         
         return newPost
     }
