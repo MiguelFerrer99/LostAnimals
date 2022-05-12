@@ -63,8 +63,8 @@ private extension DateFilterPopupViewController {
                 updateApplyFilterButton()
             }
         } else {
-            postsPreviousToTextfield.text = Date.today.toString(withFormat: DateFormat.dayMonthYearOther)
-            postsAfterTextfield.text = Date.today.toString(withFormat: DateFormat.dayMonthYearOther)
+            postsPreviousToTextfield.text = Date().toString(withFormat: DateFormat.dayMonthYearOther)
+            postsAfterTextfield.text = Date().toString(withFormat: DateFormat.dayMonthYearOther)
         }
     }
     
@@ -94,13 +94,13 @@ private extension DateFilterPopupViewController {
     
     @IBAction func applyFilterButtonPressed(_ sender: CustomButton) {
         if viewModel.postsPreviousToSelected {
-            let date = postsPreviousToTextfield.text?.toDate(withFormat: DateFormat.dayMonthYearOther) ?? Date.today
+            let date = postsPreviousToTextfield.text?.toDate(withFormat: DateFormat.dayMonthYearOther) ?? Date()
             viewModel.postsPreviousToSelectedDate = date
         } else {
             viewModel.postsPreviousToSelectedDate = nil
         }
         if viewModel.postsAfterSelected {
-            let date = postsAfterTextfield.text?.toDate(withFormat: DateFormat.dayMonthYearOther) ?? Date.today
+            let date = postsAfterTextfield.text?.toDate(withFormat: DateFormat.dayMonthYearOther) ?? Date()
             viewModel.postsAfterSelectedDate = date
         } else {
             viewModel.postsAfterSelectedDate = nil

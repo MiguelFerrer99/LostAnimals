@@ -26,7 +26,6 @@ extension Date {
     }
     
     // MARK: - Properties
-    static let today = Date()
     var day: Int {
         let calendar = Calendar.current
         return calendar.component(.day, from: self)

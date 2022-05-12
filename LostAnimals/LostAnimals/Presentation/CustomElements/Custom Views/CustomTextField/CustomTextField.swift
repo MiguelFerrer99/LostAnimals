@@ -200,7 +200,7 @@ private extension CustomTextField {
         toolbar.tintColor = .customBlack
         toolbar.backgroundColor = .customWhite
         textField.inputAccessoryView = toolbar
-        datePicker.maximumDate = .today
+        datePicker.maximumDate = Date()
         datePicker.datePickerMode = datePickerMode
         if #available(iOS 13.4, *) {
             datePicker.preferredDatePickerStyle = .wheels

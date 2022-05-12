@@ -149,7 +149,7 @@ private extension NewPostGenericViewController {
                            location: viewModel.newPostLocation,
                            description: descriptionTextview.text.isEmpty ? "Not specified" : descriptionTextview.text,
                            userID: me.id,
-                           createdAt: Date.today)
+                           createdAt: Date())
         
         return newPost
     }

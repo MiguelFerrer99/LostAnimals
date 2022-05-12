@@ -47,7 +47,9 @@ extension PostService {
             } else if let snapshotValue = snapshot.value as? [String: Any] {
                 do {
                     let postsDTO = try FirebaseDecoder().decode([PostDTO].self, from: Array(snapshotValue.values))
-                    let posts = postsDTO.compactMap { $0.map() }
+                    var posts = postsDTO.compactMap { $0.map() }
+                    posts.sort { $0.createdAt < $1.createdAt }
+                    posts = posts.filter({ !(User.shared?.blockedUsers.contains($0.userID) ?? false) })
                     completion(.success(posts))
                 } catch { completion(.error("An unexpected error occured. Please, try again later")) }
             } else { completion(.success([])) }

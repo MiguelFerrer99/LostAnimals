@@ -21,13 +21,13 @@ extension DateFilterPopupViewController {
         postsPreviousToToolbar.backgroundColor = .customWhite
         
         postsPreviousToTextfield.inputAccessoryView = postsPreviousToToolbar
-        postsPreviousToDatePicker.maximumDate = .today
+        postsPreviousToDatePicker.maximumDate = Date()
         postsPreviousToDatePicker.datePickerMode = .date
         if #available(iOS 13.4, *) {
             postsPreviousToDatePicker.preferredDatePickerStyle = .wheels
         }
         postsPreviousToTextfield.inputView = postsPreviousToDatePicker
-        postsPreviousToTextfield.text = Date.today.toString(withFormat: DateFormat.dayMonthYearOther)
+        postsPreviousToTextfield.text = Date().toString(withFormat: DateFormat.dayMonthYearOther)
         
         // postsAfterTextfield
         let postsAfterToolbar = UIToolbar()
@@ -38,13 +38,13 @@ extension DateFilterPopupViewController {
         postsAfterToolbar.backgroundColor = .customWhite
         
         postsAfterTextfield.inputAccessoryView = postsAfterToolbar
-        postsAfterDatePicker.maximumDate = .today
+        postsAfterDatePicker.maximumDate = Date()
         postsAfterDatePicker.datePickerMode = .date
         if #available(iOS 13.4, *) {
             postsAfterDatePicker.preferredDatePickerStyle = .wheels
         }
         postsAfterTextfield.inputView = postsAfterDatePicker
-        postsAfterTextfield.text = Date.today.toString(withFormat: DateFormat.dayMonthYearOther)
+        postsAfterTextfield.text = Date().toString(withFormat: DateFormat.dayMonthYearOther)
     }
 }
 

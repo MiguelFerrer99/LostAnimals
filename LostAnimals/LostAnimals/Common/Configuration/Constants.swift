@@ -20,7 +20,7 @@ struct Constants {
                                 animalShelter: false,
                                 firstname: "",
                                 lastname: "",
-                                birthdate: Date.today.toString(withFormat: DateFormat.dayMonthYearOther),
+                                birthdate: Date().toString(withFormat: DateFormat.dayMonthYearOther),
                                 userURLImage: nil,
                                 headerURLImage: nil,
                                 location: Location(address: "Not specified", coordinates: nil),

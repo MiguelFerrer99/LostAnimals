@@ -66,7 +66,7 @@ extension String {
         let dateFormatter = DateFormatter()
         dateFormatter.calendar = Calendar(identifier: .gregorian)
         dateFormatter.dateFormat = format
-        let date = dateFormatter.date(from: self) ?? Date.today
+        let date = dateFormatter.date(from: self) ?? Date()
         return date
     }
     
