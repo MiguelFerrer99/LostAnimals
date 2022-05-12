@@ -136,7 +136,7 @@ private extension NewPostGenericViewController {
                            postType: viewModel.postType,
                            animalName: animalNameText.isEmpty ? "Not specified" : animalNameText,
                            animalType: selectedAnimalType,
-                           animalBreed: animalBreedText,
+                           animalBreed: animalBreedText.isEmpty ? "Not specified" : animalBreedText,
                            urlImage1: nil,
                            urlImage2: nil,
                            urlImage3: nil,
@@ -147,7 +147,7 @@ private extension NewPostGenericViewController {
                            urlImage8: nil,
                            lastTimeSeen: lastTimeSeenText,
                            location: viewModel.newPostLocation,
-                           description: descriptionTextview.text,
+                           description: descriptionTextview.text.isEmpty ? "Not specified" : descriptionTextview.text,
                            userID: me.id,
                            createdAt: Date.today)
         

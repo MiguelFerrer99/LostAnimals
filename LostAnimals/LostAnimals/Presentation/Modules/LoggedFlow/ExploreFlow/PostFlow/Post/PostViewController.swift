@@ -79,10 +79,6 @@ extension PostViewController {
 
 // MARK: - Private functions
 private extension PostViewController {
-    func unsubscribeToNotifications() {
-        NotificationCenter.default.removeObserver(self)
-    }
-    
     func setupUI() {
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         setNavBarButtons()
@@ -104,8 +100,11 @@ private extension PostViewController {
     }
     
     func fillUI() {
-        guard let user = viewModel.user else { return }
-        
+        fillPostUI()
+        fillAuthorUI()
+    }
+    
+    func fillPostUI() {
         postTypeImageView.image = UIImage(named: "\(viewModel.post.animalType.rawValue)")
         switch viewModel.post.postType {
         case .lost:
@@ -120,20 +119,23 @@ private extension PostViewController {
         
         animalNameLabel.text = viewModel.post.animalName
         animalBreedLabel.text = viewModel.post.animalBreed
+        lastTimeSeenLabel.text = viewModel.post.lastTimeSeen
+        locationLabel.text = viewModel.post.location.address
         descriptionTextView.text = viewModel.post.description
-        authorPhotoImageView.image = UIImage()
+    }
+    
+    func fillAuthorUI() {
+        guard let user = viewModel.user else { return }
         authorNameLabel.text = "\(user.firstname) \(user.lastname)"
         authorAddressLabel.text = user.location.address
         if let authorAge = viewModel.getAge() { authorAgeLabel.text = "\(authorAge) years old" }
-        lastTimeSeenLabel.text = viewModel.post.lastTimeSeen
-        locationLabel.text = viewModel.post.location.address
         contactWithAuthorButton.setTitle("Contact with \(user.firstname)", for: .normal)
-        
         if User.shared == user {
             authorView.isHidden = true
             contactWithAuthorButton.isHidden = true
         }
         animalShelterImageView.isHidden = !user.animalShelter
+        authorPhotoImageView.image = UIImage()
     }
     
     func updateSavedPostUI() {

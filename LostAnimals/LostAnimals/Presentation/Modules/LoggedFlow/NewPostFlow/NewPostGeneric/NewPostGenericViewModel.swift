@@ -80,6 +80,10 @@ extension NewPostGenericViewModel {
         return images
     }
     
+    func reloadExplorePosts() {
+        NotificationCenter.default.post(name: .UpdateExplorePosts, object: nil)
+    }
+    
     func didPressSelectPhotoButton() {
         guard let selectPhotoImageView = selectPhotoImageViews[selectedIndexImageView].image else { return }
         self.router.goToSelectPhotoPopup(showRemoveOption: !selectPhotoImageView.isEqualTo(image: UIImage(named: "SelectPhotoPlaceholder")))
@@ -98,6 +102,7 @@ extension NewPostGenericViewModel {
             self.postService.uploadPost(post: newPost, images: getImagesFromImageViews()) { result in
                 switch result {
                 case .success:
+                    self.reloadExplorePosts()
                     showSuccessPopup(title: "The post has been published successfully") {
                         self.router.goBackToTabBar()
                     }

@@ -10,8 +10,8 @@ import Foundation
 
 // MARK: - Notifications
 extension Notification.Name {
-    static let UpdateFiltersUI = Notification.Name("UpdateFiltersUI")
-    
     static let SendWhereDoYouLiveToSignUp = Notification.Name("SendWhereDoYouLiveToSignUp")
     static let SendWhereDoYouLiveToEditPersonalDetails = Notification.Name("SendWhereDoYouLiveToEditPersonalDetails")
+    
+    static let UpdateExplorePosts = Notification.Name("UpdateExplorePosts")
 }

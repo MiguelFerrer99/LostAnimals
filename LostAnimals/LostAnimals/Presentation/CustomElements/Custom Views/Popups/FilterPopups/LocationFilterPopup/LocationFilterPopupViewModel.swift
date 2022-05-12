@@ -38,7 +38,6 @@ extension LocationFilterPopupViewModel {
         Filters.setFilterValue(filterType: .all, enabled: false)
         Filters.setFilterValue(filterType: .location, enabled: true, locationFilterRangeKm: selectedRangeOfKm)
         Filters.setFilterTitle(type: .location, title: "\(selectedRangeOfKm) km")
-        NotificationCenter.default.post(name: .UpdateFiltersUI, object: nil)
         self.router.dismissLocationFilterPopup()
     }
     

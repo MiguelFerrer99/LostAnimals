@@ -47,7 +47,6 @@ extension DateFilterPopupViewModel {
         } else if postsAfterSelected {
             Filters.setFilterTitle(type: .date, title: "Date")
         }
-        NotificationCenter.default.post(name: .UpdateFiltersUI, object: nil)
         self.router.dismissDateFilterPopup()
     }
     

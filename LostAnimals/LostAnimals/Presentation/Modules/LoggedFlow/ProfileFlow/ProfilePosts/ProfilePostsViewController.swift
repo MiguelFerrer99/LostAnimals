@@ -42,6 +42,7 @@ final class ProfilePostsViewController: ViewController {
 // MARK: - Private functions
 private extension ProfilePostsViewController {
     func setupUI() {
+        Filters.resetFilters()
         configureCollectionView(profilePostsCollectionView)
     }
 }

@@ -43,6 +43,7 @@ final class SavedPostsViewController: ViewController {
 // MARK: - Functions
 extension SavedPostsViewController {
     func setupUI() {
+        Filters.resetFilters()
         configureCollectionView(savedPostsCollectionView)
         configureRefreshControl(refreshControl)
     }

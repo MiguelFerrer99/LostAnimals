@@ -47,7 +47,6 @@ extension AnimalFilterPopupViewModel {
         if let filterTitle = selectedAnimalTypes.count == 1 ? selectedAnimalTypes.first?.rawValue : "Many" {
             Filters.setFilterTitle(type: .animal, title: filterTitle)
         }
-        NotificationCenter.default.post(name: .UpdateFiltersUI, object: nil)
         self.router.dismissAnimalFilterPopup()
     }
     

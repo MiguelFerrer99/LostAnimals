@@ -57,8 +57,13 @@ final class ExploreViewController: ViewController {
 // MARK: - Private functions
 private extension ExploreViewController {
     func setupUI() {
+        subscribeToNotifications()
         currentBarsHeight = self.barHeights
         configureCollectionView(postsCollectionView)
+    }
+    
+    func subscribeToNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(getPosts), name: .UpdateExplorePosts, object: nil)
     }
     
     func fillUI() {
@@ -72,7 +77,7 @@ private extension ExploreViewController {
 
 // MARK: - Functions
 extension ExploreViewController {
-    func getPosts() {
+    @objc func getPosts() {
         viewModel.isLoading = true
         postsCollectionView.reloadData()
         viewModel.getPosts {

@@ -46,10 +46,6 @@ private extension EditPersonalDetailsViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(fillWhereDoYouLive), name: .SendWhereDoYouLiveToEditPersonalDetails, object: nil)
     }
     
-    func unsubscribeToNotifications() {
-        NotificationCenter.default.removeObserver(self)
-    }
-    
     func setupUI() {
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         fillUI()
