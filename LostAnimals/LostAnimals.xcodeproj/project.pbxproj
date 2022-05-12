@@ -311,7 +311,6 @@
 		41EC16E127868FF900096B7A /* GuestPopupBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC16DC27868FF900096B7A /* GuestPopupBuilder.swift */; };
 		41EC16E227868FF900096B7A /* GuestPopupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC16DD27868FF900096B7A /* GuestPopupViewModel.swift */; };
 		41ED088F281D9D6700DD2826 /* LocationFilterPopupLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ED088E281D9D6700DD2826 /* LocationFilterPopupLocationManager.swift */; };
-		41ED0891281DB3CB00DD2826 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ED0890281DB3CB00DD2826 /* Double.swift */; };
 		41F2DA78278B887300E582E8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F2DA77278B887300E582E8 /* User.swift */; };
 		41F2DA7C278B8DF600E582E8 /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F2DA7B278B8DF600E582E8 /* Coordinates.swift */; };
 		41F820C7276FD83B0046B0EA /* WhereCanWeFindYouRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F820C3276FD83B0046B0EA /* WhereCanWeFindYouRouter.swift */; };
@@ -659,7 +658,6 @@
 		41EC16DC27868FF900096B7A /* GuestPopupBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestPopupBuilder.swift; sourceTree = "<group>"; };
 		41EC16DD27868FF900096B7A /* GuestPopupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestPopupViewModel.swift; sourceTree = "<group>"; };
 		41ED088E281D9D6700DD2826 /* LocationFilterPopupLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFilterPopupLocationManager.swift; sourceTree = "<group>"; };
-		41ED0890281DB3CB00DD2826 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		41F2DA77278B887300E582E8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		41F2DA7B278B8DF600E582E8 /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
 		41F820C3276FD83B0046B0EA /* WhereCanWeFindYouRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereCanWeFindYouRouter.swift; sourceTree = "<group>"; };
@@ -1720,7 +1718,6 @@
 			children = (
 				CCB0207426A6F12000214CB9 /* Array.swift */,
 				CCB0207126A6F12000214CB9 /* Date.swift */,
-				41ED0890281DB3CB00DD2826 /* Double.swift */,
 				945B15A225595DC9003A65E0 /* Int.swift */,
 				CCB0207226A6F12000214CB9 /* String.swift */,
 				945B15A125595DC9003A65E0 /* UIColor.swift */,
@@ -2005,7 +2002,6 @@
 				4160E70C277B9E9B00C7066F /* OnboardingRouter.swift in Sources */,
 				41B75627275EE4CE00C00E03 /* SignUpViewController.swift in Sources */,
 				418A331E27EA77CA00F9E278 /* ConfirmationPopupViewController.swift in Sources */,
-				41ED0891281DB3CB00DD2826 /* Double.swift in Sources */,
 				4160E713277BA00400C7066F /* OnboardingCollectionView.swift in Sources */,
 				4160E70F277B9E9B00C7066F /* OnboardingViewModel.swift in Sources */,
 				417E58FF274D9CCD00447ED3 /* LoginTextFields.swift in Sources */,
