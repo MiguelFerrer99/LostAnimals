@@ -6,8 +6,12 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
 import UIKit
+
+// MARK: - Protocols
+protocol GoToMyProfileFromPostDelegate: AnyObject {
+    func goToMyProfile()
+}
 
 final class PostViewController: ViewController, UIGestureRecognizerDelegate {
     // MARK: - IBOutlets
@@ -25,12 +29,15 @@ final class PostViewController: ViewController, UIGestureRecognizerDelegate {
     @IBOutlet private weak var descriptionTextView: UITextView!
     @IBOutlet private weak var descriptionView: CustomView!
     @IBOutlet private weak var authorView: CustomView!
+    @IBOutlet private weak var authorButton: UIButton!
+    @IBOutlet private weak var loadingAuthorInfoView: UIView!
+    @IBOutlet private weak var authorInfoStackView: UIStackView!
     @IBOutlet private weak var animalShelterImageView: UIImageView!
     @IBOutlet private weak var authorPhotoImageView: UIImageView!
     @IBOutlet private weak var authorNameLabel: UILabel!
     @IBOutlet private weak var authorAgeLabel: UILabel!
     @IBOutlet private weak var authorAddressLabel: UILabel!
-    @IBOutlet private weak var contactWithAuthorButton: UIButton!
+    @IBOutlet private weak var contactWithAuthorButton: CustomButton!
     @IBOutlet weak var postImagesCollectionView: UICollectionView!
     @IBOutlet weak var postImagesPageControl: UIPageControl!
     
@@ -53,6 +60,7 @@ final class PostViewController: ViewController, UIGestureRecognizerDelegate {
     }
     var viewModel: PostViewModel!
     var savePostBarButtonItem = UIBarButtonItem()
+    weak var delegate: GoToMyProfileFromPostDelegate?
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -83,6 +91,7 @@ private extension PostViewController {
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         setNavBarButtons()
         configureScrollView(postScrollView)
+        contactWithAuthorButton.showLoading()
         configureCollectionView(postImagesCollectionView)
         fillUI()
     }
@@ -101,11 +110,12 @@ private extension PostViewController {
     
     func fillUI() {
         fillPostUI()
-        fillAuthorUI()
+        fillPostImages()
+        getAuthorInfo()
     }
     
     func fillPostUI() {
-        postTypeImageView.image = UIImage(named: "\(viewModel.post.animalType.rawValue)")
+        postTypeImageView.image = UIImage(named: viewModel.post.animalType.rawValue)
         switch viewModel.post.postType {
         case .lost:
             postTypeLabel.text = "Lost animal"
@@ -116,7 +126,6 @@ private extension PostViewController {
             postTypeLabel.text = "To adopt animal"
             lastTimeSeenAndLocationStackView.isHidden = true
         }
-        
         animalNameLabel.text = viewModel.post.animalName
         animalBreedLabel.text = viewModel.post.animalBreed
         lastTimeSeenLabel.text = viewModel.post.lastTimeSeen
@@ -124,32 +133,62 @@ private extension PostViewController {
         descriptionTextView.text = viewModel.post.description
     }
     
+    func fillPostImages() {
+        viewModel.getImagesFromURLImages {
+            DispatchQueue.main.async {
+                self.viewModel.isLoadingPostImages = false
+                self.postImagesCollectionView.reloadData()
+            }
+        }
+    }
+    
+    func getAuthorInfo() {
+        viewModel.getAuthorInfo { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success: self.fillAuthorUI()
+            default: break
+            }
+        }
+    }
+    
     func fillAuthorUI() {
         guard let user = viewModel.user else { return }
+        animalShelterImageView.isHidden = !user.animalShelter
         authorNameLabel.text = "\(user.firstname) \(user.lastname)"
         authorAddressLabel.text = user.location.address
         if let authorAge = viewModel.getAge() { authorAgeLabel.text = "\(authorAge) years old" }
-        contactWithAuthorButton.setTitle("Contact with \(user.firstname)", for: .normal)
-        if User.shared == user {
-            authorView.isHidden = true
-            contactWithAuthorButton.isHidden = true
+        contactWithAuthorButton.hideLoading {
+            self.contactWithAuthorButton.setTitle("Contact with \(user.firstname)", for: .normal)
         }
-        animalShelterImageView.isHidden = !user.animalShelter
-        authorPhotoImageView.image = UIImage()
+        if let userURLImage = user.userURLImage {
+            userURLImage.getURLImage { [weak self] image in
+                guard let self = self else { return }
+                self.authorPhotoImageView.image = image
+                self.loadingAuthorInfoView.isHidden = true
+                self.updateAuthorUI()
+            }
+        } else { self.updateAuthorUI() }
+    }
+    
+    func updateAuthorUI() {
+        loadingAuthorInfoView.isHidden = true
+        authorInfoStackView.isHidden = false
+        authorButton.isUserInteractionEnabled = true
     }
     
     func updateSavedPostUI() {
         guard let savePostBarButtonItemImage = savePostBarButtonItem.image,
               let savePostImageViewImage = savePostImageView.image
         else { return }
-        
         savePostBarButtonItem.image = savePostBarButtonItemImage.isEqualTo(image: UIImage(named: "SavePost")) ? UIImage(named: "SavePostFilled") : UIImage(named: "SavePost")
         savePostImageView.image = savePostImageViewImage.isEqualTo(image: UIImage(named: "SavePostWhite")) ? UIImage(named: "SavePostFilled") : UIImage(named: "SavePostWhite")
     }
     
     func savePost() {
-        viewModel.didPressSavePostButton { allowed in
-            if allowed { updateSavedPostUI() }
+        viewModel.didPressSavePostButton { [weak self] allowed in
+            guard let self = self else { return }
+            if allowed { self.updateSavedPostUI() }
         }
     }
     

@@ -30,7 +30,7 @@ extension PostImagesViewController: UICollectionViewDataSource {
         let postImage = viewModel.postImages[indexPath.row]
         let summary = PostImageCollectionViewCellSummary(postImage: postImage ?? UIImage(), aspectImage: .scaleAspectFit)
         let cell = collectionView.dequeue(PostImageCollectionViewCell.self, for: indexPath)
-        cell.display(summary: summary)
+        cell.display(summary)
         return cell
     }
 }

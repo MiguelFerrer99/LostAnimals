@@ -14,6 +14,7 @@ extension PostViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(PostImageCollectionViewCell.self)
+        collectionView.register(LoadingCollectionViewCell.self)
         postImagesPageControl.numberOfPages = viewModel.postImages.count
     }
 }
@@ -27,6 +28,10 @@ extension PostViewController: UICollectionViewDelegate {
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        return !viewModel.isLoadingPostImages
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         viewModel.didPressPostImage(indexPostImage: indexPath.row)
     }
@@ -35,15 +40,22 @@ extension PostViewController: UICollectionViewDelegate {
 // MARK: - UICollectionViewDataSource
 extension PostViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.postImages.count
+        return viewModel.isLoadingPostImages ? 1 : viewModel.postImages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let postImage = viewModel.postImages[indexPath.row]
-        let summary = PostImageCollectionViewCellSummary(postImage: postImage, aspectImage: .scaleAspectFill)
-        let cell = collectionView.dequeue(PostImageCollectionViewCell.self, for: indexPath)
-        cell.display(summary: summary)
-        return cell
+        if viewModel.isLoadingPostImages {
+            let summary = LoadingCollectionViewCellSummary(activityIndicatorStyle: .medium)
+            let cell = collectionView.dequeue(LoadingCollectionViewCell.self, for: indexPath)
+            cell.display(summary)
+            return cell
+        } else {
+            let postImage = viewModel.postImages[indexPath.row]
+            let summary = PostImageCollectionViewCellSummary(postImage: postImage, aspectImage: .scaleAspectFill)
+            let cell = collectionView.dequeue(PostImageCollectionViewCell.self, for: indexPath)
+            cell.display(summary)
+            return cell
+        }
     }
 }
 

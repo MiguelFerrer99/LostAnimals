@@ -69,4 +69,8 @@ extension ExploreViewModel {
     func didPressPost(post: Post) {
         self.router.goToPost(post: post)
     }
+    
+    func goToMyProfile() {
+        self.router.goToMyProfile()
+    }
 }

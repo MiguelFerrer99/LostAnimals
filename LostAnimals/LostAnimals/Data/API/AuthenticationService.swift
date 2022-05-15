@@ -10,18 +10,16 @@ import Firebase
 import CodableFirebase
 
 // MARK: - Enums
+enum GenericResult {
+    case success
+    case error(String)
+}
+
 enum LogInResult {
     case success(User)
     case error(String)
 }
-enum ForgotPasswordResult {
-    case success
-    case error(String)
-}
-enum SignUpResult {
-    case success
-    case error(String)
-}
+
 enum FirebaseError: String {
     case emailOrPasswordIncorrect = "The password is invalid or the user does not have a password."
     case userNotExists = "There is no user record corresponding to this identifier. The user may have been deleted."
@@ -68,7 +66,7 @@ extension AuthenticationService {
         }
     }
     
-    func forgotPassword(email: String, completion: @escaping (ForgotPasswordResult) -> Void) {
+    func forgotPassword(email: String, completion: @escaping (GenericResult) -> Void) {
         Auth.auth().sendPasswordReset(withEmail: email) { error in
             if let error = error {
                 switch error.localizedDescription {
@@ -83,7 +81,7 @@ extension AuthenticationService {
         }
     }
     
-    func signUp(user: User, userPassword: String, completion: @escaping (SignUpResult) -> Void) {
+    func signUp(user: User, userPassword: String, completion: @escaping (GenericResult) -> Void) {
         Auth.auth().createUser(withEmail: user.email, password: userPassword) { (authResult, error) in
             if let authResult = authResult {
                 var newUser = user

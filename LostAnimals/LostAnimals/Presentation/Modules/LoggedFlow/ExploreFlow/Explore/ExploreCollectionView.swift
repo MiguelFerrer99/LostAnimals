@@ -40,7 +40,9 @@ extension ExploreViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if viewModel.isLoading {
+            let summary = LoadingCollectionViewCellSummary(activityIndicatorStyle: .large)
             let cell = collectionView.dequeue(LoadingCollectionViewCell.self, for: indexPath)
+            cell.display(summary)
             return cell
         } else if viewModel.posts.isEmpty {
             let summary = EmptyCollectionViewCellSummary(emptyTitle: "There are not available posts", emptyImage: UIImage(named: "Other") ?? UIImage())

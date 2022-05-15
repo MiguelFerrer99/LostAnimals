@@ -67,7 +67,7 @@ extension CustomButton {
         setImage(tintedImage, for: .normal)
     }
     
-    func showLoading(completion: @escaping (() -> ())) {
+    func showLoading(completion: (() -> ())? = nil) {
         isEnabled = false
         setTitle("", for: .normal)
         originalButtonText = titleLabel?.text
@@ -75,16 +75,16 @@ extension CustomButton {
             activityIndicator = createActivityIndicator()
         }
         showSpinning()
-        completion()
+        if let completion = completion { completion() }
     }
     
-    func hideLoading(completion: @escaping (() -> ())) {
+    func hideLoading(completion: (() -> ())? = nil) {
         DispatchQueue.main.async {
             self.setTitle(self.originalButtonText, for: .normal)
             self.activityIndicator.stopAnimating()
             self.activityIndicator = nil
             self.isEnabled = true
-            completion()
+            if let completion = completion { completion() }
         }
     }
 }

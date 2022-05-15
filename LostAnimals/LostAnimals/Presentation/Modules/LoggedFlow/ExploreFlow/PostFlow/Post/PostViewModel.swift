@@ -12,10 +12,14 @@ final class PostViewModel {
     // MARK: - Properties
     private let router: PostRouter
     private var postURLImages: [String] = []
-    let comesFrom: PostComesFrom
     let post: Post
+    let comesFrom: PostComesFrom
+    var isLoadingPostImages = true
     var postImages: [UIImage] = []
     var user: User?
+    
+    // MARK: - Services
+    let userService = UserService()
     
     // MARK: - Init
     required init(router: PostRouter, comesFrom: PostComesFrom, post: Post) {
@@ -46,55 +50,67 @@ extension PostViewModel {
 
 // MARK: - Functions
 extension PostViewModel {
+    func getAuthorInfo(completion: @escaping ((GenericResult) -> Void)) {
+        userService.getUser(id: post.userID) { result in
+            switch result {
+            case .success(let author):
+                self.user = author
+                completion(.success)
+            case .error(let error):
+                showErrorPopup(title: error) { self.router.goBack() }
+            }
+        }
+    }
+    
     func getImagesFromURLImages(completion: @escaping (() -> ())) {
-        postURLImages[0].getURLImage(completion: { image1 in
-            if let image1 = image1 {
-                self.postImages.append(image1)
+        if let postURLImage1 = postURLImages[safe: 0] {
+            postURLImage1.getURLImage(completion: { image1 in
+                if let image1 = image1 { self.postImages.append(image1) }
                 
-                self.postURLImages[1].getURLImage(completion: { image2 in
-                    if let image2 = image2 {
-                        self.postImages.append(image2)
+                if let postURLImage2 = self.postURLImages[safe: 1] {
+                    postURLImage2.getURLImage(completion: { image2 in
+                        if let image2 = image2 { self.postImages.append(image2) }
                         
-                        self.postURLImages[2].getURLImage(completion: { image3 in
-                            if let image3 = image3 {
-                                self.postImages.append(image3)
+                        if let postURLImage3 = self.postURLImages[safe: 2] {
+                            postURLImage3.getURLImage(completion: { image3 in
+                                if let image3 = image3 { self.postImages.append(image3) }
                                 
-                                self.postURLImages[3].getURLImage(completion: { image4 in
-                                    if let image4 = image4 {
-                                        self.postImages.append(image4)
+                                if let postURLImage4 = self.postURLImages[safe: 3] {
+                                    postURLImage4.getURLImage(completion: { image4 in
+                                        if let image4 = image4 { self.postImages.append(image4) }
                                         
-                                        self.postURLImages[4].getURLImage(completion: { image5 in
-                                            if let image5 = image5 {
-                                                self.postImages.append(image5)
+                                        if let postURLImage5 = self.postURLImages[safe: 4] {
+                                            postURLImage5.getURLImage(completion: { image5 in
+                                                if let image5 = image5 { self.postImages.append(image5) }
                                                 
-                                                self.postURLImages[5].getURLImage(completion: { image6 in
-                                                    if let image6 = image6 {
-                                                        self.postImages.append(image6)
+                                                if let postURLImage6 = self.postURLImages[safe: 5] {
+                                                    postURLImage6.getURLImage(completion: { image6 in
+                                                        if let image6 = image6 { self.postImages.append(image6) }
                                                         
-                                                        self.postURLImages[6].getURLImage(completion: { image7 in
-                                                            if let image7 = image7 {
-                                                                self.postImages.append(image7)
+                                                        if let postURLImage7 = self.postURLImages[safe: 6] {
+                                                            postURLImage7.getURLImage(completion: { image7 in
+                                                                if let image7 = image7 { self.postImages.append(image7) }
                                                                 
-                                                                self.postURLImages[7].getURLImage(completion: { image8 in
-                                                                    if let image8 = image8 {
-                                                                        self.postImages.append(image8)
+                                                                if let postURLImage8 = self.postURLImages[safe: 7] {
+                                                                    postURLImage8.getURLImage(completion: { image8 in
+                                                                        if let image8 = image8 { self.postImages.append(image8) }
                                                                         completion()
-                                                                    } else { completion() }
-                                                                })
-                                                            } else { completion() }
-                                                        })
-                                                    } else { completion() }
-                                                })
-                                            } else { completion() }
-                                        })
-                                    } else { completion() }
-                                })
-                            } else { completion() }
-                        })
-                    } else { completion() }
-                })
-            } else { completion() }
-        })
+                                                                    })
+                                                                } else { completion() }
+                                                            })
+                                                        } else { completion() }
+                                                    })
+                                                } else { completion() }
+                                            })
+                                        } else { completion() }
+                                    })
+                                } else { completion() }
+                            })
+                        } else { completion() }
+                    })
+                } else { completion() }
+            })
+        } else { completion() }
     }
     
     func getAge() -> Int? {
@@ -124,12 +140,12 @@ extension PostViewModel {
     
     func didPressAuthor() {
         guard let user = user else { return }
-        self.router.goToAuthorProfile(user: user)
+        User.shared == user ? self.router.goToMyProfile() : self.router.goToAuthorProfile(user: user)
     }
     
     func didPressContactWithAuthor() {
         guard let user = user else { return }
-        self.router.showContactWithPopup(authorSocialMedias: user.socialMedias)
+        User.shared == user ? self.router.goToMyProfile() : self.router.showContactWithPopup(authorSocialMedias: user.socialMedias)
     }
     
     func didPressSavePostButton(allowed: ((Bool) -> ())) {

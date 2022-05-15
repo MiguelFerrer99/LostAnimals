@@ -20,7 +20,7 @@ class PostImageCollectionViewCell: UICollectionViewCell, Reusable {
 
 // MARK: - Functions
 extension PostImageCollectionViewCell {
-    func display(summary: PostImageCollectionViewCellSummary) {
+    func display(_ summary: PostImageCollectionViewCellSummary) {
         postImageView.image = summary.postImage
         postImageView.contentMode = summary.aspectImage
     }

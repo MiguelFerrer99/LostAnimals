@@ -26,6 +26,7 @@ final class PostOptionsPopupViewController: ViewController {
     // MARK: - IBOutlets
     @IBOutlet private weak var backgroundView: UIView!
     @IBOutlet private weak var editPostButtonView: UIView!
+    @IBOutlet weak var blockUserButtonView: UIView!
     
     // MARK: - Properties
     weak var delegate: ActionAfterPostOptionsDelegate?
@@ -66,6 +67,7 @@ final class PostOptionsPopupViewController: ViewController {
 private extension PostOptionsPopupViewController {
     func setupUI() {
         editPostButtonView.isHidden = (viewModel.comesFrom == .explore) || (viewModel.user != User.shared)
+        blockUserButtonView.isHidden = viewModel.user == User.shared
     }
 }
 

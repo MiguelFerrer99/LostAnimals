@@ -9,9 +9,11 @@
 import UIKit
 
 class LoadingCollectionViewCell: UICollectionViewCell, Reusable {
-
-    // MARK: - Life cycle
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    // MARK: - Properties
+    @IBOutlet private weak var indicatorView: UIActivityIndicatorView!
+    
+    // MARK: - Functions
+    func display(_ summary: LoadingCollectionViewCellSummary) {
+        indicatorView.style = summary.activityIndicatorStyle
     }
 }

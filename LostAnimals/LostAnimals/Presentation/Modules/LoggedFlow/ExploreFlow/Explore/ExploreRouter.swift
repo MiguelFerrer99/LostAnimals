@@ -20,6 +20,13 @@ final class ExploreRouter {
 
 // MARK: - Functions
 extension ExploreRouter {
+    func goToMyProfile() {
+        DispatchQueue.main.async {
+            guard let tabBarController = self.viewController?.tabBarController else { return }
+            tabBarController.selectedIndex = TabBarItem.profile.rawValue
+        }
+    }
+    
     func goToFilterPopup(filterType: FilterType, loadData: Bool) {
         DispatchQueue.main.async {
             switch filterType {
@@ -47,6 +54,7 @@ extension ExploreRouter {
     func goToPost(post: Post) {
         DispatchQueue.main.async {
             let viewController = Container.shared.postBuilder().build(comesFrom: .explore, post: post)
+            viewController.delegate = self.viewController
             self.viewController?.push(viewController: viewController)
         }
     }

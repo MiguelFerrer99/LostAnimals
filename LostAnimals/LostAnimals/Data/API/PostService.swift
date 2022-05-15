@@ -11,11 +11,6 @@ import Firebase
 import CodableFirebase
 
 // MARK: - Enums
-enum UploadPostResult {
-    case success
-    case error(String)
-}
-
 enum GetPostsResult {
     case success([Post])
     case error(String)
@@ -56,7 +51,7 @@ extension PostService {
         }
     }
     
-    func uploadPost(post: Post, images: [UIImage?], completion: @escaping (UploadPostResult) -> Void) {
+    func uploadPost(post: Post, images: [UIImage?], completion: @escaping (GenericResult) -> Void) {
         self.uploadPostImagesAndGetURLs(postID: post.id, images: images) { urlImages in
             do {
                 var newPost = post
