@@ -17,11 +17,6 @@ class PostCollectionViewCell: UICollectionViewCell, Reusable {
     @IBOutlet private weak var postImageView: UIImageView!
     @IBOutlet private weak var leadingConstraint: NSLayoutConstraint!
     @IBOutlet private weak var trailingConstraint: NSLayoutConstraint!
-    
-    // MARK: - Life cycle
-    override func prepareForReuse() {
-        animalNameLabel.text = nil
-    }
 }
 
 // MARK: - Functions
