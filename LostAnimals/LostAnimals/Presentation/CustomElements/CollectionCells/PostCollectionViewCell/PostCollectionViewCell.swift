@@ -12,7 +12,6 @@ class PostCollectionViewCell: UICollectionViewCell, Reusable {
     // MARK: - IBOutlets
     @IBOutlet private weak var postTypeImageView: UIImageView!
     @IBOutlet private weak var postTypeWhiteImageView: UIImageView!
-    @IBOutlet private weak var animalTypeImageView: UIImageView!
     @IBOutlet private weak var animalTypeWhiteImageView: UIImageView!
     @IBOutlet private weak var animalNameLabel: UILabel!
     @IBOutlet private weak var postImageView: UIImageView!
@@ -20,8 +19,8 @@ class PostCollectionViewCell: UICollectionViewCell, Reusable {
     @IBOutlet private weak var trailingConstraint: NSLayoutConstraint!
     
     // MARK: - Life cycle
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override func prepareForReuse() {
+        animalNameLabel.text = nil
     }
 }
 
@@ -30,7 +29,6 @@ extension PostCollectionViewCell {
     func display(summary: PostCollectionViewCellSummary) {
         postTypeImageView.image = UIImage(named: summary.postType.rawValue)
         postTypeWhiteImageView.image = UIImage(named: "\(summary.postType.rawValue)White")
-        animalTypeImageView.image = UIImage(named: summary.animalType.rawValue)
         animalTypeWhiteImageView.image = UIImage(named: "\(summary.animalType.rawValue)White")
         animalNameLabel.text = summary.animalName
         getPostImage(from: summary.postURLImage)

@@ -31,7 +31,11 @@ final class PostOptionsPopupViewModel {
         self.comesFrom = comesFrom
         self.post = post
         self.user = user
-        self.postImage = postImage
+        if let croppedRectImage = postImage.croppedRectImage() {
+            self.postImage = croppedRectImage
+        } else {
+            self.postImage = postImage
+        }
     }
 }
 
@@ -96,7 +100,7 @@ extension PostOptionsPopupViewModel {
         ]
         let otherTextAttributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor.customWhite.withAlphaComponent(0.6),
-            .font: UIFont.nunitoSmallBold,
+            .font: UIFont.nunitoMediumBold,
             .paragraphStyle: paragraphStyle
         ]
         
@@ -117,34 +121,50 @@ extension PostOptionsPopupViewModel {
         }
         
         // Basic images
-        guard let clearBg = UIImage(named: "ClearBackgroundImageToShare"), let bgImage = bgImage else { return nil }
+        guard let clearBg = UIImage(named: "ClearBackgroundImageToShare"),
+              let bgImage = bgImage
+        else { return nil }
         
         // Clear background
         guard let returnedImage1 = postImage.drawImageIn(bgImage: clearBg,
-                                                           position: CGRect(x: clearBg.size.width/2 - 180, y: clearBg.size.height/2 - 313, width: 360, height: 360))
+                                                         position: CGRect(x: clearBg.size.width/2 - clearBg.size.width/3,
+                                                                          y: clearBg.size.height/2.57 - clearBg.size.width/3,
+                                                                          width: clearBg.size.width/1.5,
+                                                                          height: clearBg.size.width/1.5))
         else { return nil }
         
         // Basic background
         guard let returnedImage2 = bgImage.drawImageIn(bgImage: returnedImage1,
-                                                       position: CGRect(x: 0, y: 0, width: returnedImage1.size.width, height: returnedImage1.size.height))
+                                                       position: CGRect(x: 0,
+                                                                        y: 0,
+                                                                        width: returnedImage1.size.width,
+                                                                        height: returnedImage1.size.height))
         else { return nil }
         
         // Animal name
-        let name: String = post.animalName ?? ""
-        guard let returnedImage3 = name.drawTextIn(bgImage: returnedImage2,
-                                                   position: CGRect(x: 70, y: 215, width: returnedImage2.size.width - 140, height: returnedImage2.size.height),
-                                                   textAttributes: mainTextAttributes)
+        guard let returnedImage3 = (post.animalName ?? "").drawTextIn(bgImage: returnedImage2,
+                                                                      position: CGRect(x: (returnedImage2.size.width - returnedImage2.size.width/1.5) / 2,
+                                                                                       y: returnedImage2.size.height/5.5,
+                                                                                       width: returnedImage2.size.width/1.5,
+                                                                                       height: returnedImage2.size.height),
+                                                                      textAttributes: mainTextAttributes)
         else { return nil }
         
         // Lost in
         guard let returnedImage4 = firstText.drawTextIn(bgImage: returnedImage3,
-                                                        position: CGRect(x: 70, y: returnedImage3.size.height/2 + 125, width: returnedImage3.size.width - 140, height: returnedImage3.size.height),
+                                                        position: CGRect(x: (returnedImage3.size.width - returnedImage3.size.width/1.5) / 2,
+                                                                         y: returnedImage3.size.height/1.66,
+                                                                         width: returnedImage3.size.width/1.5,
+                                                                         height: returnedImage3.size.height),
                                                         textAttributes: otherTextAttributes)
         else { return nil }
         
         // Lost on
         guard let returnedImage5 = secondText.drawTextIn(bgImage: returnedImage4,
-                                                         position: CGRect(x: 70, y: returnedImage4.size.height/2 + 245, width: returnedImage4.size.width - 140, height: returnedImage4.size.height),
+                                                         position: CGRect(x: (returnedImage4.size.width - returnedImage4.size.width/1.5) / 2,
+                                                                          y: returnedImage4.size.height/1.43,
+                                                                          width: returnedImage4.size.width/1.5,
+                                                                          height: returnedImage4.size.height),
                                                          textAttributes: otherTextAttributes)
         else { return nil }
         

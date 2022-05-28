@@ -48,48 +48,58 @@
                                     <constraint firstAttribute="height" constant="20" id="VrA-hY-7LW"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OtherWhite" translatesAutoresizingMaskIntoConstraints="NO" id="Zb3-Q0-qIU">
-                                <rect key="frame" x="9" y="204" width="27" height="27"/>
-                                <color key="tintColor" name="CustomBlack"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t1F-xF-yRS" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
+                                <rect key="frame" x="10" y="205" width="69" height="25"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6Ox-1x-7Kr">
+                                        <rect key="frame" x="5" y="5" width="59" height="15"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OtherWhite" translatesAutoresizingMaskIntoConstraints="NO" id="Zb3-Q0-qIU">
+                                                <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
+                                                <color key="tintColor" name="CustomBlack"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="15" id="eyW-2z-Qkp"/>
+                                                    <constraint firstAttribute="width" constant="15" id="gy0-Jt-rNS"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hi-nd-LKr">
+                                                <rect key="frame" x="23" y="0.0" width="36" height="15"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="14"/>
+                                                <color key="textColor" name="CustomWhite"/>
+                                                <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <size key="shadowOffset" width="1" height="1"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" name="CustomBlack"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="27" id="eyW-2z-Qkp"/>
-                                    <constraint firstAttribute="width" constant="27" id="gy0-Jt-rNS"/>
+                                    <constraint firstItem="6Ox-1x-7Kr" firstAttribute="leading" secondItem="t1F-xF-yRS" secondAttribute="leading" constant="5" id="1mY-0A-JYB"/>
+                                    <constraint firstAttribute="bottom" secondItem="6Ox-1x-7Kr" secondAttribute="bottom" constant="5" id="H6G-uc-37g"/>
+                                    <constraint firstItem="6Ox-1x-7Kr" firstAttribute="top" secondItem="t1F-xF-yRS" secondAttribute="top" constant="5" id="oPX-ux-05k"/>
+                                    <constraint firstAttribute="trailing" secondItem="6Ox-1x-7Kr" secondAttribute="trailing" constant="5" id="yIJ-X5-Wxu"/>
                                 </constraints>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Other" translatesAutoresizingMaskIntoConstraints="NO" id="RkG-HC-Hvg">
-                                <rect key="frame" x="10" y="205" width="25" height="25"/>
-                                <color key="tintColor" name="CustomBlack"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="dCs-pu-fd6"/>
-                                    <constraint firstAttribute="width" constant="25" id="wbU-WV-E7s"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hi-nd-LKr">
-                                <rect key="frame" x="45" y="206" width="42.5" height="23"/>
-                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="16"/>
-                                <color key="textColor" name="CustomBlack"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" name="CustomWhite"/>
-                                <size key="shadowOffset" width="1" height="1"/>
-                            </label>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" name="CustomGreen"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="BbS-wx-vWX" firstAttribute="leading" secondItem="lAN-bt-fcf" secondAttribute="leading" constant="10" id="4jX-0E-MK4"/>
                             <constraint firstAttribute="bottom" secondItem="Tah-1e-Tbn" secondAttribute="bottom" id="6iu-68-rSw"/>
+                            <constraint firstAttribute="bottom" secondItem="t1F-xF-yRS" secondAttribute="bottom" constant="10" id="Bip-jn-9ei"/>
                             <constraint firstItem="BbS-wx-vWX" firstAttribute="top" secondItem="lAN-bt-fcf" secondAttribute="top" constant="10" id="Fgt-Mr-5od"/>
-                            <constraint firstItem="3hi-nd-LKr" firstAttribute="centerY" secondItem="RkG-HC-Hvg" secondAttribute="centerY" id="GDJ-CN-PfR"/>
                             <constraint firstItem="oSl-xe-pYu" firstAttribute="top" secondItem="lAN-bt-fcf" secondAttribute="top" constant="9" id="GZZ-fa-rSc"/>
+                            <constraint firstItem="t1F-xF-yRS" firstAttribute="leading" secondItem="lAN-bt-fcf" secondAttribute="leading" constant="10" id="KDU-cJ-TKL"/>
                             <constraint firstItem="oSl-xe-pYu" firstAttribute="leading" secondItem="lAN-bt-fcf" secondAttribute="leading" constant="9" id="MaI-aJ-2Wv"/>
-                            <constraint firstAttribute="bottom" secondItem="Zb3-Q0-qIU" secondAttribute="bottom" constant="9" id="NVN-aa-c2k"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="t1F-xF-yRS" secondAttribute="trailing" constant="10" id="cp1-FG-iqv"/>
                             <constraint firstItem="Tah-1e-Tbn" firstAttribute="leading" secondItem="lAN-bt-fcf" secondAttribute="leading" id="dOX-VU-F1O"/>
                             <constraint firstAttribute="trailing" secondItem="Tah-1e-Tbn" secondAttribute="trailing" id="fvC-NE-HZU"/>
-                            <constraint firstAttribute="bottom" secondItem="RkG-HC-Hvg" secondAttribute="bottom" constant="10" id="m48-WI-EUO"/>
                             <constraint firstItem="Tah-1e-Tbn" firstAttribute="top" secondItem="lAN-bt-fcf" secondAttribute="top" id="mQ9-hy-uZf"/>
-                            <constraint firstItem="RkG-HC-Hvg" firstAttribute="leading" secondItem="lAN-bt-fcf" secondAttribute="leading" constant="10" id="smH-oE-2AI"/>
-                            <constraint firstItem="3hi-nd-LKr" firstAttribute="leading" secondItem="RkG-HC-Hvg" secondAttribute="trailing" constant="10" id="wKe-bq-YCB"/>
-                            <constraint firstItem="Zb3-Q0-qIU" firstAttribute="leading" secondItem="lAN-bt-fcf" secondAttribute="leading" constant="9" id="y5J-0g-ojD"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -126,7 +136,6 @@
             <size key="customSize" width="179" height="260"/>
             <connections>
                 <outlet property="animalNameLabel" destination="3hi-nd-LKr" id="TMV-mN-b7V"/>
-                <outlet property="animalTypeImageView" destination="RkG-HC-Hvg" id="PnR-cG-RKU"/>
                 <outlet property="animalTypeWhiteImageView" destination="Zb3-Q0-qIU" id="zDe-Mh-jBn"/>
                 <outlet property="leadingConstraint" destination="OaX-Ky-5H0" id="ekE-N6-cPs"/>
                 <outlet property="postImageView" destination="Tah-1e-Tbn" id="F0d-VX-w4t"/>
@@ -146,7 +155,6 @@
         <image name="DefaultHeaderImage" width="413.5" height="283"/>
         <image name="Lost" width="25" height="25"/>
         <image name="LostWhite" width="25" height="25"/>
-        <image name="Other" width="256" height="256"/>
         <image name="OtherWhite" width="256" height="256"/>
         <namedColor name="CustomBlack">
             <color red="0.24705882352941178" green="0.24705882352941178" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

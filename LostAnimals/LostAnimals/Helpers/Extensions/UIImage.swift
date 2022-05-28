@@ -40,4 +40,29 @@ extension UIImage {
         else { return false }
         return nsData1 == nsData2
     }
+    
+    func croppedRectImage() -> UIImage? {
+        let sideLength = min(
+            self.size.width,
+            self.size.height
+        )
+        let sourceSize = self.size
+        let xOffset = (sourceSize.width - sideLength) / 2.0
+        let yOffset = (sourceSize.height - sideLength) / 2.0
+        let cropRect = CGRect(
+            x: xOffset,
+            y: yOffset,
+            width: sideLength,
+            height: sideLength
+        ).integral
+        guard let sourceCGImage = self.cgImage,
+                let croppedCGImage = sourceCGImage.cropping(to: cropRect)
+        else { return nil }
+        let croppedImage = UIImage(
+            cgImage: croppedCGImage,
+            scale: self.imageRendererFormat.scale,
+            orientation: self.imageOrientation
+        )
+        return croppedImage
+    }
 }
