@@ -15,7 +15,7 @@ enum GenericResult {
     case error(String)
 }
 
-enum LogInResult {
+enum UserResult {
     case success(User)
     case error(String)
 }
@@ -43,7 +43,7 @@ final class AuthenticationService {
 
 // MARK: - Functions
 extension AuthenticationService {
-    func logIn(email: String, password: String, completion: @escaping (LogInResult) -> Void) {
+    func logIn(email: String, password: String, completion: @escaping (UserResult) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
             if let authResult = authResult {
                 if authResult.user.isEmailVerified {

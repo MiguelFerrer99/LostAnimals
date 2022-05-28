@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: - ActionAfterPostOptionsDelegate
 extension PostViewController: ActionAfterPostOptionsDelegate {
-    func goTo(action: ActionAfterPostOptions, postImageToShare: UIImage?) {
+    func goTo(action: ActionAfterPostOptions) {
         switch action {
         case .goToEditPost:
             viewModel.didPressEditPostButton()
@@ -19,10 +19,10 @@ extension PostViewController: ActionAfterPostOptionsDelegate {
             viewModel.showGuestPopupFromPostOptionsPopup()
         case .showSuccessPopup:
             viewModel.showSuccessPopupFromPostOptionsPopup()
-        case .showErrorPopup:
-            viewModel.showErrorPopupFromPostOptionsPopup()
-        case .showActivityVC:
-            guard let postImageToShare = postImageToShare else { return }
+        case .showErrorPopup(let error):
+            viewModel.showErrorPopupFromPostOptionsPopup(error: error)
+        case .showActivityVC(let image):
+            guard let postImageToShare = image else { return }
             presentActivityVC(postImageToShare: postImageToShare)
         }
     }

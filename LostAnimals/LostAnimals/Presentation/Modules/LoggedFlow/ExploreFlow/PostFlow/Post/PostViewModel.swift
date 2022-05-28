@@ -159,8 +159,8 @@ extension PostViewModel {
     }
     
     func didPressOptionsButton() {
-        guard let user = user else { return }
-        self.router.goToPostOptionsPopup(comesFrom: comesFrom, post: post, user: user)
+        guard let user = user, let postImage = postImages[safe: 0] else { return }
+        self.router.goToPostOptionsPopup(comesFrom: comesFrom, post: post, user: user, postImage: postImage)
     }
     
     func didPressEditPostButton() {
@@ -175,7 +175,7 @@ extension PostViewModel {
         showSuccessPopup(title: "The user has been blocked successfully", action: nil)
     }
     
-    func showErrorPopupFromPostOptionsPopup() {
-        showErrorPopup(title: "An unexpected error occured. Please, try again later", action: nil)
+    func showErrorPopupFromPostOptionsPopup(error: String) {
+        showErrorPopup(title: error, action: nil)
     }
 }

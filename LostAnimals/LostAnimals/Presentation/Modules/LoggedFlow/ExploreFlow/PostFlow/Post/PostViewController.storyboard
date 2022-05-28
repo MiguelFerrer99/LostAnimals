@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -26,23 +26,23 @@
             <objects>
                 <viewController storyboardIdentifier="PostViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="PostViewController" customModule="LostAnimals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0W-Iv-nBT">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xCg-vx-Fil">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="2026"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="2026"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="MnO-2G-3ZO">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="2006"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="2006"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jWu-yv-TYG">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
                                                         <subviews>
                                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="evv-mb-LHg">
-                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="DiL-um-QnQ">
                                                                     <size key="itemSize" width="128" height="128"/>
@@ -53,7 +53,7 @@
                                                                 <cells/>
                                                             </collectionView>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6P9-dz-cSI">
-                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IWz-HV-dpg">
                                                                         <rect key="frame" x="10" y="10" width="40" height="40"/>
@@ -93,7 +93,7 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lAJ-AN-ZTh">
-                                                                        <rect key="frame" x="265" y="10" width="40" height="40"/>
+                                                                        <rect key="frame" x="270" y="10" width="40" height="40"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SavePostWhite" translatesAutoresizingMaskIntoConstraints="NO" id="Y3G-k8-S6F">
                                                                                 <rect key="frame" x="5" y="5" width="30" height="30"/>
@@ -114,7 +114,6 @@
                                                                             <constraint firstAttribute="trailing" secondItem="Y3G-k8-S6F" secondAttribute="trailing" constant="5" id="J1F-gx-UY1"/>
                                                                             <constraint firstAttribute="bottom" secondItem="ESm-8a-1ff" secondAttribute="bottom" id="UBn-nr-Gxz"/>
                                                                             <constraint firstItem="ESm-8a-1ff" firstAttribute="top" secondItem="lAJ-AN-ZTh" secondAttribute="top" id="XzA-co-4jU"/>
-                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="dxE-JO-YBl"/>
                                                                             <constraint firstAttribute="trailing" secondItem="ESm-8a-1ff" secondAttribute="trailing" id="eTD-J3-5z3"/>
                                                                             <constraint firstAttribute="bottom" secondItem="Y3G-k8-S6F" secondAttribute="bottom" constant="5" id="jmH-my-UJw"/>
                                                                             <constraint firstAttribute="width" constant="40" id="mNA-wH-R8T"/>
@@ -122,8 +121,8 @@
                                                                             <constraint firstItem="ESm-8a-1ff" firstAttribute="leading" secondItem="lAJ-AN-ZTh" secondAttribute="leading" id="zjF-yb-pH3"/>
                                                                         </constraints>
                                                                     </view>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XaK-Pw-F4c">
-                                                                        <rect key="frame" x="325" y="10" width="40" height="40"/>
+                                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XaK-Pw-F4c">
+                                                                        <rect key="frame" x="270" y="10" width="40" height="40"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PostOptionsWhite" translatesAutoresizingMaskIntoConstraints="NO" id="i9Q-go-WJS">
                                                                                 <rect key="frame" x="5" y="5" width="30" height="30"/>
@@ -162,12 +161,12 @@
                                                                     <constraint firstAttribute="height" constant="60" id="Sy1-C2-yOh"/>
                                                                     <constraint firstItem="IWz-HV-dpg" firstAttribute="leading" secondItem="6P9-dz-cSI" secondAttribute="leading" constant="10" id="WUu-PY-MxZ"/>
                                                                     <constraint firstAttribute="bottom" secondItem="IWz-HV-dpg" secondAttribute="bottom" constant="10" id="f9U-lQ-Uwg"/>
-                                                                    <constraint firstItem="XaK-Pw-F4c" firstAttribute="leading" secondItem="lAJ-AN-ZTh" secondAttribute="trailing" constant="20" id="qMG-ub-iHG"/>
+                                                                    <constraint firstItem="lAJ-AN-ZTh" firstAttribute="trailing" secondItem="6P9-dz-cSI" secondAttribute="trailing" constant="-10" id="jAS-64-9Ku"/>
                                                                     <constraint firstItem="lAJ-AN-ZTh" firstAttribute="top" secondItem="6P9-dz-cSI" secondAttribute="top" constant="10" id="tdf-JW-MF6"/>
                                                                 </constraints>
                                                             </view>
                                                             <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="1" translatesAutoresizingMaskIntoConstraints="NO" id="aK3-BS-ZKO">
-                                                                <rect key="frame" x="147.5" y="224" width="80.5" height="26"/>
+                                                                <rect key="frame" x="120" y="224" width="80.5" height="26"/>
                                                                 <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="currentPageIndicatorTintColor" name="CustomBlack"/>
                                                             </pageControl>
@@ -187,13 +186,13 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wq4-UO-xmj">
-                                                        <rect key="frame" x="0.0" y="270" width="375" height="1736"/>
+                                                        <rect key="frame" x="0.0" y="270" width="320" height="1736"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="aHp-7N-79h">
-                                                                <rect key="frame" x="20" y="0.0" width="335" height="1736"/>
+                                                                <rect key="frame" x="20" y="0.0" width="280" height="1736"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="BpK-pO-xMh">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="40"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="40"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dog" translatesAutoresizingMaskIntoConstraints="NO" id="l4C-8C-cSD">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -202,8 +201,8 @@
                                                                                     <constraint firstAttribute="height" constant="40" id="eYC-VW-pgt"/>
                                                                                 </constraints>
                                                                             </imageView>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lost animal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFS-Bh-VRV">
-                                                                                <rect key="frame" x="60" y="0.0" width="275" height="40"/>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lost animal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="yFS-Bh-VRV">
+                                                                                <rect key="frame" x="60" y="0.0" width="220" height="40"/>
                                                                                 <fontDescription key="fontDescription" name="Nunito-Black" family="Nunito" pointSize="32"/>
                                                                                 <color key="textColor" name="CustomBlack"/>
                                                                                 <nil key="highlightedColor"/>
@@ -211,19 +210,19 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1oC-ao-LQJ">
-                                                                        <rect key="frame" x="0.0" y="60" width="335" height="120"/>
+                                                                        <rect key="frame" x="0.0" y="60" width="280" height="120"/>
                                                                         <subviews>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EFR-kc-Hsv" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="157.5" height="120"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="130" height="120"/>
                                                                                 <subviews>
                                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="qY1-1A-9JS">
-                                                                                        <rect key="frame" x="0.0" y="10" width="157.5" height="100"/>
+                                                                                        <rect key="frame" x="0.0" y="10" width="130" height="100"/>
                                                                                         <subviews>
                                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A6l-fR-UbW">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="157.5" height="50"/>
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="130" height="50"/>
                                                                                                 <subviews>
                                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hb1-C7-giT">
-                                                                                                        <rect key="frame" x="20" y="0.0" width="117.5" height="50"/>
+                                                                                                        <rect key="frame" x="20" y="0.0" width="90" height="50"/>
                                                                                                         <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="16"/>
                                                                                                         <color key="textColor" name="CustomWhite"/>
                                                                                                         <nil key="highlightedColor"/>
@@ -238,10 +237,10 @@
                                                                                                 </constraints>
                                                                                             </view>
                                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sg0-pL-vPP">
-                                                                                                <rect key="frame" x="0.0" y="50" width="157.5" height="50"/>
+                                                                                                <rect key="frame" x="0.0" y="50" width="130" height="50"/>
                                                                                                 <subviews>
                                                                                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gNT-2i-Dyj">
-                                                                                                        <rect key="frame" x="20" y="0.0" width="117.5" height="50"/>
+                                                                                                        <rect key="frame" x="20" y="0.0" width="90" height="50"/>
                                                                                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
                                                                                                         <color key="textColor" name="CustomWhite"/>
                                                                                                         <nil key="highlightedColor"/>
@@ -273,16 +272,16 @@
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gKN-uU-Fir" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
-                                                                                <rect key="frame" x="177.5" y="0.0" width="157.5" height="120"/>
+                                                                                <rect key="frame" x="150" y="0.0" width="130" height="120"/>
                                                                                 <subviews>
                                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="eaL-K0-N8i">
-                                                                                        <rect key="frame" x="0.0" y="10" width="157.5" height="100"/>
+                                                                                        <rect key="frame" x="0.0" y="10" width="130" height="100"/>
                                                                                         <subviews>
                                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VqM-CO-hin">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="157.5" height="50"/>
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="130" height="50"/>
                                                                                                 <subviews>
                                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19V-o9-S4i">
-                                                                                                        <rect key="frame" x="20" y="0.0" width="117.5" height="50"/>
+                                                                                                        <rect key="frame" x="20" y="0.0" width="90" height="50"/>
                                                                                                         <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="16"/>
                                                                                                         <color key="textColor" name="CustomWhite"/>
                                                                                                         <nil key="highlightedColor"/>
@@ -297,10 +296,10 @@
                                                                                                 </constraints>
                                                                                             </view>
                                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EQX-sm-1JU">
-                                                                                                <rect key="frame" x="0.0" y="50" width="157.5" height="50"/>
+                                                                                                <rect key="frame" x="0.0" y="50" width="130" height="50"/>
                                                                                                 <subviews>
                                                                                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breed" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9p-yF-2mJ">
-                                                                                                        <rect key="frame" x="20" y="0.0" width="117.5" height="50"/>
+                                                                                                        <rect key="frame" x="20" y="0.0" width="90" height="50"/>
                                                                                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
                                                                                                         <color key="textColor" name="CustomWhite"/>
                                                                                                         <nil key="highlightedColor"/>
@@ -334,19 +333,19 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mUO-dM-QkR">
-                                                                        <rect key="frame" x="0.0" y="200" width="335" height="120"/>
+                                                                        <rect key="frame" x="0.0" y="200" width="280" height="120"/>
                                                                         <subviews>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Axu-aq-Dpm" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="157.5" height="120"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="130" height="120"/>
                                                                                 <subviews>
                                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="CeH-7I-s1q">
-                                                                                        <rect key="frame" x="0.0" y="10" width="157.5" height="100"/>
+                                                                                        <rect key="frame" x="0.0" y="10" width="130" height="100"/>
                                                                                         <subviews>
                                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jaQ-AW-kz7">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="157.5" height="50"/>
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="130" height="50"/>
                                                                                                 <subviews>
-                                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last time seen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMQ-lt-CAl">
-                                                                                                        <rect key="frame" x="20" y="0.0" width="117.5" height="50"/>
+                                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last time seen" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMQ-lt-CAl">
+                                                                                                        <rect key="frame" x="20" y="0.0" width="90" height="50"/>
                                                                                                         <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="16"/>
                                                                                                         <color key="textColor" name="CustomWhite"/>
                                                                                                         <nil key="highlightedColor"/>
@@ -361,10 +360,10 @@
                                                                                                 </constraints>
                                                                                             </view>
                                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTz-An-rt9">
-                                                                                                <rect key="frame" x="0.0" y="50" width="157.5" height="50"/>
+                                                                                                <rect key="frame" x="0.0" y="50" width="130" height="50"/>
                                                                                                 <subviews>
                                                                                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last time seen" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yny-it-gTX">
-                                                                                                        <rect key="frame" x="20" y="0.0" width="117.5" height="50"/>
+                                                                                                        <rect key="frame" x="20" y="0.0" width="90" height="50"/>
                                                                                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
                                                                                                         <color key="textColor" name="CustomWhite"/>
                                                                                                         <nil key="highlightedColor"/>
@@ -396,16 +395,16 @@
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ap6-zp-rAt" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
-                                                                                <rect key="frame" x="177.5" y="0.0" width="157.5" height="120"/>
+                                                                                <rect key="frame" x="150" y="0.0" width="130" height="120"/>
                                                                                 <subviews>
                                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Yhi-gX-Vc6">
-                                                                                        <rect key="frame" x="0.0" y="10" width="157.5" height="100"/>
+                                                                                        <rect key="frame" x="0.0" y="10" width="130" height="100"/>
                                                                                         <subviews>
                                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Nd-SU-5dw">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="157.5" height="50"/>
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="130" height="50"/>
                                                                                                 <subviews>
                                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDk-lX-g7O">
-                                                                                                        <rect key="frame" x="20" y="0.0" width="117.5" height="50"/>
+                                                                                                        <rect key="frame" x="20" y="0.0" width="90" height="50"/>
                                                                                                         <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="16"/>
                                                                                                         <color key="textColor" name="CustomWhite"/>
                                                                                                         <nil key="highlightedColor"/>
@@ -420,10 +419,10 @@
                                                                                                 </constraints>
                                                                                             </view>
                                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bVV-eh-0th">
-                                                                                                <rect key="frame" x="0.0" y="50" width="157.5" height="50"/>
+                                                                                                <rect key="frame" x="0.0" y="50" width="130" height="50"/>
                                                                                                 <subviews>
                                                                                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJ6-OI-mwx">
-                                                                                                        <rect key="frame" x="20" y="0.0" width="117.5" height="50"/>
+                                                                                                        <rect key="frame" x="20" y="0.0" width="90" height="50"/>
                                                                                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
                                                                                                         <color key="textColor" name="CustomWhite"/>
                                                                                                         <nil key="highlightedColor"/>
@@ -441,7 +440,7 @@
                                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     </stackView>
                                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JyY-w9-jK0">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="157.5" height="120"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="130" height="120"/>
                                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                         <state key="normal" title="Button"/>
                                                                                         <connections>
@@ -469,22 +468,22 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aiN-Va-WFG" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="340" width="335" height="1161"/>
+                                                                        <rect key="frame" x="0.0" y="340" width="280" height="1161"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Kl5-YG-D6Y">
-                                                                                <rect key="frame" x="0.0" y="10" width="335" height="1141"/>
+                                                                                <rect key="frame" x="0.0" y="10" width="280" height="1141"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0y-2O-nnC">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="22"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="22"/>
                                                                                         <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="16"/>
                                                                                         <color key="textColor" name="CustomWhite"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BYa-oH-txj">
-                                                                                        <rect key="frame" x="0.0" y="22" width="335" height="1119"/>
+                                                                                        <rect key="frame" x="0.0" y="22" width="280" height="1119"/>
                                                                                         <subviews>
                                                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.59999999999999998" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Description" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X59-dC-TiR">
-                                                                                                <rect key="frame" x="15" y="0.0" width="305" height="1119"/>
+                                                                                                <rect key="frame" x="15" y="0.0" width="250" height="1119"/>
                                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <color key="tintColor" name="CustomWhite"/>
                                                                                                 <color key="textColor" name="CustomWhite"/>
@@ -521,13 +520,13 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sn3-pS-yhW" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="1521" width="335" height="145"/>
+                                                                        <rect key="frame" x="0.0" y="1521" width="280" height="145"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="yez-Ry-JUG">
-                                                                                <rect key="frame" x="0.0" y="10" width="335" height="125"/>
+                                                                                <rect key="frame" x="0.0" y="10" width="280" height="125"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Rr-dv-Ml5">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="30"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="30" id="dWV-Ro-VFy"/>
                                                                                         </constraints>
@@ -536,10 +535,10 @@
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ElV-4K-rTL">
-                                                                                        <rect key="frame" x="0.0" y="35" width="335" height="90"/>
+                                                                                        <rect key="frame" x="0.0" y="35" width="280" height="90"/>
                                                                                         <subviews>
                                                                                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="bgq-RS-a1I">
-                                                                                                <rect key="frame" x="157.5" y="35" width="20" height="20"/>
+                                                                                                <rect key="frame" x="130" y="35" width="20" height="20"/>
                                                                                                 <color key="color" name="CustomWhite"/>
                                                                                             </activityIndicatorView>
                                                                                         </subviews>
@@ -551,13 +550,13 @@
                                                                                         </constraints>
                                                                                     </view>
                                                                                     <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="GBk-ua-U9l">
-                                                                                        <rect key="frame" x="0.0" y="125" width="335" height="90"/>
+                                                                                        <rect key="frame" x="0.0" y="125" width="280" height="90"/>
                                                                                         <subviews>
                                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c5E-Lv-N8f">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="167.5" height="90"/>
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="140" height="90"/>
                                                                                                 <subviews>
                                                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultUserImage" translatesAutoresizingMaskIntoConstraints="NO" id="aOH-aG-1fo" customClass="CustomImageView" customModule="LostAnimals" customModuleProvider="target">
-                                                                                                        <rect key="frame" x="34" y="-5" width="100" height="100"/>
+                                                                                                        <rect key="frame" x="20" y="-5" width="100" height="100"/>
                                                                                                         <constraints>
                                                                                                             <constraint firstAttribute="width" constant="100" id="Hsf-4r-vI5"/>
                                                                                                             <constraint firstAttribute="height" constant="100" id="Vko-FS-gbD"/>
@@ -567,7 +566,7 @@
                                                                                                         </userDefinedRuntimeAttributes>
                                                                                                     </imageView>
                                                                                                     <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AnimalShelter" translatesAutoresizingMaskIntoConstraints="NO" id="mNP-3J-hDu">
-                                                                                                        <rect key="frame" x="104" y="65" width="30" height="30"/>
+                                                                                                        <rect key="frame" x="90" y="65" width="30" height="30"/>
                                                                                                         <constraints>
                                                                                                             <constraint firstAttribute="width" constant="30" id="BfQ-1Y-nge"/>
                                                                                                             <constraint firstAttribute="height" constant="30" id="ejd-XI-C1E"/>
@@ -583,25 +582,25 @@
                                                                                                 </constraints>
                                                                                             </view>
                                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Txv-JC-W5W">
-                                                                                                <rect key="frame" x="167.5" y="0.0" width="167.5" height="90"/>
+                                                                                                <rect key="frame" x="140" y="0.0" width="140" height="90"/>
                                                                                                 <subviews>
                                                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6Gn-Nd-Vad">
-                                                                                                        <rect key="frame" x="0.0" y="0.0" width="147.5" height="90"/>
+                                                                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="90"/>
                                                                                                         <subviews>
                                                                                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6f-SG-5Gc">
-                                                                                                                <rect key="frame" x="0.0" y="0.0" width="147.5" height="30"/>
+                                                                                                                <rect key="frame" x="0.0" y="0.0" width="120" height="30"/>
                                                                                                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
                                                                                                                 <color key="textColor" name="CustomWhite"/>
                                                                                                                 <nil key="highlightedColor"/>
                                                                                                             </label>
                                                                                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRL-zd-z1f">
-                                                                                                                <rect key="frame" x="0.0" y="30" width="147.5" height="30"/>
+                                                                                                                <rect key="frame" x="0.0" y="30" width="120" height="30"/>
                                                                                                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
                                                                                                                 <color key="textColor" name="CustomWhite"/>
                                                                                                                 <nil key="highlightedColor"/>
                                                                                                             </label>
                                                                                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OoL-za-OLt">
-                                                                                                                <rect key="frame" x="0.0" y="60" width="147.5" height="30"/>
+                                                                                                                <rect key="frame" x="0.0" y="60" width="120" height="30"/>
                                                                                                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
                                                                                                                 <color key="textColor" name="CustomWhite"/>
                                                                                                                 <nil key="highlightedColor"/>
@@ -626,7 +625,7 @@
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             </stackView>
                                                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47W-7X-qaX">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="335" height="145"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="280" height="145"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                 <connections>
@@ -652,7 +651,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdL-xC-82Y" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="1686" width="335" height="50"/>
+                                                                        <rect key="frame" x="0.0" y="1686" width="280" height="50"/>
                                                                         <color key="backgroundColor" name="CustomWhite"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="50" id="j1E-pi-tvo"/>
@@ -742,11 +741,14 @@
                         <outlet property="lastTimeSeenLabel" destination="yny-it-gTX" id="Ulr-o7-6oh"/>
                         <outlet property="loadingAuthorInfoView" destination="ElV-4K-rTL" id="hR8-oj-9DC"/>
                         <outlet property="locationLabel" destination="iJ6-OI-mwx" id="7AR-N5-Zdq"/>
+                        <outlet property="optionsButtonView" destination="XaK-Pw-F4c" id="il6-3V-NC7"/>
                         <outlet property="postImagesCollectionView" destination="evv-mb-LHg" id="F8D-F9-whC"/>
                         <outlet property="postImagesPageControl" destination="aK3-BS-ZKO" id="vMN-iX-aWM"/>
                         <outlet property="postScrollView" destination="M0W-Iv-nBT" id="rU2-fm-dvS"/>
                         <outlet property="postTypeImageView" destination="l4C-8C-cSD" id="FgU-7p-p2z"/>
                         <outlet property="postTypeLabel" destination="yFS-Bh-VRV" id="RBh-7V-JTJ"/>
+                        <outlet property="savePostButtonView" destination="lAJ-AN-ZTh" id="ZJJ-01-Fxw"/>
+                        <outlet property="savePostButtonViewConstraint" destination="jAS-64-9Ku" id="gdH-YB-LcZ"/>
                         <outlet property="savePostImageView" destination="Y3G-k8-S6F" id="clr-Dm-yT6"/>
                     </connections>
                 </viewController>

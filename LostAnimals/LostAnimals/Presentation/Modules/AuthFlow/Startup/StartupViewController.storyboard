@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -32,10 +32,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JKw-y3-htU">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="367"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LostAnimals" translatesAutoresizingMaskIntoConstraints="NO" id="VSP-hD-WDs">
-                                                <rect key="frame" x="97.5" y="93.5" width="180" height="180"/>
+                                                <rect key="frame" x="97.5" y="77" width="180" height="180"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="180" id="G0e-nu-oSz"/>
                                                     <constraint firstAttribute="width" secondItem="VSP-hD-WDs" secondAttribute="height" multiplier="1:1" id="bBE-iL-rnw"/>
@@ -49,10 +49,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V2t-fj-c83" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="367" width="375" height="300"/>
+                                        <rect key="frame" x="0.0" y="333.5" width="375" height="333.5"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2dd-d1-pTk">
-                                                <rect key="frame" x="40" y="30" width="295" height="235"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="2dd-d1-pTk">
+                                                <rect key="frame" x="40" y="30" width="295" height="268.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZMg-vO-qoy">
                                                         <rect key="frame" x="0.0" y="0.0" width="295" height="40"/>
@@ -63,21 +63,21 @@
                                                         <color key="textColor" name="CustomWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in if you already have an account or Sign up to enjoy all the features of LostAnimals" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ia-BR-Ncj">
-                                                        <rect key="frame" x="0.0" y="50" width="295" height="74"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in if you already have an account or Sign up to enjoy all the features of LostAnimals" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="3Ia-BR-Ncj">
+                                                        <rect key="frame" x="0.0" y="55" width="295" height="74"/>
                                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="18"/>
                                                         <color key="textColor" name="CustomWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5dz-BV-hA2">
-                                                        <rect key="frame" x="0.0" y="134" width="295" height="1"/>
+                                                        <rect key="frame" x="0.0" y="144" width="295" height="14.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="30" id="GY1-wu-VNT"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lfD-Qw-dOH">
-                                                        <rect key="frame" x="0.0" y="145" width="295" height="25"/>
+                                                        <rect key="frame" x="0.0" y="173.5" width="295" height="25"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMk-Yx-9FK">
                                                                 <rect key="frame" x="69" y="0.0" width="157" height="25"/>
@@ -99,7 +99,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oMP-zY-ayI">
-                                                        <rect key="frame" x="0.0" y="180" width="295" height="55"/>
+                                                        <rect key="frame" x="0.0" y="213.5" width="295" height="55"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="yee-Tv-fUl">
                                                                 <rect key="frame" x="0.0" y="10" width="295" height="45"/>
@@ -183,7 +183,7 @@
                             <constraint firstItem="qfF-Hb-2aa" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="EZF-fv-ang"/>
                             <constraint firstItem="qfF-Hb-2aa" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="La9-Bq-12H"/>
                             <constraint firstAttribute="bottom" secondItem="qfF-Hb-2aa" secondAttribute="bottom" id="cog-Xp-v1U"/>
-                            <constraint firstItem="V2t-fj-c83" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.45" id="eyL-Mh-kN9"/>
+                            <constraint firstItem="V2t-fj-c83" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.5" id="eyL-Mh-kN9"/>
                             <constraint firstItem="qfF-Hb-2aa" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="xcE-Dv-DmW"/>
                         </constraints>
                     </view>

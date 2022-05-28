@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -26,56 +25,37 @@
                 <rect key="frame" x="0.0" y="0.0" width="374" height="158"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="KQ9-24-095">
-                        <rect key="frame" x="0.0" y="0.0" width="374" height="158"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQ9-24-095">
+                        <rect key="frame" x="40" y="0.0" width="294" height="158"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XZd-ml-30v">
-                                <rect key="frame" x="0.0" y="0.0" width="374" height="79"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDR-Yq-kse">
-                                        <rect key="frame" x="40" y="0.0" width="294" height="79"/>
-                                        <fontDescription key="fontDescription" name="Nunito-Black" family="Nunito" pointSize="40"/>
-                                        <color key="textColor" name="CustomBlack"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDR-Yq-kse">
+                                <rect key="frame" x="0.0" y="0.0" width="294" height="55"/>
+                                <fontDescription key="fontDescription" name="Nunito-Black" family="Nunito" pointSize="40"/>
+                                <color key="textColor" name="CustomBlack"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NT5-eL-7tI">
+                                <rect key="frame" x="0.0" y="65" width="294" height="22"/>
+                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="16"/>
+                                <color key="textColor" name="CustomBlack"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Kx-Dg-rhW">
+                                <rect key="frame" x="0.0" y="97" width="294" height="61"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="BDR-Yq-kse" secondAttribute="bottom" id="HzY-QO-BBI"/>
-                                    <constraint firstItem="BDR-Yq-kse" firstAttribute="leading" secondItem="XZd-ml-30v" secondAttribute="leading" constant="40" id="XEL-Wc-lQ2"/>
-                                    <constraint firstItem="BDR-Yq-kse" firstAttribute="top" secondItem="XZd-ml-30v" secondAttribute="top" id="ayY-4g-g1F"/>
-                                    <constraint firstAttribute="trailing" secondItem="BDR-Yq-kse" secondAttribute="trailing" constant="40" id="doH-xT-kkU"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6sW-st-98x">
-                                <rect key="frame" x="0.0" y="79" width="374" height="79"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NT5-eL-7tI">
-                                        <rect key="frame" x="40" y="0.0" width="294" height="79"/>
-                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="16"/>
-                                        <color key="textColor" name="CustomBlack"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="NT5-eL-7tI" secondAttribute="trailing" constant="40" id="5xN-9W-jev"/>
-                                    <constraint firstItem="NT5-eL-7tI" firstAttribute="leading" secondItem="6sW-st-98x" secondAttribute="leading" constant="40" id="Lad-6f-c9f"/>
-                                    <constraint firstItem="NT5-eL-7tI" firstAttribute="top" secondItem="6sW-st-98x" secondAttribute="top" id="dZq-Eb-PB5"/>
-                                    <constraint firstAttribute="bottom" secondItem="NT5-eL-7tI" secondAttribute="bottom" id="tEj-kx-bkf"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="POO-bj-utQ"/>
                                 </constraints>
                             </view>
                         </subviews>
                     </stackView>
                 </subviews>
             </view>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="KQ9-24-095" secondAttribute="trailing" id="070-fW-oYt"/>
+                <constraint firstAttribute="trailing" secondItem="KQ9-24-095" secondAttribute="trailing" constant="40" id="070-fW-oYt"/>
                 <constraint firstItem="KQ9-24-095" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="4mQ-ZB-gz6"/>
-                <constraint firstItem="KQ9-24-095" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="DIm-q2-7kj"/>
+                <constraint firstItem="KQ9-24-095" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="40" id="DIm-q2-7kj"/>
                 <constraint firstAttribute="bottom" secondItem="KQ9-24-095" secondAttribute="bottom" id="WyN-av-bKc"/>
             </constraints>
             <size key="customSize" width="374" height="158"/>

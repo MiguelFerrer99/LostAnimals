@@ -16,6 +16,8 @@ protocol GoToMyProfileFromPostDelegate: AnyObject {
 final class PostViewController: ViewController, UIGestureRecognizerDelegate {
     // MARK: - IBOutlets
     @IBOutlet private weak var savePostImageView: UIImageView!
+    @IBOutlet private weak var savePostButtonView: UIView!
+    @IBOutlet private weak var optionsButtonView: UIView!
     @IBOutlet private weak var postScrollView: UIScrollView!
     @IBOutlet private weak var postTypeImageView: UIImageView!
     @IBOutlet private weak var postTypeLabel: UILabel!
@@ -38,6 +40,7 @@ final class PostViewController: ViewController, UIGestureRecognizerDelegate {
     @IBOutlet private weak var authorAgeLabel: UILabel!
     @IBOutlet private weak var authorAddressLabel: UILabel!
     @IBOutlet private weak var contactWithAuthorButton: CustomButton!
+    @IBOutlet private var savePostButtonViewConstraint: NSLayoutConstraint!
     @IBOutlet weak var postImagesCollectionView: UICollectionView!
     @IBOutlet weak var postImagesPageControl: UIPageControl!
     
@@ -51,6 +54,13 @@ final class PostViewController: ViewController, UIGestureRecognizerDelegate {
         case .adopt:
             return viewModel.post.animalName ?? "To adopt animal"
         }
+    }
+    override var navBarRightButtons: [UIBarButtonItem] {
+        savePostBarButtonItem = UIBarButtonItem(image: UIImage(named: "SavePost"),
+                                                style: .plain,
+                                                target: self,
+                                                action: #selector(savePostBarButtonPressed))
+        return [savePostBarButtonItem]
     }
     override var hideNavigationBar: Bool {
         return shouldHideNavigationBar
@@ -89,22 +99,20 @@ extension PostViewController {
 private extension PostViewController {
     func setupUI() {
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
-        setNavBarButtons()
         configureScrollView(postScrollView)
         contactWithAuthorButton.showLoading()
         configureCollectionView(postImagesCollectionView)
         fillUI()
     }
     
-    func setNavBarButtons() {
+    func setOptionsBarButton() {
+        optionsButtonView.isHidden = false
+        savePostButtonViewConstraint = NSLayoutConstraint(item: savePostButtonView!, attribute: .trailing, relatedBy: .equal, toItem: optionsButtonView, attribute: .leading, multiplier: 1.0, constant: -20)
+        savePostButtonViewConstraint.isActive = true
         let optionsBarButtonItem = UIBarButtonItem(image: UIImage(named: "PostOptions"),
                                                    style: .plain,
                                                    target: self,
                                                    action: #selector(optionsBarButtonPressed))
-        savePostBarButtonItem = UIBarButtonItem(image: UIImage(named: "SavePost"),
-                                                style: .plain,
-                                                target: self,
-                                                action: #selector(savePostBarButtonPressed))
         self.navigationItem.rightBarButtonItems = [optionsBarButtonItem, savePostBarButtonItem]
     }
     
@@ -136,6 +144,7 @@ private extension PostViewController {
     func fillPostImages() {
         viewModel.getImagesFromURLImages {
             DispatchQueue.main.async {
+                self.setOptionsBarButton()
                 self.viewModel.isLoadingPostImages = false
                 self.postImagesCollectionView.reloadData()
             }

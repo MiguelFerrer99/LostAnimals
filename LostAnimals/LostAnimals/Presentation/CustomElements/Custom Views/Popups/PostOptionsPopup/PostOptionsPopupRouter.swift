@@ -26,31 +26,31 @@ extension PostOptionsPopupRouter {
     
     func dismissPostOptionsPopupAndGoToEditPost() {
         self.viewController?.dismissCurrentView(completion: {
-            self.viewController?.delegate?.goTo(action: .goToEditPost, postImageToShare: nil)
+            self.viewController?.delegate?.goTo(action: .goToEditPost)
         })
     }
     
     func dismissPostOptionsPopupAndShowGuestPopup() {
         self.viewController?.dismissCurrentView(completion: {
-            self.viewController?.delegate?.goTo(action: .showGuestPopup, postImageToShare: nil)
+            self.viewController?.delegate?.goTo(action: .showGuestPopup)
         })
     }
     
     func dismissPostOptionsPopupAndShowSuccessPopup() {
         self.viewController?.dismissCurrentView(completion: {
-            self.viewController?.delegate?.goTo(action: .showSuccessPopup, postImageToShare: nil)
+            self.viewController?.delegate?.goTo(action: .showSuccessPopup)
         })
     }
     
-    func dismissPostOptionsPopupAndShowErrorPopup() {
+    func dismissPostOptionsPopupAndShowErrorPopup(error: String) {
         self.viewController?.dismissCurrentView(completion: {
-            self.viewController?.delegate?.goTo(action: .showErrorPopup, postImageToShare: nil)
+            self.viewController?.delegate?.goTo(action: .showErrorPopup(error: error))
         })
     }
     
     func dismissPostOptionsAndShowActivityViewController(postImageToShare: UIImage) {
         self.viewController?.dismissCurrentView(completion: {
-            self.viewController?.delegate?.goTo(action: .showActivityVC, postImageToShare: postImageToShare)
+            self.viewController?.delegate?.goTo(action: .showActivityVC(imageToShare: postImageToShare))
         })
     }
 }

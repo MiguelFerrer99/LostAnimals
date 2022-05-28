@@ -9,21 +9,6 @@
 import Firebase
 import CodableFirebase
 
-// MARK: - Enums
-enum GetUserResult {
-    case success(User)
-    case error(String)
-}
-
-enum DeleteAccountResult {
-    case success
-    case error(String)
-}
-enum LogOutResult {
-    case success
-    case error(String)
-}
-
 final class UserService: NSObject {
     // MARK: - Properties
     let databaseRef: DatabaseReference
@@ -49,7 +34,7 @@ extension UserService {
         } else { completion(nil) }
     }
     
-    func getUser(id: String, completion: @escaping ((GetUserResult) -> ())) {
+    func getUser(id: String, completion: @escaping ((UserResult) -> ())) {
         databaseRef.child("users").child(id).getData { error, snapshot in
             if let error = error {
                 switch error.localizedDescription {
@@ -70,7 +55,7 @@ extension UserService {
         }
     }
     
-    func deleteAccount(completion: @escaping (DeleteAccountResult) -> Void) {
+    func deleteAccount(completion: @escaping (GenericResult) -> Void) {
         guard let me = Auth.auth().currentUser else { return }
         me.delete { error in
             if let error = error {
@@ -99,7 +84,7 @@ extension UserService {
         }
     }
     
-    func logOut(completion: @escaping (LogOutResult) -> Void) {
+    func logOut(completion: @escaping (GenericResult) -> Void) {
         do {
             try Auth.auth().signOut()
             completion(.success)
@@ -110,6 +95,25 @@ extension UserService {
             default:
                 completion(.error("An unexpected error occured. Please, try again later"))
             }
+        }
+    }
+    
+    func blockUser(userID: String, completion: @escaping (GenericResult) -> Void) {
+        guard let me = User.shared else {
+            completion(.error("An unexpected error occured. Please, try again later"))
+            return
+        }
+        var newBlockedUsers = me.blockedUsers
+        newBlockedUsers.append(userID)
+        self.databaseRef.child("users").child(me.id).child("blocked_users").setValue(newBlockedUsers) { (error, data) in
+            if let error = error {
+                switch error.localizedDescription {
+                case FirebaseError.networkError.rawValue:
+                    completion(.error("You don't have an internet connection"))
+                default:
+                    completion(.error("An unexpected error occured. Please, try again later"))
+                }
+            } else { completion(.success) }
         }
     }
 }

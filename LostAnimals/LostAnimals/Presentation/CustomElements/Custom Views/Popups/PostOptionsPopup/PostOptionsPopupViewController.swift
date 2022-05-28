@@ -10,16 +10,16 @@ import UIKit
 
 // MARK: - Protocols
 protocol ActionAfterPostOptionsDelegate: AnyObject {
-    func goTo(action: ActionAfterPostOptions, postImageToShare: UIImage?)
+    func goTo(action: ActionAfterPostOptions)
 }
 
 // MARK: - Enums
-enum ActionAfterPostOptions: String {
+enum ActionAfterPostOptions {
     case goToEditPost
     case showGuestPopup
     case showSuccessPopup
-    case showErrorPopup
-    case showActivityVC
+    case showErrorPopup(error: String)
+    case showActivityVC(imageToShare: UIImage? = nil)
 }
 
 final class PostOptionsPopupViewController: ViewController {

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="448" width="414" height="448"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PY3-bW-S89">
-                                <rect key="frame" x="0.0" y="104" width="414" height="244"/>
+                                <rect key="frame" x="0.0" y="84" width="414" height="324"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="JXv-q3-8pU">
@@ -112,13 +112,13 @@
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="xqg-as-hnU" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="5dg-cq-jGi"/>
-                            <constraint firstItem="U8z-ag-vCO" firstAttribute="top" secondItem="PY3-bW-S89" secondAttribute="bottom" constant="100" id="BQs-py-sZh"/>
+                            <constraint firstItem="U8z-ag-vCO" firstAttribute="top" secondItem="PY3-bW-S89" secondAttribute="bottom" constant="40" id="BQs-py-sZh"/>
                             <constraint firstItem="PY3-bW-S89" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="DVp-LH-F3K"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="7bJ-bY-ULy" secondAttribute="trailing" constant="30" id="Dmx-Hg-RTe"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="7bJ-bY-ULy" secondAttribute="bottom" constant="30" id="GnR-3Y-5CB"/>
                             <constraint firstItem="U8z-ag-vCO" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.5" id="Hpm-fm-TxE"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="PY3-bW-S89" secondAttribute="trailing" id="IWG-WK-LYq"/>
-                            <constraint firstItem="PY3-bW-S89" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="60" id="VLU-mX-HCF"/>
+                            <constraint firstItem="PY3-bW-S89" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="40" id="VLU-mX-HCF"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="xqg-as-hnU" secondAttribute="bottom" constant="30" id="d2P-PS-fu2"/>
                             <constraint firstItem="U8z-ag-vCO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="g4c-qJ-bDc"/>
                             <constraint firstAttribute="bottom" secondItem="U8z-ag-vCO" secondAttribute="bottom" id="nYz-rr-86O"/>

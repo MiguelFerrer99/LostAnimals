@@ -62,9 +62,9 @@ extension PostRouter {
         }
     }
     
-    func goToPostOptionsPopup(comesFrom: PostComesFrom, post: Post, user: User) {
+    func goToPostOptionsPopup(comesFrom: PostComesFrom, post: Post, user: User, postImage: UIImage) {
         DispatchQueue.main.async {
-            let viewController = Container.shared.postOptionsPopupBuilder().build(comesFrom: comesFrom, post: post, user: user)
+            let viewController = Container.shared.postOptionsPopupBuilder().build(comesFrom: comesFrom, post: post, user: user, postImage: postImage)
             viewController.delegate = self.viewController
             self.viewController?.present(viewController: viewController, completion: nil)
         }

@@ -20,14 +20,18 @@ final class PostOptionsPopupViewModel {
     let comesFrom: PostComesFrom
     let post: Post
     let user: User
-    var postImages: [UIImage] = []
+    var postImage: UIImage
+    
+    // MARK: - Services
+    let userService = UserService()
     
     // MARK: - Init
-    required init(router: PostOptionsPopupRouter, comesFrom: PostComesFrom, post: Post, user: User) {
+    required init(router: PostOptionsPopupRouter, comesFrom: PostComesFrom, post: Post, user: User, postImage: UIImage) {
         self.router = router
         self.comesFrom = comesFrom
         self.post = post
         self.user = user
+        self.postImage = postImage
     }
 }
 
@@ -44,6 +48,17 @@ extension PostOptionsPopupViewModel {
 
 // MARK: - Functions
 extension PostOptionsPopupViewModel {
+    func blockUser(userID: String) {
+        userService.blockUser(userID: userID) { result in
+            switch result {
+            case .success:
+                self.router.dismissPostOptionsPopupAndShowSuccessPopup()
+            case .error(let error):
+                self.router.dismissPostOptionsPopupAndShowErrorPopup(error: error)
+            }
+        }
+    }
+    
     func didPressDismissButton() {
         self.router.dismissPostOptionsPopup()
     }
@@ -54,7 +69,7 @@ extension PostOptionsPopupViewModel {
     
     func didPressBlockUserButton() {
         if Cache.get(boolFor: .logged) {
-            self.router.dismissPostOptionsPopupAndShowSuccessPopup()
+            self.blockUser(userID: user.id)
         } else {
             self.router.dismissPostOptionsPopupAndShowGuestPopup()
         }
@@ -102,10 +117,7 @@ extension PostOptionsPopupViewModel {
         }
         
         // Basic images
-        guard let clearBg = UIImage(named: "ClearBackgroundImageToShare"),
-              let postImage = postImages.first,
-              let bgImage = bgImage
-        else { return nil }
+        guard let clearBg = UIImage(named: "ClearBackgroundImageToShare"), let bgImage = bgImage else { return nil }
         
         // Clear background
         guard let returnedImage1 = postImage.drawImageIn(bgImage: clearBg,
