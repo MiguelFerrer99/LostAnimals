@@ -39,6 +39,7 @@ extension PostOptionsPopupRouter {
     func dismissPostOptionsPopupAndShowSuccessPopup() {
         self.viewController?.dismissCurrentView(completion: {
             self.viewController?.delegate?.goTo(action: .showSuccessPopup)
+            NotificationCenter.default.post(name: .UpdateUserAndUpdateExplorePosts, object: nil)
         })
     }
     

@@ -18,7 +18,9 @@ extension PostViewController: ActionAfterPostOptionsDelegate {
         case .showGuestPopup:
             viewModel.showGuestPopupFromPostOptionsPopup()
         case .showSuccessPopup:
-            viewModel.showSuccessPopupFromPostOptionsPopup()
+            viewModel.showSuccessPopupFromPostOptionsPopup {
+                self.pop()
+            }
         case .showErrorPopup(let error):
             viewModel.showErrorPopupFromPostOptionsPopup(error: error)
         case .showActivityVC(let image):

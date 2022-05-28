@@ -27,10 +27,7 @@ extension PostRouter {
     }
     
     func goToMyProfile() {
-        self.viewController?.pop()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-            self.viewController?.delegate?.goToMyProfile()
-        }
+        self.viewController?.delegate?.goToMyProfile()
     }
     
     func goToPostImages(postImages: [UIImage?], indexPostImages: Int) {

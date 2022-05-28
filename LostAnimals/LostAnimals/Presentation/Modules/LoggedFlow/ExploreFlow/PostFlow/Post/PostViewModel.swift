@@ -171,8 +171,8 @@ extension PostViewModel {
         showGuestPopup()
     }
     
-    func showSuccessPopupFromPostOptionsPopup() {
-        showSuccessPopup(title: "The user has been blocked successfully", action: nil)
+    func showSuccessPopupFromPostOptionsPopup(action: (() -> Void)? = nil) {
+        showSuccessPopup(title: "The user has been blocked successfully", action: action)
     }
     
     func showErrorPopupFromPostOptionsPopup(error: String) {

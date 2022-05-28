@@ -15,6 +15,7 @@ final class ExploreViewModel {
     var isLoading = true
     
     // MARK: - Services
+    let userService = UserService()
     let postService = PostService()
     
     // MARK: - Init
@@ -40,6 +41,13 @@ extension ExploreViewModel {
 
 // MARK: - Functions
 extension ExploreViewModel {
+    func getMe(completion: @escaping (() -> ())) {
+        userService.getMe { user in
+            User.shared = user
+            completion()
+        }
+    }
+    
     func getPosts(completion: @escaping (() -> ())) {
         postService.getPosts { result in
             switch result {
