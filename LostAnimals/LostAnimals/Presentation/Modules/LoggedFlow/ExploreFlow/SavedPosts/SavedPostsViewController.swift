@@ -40,9 +40,21 @@ final class SavedPostsViewController: ViewController {
     }
 }
 
+// MARK: - Private functions
+private extension SavedPostsViewController {
+    func subscribeToNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(getSavedPosts), name: .UpdateExploreSavedPosts, object: nil)
+    }
+    
+    @objc func getSavedPosts() {
+        // TODO: - Get Saved Posts
+    }
+}
+
 // MARK: - Functions
 extension SavedPostsViewController {
     func setupUI() {
+        subscribeToNotifications()
         Filters.resetFilters()
         configureCollectionView(savedPostsCollectionView)
         configureRefreshControl(refreshControl)

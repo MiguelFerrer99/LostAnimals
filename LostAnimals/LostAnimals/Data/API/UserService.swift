@@ -116,4 +116,23 @@ extension UserService {
             } else { completion(.success) }
         }
     }
+    
+    func savePost(postID: String, completion: @escaping (GenericResult) -> Void) {
+        guard let me = User.shared else {
+            completion(.error("An unexpected error occured. Please, try again later"))
+            return
+        }
+        var newSavedPosts = me.savedPosts
+        newSavedPosts.append(postID)
+        self.databaseRef.child("users").child(me.id).child("saved_posts").setValue(newSavedPosts) { (error, data) in
+            if let error = error {
+                switch error.localizedDescription {
+                case FirebaseError.networkError.rawValue:
+                    completion(.error("You don't have an internet connection"))
+                default:
+                    completion(.error("An unexpected error occured. Please, try again later"))
+                }
+            } else { completion(.success) }
+        }
+    }
 }

@@ -195,9 +195,8 @@ private extension PostViewController {
     }
     
     func savePost() {
-        viewModel.didPressSavePostButton { [weak self] allowed in
-            guard let self = self else { return }
-            if allowed { self.updateSavedPostUI() }
+        viewModel.didPressSavePostButton {
+            self.updateSavedPostUI()
         }
     }
     

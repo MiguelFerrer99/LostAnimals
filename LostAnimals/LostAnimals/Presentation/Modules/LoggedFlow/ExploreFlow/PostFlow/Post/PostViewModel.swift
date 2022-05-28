@@ -50,6 +50,17 @@ extension PostViewModel {
 
 // MARK: - Functions
 extension PostViewModel {
+    func savePost(completion: @escaping ((GenericResult) -> Void)) {
+        userService.savePost(postID: post.id) { result in
+            switch result {
+            case .success:
+                completion(.success)
+            case .error(let error):
+                showErrorPopup(title: error)
+            }
+        }
+    }
+    
     func getAuthorInfo(completion: @escaping ((GenericResult) -> Void)) {
         userService.getUser(id: post.userID) { result in
             switch result {
@@ -148,13 +159,16 @@ extension PostViewModel {
         User.shared == user ? self.router.goToMyProfile() : self.router.showContactWithPopup(authorSocialMedias: user.socialMedias)
     }
     
-    func didPressSavePostButton(allowed: ((Bool) -> ())) {
-        let logged = Cache.get(boolFor: .logged)
-        if logged {
-            allowed(true)
+    func didPressSavePostButton(completion: @escaping (() -> Void)) {
+        if Cache.get(boolFor: .logged) {
+            savePost { result in
+                if case .success = result {
+                    NotificationCenter.default.post(name: .UpdateExploreSavedPosts, object: nil)
+                    completion()
+                }
+            }
         } else {
             showGuestPopup()
-            allowed(false)
         }
     }
     
