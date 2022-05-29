@@ -13,6 +13,7 @@ extension SavedPostsViewController {
     func configureCollectionView(_ collectionView: UICollectionView) {
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.register(LoadingCollectionViewCell.self)
         collectionView.register(EmptyCollectionViewCell.self)
         collectionView.register(PostCollectionViewCell.self)
     }
@@ -20,43 +21,56 @@ extension SavedPostsViewController {
 
 // MARK: - UICollectionViewDelegate
 extension SavedPostsViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        return !(viewModel.isLoading || viewModel.savedPosts.isEmpty)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // TODO: - Get post from viewModel
-        /*let post = HardcodedData.savedPosts[indexPath.row]
-        viewModel.didPressPost(post: post)*/
+        let post = viewModel.savedPosts[indexPath.item]
+        viewModel.didPressPost(post: post)
     }
 }
 
 // MARK: - UICollectionViewDataSource
 extension SavedPostsViewController: UICollectionViewDataSource {    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        if viewModel.isLoading || viewModel.savedPosts.isEmpty { return 1 }
+        else { return viewModel.savedPosts.count }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // TODO: - Return cell
-        /*if HardcodedData.savedPosts.isEmpty {
-            let summary = EmptyCollectionViewCellSummary(emptyTitle: "There are not available posts", emptyImage: UIImage(named: "NotAvailablePosts") ?? UIImage())
+        if viewModel.isLoading {
+            let summary = LoadingCollectionViewCellSummary(activityIndicatorStyle: .large)
+            let cell = collectionView.dequeue(LoadingCollectionViewCell.self, for: indexPath)
+            cell.display(summary)
+            return cell
+        } else if viewModel.savedPosts.isEmpty {
+            let summary = EmptyCollectionViewCellSummary(emptyTitle: "There are not available posts", emptyImage: UIImage(named: "Other") ?? UIImage())
             let cell = collectionView.dequeue(EmptyCollectionViewCell.self, for: indexPath)
             cell.display(summary: summary)
             return cell
         } else {
-            let post = HardcodedData.savedPosts[indexPath.row]
-            let summary = PostCollectionViewCellSummary(postType: post.postType, animal: post.animal, postImage: post.animal.images.first ?? UIImage(named: "SelectPhotoPlaceholder"), leadingPadding: indexPath.row % 2 == 0 ? 20 : 10, trailingPadding: indexPath.row % 2 == 0 ? 10 : 20)
+            let post = viewModel.savedPosts[indexPath.item]
+            let summary = PostCollectionViewCellSummary(postType: post.postType,
+                                                        animalName: post.animalName,
+                                                        animalType: post.animalType,
+                                                        postURLImage: post.urlImage1 ?? "",
+                                                        leadingPadding: indexPath.item % 2 == 0 ? 20 : 10,
+                                                        trailingPadding: indexPath.item % 2 == 0 ? 10 : 20)
             let cell = collectionView.dequeue(PostCollectionViewCell.self, for: indexPath)
             cell.display(summary: summary)
             return cell
-        }*/
-        return UICollectionViewCell()
+        }
     }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
 extension SavedPostsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        /*let collectionViewRealHeight = collectionView.frame.height - statusBarHeight - navBarHeight - 50.0 - tabBarHeight
-        if HardcodedData.savedPosts.isEmpty { return CGSize(width: collectionView.frame.width, height: collectionViewRealHeight) }
-        else { return CGSize(width: collectionView.frame.width/2, height: collectionView.frame.height/3) }*/
-        return CGSize(width: collectionView.frame.width/2, height: collectionView.frame.height/3)
+        let collectionViewRealHeight = collectionView.frame.height - self.barHeights
+        if viewModel.isLoading || viewModel.savedPosts.isEmpty {
+            return CGSize(width: collectionView.frame.width, height: collectionViewRealHeight)
+        }
+        else { return CGSize(width: collectionView.frame.width/2, height: collectionView.frame.height/3) }
     }
 }

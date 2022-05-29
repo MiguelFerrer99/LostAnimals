@@ -64,7 +64,6 @@ private extension ExploreViewController {
     
     func subscribeToNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(getPosts), name: .UpdateExplorePosts, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(getMeAndGetPosts), name: .UpdateUserAndUpdateExplorePosts, object: nil)
     }
     
     func fillUI() {
@@ -84,17 +83,6 @@ extension ExploreViewController {
         viewModel.getPosts {
             self.viewModel.isLoading = false
             self.postsCollectionView.reloadData()
-        }
-    }
-    
-    @objc func getMeAndGetPosts() {
-        viewModel.isLoading = true
-        postsCollectionView.reloadData()
-        viewModel.getMe {
-            self.viewModel.getPosts {
-                self.viewModel.isLoading = false
-                self.postsCollectionView.reloadData()
-            }
         }
     }
 }

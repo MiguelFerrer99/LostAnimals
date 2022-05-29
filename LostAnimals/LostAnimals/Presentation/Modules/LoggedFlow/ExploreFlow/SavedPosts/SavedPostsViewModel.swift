@@ -11,6 +11,12 @@ import Foundation
 final class SavedPostsViewModel {
     // MARK: - Properties
     private let router: SavedPostsRouter
+    var savedPosts: [Post] = []
+    var isLoading = true
+    
+    // MARK: - Services
+    let userService = UserService()
+    let postService = PostService()
     
     // MARK: - Init
     required init(router: SavedPostsRouter) {
@@ -35,6 +41,19 @@ extension SavedPostsViewModel {
 
 // MARK: - Functions
 extension SavedPostsViewModel {
+    func getSavedPosts(completion: @escaping (() -> ())) {
+        postService.getSavedPosts { result in
+            switch result {
+            case .success(let savedPosts):
+                self.savedPosts = savedPosts
+                completion()
+            case .error(let error):
+                showErrorPopup(title: error, action: nil)
+                completion()
+            }
+        }
+    }
+    
     func didPressPostsFilterPopup(filterType: FilterType, loadData: Bool) {
         self.router.goToFilterPopup(filterType: filterType, loadData: loadData)
     }

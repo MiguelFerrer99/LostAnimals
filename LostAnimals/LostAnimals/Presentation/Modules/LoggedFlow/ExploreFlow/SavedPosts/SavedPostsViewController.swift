@@ -16,15 +16,15 @@ final class SavedPostsViewController: ViewController {
     override var navBarTitle: String {
         return "My saved posts"
     }
-    var refreshControl = UIRefreshControl()
     var viewModel: SavedPostsViewModel!
     
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupUI()
         viewModel.viewReady()
+        setupUI()
+        fillUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,21 +42,25 @@ final class SavedPostsViewController: ViewController {
 
 // MARK: - Private functions
 private extension SavedPostsViewController {
+    func setupUI() {
+        subscribeToNotifications()
+        configureCollectionView(savedPostsCollectionView)
+    }
+    
     func subscribeToNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(getSavedPosts), name: .UpdateExploreSavedPosts, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(getSavedPosts), name: .UpdateSavedPosts, object: nil)
+    }
+    
+    func fillUI() {
+        getSavedPosts()
     }
     
     @objc func getSavedPosts() {
-        // TODO: - Get Saved Posts
-    }
-}
-
-// MARK: - Functions
-extension SavedPostsViewController {
-    func setupUI() {
-        subscribeToNotifications()
-        Filters.resetFilters()
-        configureCollectionView(savedPostsCollectionView)
-        configureRefreshControl(refreshControl)
+        viewModel.isLoading = true
+        savedPostsCollectionView.reloadData()
+        viewModel.getSavedPosts {
+            self.viewModel.isLoading = false
+            self.savedPostsCollectionView.reloadData()
+        }
     }
 }

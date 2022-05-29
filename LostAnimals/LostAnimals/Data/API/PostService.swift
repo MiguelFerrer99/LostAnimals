@@ -44,7 +44,27 @@ extension PostService {
                     let postsDTO = try FirebaseDecoder().decode([PostDTO].self, from: Array(snapshotValue.values))
                     var posts = postsDTO.compactMap { $0.map() }
                     posts.sort { $0.createdAt < $1.createdAt }
-                    posts = posts.filter({ !(User.shared?.blockedUsers.contains($0.userID) ?? false) })
+                    posts = posts.filter { !(User.shared?.blockedUsers.contains($0.userID) ?? false) }
+                    completion(.success(posts))
+                } catch { completion(.error("An unexpected error occured. Please, try again later")) }
+            } else { completion(.success([])) }
+        }
+    }
+    
+    func getSavedPosts(completion: @escaping (GetPostsResult) -> Void) {
+        databaseRef.child("posts").getData { (error, snapshot) in
+            if let error = error {
+                switch error.localizedDescription {
+                case FirebaseError.networkError.rawValue:
+                    completion(.error("You don't have an internet connection"))
+                default:
+                    completion(.error("An unexpected error occured. Please, try again later"))
+                }
+            } else if let snapshotValue = snapshot.value as? [String: Any] {
+                do {
+                    let postsDTO = try FirebaseDecoder().decode([PostDTO].self, from: Array(snapshotValue.values))
+                    var posts = postsDTO.compactMap { $0.map() }
+                    posts = posts.filter { User.shared?.savedPosts.contains($0.id) ?? false }
                     completion(.success(posts))
                 } catch { completion(.error("An unexpected error occured. Please, try again later")) }
             } else { completion(.success([])) }

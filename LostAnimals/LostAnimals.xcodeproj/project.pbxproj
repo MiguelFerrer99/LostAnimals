@@ -270,7 +270,6 @@
 		41CD112427835C2200257B2B /* SavedPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CD111F27835C2200257B2B /* SavedPostsViewController.swift */; };
 		41CD112527835C2200257B2B /* SavedPostsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CD112027835C2200257B2B /* SavedPostsBuilder.swift */; };
 		41CD112627835C2200257B2B /* SavedPostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CD112127835C2200257B2B /* SavedPostsViewModel.swift */; };
-		41CD112827835F0600257B2B /* SavedPostsRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CD112727835F0600257B2B /* SavedPostsRefreshControl.swift */; };
 		41CD112C27835F6500257B2B /* SavedPostsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CD112B27835F6500257B2B /* SavedPostsCollectionView.swift */; };
 		41CDA4322780E0D60009AB55 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CDA4312780E0D60009AB55 /* Post.swift */; };
 		41CDA4382780E4400009AB55 /* OnboardingStepInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CDA4372780E4400009AB55 /* OnboardingStepInfo.swift */; };
@@ -619,7 +618,6 @@
 		41CD111F27835C2200257B2B /* SavedPostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPostsViewController.swift; sourceTree = "<group>"; };
 		41CD112027835C2200257B2B /* SavedPostsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPostsBuilder.swift; sourceTree = "<group>"; };
 		41CD112127835C2200257B2B /* SavedPostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPostsViewModel.swift; sourceTree = "<group>"; };
-		41CD112727835F0600257B2B /* SavedPostsRefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPostsRefreshControl.swift; sourceTree = "<group>"; };
 		41CD112B27835F6500257B2B /* SavedPostsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPostsCollectionView.swift; sourceTree = "<group>"; };
 		41CDA4312780E0D60009AB55 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		41CDA4372780E4400009AB55 /* OnboardingStepInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStepInfo.swift; sourceTree = "<group>"; };
@@ -1519,7 +1517,6 @@
 				41CD112027835C2200257B2B /* SavedPostsBuilder.swift */,
 				41CD112127835C2200257B2B /* SavedPostsViewModel.swift */,
 				41CD112B27835F6500257B2B /* SavedPostsCollectionView.swift */,
-				41CD112727835F0600257B2B /* SavedPostsRefreshControl.swift */,
 			);
 			path = SavedPosts;
 			sourceTree = "<group>";
@@ -2183,7 +2180,6 @@
 				943CE5FE2546DFBC00CA93AA /* CustomButton.swift in Sources */,
 				4119183C27ABFAF100F9D68A /* ProfilePostsViewModel.swift in Sources */,
 				415E59902764F1F8009A013E /* WhereDoYouLiveCitiesRouter.swift in Sources */,
-				41CD112827835F0600257B2B /* SavedPostsRefreshControl.swift in Sources */,
 				945B15B525595DC9003A65E0 /* UITableViewCell.swift in Sources */,
 				41EC16AC2785E20800096B7A /* AnimalTypeTableViewCell.swift in Sources */,
 				41A7CF5F27F080EE002BFD6F /* FakeSplashBuilder.swift in Sources */,

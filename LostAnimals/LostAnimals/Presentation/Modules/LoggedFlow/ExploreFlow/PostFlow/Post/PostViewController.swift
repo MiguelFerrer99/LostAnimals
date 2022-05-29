@@ -16,6 +16,7 @@ protocol GoToMyProfileFromPostDelegate: AnyObject {
 final class PostViewController: ViewController, UIGestureRecognizerDelegate {
     // MARK: - IBOutlets
     @IBOutlet private weak var savePostImageView: UIImageView!
+    @IBOutlet weak var savePostButton: UIButton!
     @IBOutlet private weak var savePostButtonView: UIView!
     @IBOutlet private weak var optionsButtonView: UIView!
     @IBOutlet private weak var postScrollView: UIScrollView!
@@ -139,6 +140,7 @@ private extension PostViewController {
         lastTimeSeenLabel.text = viewModel.post.lastTimeSeen
         locationLabel.text = viewModel.post.location.address
         descriptionTextView.text = viewModel.post.description
+        updateSavedPostUI()
     }
     
     func fillPostImages() {
@@ -187,15 +189,14 @@ private extension PostViewController {
     }
     
     func updateSavedPostUI() {
-        guard let savePostBarButtonItemImage = savePostBarButtonItem.image,
-              let savePostImageViewImage = savePostImageView.image
-        else { return }
-        savePostBarButtonItem.image = savePostBarButtonItemImage.isEqualTo(image: UIImage(named: "SavePost")) ? UIImage(named: "SavePostFilled") : UIImage(named: "SavePost")
-        savePostImageView.image = savePostImageViewImage.isEqualTo(image: UIImage(named: "SavePostWhite")) ? UIImage(named: "SavePostFilled") : UIImage(named: "SavePostWhite")
+        savePostBarButtonItem.image = viewModel.saved ? UIImage(named: "SavePostFilled") : UIImage(named: "SavePost")
+        savePostImageView.image = viewModel.saved ? UIImage(named: "SavePostFilledWhite") : UIImage(named: "SavePostWhite")
     }
     
     func savePost() {
+        savePostButton.isUserInteractionEnabled = false
         viewModel.didPressSavePostButton {
+            self.savePostButton.isUserInteractionEnabled = true
             self.updateSavedPostUI()
         }
     }

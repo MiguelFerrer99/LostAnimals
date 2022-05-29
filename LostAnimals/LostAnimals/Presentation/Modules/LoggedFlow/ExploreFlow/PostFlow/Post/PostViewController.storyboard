@@ -474,16 +474,16 @@
                                                                                 <rect key="frame" x="0.0" y="10" width="280" height="1141"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0y-2O-nnC">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="22"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="19"/>
                                                                                         <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="16"/>
                                                                                         <color key="textColor" name="CustomWhite"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BYa-oH-txj">
-                                                                                        <rect key="frame" x="0.0" y="22" width="280" height="1119"/>
+                                                                                        <rect key="frame" x="0.0" y="19" width="280" height="1122"/>
                                                                                         <subviews>
                                                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.59999999999999998" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Description" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X59-dC-TiR">
-                                                                                                <rect key="frame" x="15" y="0.0" width="250" height="1119"/>
+                                                                                                <rect key="frame" x="15" y="0.0" width="250" height="1122"/>
                                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <color key="tintColor" name="CustomWhite"/>
                                                                                                 <color key="textColor" name="CustomWhite"/>
@@ -747,6 +747,7 @@
                         <outlet property="postScrollView" destination="M0W-Iv-nBT" id="rU2-fm-dvS"/>
                         <outlet property="postTypeImageView" destination="l4C-8C-cSD" id="FgU-7p-p2z"/>
                         <outlet property="postTypeLabel" destination="yFS-Bh-VRV" id="RBh-7V-JTJ"/>
+                        <outlet property="savePostButton" destination="ESm-8a-1ff" id="7yJ-fh-7Nu"/>
                         <outlet property="savePostButtonView" destination="lAJ-AN-ZTh" id="ZJJ-01-Fxw"/>
                         <outlet property="savePostButtonViewConstraint" destination="jAS-64-9Ku" id="gdH-YB-LcZ"/>
                         <outlet property="savePostImageView" destination="Y3G-k8-S6F" id="clr-Dm-yT6"/>
@@ -762,7 +763,7 @@
             <size key="intrinsicContentSize" width="120" height="120"/>
         </designable>
         <designable name="wdL-xC-82Y">
-            <size key="intrinsicContentSize" width="152" height="34"/>
+            <size key="intrinsicContentSize" width="144" height="31"/>
         </designable>
     </designables>
     <resources>

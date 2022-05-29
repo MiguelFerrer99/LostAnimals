@@ -17,6 +17,7 @@ final class PostViewModel {
     var isLoadingPostImages = true
     var postImages: [UIImage] = []
     var user: User?
+    var saved = false
     
     // MARK: - Services
     let userService = UserService()
@@ -26,6 +27,7 @@ final class PostViewModel {
         self.router = router
         self.comesFrom = comesFrom
         self.post = post
+        self.saved = User.shared?.savedPosts.contains(post.id) ?? false
         if let postURLImage1 = post.urlImage1 { postURLImages.append(postURLImage1) }
         if let postURLImage2 = post.urlImage2 { postURLImages.append(postURLImage2) }
         if let postURLImage3 = post.urlImage3 { postURLImages.append(postURLImage3) }
@@ -52,6 +54,17 @@ extension PostViewModel {
 extension PostViewModel {
     func savePost(completion: @escaping ((GenericResult) -> Void)) {
         userService.savePost(postID: post.id) { result in
+            switch result {
+            case .success:
+                completion(.success)
+            case .error(let error):
+                showErrorPopup(title: error)
+            }
+        }
+    }
+    
+    func unsavePost(completion: @escaping ((GenericResult) -> Void)) {
+        userService.unsavePost(postID: post.id) { result in
             switch result {
             case .success:
                 completion(.success)
@@ -161,10 +174,27 @@ extension PostViewModel {
     
     func didPressSavePostButton(completion: @escaping (() -> Void)) {
         if Cache.get(boolFor: .logged) {
-            savePost { result in
-                if case .success = result {
-                    NotificationCenter.default.post(name: .UpdateExploreSavedPosts, object: nil)
-                    completion()
+            if saved {
+                unsavePost { result in
+                    switch result {
+                    case .success:
+                        self.saved = false
+                        NotificationCenter.default.post(name: .UpdateSavedPosts, object: nil)
+                        completion()
+                    case .error(let error):
+                        showErrorPopup(title: error)
+                    }
+                }
+            } else {
+                savePost { result in
+                    switch result {
+                    case .success:
+                        self.saved = true
+                        NotificationCenter.default.post(name: .UpdateSavedPosts, object: nil)
+                        completion()
+                    case .error(let error):
+                        showErrorPopup(title: error)
+                    }
                 }
             }
         } else {

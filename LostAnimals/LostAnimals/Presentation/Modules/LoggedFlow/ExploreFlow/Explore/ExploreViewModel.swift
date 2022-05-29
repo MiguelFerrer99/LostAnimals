@@ -41,13 +41,6 @@ extension ExploreViewModel {
 
 // MARK: - Functions
 extension ExploreViewModel {
-    func getMe(completion: @escaping (() -> ())) {
-        userService.getMe { user in
-            User.shared = user
-            completion()
-        }
-    }
-    
     func getPosts(completion: @escaping (() -> ())) {
         postService.getPosts { result in
             switch result {
@@ -66,8 +59,7 @@ extension ExploreViewModel {
     }
     
     func didPressSavedPosts() {
-        let logged = Cache.get(boolFor: .logged)
-        if logged {
+        if Cache.get(boolFor: .logged) {
             self.router.goToSavedPosts()
         } else {
             showGuestPopup()

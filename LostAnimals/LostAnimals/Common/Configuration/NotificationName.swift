@@ -14,6 +14,5 @@ extension Notification.Name {
     static let SendWhereDoYouLiveToEditPersonalDetails = Notification.Name("SendWhereDoYouLiveToEditPersonalDetails")
     
     static let UpdateExplorePosts = Notification.Name("UpdateExplorePosts")
-    static let UpdateExploreSavedPosts = Notification.Name("UpdateExploreSavedPosts")
-    static let UpdateUserAndUpdateExplorePosts = Notification.Name("UpdateUserAndUpdateExplorePosts")
+    static let UpdateSavedPosts = Notification.Name("UpdateSavedPosts")
 }
