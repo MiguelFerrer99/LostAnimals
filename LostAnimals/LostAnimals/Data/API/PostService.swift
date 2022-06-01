@@ -43,8 +43,8 @@ extension PostService {
                 do {
                     let postsDTO = try FirebaseDecoder().decode([PostDTO].self, from: Array(snapshotValue.values))
                     var posts = postsDTO.compactMap { $0.map() }
-                    posts.sort { $0.createdAt < $1.createdAt }
                     posts = posts.filter { !(User.shared?.blockedUsers.contains($0.userID) ?? false) }
+                    posts.sort { $0.createdAt > $1.createdAt }
                     completion(.success(posts))
                 } catch { completion(.error("An unexpected error occured. Please, try again later")) }
             } else { completion(.success([])) }
@@ -64,6 +64,7 @@ extension PostService {
                 do {
                     let postsDTO = try FirebaseDecoder().decode([PostDTO].self, from: Array(snapshotValue.values))
                     var posts = postsDTO.compactMap { $0.map() }
+                    posts = posts.filter { !(User.shared?.blockedUsers.contains($0.userID) ?? false) }
                     posts = posts.filter { User.shared?.savedPosts.contains($0.id) ?? false }
                     completion(.success(posts))
                 } catch { completion(.error("An unexpected error occured. Please, try again later")) }
@@ -85,6 +86,7 @@ extension PostService {
                     let postsDTO = try FirebaseDecoder().decode([PostDTO].self, from: Array(snapshotValue.values))
                     var posts = postsDTO.compactMap { $0.map() }
                     posts = posts.filter { User.shared?.id == $0.userID }
+                    posts.sort { $0.createdAt > $1.createdAt }
                     completion(.success(posts))
                 } catch { completion(.error("An unexpected error occured. Please, try again later")) }
             } else { completion(.success([])) }

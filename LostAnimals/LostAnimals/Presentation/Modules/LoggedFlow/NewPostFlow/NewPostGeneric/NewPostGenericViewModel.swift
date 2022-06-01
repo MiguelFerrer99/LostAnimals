@@ -80,8 +80,9 @@ extension NewPostGenericViewModel {
         return images
     }
     
-    func reloadExplorePosts() {
+    func reloadPosts() {
         NotificationCenter.default.post(name: .UpdateExplorePosts, object: nil)
+        NotificationCenter.default.post(name: .UpdateMyPosts, object: nil)
     }
     
     func didPressSelectPhotoButton() {
@@ -102,7 +103,7 @@ extension NewPostGenericViewModel {
             self.postService.uploadPost(post: newPost, images: getImagesFromImageViews()) { result in
                 switch result {
                 case .success:
-                    self.reloadExplorePosts()
+                    self.reloadPosts()
                     showSuccessPopup(title: "The post has been published successfully") {
                         self.router.goBackToTabBar()
                     }

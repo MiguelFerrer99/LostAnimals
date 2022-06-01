@@ -36,24 +36,28 @@ extension ProfileViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == firstCollectionView {
             let post = viewModel.posts[indexPath.row]
+            var trailingPadding: CGFloat = indexPath.row == viewModel.posts.count - 1 ? 20 : 10
+            if viewModel.posts.count <= 2 { trailingPadding = 10 }
             let summary = PostCollectionViewCellSummary(postType: post.postType,
                                                         animalName: post.animalName,
                                                         animalType: post.animalType,
                                                         postURLImage: post.urlImage1 ?? "",
                                                         leadingPadding: indexPath.row == 0 ? 20 : 10,
-                                                        trailingPadding: indexPath.row == viewModel.posts.count - 1 ? 20 : 10)
+                                                        trailingPadding: trailingPadding)
             let cell = collectionView.dequeue(PostCollectionViewCell.self, for: indexPath)
             cell.display(summary: summary)
             return cell
         } else {
             if viewModel.isMyProfile {
                 let savedPost = viewModel.savedPosts[indexPath.row]
+                var trailingPadding: CGFloat = indexPath.row == viewModel.posts.count - 1 ? 20 : 10
+                if viewModel.savedPosts.count <= 2 { trailingPadding = 10 }
                 let summary = PostCollectionViewCellSummary(postType: savedPost.postType,
                                                             animalName: savedPost.animalName,
                                                             animalType: savedPost.animalType,
                                                             postURLImage: savedPost.urlImage1 ?? "",
                                                             leadingPadding: indexPath.row == 0 ? 20 : 10,
-                                                            trailingPadding: indexPath.row == viewModel.savedPosts.count - 1 ? 20 : 10)
+                                                            trailingPadding: trailingPadding)
                 let cell = collectionView.dequeue(PostCollectionViewCell.self, for: indexPath)
                 cell.display(summary: summary)
                 return cell
@@ -78,10 +82,12 @@ extension ProfileViewController: UICollectionViewDataSource {
                     socialMediaIcon = UIImage(named: "Twitter") ?? UIImage()
                     socialMediaBackgroundImage = UIImage(named: "CustomLightBlueBackground") ?? UIImage()
                 }
+                var trailingPadding: CGFloat = indexPath.row == viewModel.user.socialMedias.count - 2 ? 20 : 10
+                if (viewModel.socialMediaTypes.count - 1) <= 2 { trailingPadding = 10 }
                 let summary = SocialMediaCollectionViewCellSummary(icon: socialMediaIcon,
                                                                    backgroundImage: socialMediaBackgroundImage,
                                                                    leadingPadding: indexPath.row == 0 ? 20 : 10,
-                                                                   trailingPadding: indexPath.row == viewModel.user.socialMedias.count - 1 ? 20 : 10)
+                                                                   trailingPadding: trailingPadding)
                 let cell = collectionView.dequeue(SocialMediaCollectionViewCell.self, for: indexPath)
                 cell.display(summary: summary)
                 return cell
@@ -123,6 +129,6 @@ extension ProfileViewController: UICollectionViewDelegate {
 // MARK: - UICollectionViewDelegateFlowLayout
 extension ProfileViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width / 2.8, height: collectionView.frame.height)
+        return CGSize(width: collectionView.frame.width/2.8, height: collectionView.frame.height)
     }
 }

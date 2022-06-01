@@ -14,7 +14,7 @@ final class ProfilePostsViewController: ViewController {
     
     // MARK: - Properties
     override var navBarTitle: String {
-        return viewModel.isMyprofile ? "My posts" : "Posts"
+        return viewModel.isMyProfile ? "My posts" : "Posts"
     }
     var viewModel: ProfilePostsViewModel!
     

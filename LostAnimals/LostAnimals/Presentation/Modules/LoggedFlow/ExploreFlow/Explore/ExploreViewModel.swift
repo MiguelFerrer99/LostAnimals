@@ -15,7 +15,6 @@ final class ExploreViewModel {
     var isLoading = true
     
     // MARK: - Services
-    let userService = UserService()
     let postService = PostService()
     
     // MARK: - Init

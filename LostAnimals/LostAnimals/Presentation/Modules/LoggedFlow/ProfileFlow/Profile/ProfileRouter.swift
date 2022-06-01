@@ -106,9 +106,9 @@ extension ProfileRouter {
         }
     }
     
-    func goToProfilePosts(user: User) {
+    func goToProfilePosts(isMyProfile: Bool, posts: [Post]) {
         DispatchQueue.main.async {
-            let viewController = Container.shared.profilePostsBuilder().build(user: user)
+            let viewController = Container.shared.profilePostsBuilder().build(isMyProfile: isMyProfile, posts: posts)
             self.viewController?.push(viewController: viewController)
         }
     }

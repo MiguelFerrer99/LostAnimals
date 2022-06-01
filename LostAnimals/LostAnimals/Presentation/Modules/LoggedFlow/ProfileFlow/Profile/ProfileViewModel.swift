@@ -19,6 +19,7 @@ final class ProfileViewModel {
     var savedPosts: [Post] = []
     
     // MARK: - Services
+    let userService = UserService()
     let postService = PostService()
     
     // MARK: - Init
@@ -48,13 +49,25 @@ extension ProfileViewModel {
 // MARK: - Functions
 extension ProfileViewModel {
     func getPosts(completion: @escaping (() -> Void)) {
-        postService.getMyPosts { result in
-            switch result {
-            case .success(let posts):
-                self.posts = posts
-                completion()
-            case .error(let error):
-                showErrorPopup(title: error)
+        if isMyProfile {
+            postService.getMyPosts { result in
+                switch result {
+                case .success(let posts):
+                    self.posts = posts
+                    completion()
+                case .error(let error):
+                    showErrorPopup(title: error)
+                }
+            }
+        } else {
+            postService.getPosts { result in
+                switch result {
+                case .success(let posts):
+                    self.posts = posts
+                    completion()
+                case .error(let error):
+                    showErrorPopup(title: error)
+                }
             }
         }
     }
@@ -82,16 +95,37 @@ extension ProfileViewModel {
         return ageComponents.year
     }
     
+    func reloadPosts() {
+        NotificationCenter.default.post(name: .UpdateSavedPosts, object: nil)
+        NotificationCenter.default.post(name: .UpdateExplorePosts, object: nil)
+    }
+    
     func didPressBlockUserButton(isBlocked: @escaping ((Bool) -> ())) {
         let isUserBlocked = User.shared?.blockedUsers.contains(user.id) ?? false
         let userFullName = user.lastname.isEmpty ? user.firstname : user.firstname + user.lastname
         if isUserBlocked {
             showConfirmationPopup(title: "Are you sure you want to unblock \(userFullName)?") {
-                isBlocked(false)
+                self.userService.unblockUser(userID: self.user.id) { result in
+                    switch result {
+                    case .success:
+                        self.reloadPosts()
+                        isBlocked(false)
+                    case .error(let error):
+                        showErrorPopup(title: error)
+                    }
+                }
             }
         } else {
             showConfirmationPopup(title: "Are you sure you want to block \(userFullName)?") {
-                isBlocked(true)
+                self.userService.blockUser(userID: self.user.id) { result in
+                    switch result {
+                    case .success:
+                        self.reloadPosts()
+                        isBlocked(true)
+                    case .error(let error):
+                        showErrorPopup(title: error)
+                    }
+                }
             }
         }
     }
@@ -134,7 +168,7 @@ extension ProfileViewModel {
     }
     
     func didPressFirstCollectionHeaderButton() {
-        self.router.goToProfilePosts(user: user)
+        self.router.goToProfilePosts(isMyProfile: isMyProfile, posts: posts)
     }
     
     func didPressSecondCollectionHeaderButton() {

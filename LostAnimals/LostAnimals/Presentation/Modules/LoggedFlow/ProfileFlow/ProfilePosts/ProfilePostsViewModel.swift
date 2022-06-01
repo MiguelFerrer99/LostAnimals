@@ -11,14 +11,17 @@ import Foundation
 final class ProfilePostsViewModel {
     // MARK: - Properties
     private let router: ProfilePostsRouter
-    let user: User
-    let isMyprofile: Bool
+    let isMyProfile: Bool
+    let posts: [Post]
+    
+    // MARK: - Services
+    let postService = PostService()
     
     // MARK: - Init
-    required init(router: ProfilePostsRouter, user: User) {
+    required init(router: ProfilePostsRouter, isMyProfile: Bool, posts: [Post]) {
         self.router = router
-        self.user = user
-        self.isMyprofile = User.shared == user
+        self.isMyProfile = isMyProfile
+        self.posts = posts
     }
 }
 

@@ -122,6 +122,30 @@ extension UserService {
         }
     }
     
+    func unblockUser(userID: String, completion: @escaping (GenericResult) -> Void) {
+        guard let me = User.shared else {
+            completion(.error("An unexpected error occured. Please, try again later"))
+            return
+        }
+        var newBlockedUsers = me.blockedUsers
+        newBlockedUsers.removeAll { $0 == userID }
+        self.databaseRef.child("users").child(me.id).child("blocked_users").setValue(newBlockedUsers) { (error, data) in
+            if let error = error {
+                switch error.localizedDescription {
+                case FirebaseError.networkError.rawValue:
+                    completion(.error("You don't have an internet connection"))
+                default:
+                    completion(.error("An unexpected error occured. Please, try again later"))
+                }
+            } else {
+                self.getMe { user in
+                    User.shared = user
+                    completion(.success)
+                }
+            }
+        }
+    }
+    
     func savePost(postID: String, completion: @escaping (GenericResult) -> Void) {
         guard let me = User.shared else {
             completion(.error("An unexpected error occured. Please, try again later"))

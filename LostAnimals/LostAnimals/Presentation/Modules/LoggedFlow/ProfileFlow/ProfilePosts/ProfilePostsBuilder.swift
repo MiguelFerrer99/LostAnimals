@@ -12,10 +12,10 @@ final class ProfilePostsBuilder {}
 
 // MARK: - Functions
 extension ProfilePostsBuilder {
-    func build(user: User) -> ProfilePostsViewController {
+    func build(isMyProfile: Bool, posts: [Post]) -> ProfilePostsViewController {
         let viewController = UIViewController.instantiate(viewController: ProfilePostsViewController.self)
         let router = ProfilePostsRouter(viewController: viewController)
-        let viewModel = ProfilePostsViewModel(router: router, user: user)
+        let viewModel = ProfilePostsViewModel(router: router, isMyProfile: isMyProfile, posts: posts)
         viewController.viewModel = viewModel
         return viewController
     }

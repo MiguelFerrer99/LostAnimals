@@ -28,8 +28,6 @@ final class ProfileViewController: ViewController, UIGestureRecognizerDelegate {
     @IBOutlet private weak var secondStackView: UIStackView!
     @IBOutlet private weak var secondCollectionHeaderLabel: UILabel!
     @IBOutlet private weak var secondCollectionHeaderImageView: UIImageView!
-    @IBOutlet private weak var emptyStackView: UIStackView!
-    @IBOutlet private weak var emptyLabel: UILabel!
     @IBOutlet private weak var blockedUserView: UIView!
     @IBOutlet private weak var blockedUserLabel: UILabel!
     @IBOutlet private weak var loadingStackView: UIStackView!
@@ -76,6 +74,7 @@ private extension ProfileViewController {
     func setupUI() {
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         setNavBarButtons()
+        subscribeToNotifications()
         configureScrollView(profileScrollView)
         configureCollectionView(firstCollectionView)
         configureCollectionView(secondCollectionView)
@@ -95,10 +94,15 @@ private extension ProfileViewController {
         self.navigationItem.rightBarButtonItems = viewModel.isMyProfile ? [profileSettingsBarButtonItem] : [blockUserBarButtonItem]
     }
     
+    func subscribeToNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(updateSavedPosts), name: .UpdateSavedPosts, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateMyPosts), name: .UpdateMyPosts, object: nil)
+    }
+    
     func fillUI() {
         fillUserInfoUI()
         fillUserImagesUI()
-        fillPostsInfoUI()
+        updateBlockedUserUI()
     }
     
     func fillUserInfoUI() {
@@ -114,13 +118,6 @@ private extension ProfileViewController {
         firstCollectionHeaderLabel.text = viewModel.isMyProfile ? "My posts" : "Posts"
         secondCollectionHeaderLabel.text = viewModel.isMyProfile ? "My saved posts" : "Social medias"
         secondCollectionHeaderImageView.isHidden = !viewModel.isMyProfile
-        blockedUserLabel.text = "\(viewModel.user.firstname) has been blocked by you"
-        let isUserBlocked = User.shared?.blockedUsers.contains(viewModel.user.id) ?? false
-        blockUserButtonImageView.image = UIImage(named: isUserBlocked ? "UnblockUserWhite" : "BlockUserWhite")
-        basicInfoView.isHidden = isUserBlocked
-        firstStackView.isHidden = isUserBlocked
-        secondStackView.isHidden = isUserBlocked
-        blockedUserView.isHidden = !isUserBlocked
     }
     
     func fillUserImagesUI() {
@@ -137,27 +134,26 @@ private extension ProfileViewController {
     }
     
     func fillPostsInfoUI() {
-        loadingIndicator.startAnimating()
-        loadingStackView.isHidden = false
+        showLoading()
         viewModel.getPosts {
             if self.viewModel.isMyProfile {
+                self.firstCollectionView.reloadData()
+                self.firstCollectionHeaderLabel.isHidden = self.viewModel.posts.isEmpty
+                self.firstStackView.isHidden = self.viewModel.posts.isEmpty
                 self.viewModel.getSavedPosts {
-                    self.firstCollectionView.reloadData()
                     self.secondCollectionView.reloadData()
-                    self.loadingStackView.isHidden = true
-                    self.loadingIndicator.startAnimating()
-                    self.firstCollectionHeaderLabel.isHidden = self.viewModel.posts.isEmpty
-                    self.firstStackView.isHidden = self.viewModel.posts.isEmpty
+                    self.hideLoading()
                     self.secondCollectionHeaderLabel.isHidden = self.viewModel.savedPosts.isEmpty
                     self.secondStackView.isHidden = self.viewModel.savedPosts.isEmpty
-                    self.emptyStackView.isHidden = !(self.viewModel.posts.isEmpty && self.viewModel.savedPosts.isEmpty)
                 }
             } else {
                 self.firstCollectionView.reloadData()
-                self.loadingStackView.isHidden = true
-                self.loadingIndicator.stopAnimating()
+                self.secondCollectionView.reloadData()
+                self.hideLoading()
                 self.firstCollectionHeaderLabel.isHidden = self.viewModel.posts.isEmpty
                 self.firstStackView.isHidden = self.viewModel.posts.isEmpty
+                self.secondCollectionHeaderLabel.isHidden = false
+                self.secondStackView.isHidden = false
             }
         }
     }
@@ -173,6 +169,38 @@ private extension ProfileViewController {
         }
     }
     
+    func updateBlockedUserUI() {
+        blockedUserLabel.text = "\(viewModel.user.firstname) has been blocked by you"
+        let isUserBlocked = User.shared?.blockedUsers.contains(viewModel.user.id) ?? false
+        if isUserBlocked {
+            blockUserButtonImageView.image = UIImage(named: "UnblockUserWhite")
+        } else {
+            blockUserButtonImageView.image = UIImage(named: "BlockUserWhite")
+            basicInfoView.isHidden = false
+            fillPostsInfoUI()
+        }
+    }
+    
+    @objc func updateMyPosts() {
+        showLoading()
+        viewModel.getPosts {
+            self.firstCollectionView.reloadData()
+            self.firstCollectionHeaderLabel.isHidden = self.viewModel.posts.isEmpty
+            self.firstStackView.isHidden = self.viewModel.posts.isEmpty
+            self.hideLoading()
+        }
+    }
+    
+    @objc func updateSavedPosts() {
+        showLoading()
+        viewModel.getSavedPosts {
+            self.secondCollectionView.reloadData()
+            self.secondCollectionHeaderLabel.isHidden = self.viewModel.savedPosts.isEmpty
+            self.secondStackView.isHidden = self.viewModel.savedPosts.isEmpty
+            self.hideLoading()
+        }
+    }
+    
     @objc func blockOrUnblockUser() {
         viewModel.didPressBlockUserButton { isBlocked in
             self.updateBlockedUserUI(isBlocked: isBlocked)
@@ -182,6 +210,16 @@ private extension ProfileViewController {
     
     @objc func profileSettingsBarButtonItemPressed() {
         viewModel.didPressSettingsButton()
+    }
+    
+    func hideLoading() {
+        self.loadingStackView.isHidden = true
+        self.loadingIndicator.stopAnimating()
+    }
+    
+    func showLoading() {
+        self.loadingIndicator.startAnimating()
+        self.loadingStackView.isHidden = false
     }
 }
 
