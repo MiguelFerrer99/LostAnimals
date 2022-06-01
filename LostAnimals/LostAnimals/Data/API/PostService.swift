@@ -71,6 +71,26 @@ extension PostService {
         }
     }
     
+    func getMyPosts(completion: @escaping (GetPostsResult) -> Void) {
+        databaseRef.child("posts").getData { (error, snapshot) in
+            if let error = error {
+                switch error.localizedDescription {
+                case FirebaseError.networkError.rawValue:
+                    completion(.error("You don't have an internet connection"))
+                default:
+                    completion(.error("An unexpected error occured. Please, try again later"))
+                }
+            } else if let snapshotValue = snapshot.value as? [String: Any] {
+                do {
+                    let postsDTO = try FirebaseDecoder().decode([PostDTO].self, from: Array(snapshotValue.values))
+                    var posts = postsDTO.compactMap { $0.map() }
+                    posts = posts.filter { User.shared?.id == $0.userID }
+                    completion(.success(posts))
+                } catch { completion(.error("An unexpected error occured. Please, try again later")) }
+            } else { completion(.success([])) }
+        }
+    }
+    
     func uploadPost(post: Post, images: [UIImage?], completion: @escaping (GenericResult) -> Void) {
         self.uploadPostImagesAndGetURLs(postID: post.id, images: images) { urlImages in
             do {

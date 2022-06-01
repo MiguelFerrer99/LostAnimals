@@ -19,73 +19,41 @@ extension ProfileViewController {
     }
 }
 
-// MARK: - UICollectionViewDelegate
-extension ProfileViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if collectionView == firstCollectionView {
-            // TODO: Get post from viewModel
-            /*let post = HardcodedData.explorePosts[indexPath.row]
-            viewModel.didPressPost(post: post)*/
-        } else if collectionView == secondCollectionView {
-            // TODO: Get post from viewModel
-            /*if viewModel.isMyProfile {
-                let post = HardcodedData.savedPosts[indexPath.row]
-                viewModel.didPressPost(post: post)
-            } else {
-                let socialMediaType = viewModel.socialMediaTypes[indexPath.row]
-                let socialMediaValue = viewModel.user.socialMedias[socialMediaType]
-                switch socialMediaType {
-                case .email:
-                    sendEmail(email: socialMediaValue ?? "")
-                case .phonePrefix, .phoneNumber:
-                    viewModel.didPressPhoneButton()
-                case .whatsapp:
-                    viewModel.didPressWhatsappButton()
-                case .instagram:
-                    viewModel.didPressInstagramButton()
-                case .twitter:
-                    viewModel.didPressTwitterButton()
-                }
-            }*/
-        }
-    }
-}
-
-
 // MARK: - UICollectionViewDataSource
 extension ProfileViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        /*if collectionView == firstCollectionView {
-            return HardcodedData.explorePosts.count
+        if collectionView == firstCollectionView {
+            return viewModel.posts.count
         } else {
             if viewModel.isMyProfile {
-                return HardcodedData.savedPosts.count
+                return viewModel.savedPosts.count
             } else {
                 return viewModel.user.socialMedias.count - 1
             }
-        }*/
-        return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        /*if collectionView == firstCollectionView {
-            let post = HardcodedData.explorePosts[indexPath.row]
+        if collectionView == firstCollectionView {
+            let post = viewModel.posts[indexPath.row]
             let summary = PostCollectionViewCellSummary(postType: post.postType,
-                                                        animal: post.animal,
-                                                        postImage: post.animal.images.first ?? UIImage(named: "SelectPhotoPlaceholder"),
+                                                        animalName: post.animalName,
+                                                        animalType: post.animalType,
+                                                        postURLImage: post.urlImage1 ?? "",
                                                         leadingPadding: indexPath.row == 0 ? 20 : 10,
-                                                        trailingPadding: indexPath.row == HardcodedData.explorePosts.count - 1 ? 20 : 10)
+                                                        trailingPadding: indexPath.row == viewModel.posts.count - 1 ? 20 : 10)
             let cell = collectionView.dequeue(PostCollectionViewCell.self, for: indexPath)
             cell.display(summary: summary)
             return cell
         } else {
             if viewModel.isMyProfile {
-                let post = HardcodedData.savedPosts[indexPath.row]
-                let summary = PostCollectionViewCellSummary(postType: post.postType,
-                                                            animal: post.animal,
-                                                            postImage: post.animal.images.first ?? UIImage(named: "SelectPhotoPlaceholder"),
+                let savedPost = viewModel.savedPosts[indexPath.row]
+                let summary = PostCollectionViewCellSummary(postType: savedPost.postType,
+                                                            animalName: savedPost.animalName,
+                                                            animalType: savedPost.animalType,
+                                                            postURLImage: savedPost.urlImage1 ?? "",
                                                             leadingPadding: indexPath.row == 0 ? 20 : 10,
-                                                            trailingPadding: indexPath.row == HardcodedData.savedPosts.count - 1 ? 20 : 10)
+                                                            trailingPadding: indexPath.row == viewModel.savedPosts.count - 1 ? 20 : 10)
                 let cell = collectionView.dequeue(PostCollectionViewCell.self, for: indexPath)
                 cell.display(summary: summary)
                 return cell
@@ -118,8 +86,37 @@ extension ProfileViewController: UICollectionViewDataSource {
                 cell.display(summary: summary)
                 return cell
             }
-        }*/
-        return UICollectionViewCell()
+        }
+    }
+}
+
+// MARK: - UICollectionViewDelegate
+extension ProfileViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == firstCollectionView {
+            let post = viewModel.posts[indexPath.row]
+            viewModel.didPressPost(post: post)
+        } else if collectionView == secondCollectionView {
+            if viewModel.isMyProfile {
+                let savedPost = viewModel.savedPosts[indexPath.row]
+                viewModel.didPressPost(post: savedPost)
+            } else {
+                let socialMediaType = viewModel.socialMediaTypes[indexPath.row]
+                let socialMediaValue = viewModel.user.socialMedias[socialMediaType]
+                switch socialMediaType {
+                case .email:
+                    sendEmail(email: socialMediaValue ?? "")
+                case .phonePrefix, .phoneNumber:
+                    viewModel.didPressPhoneButton()
+                case .whatsapp:
+                    viewModel.didPressWhatsappButton()
+                case .instagram:
+                    viewModel.didPressInstagramButton()
+                case .twitter:
+                    viewModel.didPressTwitterButton()
+                }
+            }
+        }
     }
 }
 

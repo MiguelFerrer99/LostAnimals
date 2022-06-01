@@ -34,15 +34,15 @@
                                 <rect key="frame" x="40" y="0.0" width="299" height="615"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write your social media accounts if you have. We will use them to give you the best user experience" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ktl-Gy-1el">
-                                        <rect key="frame" x="0.0" y="0.0" width="299" height="74"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="299" height="65.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="16"/>
                                         <color key="textColor" name="CustomWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dP-yx-koR">
-                                        <rect key="frame" x="0.0" y="94" width="299" height="391"/>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="3dP-yx-koR">
+                                        <rect key="frame" x="0.0" y="85.5" width="299" height="399.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zMr-TY-Z8e">
                                                 <rect key="frame" x="0.0" y="0.0" width="299" height="325"/>
@@ -193,6 +193,7 @@
                                                                             </stackView>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gbi-xZ-4yh">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="124.5" height="25"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                 <connections>
                                                                                     <action selector="haveWhatsAppButtonPressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="f0L-ki-dhj"/>
@@ -276,7 +277,7 @@
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" name="CustomWhite"/>
                                         <constraints>
                                             <constraint firstItem="zMr-TY-Z8e" firstAttribute="top" secondItem="xIE-Mo-TYn" secondAttribute="top" id="C2y-5d-I6I"/>
                                             <constraint firstItem="zMr-TY-Z8e" firstAttribute="bottom" secondItem="xIE-Mo-TYn" secondAttribute="bottom" id="EDp-vb-Yeo"/>
@@ -355,7 +356,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ieb-1D-Y6a" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="129.5" height="45"/>
                                                         <color key="backgroundColor" name="CustomWhite"/>
-                                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="20"/>
+                                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="18"/>
                                                         <state key="normal" title="Back">
                                                             <color key="titleColor" name="CustomBlack"/>
                                                         </state>
@@ -369,7 +370,7 @@
                                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ju7-bT-tuV" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
                                                         <rect key="frame" x="169.5" y="0.0" width="129.5" height="45"/>
                                                         <color key="backgroundColor" name="CustomWhite"/>
-                                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="20"/>
+                                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="18"/>
                                                         <state key="normal" title="Get started">
                                                             <color key="titleColor" name="CustomBlack"/>
                                                         </state>
@@ -434,10 +435,10 @@
     </objects>
     <designables>
         <designable name="Ieb-1D-Y6a">
-            <size key="intrinsicContentSize" width="45" height="40"/>
+            <size key="intrinsicContentSize" width="41" height="37"/>
         </designable>
         <designable name="ju7-bT-tuV">
-            <size key="intrinsicContentSize" width="106" height="40"/>
+            <size key="intrinsicContentSize" width="96" height="37"/>
         </designable>
     </designables>
     <resources>

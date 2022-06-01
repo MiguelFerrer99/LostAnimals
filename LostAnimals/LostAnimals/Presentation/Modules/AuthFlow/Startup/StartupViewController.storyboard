@@ -107,7 +107,7 @@
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qrJ-U9-aUo" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="127.5" height="45"/>
                                                                         <color key="backgroundColor" name="CustomWhite"/>
-                                                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="20"/>
+                                                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="18"/>
                                                                         <state key="normal" title="Log In">
                                                                             <color key="titleColor" name="CustomBlack"/>
                                                                         </state>
@@ -121,7 +121,7 @@
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MyI-La-a1L" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
                                                                         <rect key="frame" x="167.5" y="0.0" width="127.5" height="45"/>
                                                                         <color key="backgroundColor" name="CustomWhite"/>
-                                                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="20"/>
+                                                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="18"/>
                                                                         <state key="normal" title="Sign Up">
                                                                             <color key="titleColor" name="CustomBlack"/>
                                                                         </state>
@@ -198,10 +198,10 @@
     </scenes>
     <designables>
         <designable name="MyI-La-a1L">
-            <size key="intrinsicContentSize" width="74" height="40"/>
+            <size key="intrinsicContentSize" width="67" height="37"/>
         </designable>
         <designable name="qrJ-U9-aUo">
-            <size key="intrinsicContentSize" width="58" height="40"/>
+            <size key="intrinsicContentSize" width="52" height="37"/>
         </designable>
     </designables>
     <color key="tintColor" name="CustomBlack"/>

@@ -9,20 +9,17 @@
 import Foundation
 import UIKit
 
-// MARK: - Enums
-enum ProfileSectionType: String {
-    case posts
-    case savedPosts
-    case socialMedias
-}
-
 final class ProfileViewModel {
     // MARK: - Properties
     private let router: ProfileRouter
-    var collectionSections: [ProfileSectionType] = [.posts]
     let user: User
     let isMyProfile: Bool
     var socialMediaTypes: [SocialMediaType] = []
+    var posts: [Post] = []
+    var savedPosts: [Post] = []
+    
+    // MARK: - Services
+    let postService = PostService()
     
     // MARK: - Init
     required init(router: ProfileRouter, user: User) {
@@ -50,6 +47,30 @@ extension ProfileViewModel {
 
 // MARK: - Functions
 extension ProfileViewModel {
+    func getPosts(completion: @escaping (() -> Void)) {
+        postService.getMyPosts { result in
+            switch result {
+            case .success(let posts):
+                self.posts = posts
+                completion()
+            case .error(let error):
+                showErrorPopup(title: error)
+            }
+        }
+    }
+    
+    func getSavedPosts(completion: @escaping (() -> Void)) {
+        postService.getSavedPosts { result in
+            switch result {
+            case .success(let posts):
+                self.savedPosts = posts
+                completion()
+            case .error(let error):
+                showErrorPopup(title: error)
+            }
+        }
+    }
+    
     func getAge() -> Int? {
         guard let auxBirthdate = user.birthdate?.toDate(withFormat: DateFormat.dayMonthYearOther) else { return nil }
         let birthdate = DateComponents(year: auxBirthdate.year,
@@ -59,10 +80,6 @@ extension ProfileViewModel {
         let ageComponents = Calendar.current.dateComponents([.year], from: birthdate, to: now)
         
         return ageComponents.year
-    }
-    
-    func didPressBackButton() {
-        self.router.goBack()
     }
     
     func didPressBlockUserButton(isBlocked: @escaping ((Bool) -> ())) {
@@ -77,6 +94,10 @@ extension ProfileViewModel {
                 isBlocked(true)
             }
         }
+    }
+    
+    func didPressBackButton() {
+        self.router.goBack()
     }
     
     func didPressSettingsButton() {
