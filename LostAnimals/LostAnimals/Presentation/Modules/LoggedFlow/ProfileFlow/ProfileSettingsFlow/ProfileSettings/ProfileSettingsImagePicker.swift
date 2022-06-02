@@ -26,8 +26,8 @@ extension ProfileSettingsViewController: UIImagePickerControllerDelegate, UINavi
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             switch viewModel.selectedImageView {
-            case .user:   profileImageView.image = pickedImage
-            case .header: headerImageView.image = pickedImage
+            case .user:   break // profileImageView.image = pickedImage
+            case .header: break // headerImageView.image = pickedImage
             }
             picker.dismiss(animated: true, completion: nil)
         }
