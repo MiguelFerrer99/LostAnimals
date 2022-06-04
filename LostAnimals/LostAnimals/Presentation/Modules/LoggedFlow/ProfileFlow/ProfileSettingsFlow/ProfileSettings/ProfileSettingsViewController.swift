@@ -10,6 +10,14 @@ import UIKit
 
 final class ProfileSettingsViewController: ViewController, UIGestureRecognizerDelegate {
     // MARK: - IBOutlets
+    @IBOutlet private weak var backButton: UIButton!
+    @IBOutlet private weak var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var loadingView: CustomView!
+    @IBOutlet private weak var headerImageView: UIImageView!
+    @IBOutlet private weak var editHeaderImageButton: UIButton!
+    @IBOutlet private weak var userImageView: UIImageView!
+    @IBOutlet private weak var editUserImageButton: UIButton!
+    @IBOutlet private weak var animalShelterImageView: UIImageView!
     @IBOutlet private weak var blockedUsersView: UIView!
     @IBOutlet private weak var editPersonalDetailsButton: UIButton!
     @IBOutlet private weak var editSocialMediasButton: UIButton!
@@ -30,8 +38,9 @@ final class ProfileSettingsViewController: ViewController, UIGestureRecognizerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupUI()
         viewModel.viewReady()
+        setupUI()
+        fillUI()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -43,11 +52,9 @@ final class ProfileSettingsViewController: ViewController, UIGestureRecognizerDe
 
 // MARK: - Functions
 extension ProfileSettingsViewController {
-    func removePhoto() {
-        switch viewModel.selectedImageView {
-        case .user:   break // profileImageView.image = UIImage(named: "DefaultUserImage")
-        case .header: break // headerImageView.image = UIImage(named: "DefaultHeaderImage")
-        }
+    func takePhoto() {
+        self.imagePickerController.sourceType = .camera
+        self.present(viewController: imagePickerController, completion: nil)
     }
     
     func choosePhoto() {
@@ -55,9 +62,34 @@ extension ProfileSettingsViewController {
         self.present(viewController: imagePickerController, completion: nil)
     }
     
-    func takePhoto() {
-        self.imagePickerController.sourceType = .camera
-        self.present(viewController: imagePickerController, completion: nil)
+    func removePhoto() {
+        showLoading()
+        viewModel.didPressedRemovePhoto { result in
+            switch result {
+            case .success:
+                switch self.viewModel.selectedImageView {
+                case .user:   self.userImageView.image = UIImage(named: "DefaultUserImage")
+                case .header: self.headerImageView.image = UIImage(named: "DefaultHeaderImage")
+                }
+                self.hideLoading()
+            case .error: self.hideLoading()
+            }
+        }
+    }
+    
+    func setPhotoFromImagePicker(image: UIImage) {
+        showLoading()
+        viewModel.didPressedChangePhoto(newImage: image) { result in
+            switch result {
+            case .success:
+                switch self.viewModel.selectedImageView {
+                case .user:   self.userImageView.image = image
+                case .header: self.headerImageView.image = image
+                }
+                self.hideLoading()
+            case .error: self.hideLoading()
+            }
+        }
     }
 }
 
@@ -66,43 +98,62 @@ private extension ProfileSettingsViewController {
     func setupUI() {
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         configureImagePickerController()
-        fillUI()
     }
     
     func fillUI() {
-        // headerImageView.image = viewModel.headerImage
-        // profileImageView.image = viewModel.userImage
-        // animalShelterImageView.isHidden = !viewModel.me.animalShelter
+        if let headerImage = viewModel.profileImages.headerImage {
+            headerImageView.image = headerImage
+        }
+        if let userImage = viewModel.profileImages.userImage {
+            userImageView.image = userImage
+        }
+        animalShelterImageView.isHidden = !viewModel.me.animalShelter
         blockedUsersView.isHidden = viewModel.me.blockedUsers.isEmpty
     }
     
     func updateUserInteraction() {
-        // navigationController?.interactivePopGestureRecognizer?.isEnabled = loadingView.isHidden
-        // backButton.isUserInteractionEnabled = loadingView.isHidden
-        // changeHeaderImageButton.isUserInteractionEnabled = loadingView.isHidden
-        // changeUserImageButton.isUserInteractionEnabled = loadingView.isHidden
-        // editPersonalDetailsButton.isUserInteractionEnabled = loadingView.isHidden
-        // editSocialMediasButton.isUserInteractionEnabled = loadingView.isHidden
-        // changePasswordButton.isUserInteractionEnabled = loadingView.isHidden
-        // blockedUsersButton.isUserInteractionEnabled = loadingView.isHidden
-        // termsAndConditionsButton.isUserInteractionEnabled = loadingView.isHidden
-        // deleteAccountButton.isUserInteractionEnabled = loadingView.isHidden
-        // logOutButton.isUserInteractionEnabled = loadingView.isHidden
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = loadingView.isHidden
+        backButton.isUserInteractionEnabled = loadingView.isHidden
+        editHeaderImageButton.isUserInteractionEnabled = loadingView.isHidden
+        editUserImageButton.isUserInteractionEnabled = loadingView.isHidden
+        editPersonalDetailsButton.isUserInteractionEnabled = loadingView.isHidden
+        editSocialMediasButton.isUserInteractionEnabled = loadingView.isHidden
+        changePasswordButton.isUserInteractionEnabled = loadingView.isHidden
+        blockedUsersButton.isUserInteractionEnabled = loadingView.isHidden
+        termsAndConditionsButton.isUserInteractionEnabled = loadingView.isHidden
+        deleteAccountButton.isUserInteractionEnabled = loadingView.isHidden
+        logOutButton.isUserInteractionEnabled = loadingView.isHidden
     }
     
     func showLoading() {
-        // loadingView.isHidden = false
+        loadingIndicator.startAnimating()
+        loadingView.isHidden = false
         updateUserInteraction()
     }
     
     func hideLoading() {
-        // loadingView.isHidden = true
+        loadingView.isHidden = true
+        loadingIndicator.stopAnimating()
         updateUserInteraction()
     }
 }
 
 // MARK: - IBActions
 private extension ProfileSettingsViewController {
+    @IBAction func backButtonPressed(_ sender: UIButton) {
+        viewModel.didPressedBackButton()
+    }
+    
+    @IBAction func editHeaderImageButtonPressed(_ sender: UIButton) {
+        guard let currentHeaderImage = headerImageView.image else { return }
+        viewModel.didPressedChangeHeaderImageButton(headerImage: currentHeaderImage)
+    }
+    
+    @IBAction func editUserImageButtonPressed(_ sender: UIButton) {
+        guard let currentUserImage = userImageView.image else { return }
+        viewModel.didPressedChangeProfileImageButton(profileImage: currentUserImage)
+    }
+    
     @IBAction func editPersonalDataButtonPressed(_ sender: UIButton) {
         viewModel.didPressedEditPersonalDataButton()
     }
@@ -129,7 +180,6 @@ private extension ProfileSettingsViewController {
         } completion: {
             self.hideLoading()
         }
-
     }
     
     @IBAction func logoutButtonPressed(_ sender: UIButton) {
@@ -138,6 +188,5 @@ private extension ProfileSettingsViewController {
         } completion: {
             self.hideLoading()
         }
-
     }
 }

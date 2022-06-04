@@ -12,10 +12,10 @@ final class ProfileSettingsBuilder {}
 
 // MARK: - Functions
 extension ProfileSettingsBuilder {
-    func build(me: User) -> ProfileSettingsViewController {
+    func build(me: User, profileImages: ProfileImages) -> ProfileSettingsViewController {
         let viewController = UIViewController.instantiate(viewController: ProfileSettingsViewController.self)
         let router = ProfileSettingsRouter(viewController: viewController)
-        let viewModel = ProfileSettingsViewModel(router: router, me: me)
+        let viewModel = ProfileSettingsViewModel(router: router, me: me, images: profileImages)
         viewController.viewModel = viewModel
         return viewController
     }

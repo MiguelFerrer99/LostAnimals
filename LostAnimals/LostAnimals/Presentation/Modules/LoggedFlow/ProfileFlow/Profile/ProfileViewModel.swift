@@ -12,11 +12,13 @@ import UIKit
 final class ProfileViewModel {
     // MARK: - Properties
     private let router: ProfileRouter
-    let user: User
-    let isMyProfile: Bool
+    var user: User
+    var isMyProfile: Bool
     var socialMediaTypes: [SocialMediaType] = []
     var posts: [Post] = []
     var savedPosts: [Post] = []
+    var userImage: UIImage?
+    var headerImage: UIImage?
     
     // MARK: - Services
     let userService = UserService()
@@ -135,7 +137,7 @@ extension ProfileViewModel {
     }
     
     func didPressSettingsButton() {
-        self.router.goToProfileSettings()
+        self.router.goToProfileSettings(profileImages: (userImage, headerImage))
     }
     
     func didPressLocation() {

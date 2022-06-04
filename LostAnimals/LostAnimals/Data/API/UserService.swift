@@ -6,6 +6,7 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
+import UIKit
 import Firebase
 import CodableFirebase
 
@@ -189,6 +190,81 @@ extension UserService {
                 self.getMe { user in
                     User.shared = user
                     completion(.success)
+                }
+            }
+        }
+    }
+    
+    func editUserImage(newImage: UIImage?, imageType: ProfileSettingsImageType, completion: @escaping (GenericResult) -> Void) {
+        guard let me = User.shared else {
+            completion(.error("An unexpected error occured. Please, try again later"))
+            return
+        }
+        let newImageName = imageType == .header ? "header_image" : "user_image"
+        let newImageUrlName = imageType == .header ? "header_url_image" : "user_url_image"
+        if let newImage = newImage, let newImageData = newImage.jpegData(compressionQuality: 0.5) {
+            self.storageRef.child("users").child(me.id).child(newImageName).putData(newImageData, metadata: nil) { (_, error1) in
+                if let error1 = error1 {
+                    switch error1.localizedDescription {
+                    case FirebaseError.networkError.rawValue:
+                        completion(.error("You don't have an internet connection"))
+                    default:
+                        completion(.error("An unexpected error occured. Please, try again later"))
+                    }
+                } else {
+                    self.storageRef.child("users").child(me.id).child(newImageName).downloadURL { (url, error2) in
+                        if let error2 = error2 {
+                            switch error2.localizedDescription {
+                            case FirebaseError.networkError.rawValue:
+                                completion(.error("You don't have an internet connection"))
+                            default:
+                                completion(.error("An unexpected error occured. Please, try again later"))
+                            }
+                        } else if let url = url {
+                            self.databaseRef.child("users").child(me.id).child(newImageUrlName).setValue(url.absoluteString) { (error3, _) in
+                                if let error3 = error3 {
+                                    switch error3.localizedDescription {
+                                    case FirebaseError.networkError.rawValue:
+                                        completion(.error("You don't have an internet connection"))
+                                    default:
+                                        completion(.error("An unexpected error occured. Please, try again later"))
+                                    }
+                                } else {
+                                    self.getMe { user in
+                                        User.shared = user
+                                        completion(.success)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } else {
+            self.storageRef.child("users").child(me.id).child(newImageName).delete { error1 in
+                if let error1 = error1 {
+                    switch error1.localizedDescription {
+                    case FirebaseError.networkError.rawValue:
+                        completion(.error("You don't have an internet connection"))
+                    default:
+                        completion(.error("An unexpected error occured. Please, try again later"))
+                    }
+                } else {
+                    self.databaseRef.child("users").child(me.id).child(newImageUrlName).removeValue { (error2, _) in
+                        if let error2 = error2 {
+                            switch error2.localizedDescription {
+                            case FirebaseError.networkError.rawValue:
+                                completion(.error("You don't have an internet connection"))
+                            default:
+                                completion(.error("An unexpected error occured. Please, try again later"))
+                            }
+                        } else {
+                            self.getMe { user in
+                                User.shared = user
+                                completion(.success)
+                            }
+                        }
+                    }
                 }
             }
         }

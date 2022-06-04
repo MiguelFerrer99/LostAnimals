@@ -34,6 +34,7 @@ struct UserDTO: Codable {
     // MARK: - Functions
     func map() -> User {
         var socialMedias: [SocialMediaType: String] = [
+            .email: email,
             .phonePrefix: social_medias.phone_prefix,
             .phoneNumber: social_medias.phone_number
         ]

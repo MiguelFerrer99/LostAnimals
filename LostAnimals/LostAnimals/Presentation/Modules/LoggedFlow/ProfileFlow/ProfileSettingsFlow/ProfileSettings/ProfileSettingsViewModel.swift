@@ -14,21 +14,25 @@ enum ProfileSettingsImageType: String {
     case user
 }
 
+// MARK: - Typealias
+typealias ProfileImages = (userImage: UIImage?, headerImage: UIImage?)
+
 final class ProfileSettingsViewModel {
     // MARK: - Properties
     private let router: ProfileSettingsRouter
-    var selectedImageView: ProfileSettingsImageType = .user
-    var userImage = UIImage()
-    var headerImage = UIImage()
     let me: User
+    let profileImages: ProfileImages
+    var selectedImageView: ProfileSettingsImageType = .user
+    var userIsModified = false
     
     // MARK: - Services
     let userService = UserService()
     
     // MARK: - Init
-    required init(router: ProfileSettingsRouter, me: User) {
+    required init(router: ProfileSettingsRouter, me: User, images: ProfileImages) {
         self.router = router
         self.me = me
+        self.profileImages = images
     }
 }
 
@@ -45,22 +49,8 @@ extension ProfileSettingsViewModel {
 
 // MARK: - Functions
 extension ProfileSettingsViewModel {
-    func getImagesFromURLImages(completion: @escaping (() -> ())) {
-        me.userURLImage?.getURLImage { userImage in
-            if let userImage = userImage {
-                self.userImage = userImage
-                
-                self.me.headerURLImage?.getURLImage { headerImage in
-                    if let headerImage = headerImage {
-                        self.headerImage = headerImage
-                        completion()
-                    }
-                }
-            }
-        }
-    }
-    
     func didPressedBackButton() {
+        if userIsModified { NotificationCenter.default.post(name: .UpdateMyProfile, object: nil) }
         self.router.goBack()
     }
     
@@ -72,6 +62,32 @@ extension ProfileSettingsViewModel {
     func didPressedChangeProfileImageButton(profileImage: UIImage) {
         selectedImageView = .user
         self.router.goToSelectPhotoPopup(showRemoveOption: !profileImage.isEqualTo(image: UIImage(named: "DefaultUserImage")))
+    }
+    
+    func didPressedRemovePhoto(completion: @escaping ((GenericResult) -> ())) {
+        userService.editUserImage(newImage: nil, imageType: selectedImageView) { result in
+            switch result {
+            case .success:
+                self.userIsModified = true
+                completion(result)
+            case .error(let error):
+                completion(result)
+                showErrorPopup(title: error)
+            }
+        }
+    }
+    
+    func didPressedChangePhoto(newImage: UIImage, completion: @escaping ((GenericResult) -> ())) {
+        userService.editUserImage(newImage: newImage, imageType: selectedImageView) { result in
+            switch result {
+            case .success:
+                self.userIsModified = true
+                completion(result)
+            case .error(let error):
+                completion(result)
+                showErrorPopup(title: error)
+            }
+        }
     }
     
     func didPressedEditPersonalDataButton() {

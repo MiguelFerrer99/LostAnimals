@@ -24,10 +24,10 @@ extension ProfileRouter {
         self.viewController?.pop()
     }
     
-    func goToProfileSettings() {
+    func goToProfileSettings(profileImages: ProfileImages) {
         DispatchQueue.main.async {
             guard let me = User.shared else { return }
-            let viewController = Container.shared.profileSettingsBuilder().build(me: me)
+            let viewController = Container.shared.profileSettingsBuilder().build(me: me, profileImages: profileImages)
             self.viewController?.push(viewController: viewController)
         }
     }

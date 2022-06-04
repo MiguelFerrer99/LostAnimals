@@ -16,6 +16,7 @@ final class ProfileViewController: ViewController, UIGestureRecognizerDelegate {
     @IBOutlet private weak var blockUserButtonImageView: UIImageView!
     @IBOutlet private weak var blockUserButtonView: UIView!
     @IBOutlet private weak var settingsButtonView: UIView!
+    @IBOutlet private weak var loadingView: CustomView!
     @IBOutlet private weak var headerImageView: UIImageView!
     @IBOutlet private weak var userImageView: UIImageView!
     @IBOutlet private weak var animalShelterImageView: UIImageView!
@@ -97,6 +98,7 @@ private extension ProfileViewController {
     func subscribeToNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(updateSavedPosts), name: .UpdateSavedPosts, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateMyPosts), name: .UpdateMyPosts, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateMyProfile), name: .UpdateMyProfile, object: nil)
     }
     
     func fillUI() {
@@ -122,13 +124,31 @@ private extension ProfileViewController {
     
     func fillUserImagesUI() {
         if let userURLImage = viewModel.user.userURLImage {
+            self.loadingView.isHidden = false
+            self.settingsButtonView.isHidden = true
             userURLImage.getURLImage { image in
-                if let image = image { self.userImageView.image = image }
+                if let image = image {
+                    DispatchQueue.main.async {
+                        self.loadingView.isHidden = true
+                        self.settingsButtonView.isHidden = false
+                        self.viewModel.userImage = image
+                        self.userImageView.image = image
+                    }
+                }
             }
         }
         if let headerURLImage = viewModel.user.headerURLImage {
+            self.loadingView.isHidden = false
+            self.settingsButtonView.isHidden = true
             headerURLImage.getURLImage { image in
-                if let image = image { self.headerImageView.image = image }
+                if let image = image {
+                    DispatchQueue.main.async {
+                        self.loadingView.isHidden = true
+                        self.settingsButtonView.isHidden = false
+                        self.viewModel.headerImage = image
+                        self.headerImageView.image = image
+                    }
+                }
             }
         }
     }
@@ -181,6 +201,16 @@ private extension ProfileViewController {
         }
     }
     
+    @objc func updateSavedPosts() {
+        showLoading()
+        viewModel.getSavedPosts {
+            self.secondCollectionView.reloadData()
+            self.secondCollectionHeaderLabel.isHidden = self.viewModel.savedPosts.isEmpty
+            self.secondStackView.isHidden = self.viewModel.savedPosts.isEmpty
+            self.hideLoading()
+        }
+    }
+    
     @objc func updateMyPosts() {
         showLoading()
         viewModel.getPosts {
@@ -191,14 +221,11 @@ private extension ProfileViewController {
         }
     }
     
-    @objc func updateSavedPosts() {
-        showLoading()
-        viewModel.getSavedPosts {
-            self.secondCollectionView.reloadData()
-            self.secondCollectionHeaderLabel.isHidden = self.viewModel.savedPosts.isEmpty
-            self.secondStackView.isHidden = self.viewModel.savedPosts.isEmpty
-            self.hideLoading()
-        }
+    @objc func updateMyProfile() {
+        guard let me = User.shared else { return }
+        viewModel.user = me
+        viewModel.isMyProfile = (me == viewModel.user)
+        fillUserImagesUI()
     }
     
     @objc func blockOrUnblockUser() {
