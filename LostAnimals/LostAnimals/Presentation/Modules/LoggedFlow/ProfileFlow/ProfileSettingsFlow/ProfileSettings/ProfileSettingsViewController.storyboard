@@ -233,18 +233,11 @@
                                                             <constraint firstAttribute="bottom" secondItem="KKt-wt-Gx1" secondAttribute="bottom" id="qFl-2V-PmY"/>
                                                         </constraints>
                                                     </view>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j8S-I2-JOr">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fcn-ct-Lit">
                                                         <rect key="frame" x="0.0" y="380" width="428" height="60"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JRZ-NK-g4i">
-                                                                <rect key="frame" x="0.0" y="0.0" width="20" height="60"/>
-                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="20" id="tMZ-5J-9OM"/>
-                                                                </constraints>
-                                                            </view>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9d0-uU-rY9">
-                                                                <rect key="frame" x="20" y="0.0" width="408" height="60"/>
+                                                                <rect key="frame" x="20" y="0.0" width="139" height="60"/>
                                                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="20"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="Delete account">
@@ -255,22 +248,19 @@
                                                                 </connections>
                                                             </button>
                                                         </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="60" id="Btw-rg-rGb"/>
+                                                            <constraint firstAttribute="bottom" secondItem="9d0-uU-rY9" secondAttribute="bottom" id="59b-fJ-QQO"/>
+                                                            <constraint firstItem="9d0-uU-rY9" firstAttribute="leading" secondItem="fcn-ct-Lit" secondAttribute="leading" constant="20" id="huV-Lf-UU0"/>
+                                                            <constraint firstItem="9d0-uU-rY9" firstAttribute="top" secondItem="fcn-ct-Lit" secondAttribute="top" id="i59-zu-7Ib"/>
+                                                            <constraint firstAttribute="height" constant="60" id="wAE-qh-2Wl"/>
                                                         </constraints>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Zb-lL-L8r">
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HvC-Wx-8lF">
                                                         <rect key="frame" x="0.0" y="445" width="428" height="60"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bt7-pu-wVL">
-                                                                <rect key="frame" x="0.0" y="0.0" width="20" height="60"/>
-                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="20" id="XnE-ke-AIb"/>
-                                                                </constraints>
-                                                            </view>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1b-0X-QXp">
-                                                                <rect key="frame" x="20" y="0.0" width="408" height="60"/>
+                                                                <rect key="frame" x="20" y="0.0" width="71" height="60"/>
                                                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="20"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="Log out">
@@ -281,10 +271,14 @@
                                                                 </connections>
                                                             </button>
                                                         </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="60" id="NgL-ia-eLX"/>
+                                                            <constraint firstItem="J1b-0X-QXp" firstAttribute="top" secondItem="HvC-Wx-8lF" secondAttribute="top" id="0Mg-ut-XkF"/>
+                                                            <constraint firstItem="J1b-0X-QXp" firstAttribute="leading" secondItem="HvC-Wx-8lF" secondAttribute="leading" constant="20" id="Cdc-g0-Q6p"/>
+                                                            <constraint firstAttribute="bottom" secondItem="J1b-0X-QXp" secondAttribute="bottom" id="oFP-n7-PxD"/>
+                                                            <constraint firstAttribute="height" constant="60" id="pSL-B4-Pf3"/>
                                                         </constraints>
-                                                    </stackView>
+                                                    </view>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
