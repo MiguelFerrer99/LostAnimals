@@ -41,9 +41,10 @@ extension EditSocialMediasViewController {
     
     func checkAllContentsAreOk() {
         let haveErrors = viewModel.textFieldsHaveErrors()
-        let canMoveToNextStep = !haveErrors && viewModel.numberOfTextFields <= viewModel.editedTextFields.count
-        saveChangesButton.alpha = canMoveToNextStep ? 1 : 0.5
-        saveChangesButton.isEnabled = canMoveToNextStep
+        let canSaveChanges = !haveErrors && viewModel.numberOfTextFields <= viewModel.editedTextFields.count
+        let socialMediasDetailsModified = (viewModel.currentSocialMediasDetails != viewModel.newSocialMediasDetails) || (viewModel.haveWhatsAppSelected != viewModel.willHaveWhatsAppSelected)
+        saveChangesButton.alpha = (canSaveChanges && socialMediasDetailsModified) ? 1 : 0.5
+        saveChangesButton.isEnabled = canSaveChanges && socialMediasDetailsModified
     }
 }
 
@@ -65,10 +66,28 @@ extension EditSocialMediasViewController: CustomTextFieldDelegate {
     }
     
     func textFieldDidChange(_ customTextField: CustomTextField) {
+        switch customTextField {
+        case phoneNumberTextfield:
+            self.viewModel.newSocialMediasDetails[.phoneNumber] = phoneNumberTextfield.value
+        case instagramTextfield:
+            self.viewModel.newSocialMediasDetails[.instagram] = instagramTextfield.value
+        case twitterTextfield:
+            self.viewModel.newSocialMediasDetails[.twitter] = twitterTextfield.value
+        default: break
+        }
         checkAllContentsAreOk()
     }
     
     func textFieldDidEndEditing(_ customTextField: CustomTextField) {
+        switch customTextField {
+        case phoneNumberTextfield:
+            self.viewModel.newSocialMediasDetails[.phoneNumber] = phoneNumberTextfield.value
+        case instagramTextfield:
+            self.viewModel.newSocialMediasDetails[.instagram] = instagramTextfield.value
+        case twitterTextfield:
+            self.viewModel.newSocialMediasDetails[.twitter] = twitterTextfield.value
+        default: break
+        }
         checkAllContentsAreOk()
     }
 }

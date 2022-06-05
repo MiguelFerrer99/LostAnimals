@@ -49,7 +49,9 @@ final class EditSocialMediasViewController: ViewController, UIGestureRecognizerD
 // MARK: - Functions
 extension EditSocialMediasViewController {
     func fillPhonePrefix(dialCode: String) {
-        phonePrefixLabel.text = "+\(dialCode)"
+        let dialCodeString = "+\(dialCode)"
+        phonePrefixLabel.text = dialCodeString
+        viewModel.newSocialMediasDetails[.phonePrefix] = dialCodeString
         checkAllContentsAreOk()
     }
 }
@@ -65,14 +67,15 @@ private extension EditSocialMediasViewController {
     func fillUI() {
         if let phonePrefix = viewModel.me.socialMedias[.phonePrefix] { phonePrefixLabel.text = phonePrefix }
         phoneNumberTextfield.textField.text = viewModel.me.socialMedias[.phoneNumber]
-        haveWhatsappButtonImageView.image = UIImage(systemName: viewModel.haveWhatsAppSelected ? "checkmark.circle.fill" : "circle")
+        haveWhatsappButtonImageView.image = UIImage(systemName: viewModel.willHaveWhatsAppSelected ? "checkmark.circle.fill" : "circle")
         if let instagram = viewModel.me.socialMedias[.instagram] { instagramTextfield.textField.text = instagram }
         if let twitter = viewModel.me.socialMedias[.twitter] { twitterTextfield.textField.text = twitter }
     }
     
     func toggleHaveWhatsAppButton() {
-        viewModel.haveWhatsAppSelected.toggle()
-        haveWhatsappButtonImageView.image = UIImage(systemName: viewModel.haveWhatsAppSelected ? "checkmark.circle.fill" : "circle")
+        viewModel.willHaveWhatsAppSelected.toggle()
+        haveWhatsappButtonImageView.image = UIImage(systemName: viewModel.willHaveWhatsAppSelected ? "checkmark.circle.fill" : "circle")
+        checkAllContentsAreOk()
     }
     
     func updateUserInteraction() {

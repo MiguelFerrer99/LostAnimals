@@ -6,6 +6,14 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
+// MARK: - Enums
+enum EditSocialMediasFields {
+    case phonePrefix
+    case phoneNumber
+    case instagram
+    case twitter
+}
+
 final class EditSocialMediasViewModel {
     // MARK: - Properties
     private let router: EditSocialMediasRouter
@@ -13,12 +21,21 @@ final class EditSocialMediasViewModel {
     var numberOfTextFields = 1
     var editedTextFields = [CustomTextField]()
     var haveWhatsAppSelected = false
+    var willHaveWhatsAppSelected = false
+    var currentSocialMediasDetails: [EditSocialMediasFields: String] = [:]
+    var newSocialMediasDetails: [EditSocialMediasFields: String] = [:]
     
     // MARK: - Init
     required init(router: EditSocialMediasRouter, me: User) {
         self.router = router
         self.me = me
         self.haveWhatsAppSelected = me.socialMedias[.whatsapp] != nil
+        self.willHaveWhatsAppSelected = haveWhatsAppSelected
+        self.currentSocialMediasDetails[.phonePrefix] = me.socialMedias[.phonePrefix]
+        self.currentSocialMediasDetails[.phoneNumber] = me.socialMedias[.phoneNumber]
+        self.currentSocialMediasDetails[.instagram] = me.socialMedias[.instagram]
+        self.currentSocialMediasDetails[.twitter] = me.socialMedias[.twitter]
+        self.newSocialMediasDetails = currentSocialMediasDetails
     }
 }
 
