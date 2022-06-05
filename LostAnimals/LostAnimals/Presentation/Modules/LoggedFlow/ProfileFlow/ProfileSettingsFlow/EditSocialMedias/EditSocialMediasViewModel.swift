@@ -25,6 +25,9 @@ final class EditSocialMediasViewModel {
     var currentSocialMediasDetails: [EditSocialMediasFields: String] = [:]
     var newSocialMediasDetails: [EditSocialMediasFields: String] = [:]
     
+    // MARK: - Services
+    let userService = UserService()
+    
     // MARK: - Init
     required init(router: EditSocialMediasRouter, me: User) {
         self.router = router
@@ -66,9 +69,23 @@ extension EditSocialMediasViewModel {
         self.router.goToWhereDoYouLiveCountries()
     }
     
-    func didPressSaveChangesButton() {
-        showSuccessPopup(title: "The changes has been saved successfully") {
-            self.router.goBack()
+    func didPressSaveChangesButton(completion: @escaping (() -> Void)) {
+        let newWhatsAppValue = willHaveWhatsAppSelected ? ((newSocialMediasDetails[.phonePrefix] ?? "") + (newSocialMediasDetails[.phoneNumber] ?? "")) : nil
+        userService.editUserSocialMediasDetails(phonePrefix: newSocialMediasDetails[.phonePrefix],
+                                                phoneNumber: newSocialMediasDetails[.phoneNumber],
+                                                whatsapp: newWhatsAppValue,
+                                                instagram: newSocialMediasDetails[.instagram],
+                                                twitter: newSocialMediasDetails[.twitter]) { result in
+            switch result {
+            case .success:
+                completion()
+                showSuccessPopup(title: "The changes has been saved successfully") {
+                    self.router.goBack()
+                }
+            case .error(let error):
+                completion()
+                showErrorPopup(title: error)
+            }
         }
     }
 }

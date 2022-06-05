@@ -20,7 +20,7 @@ typealias ProfileImages = (userImage: UIImage?, headerImage: UIImage?)
 final class ProfileSettingsViewModel {
     // MARK: - Properties
     private let router: ProfileSettingsRouter
-    let me: User
+    var me: User
     let profileImages: ProfileImages
     var selectedImageView: ProfileSettingsImageType = .user
     var userIsModified = false

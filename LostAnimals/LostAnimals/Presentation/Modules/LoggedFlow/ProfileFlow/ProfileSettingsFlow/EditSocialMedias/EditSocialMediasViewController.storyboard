@@ -235,6 +235,9 @@
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="fullRound" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="indicatorColor">
+                                                <color key="value" name="CustomBlack"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="saveChangesButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="3ua-YD-zUc"/>

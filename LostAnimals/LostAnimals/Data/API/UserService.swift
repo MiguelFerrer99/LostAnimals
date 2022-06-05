@@ -359,4 +359,70 @@ extension UserService {
             }
         }
     }
+    
+    func editUserSocialMediasDetails(phonePrefix: String? = nil, phoneNumber: String? = nil, whatsapp: String? = nil, instagram: String? = nil, twitter: String? = nil, completion: @escaping (GenericResult) -> Void) {
+        guard let me = User.shared else {
+            completion(.error("An unexpected error occured. Please, try again later"))
+            return
+        }
+        self.databaseRef.child("users").child(me.id).child("social_medias").child("phone_prefix").setValue(phonePrefix) { (error1, _) in
+            if let error1 = error1 {
+                switch error1.localizedDescription {
+                case FirebaseError.networkError.rawValue:
+                    completion(.error("You don't have an internet connection"))
+                default:
+                    completion(.error("An unexpected error occured. Please, try again later"))
+                }
+            } else {
+                self.databaseRef.child("users").child(me.id).child("social_medias").child("phone_number").setValue(phoneNumber) { (error2, _) in
+                    if let error2 = error2 {
+                        switch error2.localizedDescription {
+                        case FirebaseError.networkError.rawValue:
+                            completion(.error("You don't have an internet connection"))
+                        default:
+                            completion(.error("An unexpected error occured. Please, try again later"))
+                        }
+                    } else {
+                        self.databaseRef.child("users").child(me.id).child("social_medias").child("whatsapp").setValue(whatsapp) { (error3, _) in
+                            if let error3 = error3 {
+                                switch error3.localizedDescription {
+                                case FirebaseError.networkError.rawValue:
+                                    completion(.error("You don't have an internet connection"))
+                                default:
+                                    completion(.error("An unexpected error occured. Please, try again later"))
+                                }
+                            } else {
+                                self.databaseRef.child("users").child(me.id).child("social_medias").child("instagram").setValue(instagram) { (error4, _) in
+                                    if let error4 = error4 {
+                                        switch error4.localizedDescription {
+                                        case FirebaseError.networkError.rawValue:
+                                            completion(.error("You don't have an internet connection"))
+                                        default:
+                                            completion(.error("An unexpected error occured. Please, try again later"))
+                                        }
+                                    } else {
+                                        self.databaseRef.child("users").child(me.id).child("social_medias").child("twitter").setValue(twitter) { (error5, _) in
+                                            if let error5 = error5 {
+                                                switch error5.localizedDescription {
+                                                case FirebaseError.networkError.rawValue:
+                                                    completion(.error("You don't have an internet connection"))
+                                                default:
+                                                    completion(.error("An unexpected error occured. Please, try again later"))
+                                                }
+                                            } else {
+                                                self.getMe { user in
+                                                    User.shared = user
+                                                    completion(.success)
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

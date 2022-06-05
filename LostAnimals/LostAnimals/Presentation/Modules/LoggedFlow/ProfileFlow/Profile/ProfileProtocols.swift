@@ -21,4 +21,8 @@ extension ProfileViewController: ProfileSettingsDelegate {
     func updatePersonalDetails() {
         reloadBasicInfo()
     }
+    
+    func updateSocialMediasDetails() {
+        reloadSocialMedias()
+    }
 }

@@ -100,6 +100,10 @@ private extension EditSocialMediasViewController {
     }
     
     @IBAction func saveChangesButtonPressed(_ sender: CustomButton) {
-        viewModel.didPressSaveChangesButton()
+        saveChangesButton.showLoading { self.updateUserInteraction() }
+        viewModel.didPressSaveChangesButton {
+            self.saveChangesButton.hideLoading()
+            self.delegate?.updateSocialMedias()
+        }
     }
 }

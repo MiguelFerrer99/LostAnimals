@@ -78,9 +78,10 @@ extension EditPersonalDetailsViewModel {
         self.router.goToWhereCanWeFindYou()
     }
     
-    func didPressedSaveChangesButton(firstname: String? = nil, lastname: String? = nil, birthdate: String? = nil, whereDoYouLive: Location? = nil, animalShelterName: String? = nil, whereCanWeFindYou: Location? = nil, completion: @escaping (() -> Void)) {
+    func didPressedSaveChangesButton(completion: @escaping (() -> Void)) {
         if me.animalShelter {
-            userService.editUserPersonalDetails(animalShelterName: animalShelterName, whereCanWeFindYou: whereCanWeFindYou) { result in
+            userService.editUserPersonalDetails(animalShelterName: newPersonalDetailsValues[.firstname],
+                                                whereCanWeFindYou: newLocation) { result in
                 switch result {
                 case .success:
                     completion()
@@ -93,7 +94,10 @@ extension EditPersonalDetailsViewModel {
                 }
             }
         } else {
-            userService.editUserPersonalDetails(firstname: firstname, lastname: lastname, birthdate: birthdate, whereDoYouLive: whereDoYouLive) { result in
+            userService.editUserPersonalDetails(firstname: newPersonalDetailsValues[.firstname],
+                                                lastname: newPersonalDetailsValues[.lastname],
+                                                birthdate: newPersonalDetailsValues[.birthdate],
+                                                whereDoYouLive: newLocation) { result in
                 switch result {
                 case .success:
                     completion()

@@ -23,3 +23,12 @@ extension ProfileSettingsViewController: EditPersonalDetailsDelegate {
         delegate?.updatePersonalDetails()
     }
 }
+
+// MARK: - EditSocialMediasDelegate
+extension ProfileSettingsViewController: EditSocialMediasDelegate {
+    func updateSocialMedias() {
+        guard let me = User.shared else { return }
+        viewModel.me = me
+        delegate?.updateSocialMediasDetails()
+    }
+}

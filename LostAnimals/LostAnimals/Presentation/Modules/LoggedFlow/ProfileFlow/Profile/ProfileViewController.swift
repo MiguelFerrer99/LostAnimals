@@ -95,6 +95,12 @@ extension ProfileViewController {
         if let age = viewModel.getAge() { basicInfoViewFirstLabel.text = "\(age) years old" }
         basicInfoViewSecondLabel.text = viewModel.user.location.address
     }
+    
+    func reloadSocialMedias() {
+        guard let me = User.shared else { return }
+        viewModel.user = me
+        viewModel.isMyProfile = (me == viewModel.user)
+    }
 }
 
 // MARK: - Private functions

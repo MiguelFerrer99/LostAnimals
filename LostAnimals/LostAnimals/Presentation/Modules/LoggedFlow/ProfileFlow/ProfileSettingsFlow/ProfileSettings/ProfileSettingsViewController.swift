@@ -13,6 +13,7 @@ protocol ProfileSettingsDelegate: AnyObject {
     func updateHeaderImage()
     func updateUserImage()
     func updatePersonalDetails()
+    func updateSocialMediasDetails()
 }
 
 final class ProfileSettingsViewController: ViewController, UIGestureRecognizerDelegate {

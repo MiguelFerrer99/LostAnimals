@@ -43,6 +43,7 @@ extension ProfileSettingsRouter {
     func goToEditSocialMediaDetails(me: User) {
         DispatchQueue.main.async {
             let viewController = Container.shared.editSocialMediasBuilder().build(me: me)
+            viewController.delegate = self.viewController
             self.viewController?.push(viewController: viewController)
         }
     }

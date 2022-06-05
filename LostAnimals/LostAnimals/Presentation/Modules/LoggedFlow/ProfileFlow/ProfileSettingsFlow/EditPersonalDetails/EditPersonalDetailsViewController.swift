@@ -92,12 +92,7 @@ private extension EditPersonalDetailsViewController {
 private extension EditPersonalDetailsViewController {
     @IBAction func saveChangesButtonPressed(_ sender: CustomButton) {
         saveChangesButton.showLoading { self.updateUserInteraction() }
-        viewModel.didPressedSaveChangesButton(firstname: firstnameTextfield.value,
-                                              lastname: lastnameTextfield.value,
-                                              birthdate: birthdateTextfield.value,
-                                              whereDoYouLive: viewModel.newLocation,
-                                              animalShelterName: animalShelterNameTextfield.value,
-                                              whereCanWeFindYou: viewModel.newLocation) {
+        viewModel.didPressedSaveChangesButton() {
             self.saveChangesButton.hideLoading()
             self.delegate?.updatePersonalDetails()
         }
