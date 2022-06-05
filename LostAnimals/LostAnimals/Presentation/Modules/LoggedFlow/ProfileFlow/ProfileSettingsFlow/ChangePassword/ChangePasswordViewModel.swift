@@ -13,6 +13,9 @@ final class ChangePasswordViewModel {
     var numberOfTextFields = 2
     var editedTextFields = [CustomTextField]()
     
+    // MARK: - Services
+    let userService = UserService()
+    
     // MARK: - Init
     required init(router: ChangePasswordRouter, me: User) {
         self.router = router
@@ -43,9 +46,18 @@ extension ChangePasswordViewModel {
         return haveErrors
     }
     
-    func didPressedSaveChangesButton() {
-        showSuccessPopup(title: "The password has been changed successfully") {
-            self.router.goBack()
+    func didPressedSaveChangesButton(newPassword: String, completion: @escaping (() -> Void)) {
+        userService.changePassword(newPassword: newPassword) { result in
+            switch result {
+            case .success:
+                completion()
+                showSuccessPopup(title: "The password has been changed successfully") {
+                    self.router.goBack()
+                }
+            case .error(let error):
+                completion()
+                showErrorPopup(title: error)
+            }
         }
     }
 }

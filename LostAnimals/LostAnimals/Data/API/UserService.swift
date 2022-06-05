@@ -10,13 +10,19 @@ import UIKit
 import Firebase
 import CodableFirebase
 
-final class UserService: NSObject {
+// MARK: - Enums
+enum GetUsersResult {
+    case success([User])
+    case error(String)
+}
+
+final class UserService {
     // MARK: - Properties
     let databaseRef: DatabaseReference
     let storageRef: StorageReference
     
     // MARK: - Init
-    override init() {
+    init() {
         databaseRef = Database.database().reference()
         storageRef = Storage.storage().reference()
     }
@@ -54,6 +60,66 @@ extension UserService {
                 } else { completion(.error("An unexpected error occured. Please, try again later")) }
             }
         }
+    }
+    
+    func getBlockedUsers(completion: @escaping (GetUsersResult) -> Void) {
+        guard let me = User.shared else {
+            completion(.error("An unexpected error occured. Please, try again later"))
+            return
+        }
+        databaseRef.child("users").getData { (error, snapshot) in
+            if let error = error {
+                switch error.localizedDescription {
+                case FirebaseError.networkError.rawValue:
+                    completion(.error("You don't have an internet connection"))
+                default:
+                    completion(.error("An unexpected error occured. Please, try again later"))
+                }
+            } else if let snapshotValue = snapshot.value as? [String: Any] {
+                do {
+                    let usersDTO = try FirebaseDecoder().decode([UserDTO].self, from: Array(snapshotValue.values))
+                    var users = usersDTO.compactMap { $0.map() }
+                    users = users.filter { me.blockedUsers.contains($0.id) }
+                    completion(.success(users))
+                } catch { completion(.error("An unexpected error occured. Please, try again later")) }
+            } else { completion(.success([])) }
+        }
+    }
+    
+    func getPosts(completion: @escaping (GetPostsResult) -> Void) {
+        databaseRef.child("posts").getData { (error, snapshot) in
+            if let error = error {
+                switch error.localizedDescription {
+                case FirebaseError.networkError.rawValue:
+                    completion(.error("You don't have an internet connection"))
+                default:
+                    completion(.error("An unexpected error occured. Please, try again later"))
+                }
+            } else if let snapshotValue = snapshot.value as? [String: Any] {
+                do {
+                    let postsDTO = try FirebaseDecoder().decode([PostDTO].self, from: Array(snapshotValue.values))
+                    var posts = postsDTO.compactMap { $0.map() }
+                    posts = posts.filter { !(User.shared?.blockedUsers.contains($0.userID) ?? false) }
+                    posts.sort { $0.createdAt > $1.createdAt }
+                    completion(.success(posts))
+                } catch { completion(.error("An unexpected error occured. Please, try again later")) }
+            } else { completion(.success([])) }
+        }
+    }
+    
+    func changePassword(newPassword: String, completion: @escaping (GenericResult) -> Void) {
+        if let currentUser = Auth.auth().currentUser {
+            currentUser.updatePassword(to: newPassword) { error in
+                if let error = error {
+                    switch error.localizedDescription {
+                    case FirebaseError.networkError.rawValue:
+                        completion(.error("You don't have an internet connection"))
+                    default:
+                        completion(.error("An unexpected error occured. Please, try again later"))
+                    }
+                } else { completion(.success) }
+            }
+        } else { completion(.error("An unexpected error occured. Please, try again later")) }
     }
     
     func deleteAccount(completion: @escaping (GenericResult) -> Void) {

@@ -9,6 +9,11 @@
 final class BlockedUsersViewModel {
     // MARK: - Properties
     private let router: BlockedUsersRouter
+    var isLoading = true
+    var myBlockedUsers: [User] = []
+    
+    // MARK: - Services
+    let userService = UserService()
     
     // MARK: - Init
     required init(router: BlockedUsersRouter) {
@@ -28,4 +33,24 @@ extension BlockedUsersViewModel {
 }
 
 // MARK: - Functions
-extension BlockedUsersViewModel {}
+extension BlockedUsersViewModel {
+    func getBlockedUsers(completion: @escaping () -> Void) {
+        userService.getBlockedUsers { result in
+            switch result {
+            case .success(let blockedUsers):
+                self.myBlockedUsers = blockedUsers
+                completion()
+            case .error(let error): showErrorPopup(title: error)
+            }
+        }
+    }
+    
+    func unblockUser(userID: String, completion: @escaping () -> Void) {
+        userService.unblockUser(userID: userID) { result in
+            switch result {
+            case .success: completion()
+            case .error(let error): showErrorPopup(title: error)
+            }
+        }
+    }
+}

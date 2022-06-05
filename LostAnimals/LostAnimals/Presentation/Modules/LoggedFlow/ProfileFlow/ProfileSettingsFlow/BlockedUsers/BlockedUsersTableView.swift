@@ -23,18 +23,16 @@ extension BlockedUsersViewController: UITableViewDelegate {}
 // MARK: - UITableViewDataSource
 extension BlockedUsersViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return viewModel.myBlockedUsers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        /*let blockedUser = HardcodedData.exampleUsers[indexPath.row]
+        let blockedUser = viewModel.myBlockedUsers[indexPath.row]
         let summary = BlockedUserTableViewCellSummary(user: blockedUser)
-        let cellVM = BlockedUserTableViewCellViewModel(userID: blockedUser.id)
-        let cell = tableView.dequeue(BlockedUserTableViewCell.self, viewModel: cellVM)
+        let cell = tableView.dequeue(BlockedUserTableViewCell.self)
         cell.delegate = self
         cell.display(summary: summary)
-        return cell*/
-        return UITableViewCell()
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

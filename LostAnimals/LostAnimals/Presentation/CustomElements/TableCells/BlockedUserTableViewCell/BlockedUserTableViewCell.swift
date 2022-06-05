@@ -13,16 +13,15 @@ protocol UnblockUserDelegate: AnyObject {
     func unblockUser(userID: String)
 }
 
-class BlockedUserTableViewCell: UITableViewCell, ViewModelCell {
-    typealias T = BlockedUserTableViewCellViewModel
+class BlockedUserTableViewCell: UITableViewCell {
     // MARK: - IBOutlets
     @IBOutlet private weak var userImageView: UIImageView!
     @IBOutlet private weak var userNameLabel: UILabel!
     @IBOutlet private weak var unblockButton: CustomButton!
     
     // MARK: - Properties
-    var viewModel: BlockedUserTableViewCellViewModel!
     weak var delegate: UnblockUserDelegate?
+    private var userID = ""
     
     // MARK: - Life cycle
     override func awakeFromNib() {
@@ -33,14 +32,17 @@ class BlockedUserTableViewCell: UITableViewCell, ViewModelCell {
 // MARK: - Functions
 extension BlockedUserTableViewCell {
     func display(summary: BlockedUserTableViewCellSummary) {
-        userImageView.image = UIImage()
+        userID = summary.user.id
         userNameLabel.text = "\(summary.user.firstname) \(summary.user.lastname)"
+        summary.user.userURLImage?.getURLImage { image in
+            if let image = image { self.userImageView.image = image }
+        }
     }
 }
 
 // MARK: - IBActions
 private extension BlockedUserTableViewCell {
     @IBAction func unblockUserButtonPressed(_ sender: CustomButton) {
-        delegate?.unblockUser(userID: viewModel.userID)
+        delegate?.unblockUser(userID: userID)
     }
 }

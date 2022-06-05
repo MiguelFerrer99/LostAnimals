@@ -66,7 +66,6 @@
 		4119185327AC2CCD00F9D68A /* BlockedUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4119185127AC2CCD00F9D68A /* BlockedUserTableViewCell.swift */; };
 		4119185427AC2CCD00F9D68A /* BlockedUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4119185227AC2CCD00F9D68A /* BlockedUserTableViewCell.xib */; };
 		4119185627AC2CFF00F9D68A /* BlockedUserTableViewCellSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4119185527AC2CFF00F9D68A /* BlockedUserTableViewCellSummary.swift */; };
-		4119185827AC30F800F9D68A /* BlockedUserTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4119185727AC30F800F9D68A /* BlockedUserTableViewCellViewModel.swift */; };
 		4119F6CD27958A9A006B665A /* NewPostGenericRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4119F6C827958A9A006B665A /* NewPostGenericRouter.swift */; };
 		4119F6CF27958A9A006B665A /* NewPostGenericViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4119F6CA27958A9A006B665A /* NewPostGenericViewController.swift */; };
 		4119F6D027958A9A006B665A /* NewPostGenericBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4119F6CB27958A9A006B665A /* NewPostGenericBuilder.swift */; };
@@ -433,7 +432,6 @@
 		4119185127AC2CCD00F9D68A /* BlockedUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedUserTableViewCell.swift; sourceTree = "<group>"; };
 		4119185227AC2CCD00F9D68A /* BlockedUserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlockedUserTableViewCell.xib; sourceTree = "<group>"; };
 		4119185527AC2CFF00F9D68A /* BlockedUserTableViewCellSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedUserTableViewCellSummary.swift; sourceTree = "<group>"; };
-		4119185727AC30F800F9D68A /* BlockedUserTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedUserTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		4119F6C827958A9A006B665A /* NewPostGenericRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostGenericRouter.swift; sourceTree = "<group>"; };
 		4119F6CA27958A9A006B665A /* NewPostGenericViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostGenericViewController.swift; sourceTree = "<group>"; };
 		4119F6CB27958A9A006B665A /* NewPostGenericBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostGenericBuilder.swift; sourceTree = "<group>"; };
@@ -960,7 +958,6 @@
 				4119185227AC2CCD00F9D68A /* BlockedUserTableViewCell.xib */,
 				4119185127AC2CCD00F9D68A /* BlockedUserTableViewCell.swift */,
 				4119185527AC2CFF00F9D68A /* BlockedUserTableViewCellSummary.swift */,
-				4119185727AC30F800F9D68A /* BlockedUserTableViewCellViewModel.swift */,
 			);
 			path = BlockedUserTableViewCell;
 			sourceTree = "<group>";
@@ -2018,7 +2015,6 @@
 				41FEE1F12788D76600F11449 /* ContactWithPopupViewModel.swift in Sources */,
 				418E2340277CB619008BB92E /* TabBarRouter.swift in Sources */,
 				4100A0EF278372110049EEF0 /* PostViewController.swift in Sources */,
-				4119185827AC30F800F9D68A /* BlockedUserTableViewCellViewModel.swift in Sources */,
 				41CD112627835C2200257B2B /* SavedPostsViewModel.swift in Sources */,
 				4114ABD2275F960200F1AB01 /* AccountDetailsCollectionViewCell.swift in Sources */,
 				418E2350277CC934008BB92E /* TermTableViewCellSummary.swift in Sources */,

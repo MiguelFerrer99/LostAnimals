@@ -22,8 +22,9 @@ final class BlockedUsersViewController: ViewController, UIGestureRecognizerDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupUI()
         viewModel.viewReady()
+        setupUI()
+        fillUI()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -35,10 +36,10 @@ final class BlockedUsersViewController: ViewController, UIGestureRecognizerDeleg
 
 // MARK: - Functions
 extension BlockedUsersViewController {
-    func updateUserInteraction(to: Bool) {
-        navigationController?.navigationBar.isUserInteractionEnabled = to
-        navigationController?.interactivePopGestureRecognizer?.isEnabled = to
-        blockedUsersTableView.isUserInteractionEnabled = to
+    func unblockUserWith(userID: String) {
+        viewModel.unblockUser(userID: userID) {
+            self.getBlockedUsers()
+        }
     }
 }
 
@@ -47,5 +48,24 @@ private extension BlockedUsersViewController {
     func setupUI() {
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         configureTableView(blockedUsersTableView)
+    }
+    
+    func updateUserInteraction(to: Bool) {
+        navigationController?.navigationBar.isUserInteractionEnabled = to
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = to
+        blockedUsersTableView.isUserInteractionEnabled = to
+    }
+    
+    func fillUI() {
+        getBlockedUsers()
+    }
+    
+    func getBlockedUsers() {
+        viewModel.isLoading = true
+        blockedUsersTableView.reloadData()
+        viewModel.getBlockedUsers {
+            self.viewModel.isLoading = false
+            self.blockedUsersTableView.reloadData()
+        }
     }
 }

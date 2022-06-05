@@ -9,9 +9,6 @@
 // MARK: - UnblockUserDelegate
 extension BlockedUsersViewController: UnblockUserDelegate {
     func unblockUser(userID: String) {
-        updateUserInteraction(to: false)
-        // TODO: - Call API to unblock user
-        blockedUsersTableView.reloadData()
-        updateUserInteraction(to: true)
+        unblockUserWith(userID: userID)
     }
 }
