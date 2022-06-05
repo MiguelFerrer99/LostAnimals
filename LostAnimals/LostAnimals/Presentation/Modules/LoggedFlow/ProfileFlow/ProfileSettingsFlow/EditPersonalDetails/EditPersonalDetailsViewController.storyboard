@@ -155,7 +155,7 @@
                                             <constraint firstAttribute="trailing" secondItem="Vf9-h8-9Cx" secondAttribute="trailing" id="nKI-XM-9hI"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLM-Bl-vP4" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
+                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLM-Bl-vP4" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="733" width="334" height="45"/>
                                         <color key="backgroundColor" name="CustomWhite"/>
                                         <constraints>

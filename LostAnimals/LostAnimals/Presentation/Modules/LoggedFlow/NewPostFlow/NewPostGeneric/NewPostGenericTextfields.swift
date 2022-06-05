@@ -73,12 +73,12 @@ extension NewPostGenericViewController {
 // MARK: - CustomTextFieldDelegate
 extension NewPostGenericViewController: CustomTextFieldDelegate {
     func textFieldShouldReturn(_ customTextField: CustomTextField) -> Bool {
-        switch customTextField.textField {
-        case nameTextfield.textField:
+        switch customTextField {
+        case nameTextfield:
             customTextField.textField.resignFirstResponder()
-        case breedTextfield.textField:
+        case breedTextfield:
             lastTimeSeenTextfield.textField.becomeFirstResponder()
-        case lastTimeSeenTextfield.textField:
+        case lastTimeSeenTextfield:
             customTextField.textField.resignFirstResponder()
         default: customTextField.textField.resignFirstResponder()
         }

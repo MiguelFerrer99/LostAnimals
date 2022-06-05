@@ -84,14 +84,10 @@ private extension PersonalDetailsCollectionViewCell {
     }
     
     @IBAction func nextStepButtonPressed(_ sender: CustomButton) {
-        guard let firstname = viewModel.isAnimalShelter ? animalShelterNameTextfield.textField.text : firstnameTextfield.textField.text,
-              let lastname = viewModel.isAnimalShelter ? "" : lastnameTextfield.textField.text,
-              let birthdate = birthdateTexfield.textField.text else { return }
-        
         signUpStepsDelegate?.sendSignUpStep1Data(isAnimalShelter: viewModel.isAnimalShelter,
-                                                 firstname: firstname,
-                                                 lastname: lastname,
-                                                 birthdate: viewModel.isAnimalShelter ? nil : birthdate,
+                                                 firstname: viewModel.isAnimalShelter ? animalShelterNameTextfield.value : firstnameTextfield.value,
+                                                 lastname: viewModel.isAnimalShelter ? "" : lastnameTextfield.value,
+                                                 birthdate: viewModel.isAnimalShelter ? nil : birthdateTexfield.value,
                                                  location: viewModel.location ?? Location(address: "Not specified", coordinates: nil))
         signUpStepsDelegate?.moveToNextSignUpStep()
     }

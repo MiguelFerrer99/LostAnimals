@@ -45,8 +45,8 @@ extension SocialMediaDetailsCollectionViewCell {
 // MARK: - CustomTextFieldDelegate
 extension SocialMediaDetailsCollectionViewCell: CustomTextFieldDelegate {
     func textFieldShouldReturn(_ customTextField: CustomTextField) -> Bool {
-        switch customTextField.textField {
-        case phoneTextfield.textField:
+        switch customTextField {
+        case phoneTextfield:
             phoneTextfield.textField.resignFirstResponder()
         default: customTextField.textField.resignFirstResponder()
         }

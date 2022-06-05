@@ -62,12 +62,8 @@ private extension LoginViewController {
     }
     
     @IBAction func logInButtonPressed(_ sender: CustomButton) {
-        guard let email = mailTextField.textField.text,
-              let password = passwordTextField.textField.text else { return }
-        logInButton.showLoading {
-            self.updateUserInteraction()
-        }
-        viewModel.didPressLoginButton(email: email, password: password) {
+        logInButton.showLoading { self.updateUserInteraction() }
+        viewModel.didPressLoginButton(email: mailTextField.value, password: passwordTextField.value) {
             self.stopLoadingLogInButton()
         }
     }

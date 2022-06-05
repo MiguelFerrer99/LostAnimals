@@ -55,12 +55,12 @@ private extension AccountDetailsCollectionViewCell {
 // MARK: - CustomTextFieldDelegate
 extension AccountDetailsCollectionViewCell: CustomTextFieldDelegate {
     func textFieldShouldReturn(_ customTextField: CustomTextField) -> Bool {
-        switch customTextField.textField {
-        case mailTextfield.textField:
+        switch customTextField {
+        case mailTextfield:
             passwordTextfield.textField.becomeFirstResponder()
-        case passwordTextfield.textField:
+        case passwordTextfield:
             repeatPasswordTextfield.textField.becomeFirstResponder()
-        case repeatPasswordTextfield.textField:
+        case repeatPasswordTextfield:
             customTextField.textField.resignFirstResponder()
         default: customTextField.textField.resignFirstResponder()
         }

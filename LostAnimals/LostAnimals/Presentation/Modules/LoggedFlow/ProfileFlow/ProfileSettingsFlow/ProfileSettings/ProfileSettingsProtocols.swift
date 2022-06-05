@@ -16,3 +16,10 @@ extension ProfileSettingsViewController: ActionAfterSelectPhotoDelegate {
         }
     }
 }
+
+// MARK: - EditPersonalDetailsDelegate
+extension ProfileSettingsViewController: EditPersonalDetailsDelegate {
+    func updatePersonalDetails() {
+        delegate?.updatePersonalDetails()
+    }
+}

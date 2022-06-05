@@ -6,8 +6,13 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-struct Coordinates: Codable {
+struct Coordinates: Codable, Equatable {
     // MARK: - Properties
     let longitude: Double
     let latitude: Double
+    
+    // MARK: - Functions
+    static func == (lhs: Coordinates, rhs: Coordinates) -> Bool {
+        return (lhs.longitude == rhs.longitude) && (lhs.latitude == rhs.latitude)
+    }
 }

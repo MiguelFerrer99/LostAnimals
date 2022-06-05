@@ -37,10 +37,10 @@ private extension LoginViewController {
 // MARK: - CustomTextFieldDelegate
 extension LoginViewController: CustomTextFieldDelegate {
     func textFieldShouldReturn(_ customTextField: CustomTextField) -> Bool {
-        switch customTextField.textField {
-        case mailTextField.textField:
+        switch customTextField {
+        case mailTextField:
             passwordTextField.textField.becomeFirstResponder()
-        case passwordTextField.textField:
+        case passwordTextField:
             customTextField.textField.resignFirstResponder()
         default: customTextField.textField.resignFirstResponder()
         }

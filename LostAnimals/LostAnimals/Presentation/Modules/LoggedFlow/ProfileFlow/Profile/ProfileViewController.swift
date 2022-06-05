@@ -85,6 +85,16 @@ extension ProfileViewController {
         viewModel.isMyProfile = (me == viewModel.user)
         updateUserImageUI()
     }
+    
+    func reloadBasicInfo() {
+        guard let me = User.shared else { return }
+        viewModel.user = me
+        viewModel.isMyProfile = (me == viewModel.user)
+        welcomeBackLabel.text = "Welcome back, \(viewModel.user.firstname)"
+        basicInfoViewFirstLabel.isHidden = viewModel.user.animalShelter
+        if let age = viewModel.getAge() { basicInfoViewFirstLabel.text = "\(age) years old" }
+        basicInfoViewSecondLabel.text = viewModel.user.location.address
+    }
 }
 
 // MARK: - Private functions

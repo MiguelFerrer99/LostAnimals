@@ -86,16 +86,18 @@ private extension EditPersonalDetailsViewController {
             if let placemark = placemarks?.first, let location = placemark.location {
                 let lat = location.coordinate.latitude
                 let long = location.coordinate.longitude
-                self.viewModel.location = Location(address: address, coordinates: Coordinates(longitude: long, latitude: lat))
+                self.viewModel.newLocation = Location(address: address, coordinates: Coordinates(longitude: long, latitude: lat))
+                self.checkAllContentsAreOk()
             }
         }
     }
     
     func checkAllContentsAreOk() {
         let haveErrors = viewModel.textFieldsHaveErrors()
-        let canMoveToNextStep = !haveErrors && viewModel.editedTextFields.count == viewModel.numberOfTextFields
-        saveChangesButton.alpha = canMoveToNextStep ? 1 : 0.5
-        saveChangesButton.isEnabled = canMoveToNextStep
+        let canSaveChanges = !haveErrors && viewModel.editedTextFields.count == viewModel.numberOfTextFields
+        let personalDetailsModified = (viewModel.currentPersonalDetailsValues != viewModel.newPersonalDetailsValues) || (viewModel.currentLocation != viewModel.newLocation)
+        saveChangesButton.alpha = (canSaveChanges && personalDetailsModified) ? 1 : 0.5
+        saveChangesButton.isEnabled = canSaveChanges && personalDetailsModified
     }
 }
 
@@ -103,22 +105,22 @@ private extension EditPersonalDetailsViewController {
 extension EditPersonalDetailsViewController: CustomTextFieldDelegate {
     func textFieldShouldReturn(_ customTextField: CustomTextField) -> Bool {
         if viewModel.me.animalShelter {
-            switch customTextField.textField {
-            case animalShelterNameTextfield.textField:
+            switch customTextField {
+            case animalShelterNameTextfield:
                 animalShelterNameTextfield.textField.resignFirstResponder()
-            case whereCanWeFindYouTextfield.textField:
+            case whereCanWeFindYouTextfield:
                 customTextField.textField.resignFirstResponder()
             default: customTextField.textField.resignFirstResponder()
             }
         } else {
-            switch customTextField.textField {
-            case firstnameTextfield.textField:
+            switch customTextField {
+            case firstnameTextfield:
                 lastnameTextfield.textField.becomeFirstResponder()
-            case lastnameTextfield.textField:
+            case lastnameTextfield:
                 birthdateTextfield.textField.becomeFirstResponder()
-            case birthdateTextfield.textField:
+            case birthdateTextfield:
                 birthdateTextfield.textField.resignFirstResponder()
-            case whereDoYouLiveTextfield.textField:
+            case whereDoYouLiveTextfield:
                 customTextField.textField.resignFirstResponder()
             default: customTextField.textField.resignFirstResponder()
             }
@@ -133,10 +135,28 @@ extension EditPersonalDetailsViewController: CustomTextFieldDelegate {
     }
     
     func textFieldDidChange(_ customTextField: CustomTextField) {
+        switch customTextField {
+        case firstnameTextfield, animalShelterNameTextfield:
+            viewModel.newPersonalDetailsValues[.firstname] = customTextField.value
+        case lastnameTextfield:
+            viewModel.newPersonalDetailsValues[.lastname] = customTextField.value
+        case birthdateTextfield:
+            viewModel.newPersonalDetailsValues[.birthdate] = customTextField.value
+        default: break
+        }
         checkAllContentsAreOk()
     }
     
     func textFieldDidEndEditing(_ customTextField: CustomTextField) {
+        switch customTextField {
+        case firstnameTextfield, animalShelterNameTextfield:
+            viewModel.newPersonalDetailsValues[.firstname] = customTextField.value
+        case lastnameTextfield:
+            viewModel.newPersonalDetailsValues[.lastname] = customTextField.value
+        case birthdateTextfield:
+            viewModel.newPersonalDetailsValues[.birthdate] = customTextField.value
+        default: break
+        }
         checkAllContentsAreOk()
     }
     

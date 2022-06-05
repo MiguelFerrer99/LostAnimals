@@ -125,18 +125,12 @@ private extension NewPostGenericViewController {
     }
     
     func buildNewPost() -> Post? {
-        guard let selectedAnimalType = viewModel.selectedAnimalType,
-              let animalNameText = nameTextfield.textField.text,
-              let animalBreedText = breedTextfield.textField.text,
-              let lastTimeSeenText = lastTimeSeenTextfield.textField.text,
-              let me = User.shared
-        else { return nil }
-                
+        guard let selectedAnimalType = viewModel.selectedAnimalType, let me = User.shared else { return nil }
         let newPost = Post(id: UUID().uuidString,
                            postType: viewModel.postType,
-                           animalName: animalNameText.isEmpty ? "Not specified" : animalNameText,
+                           animalName: nameTextfield.value.isEmpty ? "Not specified" : nameTextfield.value,
                            animalType: selectedAnimalType,
-                           animalBreed: animalBreedText.isEmpty ? "Not specified" : animalBreedText,
+                           animalBreed: breedTextfield.value.isEmpty ? "Not specified" : breedTextfield.value,
                            urlImage1: nil,
                            urlImage2: nil,
                            urlImage3: nil,
@@ -145,12 +139,11 @@ private extension NewPostGenericViewController {
                            urlImage6: nil,
                            urlImage7: nil,
                            urlImage8: nil,
-                           lastTimeSeen: lastTimeSeenText,
+                           lastTimeSeen: lastTimeSeenTextfield.value,
                            location: viewModel.newPostLocation,
                            description: descriptionTextview.text.isEmpty ? "Not specified" : descriptionTextview.text,
                            userID: me.id,
                            createdAt: Date())
-        
         return newPost
     }
 }

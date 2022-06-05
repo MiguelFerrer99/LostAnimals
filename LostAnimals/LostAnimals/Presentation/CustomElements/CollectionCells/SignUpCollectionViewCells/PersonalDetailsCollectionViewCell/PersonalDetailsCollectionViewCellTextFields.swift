@@ -87,22 +87,22 @@ private extension PersonalDetailsCollectionViewCell {
 extension PersonalDetailsCollectionViewCell {
     func textFieldShouldReturn(_ customTextField: CustomTextField) -> Bool {
         if viewModel.isAnimalShelter {
-            switch customTextField.textField {
-            case animalShelterNameTextfield.textField:
+            switch customTextField {
+            case animalShelterNameTextfield:
                 animalShelterNameTextfield.textField.resignFirstResponder()
-            case whereCanWeFindYouTextfield.textField:
+            case whereCanWeFindYouTextfield:
                 customTextField.textField.resignFirstResponder()
             default: customTextField.textField.resignFirstResponder()
             }
         } else {
-            switch customTextField.textField {
-            case firstnameTextfield.textField:
+            switch customTextField {
+            case firstnameTextfield:
                 lastnameTextfield.textField.becomeFirstResponder()
-            case lastnameTextfield.textField:
+            case lastnameTextfield:
                 birthdateTexfield.textField.becomeFirstResponder()
-            case birthdateTexfield.textField:
+            case birthdateTexfield:
                 birthdateTexfield.textField.resignFirstResponder()
-            case whereDoYouLiveTextfield.textField:
+            case whereDoYouLiveTextfield:
                 customTextField.textField.resignFirstResponder()
             default: customTextField.textField.resignFirstResponder()
             }

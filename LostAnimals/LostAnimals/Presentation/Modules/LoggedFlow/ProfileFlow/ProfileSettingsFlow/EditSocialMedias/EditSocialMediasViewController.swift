@@ -8,6 +8,11 @@
 
 import UIKit
 
+// MARK: - Protocols
+protocol EditSocialMediasDelegate: AnyObject {
+    func updateSocialMedias()
+}
+
 final class EditSocialMediasViewController: ViewController, UIGestureRecognizerDelegate {
     // MARK: - IBOutlets
     @IBOutlet private weak var phonePrefixLabel: UILabel!
@@ -24,6 +29,7 @@ final class EditSocialMediasViewController: ViewController, UIGestureRecognizerD
         return "Edit social medias"
     }
     var viewModel: EditSocialMediasViewModel!
+    weak var delegate: EditSocialMediasDelegate?
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -57,17 +63,11 @@ private extension EditSocialMediasViewController {
     }
     
     func fillUI() {
-        if let phonePrefix = viewModel.me.socialMedias[.phonePrefix] {
-            phonePrefixLabel.text = phonePrefix
-        }
+        if let phonePrefix = viewModel.me.socialMedias[.phonePrefix] { phonePrefixLabel.text = phonePrefix }
         phoneNumberTextfield.textField.text = viewModel.me.socialMedias[.phoneNumber]
         haveWhatsappButtonImageView.image = UIImage(systemName: viewModel.haveWhatsAppSelected ? "checkmark.circle.fill" : "circle")
-        if let instagram = viewModel.me.socialMedias[.instagram] {
-            instagramTextfield.textField.text = instagram
-        }
-        if let twitter = viewModel.me.socialMedias[.twitter] {
-            twitterTextfield.textField.text = twitter
-        }
+        if let instagram = viewModel.me.socialMedias[.instagram] { instagramTextfield.textField.text = instagram }
+        if let twitter = viewModel.me.socialMedias[.twitter] { twitterTextfield.textField.text = twitter }
     }
     
     func toggleHaveWhatsAppButton() {

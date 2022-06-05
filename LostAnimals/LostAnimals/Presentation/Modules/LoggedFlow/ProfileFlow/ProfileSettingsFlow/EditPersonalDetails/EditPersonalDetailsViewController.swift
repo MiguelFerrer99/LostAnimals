@@ -8,6 +8,11 @@
 
 import UIKit
 
+// MARK: - Protocols
+protocol EditPersonalDetailsDelegate: AnyObject {
+    func updatePersonalDetails()
+}
+
 final class EditPersonalDetailsViewController: ViewController, UIGestureRecognizerDelegate {
     // MARK: - IBOutlets
     @IBOutlet weak var animalShelterNameTextfield: CustomTextField!
@@ -23,6 +28,7 @@ final class EditPersonalDetailsViewController: ViewController, UIGestureRecogniz
         return "Edit personal details"
     }
     var viewModel: EditPersonalDetailsViewModel!
+    weak var delegate: EditPersonalDetailsDelegate?
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -85,9 +91,15 @@ private extension EditPersonalDetailsViewController {
 // MARK: - IBActions
 private extension EditPersonalDetailsViewController {
     @IBAction func saveChangesButtonPressed(_ sender: CustomButton) {
-        saveChangesButton.showLoading {
-            self.updateUserInteraction()
+        saveChangesButton.showLoading { self.updateUserInteraction() }
+        viewModel.didPressedSaveChangesButton(firstname: firstnameTextfield.value,
+                                              lastname: lastnameTextfield.value,
+                                              birthdate: birthdateTextfield.value,
+                                              whereDoYouLive: viewModel.newLocation,
+                                              animalShelterName: animalShelterNameTextfield.value,
+                                              whereCanWeFindYou: viewModel.newLocation) {
+            self.saveChangesButton.hideLoading()
+            self.delegate?.updatePersonalDetails()
         }
-        viewModel.didPressedSaveChangesButton()
     }
 }

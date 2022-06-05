@@ -31,8 +31,8 @@ private extension ForgotPasswordViewController {
 // MARK: - CustomTextFieldDelegate
 extension ForgotPasswordViewController: CustomTextFieldDelegate {
     func textFieldShouldReturn(_ customTextField: CustomTextField) -> Bool {
-        switch customTextField.textField {
-        case mailTexfield.textField:
+        switch customTextField {
+        case mailTexfield:
             mailTexfield.textField.resignFirstResponder()
         default: customTextField.textField.resignFirstResponder()
         }

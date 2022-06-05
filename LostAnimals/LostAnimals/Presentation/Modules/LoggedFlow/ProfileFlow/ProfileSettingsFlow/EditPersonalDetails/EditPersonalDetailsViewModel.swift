@@ -6,19 +6,44 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
+// MARK: - Enums
+enum EditPersonalDetailsField {
+    case firstname
+    case lastname
+    case birthdate
+}
+
 final class EditPersonalDetailsViewModel {
     // MARK: - Properties
     private let router: EditPersonalDetailsRouter
     let me: User
     var numberOfTextFields = 0
     var editedTextFields = [CustomTextField]()
-    var location: Location? = nil
+    var currentLocation: Location
+    var newLocation: Location
+    var currentPersonalDetailsValues: [EditPersonalDetailsField: String] = [:]
+    var newPersonalDetailsValues: [EditPersonalDetailsField: String] = [:]
+    
+    // MARK: - Services
+    let userService = UserService()
     
     // MARK: - Init
     required init(router: EditPersonalDetailsRouter, me: User) {
         self.router = router
         self.me = me
-        self.numberOfTextFields = me.animalShelter ? 2 : 4
+        if me.animalShelter {
+            self.numberOfTextFields = 2
+            self.currentPersonalDetailsValues[.firstname] = me.firstname
+            self.currentLocation = me.location
+        } else {
+            self.numberOfTextFields = 4
+            self.currentPersonalDetailsValues[.firstname] = me.firstname
+            self.currentPersonalDetailsValues[.lastname] = me.lastname
+            if let birthdate = me.birthdate { self.currentPersonalDetailsValues[.birthdate] = birthdate }
+            self.currentLocation = me.location
+        }
+        self.newPersonalDetailsValues = currentPersonalDetailsValues
+        self.newLocation = currentLocation
     }
 }
 
@@ -53,9 +78,33 @@ extension EditPersonalDetailsViewModel {
         self.router.goToWhereCanWeFindYou()
     }
     
-    func didPressedSaveChangesButton() {
-        showSuccessPopup(title: "The changes has been saved successfully") {
-            self.router.goBack()
+    func didPressedSaveChangesButton(firstname: String? = nil, lastname: String? = nil, birthdate: String? = nil, whereDoYouLive: Location? = nil, animalShelterName: String? = nil, whereCanWeFindYou: Location? = nil, completion: @escaping (() -> Void)) {
+        if me.animalShelter {
+            userService.editUserPersonalDetails(animalShelterName: animalShelterName, whereCanWeFindYou: whereCanWeFindYou) { result in
+                switch result {
+                case .success:
+                    completion()
+                    showSuccessPopup(title: "The changes has been saved successfully") {
+                        self.router.goBack()
+                    }
+                case .error(let error):
+                    completion()
+                    showErrorPopup(title: error)
+                }
+            }
+        } else {
+            userService.editUserPersonalDetails(firstname: firstname, lastname: lastname, birthdate: birthdate, whereDoYouLive: whereDoYouLive) { result in
+                switch result {
+                case .success:
+                    completion()
+                    showSuccessPopup(title: "The changes has been saved successfully") {
+                        self.router.goBack()
+                    }
+                case .error(let error):
+                    completion()
+                    showErrorPopup(title: error)
+                }
+            }
         }
     }
 }

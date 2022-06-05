@@ -269,4 +269,94 @@ extension UserService {
             }
         }
     }
+    
+    func editUserPersonalDetails(firstname: String? = nil, lastname: String? = nil, birthdate: String? = nil, whereDoYouLive: Location? = nil, animalShelterName: String? = nil, whereCanWeFindYou: Location? = nil, completion: @escaping (GenericResult) -> Void) {
+        guard let me = User.shared else {
+            completion(.error("An unexpected error occured. Please, try again later"))
+            return
+        }
+        if me.animalShelter {
+            self.databaseRef.child("users").child(me.id).child("firstname").setValue(animalShelterName) { (error1, _) in
+                if let error1 = error1 {
+                    switch error1.localizedDescription {
+                    case FirebaseError.networkError.rawValue:
+                        completion(.error("You don't have an internet connection"))
+                    default:
+                        completion(.error("An unexpected error occured. Please, try again later"))
+                    }
+                } else {
+                    do {
+                        let locationObject = try FirebaseEncoder().encode(whereCanWeFindYou)
+                        self.databaseRef.child("users").child(me.id).child("location").setValue(locationObject) { (error2, _) in
+                            if let error2 = error2 {
+                                switch error2.localizedDescription {
+                                case FirebaseError.networkError.rawValue:
+                                    completion(.error("You don't have an internet connection"))
+                                default:
+                                    completion(.error("An unexpected error occured. Please, try again later"))
+                                }
+                            } else {
+                                self.getMe { user in
+                                    User.shared = user
+                                    completion(.success)
+                                }
+                            }
+                        }
+                    } catch { completion(.error("An unexpected error occured. Please, try again later")) }
+                }
+            }
+        } else {
+            self.databaseRef.child("users").child(me.id).child("firstname").setValue(firstname) { (error1, _) in
+                if let error1 = error1 {
+                    switch error1.localizedDescription {
+                    case FirebaseError.networkError.rawValue:
+                        completion(.error("You don't have an internet connection"))
+                    default:
+                        completion(.error("An unexpected error occured. Please, try again later"))
+                    }
+                } else {
+                    self.databaseRef.child("users").child(me.id).child("lastname").setValue(lastname) { (error2, _) in
+                        if let error2 = error2 {
+                            switch error2.localizedDescription {
+                            case FirebaseError.networkError.rawValue:
+                                completion(.error("You don't have an internet connection"))
+                            default:
+                                completion(.error("An unexpected error occured. Please, try again later"))
+                            }
+                        } else {
+                            self.databaseRef.child("users").child(me.id).child("birthdate").setValue(birthdate) { (error3, _) in
+                                if let error3 = error3 {
+                                    switch error3.localizedDescription {
+                                    case FirebaseError.networkError.rawValue:
+                                        completion(.error("You don't have an internet connection"))
+                                    default:
+                                        completion(.error("An unexpected error occured. Please, try again later"))
+                                    }
+                                } else {
+                                    do {
+                                        let locationObject = try FirebaseEncoder().encode(whereDoYouLive)
+                                        self.databaseRef.child("users").child(me.id).child("location").setValue(locationObject) { (error4, _) in
+                                            if let error4 = error4 {
+                                                switch error4.localizedDescription {
+                                                case FirebaseError.networkError.rawValue:
+                                                    completion(.error("You don't have an internet connection"))
+                                                default:
+                                                    completion(.error("An unexpected error occured. Please, try again later"))
+                                                }
+                                            } else {
+                                                self.getMe { user in
+                                                    User.shared = user
+                                                    completion(.success)
+                                                }
+                                            }
+                                        }
+                                    } catch { completion(.error("An unexpected error occured. Please, try again later")) }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

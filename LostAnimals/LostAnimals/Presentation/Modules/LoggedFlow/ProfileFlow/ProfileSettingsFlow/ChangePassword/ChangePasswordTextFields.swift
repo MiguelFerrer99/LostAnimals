@@ -48,10 +48,10 @@ private extension ChangePasswordViewController {
 // MARK: - CustomTextFieldDelegate
 extension ChangePasswordViewController: CustomTextFieldDelegate {
     func textFieldShouldReturn(_ customTextField: CustomTextField) -> Bool {
-        switch customTextField.textField {
-        case passwordTextfield.textField:
+        switch customTextField {
+        case passwordTextfield:
             confirmPasswordTextfield.textField.becomeFirstResponder()
-        case confirmPasswordTextfield.textField:
+        case confirmPasswordTextfield:
             customTextField.textField.resignFirstResponder()
         default: customTextField.textField.resignFirstResponder()
         }

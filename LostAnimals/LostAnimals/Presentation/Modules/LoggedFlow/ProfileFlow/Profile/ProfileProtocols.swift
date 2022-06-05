@@ -17,4 +17,8 @@ extension ProfileViewController: ProfileSettingsDelegate {
     func updateUserImage() {
         reloadUserImage()
     }
+    
+    func updatePersonalDetails() {
+        reloadBasicInfo()
+    }
 }

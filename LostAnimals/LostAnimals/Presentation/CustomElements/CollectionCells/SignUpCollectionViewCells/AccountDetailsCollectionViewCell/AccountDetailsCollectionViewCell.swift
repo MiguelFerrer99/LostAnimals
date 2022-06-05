@@ -43,8 +43,7 @@ private extension AccountDetailsCollectionViewCell {
     }
     
     @IBAction func nextStepButtonPressed(_ sender: CustomButton) {
-        signUpStepsDelegate?.sendSignUpStep2Data(mail: mailTextfield.textField.text ?? "",
-                                                 password: passwordTextfield.textField.text ?? "")
+        signUpStepsDelegate?.sendSignUpStep2Data(mail: mailTextfield.value, password: passwordTextfield.value)
         signUpStepsDelegate?.moveToNextSignUpStep()
     }
 }

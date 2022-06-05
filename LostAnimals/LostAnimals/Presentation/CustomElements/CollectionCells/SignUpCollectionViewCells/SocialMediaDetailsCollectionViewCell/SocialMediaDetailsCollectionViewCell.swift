@@ -113,19 +113,14 @@ private extension SocialMediaDetailsCollectionViewCell {
     }
     
     @IBAction func getStartedButtonPressed(_ sender: CustomButton) {
-        guard let phonePrefix = phonePrefixLabel.text,
-              let phoneNumber = phoneTextfield.textField.text?.components(separatedBy: .whitespaces).joined(),
-              let instagram = instagramTextfield.textField.text,
-              let twitter = twitterTextfield.textField.text
-        else { return }
-        getStartedButton.showLoading {
-            self.updateUserInteraction()
-        }
+        guard let phonePrefix = phonePrefixLabel.text else { return }
+        let phoneNumber = phoneTextfield.value.components(separatedBy: .whitespaces).joined()
+        getStartedButton.showLoading { self.updateUserInteraction() }
         signUpStepsDelegate?.sendSignUpStep3Data(phonePrefix: phonePrefix,
                                                  phoneNumber: phoneNumber,
                                                  whatsapp: viewModel.haveWhatsAppSelected ? "\(phonePrefix)\(phoneNumber)" : nil,
-                                                 instagram: instagram.isEmpty ? nil : instagram,
-                                                 twitter: twitter.isEmpty ? nil : twitter)
+                                                 instagram: instagramTextfield.value.isEmpty ? nil : instagramTextfield.value,
+                                                 twitter: twitterTextfield.value.isEmpty ? nil : twitterTextfield.value)
         signUpStepsDelegate?.moveToNextSignUpStep()
     }
 }

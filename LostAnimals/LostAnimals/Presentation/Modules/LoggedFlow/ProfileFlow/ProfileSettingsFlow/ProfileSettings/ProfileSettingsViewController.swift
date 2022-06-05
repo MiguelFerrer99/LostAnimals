@@ -12,6 +12,7 @@ import UIKit
 protocol ProfileSettingsDelegate: AnyObject {
     func updateHeaderImage()
     func updateUserImage()
+    func updatePersonalDetails()
 }
 
 final class ProfileSettingsViewController: ViewController, UIGestureRecognizerDelegate {
