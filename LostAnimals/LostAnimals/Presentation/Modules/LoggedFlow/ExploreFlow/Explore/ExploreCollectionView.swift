@@ -71,6 +71,6 @@ extension ExploreViewController: UICollectionViewDelegateFlowLayout {
         if viewModel.isLoading || viewModel.posts.isEmpty {
             return CGSize(width: collectionView.frame.width, height: collectionViewRealHeight)
         }
-        else { return CGSize(width: collectionView.frame.width / 2, height: collectionView.frame.height / 2.5) }
+        else { return CGSize(width: collectionView.frame.width / 2, height: collectionView.frame.height / 2.7) }
     }
 }

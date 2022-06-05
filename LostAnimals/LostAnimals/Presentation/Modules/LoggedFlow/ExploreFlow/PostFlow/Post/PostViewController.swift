@@ -147,6 +147,7 @@ private extension PostViewController {
         viewModel.getImagesFromURLImages {
             DispatchQueue.main.async {
                 self.setOptionsBarButton()
+                self.postImagesPageControl.numberOfPages = self.viewModel.postImages.count
                 self.viewModel.isLoadingPostImages = false
                 self.postImagesCollectionView.reloadData()
             }
@@ -154,13 +155,7 @@ private extension PostViewController {
     }
     
     func getAuthorInfo() {
-        viewModel.getAuthorInfo { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success: self.fillAuthorUI()
-            default: break
-            }
-        }
+        viewModel.getAuthorInfo { self.fillAuthorUI() }
     }
     
     func fillAuthorUI() {
@@ -173,11 +168,12 @@ private extension PostViewController {
             self.contactWithAuthorButton.setTitle("Contact with \(user.firstname)", for: .normal)
         }
         if let userURLImage = user.userURLImage {
-            userURLImage.getURLImage { [weak self] image in
-                guard let self = self else { return }
-                self.authorPhotoImageView.image = image
-                self.loadingAuthorInfoView.isHidden = true
-                self.updateAuthorUI()
+            userURLImage.getURLImage { image in
+                DispatchQueue.main.async {
+                    self.authorPhotoImageView.image = image
+                    self.loadingAuthorInfoView.isHidden = true
+                    self.updateAuthorUI()
+                }
             }
         } else { self.updateAuthorUI() }
     }

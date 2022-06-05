@@ -15,7 +15,6 @@ extension PostViewController {
         collectionView.dataSource = self
         collectionView.register(PostImageCollectionViewCell.self)
         collectionView.register(LoadingCollectionViewCell.self)
-        postImagesPageControl.numberOfPages = viewModel.postImages.count
     }
 }
 

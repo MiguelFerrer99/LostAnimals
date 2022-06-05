@@ -74,12 +74,12 @@ extension PostViewModel {
         }
     }
     
-    func getAuthorInfo(completion: @escaping ((GenericResult) -> Void)) {
+    func getAuthorInfo(completion: @escaping (() -> Void)) {
         userService.getUser(id: post.userID) { result in
             switch result {
             case .success(let author):
                 self.user = author
-                completion(.success)
+                completion()
             case .error(let error):
                 showErrorPopup(title: error) { self.router.goBack() }
             }

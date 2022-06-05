@@ -121,6 +121,8 @@
 		4160E717277BA60900C7066F /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4160E715277BA60900C7066F /* OnboardingCollectionViewCell.swift */; };
 		4160E718277BA60900C7066F /* OnboardingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4160E716277BA60900C7066F /* OnboardingCollectionViewCell.xib */; };
 		4160E71A277BA6C200C7066F /* OnboardingCollectionViewCellSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4160E719277BA6C200C7066F /* OnboardingCollectionViewCellSummary.swift */; };
+		4168E013284D635C002629D3 /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4168E011284D635C002629D3 /* LoadingTableViewCell.swift */; };
+		4168E014284D635C002629D3 /* LoadingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4168E012284D635C002629D3 /* LoadingTableViewCell.xib */; };
 		416D1CE927751BFB00C75546 /* SocialMediaDetailsCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D1CE827751BFB00C75546 /* SocialMediaDetailsCollectionViewCellViewModel.swift */; };
 		416D1CEB27751C0C00C75546 /* SocialMediaDetailsCollectionViewCellTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D1CEA27751C0C00C75546 /* SocialMediaDetailsCollectionViewCellTextFields.swift */; };
 		416D29D22772551400CDD277 /* AccountDetailsCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D29D12772551400CDD277 /* AccountDetailsCollectionViewCellViewModel.swift */; };
@@ -487,6 +489,8 @@
 		4160E715277BA60900C7066F /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		4160E716277BA60900C7066F /* OnboardingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCollectionViewCell.xib; sourceTree = "<group>"; };
 		4160E719277BA6C200C7066F /* OnboardingCollectionViewCellSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCellSummary.swift; sourceTree = "<group>"; };
+		4168E011284D635C002629D3 /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
+		4168E012284D635C002629D3 /* LoadingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingTableViewCell.xib; sourceTree = "<group>"; };
 		416D1CE827751BFB00C75546 /* SocialMediaDetailsCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaDetailsCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		416D1CEA27751C0C00C75546 /* SocialMediaDetailsCollectionViewCellTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaDetailsCollectionViewCellTextFields.swift; sourceTree = "<group>"; };
 		416D29D12772551400CDD277 /* AccountDetailsCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
@@ -1204,6 +1208,15 @@
 			path = GenericPopups;
 			sourceTree = "<group>";
 		};
+		4168E010284D6342002629D3 /* LoadingTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				4168E011284D635C002629D3 /* LoadingTableViewCell.swift */,
+				4168E012284D635C002629D3 /* LoadingTableViewCell.xib */,
+			);
+			path = LoadingTableViewCell;
+			sourceTree = "<group>";
+		};
 		4174221D277C813C00915233 /* Explore */ = {
 			isa = PBXGroup;
 			children = (
@@ -1559,6 +1572,7 @@
 		41E00060275A5B99003CAF90 /* TableCells */ = {
 			isa = PBXGroup;
 			children = (
+				4168E010284D6342002629D3 /* LoadingTableViewCell */,
 				410FE67B2770C33500A390A3 /* AddressTableViewCell */,
 				41CD10F4278222C900257B2B /* AnimalFilterTableViewCell */,
 				41EC16A92785E1DB00096B7A /* AnimalTypeTableViewCell */,
@@ -1918,6 +1932,7 @@
 				4186AC92277F77EF009C07E2 /* ExploreFiltersCollectionViewCell.xib in Resources */,
 				4114ABD3275F960200F1AB01 /* AccountDetailsCollectionViewCell.xib in Resources */,
 				4100A0EE278372110049EEF0 /* PostViewController.storyboard in Resources */,
+				4168E014284D635C002629D3 /* LoadingTableViewCell.xib in Resources */,
 				41EC16BE278678CE00096B7A /* SelectPhotoPopupViewController.storyboard in Resources */,
 				41B7562B275EE50900C00E03 /* SignUpViewController.storyboard in Resources */,
 				41CD11042783244700257B2B /* LocationFilterPopupViewController.storyboard in Resources */,
@@ -1983,6 +1998,7 @@
 				4186AC91277F77EF009C07E2 /* ExploreFiltersCollectionViewCell.swift in Sources */,
 				419CE0D427B5BC0A005D009C /* EditSocialMediasProtocols.swift in Sources */,
 				41EC16C1278678CE00096B7A /* SelectPhotoPopupViewModel.swift in Sources */,
+				4168E013284D635C002629D3 /* LoadingTableViewCell.swift in Sources */,
 				417B8609277D1F1C0051B8CF /* NewPostRouter.swift in Sources */,
 				418C4140275A5E310099BC5B /* ForgotPasswordRouter.swift in Sources */,
 				CCB0207626A6F12000214CB9 /* String.swift in Sources */,

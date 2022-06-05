@@ -61,8 +61,6 @@ private extension BlockedUsersViewController {
     }
     
     func getBlockedUsers() {
-        viewModel.isLoading = true
-        blockedUsersTableView.reloadData()
         viewModel.getBlockedUsers {
             self.viewModel.isLoading = false
             self.blockedUsersTableView.reloadData()
