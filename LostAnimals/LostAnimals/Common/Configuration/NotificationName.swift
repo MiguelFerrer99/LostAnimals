@@ -16,5 +16,4 @@ extension Notification.Name {
     static let UpdateExplorePosts = Notification.Name("UpdateExplorePosts")
     static let UpdateSavedPosts = Notification.Name("UpdateSavedPosts")
     static let UpdateMyPosts = Notification.Name("UpdateMyPosts")
-    static let UpdateMyProfile = Notification.Name("UpdateMyProfile")
 }

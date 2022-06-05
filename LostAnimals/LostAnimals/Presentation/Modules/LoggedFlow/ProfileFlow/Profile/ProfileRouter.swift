@@ -28,6 +28,7 @@ extension ProfileRouter {
         DispatchQueue.main.async {
             guard let me = User.shared else { return }
             let viewController = Container.shared.profileSettingsBuilder().build(me: me, profileImages: profileImages)
+            viewController.delegate = self.viewController
             self.viewController?.push(viewController: viewController)
         }
     }

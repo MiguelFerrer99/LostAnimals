@@ -46,6 +46,13 @@
                                                                     <outletCollection property="gestureRecognizers" destination="doE-Zv-Gb8" appends="YES" id="vHR-by-dpW"/>
                                                                 </connections>
                                                             </imageView>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S35-ti-Scs">
+                                                                <rect key="frame" x="0.0" y="212" width="414" height="5"/>
+                                                                <color key="backgroundColor" name="CustomBlack"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="5" id="fmx-AR-nGS"/>
+                                                                </constraints>
+                                                            </view>
                                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultUserImage" translatesAutoresizingMaskIntoConstraints="NO" id="OdU-2w-JUY" customClass="CustomImageView" customModule="LostAnimals" customModuleProvider="target">
                                                                 <rect key="frame" x="162" y="169.5" width="90" height="90"/>
                                                                 <gestureRecognizers/>
@@ -55,6 +62,12 @@
                                                                 </constraints>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="fullRound" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                        <color key="value" name="CustomBlack"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                        <real key="value" value="5"/>
+                                                                    </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
                                                                     <outletCollection property="gestureRecognizers" destination="1nY-8q-ySw" appends="YES" id="OyF-ZO-QdI"/>
@@ -225,9 +238,12 @@
                                                             <constraint firstItem="UeK-2r-TtM" firstAttribute="top" secondItem="irm-4F-XJr" secondAttribute="top" id="CVL-NZ-g4s"/>
                                                             <constraint firstAttribute="trailing" secondItem="UeK-2r-TtM" secondAttribute="trailing" id="CZb-I0-eNh"/>
                                                             <constraint firstItem="UE6-hy-l66" firstAttribute="height" secondItem="irm-4F-XJr" secondAttribute="height" multiplier="0.75" id="Iq0-gd-veo"/>
+                                                            <constraint firstItem="S35-ti-Scs" firstAttribute="trailing" secondItem="UE6-hy-l66" secondAttribute="trailing" id="ItZ-os-deT"/>
                                                             <constraint firstItem="UE6-hy-l66" firstAttribute="top" secondItem="irm-4F-XJr" secondAttribute="top" id="PLM-Du-SIV"/>
                                                             <constraint firstItem="g8t-rU-knB" firstAttribute="bottom" secondItem="OdU-2w-JUY" secondAttribute="bottom" id="Qtn-mS-42Y"/>
+                                                            <constraint firstItem="S35-ti-Scs" firstAttribute="leading" secondItem="UE6-hy-l66" secondAttribute="leading" id="WrX-jC-yYR"/>
                                                             <constraint firstItem="OdU-2w-JUY" firstAttribute="centerX" secondItem="irm-4F-XJr" secondAttribute="centerX" id="Wuw-LZ-51g"/>
+                                                            <constraint firstItem="S35-ti-Scs" firstAttribute="centerY" secondItem="UE6-hy-l66" secondAttribute="bottom" id="XSf-WV-mNS"/>
                                                             <constraint firstItem="OdU-2w-JUY" firstAttribute="centerY" secondItem="UE6-hy-l66" secondAttribute="bottom" id="YhE-Ne-u4E"/>
                                                             <constraint firstItem="UE6-hy-l66" firstAttribute="leading" secondItem="irm-4F-XJr" secondAttribute="leading" id="jpE-yQ-OP6"/>
                                                             <constraint firstItem="g8t-rU-knB" firstAttribute="trailing" secondItem="OdU-2w-JUY" secondAttribute="trailing" id="l6o-IP-8zb"/>

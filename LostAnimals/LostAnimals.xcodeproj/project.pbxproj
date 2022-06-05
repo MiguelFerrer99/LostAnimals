@@ -82,6 +82,7 @@
 		411EF7CD2788E0BA00725B73 /* PostImagesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411EF7C82788E0BA00725B73 /* PostImagesBuilder.swift */; };
 		411EF7CE2788E0BA00725B73 /* PostImagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411EF7C92788E0BA00725B73 /* PostImagesViewModel.swift */; };
 		411EF7D02788E14F00725B73 /* PostImagesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411EF7CF2788E14F00725B73 /* PostImagesCollectionView.swift */; };
+		4125D60C284C9D7000F2E94A /* ProfileProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4125D60B284C9D7000F2E94A /* ProfileProtocols.swift */; };
 		413193B6276FFDD60006FE7B /* WhereDoYouLiveCitiesSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413193B5276FFDD60006FE7B /* WhereDoYouLiveCitiesSearchBar.swift */; };
 		413987002737F6F200C243F4 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413986FF2737F6F200C243F4 /* UIFont.swift */; };
 		4139870E2737FA3500C243F4 /* StartupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4139870A2737FA3500C243F4 /* StartupRouter.swift */; };
@@ -448,6 +449,7 @@
 		411EF7C82788E0BA00725B73 /* PostImagesBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImagesBuilder.swift; sourceTree = "<group>"; };
 		411EF7C92788E0BA00725B73 /* PostImagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImagesViewModel.swift; sourceTree = "<group>"; };
 		411EF7CF2788E14F00725B73 /* PostImagesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImagesCollectionView.swift; sourceTree = "<group>"; };
+		4125D60B284C9D7000F2E94A /* ProfileProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProtocols.swift; sourceTree = "<group>"; };
 		413193B5276FFDD60006FE7B /* WhereDoYouLiveCitiesSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereDoYouLiveCitiesSearchBar.swift; sourceTree = "<group>"; };
 		413986FF2737F6F200C243F4 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		4139870A2737FA3500C243F4 /* StartupRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupRouter.swift; sourceTree = "<group>"; };
@@ -1242,6 +1244,7 @@
 				417025772799FEF200AEB373 /* ProfileCollectionViews.swift */,
 				414903B627EF796F0037EE4E /* ProfileScrollView.swift */,
 				41DA64F127A492240094F55C /* ProfileMailController.swift */,
+				4125D60B284C9D7000F2E94A /* ProfileProtocols.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -2166,6 +2169,7 @@
 				31981E4D24191C2F00D25074 /* CustomTextField-Models.swift in Sources */,
 				418A331F27EA77CA00F9E278 /* ConfirmationPopupBuilder.swift in Sources */,
 				416D29D42772558800CDD277 /* AccountDetailsCollectionViewCellTextFields.swift in Sources */,
+				4125D60C284C9D7000F2E94A /* ProfileProtocols.swift in Sources */,
 				945B15B425595DC9003A65E0 /* Int.swift in Sources */,
 				41B9CE6D277F403000966509 /* ExploreCollectionView.swift in Sources */,
 				41CD1110278336F400257B2B /* DateFilterPopupViewController.swift in Sources */,

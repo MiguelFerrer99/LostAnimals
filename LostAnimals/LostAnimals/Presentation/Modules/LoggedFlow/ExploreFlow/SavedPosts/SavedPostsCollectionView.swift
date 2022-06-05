@@ -71,6 +71,6 @@ extension SavedPostsViewController: UICollectionViewDelegateFlowLayout {
         if viewModel.isLoading || viewModel.savedPosts.isEmpty {
             return CGSize(width: collectionView.frame.width, height: collectionViewRealHeight)
         }
-        else { return CGSize(width: collectionView.frame.width/2, height: collectionView.frame.height/3) }
+        else { return CGSize(width: collectionView.frame.width / 2, height: collectionView.frame.height / 2.5) }
     }
 }

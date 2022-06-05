@@ -50,7 +50,6 @@ extension ProfileSettingsViewModel {
 // MARK: - Functions
 extension ProfileSettingsViewModel {
     func didPressedBackButton() {
-        if userIsModified { NotificationCenter.default.post(name: .UpdateMyProfile, object: nil) }
         self.router.goBack()
     }
     
@@ -67,9 +66,7 @@ extension ProfileSettingsViewModel {
     func didPressedRemovePhoto(completion: @escaping ((GenericResult) -> ())) {
         userService.editUserImage(newImage: nil, imageType: selectedImageView) { result in
             switch result {
-            case .success:
-                self.userIsModified = true
-                completion(result)
+            case .success: completion(result)
             case .error(let error):
                 completion(result)
                 showErrorPopup(title: error)
@@ -80,9 +77,7 @@ extension ProfileSettingsViewModel {
     func didPressedChangePhoto(newImage: UIImage, completion: @escaping ((GenericResult) -> ())) {
         userService.editUserImage(newImage: newImage, imageType: selectedImageView) { result in
             switch result {
-            case .success:
-                self.userIsModified = true
-                completion(result)
+            case .success: completion(result)
             case .error(let error):
                 completion(result)
                 showErrorPopup(title: error)

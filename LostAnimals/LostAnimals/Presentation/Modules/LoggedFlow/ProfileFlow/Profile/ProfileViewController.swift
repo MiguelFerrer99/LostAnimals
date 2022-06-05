@@ -70,6 +70,23 @@ final class ProfileViewController: ViewController, UIGestureRecognizerDelegate {
     }
 }
 
+// MARK: - Functions
+extension ProfileViewController {
+    func reloadHeaderImage() {
+        guard let me = User.shared else { return }
+        viewModel.user = me
+        viewModel.isMyProfile = (me == viewModel.user)
+        updateHeaderImageUI()
+    }
+    
+    func reloadUserImage() {
+        guard let me = User.shared else { return }
+        viewModel.user = me
+        viewModel.isMyProfile = (me == viewModel.user)
+        updateUserImageUI()
+    }
+}
+
 // MARK: - Private functions
 private extension ProfileViewController {
     func setupUI() {
@@ -98,7 +115,6 @@ private extension ProfileViewController {
     func subscribeToNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(updateSavedPosts), name: .UpdateSavedPosts, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateMyPosts), name: .UpdateMyPosts, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(updateMyProfile), name: .UpdateMyProfile, object: nil)
     }
     
     func fillUI() {
@@ -123,34 +139,8 @@ private extension ProfileViewController {
     }
     
     func fillUserImagesUI() {
-        if let userURLImage = viewModel.user.userURLImage {
-            self.loadingView.isHidden = false
-            self.settingsButtonView.isHidden = true
-            userURLImage.getURLImage { image in
-                if let image = image {
-                    DispatchQueue.main.async {
-                        self.loadingView.isHidden = true
-                        self.settingsButtonView.isHidden = false
-                        self.viewModel.userImage = image
-                        self.userImageView.image = image
-                    }
-                }
-            }
-        }
-        if let headerURLImage = viewModel.user.headerURLImage {
-            self.loadingView.isHidden = false
-            self.settingsButtonView.isHidden = true
-            headerURLImage.getURLImage { image in
-                if let image = image {
-                    DispatchQueue.main.async {
-                        self.loadingView.isHidden = true
-                        self.settingsButtonView.isHidden = false
-                        self.viewModel.headerImage = image
-                        self.headerImageView.image = image
-                    }
-                }
-            }
-        }
+        updateHeaderImageUI()
+        updateUserImageUI()
     }
     
     func fillPostsInfoUI() {
@@ -175,6 +165,46 @@ private extension ProfileViewController {
                 self.secondCollectionHeaderLabel.isHidden = false
                 self.secondStackView.isHidden = false
             }
+        }
+    }
+    
+    func updateHeaderImageUI() {
+        if let headerURLImage = viewModel.user.headerURLImage {
+            self.loadingView.isHidden = false
+            self.settingsButtonView.isHidden = true
+            headerURLImage.getURLImage { image in
+                if let image = image {
+                    self.viewModel.headerImage = image
+                    DispatchQueue.main.async {
+                        self.loadingView.isHidden = true
+                        self.settingsButtonView.isHidden = false
+                        self.headerImageView.image = image
+                    }
+                }
+            }
+        } else {
+            self.viewModel.headerImage = nil
+            self.headerImageView.image = UIImage(named: "DefaultHeaderImage")
+        }
+    }
+    
+    func updateUserImageUI() {
+        if let userURLImage = viewModel.user.userURLImage {
+            self.loadingView.isHidden = false
+            self.settingsButtonView.isHidden = true
+            userURLImage.getURLImage { image in
+                if let image = image {
+                    self.viewModel.userImage = image
+                    DispatchQueue.main.async {
+                        self.loadingView.isHidden = true
+                        self.settingsButtonView.isHidden = false
+                        self.userImageView.image = image
+                    }
+                }
+            }
+        } else {
+            self.viewModel.userImage = nil
+            self.userImageView.image = UIImage(named: "DefaultUserImage")
         }
     }
     
@@ -219,13 +249,6 @@ private extension ProfileViewController {
             self.firstStackView.isHidden = self.viewModel.posts.isEmpty
             self.hideLoading()
         }
-    }
-    
-    @objc func updateMyProfile() {
-        guard let me = User.shared else { return }
-        viewModel.user = me
-        viewModel.isMyProfile = (me == viewModel.user)
-        fillUserImagesUI()
     }
     
     @objc func blockOrUnblockUser() {

@@ -8,6 +8,12 @@
 
 import UIKit
 
+// MARK: - Protocols
+protocol ProfileSettingsDelegate: AnyObject {
+    func updateHeaderImage()
+    func updateUserImage()
+}
+
 final class ProfileSettingsViewController: ViewController, UIGestureRecognizerDelegate {
     // MARK: - IBOutlets
     @IBOutlet private weak var backButton: UIButton!
@@ -33,6 +39,7 @@ final class ProfileSettingsViewController: ViewController, UIGestureRecognizerDe
     }
     var viewModel: ProfileSettingsViewModel!
     let imagePickerController = UIImagePickerController()
+    weak var delegate: ProfileSettingsDelegate?
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -68,8 +75,12 @@ extension ProfileSettingsViewController {
             switch result {
             case .success:
                 switch self.viewModel.selectedImageView {
-                case .user:   self.userImageView.image = UIImage(named: "DefaultUserImage")
-                case .header: self.headerImageView.image = UIImage(named: "DefaultHeaderImage")
+                case .user:
+                    self.delegate?.updateUserImage()
+                    self.userImageView.image = UIImage(named: "DefaultUserImage")
+                case .header:
+                    self.delegate?.updateHeaderImage()
+                    self.headerImageView.image = UIImage(named: "DefaultHeaderImage")
                 }
                 self.hideLoading()
             case .error: self.hideLoading()
@@ -83,8 +94,12 @@ extension ProfileSettingsViewController {
             switch result {
             case .success:
                 switch self.viewModel.selectedImageView {
-                case .user:   self.userImageView.image = image
-                case .header: self.headerImageView.image = image
+                case .user:
+                    self.delegate?.updateUserImage()
+                    self.userImageView.image = image
+                case .header:
+                    self.delegate?.updateHeaderImage()
+                    self.headerImageView.image = image
                 }
                 self.hideLoading()
             case .error: self.hideLoading()
