@@ -208,7 +208,7 @@ extension PostViewModel {
     }
     
     func didPressEditPostButton() {
-        self.router.goToEditPost(post: post)
+        self.router.goToEditPost(post: post, postImages: postImages)
     }
     
     func showGuestPopupFromPostOptionsPopup() {

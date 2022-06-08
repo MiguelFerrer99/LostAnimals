@@ -6,6 +6,8 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
+import Foundation
+
 final class BlockedUsersViewModel {
     // MARK: - Properties
     private let router: BlockedUsersRouter
@@ -34,6 +36,10 @@ extension BlockedUsersViewModel {
 
 // MARK: - Functions
 extension BlockedUsersViewModel {
+    func goBack() {
+        self.router.goBack()
+    }
+    
     func getBlockedUsers(completion: @escaping () -> Void) {
         userService.getBlockedUsers { result in
             switch result {
@@ -48,7 +54,10 @@ extension BlockedUsersViewModel {
     func unblockUser(userID: String, completion: @escaping () -> Void) {
         userService.unblockUser(userID: userID) { result in
             switch result {
-            case .success: completion()
+            case .success:
+                NotificationCenter.default.post(name: .UpdateExplorePosts, object: nil)
+                NotificationCenter.default.post(name: .UpdateSavedPosts, object: nil)
+                completion()
             case .error(let error): showErrorPopup(title: error)
             }
         }

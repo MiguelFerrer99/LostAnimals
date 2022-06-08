@@ -11,6 +11,7 @@ import Foundation
 final class SavedPostsViewModel {
     // MARK: - Properties
     private let router: SavedPostsRouter
+    private let comesFrom: PostComesFrom
     var savedPosts: [Post] = []
     var isLoading = true
     
@@ -19,8 +20,9 @@ final class SavedPostsViewModel {
     let postService = PostService()
     
     // MARK: - Init
-    required init(router: SavedPostsRouter) {
+    required init(router: SavedPostsRouter, comesFrom: PostComesFrom) {
         self.router = router
+        self.comesFrom = comesFrom
     }
 }
 
@@ -59,6 +61,6 @@ extension SavedPostsViewModel {
     }
     
     func didPressPost(post: Post) {
-        self.router.goToPost(post: post)
+        self.router.goToPost(post: post, comesFrom: comesFrom)
     }
 }

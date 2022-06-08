@@ -36,9 +36,9 @@ extension SavedPostsRouter {
         }
     }
     
-    func goToPost(post: Post) {
+    func goToPost(post: Post, comesFrom: PostComesFrom) {
         DispatchQueue.main.async {
-            let viewController = Container.shared.postBuilder().build(comesFrom: .explore, post: post)
+            let viewController = Container.shared.postBuilder().build(comesFrom: comesFrom, post: post)
             self.viewController?.push(viewController: viewController)
         }
     }

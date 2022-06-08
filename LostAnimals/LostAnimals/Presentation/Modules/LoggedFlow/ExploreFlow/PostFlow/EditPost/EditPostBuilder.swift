@@ -12,10 +12,10 @@ final class EditPostBuilder {}
 
 // MARK: - Functions
 extension EditPostBuilder {
-    func build(post: Post) -> EditPostViewController {
+    func build(post: Post, postImages: [UIImage]) -> EditPostViewController {
         let viewController = UIViewController.instantiate(viewController: EditPostViewController.self)
         let router = EditPostRouter(viewController: viewController)
-        let viewModel = EditPostViewModel(router: router, post: post)
+        let viewModel = EditPostViewModel(router: router, post: post, postImages: postImages)
         viewController.viewModel = viewModel
         return viewController
     }

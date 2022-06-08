@@ -38,7 +38,7 @@ extension ProfilePostsRouter {
     
     func goToPost(post: Post) {
         DispatchQueue.main.async {
-            let viewController = Container.shared.postBuilder().build(comesFrom: .explore, post: post)
+            let viewController = Container.shared.postBuilder().build(comesFrom: .profile, post: post)
             self.viewController?.push(viewController: viewController)
         }
     }

@@ -14,6 +14,7 @@ extension ProfilePostsViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(EmptyCollectionViewCell.self)
+        collectionView.register(LoadingCollectionViewCell.self)
         collectionView.register(PostCollectionViewCell.self)
     }
 }
@@ -21,7 +22,7 @@ extension ProfilePostsViewController {
 // MARK: - UICollectionViewDelegate
 extension ProfilePostsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return !viewModel.posts.isEmpty
+        return !viewModel.posts.isEmpty || viewModel.isLoading
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -33,12 +34,15 @@ extension ProfilePostsViewController: UICollectionViewDelegate {
 // MARK: - UICollectionViewDataSource
 extension ProfilePostsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if viewModel.posts.isEmpty { return 1 }
+        if viewModel.posts.isEmpty || viewModel.isLoading { return 1 }
         else { return viewModel.posts.count }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if viewModel.posts.isEmpty {
+        if viewModel.isLoading {
+            let cell = collectionView.dequeue(LoadingCollectionViewCell.self, for: indexPath)
+            return cell
+        } else if viewModel.posts.isEmpty {
             let summary = EmptyCollectionViewCellSummary(emptyTitle: "There are not available posts", emptyImage: UIImage(named: "Other") ?? UIImage())
             let cell = collectionView.dequeue(EmptyCollectionViewCell.self, for: indexPath)
             cell.display(summary: summary)
@@ -62,7 +66,7 @@ extension ProfilePostsViewController: UICollectionViewDataSource {
 extension ProfilePostsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let collectionViewRealHeight = collectionView.frame.height - self.barHeights
-        if viewModel.posts.isEmpty {
+        if viewModel.posts.isEmpty || viewModel.isLoading {
             return CGSize(width: collectionView.frame.width, height: collectionViewRealHeight)
         }
         else { return CGSize(width: collectionView.frame.width / 2, height: collectionView.frame.height / 2.7) }

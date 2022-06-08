@@ -12,7 +12,8 @@ final class ProfilePostsViewModel {
     // MARK: - Properties
     private let router: ProfilePostsRouter
     let isMyProfile: Bool
-    let posts: [Post]
+    var posts: [Post]
+    var isLoading = false
     
     // MARK: - Services
     let postService = PostService()
@@ -42,6 +43,18 @@ extension ProfilePostsViewModel {
 
 // MARK: - Functions
 extension ProfilePostsViewModel {
+    func getMyPosts(completion: @escaping (() -> Void)) {
+        postService.getMyPosts { result in
+            switch result {
+            case .success(let posts):
+                self.posts = posts
+                completion()
+            case .error(let error):
+                showErrorPopup(title: error)
+            }
+        }
+    }
+    
     func didPressPostsFilterPopup(filterType: FilterType, loadData: Bool) {
         self.router.goToFilterPopup(filterType: filterType, loadData: loadData)
     }

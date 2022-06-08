@@ -67,9 +67,9 @@ extension PostRouter {
         }
     }
     
-    func goToEditPost(post: Post) {
+    func goToEditPost(post: Post, postImages: [UIImage]) {
         DispatchQueue.main.async {
-            let viewController = Container.shared.editPostBuilder().build(post: post)
+            let viewController = Container.shared.editPostBuilder().build(post: post, postImages: postImages)
             self.viewController?.push(viewController: viewController)
         }
     }

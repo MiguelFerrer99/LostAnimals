@@ -32,3 +32,10 @@ extension ProfileSettingsViewController: EditSocialMediasDelegate {
         delegate?.updateSocialMediasDetails()
     }
 }
+
+// MARK: - BlockedUsersDelegate
+extension ProfileSettingsViewController: BlockedUsersDelegate {
+    func updateBlockedUsersButtonView() {
+        updateBlockedUsersView()
+    }
+}

@@ -35,7 +35,11 @@ extension BlockedUserTableViewCell {
         userID = summary.user.id
         userNameLabel.text = "\(summary.user.firstname) \(summary.user.lastname)"
         summary.user.userURLImage?.getURLImage { image in
-            if let image = image { self.userImageView.image = image }
+            if let image = image {
+                DispatchQueue.main.async {
+                    self.userImageView.image = image
+                }
+            }
         }
     }
 }
@@ -43,6 +47,7 @@ extension BlockedUserTableViewCell {
 // MARK: - IBActions
 private extension BlockedUserTableViewCell {
     @IBAction func unblockUserButtonPressed(_ sender: CustomButton) {
+        unblockButton.showLoading()
         delegate?.unblockUser(userID: userID)
     }
 }

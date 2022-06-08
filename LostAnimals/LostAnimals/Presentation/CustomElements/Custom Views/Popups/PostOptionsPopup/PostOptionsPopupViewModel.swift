@@ -56,6 +56,8 @@ extension PostOptionsPopupViewModel {
         userService.blockUser(userID: userID) { result in
             switch result {
             case .success:
+                NotificationCenter.default.post(name: .UpdateExplorePosts, object: nil)
+                NotificationCenter.default.post(name: .UpdateSavedPosts, object: nil)
                 self.router.dismissPostOptionsPopupAndShowSuccessPopup()
             case .error(let error):
                 self.router.dismissPostOptionsPopupAndShowErrorPopup(error: error)

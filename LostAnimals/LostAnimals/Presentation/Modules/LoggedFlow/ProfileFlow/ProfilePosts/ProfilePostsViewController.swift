@@ -42,6 +42,20 @@ final class ProfilePostsViewController: ViewController {
 // MARK: - Private functions
 private extension ProfilePostsViewController {
     func setupUI() {
+        subscribeToNotifications()
         configureCollectionView(profilePostsCollectionView)
+    }
+    
+    func subscribeToNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(updateMyPosts), name: .UpdateMyPosts, object: nil)
+    }
+    
+    @objc func updateMyPosts() {
+        viewModel.isLoading = true
+        profilePostsCollectionView.reloadData()
+        viewModel.getMyPosts {
+            self.viewModel.isLoading = false
+            self.profilePostsCollectionView.reloadData()
+        }
     }
 }

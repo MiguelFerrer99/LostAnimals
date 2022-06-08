@@ -491,4 +491,121 @@ extension UserService {
             }
         }
     }
+    
+    func deletePost(post: Post, completion: @escaping (GenericResult) -> Void) {
+        self.databaseRef.child("posts").child(post.id).removeValue { (error, _) in
+            if let error = error {
+                switch error.localizedDescription {
+                case FirebaseError.networkError.rawValue:
+                    completion(.error("You don't have an internet connection"))
+                default:
+                    completion(.error("An unexpected error occured. Please, try again later"))
+                }
+            } else {
+                if post.urlImage1 != nil {
+                    self.storageRef.child("posts").child(post.id).child("post_image1").delete { error in
+                        if let error = error {
+                            switch error.localizedDescription {
+                            case FirebaseError.networkError.rawValue:
+                                completion(.error("You don't have an internet connection"))
+                            default:
+                                completion(.error("An unexpected error occured. Please, try again later"))
+                            }
+                        } else {
+                            if post.urlImage2 != nil {
+                                self.storageRef.child("posts").child(post.id).child("post_image2").delete { error in
+                                    if let error = error {
+                                        switch error.localizedDescription {
+                                        case FirebaseError.networkError.rawValue:
+                                            completion(.error("You don't have an internet connection"))
+                                        default:
+                                            completion(.error("An unexpected error occured. Please, try again later"))
+                                        }
+                                    } else {
+                                        if post.urlImage3 != nil {
+                                            self.storageRef.child("posts").child(post.id).child("post_image3").delete { error in
+                                                if let error = error {
+                                                    switch error.localizedDescription {
+                                                    case FirebaseError.networkError.rawValue:
+                                                        completion(.error("You don't have an internet connection"))
+                                                    default:
+                                                        completion(.error("An unexpected error occured. Please, try again later"))
+                                                    }
+                                                } else {
+                                                    if post.urlImage4 != nil {
+                                                        self.storageRef.child("posts").child(post.id).child("post_image4").delete { error in
+                                                            if let error = error {
+                                                                switch error.localizedDescription {
+                                                                case FirebaseError.networkError.rawValue:
+                                                                    completion(.error("You don't have an internet connection"))
+                                                                default:
+                                                                    completion(.error("An unexpected error occured. Please, try again later"))
+                                                                }
+                                                            } else {
+                                                                if post.urlImage5 != nil {
+                                                                    self.storageRef.child("posts").child(post.id).child("post_image5").delete { error in
+                                                                        if let error = error {
+                                                                            switch error.localizedDescription {
+                                                                            case FirebaseError.networkError.rawValue:
+                                                                                completion(.error("You don't have an internet connection"))
+                                                                            default:
+                                                                                completion(.error("An unexpected error occured. Please, try again later"))
+                                                                            }
+                                                                        } else {
+                                                                            if post.urlImage6 != nil {
+                                                                                self.storageRef.child("posts").child(post.id).child("post_image6").delete { error in
+                                                                                    if let error = error {
+                                                                                        switch error.localizedDescription {
+                                                                                        case FirebaseError.networkError.rawValue:
+                                                                                            completion(.error("You don't have an internet connection"))
+                                                                                        default:
+                                                                                            completion(.error("An unexpected error occured. Please, try again later"))
+                                                                                        }
+                                                                                    } else {
+                                                                                        if post.urlImage7 != nil {
+                                                                                            self.storageRef.child("posts").child(post.id).child("post_image7").delete { error in
+                                                                                                if let error = error {
+                                                                                                    switch error.localizedDescription {
+                                                                                                    case FirebaseError.networkError.rawValue:
+                                                                                                        completion(.error("You don't have an internet connection"))
+                                                                                                    default:
+                                                                                                        completion(.error("An unexpected error occured. Please, try again later"))
+                                                                                                    }
+                                                                                                } else {
+                                                                                                    if post.urlImage8 != nil {
+                                                                                                        self.storageRef.child("posts").child(post.id).child("post_image8").delete { error in
+                                                                                                            if let error = error {
+                                                                                                                switch error.localizedDescription {
+                                                                                                                case FirebaseError.networkError.rawValue:
+                                                                                                                    completion(.error("You don't have an internet connection"))
+                                                                                                                default:
+                                                                                                                    completion(.error("An unexpected error occured. Please, try again later"))
+                                                                                                                }
+                                                                                                            } else { completion(.success) }
+                                                                                                        }
+                                                                                                    } else { completion(.success) }
+                                                                                                }
+                                                                                            }
+                                                                                        } else { completion(.success) }
+                                                                                    }
+                                                                                }
+                                                                            } else { completion(.success) }
+                                                                        }
+                                                                    }
+                                                                } else { completion(.success) }
+                                                            }
+                                                        }
+                                                    } else { completion(.success) }
+                                                }
+                                            }
+                                        } else { completion(.success) }
+                                    }
+                                }
+                            } else { completion(.success) }
+                        }
+                    }
+                } else { completion(.error("An unexpected error occured. Please, try again later")) }
+            }
+        }
+    }
 }

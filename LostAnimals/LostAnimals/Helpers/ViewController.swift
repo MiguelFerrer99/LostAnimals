@@ -22,7 +22,6 @@ class ViewController: UIViewController {
     var useLargeTitle: Bool {
         return false
     }
-    var viewDidAppear = false
     var hideNavigationBar: Bool {
         return false
     }
@@ -86,8 +85,6 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        viewDidAppear = true
     }
     
     deinit { unsubscribeToNotifications() }

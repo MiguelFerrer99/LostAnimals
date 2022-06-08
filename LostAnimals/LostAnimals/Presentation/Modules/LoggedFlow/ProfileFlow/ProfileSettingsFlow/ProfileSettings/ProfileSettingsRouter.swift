@@ -58,6 +58,7 @@ extension ProfileSettingsRouter {
     func goToBlockedUsers() {
         DispatchQueue.main.async {
             let viewController = Container.shared.blockedUsersBuilder().build()
+            viewController.delegate = self.viewController
             self.viewController?.push(viewController: viewController)
         }
     }

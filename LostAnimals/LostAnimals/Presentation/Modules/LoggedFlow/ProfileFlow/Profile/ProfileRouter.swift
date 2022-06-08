@@ -102,7 +102,7 @@ extension ProfileRouter {
     
     func goToMySavedPosts() {
         DispatchQueue.main.async {
-            let viewController = Container.shared.savedPostsBuilder().build()
+            let viewController = Container.shared.savedPostsBuilder().build(comesFrom: .profile)
             self.viewController?.push(viewController: viewController)
         }
     }

@@ -17,3 +17,10 @@ final class BlockedUsersRouter {
         self.viewController = viewController
     }
 }
+
+// MARK: - BlockedUsersRouter
+extension BlockedUsersRouter {
+    func goBack() {
+        self.viewController?.pop()
+    }
+}

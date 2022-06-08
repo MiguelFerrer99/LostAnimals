@@ -49,6 +49,10 @@ extension EditPostViewController {
         }
     }
     
+    func configureTextView() {
+        descriptionTextview.delegate = self
+    }
+    
     func fillWhereCanWeFindYou(searchResult: MKLocalSearchCompletion) {
         let searchResultString1 = searchResult.title
         let searchResultString2 = searchResult.subtitle.isEmpty ? "" : ", \(searchResult.subtitle)"
@@ -64,9 +68,10 @@ extension EditPostViewController {
             guard let image = $0.image else { return false }
             return !image.isEqualTo(image: UIImage(named: "SelectPhotoPlaceholder"))
         })
-        let canMoveToNextStep = !haveErrors && hasAtLeastOnePhoto && viewModel.editedTextFields.count == viewModel.numberOfTextFields
-        saveChangesButton.alpha = canMoveToNextStep ? 1 : 0.5
-        saveChangesButton.isEnabled = canMoveToNextStep
+        let currentAndNewInfoAreDifferent = viewModel.currentEditPostInfo != viewModel.newEditPostInfo || viewModel.currentLocation != viewModel.newLocation || viewModel.imagesModified
+        let canSaveChanges = !haveErrors && hasAtLeastOnePhoto && currentAndNewInfoAreDifferent && viewModel.numberOfTextFields <= viewModel.editedTextFields.count
+        saveChangesButton.alpha = canSaveChanges ? 1 : 0.5
+        saveChangesButton.isEnabled = canSaveChanges
     }
 }
 
@@ -79,7 +84,7 @@ private extension EditPostViewController {
             if let placemark = placemarks?.first, let location = placemark.location {
                 let lat = location.coordinate.latitude
                 let long = location.coordinate.longitude
-                self.viewModel.newPostLocation = Location(address: address, coordinates: Coordinates(longitude: long, latitude: lat))
+                self.viewModel.newLocation = Location(address: address, coordinates: Coordinates(longitude: long, latitude: lat))
             }
         }
     }
@@ -129,10 +134,40 @@ extension EditPostViewController: CustomTextFieldDelegate {
     }
     
     func textFieldDidChange(_ customTextField: CustomTextField) {
+        switch customTextField {
+        case nameTextfield:
+            viewModel.newEditPostInfo[.animalName] = customTextField.value
+        case breedTextfield:
+            viewModel.newEditPostInfo[.animalBreed] = customTextField.value
+        case lastTimeSeenTextfield:
+            viewModel.newEditPostInfo[.lastTimeSeen] = customTextField.value
+        default: break
+        }
         checkAllContentsAreOk()
     }
     
     func textFieldDidEndEditing(_ customTextField: CustomTextField) {
+        switch customTextField {
+        case nameTextfield:
+            viewModel.newEditPostInfo[.animalName] = customTextField.value
+        case breedTextfield:
+            viewModel.newEditPostInfo[.animalBreed] = customTextField.value
+        case lastTimeSeenTextfield:
+            viewModel.newEditPostInfo[.lastTimeSeen] = customTextField.value
+        default: break
+        }
+        checkAllContentsAreOk()
+    }
+}
+
+extension EditPostViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        viewModel.newEditPostInfo[.description] = textView.text
+        checkAllContentsAreOk()
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        viewModel.newEditPostInfo[.description] = textView.text
         checkAllContentsAreOk()
     }
 }

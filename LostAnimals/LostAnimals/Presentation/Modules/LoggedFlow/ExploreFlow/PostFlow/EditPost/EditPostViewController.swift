@@ -82,9 +82,10 @@ private extension EditPostViewController {
     func setupUI() {
         viewModel.selectPhotoImageViews = [selectPhoto1ImageView, selectPhoto2ImageView, selectPhoto3ImageView, selectPhoto4ImageView,
                                            selectPhoto5ImageView, selectPhoto6ImageView, selectPhoto7ImageView, selectPhoto8ImageView]
-        configureTextfields()
+        configureTextView()
         configureImagePickerController()
         fillUI()
+        configureTextfields()
     }
     
     func fillUI() {
@@ -100,23 +101,29 @@ private extension EditPostViewController {
             locationTextfield.isHidden = true
         }
         
+        for index in 0..<viewModel.postImages.count {
+            viewModel.selectPhotoImageViews[index].image = viewModel.postImages[index]
+        }
+        
         nameTextfield.textField.text = viewModel.post.animalName
         animalTextfield.textField.text = viewModel.post.animalType.rawValue
         breedTextfield.textField.text = viewModel.post.animalBreed
         descriptionTextview.text = viewModel.post.description
         lastTimeSeenTextfield.textField.text = viewModel.post.lastTimeSeen
-        locationTextfield.textField.text = viewModel.post.location.address
+        locationTextfield.textField.text = viewModel.currentLocation.address
     }
 }
 
 // MARK: - Functions
 extension EditPostViewController {
     func fillAnimal(animalType: AnimalType) {
+        viewModel.newEditPostInfo[.animalType] = animalType.rawValue
         animalTextfield.textField.text = animalType.rawValue
         animalTextfield.didFinishSelectContentFromOtherVC()
     }
     
     func removePhoto() {
+        viewModel.imagesModified = true
         viewModel.selectPhotoImageViews[viewModel.selectedIndexImageView].image = UIImage(named: "SelectPhotoPlaceholder")
         checkAllContentsAreOk()
     }
@@ -175,17 +182,17 @@ private extension EditPostViewController {
     }
 
     @IBAction func deletePostButtonPressed(_ sender: CustomButton) {
-        deletePostButton.showLoading {
-            self.updateUserInteraction()
+        deletePostButton.showLoading { self.updateUserInteraction() }
+        viewModel.didPressDeletePostButton {
+            self.deletePostButton.hideLoading { self.updateUserInteraction() }
         }
-        viewModel.didPressDeletePostButton()
     }
 
     @IBAction func saveChangesButtonPressed(_ sender: CustomButton) {
-        saveChangesButton.showLoading {
-            self.updateUserInteraction()
+        saveChangesButton.showLoading { self.updateUserInteraction() }
+        viewModel.didPressSaveChangesButton {
+            self.deletePostButton.hideLoading { self.updateUserInteraction() }
         }
-        viewModel.didPressSaveChangesButton()
     }
 
 }

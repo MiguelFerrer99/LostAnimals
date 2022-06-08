@@ -8,6 +8,11 @@
 
 import UIKit
 
+// MARK: - Protocols
+protocol BlockedUsersDelegate: AnyObject {
+    func updateBlockedUsersButtonView()
+}
+
 final class BlockedUsersViewController: ViewController, UIGestureRecognizerDelegate {
     // MARK: - IBOutlets
     @IBOutlet weak var blockedUsersTableView: UITableView!
@@ -17,6 +22,7 @@ final class BlockedUsersViewController: ViewController, UIGestureRecognizerDeleg
         return "Blocked users"
     }
     var viewModel: BlockedUsersViewModel!
+    weak var delegate: BlockedUsersDelegate?
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -64,6 +70,10 @@ private extension BlockedUsersViewController {
         viewModel.getBlockedUsers {
             self.viewModel.isLoading = false
             self.blockedUsersTableView.reloadData()
+            if self.viewModel.myBlockedUsers.isEmpty {
+                self.delegate?.updateBlockedUsersButtonView()
+                self.viewModel.goBack()
+            }
         }
     }
 }

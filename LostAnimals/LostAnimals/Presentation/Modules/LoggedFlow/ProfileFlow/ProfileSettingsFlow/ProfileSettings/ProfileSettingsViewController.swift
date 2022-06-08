@@ -108,6 +108,12 @@ extension ProfileSettingsViewController {
             }
         }
     }
+    
+    func updateBlockedUsersView() {
+        guard let me = User.shared else { return }
+        viewModel.me = me
+        blockedUsersView.isHidden = viewModel.me.blockedUsers.isEmpty
+    }
 }
 
 // MARK: - Private functions
@@ -125,7 +131,7 @@ private extension ProfileSettingsViewController {
             userImageView.image = userImage
         }
         animalShelterImageView.isHidden = !viewModel.me.animalShelter
-        blockedUsersView.isHidden = viewModel.me.blockedUsers.isEmpty
+        updateBlockedUsersView()
     }
     
     func updateUserInteraction() {

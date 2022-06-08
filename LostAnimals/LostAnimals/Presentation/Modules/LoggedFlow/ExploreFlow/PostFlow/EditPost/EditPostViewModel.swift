@@ -8,6 +8,15 @@
 
 import UIKit
 
+// MARK: - Enums
+enum EditPostInfo {
+    case animalType
+    case animalName
+    case animalBreed
+    case lastTimeSeen
+    case description
+}
+
 final class EditPostViewModel {
     // MARK: - Properties
     private let router: EditPostRouter
@@ -15,20 +24,34 @@ final class EditPostViewModel {
     var editedTextFields = [CustomTextField]()
     var selectPhotoImageViews: [UIImageView] = []
     var selectedIndexImageView = 0
-    var newPostLocation: Location? = nil
+    var currentLocation: Location
+    var newLocation: Location
     let post: Post
+    let postImages: [UIImage]
+    var currentEditPostInfo: [EditPostInfo: String] = [:]
+    var newEditPostInfo: [EditPostInfo: String] = [:]
+    var imagesModified = false
+    
+    // MARK: - Services
+    let userService = UserService()
     
     // MARK: - Init
-    required init(router: EditPostRouter, post: Post) {
+    required init(router: EditPostRouter, post: Post, postImages: [UIImage]) {
         self.router = router
         self.post = post
+        self.postImages = postImages
+        self.currentLocation = post.location
+        self.newLocation = post.location
+        self.currentEditPostInfo[.animalType] = post.animalType.rawValue
+        self.currentEditPostInfo[.animalName] = post.animalName ?? ""
+        self.currentEditPostInfo[.animalBreed] = post.animalBreed
+        self.currentEditPostInfo[.lastTimeSeen] = post.lastTimeSeen
+        self.currentEditPostInfo[.description] = post.description
+        self.newEditPostInfo = currentEditPostInfo
         switch post.postType {
-        case .lost:
-            numberOfTextFields = 4
-        case .found:
-            numberOfTextFields = 3
-        case .adopt:
-            numberOfTextFields = 2
+        case .lost:  numberOfTextFields = 4
+        case .found: numberOfTextFields = 3
+        case .adopt: numberOfTextFields = 2
         }
     }
 }
@@ -67,13 +90,26 @@ extension EditPostViewModel {
         self.router.goToWhereCanWeFindYou()
     }
     
-    func didPressDeletePostButton() {
-        showSuccessPopup(title: "The post has been removed sucessfully") {
-            self.router.goBack2Times()
+    func didPressDeletePostButton(completion: @escaping (() -> Void)) {
+        userService.deletePost(post: post) { result in
+            switch result {
+            case .success:
+                NotificationCenter.default.post(name: .UpdateMyPosts, object: nil)
+                NotificationCenter.default.post(name: .UpdateExplorePosts, object: nil)
+                NotificationCenter.default.post(name: .UpdateSavedPosts, object: nil)
+                completion()
+                showSuccessPopup(title: "The post has been removed sucessfully") {
+                    self.router.goBack2Times()
+                }
+            case .error(let error):
+                completion()
+                showErrorPopup(title: error)
+            }
         }
     }
     
-    func didPressSaveChangesButton() {
+    func didPressSaveChangesButton(completion: @escaping (() -> Void)) {
+        completion()
         showSuccessPopup(title: "The changes has been saved successfully") {
             self.router.goBack()
         }

@@ -46,7 +46,7 @@ extension ExploreRouter {
     
     func goToSavedPosts() {
         DispatchQueue.main.async {
-            let viewController = Container.shared.savedPostsBuilder().build()
+            let viewController = Container.shared.savedPostsBuilder().build(comesFrom: .explore)
             self.viewController?.push(viewController: viewController)
         }
     }

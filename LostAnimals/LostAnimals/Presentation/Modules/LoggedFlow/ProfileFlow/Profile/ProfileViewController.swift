@@ -187,13 +187,13 @@ private extension ProfileViewController {
     func updateHeaderImageUI() {
         if let headerURLImage = viewModel.user.headerURLImage {
             self.loadingView.isHidden = false
-            self.settingsButtonView.isHidden = true
+            if viewModel.isMyProfile { self.settingsButtonView.isHidden = true }
             headerURLImage.getURLImage { image in
                 if let image = image {
                     self.viewModel.headerImage = image
                     DispatchQueue.main.async {
                         self.loadingView.isHidden = true
-                        self.settingsButtonView.isHidden = false
+                        if self.viewModel.isMyProfile { self.settingsButtonView.isHidden = false }
                         self.headerImageView.image = image
                     }
                 }
@@ -207,13 +207,13 @@ private extension ProfileViewController {
     func updateUserImageUI() {
         if let userURLImage = viewModel.user.userURLImage {
             self.loadingView.isHidden = false
-            self.settingsButtonView.isHidden = true
+            if viewModel.isMyProfile { self.settingsButtonView.isHidden = true }
             userURLImage.getURLImage { image in
                 if let image = image {
                     self.viewModel.userImage = image
                     DispatchQueue.main.async {
                         self.loadingView.isHidden = true
-                        self.settingsButtonView.isHidden = false
+                        if self.viewModel.isMyProfile { self.settingsButtonView.isHidden = false }
                         self.userImageView.image = image
                     }
                 }
