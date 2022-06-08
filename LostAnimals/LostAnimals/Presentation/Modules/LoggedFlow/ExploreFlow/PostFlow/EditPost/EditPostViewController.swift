@@ -190,9 +190,8 @@ private extension EditPostViewController {
 
     @IBAction func saveChangesButtonPressed(_ sender: CustomButton) {
         saveChangesButton.showLoading { self.updateUserInteraction() }
-        viewModel.didPressSaveChangesButton {
-            self.deletePostButton.hideLoading { self.updateUserInteraction() }
+        viewModel.didPressSaveChangesButton() {
+            self.saveChangesButton.hideLoading { self.updateUserInteraction() }
         }
     }
-
 }

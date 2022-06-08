@@ -27,13 +27,13 @@ struct Post {
     // MARK: - Properties
     let id: String
     let postType: PostType
-    let animalName: String?
-    let animalType: AnimalType
-    let animalBreed: String
+    var animalName: String?
+    var animalType: AnimalType
+    var animalBreed: String
     var urlImage1, urlImage2, urlImage3, urlImage4, urlImage5, urlImage6, urlImage7, urlImage8: String?
-    let lastTimeSeen: String
-    let location: Location
-    let description: String
+    var lastTimeSeen: String
+    var location: Location
+    var description: String
     let userID: String
     let createdAt: Date
     

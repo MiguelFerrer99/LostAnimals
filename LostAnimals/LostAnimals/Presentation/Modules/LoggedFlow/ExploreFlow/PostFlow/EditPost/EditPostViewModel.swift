@@ -34,6 +34,7 @@ final class EditPostViewModel {
     
     // MARK: - Services
     let userService = UserService()
+    let postService = PostService()
     
     // MARK: - Init
     required init(router: EditPostRouter, post: Post, postImages: [UIImage]) {
@@ -77,6 +78,27 @@ extension EditPostViewModel {
         return haveErrors
     }
     
+    func getModifiedPost() -> Post {
+        var newPost = post
+        newPost.animalName = (newEditPostInfo[.animalName]?.isEmpty ?? true) ? nil : newEditPostInfo[.animalName]
+        newPost.animalType = AnimalType(rawValue: newEditPostInfo[.animalType] ?? "") ?? .other
+        newPost.animalBreed = newEditPostInfo[.animalBreed] ?? "Not specified"
+        newPost.lastTimeSeen = newEditPostInfo[.lastTimeSeen] ?? Date().toString(withFormat: DateFormat.dayMonthYearHourOther)
+        newPost.location = newLocation
+        newPost.description = newEditPostInfo[.description] ?? "Not specified"
+        return newPost
+    }
+    
+    func getModifiedImages() -> [UIImage] {
+        var modifiedImages: [UIImage] = []
+        for imageView in selectPhotoImageViews {
+            if let image = imageView.image, !image.isEqualTo(image: UIImage(named: "SelectPhotoPlaceholder")) {
+                modifiedImages.append(image)
+            }
+        }
+        return modifiedImages
+    }
+    
     func didPressSelectPhotoButton() {
         guard let selectPhotoImageView = selectPhotoImageViews[selectedIndexImageView].image else { return }
         self.router.goToSelectPhotoPopup(showRemoveOption: !selectPhotoImageView.isEqualTo(image: UIImage(named: "SelectPhotoPlaceholder")))
@@ -109,15 +131,25 @@ extension EditPostViewModel {
     }
     
     func didPressSaveChangesButton(completion: @escaping (() -> Void)) {
-        userService.editPost { result in
-            switch result {
+        userService.deletePost(post: post) { deleteResult in
+            switch deleteResult {
             case .success:
-                NotificationCenter.default.post(name: .UpdateMyPosts, object: nil)
-                NotificationCenter.default.post(name: .UpdateExplorePosts, object: nil)
-                NotificationCenter.default.post(name: .UpdateSavedPosts, object: nil)
-                completion()
-                showSuccessPopup(title: "The changes has been saved successfully") {
-                    self.router.goBack()
+                let modifiedPost = self.getModifiedPost()
+                let modifiedImages = self.getModifiedImages()
+                self.postService.uploadPost(post: modifiedPost, images: modifiedImages) { uploadResult in
+                    switch uploadResult {
+                    case .success:
+                        NotificationCenter.default.post(name: .UpdateMyPosts, object: nil)
+                        NotificationCenter.default.post(name: .UpdateExplorePosts, object: nil)
+                        NotificationCenter.default.post(name: .UpdateSavedPosts, object: nil)
+                        completion()
+                        showSuccessPopup(title: "The changes has been saved successfully") {
+                            self.router.goBack2Times()
+                        }
+                    case .error(let error):
+                        completion()
+                        showErrorPopup(title: error)
+                    }
                 }
             case .error(let error):
                 completion()

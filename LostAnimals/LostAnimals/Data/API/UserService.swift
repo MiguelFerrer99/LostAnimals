@@ -608,8 +608,4 @@ extension UserService {
             }
         }
     }
-    
-    func editPost(completion: @escaping (GenericResult) -> Void) {
-        completion(.success)
-    }
 }
