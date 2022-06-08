@@ -109,9 +109,20 @@ extension EditPostViewModel {
     }
     
     func didPressSaveChangesButton(completion: @escaping (() -> Void)) {
-        completion()
-        showSuccessPopup(title: "The changes has been saved successfully") {
-            self.router.goBack()
+        userService.editPost { result in
+            switch result {
+            case .success:
+                NotificationCenter.default.post(name: .UpdateMyPosts, object: nil)
+                NotificationCenter.default.post(name: .UpdateExplorePosts, object: nil)
+                NotificationCenter.default.post(name: .UpdateSavedPosts, object: nil)
+                completion()
+                showSuccessPopup(title: "The changes has been saved successfully") {
+                    self.router.goBack()
+                }
+            case .error(let error):
+                completion()
+                showErrorPopup(title: error)
+            }
         }
     }
 }
