@@ -15,9 +15,9 @@
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>LSApplicationQueriesSchemes</key>
@@ -30,10 +30,16 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>LostAnimals needs to access the camera</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>LostAnimals needs to access the photo library</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>LostAnimals needs to access to your location to search posts near you</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>LostAnimals needs to access to your location to search posts near you</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>LostAnimals needs to access to your location to search posts near you</string>
+	<key>NSLocationUsageDescription</key>
+	<string>LostAnimals needs to access to your location to search posts near you</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>LostAnimals needs to access the photo library</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
