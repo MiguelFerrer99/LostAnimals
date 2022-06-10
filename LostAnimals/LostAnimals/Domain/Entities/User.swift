@@ -19,6 +19,7 @@ enum SocialMediaType: String {
 struct User: Equatable {
     // MARK: - Singleton
     static var shared: User?
+    static var currentCoordinates: Coordinates?
     
     // MARK: - Properties
     var id: String

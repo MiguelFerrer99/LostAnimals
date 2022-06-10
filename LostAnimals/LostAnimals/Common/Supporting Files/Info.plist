@@ -36,8 +36,6 @@
 	<string>LostAnimals needs to access to your location to search posts near you</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>LostAnimals needs to access to your location to search posts near you</string>
-	<key>NSLocationUsageDescription</key>
-	<string>LostAnimals needs to access to your location to search posts near you</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>LostAnimals needs to access the photo library</string>
 	<key>UIApplicationSceneManifest</key>

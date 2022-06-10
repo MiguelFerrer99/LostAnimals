@@ -36,6 +36,11 @@ struct Post {
     var description: String
     let userID: String
     let createdAt: Date
+    var distanceToUserLocation: Double? {
+        guard let userCoordinates = User.currentCoordinates,
+              let postCoordinates = location.coordinates else { return nil }
+        return abs(abs(userCoordinates.longitude + userCoordinates.latitude) - abs(postCoordinates.longitude + postCoordinates.latitude))
+    }
     
     // MARK: - Functions
     func map() -> PostDTO {

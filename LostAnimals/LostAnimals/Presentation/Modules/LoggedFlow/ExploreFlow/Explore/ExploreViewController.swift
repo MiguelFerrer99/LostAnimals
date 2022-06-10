@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 final class ExploreViewController: ViewController {
     // MARK: - IBOutlets
@@ -29,6 +30,7 @@ final class ExploreViewController: ViewController {
         savedPosts.addTarget(self, action: #selector(savedPostsButtonPressed), for: .touchUpInside)
         return [UIBarButtonItem(customView: savedPosts)]
     }
+    let locationManager = CLLocationManager()
     var currentBarsHeight = 0.0
     var viewModel: ExploreViewModel!
     
@@ -54,12 +56,20 @@ final class ExploreViewController: ViewController {
     }
 }
 
+// MARK: - Functions
+extension ExploreViewController {
+    func finishedGetUserCurrentLocation() {
+        getPosts()
+    }
+}
+
 // MARK: - Private functions
 private extension ExploreViewController {
     func setupUI() {
         subscribeToNotifications()
         currentBarsHeight = self.barHeights
         configureCollectionView(postsCollectionView)
+        configureLocationManager(locationManager)
     }
     
     func subscribeToNotifications() {
@@ -67,16 +77,9 @@ private extension ExploreViewController {
     }
     
     func fillUI() {
-        getPosts()
+        getUserCurrentLocation()
     }
     
-    @objc func savedPostsButtonPressed() {
-        viewModel.didPressSavedPosts()
-    }
-}
-
-// MARK: - Functions
-extension ExploreViewController {
     @objc func getPosts() {
         viewModel.isLoading = true
         postsCollectionView.reloadData()
@@ -84,5 +87,9 @@ extension ExploreViewController {
             self.viewModel.isLoading = false
             self.postsCollectionView.reloadData()
         }
+    }
+    
+    @objc func savedPostsButtonPressed() {
+        viewModel.didPressSavedPosts()
     }
 }

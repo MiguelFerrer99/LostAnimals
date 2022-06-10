@@ -45,6 +45,7 @@ extension PostService {
                     var posts = postsDTO.compactMap { $0.map() }
                     posts = posts.filter { !(User.shared?.blockedUsers.contains($0.userID) ?? false) }
                     posts.sort { $0.createdAt > $1.createdAt }
+                    posts.sort { ($0.distanceToUserLocation ?? 0) < ($1.distanceToUserLocation ?? 0) }
                     completion(.success(posts))
                 } catch { completion(.error("An unexpected error occured. Please, try again later")) }
             } else { completion(.success([])) }
