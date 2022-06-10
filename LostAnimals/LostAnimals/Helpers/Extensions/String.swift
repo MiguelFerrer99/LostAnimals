@@ -18,14 +18,9 @@ extension String {
 // MARK: - Functions
 extension String {
     public func isValidEmail() -> Bool {
-        let emailRegEx = "[A-Z0-9a-z]([A-Z0-9a-z._-]{0,64})+[A-Z0-9a-z]+@[A-Z0-9a-z]+([A-Za-z0-9.-]{0,64})+([A-Z0-9a-z])+\\.[A-Za-z]{2,4}"
-        let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
-        if emailPredicate.evaluate(with: self) {
-            let duplicatedDotsRegEx = "(?!.*([..])\\1{1}).+"
-            let emailSecondPredicate = NSPredicate(format: "SELF MATCHES %@", duplicatedDotsRegEx)
-            return emailSecondPredicate.evaluate(with: self)
-        }
-        return false
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: self)
     }
     
     func isValidPassword() -> Bool {
