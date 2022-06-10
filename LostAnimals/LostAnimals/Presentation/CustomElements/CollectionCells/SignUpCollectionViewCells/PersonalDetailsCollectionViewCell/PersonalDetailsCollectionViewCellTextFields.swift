@@ -15,7 +15,7 @@ extension PersonalDetailsCollectionViewCell: CustomTextFieldDelegate {
         firstnameTextfield.delegate = self
         firstnameTextfield.textField.keyboardType = .alphabet
         firstnameTextfield.textField.textContentType = .givenName
-        firstnameTextfield.textField.autocapitalizationType = .words
+        firstnameTextfield.textField.autocapitalizationType = .sentences
         firstnameTextfield.textField.returnKeyType = .next
         firstnameTextfield.addErrorsToCheck([TextFieldErrorEmptyValue(),
                                              TextFieldErrorOnlyLettersAndSpaces(),
@@ -41,7 +41,7 @@ extension PersonalDetailsCollectionViewCell: CustomTextFieldDelegate {
         animalShelterNameTextfield.delegate = self
         animalShelterNameTextfield.textField.keyboardType = .alphabet
         animalShelterNameTextfield.textField.textContentType = .name
-        animalShelterNameTextfield.textField.autocapitalizationType = .none
+        animalShelterNameTextfield.textField.autocapitalizationType = .sentences
         animalShelterNameTextfield.textField.returnKeyType = .done
         animalShelterNameTextfield.addErrorsToCheck([TextFieldErrorEmptyValue(),
                                                      TextFieldErrorOnlyLettersAndSpaces(),

@@ -13,7 +13,6 @@ extension EditPostViewController {
     func configureImagePickerController() {
         imagePickerController.delegate = self
         imagePickerController.modalPresentationStyle = .overFullScreen
-        imagePickerController.allowsEditing = true
     }
 }
 

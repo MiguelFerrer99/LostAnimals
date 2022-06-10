@@ -13,7 +13,6 @@ extension ProfileSettingsViewController {
     func configureImagePickerController() {
         imagePickerController.delegate = self
         imagePickerController.modalPresentationStyle = .overFullScreen
-        imagePickerController.allowsEditing = true
     }
 }
 
@@ -24,7 +23,7 @@ extension ProfileSettingsViewController: UIImagePickerControllerDelegate, UINavi
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             setPhotoFromImagePicker(image: pickedImage)
             picker.dismiss(animated: true, completion: nil)
         }

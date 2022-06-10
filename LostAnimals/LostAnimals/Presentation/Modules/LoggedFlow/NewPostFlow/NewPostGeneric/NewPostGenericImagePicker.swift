@@ -13,7 +13,6 @@ extension NewPostGenericViewController {
     func configureImagePickerController() {
         imagePickerController.delegate = self
         imagePickerController.modalPresentationStyle = .overFullScreen
-        imagePickerController.allowsEditing = true
     }
 }
 
@@ -24,7 +23,7 @@ extension NewPostGenericViewController: UIImagePickerControllerDelegate, UINavig
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             viewModel.selectPhotoImageViews[viewModel.selectedIndexImageView].image = pickedImage
             checkAllContentsAreOk()
             picker.dismiss(animated: true, completion: nil)

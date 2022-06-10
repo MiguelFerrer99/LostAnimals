@@ -62,7 +62,6 @@
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="dateAndTimePickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isOptional" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="animalPickerEnabled" value="NO"/>
                                                                 </userDefinedRuntimeAttributes>
@@ -82,7 +81,6 @@
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="datePickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isOptional" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="animalPickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="dateAndTimePickerEnabled" value="NO"/>
@@ -103,13 +101,12 @@
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="datePickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isOptional" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="animalPickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="dateAndTimePickerEnabled" value="NO"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Must contain a minimum of 8 characters, including at least one lowercase letter and one number" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4I3-pf-jxX">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Must contain a minimum of 8 characters, including at least one lowercase letter and one number" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4I3-pf-jxX">
                                                                 <rect key="frame" x="0.0" y="300" width="357" height="65.5"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

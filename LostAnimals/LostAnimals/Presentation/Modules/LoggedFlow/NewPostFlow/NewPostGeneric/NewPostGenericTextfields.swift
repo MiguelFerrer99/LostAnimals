@@ -14,9 +14,10 @@ import MapKit
 extension NewPostGenericViewController {
     func configureTextfields() {
         nameTextfield.delegate = self
-        nameTextfield.textField.textContentType = .name
-        nameTextfield.textField.keyboardType    = .alphabet
-        nameTextfield.textField.returnKeyType   = .next
+        nameTextfield.textField.textContentType        = .name
+        nameTextfield.textField.keyboardType           = .alphabet
+        nameTextfield.textField.autocapitalizationType = .sentences
+        nameTextfield.textField.returnKeyType          = .next
         nameTextfield.addErrorsToCheck([TextFieldErrorEmptyValue(),
                                         TextFieldErrorOnlyLettersAndSpaces()])
         
@@ -24,9 +25,10 @@ extension NewPostGenericViewController {
         animalTextfield.addErrorsToCheck([TextFieldErrorEmptyValue()])
         
         breedTextfield.delegate = self
-        breedTextfield.textField.textContentType = .name
-        breedTextfield.textField.keyboardType    = .alphabet
-        breedTextfield.textField.returnKeyType   = .next
+        breedTextfield.textField.textContentType        = .name
+        breedTextfield.textField.keyboardType           = .alphabet
+        breedTextfield.textField.autocapitalizationType = .sentences
+        breedTextfield.textField.returnKeyType          = .next
         
         lastTimeSeenTextfield.delegate = self
         lastTimeSeenTextfield.addErrorsToCheck([TextFieldErrorEmptyValue()])
