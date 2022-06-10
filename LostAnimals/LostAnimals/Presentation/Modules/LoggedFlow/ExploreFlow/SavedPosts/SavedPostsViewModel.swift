@@ -63,4 +63,8 @@ extension SavedPostsViewModel {
     func didPressPost(post: Post) {
         self.router.goToPost(post: post, comesFrom: comesFrom)
     }
+    
+    func goBack() {
+        self.router.back()
+    }
 }

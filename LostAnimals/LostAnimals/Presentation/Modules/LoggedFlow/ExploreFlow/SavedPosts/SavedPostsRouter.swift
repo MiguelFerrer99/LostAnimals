@@ -42,4 +42,8 @@ extension SavedPostsRouter {
             self.viewController?.push(viewController: viewController)
         }
     }
+    
+    func back() {
+        self.viewController?.pop()
+    }
 }

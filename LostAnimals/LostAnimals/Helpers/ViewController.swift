@@ -75,16 +75,9 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if useLargeTitle {
-            navigationController?.navigationBar.prefersLargeTitles = true
-        }
-        
         navigationController?.setNavigationBarHidden(hideNavigationBar, animated: true)
+        if useLargeTitle { navigationController?.navigationBar.prefersLargeTitles = true }
         navigationItem.largeTitleDisplayMode = useLargeTitle ? .always : .never
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
     }
     
     deinit { unsubscribeToNotifications() }

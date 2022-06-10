@@ -8,13 +8,20 @@
 
 import UIKit
 
-final class SavedPostsViewController: ViewController {
+final class SavedPostsViewController: ViewController, UIGestureRecognizerDelegate {
     // MARK: - IBOutlets
     @IBOutlet weak var savedPostsCollectionView: UICollectionView!
     
     // MARK: - Properties
     override var navBarTitle: String {
         return "My saved posts"
+    }
+    override var navBarLeftButtons: [UIBarButtonItem] {
+        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"),
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(goBack))
+        return [backButton]
     }
     var viewModel: SavedPostsViewModel!
     
@@ -43,6 +50,7 @@ final class SavedPostsViewController: ViewController {
 // MARK: - Private functions
 private extension SavedPostsViewController {
     func setupUI() {
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         subscribeToNotifications()
         configureCollectionView(savedPostsCollectionView)
     }
@@ -62,5 +70,9 @@ private extension SavedPostsViewController {
             self.viewModel.isLoading = false
             self.savedPostsCollectionView.reloadData()
         }
+    }
+    
+    @objc func goBack() {
+        viewModel.goBack()
     }
 }
