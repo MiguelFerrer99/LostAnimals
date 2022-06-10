@@ -52,11 +52,4 @@ private extension PostImagesViewController {
     @IBAction func dismissButtonPressed(_ sender: UIButton) {
         viewModel.didPressDismissButton()
     }
-    
-    @IBAction func didPanDownGestureRecognized(_ sender: UIPanGestureRecognizer) {
-        let velocity = sender.velocity(in: view)
-        if velocity.y > 500 {
-            viewModel.didPressDismissButton()
-        }
-    }
 }

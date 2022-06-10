@@ -163,23 +163,23 @@ private extension ProfileViewController {
         showLoading()
         viewModel.getPosts {
             if self.viewModel.isMyProfile {
-                self.firstCollectionView.reloadData()
-                self.firstCollectionHeaderLabel.isHidden = self.viewModel.posts.isEmpty
-                self.firstStackView.isHidden = self.viewModel.posts.isEmpty
                 self.viewModel.getSavedPosts {
+                    self.firstCollectionView.reloadData()
+                    self.firstCollectionHeaderLabel.isHidden = self.viewModel.posts.isEmpty
+                    self.firstStackView.isHidden = self.viewModel.posts.isEmpty
                     self.secondCollectionView.reloadData()
-                    self.hideLoading()
                     self.secondCollectionHeaderLabel.isHidden = self.viewModel.savedPosts.isEmpty
                     self.secondStackView.isHidden = self.viewModel.savedPosts.isEmpty
+                    self.hideLoading()
                 }
             } else {
                 self.firstCollectionView.reloadData()
-                self.secondCollectionView.reloadData()
-                self.hideLoading()
                 self.firstCollectionHeaderLabel.isHidden = self.viewModel.posts.isEmpty
                 self.firstStackView.isHidden = self.viewModel.posts.isEmpty
+                self.secondCollectionView.reloadData()
                 self.secondCollectionHeaderLabel.isHidden = false
                 self.secondStackView.isHidden = false
+                self.hideLoading()
             }
         }
     }
