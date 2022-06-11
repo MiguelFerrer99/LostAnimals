@@ -54,33 +54,29 @@ private extension AnimalFilterPopupViewController {
     func fillUI() {
         if viewModel.loadData {
             if let animalFilter = Filters.currentFilters[.animal] {
-                if animalFilter.animalFilterDog {
+                switch animalFilter.animalFiltered {
+                case .dog:
                     selectAnimalCell(index: 0)
-                    viewModel.selectedAnimalTypes.append(.dog)
-                }
-                if animalFilter.animalFilterBird {
+                    viewModel.selectedAnimalType = .dog
+                case .bird:
                     selectAnimalCell(index: 1)
-                    viewModel.selectedAnimalTypes.append(.bird)
-                }
-                if animalFilter.animalFilterCat {
+                    viewModel.selectedAnimalType = .bird
+                case .cat:
                     selectAnimalCell(index: 2)
-                    viewModel.selectedAnimalTypes.append(.cat)
-                }
-                if animalFilter.animalFilterTurtle {
+                    viewModel.selectedAnimalType = .cat
+                case .turtle:
                     selectAnimalCell(index: 3)
-                    viewModel.selectedAnimalTypes.append(.turtle)
-                }
-                if animalFilter.animalFilterSnake {
+                    viewModel.selectedAnimalType = .turtle
+                case .snake:
                     selectAnimalCell(index: 4)
-                    viewModel.selectedAnimalTypes.append(.snake)
-                }
-                if animalFilter.animalFilterRabbit {
+                    viewModel.selectedAnimalType = .snake
+                case .rabbit:
                     selectAnimalCell(index: 5)
-                    viewModel.selectedAnimalTypes.append(.rabbit)
-                }
-                if animalFilter.animalFilterOther {
+                    viewModel.selectedAnimalType = .rabbit
+                case .other:
                     selectAnimalCell(index: 6)
-                    viewModel.selectedAnimalTypes.append(.other)
+                    viewModel.selectedAnimalType = .other
+                case .none: break
                 }
             }
             enableApplyFilterButton()

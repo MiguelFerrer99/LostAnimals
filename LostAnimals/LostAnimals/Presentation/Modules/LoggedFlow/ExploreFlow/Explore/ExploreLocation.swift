@@ -20,6 +20,8 @@ extension ExploreViewController {
             switch locationManager.authorizationStatus {
             case .authorized, .authorizedAlways, .authorizedWhenInUse:
                 locationManager.requestLocation()
+            case .denied:
+                finishedGetUserCurrentLocation()
             default:
                 locationManager.requestWhenInUseAuthorization()
             }
@@ -27,6 +29,8 @@ extension ExploreViewController {
             switch CLLocationManager.authorizationStatus() {
             case .authorized, .authorizedAlways, .authorizedWhenInUse:
                 locationManager.requestLocation()
+            case .denied:
+                finishedGetUserCurrentLocation()
             default:
                 locationManager.requestWhenInUseAuthorization()
             }

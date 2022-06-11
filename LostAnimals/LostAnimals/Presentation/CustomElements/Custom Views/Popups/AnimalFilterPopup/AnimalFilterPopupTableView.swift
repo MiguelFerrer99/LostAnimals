@@ -24,19 +24,12 @@ extension AnimalFilterPopupViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedAnimalType = Constants.animalTypes[indexPath.row]
-        if !viewModel.selectedAnimalTypes.contains(selectedAnimalType) {
-            viewModel.selectedAnimalTypes.append(selectedAnimalType)
-        }
         enableApplyFilterButton()
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        let selectedAnimalType = Constants.animalTypes[indexPath.row]
-        viewModel.selectedAnimalTypes.removeAll(where: { selectedAnimalType == $0 })
-        if (tableView.indexPathsForSelectedRows?.isEmpty ?? true) && viewModel.selectedAnimalTypes.isEmpty {
-            disableApplyFilterButton()
-        }
+        // let selectedAnimalType = Constants.animalTypes[indexPath.row]
+        disableApplyFilterButton()
     }
 }
 

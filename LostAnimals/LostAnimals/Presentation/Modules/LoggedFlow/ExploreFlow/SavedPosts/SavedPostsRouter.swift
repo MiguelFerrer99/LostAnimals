@@ -26,10 +26,6 @@ extension SavedPostsRouter {
             switch filterType {
             case .animal:
                 viewController = Container.shared.animalFilterPopupBuilder().build(loadData: loadData)
-            case .location:
-                viewController = Container.shared.locationFilterPopupBuilder().build(loadData: loadData)
-            case .date:
-                viewController = Container.shared.dateFilterPopupBuilder().build(loadData: loadData)
             default: return
             }
             self.viewController?.present(viewController: viewController, completion: nil)

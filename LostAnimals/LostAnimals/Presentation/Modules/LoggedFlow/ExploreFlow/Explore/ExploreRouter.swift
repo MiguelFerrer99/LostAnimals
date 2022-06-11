@@ -33,12 +33,6 @@ extension ExploreRouter {
             case .animal:
                 let viewController = Container.shared.animalFilterPopupBuilder().build(loadData: loadData)
                 self.viewController?.present(viewController: viewController, completion: nil)
-            case .location:
-                let viewController = Container.shared.locationFilterPopupBuilder().build(loadData: loadData)
-                self.viewController?.present(viewController: viewController, completion: nil)
-            case .date:
-                let viewController = Container.shared.dateFilterPopupBuilder().build(loadData: loadData)
-                self.viewController?.present(viewController: viewController, completion: nil)
             default: return
             }
         }

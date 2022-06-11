@@ -44,8 +44,19 @@ extension PostService {
                     let postsDTO = try FirebaseDecoder().decode([PostDTO].self, from: Array(snapshotValue.values))
                     var posts = postsDTO.compactMap { $0.map() }
                     posts = posts.filter { !(User.shared?.blockedUsers.contains($0.userID) ?? false) }
-                    posts.sort { $0.createdAt > $1.createdAt }
-                    posts.sort { ($0.distanceToUserLocation ?? 0) < ($1.distanceToUserLocation ?? 0) }
+                    if Filters.currentFilters[.lost]?.enabled ?? false {
+                        posts = posts.filter { $0.postType == .lost }
+                    } else if Filters.currentFilters[.found]?.enabled ?? false {
+                        posts = posts.filter { $0.postType == .found }
+                    } else if Filters.currentFilters[.adopt]?.enabled ?? false {
+                        posts = posts.filter { $0.postType == .adopt }
+                    } else if Filters.currentFilters[.animal]?.enabled ?? false {
+                        posts = posts.filter { $0.animalType == Filters.currentFilters[.animal]?.animalFiltered }
+                    } else if Filters.currentFilters[.recent]?.enabled ?? false {
+                        posts.sort { $0.createdAt > $1.createdAt }
+                    } else if Filters.currentFilters[.near]?.enabled ?? false {
+                        posts.sort { ($0.distanceToUserLocation ?? 0) < ($1.distanceToUserLocation ?? 0) }
+                    }
                     completion(.success(posts))
                 } catch { completion(.error("An unexpected error occured. Please, try again later")) }
             } else { completion(.success([])) }

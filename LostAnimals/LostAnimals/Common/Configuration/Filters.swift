@@ -10,90 +10,43 @@ import UIKit
 
 // MARK: - Enums
 enum FilterType: Int {
-    case all
     case lost
     case found
     case adopt
     case animal
-    case location
-    case date
+    case near
+    case recent
 }
 
 class Filters {
     // MARK: - Properties
     static var currentFilters: [FilterType: PostsFilter] = [
-        .all: PostsFilter(filterTitle: "All", filterType: .all, enabled: true, animalFilterDog: false, animalFilterBird: false, animalFilterCat: false, animalFilterTurtle: false, animalFilterSnake: false, animalFilterRabbit: false, animalFilterOther: false),
-        .lost: PostsFilter(filterTitle: "Lost", filterType: .lost, enabled: false, animalFilterDog: false, animalFilterBird: false, animalFilterCat: false, animalFilterTurtle: false, animalFilterSnake: false, animalFilterRabbit: false, animalFilterOther: false),
-        .found: PostsFilter(filterTitle: "Found", filterType: .found, enabled: false, animalFilterDog: false, animalFilterBird: false, animalFilterCat: false, animalFilterTurtle: false, animalFilterSnake: false, animalFilterRabbit: false, animalFilterOther: false),
-        .adopt: PostsFilter(filterTitle: "Adopt", filterType: .adopt, enabled: false, animalFilterDog: false, animalFilterBird: false, animalFilterCat: false, animalFilterTurtle: false, animalFilterSnake: false, animalFilterRabbit: false, animalFilterOther: false),
-        .animal: PostsFilter(filterTitle: "Animal", filterType: .animal, enabled: false, animalFilterDog: false, animalFilterBird: false, animalFilterCat: false, animalFilterTurtle: false, animalFilterSnake: false, animalFilterRabbit: false, animalFilterOther: false),
-        .location: PostsFilter(filterTitle: "Location", filterType: .location, enabled: false, animalFilterDog: false, animalFilterBird: false, animalFilterCat: false, animalFilterTurtle: false, animalFilterSnake: false, animalFilterRabbit: false, animalFilterOther: false),
-        .date: PostsFilter(filterTitle: "Date", filterType: .date, enabled: false, animalFilterDog: false, animalFilterBird: false, animalFilterCat: false, animalFilterTurtle: false, animalFilterSnake: false, animalFilterRabbit: false, animalFilterOther: false)
+        .lost: PostsFilter(filterTitle: "Lost", filterType: .lost, enabled: false),
+        .found: PostsFilter(filterTitle: "Found", filterType: .found, enabled: false),
+        .adopt: PostsFilter(filterTitle: "Adopt", filterType: .adopt, enabled: false),
+        .animal: PostsFilter(filterTitle: "Animal", filterType: .animal, enabled: false),
+        .near: PostsFilter(filterTitle: "Near", filterType: .near, enabled: false),
+        .recent: PostsFilter(filterTitle: "Recent", filterType: .recent, enabled: false)
     ] {
         didSet { printCurrentExploreFilterValues() }
     }
     
     // MARK: - Functions
-    static func setFilterValue(filterType: FilterType, enabled: Bool, animalFilterDog: Bool? = nil, animalFilterBird: Bool? = nil, animalFilterCat: Bool? = nil, animalFilterTurtle: Bool? = nil, animalFilterSnake: Bool? = nil, animalFilterRabbit: Bool? = nil, animalFilterOther: Bool? = nil, locationFilterRangeKm: Int? = nil, dateFilterDatesBeforeOf: Date? = nil, dateFilterDatesAfterOf: Date? = nil) {
+    static func setFilterValue(filterType: FilterType, enabled: Bool, animalFiltered: AnimalType? = nil) {
         currentFilters[filterType]?.enabled = enabled
-        if let animalFilterDog = animalFilterDog { currentFilters[filterType]?.animalFilterDog = animalFilterDog }
-        if let animalFilterBird = animalFilterBird { currentFilters[filterType]?.animalFilterBird = animalFilterBird }
-        if let animalFilterCat = animalFilterCat { currentFilters[filterType]?.animalFilterCat = animalFilterCat }
-        if let animalFilterTurtle = animalFilterTurtle { currentFilters[filterType]?.animalFilterTurtle = animalFilterTurtle }
-        if let animalFilterSnake = animalFilterSnake { currentFilters[filterType]?.animalFilterSnake = animalFilterSnake }
-        if let animalFilterRabbit = animalFilterRabbit { currentFilters[filterType]?.animalFilterRabbit = animalFilterRabbit }
-        if let animalFilterOther = animalFilterOther { currentFilters[filterType]?.animalFilterOther = animalFilterOther }
-        if let locationFilterRangeKm = locationFilterRangeKm { currentFilters[filterType]?.locationFilterRangeKm = locationFilterRangeKm }
-        if let dateFilterDatesBeforeOf = dateFilterDatesBeforeOf { currentFilters[filterType]?.dateFilterDatesBeforeOf = dateFilterDatesBeforeOf }
-        if let dateFilterDatesAfterOf = dateFilterDatesAfterOf { currentFilters[filterType]?.dateFilterDatesAfterOf = dateFilterDatesAfterOf }
-    }
-    
-    static func setFilterTitle(type: FilterType, title: String) {
-        switch type {
-        case .animal:   currentFilters[.animal]?.filterTitle = title
-        case .location: currentFilters[.location]?.filterTitle = title
-        case .date:     currentFilters[.date]?.filterTitle = title
-        default:        return
-        }
-    }
-    
-    static func getFilter(from position: Int) -> PostsFilter? {
-        if let filterType = FilterType(rawValue: position), let filter = Filters.currentFilters[filterType] {
-            return filter
-        }
-        return nil
-    }
-    
-    static func resetFilterTitle(type: FilterType) {
-        switch type {
-        case .animal:   currentFilters[.animal]?.filterTitle = "Animal"
-        case .location: currentFilters[.location]?.filterTitle = "Location"
-        case .date:     currentFilters[.date]?.filterTitle = "Date"
-        default:        return
-        }
+        if let animalFiltered = animalFiltered { currentFilters[filterType]?.animalFiltered = animalFiltered }
     }
     
     static func resetFilters() {
-        currentFilters[.all]?.enabled = true
         currentFilters[.lost]?.enabled = false
         currentFilters[.found]?.enabled = false
         currentFilters[.adopt]?.enabled = false
         currentFilters[.animal]?.enabled = false
         currentFilters[.animal]?.filterTitle = "Animal"
-        currentFilters[.animal]?.animalFilterDog = false
-        currentFilters[.animal]?.animalFilterBird = false
-        currentFilters[.animal]?.animalFilterCat = false
-        currentFilters[.animal]?.animalFilterTurtle = false
-        currentFilters[.animal]?.animalFilterSnake = false
-        currentFilters[.animal]?.animalFilterRabbit = false
-        currentFilters[.animal]?.animalFilterOther = false
-        currentFilters[.location]?.enabled = false
-        currentFilters[.location]?.filterTitle = "Location"
-        currentFilters[.location]?.locationFilterRangeKm = nil
-        currentFilters[.date]?.enabled = false
-        currentFilters[.date]?.filterTitle = "Date"
-        currentFilters[.date]?.dateFilterDatesBeforeOf = nil
-        currentFilters[.date]?.dateFilterDatesAfterOf = nil
+        currentFilters[.near]?.enabled = false
+        currentFilters[.near]?.filterTitle = "Near"
+        currentFilters[.recent]?.enabled = false
+        currentFilters[.recent]?.filterTitle = "Recent"
     }
     
     static func printCurrentExploreFilterValues() {

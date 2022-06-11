@@ -154,9 +154,6 @@
 		4183EE2927961AC1005C554E /* NewPostGenericTextfields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4183EE2827961AC1005C554E /* NewPostGenericTextfields.swift */; };
 		4183EE2B27962005005C554E /* NewPostGenericViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4183EE2A27962005005C554E /* NewPostGenericViewController.storyboard */; };
 		4185264F27D2827F0015CAD3 /* CodableFirebase in Frameworks */ = {isa = PBXBuildFile; productRef = 4185264E27D2827F0015CAD3 /* CodableFirebase */; };
-		4186AC91277F77EF009C07E2 /* ExploreFiltersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186AC8F277F77EF009C07E2 /* ExploreFiltersCollectionViewCell.swift */; };
-		4186AC92277F77EF009C07E2 /* ExploreFiltersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4186AC90277F77EF009C07E2 /* ExploreFiltersCollectionViewCell.xib */; };
-		4186AC94277F78FB009C07E2 /* ExploreFiltersCollectionViewCellSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186AC93277F78FB009C07E2 /* ExploreFiltersCollectionViewCellSummary.swift */; };
 		4187195C275BFA6D00C993BC /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8DB273848AC00F5946B /* Nunito-Black.ttf */; };
 		4187195D275BFA6D00C993BC /* Nunito-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8D4273848AB00F5946B /* Nunito-BlackItalic.ttf */; };
 		4187195E275BFA6D00C993BC /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4104A8DA273848AC00F5946B /* Nunito-Bold.ttf */; };
@@ -254,17 +251,6 @@
 		41CD10F7278222F200257B2B /* AnimalFilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CD10F5278222F200257B2B /* AnimalFilterTableViewCell.swift */; };
 		41CD10F8278222F200257B2B /* AnimalFilterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41CD10F6278222F200257B2B /* AnimalFilterTableViewCell.xib */; };
 		41CD10FA2782232200257B2B /* AnimalFilterTableViewCellSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CD10F92782232200257B2B /* AnimalFilterTableViewCellSummary.swift */; };
-		41CD11032783244700257B2B /* LocationFilterPopupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CD10FE2783244700257B2B /* LocationFilterPopupRouter.swift */; };
-		41CD11042783244700257B2B /* LocationFilterPopupViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41CD10FF2783244700257B2B /* LocationFilterPopupViewController.storyboard */; };
-		41CD11052783244700257B2B /* LocationFilterPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CD11002783244700257B2B /* LocationFilterPopupViewController.swift */; };
-		41CD11062783244700257B2B /* LocationFilterPopupBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CD11012783244700257B2B /* LocationFilterPopupBuilder.swift */; };
-		41CD11072783244700257B2B /* LocationFilterPopupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CD11022783244700257B2B /* LocationFilterPopupViewModel.swift */; };
-		41CD110E278336F400257B2B /* DateFilterPopupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CD1109278336F400257B2B /* DateFilterPopupRouter.swift */; };
-		41CD110F278336F400257B2B /* DateFilterPopupViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41CD110A278336F400257B2B /* DateFilterPopupViewController.storyboard */; };
-		41CD1110278336F400257B2B /* DateFilterPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CD110B278336F400257B2B /* DateFilterPopupViewController.swift */; };
-		41CD1111278336F400257B2B /* DateFilterPopupBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CD110C278336F400257B2B /* DateFilterPopupBuilder.swift */; };
-		41CD1112278336F400257B2B /* DateFilterPopupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CD110D278336F400257B2B /* DateFilterPopupViewModel.swift */; };
-		41CD111427834A8E00257B2B /* DateFilterPopupTextfields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CD111327834A8E00257B2B /* DateFilterPopupTextfields.swift */; };
 		41CD1118278350F300257B2B /* EmptyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CD1116278350F300257B2B /* EmptyCollectionViewCell.swift */; };
 		41CD1119278350F300257B2B /* EmptyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41CD1117278350F300257B2B /* EmptyCollectionViewCell.xib */; };
 		41CD111B2783510700257B2B /* EmptyCollectionViewCellSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CD111A2783510700257B2B /* EmptyCollectionViewCellSummary.swift */; };
@@ -314,7 +300,6 @@
 		41EC16E027868FF900096B7A /* GuestPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC16DB27868FF900096B7A /* GuestPopupViewController.swift */; };
 		41EC16E127868FF900096B7A /* GuestPopupBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC16DC27868FF900096B7A /* GuestPopupBuilder.swift */; };
 		41EC16E227868FF900096B7A /* GuestPopupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC16DD27868FF900096B7A /* GuestPopupViewModel.swift */; };
-		41ED088F281D9D6700DD2826 /* LocationFilterPopupLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ED088E281D9D6700DD2826 /* LocationFilterPopupLocationManager.swift */; };
 		41F2DA78278B887300E582E8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F2DA77278B887300E582E8 /* User.swift */; };
 		41F2DA7C278B8DF600E582E8 /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F2DA7B278B8DF600E582E8 /* Coordinates.swift */; };
 		41F820C7276FD83B0046B0EA /* WhereCanWeFindYouRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F820C3276FD83B0046B0EA /* WhereCanWeFindYouRouter.swift */; };
@@ -519,9 +504,6 @@
 		4183EE2627961A8E005C554E /* NewPostGenericImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostGenericImagePicker.swift; sourceTree = "<group>"; };
 		4183EE2827961AC1005C554E /* NewPostGenericTextfields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostGenericTextfields.swift; sourceTree = "<group>"; };
 		4183EE2A27962005005C554E /* NewPostGenericViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewPostGenericViewController.storyboard; sourceTree = "<group>"; };
-		4186AC8F277F77EF009C07E2 /* ExploreFiltersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreFiltersCollectionViewCell.swift; sourceTree = "<group>"; };
-		4186AC90277F77EF009C07E2 /* ExploreFiltersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExploreFiltersCollectionViewCell.xib; sourceTree = "<group>"; };
-		4186AC93277F78FB009C07E2 /* ExploreFiltersCollectionViewCellSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreFiltersCollectionViewCellSummary.swift; sourceTree = "<group>"; };
 		418A331727EA77CA00F9E278 /* ConfirmationPopupRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationPopupRouter.swift; sourceTree = "<group>"; };
 		418A331827EA77CA00F9E278 /* ConfirmationPopupViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConfirmationPopupViewController.storyboard; sourceTree = "<group>"; };
 		418A331927EA77CA00F9E278 /* ConfirmationPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationPopupViewController.swift; sourceTree = "<group>"; };
@@ -605,17 +587,6 @@
 		41CD10F5278222F200257B2B /* AnimalFilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalFilterTableViewCell.swift; sourceTree = "<group>"; };
 		41CD10F6278222F200257B2B /* AnimalFilterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalFilterTableViewCell.xib; sourceTree = "<group>"; };
 		41CD10F92782232200257B2B /* AnimalFilterTableViewCellSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalFilterTableViewCellSummary.swift; sourceTree = "<group>"; };
-		41CD10FE2783244700257B2B /* LocationFilterPopupRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFilterPopupRouter.swift; sourceTree = "<group>"; };
-		41CD10FF2783244700257B2B /* LocationFilterPopupViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LocationFilterPopupViewController.storyboard; sourceTree = "<group>"; };
-		41CD11002783244700257B2B /* LocationFilterPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFilterPopupViewController.swift; sourceTree = "<group>"; };
-		41CD11012783244700257B2B /* LocationFilterPopupBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFilterPopupBuilder.swift; sourceTree = "<group>"; };
-		41CD11022783244700257B2B /* LocationFilterPopupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFilterPopupViewModel.swift; sourceTree = "<group>"; };
-		41CD1109278336F400257B2B /* DateFilterPopupRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFilterPopupRouter.swift; sourceTree = "<group>"; };
-		41CD110A278336F400257B2B /* DateFilterPopupViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DateFilterPopupViewController.storyboard; sourceTree = "<group>"; };
-		41CD110B278336F400257B2B /* DateFilterPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFilterPopupViewController.swift; sourceTree = "<group>"; };
-		41CD110C278336F400257B2B /* DateFilterPopupBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFilterPopupBuilder.swift; sourceTree = "<group>"; };
-		41CD110D278336F400257B2B /* DateFilterPopupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFilterPopupViewModel.swift; sourceTree = "<group>"; };
-		41CD111327834A8E00257B2B /* DateFilterPopupTextfields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFilterPopupTextfields.swift; sourceTree = "<group>"; };
 		41CD1116278350F300257B2B /* EmptyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCollectionViewCell.swift; sourceTree = "<group>"; };
 		41CD1117278350F300257B2B /* EmptyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyCollectionViewCell.xib; sourceTree = "<group>"; };
 		41CD111A2783510700257B2B /* EmptyCollectionViewCellSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCollectionViewCellSummary.swift; sourceTree = "<group>"; };
@@ -665,7 +636,6 @@
 		41EC16DB27868FF900096B7A /* GuestPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestPopupViewController.swift; sourceTree = "<group>"; };
 		41EC16DC27868FF900096B7A /* GuestPopupBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestPopupBuilder.swift; sourceTree = "<group>"; };
 		41EC16DD27868FF900096B7A /* GuestPopupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestPopupViewModel.swift; sourceTree = "<group>"; };
-		41ED088E281D9D6700DD2826 /* LocationFilterPopupLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFilterPopupLocationManager.swift; sourceTree = "<group>"; };
 		41F2DA77278B887300E582E8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		41F2DA7B278B8DF600E582E8 /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
 		41F820C3276FD83B0046B0EA /* WhereCanWeFindYouRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereCanWeFindYouRouter.swift; sourceTree = "<group>"; };
@@ -828,7 +798,7 @@
 			isa = PBXGroup;
 			children = (
 				41FEE1E72788D74600F11449 /* ContactWithPopup */,
-				41CD10E4278217FC00257B2B /* FilterPopups */,
+				41CD10E52782181800257B2B /* AnimalFilterPopup */,
 				4163B2682787754B00C83245 /* GenericPopups */,
 				4100A0F32783AE440049EEF0 /* PostOptionsPopup */,
 				41EC16B72786783400096B7A /* SelectPhotoPopup */,
@@ -900,7 +870,6 @@
 			isa = PBXGroup;
 			children = (
 				41CD1115278350CA00257B2B /* EmptyCollectionViewCell */,
-				4186AC8E277F7769009C07E2 /* ExploreFiltersCollectionViewCell */,
 				41C06A07281B3414009547CF /* LoadingCollectionViewCell */,
 				4160E714277BA36500C7066F /* OnboardingCollectionViewCell */,
 				41B9CE6E277F41B700966509 /* PostCollectionViewCell */,
@@ -1271,16 +1240,6 @@
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		4186AC8E277F7769009C07E2 /* ExploreFiltersCollectionViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				4186AC90277F77EF009C07E2 /* ExploreFiltersCollectionViewCell.xib */,
-				4186AC8F277F77EF009C07E2 /* ExploreFiltersCollectionViewCell.swift */,
-				4186AC93277F78FB009C07E2 /* ExploreFiltersCollectionViewCellSummary.swift */,
-			);
-			path = ExploreFiltersCollectionViewCell;
-			sourceTree = "<group>";
-		};
 		418A331627EA77AB00F9E278 /* ConfirmationPopup */ = {
 			isa = PBXGroup;
 			children = (
@@ -1455,16 +1414,6 @@
 			path = LoadingCollectionViewCell;
 			sourceTree = "<group>";
 		};
-		41CD10E4278217FC00257B2B /* FilterPopups */ = {
-			isa = PBXGroup;
-			children = (
-				41CD10E52782181800257B2B /* AnimalFilterPopup */,
-				41CD11082783366100257B2B /* DateFilterPopup */,
-				41CD10FD2782310E00257B2B /* LocationFilterPopup */,
-			);
-			path = FilterPopups;
-			sourceTree = "<group>";
-		};
 		41CD10E52782181800257B2B /* AnimalFilterPopup */ = {
 			isa = PBXGroup;
 			children = (
@@ -1486,32 +1435,6 @@
 				41CD10F92782232200257B2B /* AnimalFilterTableViewCellSummary.swift */,
 			);
 			path = AnimalFilterTableViewCell;
-			sourceTree = "<group>";
-		};
-		41CD10FD2782310E00257B2B /* LocationFilterPopup */ = {
-			isa = PBXGroup;
-			children = (
-				41CD10FF2783244700257B2B /* LocationFilterPopupViewController.storyboard */,
-				41CD10FE2783244700257B2B /* LocationFilterPopupRouter.swift */,
-				41CD11002783244700257B2B /* LocationFilterPopupViewController.swift */,
-				41CD11012783244700257B2B /* LocationFilterPopupBuilder.swift */,
-				41CD11022783244700257B2B /* LocationFilterPopupViewModel.swift */,
-				41ED088E281D9D6700DD2826 /* LocationFilterPopupLocationManager.swift */,
-			);
-			path = LocationFilterPopup;
-			sourceTree = "<group>";
-		};
-		41CD11082783366100257B2B /* DateFilterPopup */ = {
-			isa = PBXGroup;
-			children = (
-				41CD110A278336F400257B2B /* DateFilterPopupViewController.storyboard */,
-				41CD1109278336F400257B2B /* DateFilterPopupRouter.swift */,
-				41CD110B278336F400257B2B /* DateFilterPopupViewController.swift */,
-				41CD110C278336F400257B2B /* DateFilterPopupBuilder.swift */,
-				41CD110D278336F400257B2B /* DateFilterPopupViewModel.swift */,
-				41CD111327834A8E00257B2B /* DateFilterPopupTextfields.swift */,
-			);
-			path = DateFilterPopup;
 			sourceTree = "<group>";
 		};
 		41CD1115278350CA00257B2B /* EmptyCollectionViewCell */ = {
@@ -1932,13 +1855,11 @@
 				41871968275BFA6D00C993BC /* Nunito-SemiBold.ttf in Resources */,
 				4114ABD8275F966600F1AB01 /* SocialMediaDetailsCollectionViewCell.xib in Resources */,
 				41871969275BFA6D00C993BC /* Nunito-SemiBoldItalic.ttf in Resources */,
-				4186AC92277F77EF009C07E2 /* ExploreFiltersCollectionViewCell.xib in Resources */,
 				4114ABD3275F960200F1AB01 /* AccountDetailsCollectionViewCell.xib in Resources */,
 				4100A0EE278372110049EEF0 /* PostViewController.storyboard in Resources */,
 				4168E014284D635C002629D3 /* LoadingTableViewCell.xib in Resources */,
 				41EC16BE278678CE00096B7A /* SelectPhotoPopupViewController.storyboard in Resources */,
 				41B7562B275EE50900C00E03 /* SignUpViewController.storyboard in Resources */,
-				41CD11042783244700257B2B /* LocationFilterPopupViewController.storyboard in Resources */,
 				4100A11127848E240049EEF0 /* EditPostViewController.storyboard in Resources */,
 				41CD1119278350F300257B2B /* EmptyCollectionViewCell.xib in Resources */,
 				41DA64EE27A4860C0094F55C /* SocialMediaCollectionViewCell.xib in Resources */,
@@ -1958,7 +1879,6 @@
 				4160E706277B9A5D00C7066F /* TermsAndConditionsViewController.storyboard in Resources */,
 				41C06A0B281B3449009547CF /* LoadingCollectionViewCell.xib in Resources */,
 				41742227277C816100915233 /* ExploreViewController.storyboard in Resources */,
-				41CD110F278336F400257B2B /* DateFilterPopupViewController.storyboard in Resources */,
 				41EC16AD2785E20800096B7A /* AnimalTypeTableViewCell.xib in Resources */,
 				3147D626241906FD00E741D3 /* LaunchScreen.storyboard in Resources */,
 				41BFE16C276539BC00AC5570 /* CountryTableViewCell.xib in Resources */,
@@ -1998,7 +1918,6 @@
 				41FEE1F02788D76600F11449 /* ContactWithPopupBuilder.swift in Sources */,
 				41CD112C27835F6500257B2B /* SavedPostsCollectionView.swift in Sources */,
 				411C7F6E274BA8FE00C9710A /* LoginViewController.swift in Sources */,
-				4186AC91277F77EF009C07E2 /* ExploreFiltersCollectionViewCell.swift in Sources */,
 				419CE0D427B5BC0A005D009C /* EditSocialMediasProtocols.swift in Sources */,
 				41EC16C1278678CE00096B7A /* SelectPhotoPopupViewModel.swift in Sources */,
 				4168E013284D635C002629D3 /* LoadingTableViewCell.swift in Sources */,
@@ -2038,9 +1957,7 @@
 				41CD112627835C2200257B2B /* SavedPostsViewModel.swift in Sources */,
 				4114ABD2275F960200F1AB01 /* AccountDetailsCollectionViewCell.swift in Sources */,
 				418E2350277CC934008BB92E /* TermTableViewCellSummary.swift in Sources */,
-				4186AC94277F78FB009C07E2 /* ExploreFiltersCollectionViewCellSummary.swift in Sources */,
 				41EC16E227868FF900096B7A /* GuestPopupViewModel.swift in Sources */,
-				41CD11072783244700257B2B /* LocationFilterPopupViewModel.swift in Sources */,
 				4139870F2737FA3500C243F4 /* StartupViewController.swift in Sources */,
 				4100A0F0278372110049EEF0 /* PostBuilder.swift in Sources */,
 				945B15BD25595DC9003A65E0 /* Cache.swift in Sources */,
@@ -2059,11 +1976,8 @@
 				4108D8D12762276800880E0B /* SignUpProtocols.swift in Sources */,
 				41FEE1E32788B68000F11449 /* LocationBuilder.swift in Sources */,
 				41EC16D327868C2900096B7A /* SuccessPopupRouter.swift in Sources */,
-				41CD110E278336F400257B2B /* DateFilterPopupRouter.swift in Sources */,
-				41CD11052783244700257B2B /* LocationFilterPopupViewController.swift in Sources */,
 				41CDA4322780E0D60009AB55 /* Post.swift in Sources */,
 				4119F6D127958A9A006B665A /* NewPostGenericViewModel.swift in Sources */,
-				41CD111427834A8E00257B2B /* DateFilterPopupTextfields.swift in Sources */,
 				418C4141275A5E310099BC5B /* ForgotPasswordViewController.swift in Sources */,
 				E3D14DCD242D081B00436D51 /* Constants.swift in Sources */,
 				416D29D22772551400CDD277 /* AccountDetailsCollectionViewCellViewModel.swift in Sources */,
@@ -2106,7 +2020,6 @@
 				411EF7CC2788E0BA00725B73 /* PostImagesViewController.swift in Sources */,
 				945B15B325595DC9003A65E0 /* UIColor.swift in Sources */,
 				418E2342277CB619008BB92E /* TabBarBuilder.swift in Sources */,
-				41ED088F281D9D6700DD2826 /* LocationFilterPopupLocationManager.swift in Sources */,
 				41CD112527835C2200257B2B /* SavedPostsBuilder.swift in Sources */,
 				41EC16E127868FF900096B7A /* GuestPopupBuilder.swift in Sources */,
 				418B637527AEB83C00F7DC4B /* ChangePasswordBuilder.swift in Sources */,
@@ -2130,7 +2043,6 @@
 				41742222277C815600915233 /* ExploreRouter.swift in Sources */,
 				4119183A27ABFAF100F9D68A /* ProfilePostsViewController.swift in Sources */,
 				4119184B27AC2B7600F9D68A /* BlockedUsersViewController.swift in Sources */,
-				41CD11032783244700257B2B /* LocationFilterPopupRouter.swift in Sources */,
 				41FEE1D22788855300F11449 /* PostCollectionView.swift in Sources */,
 				4119183B27ABFAF100F9D68A /* ProfilePostsBuilder.swift in Sources */,
 				4108D8DF2762A45D00880E0B /* CustomStackView.swift in Sources */,
@@ -2188,7 +2100,6 @@
 				4125D60C284C9D7000F2E94A /* ProfileProtocols.swift in Sources */,
 				945B15B425595DC9003A65E0 /* Int.swift in Sources */,
 				41B9CE6D277F403000966509 /* ExploreCollectionView.swift in Sources */,
-				41CD1110278336F400257B2B /* DateFilterPopupViewController.swift in Sources */,
 				41CD10E32781DF1500257B2B /* Filters.swift in Sources */,
 				4160E703277B99FB00C7066F /* TermsAndConditionsBuilder.swift in Sources */,
 				41F820C8276FD83B0046B0EA /* WhereCanWeFindYouViewController.swift in Sources */,
@@ -2224,14 +2135,12 @@
 				41B2F4C827F7D37500B0C72D /* PostService.swift in Sources */,
 				945B15BB25595DC9003A65E0 /* Window.swift in Sources */,
 				411EF7CA2788E0BA00725B73 /* PostImagesRouter.swift in Sources */,
-				41CD11062783244700257B2B /* LocationFilterPopupBuilder.swift in Sources */,
 				418C4142275A5E310099BC5B /* ForgotPasswordBuilder.swift in Sources */,
 				413987002737F6F200C243F4 /* UIFont.swift in Sources */,
 				41742223277C815600915233 /* ExploreViewController.swift in Sources */,
 				419CE0D027B5ACD7005D009C /* NewPostGenericProtocols.swift in Sources */,
 				41CD10FA2782232200257B2B /* AnimalFilterTableViewCellSummary.swift in Sources */,
 				415E597D2763EA7E009A013E /* WhereDoYouLiveCountriesViewController.swift in Sources */,
-				41CD1111278336F400257B2B /* DateFilterPopupBuilder.swift in Sources */,
 				4119183827ABFAF100F9D68A /* ProfilePostsRouter.swift in Sources */,
 				411EF7CD2788E0BA00725B73 /* PostImagesBuilder.swift in Sources */,
 				41CD10EF2782183900257B2B /* AnimalFilterPopupViewModel.swift in Sources */,
@@ -2255,7 +2164,6 @@
 				411C7F70274BA8FE00C9710A /* LoginViewModel.swift in Sources */,
 				41FEE1EF2788D76600F11449 /* ContactWithPopupViewController.swift in Sources */,
 				41FEE1D92788928200F11449 /* PostImageCollectionViewCellSummary.swift in Sources */,
-				41CD1112278336F400257B2B /* DateFilterPopupViewModel.swift in Sources */,
 				415E59832763EB4E009A013E /* WhereDoYouLiveCountriesTableView.swift in Sources */,
 				41CD1118278350F300257B2B /* EmptyCollectionViewCell.swift in Sources */,
 				415E597C2763EA7E009A013E /* WhereDoYouLiveCountriesRouter.swift in Sources */,

@@ -37,10 +37,6 @@ extension Container {
         ContactWithPopupBuilder()
     }
     
-    func dateFilterPopupBuilder() -> DateFilterPopupBuilder {
-        DateFilterPopupBuilder()
-    }
-    
     func editPersonalDetailsBuilder() -> EditPersonalDetailsBuilder {
         EditPersonalDetailsBuilder()
     }
@@ -75,10 +71,6 @@ extension Container {
     
     func locationBuilder() -> LocationBuilder {
         LocationBuilder()
-    }
-    
-    func locationFilterPopupBuilder() -> LocationFilterPopupBuilder {
-        LocationFilterPopupBuilder()
     }
     
     func loginBuilder() -> LoginBuilder {
