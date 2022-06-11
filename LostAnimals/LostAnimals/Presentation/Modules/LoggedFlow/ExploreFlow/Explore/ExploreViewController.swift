@@ -11,6 +11,7 @@ import CoreLocation
 
 final class ExploreViewController: ViewController {
     // MARK: - IBOutlets
+    @IBOutlet weak var filtersCollectionView: UICollectionView!
     @IBOutlet weak var postsCollectionView: UICollectionView!
     
     // MARK: - Properties
@@ -68,6 +69,7 @@ private extension ExploreViewController {
     func setupUI() {
         subscribeToNotifications()
         currentBarsHeight = self.barHeights
+        configureCollectionView(filtersCollectionView)
         configureCollectionView(postsCollectionView)
         configureLocationManager(locationManager)
     }

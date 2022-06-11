@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PostImageCollectionViewCell: UICollectionViewCell, Reusable {
+final class PostImageCollectionViewCell: UICollectionViewCell, Reusable {
     // MARK: - IBOutlets
     @IBOutlet private weak var postImageView: UIImageView!
     

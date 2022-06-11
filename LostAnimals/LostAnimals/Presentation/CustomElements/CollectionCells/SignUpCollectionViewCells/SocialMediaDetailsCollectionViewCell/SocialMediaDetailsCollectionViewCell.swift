@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SocialMediaDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell {
+final class SocialMediaDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell {
     typealias T = SocialMediaDetailsCollectionViewCellViewModel
     // MARK: - IBOutlets
     @IBOutlet private weak var topPrefixPlaceholder: UILabel!

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoadingCollectionViewCell: UICollectionViewCell, Reusable {
+final class LoadingCollectionViewCell: UICollectionViewCell, Reusable {
     // MARK: - Properties
     @IBOutlet private weak var indicatorView: UIActivityIndicatorView!
     

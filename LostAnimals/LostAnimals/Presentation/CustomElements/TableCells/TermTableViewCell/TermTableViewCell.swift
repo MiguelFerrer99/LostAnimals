@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TermTableViewCell: UITableViewCell, Reusable {
+final class TermTableViewCell: UITableViewCell, Reusable {
     // MARK: - IBOutlets
     @IBOutlet private weak var termTitle: UILabel!
     @IBOutlet private weak var termDescription: UILabel!

@@ -13,29 +13,45 @@ extension ExploreViewController {
     func configureCollectionView(_ collectionView: UICollectionView) {
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(LoadingCollectionViewCell.self)
-        collectionView.register(EmptyCollectionViewCell.self)
-        collectionView.register(PostCollectionViewCell.self)
+        if collectionView == filtersCollectionView {
+            
+        } else {
+            collectionView.register(LoadingCollectionViewCell.self)
+            collectionView.register(EmptyCollectionViewCell.self)
+            collectionView.register(PostCollectionViewCell.self)
+        }
     }
 }
 
 // MARK: - UICollectionViewDelegate
 extension ExploreViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return !(viewModel.isLoading || viewModel.posts.isEmpty)
+        if collectionView == filtersCollectionView {
+            return true
+        } else {
+            return !(viewModel.isLoading || viewModel.posts.isEmpty)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let post = viewModel.posts[indexPath.item]
-        viewModel.didPressPost(post: post)
+        if collectionView == filtersCollectionView {
+            
+        } else {
+            let post = viewModel.posts[indexPath.item]
+            viewModel.didPressPost(post: post)
+        }
     }
 }
 
 // MARK: - UICollectionViewDataSource
 extension ExploreViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if viewModel.isLoading || viewModel.posts.isEmpty { return 1 }
-        else { return viewModel.posts.count }
+        if collectionView == filtersCollectionView {
+            return Filters.currentFilters.count
+        } else {
+            if viewModel.isLoading || viewModel.posts.isEmpty { return 1 }
+            else { return viewModel.posts.count }
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -67,10 +83,14 @@ extension ExploreViewController: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegateFlowLayout
 extension ExploreViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let collectionViewRealHeight = collectionView.frame.height - currentBarsHeight
-        if viewModel.isLoading || viewModel.posts.isEmpty {
-            return CGSize(width: collectionView.frame.width, height: collectionViewRealHeight)
+        if collectionView == filtersCollectionView {
+            return CGSize(width: 100, height: collectionView.frame.height)
+        } else {
+            let collectionViewRealHeight = collectionView.frame.height - currentBarsHeight
+            if viewModel.isLoading || viewModel.posts.isEmpty {
+                return CGSize(width: collectionView.frame.width, height: collectionViewRealHeight)
+            }
+            else { return CGSize(width: collectionView.frame.width / 2, height: collectionView.frame.height / 2.7) }
         }
-        else { return CGSize(width: collectionView.frame.width / 2, height: collectionView.frame.height / 2.7) }
     }
 }

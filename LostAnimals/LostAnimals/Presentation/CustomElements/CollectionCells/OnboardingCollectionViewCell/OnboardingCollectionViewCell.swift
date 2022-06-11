@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OnboardingCollectionViewCell: UICollectionViewCell, Reusable {
+final class OnboardingCollectionViewCell: UICollectionViewCell, Reusable {
     // MARK: - IBOutlets
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!

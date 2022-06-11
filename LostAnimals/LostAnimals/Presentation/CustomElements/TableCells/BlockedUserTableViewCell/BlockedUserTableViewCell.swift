@@ -13,7 +13,7 @@ protocol UnblockUserDelegate: AnyObject {
     func unblockUser(userID: String)
 }
 
-class BlockedUserTableViewCell: UITableViewCell, Reusable {
+final class BlockedUserTableViewCell: UITableViewCell, Reusable {
     // MARK: - IBOutlets
     @IBOutlet private weak var userImageView: UIImageView!
     @IBOutlet private weak var userNameLabel: UILabel!

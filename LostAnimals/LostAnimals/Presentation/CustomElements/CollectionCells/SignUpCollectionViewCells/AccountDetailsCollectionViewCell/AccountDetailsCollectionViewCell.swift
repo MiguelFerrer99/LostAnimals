@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AccountDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell {
+final class AccountDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell {
     typealias T = AccountDetailsCollectionViewCellViewModel
     // MARK: - IBOutlets
     @IBOutlet private weak var backStepButton: CustomButton!

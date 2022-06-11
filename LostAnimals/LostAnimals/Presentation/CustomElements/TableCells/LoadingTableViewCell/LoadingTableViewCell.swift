@@ -8,4 +8,4 @@
 
 import UIKit
 
-class LoadingTableViewCell: UITableViewCell, Reusable {}
+final class LoadingTableViewCell: UITableViewCell, Reusable {}

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddressTableViewCell: UITableViewCell, Reusable {
+final class AddressTableViewCell: UITableViewCell, Reusable {
     // MARK: - IBOutlets
     @IBOutlet private weak var addressName: UILabel!
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PersonalDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell {
+final class PersonalDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell {
     typealias T = PersonalDetailsCollectionViewCellViewModel
     // MARK: - IBOutlets
     @IBOutlet private weak var personalDetailsModeButton: UIButton!

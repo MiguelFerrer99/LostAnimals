@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EmptyCollectionViewCell: UICollectionViewCell, Reusable {
+final class EmptyCollectionViewCell: UICollectionViewCell, Reusable {
     // MARK: - IBOutlets
     @IBOutlet private weak var emptyImageView: UIImageView!
     @IBOutlet private weak var emptyTitleLabel: UILabel!

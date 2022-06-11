@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SocialMediaCollectionViewCell: UICollectionViewCell, Reusable {
+final class SocialMediaCollectionViewCell: UICollectionViewCell, Reusable {
     // MARK: - IBOutlets
     @IBOutlet private weak var socialMediaIconImageView: UIImageView!
     @IBOutlet private weak var socialMediaBackgroundImageView: CustomImageView!

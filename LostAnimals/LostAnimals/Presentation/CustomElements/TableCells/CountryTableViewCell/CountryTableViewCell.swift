@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CountryTableViewCell: UITableViewCell, Reusable {
+final class CountryTableViewCell: UITableViewCell, Reusable {
     // MARK: - IBOutlets
     @IBOutlet private weak var countryName: UILabel!
     @IBOutlet private weak var rightArrowImageView: UIImageView!

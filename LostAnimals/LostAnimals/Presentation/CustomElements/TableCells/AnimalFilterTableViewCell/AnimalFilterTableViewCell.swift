@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AnimalFilterTableViewCell: UITableViewCell, Reusable {
+final class AnimalFilterTableViewCell: UITableViewCell, Reusable {
     // MARK: - IBOutlets
     @IBOutlet private weak var animalTypeImageView: UIImageView!
     @IBOutlet private weak var animalTypeTitleLabel: UILabel!
