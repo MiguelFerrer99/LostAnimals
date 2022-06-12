@@ -13,7 +13,6 @@ extension ExploreViewController {
     func configureCollectionView(_ collectionView: UICollectionView) {
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(supplementaryView: ExplorePostsFiltersHeader.self)
         collectionView.register(LoadingCollectionViewCell.self)
         collectionView.register(EmptyCollectionViewCell.self)
         collectionView.register(PostCollectionViewCell.self)
@@ -34,15 +33,6 @@ extension ExploreViewController: UICollectionViewDelegate {
 
 // MARK: - UICollectionViewDataSource
 extension ExploreViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        switch kind {
-        case UICollectionView.elementKindSectionHeader:
-            let filtersHeader = collectionView.dequeue(supplementaryView: ExplorePostsFiltersHeader.self, for: indexPath)
-            return filtersHeader
-        default: return UICollectionReusableView()
-        }
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if viewModel.isLoading || viewModel.posts.isEmpty { return 1 }
         else { return viewModel.posts.count }
@@ -81,10 +71,6 @@ extension ExploreViewController: UICollectionViewDelegateFlowLayout {
         if viewModel.isLoading || viewModel.posts.isEmpty {
             return CGSize(width: collectionView.frame.width, height: collectionViewRealHeight)
         }
-        else { return CGSize(width: collectionView.frame.width / 2, height: collectionView.frame.height / 2.7) }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 50)
+        else { return CGSize(width: collectionView.frame.width / 2, height: collectionView.frame.height / 2.2) }
     }
 }
