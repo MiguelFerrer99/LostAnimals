@@ -17,49 +17,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nYx-p5-bXh">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" indicatorStyle="black" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gwv-57-Lb8">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="YJU-Of-Dz0">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="10" id="jGv-HJ-kfy">
-                                            <size key="itemSize" width="128" height="128"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells/>
-                                    </collectionView>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" indicatorStyle="black" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gwv-57-Lb8">
-                                        <rect key="frame" x="0.0" y="896" width="414" height="0.0"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" name="CustomBlack"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="4Uf-Gj-NXA">
-                                            <size key="itemSize" width="128" height="128"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells/>
-                                    </collectionView>
-                                </subviews>
-                            </stackView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="CustomBlack"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="4Uf-Gj-NXA">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="CustomGreen"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="nYx-p5-bXh" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="BQr-tu-PTs"/>
-                            <constraint firstItem="nYx-p5-bXh" firstAttribute="bottom" secondItem="5EZ-qb-Rvc" secondAttribute="bottom" id="fGa-pj-x66"/>
-                            <constraint firstItem="nYx-p5-bXh" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="rl0-MG-ajx"/>
-                            <constraint firstItem="nYx-p5-bXh" firstAttribute="trailing" secondItem="5EZ-qb-Rvc" secondAttribute="trailing" id="xaJ-Tw-Xoa"/>
+                            <constraint firstAttribute="bottom" secondItem="Gwv-57-Lb8" secondAttribute="bottom" id="DBx-1d-5aT"/>
+                            <constraint firstItem="Gwv-57-Lb8" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="HYu-Hu-kBl"/>
+                            <constraint firstItem="Gwv-57-Lb8" firstAttribute="trailing" secondItem="5EZ-qb-Rvc" secondAttribute="trailing" id="N6R-XP-ecJ"/>
+                            <constraint firstItem="Gwv-57-Lb8" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="cbC-9I-zbJ"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="filtersCollectionView" destination="YJU-Of-Dz0" id="Mpp-ec-oRH"/>
                         <outlet property="postsCollectionView" destination="Gwv-57-Lb8" id="lb7-8i-54G"/>
                     </connections>
                 </viewController>

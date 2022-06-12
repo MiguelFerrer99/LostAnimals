@@ -69,7 +69,6 @@ private extension ExploreViewController {
     func setupUI() {
         subscribeToNotifications()
         currentBarsHeight = self.barHeights
-        configureCollectionView(filtersCollectionView)
         configureCollectionView(postsCollectionView)
         configureLocationManager(locationManager)
     }

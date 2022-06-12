@@ -216,6 +216,8 @@
 		419CE0D427B5BC0A005D009C /* EditSocialMediasProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE0D327B5BC0A005D009C /* EditSocialMediasProtocols.swift */; };
 		419CE0D827B5D559005D009C /* EditPersonalDetailsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CE0D727B5D559005D009C /* EditPersonalDetailsProtocols.swift */; };
 		419E507527708ACD007C196B /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419E507427708ACD007C196B /* NotificationName.swift */; };
+		41A22738285638FE006B2971 /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A22737285638FE006B2971 /* XibView.swift */; };
+		41A2273A2856396F006B2971 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A227392856396F006B2971 /* UIView.swift */; };
 		41A7CF5C27F080EE002BFD6F /* FakeSplashRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A7CF5727F080EE002BFD6F /* FakeSplashRouter.swift */; };
 		41A7CF5D27F080EE002BFD6F /* FakeSplashViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41A7CF5827F080EE002BFD6F /* FakeSplashViewController.storyboard */; };
 		41A7CF5E27F080EE002BFD6F /* FakeSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A7CF5927F080EE002BFD6F /* FakeSplashViewController.swift */; };
@@ -554,6 +556,8 @@
 		419CE0D327B5BC0A005D009C /* EditSocialMediasProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSocialMediasProtocols.swift; sourceTree = "<group>"; };
 		419CE0D727B5D559005D009C /* EditPersonalDetailsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPersonalDetailsProtocols.swift; sourceTree = "<group>"; };
 		419E507427708ACD007C196B /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
+		41A22737285638FE006B2971 /* XibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
+		41A227392856396F006B2971 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		41A7CF5727F080EE002BFD6F /* FakeSplashRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeSplashRouter.swift; sourceTree = "<group>"; };
 		41A7CF5827F080EE002BFD6F /* FakeSplashViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FakeSplashViewController.storyboard; sourceTree = "<group>"; };
 		41A7CF5927F080EE002BFD6F /* FakeSplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeSplashViewController.swift; sourceTree = "<group>"; };
@@ -1666,6 +1670,7 @@
 				CCB0206026A6F04500214CB9 /* ViewController.swift */,
 				945B159E25595DC9003A65E0 /* ViewModel.swift */,
 				945B15A925595DC9003A65E0 /* Window.swift */,
+				41A22737285638FE006B2971 /* XibView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1681,6 +1686,7 @@
 				413986FF2737F6F200C243F4 /* UIFont.swift */,
 				945B15A625595DC9003A65E0 /* UIImage.swift */,
 				945B15A325595DC9003A65E0 /* UITableViewCell.swift */,
+				41A227392856396F006B2971 /* UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1990,6 +1996,7 @@
 				411483AD27B326CA00F994F3 /* PostProtocols.swift in Sources */,
 				4108D8D12762276800880E0B /* SignUpProtocols.swift in Sources */,
 				41FEE1E32788B68000F11449 /* LocationBuilder.swift in Sources */,
+				41A2273A2856396F006B2971 /* UIView.swift in Sources */,
 				41EC16D327868C2900096B7A /* SuccessPopupRouter.swift in Sources */,
 				41CDA4322780E0D60009AB55 /* Post.swift in Sources */,
 				4119F6D127958A9A006B665A /* NewPostGenericViewModel.swift in Sources */,
@@ -2068,6 +2075,7 @@
 				41DA64F027A4862A0094F55C /* SocialMediaCollectionViewCellSummary.swift in Sources */,
 				41F820C9276FD83B0046B0EA /* WhereCanWeFindYouBuilder.swift in Sources */,
 				410FE6782770BCA800A390A3 /* WhereCanWeFindYouTableView.swift in Sources */,
+				41A22738285638FE006B2971 /* XibView.swift in Sources */,
 				41B75628275EE4CE00C00E03 /* SignUpBuilder.swift in Sources */,
 				412FBB4A28550D0F00E88D9D /* ExplorePostsFilterCollectionViewCell.swift in Sources */,
 				418B638F27AF436700F7DC4B /* EditSocialMediasBuilder.swift in Sources */,

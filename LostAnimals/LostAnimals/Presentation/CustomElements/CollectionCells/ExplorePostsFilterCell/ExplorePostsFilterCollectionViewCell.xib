@@ -4,22 +4,40 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ExplorePostsFilterCollectionViewCell" customModule="LostAnimals" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="163" height="56"/>
+            <rect key="frame" x="0.0" y="0.0" width="127" height="56"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="163" height="56"/>
+                <rect key="frame" x="0.0" y="0.0" width="127" height="56"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UI0-5L-AIb">
-                        <rect key="frame" x="0.0" y="0.0" width="163" height="56"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UI0-5L-AIb" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="127" height="56"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdr-Er-imC">
+                                <rect key="frame" x="10" y="5" width="107" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="CustomWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="CustomBlack"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fdr-Er-imC" secondAttribute="trailing" constant="10" id="TEw-Gt-yQu"/>
+                            <constraint firstItem="fdr-Er-imC" firstAttribute="top" secondItem="UI0-5L-AIb" secondAttribute="top" constant="5" id="vTc-bz-kxp"/>
+                            <constraint firstItem="fdr-Er-imC" firstAttribute="leading" secondItem="UI0-5L-AIb" secondAttribute="leading" constant="10" id="wLu-5k-Tev"/>
+                            <constraint firstAttribute="bottom" secondItem="fdr-Er-imC" secondAttribute="bottom" constant="5" id="waL-Cw-Bbl"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="fullRound" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
             </view>
@@ -31,8 +49,16 @@
                 <constraint firstAttribute="trailing" secondItem="UI0-5L-AIb" secondAttribute="trailing" id="Yo4-Ye-gjU"/>
                 <constraint firstItem="UI0-5L-AIb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="eqy-TV-oex"/>
             </constraints>
-            <size key="customSize" width="163" height="56"/>
-            <point key="canvasLocation" x="219.56521739130437" y="122.54464285714285"/>
+            <size key="customSize" width="127" height="56"/>
+            <point key="canvasLocation" x="193.47826086956522" y="122.54464285714285"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <namedColor name="CustomBlack">
+            <color red="0.24705882352941178" green="0.24705882352941178" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="CustomWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
 </document>
