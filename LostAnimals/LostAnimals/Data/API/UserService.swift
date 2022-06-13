@@ -268,7 +268,7 @@ extension UserService {
         }
         let newImageName = imageType == .header ? "header_image" : "user_image"
         let newImageUrlName = imageType == .header ? "header_url_image" : "user_url_image"
-        if let newImage = newImage, let newImageData = newImage.jpegData(compressionQuality: 0.5) {
+        if let newImage = newImage, let newImageData = newImage.jpegData(compressionQuality: 0.0) {
             self.storageRef.child("users").child(me.id).child(newImageName).putData(newImageData, metadata: nil) { (_, error1) in
                 if let error1 = error1 {
                     switch error1.localizedDescription {

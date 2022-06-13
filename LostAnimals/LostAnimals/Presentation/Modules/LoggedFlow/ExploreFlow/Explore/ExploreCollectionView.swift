@@ -17,7 +17,6 @@ extension ExploreViewController {
             collectionView.allowsSelection = true
             collectionView.register(ExplorePostsFilterCollectionViewCell.self)
         } else {
-            collectionView.allowsSelection = false
             collectionView.register(LoadingCollectionViewCell.self)
             collectionView.register(EmptyCollectionViewCell.self)
             collectionView.register(PostCollectionViewCell.self)
