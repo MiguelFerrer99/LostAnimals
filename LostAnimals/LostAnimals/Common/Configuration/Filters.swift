@@ -40,7 +40,7 @@ class Filters {
         currentFilters[.adopt]?.enabled = false
         currentFilters[.animal]?.enabled = false
         currentFilters[.animal]?.filterTitle = "Animal"
-        currentFilters[.recent]?.enabled = true
+        currentFilters[.recent]?.enabled = false
         currentFilters[.near]?.enabled = false
         currentFilters[.near]?.filterTitle = "Near"
     }

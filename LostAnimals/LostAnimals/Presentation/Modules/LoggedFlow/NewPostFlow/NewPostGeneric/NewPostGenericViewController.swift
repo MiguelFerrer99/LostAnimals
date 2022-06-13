@@ -102,6 +102,7 @@ private extension NewPostGenericViewController {
             postTypeLabel.text = "To adopt animal"
             lastTimeSeenTextfield.isHidden = true
             locationTextfield.isHidden = true
+            if let me = User.shared { viewModel.newPostLocation = me.location }
         }
     }
     
