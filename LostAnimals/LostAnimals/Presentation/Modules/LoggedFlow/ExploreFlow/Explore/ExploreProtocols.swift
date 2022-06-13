@@ -12,3 +12,10 @@ extension ExploreViewController: GoToMyProfileFromPostDelegate {
         viewModel.goToMyProfile()
     }
 }
+
+// MARK: - AnimalFilterPopupDelegate
+extension ExploreViewController: AnimalFilterPopupDelegate {
+    func animalFilterApplied() {
+        selectAnimalFilterCell()
+    }
+}

@@ -25,8 +25,8 @@ class Filters {
         .found: PostsFilter(filterTitle: "Found", filterType: .found, enabled: false),
         .adopt: PostsFilter(filterTitle: "Adopt", filterType: .adopt, enabled: false),
         .animal: PostsFilter(filterTitle: "Animal", filterType: .animal, enabled: false),
-        .recent: PostsFilter(filterTitle: "Recent", filterType: .recent, enabled: true),
-        .near: PostsFilter(filterTitle: "Near", filterType: .near, enabled: false)
+        .near: PostsFilter(filterTitle: "Near", filterType: .near, enabled: false),
+        .recent: PostsFilter(filterTitle: "Recent", filterType: .recent, enabled: true)
     ] {
         didSet {
             // printCurrentExploreFilterValues()

@@ -28,7 +28,13 @@ extension ExploreViewController {
 extension ExploreViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         if collectionView == filtersCollectionView {
-            return !viewModel.isLoading
+            let filterType = FilterType(rawValue: indexPath.item) ?? .recent
+            if viewModel.isLoading { return false }
+            else if filterType == .animal {
+                let loadData = collectionView.indexPathsForSelectedItems?.contains(indexPath) ?? false
+                viewModel.didPressAnimalFilter(loadData: loadData)
+                return false
+            } else { return true }
         } else {
             return !(viewModel.isLoading || viewModel.posts.isEmpty)
         }

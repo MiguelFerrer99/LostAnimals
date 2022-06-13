@@ -24,11 +24,11 @@ extension AnimalFilterPopupViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.selectedAnimalType = Constants.animalTypes[indexPath.row]
         enableApplyFilterButton()
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        // let selectedAnimalType = Constants.animalTypes[indexPath.row]
         disableApplyFilterButton()
     }
 }

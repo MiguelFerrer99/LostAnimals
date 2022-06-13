@@ -53,8 +53,8 @@ extension ExploreViewModel {
         }
     }
     
-    func didPressPostsFilterPopup(filterType: FilterType, loadData: Bool) {
-        self.router.goToFilterPopup(filterType: filterType, loadData: loadData)
+    func didPressAnimalFilter(loadData: Bool) {
+        self.router.goToAnimalFilter(loadData: loadData)
     }
     
     func didPressSavedPosts() {

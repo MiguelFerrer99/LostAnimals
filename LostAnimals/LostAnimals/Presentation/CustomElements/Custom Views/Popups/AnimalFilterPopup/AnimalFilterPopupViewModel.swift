@@ -35,7 +35,9 @@ extension AnimalFilterPopupViewModel {
 // MARK: - Functions
 extension AnimalFilterPopupViewModel {
     func didPressApplyFilterButton() {
-        // Filters.setFilterValue(filterType: .animal, enabled: true, animalFiltered: selectedAnimalType)
+        Filters.resetFilters()
+        Filters.currentFilters[.animal]?.enabled = true
+        Filters.currentFilters[.animal]?.animalFiltered = selectedAnimalType
         Filters.currentFilters[.animal]?.filterTitle = selectedAnimalType?.rawValue ?? "Animal"
         self.router.dismissAnimalFilterPopup()
     }

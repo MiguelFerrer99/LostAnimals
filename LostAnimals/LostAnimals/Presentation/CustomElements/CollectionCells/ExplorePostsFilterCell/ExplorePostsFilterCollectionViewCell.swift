@@ -32,6 +32,10 @@ extension ExplorePostsFilterCollectionViewCell {
         trailingConstraint.constant = summary.trailingPadding
         filterTitleLabel.text = summary.filter.filterTitle
     }
+    
+    func setFilterTitle(_ title: String) {
+        filterTitleLabel.text = title
+    }
 }
 
 // MARK: - Private functions

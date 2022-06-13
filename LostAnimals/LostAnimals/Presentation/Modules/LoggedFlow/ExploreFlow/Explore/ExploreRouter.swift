@@ -27,14 +27,11 @@ extension ExploreRouter {
         }
     }
     
-    func goToFilterPopup(filterType: FilterType, loadData: Bool) {
+    func goToAnimalFilter(loadData: Bool) {
         DispatchQueue.main.async {
-            switch filterType {
-            case .animal:
-                let viewController = Container.shared.animalFilterPopupBuilder().build(loadData: loadData)
-                self.viewController?.present(viewController: viewController, completion: nil)
-            default: return
-            }
+            let viewController = Container.shared.animalFilterPopupBuilder().build(loadData: loadData)
+            viewController.delegate = self.viewController
+            self.viewController?.present(viewController: viewController, completion: nil)
         }
     }
     

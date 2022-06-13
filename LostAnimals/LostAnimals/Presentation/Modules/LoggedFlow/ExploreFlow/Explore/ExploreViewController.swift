@@ -60,21 +60,32 @@ final class ExploreViewController: ViewController {
 // MARK: - Functions
 extension ExploreViewController {
     func finishedGetUserCurrentLocation() {
-        if userSharedLocation() { Filters.currentFilters.removeValue(forKey: .near) }
+        if !userSharedLocation() {
+            Filters.currentFilters.removeValue(forKey: .near)
+        }
         configureCollectionView(filtersCollectionView)
         selectRecentFilterCell()
         getPosts()
     }
     
     func setNewFilter(_ index: Int) {
+        let indexPath = IndexPath(item: FilterType.animal.rawValue, section: 0)
+        if let animalFilterCell = filtersCollectionView.cellForItem(at: indexPath) as? ExplorePostsFilterCollectionViewCell {
+            animalFilterCell.setFilterTitle("Animal")
+        }
         Filters.resetFilters()
         let filterType = FilterType(rawValue: index) ?? .recent
-        if filterType == .animal {
-            // TODO: Show AnimalFilter Popup
-        } else {
-            Filters.currentFilters[filterType]?.enabled = true
-            getPosts()
+        Filters.currentFilters[filterType]?.enabled = true
+        getPosts()
+    }
+    
+    func selectAnimalFilterCell() {
+        let indexPath = IndexPath(item: FilterType.animal.rawValue, section: 0)
+        filtersCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
+        if let animalFilterCell = filtersCollectionView.cellForItem(at: indexPath) as? ExplorePostsFilterCollectionViewCell {
+            animalFilterCell.setFilterTitle(Filters.currentFilters[.animal]?.animalFiltered?.rawValue ?? "Animal")
         }
+        getPosts()
     }
 }
 

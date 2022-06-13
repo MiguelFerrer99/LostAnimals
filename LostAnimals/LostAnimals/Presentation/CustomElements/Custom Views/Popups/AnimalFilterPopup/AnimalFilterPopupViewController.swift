@@ -8,12 +8,18 @@
 
 import UIKit
 
+// MARK: - Protocols
+protocol AnimalFilterPopupDelegate: AnyObject {
+    func animalFilterApplied()
+}
+
 final class AnimalFilterPopupViewController: ViewController {
     // MARK: - IBOutlets
     @IBOutlet private weak var animalsFilterTableView: UITableView!
     @IBOutlet private weak var applyFilterButton: CustomButton!
     
     // MARK: - Properties
+    weak var delegate: AnimalFilterPopupDelegate?
     var viewModel: AnimalFilterPopupViewModel!
     
     // MARK: - Life cycle
@@ -54,28 +60,15 @@ private extension AnimalFilterPopupViewController {
     func fillUI() {
         if viewModel.loadData {
             if let animalFilter = Filters.currentFilters[.animal] {
+                viewModel.selectedAnimalType = animalFilter.animalFiltered
                 switch animalFilter.animalFiltered {
-                case .dog:
-                    selectAnimalCell(index: 0)
-                    viewModel.selectedAnimalType = .dog
-                case .bird:
-                    selectAnimalCell(index: 1)
-                    viewModel.selectedAnimalType = .bird
-                case .cat:
-                    selectAnimalCell(index: 2)
-                    viewModel.selectedAnimalType = .cat
-                case .turtle:
-                    selectAnimalCell(index: 3)
-                    viewModel.selectedAnimalType = .turtle
-                case .snake:
-                    selectAnimalCell(index: 4)
-                    viewModel.selectedAnimalType = .snake
-                case .rabbit:
-                    selectAnimalCell(index: 5)
-                    viewModel.selectedAnimalType = .rabbit
-                case .other:
-                    selectAnimalCell(index: 6)
-                    viewModel.selectedAnimalType = .other
+                case .dog:    selectAnimalCell(index: 0)
+                case .bird:   selectAnimalCell(index: 1)
+                case .cat:    selectAnimalCell(index: 2)
+                case .turtle: selectAnimalCell(index: 3)
+                case .snake:  selectAnimalCell(index: 4)
+                case .rabbit: selectAnimalCell(index: 5)
+                case .other:  selectAnimalCell(index: 6)
                 case .none: break
                 }
             }
@@ -93,6 +86,7 @@ private extension AnimalFilterPopupViewController {
 private extension AnimalFilterPopupViewController {
     @IBAction func applyFilterButtonPressed(_ sender: CustomButton) {
         viewModel.didPressApplyFilterButton()
+        delegate?.animalFilterApplied()
     }
     
     @IBAction func dismissButtonPressed(_ sender: Any) {
