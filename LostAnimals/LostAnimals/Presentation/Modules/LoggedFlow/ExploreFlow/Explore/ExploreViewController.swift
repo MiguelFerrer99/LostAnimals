@@ -60,7 +60,21 @@ final class ExploreViewController: ViewController {
 // MARK: - Functions
 extension ExploreViewController {
     func finishedGetUserCurrentLocation() {
+        if userSharedLocation() { Filters.currentFilters.removeValue(forKey: .near) }
+        configureCollectionView(filtersCollectionView)
+        selectRecentFilterCell()
         getPosts()
+    }
+    
+    func setNewFilter(_ index: Int) {
+        Filters.resetFilters()
+        let filterType = FilterType(rawValue: index) ?? .recent
+        if filterType == .animal {
+            // TODO: Show AnimalFilter Popup
+        } else {
+            Filters.currentFilters[filterType]?.enabled = true
+            getPosts()
+        }
     }
 }
 
@@ -79,6 +93,11 @@ private extension ExploreViewController {
     
     func fillUI() {
         getUserCurrentLocation()
+    }
+    
+    func selectRecentFilterCell() {
+        let indexPath = IndexPath(item: FilterType.recent.rawValue, section: 0)
+        filtersCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
     }
     
     @objc func getPosts() {

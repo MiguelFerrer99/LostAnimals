@@ -14,8 +14,8 @@ enum FilterType: Int {
     case found
     case adopt
     case animal
-    case near
     case recent
+    case near
 }
 
 class Filters {
@@ -25,28 +25,24 @@ class Filters {
         .found: PostsFilter(filterTitle: "Found", filterType: .found, enabled: false),
         .adopt: PostsFilter(filterTitle: "Adopt", filterType: .adopt, enabled: false),
         .animal: PostsFilter(filterTitle: "Animal", filterType: .animal, enabled: false),
-        .near: PostsFilter(filterTitle: "Near", filterType: .near, enabled: false),
-        .recent: PostsFilter(filterTitle: "Recent", filterType: .recent, enabled: false)
+        .recent: PostsFilter(filterTitle: "Recent", filterType: .recent, enabled: true),
+        .near: PostsFilter(filterTitle: "Near", filterType: .near, enabled: false)
     ] {
-        didSet { printCurrentExploreFilterValues() }
+        didSet {
+            // printCurrentExploreFilterValues()
+        }
     }
     
     // MARK: - Functions
-    static func setFilterValue(filterType: FilterType, enabled: Bool, animalFiltered: AnimalType? = nil) {
-        currentFilters[filterType]?.enabled = enabled
-        if let animalFiltered = animalFiltered { currentFilters[filterType]?.animalFiltered = animalFiltered }
-    }
-    
     static func resetFilters() {
         currentFilters[.lost]?.enabled = false
         currentFilters[.found]?.enabled = false
         currentFilters[.adopt]?.enabled = false
         currentFilters[.animal]?.enabled = false
         currentFilters[.animal]?.filterTitle = "Animal"
+        currentFilters[.recent]?.enabled = true
         currentFilters[.near]?.enabled = false
         currentFilters[.near]?.filterTitle = "Near"
-        currentFilters[.recent]?.enabled = false
-        currentFilters[.recent]?.filterTitle = "Recent"
     }
     
     static func printCurrentExploreFilterValues() {

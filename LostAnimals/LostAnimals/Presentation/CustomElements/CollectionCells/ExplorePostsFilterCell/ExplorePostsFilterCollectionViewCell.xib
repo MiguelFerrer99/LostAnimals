@@ -7,36 +7,42 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-Bold.ttf">
+            <string>Nunito-Bold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ExplorePostsFilterCollectionViewCell" customModule="LostAnimals" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="127" height="56"/>
+            <rect key="frame" x="0.0" y="0.0" width="135" height="53"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="127" height="56"/>
+                <rect key="frame" x="0.0" y="0.0" width="135" height="53"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UI0-5L-AIb" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="127" height="56"/>
+                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="taV-ci-k4s" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
+                        <rect key="frame" x="10" y="10" width="115" height="33"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdr-Er-imC">
-                                <rect key="frame" x="10" y="5" width="107" height="46"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8aN-Ir-v4C">
+                                <rect key="frame" x="15" y="8" width="85" height="17"/>
+                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="16"/>
                                 <color key="textColor" name="CustomWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" name="CustomBlack"/>
-                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="fdr-Er-imC" secondAttribute="trailing" constant="10" id="TEw-Gt-yQu"/>
-                            <constraint firstItem="fdr-Er-imC" firstAttribute="top" secondItem="UI0-5L-AIb" secondAttribute="top" constant="5" id="vTc-bz-kxp"/>
-                            <constraint firstItem="fdr-Er-imC" firstAttribute="leading" secondItem="UI0-5L-AIb" secondAttribute="leading" constant="10" id="wLu-5k-Tev"/>
-                            <constraint firstAttribute="bottom" secondItem="fdr-Er-imC" secondAttribute="bottom" constant="5" id="waL-Cw-Bbl"/>
+                            <constraint firstAttribute="bottom" secondItem="8aN-Ir-v4C" secondAttribute="bottom" constant="8" id="FNA-Ry-QPm"/>
+                            <constraint firstItem="8aN-Ir-v4C" firstAttribute="leading" secondItem="taV-ci-k4s" secondAttribute="leading" constant="15" id="KWz-3f-Qdn"/>
+                            <constraint firstAttribute="trailing" secondItem="8aN-Ir-v4C" secondAttribute="trailing" constant="15" id="hiR-4y-pNu"/>
+                            <constraint firstItem="8aN-Ir-v4C" firstAttribute="top" secondItem="taV-ci-k4s" secondAttribute="top" constant="8" id="q08-mn-LRp"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="fullRound" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="19"/>
+                            </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
@@ -44,13 +50,19 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="UI0-5L-AIb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="A7W-Yf-JgD"/>
-                <constraint firstAttribute="bottom" secondItem="UI0-5L-AIb" secondAttribute="bottom" id="JTO-Mf-Vcg"/>
-                <constraint firstAttribute="trailing" secondItem="UI0-5L-AIb" secondAttribute="trailing" id="Yo4-Ye-gjU"/>
-                <constraint firstItem="UI0-5L-AIb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="eqy-TV-oex"/>
+                <constraint firstItem="taV-ci-k4s" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="36g-Kh-5bz"/>
+                <constraint firstAttribute="trailing" secondItem="taV-ci-k4s" secondAttribute="trailing" constant="10" id="3b6-nm-V1f"/>
+                <constraint firstItem="taV-ci-k4s" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="X3x-NW-n9N"/>
+                <constraint firstAttribute="bottom" secondItem="taV-ci-k4s" secondAttribute="bottom" constant="10" id="frE-B3-lAt"/>
             </constraints>
-            <size key="customSize" width="127" height="56"/>
-            <point key="canvasLocation" x="193.47826086956522" y="122.54464285714285"/>
+            <size key="customSize" width="135" height="53"/>
+            <connections>
+                <outlet property="filterTitleLabel" destination="8aN-Ir-v4C" id="XHx-sE-tuB"/>
+                <outlet property="filterView" destination="taV-ci-k4s" id="Dz8-v3-0VH"/>
+                <outlet property="leadingConstraint" destination="X3x-NW-n9N" id="nuW-uK-7Ld"/>
+                <outlet property="trailingConstraint" destination="3b6-nm-V1f" id="YSV-1y-s4h"/>
+            </connections>
+            <point key="canvasLocation" x="197.82608695652175" y="121.54017857142857"/>
         </collectionViewCell>
     </objects>
     <resources>

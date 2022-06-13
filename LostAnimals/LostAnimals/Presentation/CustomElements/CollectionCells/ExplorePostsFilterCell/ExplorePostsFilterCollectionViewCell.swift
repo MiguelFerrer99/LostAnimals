@@ -10,12 +10,29 @@ import UIKit
 
 final class ExplorePostsFilterCollectionViewCell: UICollectionViewCell, Reusable {
     // MARK: - IBOutlets
+    @IBOutlet private weak var filterView: CustomView!
+    @IBOutlet private weak var filterTitleLabel: UILabel!
+    @IBOutlet private weak var leadingConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var trailingConstraint: NSLayoutConstraint!
     
     // MARK: - Life cycle
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override var isSelected: Bool {
+        didSet {
+            UIView.animate(withDuration: 0.2) {
+                self.filterView.alpha = self.isSelected ? 1 : 0.5
+            }
+        }
     }
 }
 
 // MARK: - Functions
+extension ExplorePostsFilterCollectionViewCell {
+    func display(_ summary: ExplorePostsFilterCollectionViewCellSummary) {
+        leadingConstraint.constant = summary.leadingPadding
+        trailingConstraint.constant = summary.trailingPadding
+        filterTitleLabel.text = summary.filter.filterTitle
+    }
+}
+
+// MARK: - Private functions
 private extension ExplorePostsFilterCollectionViewCell {}

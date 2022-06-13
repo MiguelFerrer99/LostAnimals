@@ -36,6 +36,20 @@ extension ExploreViewController {
             }
         }
     }
+    
+    func userSharedLocation() -> Bool {
+        if #available(iOS 14.0, *) {
+            switch locationManager.authorizationStatus {
+            case .authorized, .authorizedAlways, .authorizedWhenInUse: return true
+            default: return false
+            }
+        } else {
+            switch CLLocationManager.authorizationStatus() {
+            case .authorized, .authorizedAlways, .authorizedWhenInUse: return true
+            default: return false
+            }
+        }
+    }
 }
 
 // MARK: - CLLocationManagerDelegate
