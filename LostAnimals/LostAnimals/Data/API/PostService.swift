@@ -55,7 +55,7 @@ extension PostService {
                     } else if Filters.currentFilters[.recent]?.enabled ?? false {
                         posts.sort { $0.createdAt > $1.createdAt }
                     } else if Filters.currentFilters[.near]?.enabled ?? false {
-                        posts.sort { ($0.distanceToUserLocation ?? 0) < ($1.distanceToUserLocation ?? 0) }
+                        posts.sort { ($0.distanceToUserLocation ?? 0) > ($1.distanceToUserLocation ?? 0) }
                     }
                     completion(.success(posts))
                 } catch { completion(.error("An unexpected error occured. Please, try again later")) }

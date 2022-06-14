@@ -581,7 +581,18 @@ extension UserService {
                                                                                                                 default:
                                                                                                                     completion(.error("An unexpected error occured. Please, try again later"))
                                                                                                                 }
-                                                                                                            } else { completion(.success) }
+                                                                                                            } else {
+                                                                                                                if User.shared?.savedPosts.contains(post.id) ?? false {
+                                                                                                                    self.unsavePost(postID: post.id) { result in
+                                                                                                                        switch result {
+                                                                                                                        case .success:
+                                                                                                                            completion(.success)
+                                                                                                                        case .error(let error):
+                                                                                                                            completion(.error(error))
+                                                                                                                        }
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            }
                                                                                                         }
                                                                                                     } else { completion(.success) }
                                                                                                 }

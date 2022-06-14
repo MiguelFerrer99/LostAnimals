@@ -37,12 +37,12 @@ struct Post {
     var description: String
     let userID: String
     let createdAt: Date
-    var distanceToUserLocation: Int? {
+    var distanceToUserLocation: Double? {
         guard let userCoordinates = User.currentCoordinates,
               let postCoordinates = location.coordinates else { return nil }
         let userLocation = CLLocation(latitude: userCoordinates.latitude, longitude: userCoordinates.longitude)
         let postLocation = CLLocation(latitude: postCoordinates.latitude, longitude: postCoordinates.longitude)
-        return Int(exactly: postLocation.distance(from: userLocation) / 1000)
+        return postLocation.distance(from: userLocation) / 1000
     }
     
     // MARK: - Functions
