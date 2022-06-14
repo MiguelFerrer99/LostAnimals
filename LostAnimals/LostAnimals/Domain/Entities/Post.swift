@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 // MARK: - Enums
 enum AnimalType: String {
@@ -36,10 +37,12 @@ struct Post {
     var description: String
     let userID: String
     let createdAt: Date
-    var distanceToUserLocation: Double? {
+    var distanceToUserLocation: Int? {
         guard let userCoordinates = User.currentCoordinates,
               let postCoordinates = location.coordinates else { return nil }
-        return abs(abs(userCoordinates.longitude + userCoordinates.latitude) - abs(postCoordinates.longitude + postCoordinates.latitude))
+        let userLocation = CLLocation(latitude: userCoordinates.latitude, longitude: userCoordinates.longitude)
+        let postLocation = CLLocation(latitude: postCoordinates.latitude, longitude: postCoordinates.longitude)
+        return Int(exactly: postLocation.distance(from: userLocation) / 1000)
     }
     
     // MARK: - Functions
