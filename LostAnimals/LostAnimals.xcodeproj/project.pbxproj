@@ -95,6 +95,8 @@
 		413E151B2831C5550015453D /* ExploreProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413E151A2831C5550015453D /* ExploreProtocols.swift */; };
 		414903B727EF796F0037EE4E /* ProfileScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414903B627EF796F0037EE4E /* ProfileScrollView.swift */; };
 		415476BF27849A0300BD684F /* EditPostTextfields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415476BE27849A0300BD684F /* EditPostTextfields.swift */; };
+		415AF1EE285A71D100DBE7DD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 415AF1F0285A71D100DBE7DD /* Localizable.strings */; };
+		415AF1F3285A722B00DBE7DD /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415AF1F2285A722B00DBE7DD /* Strings.swift */; };
 		415E597C2763EA7E009A013E /* WhereDoYouLiveCountriesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E59782763EA7E009A013E /* WhereDoYouLiveCountriesRouter.swift */; };
 		415E597D2763EA7E009A013E /* WhereDoYouLiveCountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E59792763EA7E009A013E /* WhereDoYouLiveCountriesViewController.swift */; };
 		415E597E2763EA7E009A013E /* WhereDoYouLiveCountriesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E597A2763EA7E009A013E /* WhereDoYouLiveCountriesBuilder.swift */; };
@@ -454,6 +456,9 @@
 		413E151A2831C5550015453D /* ExploreProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreProtocols.swift; sourceTree = "<group>"; };
 		414903B627EF796F0037EE4E /* ProfileScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScrollView.swift; sourceTree = "<group>"; };
 		415476BE27849A0300BD684F /* EditPostTextfields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostTextfields.swift; sourceTree = "<group>"; };
+		415AF1EF285A71D100DBE7DD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		415AF1F1285A71EA00DBE7DD /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		415AF1F2285A722B00DBE7DD /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		415E59782763EA7E009A013E /* WhereDoYouLiveCountriesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereDoYouLiveCountriesRouter.swift; sourceTree = "<group>"; };
 		415E59792763EA7E009A013E /* WhereDoYouLiveCountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereDoYouLiveCountriesViewController.swift; sourceTree = "<group>"; };
 		415E597A2763EA7E009A013E /* WhereDoYouLiveCountriesBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereDoYouLiveCountriesBuilder.swift; sourceTree = "<group>"; };
@@ -740,10 +745,11 @@
 		3147D62E2419074F00E741D3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4104A8CE2738489500F5946B /* Fonts */,
-				41BFE1672765392600AC5570 /* Jsons */,
 				4176D22827C2604C008B0830 /* GoogleService-Info.plist */,
 				3147D622241906FD00E741D3 /* Assets.xcassets */,
+				4104A8CE2738489500F5946B /* Fonts */,
+				41BFE1672765392600AC5570 /* Jsons */,
+				415AF1EB285A710400DBE7DD /* LocaleStrings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1101,6 +1107,15 @@
 				418B636B27AEB81300F7DC4B /* ProfileSettingsFlow */,
 			);
 			path = ProfileFlow;
+			sourceTree = "<group>";
+		};
+		415AF1EB285A710400DBE7DD /* LocaleStrings */ = {
+			isa = PBXGroup;
+			children = (
+				415AF1F2285A722B00DBE7DD /* Strings.swift */,
+				415AF1F0285A71D100DBE7DD /* Localizable.strings */,
+			);
+			path = LocaleStrings;
 			sourceTree = "<group>";
 		};
 		415E596B2763E784009A013E /* WhereDoYouLive */ = {
@@ -1828,6 +1843,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 3147D60D241906FB00E741D3;
 			packageReferences = (
@@ -1918,6 +1934,7 @@
 				41CD10F8278222F200257B2B /* AnimalFilterTableViewCell.xib in Resources */,
 				41EC16A32785E08700096B7A /* AnimalTypesViewController.storyboard in Resources */,
 				418A331D27EA77CA00F9E278 /* ConfirmationPopupViewController.storyboard in Resources */,
+				415AF1EE285A71D100DBE7DD /* Localizable.strings in Resources */,
 				411C7F72274BA91300C9710A /* LoginViewController.storyboard in Resources */,
 				412FBB4B28550D0F00E88D9D /* ExplorePostsFilterCollectionViewCell.xib in Resources */,
 				417B8620277D27380051B8CF /* ProfileViewController.storyboard in Resources */,
@@ -2078,6 +2095,7 @@
 				41DA64F027A4862A0094F55C /* SocialMediaCollectionViewCellSummary.swift in Sources */,
 				41F820C9276FD83B0046B0EA /* WhereCanWeFindYouBuilder.swift in Sources */,
 				410FE6782770BCA800A390A3 /* WhereCanWeFindYouTableView.swift in Sources */,
+				415AF1F3285A722B00DBE7DD /* Strings.swift in Sources */,
 				41A22738285638FE006B2971 /* XibView.swift in Sources */,
 				41B75628275EE4CE00C00E03 /* SignUpBuilder.swift in Sources */,
 				412FBB4A28550D0F00E88D9D /* ExplorePostsFilterCollectionViewCell.swift in Sources */,
@@ -2209,6 +2227,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		415AF1F0285A71D100DBE7DD /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				415AF1EF285A71D100DBE7DD /* en */,
+				415AF1F1285A71EA00DBE7DD /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -2216,6 +2243,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -2277,6 +2305,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
