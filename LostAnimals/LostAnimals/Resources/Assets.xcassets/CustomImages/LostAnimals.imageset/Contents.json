@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "LostAnimals2.png",
+      "filename" : "LostAnimals-2.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "LostAnimals2-1.png",
+      "filename" : "LostAnimals-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "LostAnimals2-2.png",
+      "filename" : "LostAnimals.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

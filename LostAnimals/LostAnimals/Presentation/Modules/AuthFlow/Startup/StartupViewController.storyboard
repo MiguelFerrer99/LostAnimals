@@ -206,7 +206,7 @@
     </designables>
     <color key="tintColor" name="CustomBlack"/>
     <resources>
-        <image name="LostAnimals" width="453" height="412"/>
+        <image name="LostAnimals" width="500" height="412"/>
         <namedColor name="CustomBlack">
             <color red="0.24705882352941178" green="0.24705882352941178" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
