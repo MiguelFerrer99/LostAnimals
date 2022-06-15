@@ -26,8 +26,20 @@ extension PostRouter {
         }
     }
     
-    func goToMyProfile() {
+    func goToMyProfileFromExplore() {
         self.viewController?.delegate?.goToMyProfile()
+    }
+    
+    func goToMyProfileFromProfile() {
+        DispatchQueue.main.async {
+            guard let viewControllers = self.viewController?.navigationController?.viewControllers else { return }
+            for index in 0..<viewControllers.count {
+                if let profileViewController = viewControllers[index] as? ProfileViewController {
+                    self.viewController?.navigationController?.popToViewController(profileViewController, animated: true)
+                    break
+                }
+            }
+        }
     }
     
     func goToPostImages(postImages: [UIImage?], indexPostImages: Int) {

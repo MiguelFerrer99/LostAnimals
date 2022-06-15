@@ -164,12 +164,28 @@ extension PostViewModel {
     
     func didPressAuthor() {
         guard let user = user else { return }
-        User.shared == user ? self.router.goToMyProfile() : self.router.goToAuthorProfile(user: user)
+        if User.shared == user {
+            if comesFrom == .explore {
+                self.router.goToMyProfileFromExplore()
+            } else {
+                self.router.goToMyProfileFromProfile()
+            }
+        } else {
+            self.router.goToAuthorProfile(user: user)
+        }
     }
     
     func didPressContactWithAuthor() {
         guard let user = user else { return }
-        User.shared == user ? self.router.goToMyProfile() : self.router.showContactWithPopup(authorSocialMedias: user.socialMedias)
+        if User.shared == user {
+            if comesFrom == .explore {
+                self.router.goToMyProfileFromExplore()
+            } else {
+                self.router.goToMyProfileFromProfile()
+            }
+        } else {
+            self.router.showContactWithPopup(authorSocialMedias: user.socialMedias)
+        }
     }
     
     func didPressSavePostButton(completion: @escaping (() -> Void)) {
