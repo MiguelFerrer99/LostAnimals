@@ -33,7 +33,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ppU-IY-XXx">
                                 <rect key="frame" x="40" y="0.0" width="299" height="615"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write your social media accounts if you have. We will use them to give you the best user experience" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ktl-Gy-1el">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write your social media accounts if you have. We will use them to give you the best user experience" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ktl-Gy-1el">
                                         <rect key="frame" x="0.0" y="0.0" width="299" height="65.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -310,7 +310,7 @@
                                                                     </imageView>
                                                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I have read and accept" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfb-p6-Jvx">
                                                                         <rect key="frame" x="30" y="0.0" width="132" height="25"/>
-                                                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="13"/>
+                                                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
                                                                         <color key="textColor" name="CustomWhite"/>
                                                                         <nil key="highlightedColor"/>
                                                                         <size key="shadowOffset" width="0.0" height="0.0"/>
@@ -340,7 +340,7 @@
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qd-cT-U3Z">
                                                         <rect key="frame" x="166" y="0.0" width="133" height="25"/>
-                                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="13"/>
+                                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Terms and Conditions">
                                                             <color key="titleColor" name="CustomWhite"/>

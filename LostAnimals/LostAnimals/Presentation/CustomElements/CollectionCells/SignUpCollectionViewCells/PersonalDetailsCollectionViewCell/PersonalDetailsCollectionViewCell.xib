@@ -29,7 +29,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8CX-ve-MNp">
                                 <rect key="frame" x="40" y="0.0" width="334" height="657"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fill your personal details to let us know something about you" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvr-8t-FPC">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fill your personal details to let us know something about you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvr-8t-FPC">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="44"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -61,7 +61,6 @@
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Animal shelter name"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isOptional" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
@@ -79,9 +78,7 @@
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="datePickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Where can we find you?"/>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="locationPickerEnabled" value="YES"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="YES"/>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isOptional" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
@@ -100,7 +97,6 @@
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="datePickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isOptional" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="animalPickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="dateAndTimePickerEnabled" value="NO"/>
@@ -122,7 +118,6 @@
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isOptional" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="animalPickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="dateAndTimePickerEnabled" value="NO"/>
                                                                 </userDefinedRuntimeAttributes>
@@ -143,7 +138,6 @@
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="cityPickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isOptional" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="animalPickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="dateAndTimePickerEnabled" value="NO"/>
                                                                 </userDefinedRuntimeAttributes>
@@ -164,7 +158,6 @@
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="addressPickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="datePickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isNumberPad" value="NO"/>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isOptional" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="animalPickerEnabled" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="dateAndTimePickerEnabled" value="NO"/>
                                                                 </userDefinedRuntimeAttributes>
