@@ -37,6 +37,10 @@ extension NewPostGenericViewController {
         locationTextfield.addErrorsToCheck([TextFieldErrorEmptyValue()])
     }
     
+    func configureTextView() {
+        descriptionTextview.delegate = self
+    }
+    
     func fillWhereCanWeFindYou(searchResult: MKLocalSearchCompletion) {
         let searchResultString1 = searchResult.title
         let searchResultString2 = searchResult.subtitle.isEmpty ? "" : ", \(searchResult.subtitle)"
@@ -69,6 +73,14 @@ extension NewPostGenericViewController {
                 self.viewModel.newPostLocation = Location(address: address, coordinates: Coordinates(longitude: long, latitude: lat))
             }
         }
+    }
+}
+
+// MARK: - UITextViewDelegate
+extension NewPostGenericViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        if textView.text.count > 300 { textView.text.removeLast() }
+        else { descriptionCharactersCounterLabel.text = "\(textView.text.count)/300" }
     }
 }
 

@@ -90,6 +90,23 @@ private extension EditPostViewController {
     }
 }
 
+// MARK: - UITextViewDelegate
+extension EditPostViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        if textView.text.count > 300 { textView.text.removeLast() }
+        else {
+            descriptionCharactersCounterLabel.text = "\(textView.text.count)/300"
+            viewModel.newEditPostInfo[.description] = textView.text
+            checkAllContentsAreOk()
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        viewModel.newEditPostInfo[.description] = textView.text
+        checkAllContentsAreOk()
+    }
+}
+
 // MARK: - CustomTextFieldDelegate
 extension EditPostViewController: CustomTextFieldDelegate {
     func textFieldShouldReturn(_ customTextField: CustomTextField) -> Bool {
@@ -156,18 +173,6 @@ extension EditPostViewController: CustomTextFieldDelegate {
             viewModel.newEditPostInfo[.lastTimeSeen] = customTextField.value
         default: break
         }
-        checkAllContentsAreOk()
-    }
-}
-
-extension EditPostViewController: UITextViewDelegate {
-    func textViewDidChange(_ textView: UITextView) {
-        viewModel.newEditPostInfo[.description] = textView.text
-        checkAllContentsAreOk()
-    }
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        viewModel.newEditPostInfo[.description] = textView.text
         checkAllContentsAreOk()
     }
 }

@@ -99,6 +99,12 @@ extension EditPostViewModel {
         return modifiedImages
     }
     
+    func goBack() {
+        showConfirmationPopup(title: "Are you sure you want to exit?") {
+            self.router.goBack()
+        }
+    }
+    
     func didPressSelectPhotoButton() {
         guard let selectPhotoImageView = selectPhotoImageViews[selectedIndexImageView].image else { return }
         self.router.goToSelectPhotoPopup(showRemoveOption: !selectPhotoImageView.isEqualTo(image: UIImage(named: "SelectPhotoPlaceholder")))

@@ -33,10 +33,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mLx-cp-LpY">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1222"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1269.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qbc-Gi-86c">
-                                                <rect key="frame" x="20" y="0.0" width="374" height="1222"/>
+                                                <rect key="frame" x="20" y="0.0" width="374" height="1269.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F7S-Hg-Bet">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="20"/>
@@ -544,7 +544,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pHH-tC-hlN" customClass="CustomStackView" customModule="LostAnimals" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="937" width="374" height="85"/>
+                                                        <rect key="frame" x="0.0" y="937" width="374" height="93"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="15h-Dy-Uyh">
                                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="35"/>
@@ -568,10 +568,10 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UYV-Z2-WOo">
-                                                                <rect key="frame" x="0.0" y="35" width="374" height="50"/>
+                                                                <rect key="frame" x="0.0" y="35" width="374" height="58"/>
                                                                 <subviews>
                                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6m-so-Scg" customClass="IQTextView">
-                                                                        <rect key="frame" x="15" y="0.0" width="344" height="50"/>
+                                                                        <rect key="frame" x="15" y="0.0" width="344" height="48"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <color key="tintColor" name="CustomWhite"/>
                                                                         <color key="textColor" name="CustomWhite"/>
@@ -587,9 +587,9 @@
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
+                                                                    <constraint firstAttribute="bottom" secondItem="I6m-so-Scg" secondAttribute="bottom" constant="10" id="34G-dj-Zjd"/>
                                                                     <constraint firstAttribute="trailing" secondItem="I6m-so-Scg" secondAttribute="trailing" constant="15" id="aDZ-nE-c5h"/>
-                                                                    <constraint firstItem="I6m-so-Scg" firstAttribute="centerY" secondItem="UYV-Z2-WOo" secondAttribute="centerY" id="e2G-V3-7sU"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="I6m-so-Scg" secondAttribute="bottom" id="xZS-db-ioK"/>
+                                                                    <constraint firstItem="I6m-so-Scg" firstAttribute="top" secondItem="UYV-Z2-WOo" secondAttribute="top" id="anu-vm-Sle"/>
                                                                     <constraint firstItem="I6m-so-Scg" firstAttribute="leading" secondItem="UYV-Z2-WOo" secondAttribute="leading" constant="15" id="zmC-x3-wlU"/>
                                                                 </constraints>
                                                             </view>
@@ -604,15 +604,21 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/300" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Za1-aq-iCL">
+                                                        <rect key="frame" x="0.0" y="1050" width="374" height="19.5"/>
+                                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="14"/>
+                                                        <color key="textColor" name="CustomBlack"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hl1-DN-Azn">
-                                                        <rect key="frame" x="0.0" y="1042" width="374" height="20"/>
+                                                        <rect key="frame" x="0.0" y="1089.5" width="374" height="20"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="6y0-Uc-Hqb"/>
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="5G9-UP-vVj">
-                                                        <rect key="frame" x="0.0" y="1082" width="374" height="140"/>
+                                                        <rect key="frame" x="0.0" y="1129.5" width="374" height="140"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5c-zU-faL" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
@@ -707,6 +713,7 @@
                         <outlet property="animalTextfield" destination="qW6-ul-zfy" id="7qc-W6-l3k"/>
                         <outlet property="breedTextfield" destination="WJK-6z-zNb" id="tJa-xs-faa"/>
                         <outlet property="deletePostButton" destination="D5c-zU-faL" id="04q-B9-avH"/>
+                        <outlet property="descriptionCharactersCounterLabel" destination="Za1-aq-iCL" id="ec5-Yg-1Nu"/>
                         <outlet property="descriptionTextview" destination="I6m-so-Scg" id="fRt-Lr-6al"/>
                         <outlet property="lastTimeSeenTextfield" destination="6aE-zP-tLV" id="0Bw-Fz-Yg6"/>
                         <outlet property="locationTextfield" destination="nwB-Wc-qQW" id="4O8-6O-mzp"/>

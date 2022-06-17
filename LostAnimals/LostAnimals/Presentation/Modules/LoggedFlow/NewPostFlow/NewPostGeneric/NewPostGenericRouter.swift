@@ -20,6 +20,10 @@ final class NewPostGenericRouter {
 
 // MARK: - Functions
 extension NewPostGenericRouter {
+    func goBack() {
+        self.viewController?.pop()
+    }
+    
     func goBackToTabBar() {
         self.viewController?.dismissCurrentView(completion: nil)
     }

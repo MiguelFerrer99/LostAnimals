@@ -27,7 +27,8 @@ final class NewPostGenericViewController: ViewController {
     @IBOutlet private weak var selectPhoto6Button: UIButton!
     @IBOutlet private weak var selectPhoto7Button: UIButton!
     @IBOutlet private weak var selectPhoto8Button: UIButton!
-    @IBOutlet private weak var descriptionTextview: UITextView!
+    @IBOutlet weak var descriptionTextview: UITextView!
+    @IBOutlet weak var descriptionCharactersCounterLabel: UILabel!
     @IBOutlet weak var nameTextfield: CustomTextField!
     @IBOutlet weak var animalTextfield: CustomTextField!
     @IBOutlet weak var breedTextfield: CustomTextField!
@@ -38,6 +39,13 @@ final class NewPostGenericViewController: ViewController {
     // MARK: - Properties
     override var navBarTitle: String {
         return "New post"
+    }
+    override var navBarLeftButtons: [UIBarButtonItem] {
+        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"),
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(goBack))
+        return [backButton]
     }
     var viewModel: NewPostGenericViewModel!
     let imagePickerController = UIImagePickerController()
@@ -87,6 +95,7 @@ private extension NewPostGenericViewController {
         viewModel.selectPhotoImageViews = [selectPhoto1ImageView, selectPhoto2ImageView, selectPhoto3ImageView, selectPhoto4ImageView,
                                            selectPhoto5ImageView, selectPhoto6ImageView, selectPhoto7ImageView, selectPhoto8ImageView]
         configureTextfields()
+        configureTextView()
         configureImagePickerController()
         fillUI()
     }
@@ -108,7 +117,6 @@ private extension NewPostGenericViewController {
     
     func updateUserInteraction() {
         navigationController?.navigationBar.isUserInteractionEnabled = publishPostButton.isEnabled
-        navigationController?.interactivePopGestureRecognizer?.isEnabled = publishPostButton.isEnabled
         nameTextfield.isUserInteractionEnabled = publishPostButton.isEnabled
         animalTextfield.isUserInteractionEnabled = publishPostButton.isEnabled
         breedTextfield.isUserInteractionEnabled = publishPostButton.isEnabled
@@ -146,6 +154,11 @@ private extension NewPostGenericViewController {
                            userID: me.id,
                            createdAt: Date())
         return newPost
+    }
+    
+    
+    @objc func goBack() {
+        viewModel.goBack()
     }
 }
 

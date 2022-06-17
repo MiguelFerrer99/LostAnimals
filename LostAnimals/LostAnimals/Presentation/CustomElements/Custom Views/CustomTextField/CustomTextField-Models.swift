@@ -90,7 +90,7 @@ class TextFieldErrorMaximumCharacters: TextFieldError {
 class TextFieldErrorPhoneNumber: TextFieldError {
     // MARK: - Init
     init() {
-        super.init(localizedDescription: "Invalid phone number format") { (value) -> Bool in
+        super.init(localizedDescription: "Invalid format") { (value) -> Bool in
             return !value.isValidPhoneNumber()
         }
     }

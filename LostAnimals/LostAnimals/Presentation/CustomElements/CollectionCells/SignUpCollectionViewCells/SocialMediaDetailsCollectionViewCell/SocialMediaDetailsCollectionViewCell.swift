@@ -104,7 +104,7 @@ private extension SocialMediaDetailsCollectionViewCell {
         toggleTermsAndConditionsButton()
     }
     
-    @IBAction func termsAndConditionsButtonPressed(_ sender: UIButton) {
+    @IBAction func termsAndConditionsButtonPressed() {
         signUpStepsDelegate?.goToTermsAndConditions()
     }
     

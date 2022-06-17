@@ -34,11 +34,19 @@ final class EditPostViewController: ViewController {
     @IBOutlet weak var lastTimeSeenTextfield: CustomTextField!
     @IBOutlet weak var locationTextfield: CustomTextField!
     @IBOutlet weak var descriptionTextview: UITextView!
+    @IBOutlet weak var descriptionCharactersCounterLabel: UILabel!
     @IBOutlet weak var saveChangesButton: CustomButton!
     
     // MARK: - Properties
     override var navBarTitle: String {
         return "Edit post"
+    }
+    override var navBarLeftButtons: [UIBarButtonItem] {
+        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"),
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(goBack))
+        return [backButton]
     }
     var viewModel: EditPostViewModel!
     let imagePickerController = UIImagePickerController()
@@ -62,7 +70,6 @@ final class EditPostViewController: ViewController {
 private extension EditPostViewController {
     func updateUserInteraction() {
         navigationController?.navigationBar.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
-        navigationController?.interactivePopGestureRecognizer?.isEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
         nameTextfield.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
         animalTextfield.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
         breedTextfield.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
@@ -109,8 +116,13 @@ private extension EditPostViewController {
         animalTextfield.textField.text = viewModel.post.animalType.rawValue
         breedTextfield.textField.text = viewModel.post.animalBreed
         descriptionTextview.text = viewModel.post.description
+        descriptionCharactersCounterLabel.text = "\(descriptionTextview.text.count)/300"
         lastTimeSeenTextfield.textField.text = viewModel.post.lastTimeSeen
         locationTextfield.textField.text = viewModel.currentLocation.address
+    }
+    
+    @objc func goBack() {
+        viewModel.goBack()
     }
 }
 

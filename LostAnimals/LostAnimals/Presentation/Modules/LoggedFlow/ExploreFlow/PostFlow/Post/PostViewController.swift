@@ -164,6 +164,7 @@ private extension PostViewController {
         authorNameLabel.text = "\(user.firstname) \(user.lastname)"
         authorAddressLabel.text = user.location.address
         if let authorAge = viewModel.getAge() { authorAgeLabel.text = "\(authorAge) years old" }
+        updateAuthorUI()
         contactWithAuthorButton.hideLoading {
             self.contactWithAuthorButton.setTitle("Contact with \(user.firstname)", for: .normal)
         }
@@ -172,10 +173,9 @@ private extension PostViewController {
                 DispatchQueue.main.async {
                     self.authorPhotoImageView.image = image
                     self.loadingAuthorInfoView.isHidden = true
-                    self.updateAuthorUI()
                 }
             }
-        } else { self.updateAuthorUI() }
+        }
     }
     
     func updateAuthorUI() {

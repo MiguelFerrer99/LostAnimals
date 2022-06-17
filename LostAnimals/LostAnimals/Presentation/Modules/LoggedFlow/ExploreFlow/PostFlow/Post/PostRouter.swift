@@ -59,7 +59,7 @@ extension PostRouter {
     func goToAuthorProfile(user: User) {
         DispatchQueue.main.async {
             let viewController = Container.shared.profileBuilder().build(user: user)
-            viewController.hidesBottomBarWhenPushed = true
+            viewController.hidesBottomBarWhenPushed = false
             self.viewController?.push(viewController: viewController)
         }
     }
