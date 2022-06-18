@@ -11,6 +11,11 @@ import UIKit
 final class StartupViewController: ViewController {
     // MARK: - IBOutlets
     @IBOutlet private weak var welcomeView: CustomView!
+    @IBOutlet private weak var welcomeTitleLabel: UILabel!
+    @IBOutlet private weak var welcomeTextLabel: UILabel!
+    @IBOutlet private weak var continueAsGuestButton: UIButton!
+    @IBOutlet private weak var logInButton: CustomButton!
+    @IBOutlet private weak var signUpButton: CustomButton!
     
     // MARK: - Properties
     override var hideNavigationBar: Bool {
@@ -23,6 +28,7 @@ final class StartupViewController: ViewController {
         super.viewDidLoad()
         
         setupUI()
+        fillUI()
         viewModel.viewReady()
     }
     
@@ -37,6 +43,18 @@ final class StartupViewController: ViewController {
 private extension StartupViewController {
     func setupUI() {
         welcomeView.layer.maskedCorners =  [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+    }
+    
+    func fillUI() {
+        setLocalizables()
+    }
+    
+    func setLocalizables() {
+        welcomeTitleLabel.text = .Startup.WelcomeTitle()
+        welcomeTextLabel.text = .Startup.WelcomeText()
+        continueAsGuestButton.setTitle(.Startup.ContinueAsGuest(), for: .normal)
+        logInButton.setTitle(.Startup.LogIn(), for: .normal)
+        signUpButton.setTitle(.Startup.SignUp(), for: .normal)
     }
 }
 

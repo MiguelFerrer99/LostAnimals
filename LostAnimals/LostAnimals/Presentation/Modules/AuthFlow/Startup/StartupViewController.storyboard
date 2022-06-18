@@ -64,18 +64,11 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in if you already have an account or Sign up to enjoy all the features of LostAnimals" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="3Ia-BR-Ncj">
-                                                        <rect key="frame" x="0.0" y="55" width="295" height="74"/>
+                                                        <rect key="frame" x="0.0" y="55" width="295" height="103.5"/>
                                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="18"/>
                                                         <color key="textColor" name="CustomWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5dz-BV-hA2">
-                                                        <rect key="frame" x="0.0" y="144" width="295" height="14.5"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="30" id="GY1-wu-VNT"/>
-                                                        </constraints>
-                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lfD-Qw-dOH">
                                                         <rect key="frame" x="0.0" y="173.5" width="295" height="25"/>
                                                         <subviews>
@@ -107,7 +100,7 @@
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qrJ-U9-aUo" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="127.5" height="45"/>
                                                                         <color key="backgroundColor" name="CustomWhite"/>
-                                                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="18"/>
+                                                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="16"/>
                                                                         <state key="normal" title="Log In">
                                                                             <color key="titleColor" name="CustomBlack"/>
                                                                         </state>
@@ -121,7 +114,7 @@
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MyI-La-a1L" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
                                                                         <rect key="frame" x="167.5" y="0.0" width="127.5" height="45"/>
                                                                         <color key="backgroundColor" name="CustomWhite"/>
-                                                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="18"/>
+                                                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="16"/>
                                                                         <state key="normal" title="Sign Up">
                                                                             <color key="titleColor" name="CustomBlack"/>
                                                                         </state>
@@ -188,6 +181,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="continueAsGuestButton" destination="iMk-Yx-9FK" id="kvD-02-Czr"/>
+                        <outlet property="logInButton" destination="qrJ-U9-aUo" id="ixT-9a-2Ph"/>
+                        <outlet property="signUpButton" destination="MyI-La-a1L" id="MxX-7M-VHG"/>
+                        <outlet property="welcomeTextLabel" destination="3Ia-BR-Ncj" id="aVe-ti-W3r"/>
+                        <outlet property="welcomeTitleLabel" destination="ZMg-vO-qoy" id="PhT-Dk-acO"/>
                         <outlet property="welcomeView" destination="V2t-fj-c83" id="EYa-Re-sRB"/>
                     </connections>
                 </viewController>
@@ -198,10 +196,10 @@
     </scenes>
     <designables>
         <designable name="MyI-La-a1L">
-            <size key="intrinsicContentSize" width="67" height="37"/>
+            <size key="intrinsicContentSize" width="59" height="34"/>
         </designable>
         <designable name="qrJ-U9-aUo">
-            <size key="intrinsicContentSize" width="52" height="37"/>
+            <size key="intrinsicContentSize" width="46" height="34"/>
         </designable>
     </designables>
     <color key="tintColor" name="CustomBlack"/>

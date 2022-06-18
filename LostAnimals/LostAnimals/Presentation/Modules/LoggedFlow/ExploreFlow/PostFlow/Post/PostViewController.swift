@@ -164,6 +164,7 @@ private extension PostViewController {
         authorNameLabel.text = "\(user.firstname) \(user.lastname)"
         authorAddressLabel.text = user.location.address
         if let authorAge = viewModel.getAge() { authorAgeLabel.text = "\(authorAge) years old" }
+        else { authorAgeLabel.isHidden = true }
         updateAuthorUI()
         contactWithAuthorButton.hideLoading {
             self.contactWithAuthorButton.setTitle("Contact with \(user.firstname)", for: .normal)

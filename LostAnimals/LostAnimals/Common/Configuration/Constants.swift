@@ -11,10 +11,6 @@ import UIKit
 // MARK: - Constants
 struct Constants {
     // MARK: - Properties
-    static var userCoordinates: Coordinates? = nil
-    
-    static let RELATION_KM_HOURS = 0.009009009008
-    
     static let emptyUser = User(id: "",
                                 email: "",
                                 animalShelter: false,

@@ -36,7 +36,11 @@ extension Localizable {
 }
 
 extension String {
-    enum Common: String, Localizable {
-        case Test = "Common_Test"
+    enum Startup: String, Localizable {
+        case WelcomeTitle = "Startup_WelcomeTitle"
+        case WelcomeText = "Startup_WelcomeText"
+        case ContinueAsGuest = "Startup_ContinueAsGuest"
+        case LogIn = "Startup_LogIn"
+        case SignUp = "Startup_SignUp"
     }
 }

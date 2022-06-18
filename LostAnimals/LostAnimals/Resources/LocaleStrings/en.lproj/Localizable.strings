@@ -6,4 +6,9 @@
   Copyright © 2022 Rudo. All rights reserved.
 */
 
-"Common_Test" = "Test";
+// MARK: - Startup
+"Startup_WelcomeTitle" = "Welcome";
+"Startup_WelcomeText" = "Log in if you already have an account or Sign up to enjoy all the features of Lost Animals";
+"Startup_ContinueAsGuest" = "Continue as guest";
+"Startup_LogIn" = "Log in";
+"Startup_SignUp" = "Sign up";

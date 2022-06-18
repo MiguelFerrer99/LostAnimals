@@ -18,6 +18,7 @@ extension WhereDoYouLiveCountriesViewController {
         searchController.searchBar.searchTextField.tintColor = .customWhite
         searchController.searchBar.searchTextField.backgroundColor = .customBlack
         searchController.searchBar.searchTextField.leftView?.tintColor = .customWhite
+        searchController.obscuresBackgroundDuringPresentation = false
         self.navigationItem.searchController = searchController
         self.navigationItem.hidesSearchBarWhenScrolling = false
     }

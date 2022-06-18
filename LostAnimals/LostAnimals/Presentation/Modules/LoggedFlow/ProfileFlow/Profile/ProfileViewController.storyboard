@@ -87,10 +87,10 @@
                                                                         <rect key="frame" x="10" y="10" width="40" height="40"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X9K-R3-4zG">
-                                                                                <rect key="frame" x="5" y="4" width="30" height="31.5"/>
+                                                                                <rect key="frame" x="5" y="5" width="30" height="30"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <color key="tintColor" name="CustomBlack"/>
-                                                                                <imageReference key="image" image="chevron.left.circle.fill" catalog="system" symbolScale="default" renderingMode="hierarchical">
+                                                                                <imageReference key="image" image="CustomBackButton" symbolScale="default" renderingMode="hierarchical">
                                                                                     <hierarchicalColors>
                                                                                         <color name="CustomBlack"/>
                                                                                         <color white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -569,10 +569,10 @@
     <resources>
         <image name="AnimalShelter" width="45.5" height="43.5"/>
         <image name="BlockUserWhite" width="381" height="381"/>
+        <image name="CustomBackButton" width="512" height="512"/>
         <image name="DefaultHeaderImage" width="413.5" height="283"/>
         <image name="DefaultUserImage" width="120" height="120"/>
         <image name="ProfileSettingsWhite" width="350" height="350"/>
-        <image name="chevron.left.circle.fill" catalog="system" width="128" height="121"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <namedColor name="CustomBlack">
             <color red="0.24705882352941178" green="0.24705882352941178" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
