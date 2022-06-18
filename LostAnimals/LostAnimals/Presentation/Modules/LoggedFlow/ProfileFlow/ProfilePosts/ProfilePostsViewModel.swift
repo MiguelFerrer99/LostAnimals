@@ -55,10 +55,6 @@ extension ProfilePostsViewModel {
         }
     }
     
-    func didPressPostsFilterPopup(filterType: FilterType, loadData: Bool) {
-        self.router.goToFilterPopup(filterType: filterType, loadData: loadData)
-    }
-    
     func didPressPost(post: Post) {
         self.router.goToPost(post: post)
     }

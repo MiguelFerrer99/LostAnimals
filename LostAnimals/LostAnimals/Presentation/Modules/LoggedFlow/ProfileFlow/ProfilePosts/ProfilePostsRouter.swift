@@ -20,18 +20,6 @@ final class ProfilePostsRouter {
 
 // MARK: - Functions
 extension ProfilePostsRouter {
-    func goToFilterPopup(filterType: FilterType, loadData: Bool) {
-        DispatchQueue.main.async {
-            let viewController: ViewController!
-            switch filterType {
-            case .animal:
-                viewController = Container.shared.animalFilterPopupBuilder().build(loadData: loadData)
-            default: return
-            }
-            self.viewController?.present(viewController: viewController, completion: nil)
-        }
-    }
-    
     func goToPost(post: Post) {
         DispatchQueue.main.async {
             let viewController = Container.shared.postBuilder().build(comesFrom: .profile, post: post)

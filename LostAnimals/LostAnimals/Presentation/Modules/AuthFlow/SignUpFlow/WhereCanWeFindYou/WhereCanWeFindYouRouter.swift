@@ -25,4 +25,9 @@ extension WhereCanWeFindYouRouter {
         self.viewController?.delegate?.getWhereCanWeFindYou(whereCanWeFindYouSearchResult: searchResult)
         self.viewController?.pop()
     }
+    
+    func goBack(addressString: String, coordinates: Coordinates) {
+        self.viewController?.delegate?.getWhereCanWeFindYou(addressString: addressString)
+        self.viewController?.pop()
+    }
 }

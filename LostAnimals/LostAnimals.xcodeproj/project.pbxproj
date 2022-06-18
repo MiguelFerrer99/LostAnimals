@@ -42,6 +42,9 @@
 		410FE67E2770C4D100A390A3 /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410FE67C2770C4D100A390A3 /* AddressTableViewCell.swift */; };
 		410FE67F2770C4D100A390A3 /* AddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 410FE67D2770C4D100A390A3 /* AddressTableViewCell.xib */; };
 		410FE6812770C4E200A390A3 /* AddressTableViewCellSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410FE6802770C4E200A390A3 /* AddressTableViewCellSummary.swift */; };
+		41124E80285D1BD000273B6F /* CurrentLocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41124E7E285D1BD000273B6F /* CurrentLocationTableViewCell.swift */; };
+		41124E81285D1BD000273B6F /* CurrentLocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41124E7F285D1BD000273B6F /* CurrentLocationTableViewCell.xib */; };
+		41124E83285D355F00273B6F /* WhereCanWeFindYouLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41124E82285D355F00273B6F /* WhereCanWeFindYouLocation.swift */; };
 		411483AD27B326CA00F994F3 /* PostProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411483AC27B326CA00F994F3 /* PostProtocols.swift */; };
 		4114ABC8275F92C900F1AB01 /* SignUpCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4114ABC7275F92C900F1AB01 /* SignUpCollectionView.swift */; };
 		4114ABCC275F94B400F1AB01 /* PersonalDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4114ABCA275F94B400F1AB01 /* PersonalDetailsCollectionViewCell.swift */; };
@@ -403,6 +406,9 @@
 		410FE67C2770C4D100A390A3 /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
 		410FE67D2770C4D100A390A3 /* AddressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressTableViewCell.xib; sourceTree = "<group>"; };
 		410FE6802770C4E200A390A3 /* AddressTableViewCellSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCellSummary.swift; sourceTree = "<group>"; };
+		41124E7E285D1BD000273B6F /* CurrentLocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationTableViewCell.swift; sourceTree = "<group>"; };
+		41124E7F285D1BD000273B6F /* CurrentLocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentLocationTableViewCell.xib; sourceTree = "<group>"; };
+		41124E82285D355F00273B6F /* WhereCanWeFindYouLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereCanWeFindYouLocation.swift; sourceTree = "<group>"; };
 		411483AC27B326CA00F994F3 /* PostProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostProtocols.swift; sourceTree = "<group>"; };
 		4114ABC7275F92C900F1AB01 /* SignUpCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCollectionView.swift; sourceTree = "<group>"; };
 		4114ABCA275F94B400F1AB01 /* PersonalDetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDetailsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -880,6 +886,15 @@
 				410FE6802770C4E200A390A3 /* AddressTableViewCellSummary.swift */,
 			);
 			path = AddressTableViewCell;
+			sourceTree = "<group>";
+		};
+		41124E7D285D1B2E00273B6F /* CurrentLocationTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				41124E7F285D1BD000273B6F /* CurrentLocationTableViewCell.xib */,
+				41124E7E285D1BD000273B6F /* CurrentLocationTableViewCell.swift */,
+			);
+			path = CurrentLocationTableViewCell;
 			sourceTree = "<group>";
 		};
 		4114ABC9275F948200F1AB01 /* CollectionCells */ = {
@@ -1534,13 +1549,14 @@
 		41E00060275A5B99003CAF90 /* TableCells */ = {
 			isa = PBXGroup;
 			children = (
-				4168E010284D6342002629D3 /* LoadingTableViewCell */,
 				410FE67B2770C33500A390A3 /* AddressTableViewCell */,
 				41CD10F4278222C900257B2B /* AnimalFilterTableViewCell */,
 				41EC16A92785E1DB00096B7A /* AnimalTypeTableViewCell */,
 				4119185027AC2CA000F9D68A /* BlockedUserTableViewCell */,
 				41BFE171276618AF00AC5570 /* CityTableViewCell */,
 				41BFE1682765399D00AC5570 /* CountryTableViewCell */,
+				4168E010284D6342002629D3 /* LoadingTableViewCell */,
+				41124E7D285D1B2E00273B6F /* CurrentLocationTableViewCell */,
 				418E234A277CC8D9008BB92E /* TermTableViewCell */,
 			);
 			path = TableCells;
@@ -1628,6 +1644,7 @@
 				410FE6772770BCA800A390A3 /* WhereCanWeFindYouTableView.swift */,
 				410FE6792770BCB400A390A3 /* WhereCanWeFindYouSearchBar.swift */,
 				4103944D2770D56B00A1CC5C /* WhereCanWeFindYouMapkit.swift */,
+				41124E82285D355F00273B6F /* WhereCanWeFindYouLocation.swift */,
 			);
 			path = WhereCanWeFindYou;
 			sourceTree = "<group>";
@@ -1895,6 +1912,7 @@
 				4114ABD8275F966600F1AB01 /* SocialMediaDetailsCollectionViewCell.xib in Resources */,
 				41871969275BFA6D00C993BC /* Nunito-SemiBoldItalic.ttf in Resources */,
 				4114ABD3275F960200F1AB01 /* AccountDetailsCollectionViewCell.xib in Resources */,
+				41124E81285D1BD000273B6F /* CurrentLocationTableViewCell.xib in Resources */,
 				4100A0EE278372110049EEF0 /* PostViewController.storyboard in Resources */,
 				4168E014284D635C002629D3 /* LoadingTableViewCell.xib in Resources */,
 				41EC16BE278678CE00096B7A /* SelectPhotoPopupViewController.storyboard in Resources */,
@@ -2158,6 +2176,7 @@
 				4119183C27ABFAF100F9D68A /* ProfilePostsViewModel.swift in Sources */,
 				415E59902764F1F8009A013E /* WhereDoYouLiveCitiesRouter.swift in Sources */,
 				945B15B525595DC9003A65E0 /* UITableViewCell.swift in Sources */,
+				41124E83285D355F00273B6F /* WhereCanWeFindYouLocation.swift in Sources */,
 				41EC16AC2785E20800096B7A /* AnimalTypeTableViewCell.swift in Sources */,
 				41A7CF5F27F080EE002BFD6F /* FakeSplashBuilder.swift in Sources */,
 				41742224277C815600915233 /* ExploreBuilder.swift in Sources */,
@@ -2198,6 +2217,7 @@
 				CCB0202A26A6EE3400214CB9 /* AppDelegate.swift in Sources */,
 				415E59912764F1F8009A013E /* WhereDoYouLiveCitiesViewController.swift in Sources */,
 				4119F6CD27958A9A006B665A /* NewPostGenericRouter.swift in Sources */,
+				41124E80285D1BD000273B6F /* CurrentLocationTableViewCell.swift in Sources */,
 				4100A0F1278372110049EEF0 /* PostViewModel.swift in Sources */,
 				4160E702277B99FB00C7066F /* TermsAndConditionsViewController.swift in Sources */,
 				41BFE17027653A6300AC5570 /* CountryTableViewCellSummary.swift in Sources */,

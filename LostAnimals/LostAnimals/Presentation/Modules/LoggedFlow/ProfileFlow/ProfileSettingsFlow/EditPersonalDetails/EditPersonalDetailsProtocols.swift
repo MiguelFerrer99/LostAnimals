@@ -13,4 +13,8 @@ extension EditPersonalDetailsViewController: WhereCanWeFindYouDelegate {
     func getWhereCanWeFindYou(whereCanWeFindYouSearchResult: MKLocalSearchCompletion) {
         fillWhereCanWeFindYou(searchResult: whereCanWeFindYouSearchResult)
     }
+    
+    func getWhereCanWeFindYou(addressString: String) {
+        fillWhereCanWeFindYou(addressString: addressString)
+    }
 }

@@ -50,6 +50,12 @@ extension NewPostGenericViewController {
         convertAddressToLocation(address: searchResultString)
     }
     
+    func fillWhereCanWeFindYou(addressString: String) {
+        locationTextfield.textField.text = addressString
+        locationTextfield.didFinishSelectContentFromOtherVC()
+        convertAddressToLocation(address: addressString)
+    }
+    
     func checkAllContentsAreOk() {
         let haveErrors = viewModel.textFieldsHaveErrors()
         let hasAtLeastOnePhoto = viewModel.selectPhotoImageViews.contains(where: {

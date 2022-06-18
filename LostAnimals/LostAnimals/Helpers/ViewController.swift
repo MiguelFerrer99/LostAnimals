@@ -78,6 +78,7 @@ class ViewController: UIViewController {
         navigationController?.setNavigationBarHidden(hideNavigationBar, animated: true)
         if useLargeTitle { navigationController?.navigationBar.prefersLargeTitles = true }
         navigationItem.largeTitleDisplayMode = useLargeTitle ? .always : .never
+        navigationController?.navigationBar.sizeToFit()
     }
     
     deinit { unsubscribeToNotifications() }

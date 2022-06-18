@@ -12,6 +12,7 @@ import MapKit
 // MARK: - Protocols
 protocol WhereCanWeFindYouDelegate: AnyObject {
     func getWhereCanWeFindYou(whereCanWeFindYouSearchResult: MKLocalSearchCompletion)
+    func getWhereCanWeFindYou(addressString: String)
 }
 
 final class WhereCanWeFindYouViewController: ViewController {
@@ -25,6 +26,7 @@ final class WhereCanWeFindYouViewController: ViewController {
     private var searchController = UISearchController(searchResultsController: nil)
     weak var delegate: WhereCanWeFindYouDelegate?
     var searchCompleter = MKLocalSearchCompleter()
+    let locationManager = CLLocationManager()
     var viewModel: WhereCanWeFindYouViewModel!
     
     // MARK: - Life cycle
@@ -46,9 +48,25 @@ final class WhereCanWeFindYouViewController: ViewController {
 }
 
 // MARK: - Functions
+extension WhereCanWeFindYouViewController {
+    func finishedGetUserCurrentLocation() {
+        if userSharedLocation(), let userCoordinates = User.currentCoordinates {
+            getAddressFromCoordinates(userCoordinates) { addressString in
+                if let addressString = addressString {
+                    self.viewModel.didPressAddress(addressString: addressString, coordinates: userCoordinates)
+                } else {
+                    showErrorPopup(title: "Sorry, It was not possible to get the address of your location")
+                }
+            }
+        } else { addressTableView.reloadData() }
+    }
+}
+
+// MARK: - Functions
 private extension WhereCanWeFindYouViewController {
     func setupUI() {
         configureMapKit()
+        configureLocationManager(locationManager)
         configureSearchController(searchController)
         configureTableView(addressTableView)
     }

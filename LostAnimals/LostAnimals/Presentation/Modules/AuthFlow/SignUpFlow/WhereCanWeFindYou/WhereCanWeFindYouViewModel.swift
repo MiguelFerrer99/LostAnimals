@@ -46,4 +46,8 @@ extension WhereCanWeFindYouViewModel {
     func didPressAddress(searchResult: MKLocalSearchCompletion) {
         self.router.goBack(comesFrom: comesFrom, searchResult: searchResult)
     }
+    
+    func didPressAddress(addressString: String, coordinates: Coordinates) {
+        self.router.goBack(addressString: addressString, coordinates: coordinates)
+    }
 }

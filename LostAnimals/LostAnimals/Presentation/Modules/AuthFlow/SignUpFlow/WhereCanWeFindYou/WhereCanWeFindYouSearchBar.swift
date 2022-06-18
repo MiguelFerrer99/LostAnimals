@@ -26,6 +26,9 @@ extension WhereCanWeFindYouViewController {
 // MARK: - UISearchBarDelegate
 extension WhereCanWeFindYouViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        searchCompleter.queryFragment = searchText
+        if searchText.isEmpty && userSharedLocation() {
+            viewModel.searchResults.removeAll()
+            addressTableView.reloadData()
+        } else { searchCompleter.queryFragment = searchText }
     }
 }

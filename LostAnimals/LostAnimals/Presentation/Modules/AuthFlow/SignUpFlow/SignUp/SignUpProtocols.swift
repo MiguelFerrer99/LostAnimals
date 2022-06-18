@@ -70,4 +70,8 @@ extension SignUpViewController: WhereCanWeFindYouDelegate {
     func getWhereCanWeFindYou(whereCanWeFindYouSearchResult: MKLocalSearchCompletion) {
         fillWhereCanWeFindYouPersonalDetails(whereCanWeFindYouSearchResult: whereCanWeFindYouSearchResult)
     }
+    
+    func getWhereCanWeFindYou(addressString: String) {
+        fillWhereCanWeFindYouPersonalDetails(addressString: addressString)
+    }
 }

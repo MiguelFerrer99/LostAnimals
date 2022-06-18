@@ -19,19 +19,7 @@ final class SavedPostsRouter {
 }
 
 // MARK: - Functions
-extension SavedPostsRouter {
-    func goToFilterPopup(filterType: FilterType, loadData: Bool) {
-        DispatchQueue.main.async {
-            let viewController: ViewController!
-            switch filterType {
-            case .animal:
-                viewController = Container.shared.animalFilterPopupBuilder().build(loadData: loadData)
-            default: return
-            }
-            self.viewController?.present(viewController: viewController, completion: nil)
-        }
-    }
-    
+extension SavedPostsRouter {    
     func goToPost(post: Post, comesFrom: PostComesFrom) {
         DispatchQueue.main.async {
             let viewController = Container.shared.postBuilder().build(comesFrom: comesFrom, post: post)

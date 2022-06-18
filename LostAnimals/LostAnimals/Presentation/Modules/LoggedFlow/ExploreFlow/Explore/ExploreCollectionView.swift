@@ -63,11 +63,13 @@ extension ExploreViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == filtersCollectionView {
-            let filterType = FilterType(rawValue: indexPath.row) ?? .recent
+            var customIndexPathItem = indexPath.item
+            if Filters.currentFilters.count == 5 && customIndexPathItem > 0 { customIndexPathItem += 1 }
+            let filterType = FilterType(rawValue: customIndexPathItem) ?? .recent
             let postFilter = Filters.currentFilters[filterType] ?? PostsFilter(filterTitle: "Recent", filterType: .recent, enabled: true)
             let summary = ExplorePostsFilterCollectionViewCellSummary(filter: postFilter,
-                                                                      leadingPadding: (indexPath.row == 0) ? 20 : 10,
-                                                                      trailingPadding: (indexPath.row == Filters.currentFilters.count - 1) ? 20 : 10)
+                                                                      leadingPadding: (indexPath.item == 0) ? 20 : 10,
+                                                                      trailingPadding: (indexPath.item == Filters.currentFilters.count - 1) ? 20 : 10)
             let cell = collectionView.dequeue(ExplorePostsFilterCollectionViewCell.self, for: indexPath)
             cell.display(summary)
             return cell

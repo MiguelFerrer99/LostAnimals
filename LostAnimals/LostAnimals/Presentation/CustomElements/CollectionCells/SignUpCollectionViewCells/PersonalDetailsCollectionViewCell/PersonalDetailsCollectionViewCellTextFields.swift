@@ -61,6 +61,12 @@ extension PersonalDetailsCollectionViewCell: CustomTextFieldDelegate {
         convertAddressToLocation(address: searchResultString)
     }
     
+    func fillWhereCanWeFindYou(addressString: String) {
+        whereCanWeFindYouTextfield.textField.text = addressString
+        whereCanWeFindYouTextfield.didFinishSelectContentFromOtherVC()
+        convertAddressToLocation(address: addressString)
+    }
+    
     func convertAddressToLocation(address: String) {
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(address) { placemarks, error in

@@ -97,6 +97,12 @@ extension SignUpViewController {
         personalDetailsCollectionViewCell.fillWhereCanWeFindYou(searchResult: whereCanWeFindYouSearchResult)
     }
     
+    func fillWhereCanWeFindYouPersonalDetails(addressString: String) {
+        let indexPath = IndexPath(item: 0, section: 0)
+        guard let personalDetailsCollectionViewCell = stepsCollectionView.cellForItem(at: indexPath) as? PersonalDetailsCollectionViewCell else { return }
+        personalDetailsCollectionViewCell.fillWhereCanWeFindYou(addressString: addressString)
+    }
+    
     func fillPhonePrefixOfSocialMediaDetails(dialCode: String) {
         let indexPath = IndexPath(item: 2, section: 0)
         guard let socialMediaDetailsCollectionViewCell = stepsCollectionView.cellForItem(at: indexPath) as? SocialMediaDetailsCollectionViewCell else { return }

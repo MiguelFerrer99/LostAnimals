@@ -76,6 +76,12 @@ extension EditPersonalDetailsViewController {
         whereCanWeFindYouTextfield.didFinishSelectContentFromOtherVC()
         convertAddressToLocation(address: searchResultString)
     }
+    
+    func fillWhereCanWeFindYou(addressString: String) {
+        whereCanWeFindYouTextfield.textField.text = addressString
+        whereCanWeFindYouTextfield.didFinishSelectContentFromOtherVC()
+        convertAddressToLocation(address: addressString)
+    }
 }
 
 // MARK: - Private functions
