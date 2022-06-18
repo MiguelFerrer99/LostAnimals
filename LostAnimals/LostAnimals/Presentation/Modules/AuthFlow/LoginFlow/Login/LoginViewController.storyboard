@@ -120,6 +120,7 @@
                     <connections>
                         <outlet property="forgotPasswordButton" destination="QFj-SD-LHa" id="JNf-gO-mkv"/>
                         <outlet property="logInButton" destination="RDN-TM-gf9" id="nbf-5t-tPl"/>
+                        <outlet property="logInTitleLabel" destination="P9Z-NB-VOJ" id="GdY-NF-Hkk"/>
                         <outlet property="mailTextField" destination="LWY-sy-TEg" id="iWn-M3-K0x"/>
                         <outlet property="passwordTextField" destination="DvV-CO-43e" id="3kb-4d-AMz"/>
                     </connections>

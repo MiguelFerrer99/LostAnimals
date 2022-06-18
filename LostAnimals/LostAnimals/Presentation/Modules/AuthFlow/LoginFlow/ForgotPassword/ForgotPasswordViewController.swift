@@ -10,7 +10,9 @@ import UIKit
 
 final class ForgotPasswordViewController: ViewController {
     // MARK: - IBOutlets
+    @IBOutlet private weak var forgotPasswordTitleLabel: UILabel!
     @IBOutlet weak var mailTexfield: CustomTextField!
+    @IBOutlet weak var forgotPasswordTextLabel: UILabel!
     @IBOutlet weak var forgotPasswordButton: CustomButton!
     
     // MARK: - Properties
@@ -22,6 +24,7 @@ final class ForgotPasswordViewController: ViewController {
         
         viewModel.viewReady()
         setupUI()
+        fillUI()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -34,6 +37,17 @@ final class ForgotPasswordViewController: ViewController {
 private extension ForgotPasswordViewController {
     func setupUI() {
         configureTextFields()
+    }
+    
+    func fillUI() {
+        setLocalizables()
+    }
+    
+    func setLocalizables() {
+        forgotPasswordTitleLabel.text = .ForgotPassword.Title()
+        mailTexfield.placeholder = .ForgotPassword.Mail()
+        forgotPasswordTextLabel.text = .ForgotPassword.Text()
+        forgotPasswordButton.setTitle(.ForgotPassword.RecoverPasswordButton(), for: .normal)
     }
     
     func updateUserInteraction() {

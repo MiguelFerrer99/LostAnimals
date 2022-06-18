@@ -51,4 +51,17 @@ extension String {
         case Item3Title = "Onboarding_Item3Title"
         case Item3Text = "Onboarding_Item3Text"
     }
+    enum LogIn: String, Localizable {
+        case Title = "LogIn_Title"
+        case Mail = "LogIn_Mail"
+        case Password = "LogIn_Password"
+        case ForgotPassword = "LogIn_ForgotPassword"
+        case LogInButton = "LogIn_LogInButton"
+    }
+    enum ForgotPassword: String, Localizable {
+        case Title = "ForgotPassword_Title"
+        case Mail = "ForgotPassword_Mail"
+        case Text = "ForgotPassword_Text"
+        case RecoverPasswordButton = "ForgotPassword_RecoverPasswordButton"
+    }
 }

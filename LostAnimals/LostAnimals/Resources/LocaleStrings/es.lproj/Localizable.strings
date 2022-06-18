@@ -20,3 +20,16 @@
 "Onboarding_Item2Text" = "¿Has visto una mascota abandonada? Compártelo para que todo el mundo sepa donde y cuando la has visto 🔍";
 "Onboarding_Item3Title" = "Contacta";
 "Onboarding_Item3Text" = "Contacta gente facilmente a través de sus redes sociales para solucionar cualquier cosa 📞";
+
+// MARK: - LogIn
+"LogIn_Title" = "Iniciar sesión";
+"LogIn_Mail" = "Email";
+"LogIn_Password" = "Contraseña";
+"LogIn_ForgotPassword" = "¿Olvidaste tu contraseña?";
+"LogIn_LogInButton" = "Iniciar sesión";
+
+// MARK: - ForgotPassword
+"ForgotPassword_Title" = "Olvidar contraseña";
+"ForgotPassword_Mail" = "Mail";
+"ForgotPassword_Text" = "Te enviaremos un email a tu correo electrónico. Por favor, sigue las intrucciones para recuperar tu contraseña";
+"ForgotPassword_RecoverPasswordButton" = "Recuperar contraseña";
