@@ -12,3 +12,11 @@
 "Startup_ContinueAsGuest" = "Continuar como invitado";
 "Startup_LogIn" = "Iniciar sesión";
 "Startup_SignUp" = "Registrarse";
+
+// MARK: - Onboarding
+"Onboarding_Item1Title" = "Comparte";
+"Onboarding_Item1Text" = "¿Has perdido tu mascota? Te ayudamos a encontrarla compartiendo información. Todo el mundo atento! 👀";
+"Onboarding_Item2Title" = "Encuentra";
+"Onboarding_Item2Text" = "¿Has visto una mascota abandonada? Compártelo para que todo el mundo sepa donde y cuando la has visto 🔍";
+"Onboarding_Item3Title" = "Contacta";
+"Onboarding_Item3Text" = "Contacta gente facilmente a través de sus redes sociales para solucionar cualquier cosa 📞";

@@ -26,14 +26,14 @@ struct Constants {
                                 savedPosts: [])
     
     static let onboardingStepsInfo = [
-        OnboardingStepInfo(title: "Share",
-                           description: "Have you lost your pet? We help you to find her by sharing information. Everyone stay tuned! 👀",
+        OnboardingStepInfo(title: .Onboarding.Item1Title(),
+                           description: .Onboarding.Item1Text(),
                            image: UIImage(named: "OnboardingItem1") ?? UIImage()),
-        OnboardingStepInfo(title: "Find",
-                           description: "Have you seen an abandoned pet? Share it so everyone knows where and when have you seen it 🔍",
+        OnboardingStepInfo(title: .Onboarding.Item2Title(),
+                           description: .Onboarding.Item2Text(),
                            image: UIImage(named: "OnboardingItem2") ?? UIImage()),
-        OnboardingStepInfo(title: "Contact",
-                           description: "Contact people easily through their social networks to solve everything 📞",
+        OnboardingStepInfo(title: .Onboarding.Item3Title(),
+                           description: .Onboarding.Item3Text(),
                            image: UIImage(named: "OnboardingItem3") ?? UIImage())
     ]
     
