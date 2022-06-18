@@ -22,6 +22,7 @@ final class WhereCanWeFindYouViewModel {
     private let router: WhereCanWeFindYouRouter
     var searchResults = [MKLocalSearchCompletion]()
     let comesFrom: WhereCanWeFindYouComesFrom
+    var locationConfigured = false
     
     // MARK: - Init
     required init(router: WhereCanWeFindYouRouter, comesFrom: WhereCanWeFindYouComesFrom) {

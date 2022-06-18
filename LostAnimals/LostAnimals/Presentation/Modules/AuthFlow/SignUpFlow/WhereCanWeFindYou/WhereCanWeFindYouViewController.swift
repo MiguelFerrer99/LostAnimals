@@ -41,9 +41,7 @@ final class WhereCanWeFindYouViewController: ViewController {
         super.viewDidAppear(animated)
         
         viewModel.viewDidAppear()
-        DispatchQueue.main.async {
-            self.searchController.searchBar.becomeFirstResponder()
-        }
+        DispatchQueue.main.async { self.searchController.searchBar.becomeFirstResponder() }
     }
 }
 
@@ -58,7 +56,9 @@ extension WhereCanWeFindYouViewController {
                     showErrorPopup(title: "Sorry, It was not possible to get the address of your location")
                 }
             }
-        } else { addressTableView.reloadData() }
+        } else {
+            addressTableView.reloadData()
+        }
     }
 }
 

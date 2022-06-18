@@ -55,19 +55,23 @@ extension WhereCanWeFindYouViewController {
 // MARK: - CLLocationManagerDelegate
 extension WhereCanWeFindYouViewController: CLLocationManagerDelegate {
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        if #available(iOS 14.0, *) {
-            switch manager.authorizationStatus {
-            case .authorized, .authorizedAlways, .authorizedWhenInUse:
-                locationManager.requestLocation()
-            default:
-                finishedGetUserCurrentLocation()
-            }
+        if !viewModel.locationConfigured {
+            viewModel.locationConfigured = true
         } else {
-            switch CLLocationManager.authorizationStatus() {
-            case .authorized, .authorizedAlways, .authorizedWhenInUse:
-                locationManager.requestLocation()
-            default:
-                finishedGetUserCurrentLocation()
+            if #available(iOS 14.0, *) {
+                switch manager.authorizationStatus {
+                case .authorized, .authorizedAlways, .authorizedWhenInUse:
+                    locationManager.requestLocation()
+                default:
+                    finishedGetUserCurrentLocation()
+                }
+            } else {
+                switch CLLocationManager.authorizationStatus() {
+                case .authorized, .authorizedAlways, .authorizedWhenInUse:
+                    locationManager.requestLocation()
+                default:
+                    finishedGetUserCurrentLocation()
+                }
             }
         }
     }
