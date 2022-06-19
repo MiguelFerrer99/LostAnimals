@@ -13,7 +13,7 @@ extension WhereDoYouLiveCountriesViewController {
     func configureSearchController(_ searchController: UISearchController) {
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.delegate = self
-        searchController.searchBar.placeholder = "Search your country..."
+        searchController.searchBar.placeholder = .WhereDoYouLiveCountries.SearchBarPlaceholder()
         searchController.searchBar.barStyle = .black
         searchController.searchBar.searchTextField.tintColor = .customWhite
         searchController.searchBar.searchTextField.backgroundColor = .customBlack
@@ -32,7 +32,11 @@ extension WhereDoYouLiveCountriesViewController: UISearchBarDelegate {
         } else {
             self.viewModel.filteredCountries.removeAll()
             self.viewModel.countries.forEach { country in
-                if country.nameEN.lowercased().contains(searchText.lowercased()) {
+                var countryName = country.nameEN
+                if let languageCode = Locale.current.languageCode, languageCode == "es" {
+                    countryName = country.nameES
+                }
+                if countryName.lowercased().contains(searchText.lowercased()) {
                     self.viewModel.filteredCountries.append(country)
                 }
             }

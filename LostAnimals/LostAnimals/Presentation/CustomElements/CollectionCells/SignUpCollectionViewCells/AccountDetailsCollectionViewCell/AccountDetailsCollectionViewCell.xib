@@ -202,9 +202,11 @@
             </constraints>
             <size key="customSize" width="437" height="625"/>
             <connections>
+                <outlet property="accountDetailsTextLabel" destination="oWL-zQ-dGa" id="vbs-lu-DBm"/>
                 <outlet property="backStepButton" destination="RiH-hu-4G5" id="Zu2-dl-mnD"/>
                 <outlet property="mailTextfield" destination="Y9w-Ob-pxa" id="UxP-FP-edi"/>
                 <outlet property="nextStepButton" destination="jJ8-mV-WVQ" id="F1h-YD-rKl"/>
+                <outlet property="passwordRequirementLabel" destination="4I3-pf-jxX" id="r9w-cp-Ukm"/>
                 <outlet property="passwordTextfield" destination="Phi-vO-jqe" id="a0b-g3-oAC"/>
                 <outlet property="repeatPasswordTextfield" destination="SHq-gn-eX3" id="Thm-sy-HsV"/>
             </connections>

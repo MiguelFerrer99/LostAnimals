@@ -24,6 +24,7 @@ protocol SignUpStepsDelegate: AnyObject {
 
 final class SignUpViewController: ViewController {
     // MARK: - IBOutlets
+    @IBOutlet private weak var signUpTitleLabel: UILabel!
     @IBOutlet private weak var progressBarLabel: UILabel!
     @IBOutlet private weak var progressView: UIProgressView!
     @IBOutlet private weak var signupContentsView: CustomView!
@@ -38,6 +39,7 @@ final class SignUpViewController: ViewController {
         
         subscribeToNotifications()
         setupUI()
+        fillUI()
         viewModel.viewReady()
     }
     
@@ -66,6 +68,14 @@ private extension SignUpViewController {
         updateCurrentProgressBarView()
     }
     
+    func fillUI() {
+        setLocalizables()
+    }
+    
+    func setLocalizables() {
+        signUpTitleLabel.text = .SignUp.Title()
+    }
+    
     func updateCurrenCollectionViewItem(direction: MoveDirection) {
         let indexPath = IndexPath(item: viewModel.currentStep.rawValue, section: 0)
         stepsCollectionView.scrollToItem(at: indexPath, at: direction == .back ? .left : .right, animated: true)
@@ -76,7 +86,7 @@ private extension SignUpViewController {
         progressView.setProgress(percentageInFloat, animated: true)
         UIView.transition(with: progressBarLabel, duration: 0.25, options: .transitionCrossDissolve, animations: { [weak self] in
             guard let self = self else { return }
-            self.progressBarLabel.text = self.viewModel.currentStepLabel.rawValue
+            self.progressBarLabel.text = self.viewModel.currentStepLabel.rawValue.localized
         })
     }
     

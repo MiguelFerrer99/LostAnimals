@@ -300,7 +300,7 @@
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gH4-yd-dkq" secondAttribute="trailing" constant="5" id="2cW-qj-sMa"/>
+                                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gH4-yd-dkq" secondAttribute="trailing" id="2cW-qj-sMa"/>
                                                                     <constraint firstItem="gH4-yd-dkq" firstAttribute="leading" secondItem="mfb-p6-Jvx" secondAttribute="trailing" constant="5" id="2hs-od-4gJ"/>
                                                                     <constraint firstItem="hB9-2R-5Vw" firstAttribute="leading" secondItem="jp0-VK-qot" secondAttribute="leading" id="DID-nN-IcF"/>
                                                                     <constraint firstItem="sQc-k7-Drn" firstAttribute="trailing" secondItem="mfb-p6-Jvx" secondAttribute="trailing" id="Muc-2F-wCp"/>
@@ -406,9 +406,11 @@
             </constraints>
             <size key="customSize" width="379" height="615"/>
             <connections>
+                <outlet property="acceptTermsAndConditionsLabel" destination="mfb-p6-Jvx" id="guQ-4K-6lC"/>
                 <outlet property="backStepButton" destination="Ieb-1D-Y6a" id="FhB-Kp-kIa"/>
                 <outlet property="errorPhonePrefixLabel" destination="cnM-le-bg3" id="cco-Iz-eUc"/>
                 <outlet property="getStartedButton" destination="ju7-bT-tuV" id="6JU-yM-kec"/>
+                <outlet property="haveWhatsAppLabel" destination="iJS-oj-7y0" id="XRd-Al-7Ez"/>
                 <outlet property="haveWhatsAppRadioButton" destination="VOs-EE-2PH" id="mEO-Dr-ccZ"/>
                 <outlet property="haveWhatsAppRadioButtonImageView" destination="Tnh-yh-MRg" id="R4U-43-0lp"/>
                 <outlet property="instagramTextfield" destination="v2V-Ev-j9Q" id="vdm-GW-PaP"/>
@@ -416,6 +418,7 @@
                 <outlet property="phonePrefixButton" destination="uhm-5w-aem" id="HVK-X8-Yea"/>
                 <outlet property="phonePrefixLabel" destination="ZGb-bx-nNu" id="zHa-Vo-GD6"/>
                 <outlet property="phoneTextfield" destination="iTR-O4-n8b" id="gmX-lL-jpi"/>
+                <outlet property="socialMediaDetailsTextLabel" destination="ktl-Gy-1el" id="Kbu-St-Bxn"/>
                 <outlet property="termsAndConditionsButton" destination="gH4-yd-dkq" id="IIa-aE-Leu"/>
                 <outlet property="termsAndConditionsRadioButton" destination="sQc-k7-Drn" id="zJy-c6-iFH"/>
                 <outlet property="termsAndConditionsRadioButtonImageView" destination="hB9-2R-5Vw" id="ZIY-Jg-ad0"/>

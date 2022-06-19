@@ -107,6 +107,7 @@
                     <connections>
                         <outlet property="progressBarLabel" destination="1rK-Q7-Rh8" id="zu5-0x-1wf"/>
                         <outlet property="progressView" destination="Gg7-eV-6ny" id="TpM-Se-Iod"/>
+                        <outlet property="signUpTitleLabel" destination="CIj-HD-ffO" id="wfj-sf-KMe"/>
                         <outlet property="signupContentsView" destination="LGX-7N-aC4" id="Fdn-oT-5CU"/>
                         <outlet property="stepsCollectionView" destination="5sR-yb-Lbi" id="hda-Ht-Uns"/>
                     </connections>

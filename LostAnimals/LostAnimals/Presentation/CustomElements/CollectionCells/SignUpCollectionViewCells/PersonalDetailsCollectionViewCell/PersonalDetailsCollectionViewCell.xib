@@ -269,6 +269,7 @@
                 <outlet property="lastnameTextfield" destination="ASv-7o-1p3" id="knE-zk-jVG"/>
                 <outlet property="nextStepButton" destination="ct8-rw-mPz" id="N24-hT-Ylz"/>
                 <outlet property="personalDetailsModeButton" destination="jIn-6Z-sHW" id="n5b-LX-hgs"/>
+                <outlet property="personalDetailsTextLabel" destination="fvr-8t-FPC" id="W56-Fp-afL"/>
                 <outlet property="whereCanWeFindYouTextfield" destination="rIi-ry-qv7" id="u7B-bg-Tkh"/>
                 <outlet property="whereDoYouLiveTextfield" destination="qPy-Pp-Rnd" id="YKu-5O-Qp2"/>
             </connections>

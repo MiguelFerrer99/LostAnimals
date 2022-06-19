@@ -48,7 +48,7 @@ extension ForgotPasswordViewModel {
         authenticationService.forgotPassword(email: email) { result in
             switch result {
             case .success:
-                showSuccessPopup(title: "We have sent an email to recover your password", action: nil)
+                showSuccessPopup(title: .ForgotPassword.SuccessPopup(), action: nil)
             case .error(let error):
                 showErrorPopup(title: error)
             }

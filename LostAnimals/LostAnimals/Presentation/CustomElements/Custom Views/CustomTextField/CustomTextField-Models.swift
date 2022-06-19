@@ -19,24 +19,10 @@ class TextFieldError {
 }
 
 // MARK: - Errors
-class TextFieldErrorMinimumCharacters: TextFieldError {
-    // MARK: - Properties
-    let minCharacters: Int
-    
-    // MARK: - Init
-    init(_ minCharacters: Int) {
-        self.minCharacters = minCharacters
-        
-        super.init(localizedDescription: "Minimum \(minCharacters) characters") { (value) -> Bool in
-            return value.count < minCharacters
-        }
-    }
-}
-
 class TextFieldErrorEmailFormat: TextFieldError {
     // MARK: - Init
     init() {
-        super.init(localizedDescription: "Invalid email format") { (value) -> Bool in
+        super.init(localizedDescription: .TextFieldErrors.EmailFormat()) { (value) -> Bool in
             return !value.isValidEmail()
         }
     }
@@ -45,7 +31,7 @@ class TextFieldErrorEmailFormat: TextFieldError {
 class TextFieldErrorEmptyValue: TextFieldError {
     // MARK: - Init
     init() {
-        super.init(localizedDescription: "Empty field") { (value) -> Bool in
+        super.init(localizedDescription: .TextFieldErrors.EmptyField()) { (value) -> Bool in
             return value.isEmpty
         }
     }
@@ -54,7 +40,7 @@ class TextFieldErrorEmptyValue: TextFieldError {
 class TextFieldErrorPasswordFormat: TextFieldError {
     // MARK: - Init
     init() {
-        super.init(localizedDescription: "Invalid password format") { (value) -> Bool in
+        super.init(localizedDescription: .TextFieldErrors.PasswordFormat()) { (value) -> Bool in
             return !value.isValidPassword()
         }
     }
@@ -63,7 +49,7 @@ class TextFieldErrorPasswordFormat: TextFieldError {
 class TextFieldErrorPasswordsAreNotEqual: TextFieldError {
     // MARK: - Init
     init() {
-        super.init(localizedDescription: "Passwords are not equal") { (value) -> Bool in
+        super.init(localizedDescription: .TextFieldErrors.PasswordsDifferent()) { (value) -> Bool in
             return true
         }
     }
@@ -72,8 +58,17 @@ class TextFieldErrorPasswordsAreNotEqual: TextFieldError {
 class TextFieldErrorOnlyLettersAndSpaces: TextFieldError {
     // MARK: - Init
     init() {
-        super.init(localizedDescription: "The field may contain only letters and spaces") { (value) -> Bool in
+        super.init(localizedDescription: .TextFieldErrors.OnlyLettersAndSpaces()) { (value) -> Bool in
             return !value.areOnlyLettersAndSpaces()
+        }
+    }
+}
+
+class TextFieldErrorMinimumCharacters: TextFieldError {
+    // MARK: - Init
+    init(_ minimum: Int) {
+        super.init(localizedDescription: .TextFieldErrors.MinimumCharacters.localized(with: minimum)) { (value) -> Bool in
+            return value.count < minimum
         }
     }
 }
@@ -81,8 +76,8 @@ class TextFieldErrorOnlyLettersAndSpaces: TextFieldError {
 class TextFieldErrorMaximumCharacters: TextFieldError {
     // MARK: - Init
     init(_ maximum: Int) {
-        super.init(localizedDescription: "The field can contain maximum \(maximum) characters") { (value) -> Bool in
-            return !value.maximumCharacters(maximum: maximum)
+        super.init(localizedDescription: .TextFieldErrors.MaximumCharacters.localized(with: maximum)) { (value) -> Bool in
+            return value.count > maximum
         }
     }
 }
@@ -90,7 +85,7 @@ class TextFieldErrorMaximumCharacters: TextFieldError {
 class TextFieldErrorPhoneNumber: TextFieldError {
     // MARK: - Init
     init() {
-        super.init(localizedDescription: "Invalid format") { (value) -> Bool in
+        super.init(localizedDescription: .TextFieldErrors.InvalidFormat()) { (value) -> Bool in
             return !value.isValidPhoneNumber()
         }
     }

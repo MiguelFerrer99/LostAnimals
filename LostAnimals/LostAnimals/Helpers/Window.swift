@@ -44,19 +44,6 @@ func changeRoot(to viewController: UIViewController) {
     }
 }
 
-func showAlert(title: String, message: String  = "", completion: (() -> Void)? = nil) {
-    DispatchQueue.main.async {
-        let topMostController = topMostController()
-        if topMostController is UIAlertController { return }
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let accept = UIAlertAction(title: "Aceptar", style: .default) { _ in
-            if let completion = completion { completion() }
-        }
-        alert.addAction(accept)
-        topMostController?.present(viewController: alert)
-    }
-}
-
 func showGuestPopup() {
     DispatchQueue.main.async {
         let topMostController = topMostController()
@@ -90,7 +77,7 @@ func showBannedPopup(comesFrom: BannedPopupComesFrom) {
         if topMostController is UIAlertController { return }
         Cache.logOut()
         let startupViewController = Container.shared.startupBuilder().build().embeddedInNavigation()
-        let viewController = Container.shared.errorPopupBuilder().build(errorTitle: "You has been banned of LostAnimals. Please contact with the administrator to solve this situation") {
+        let viewController = Container.shared.errorPopupBuilder().build(errorTitle: .ServiceErrors.Banned()) {
             if comesFrom != .login { changeRoot(to: startupViewController) }
         }
         topMostController?.present(viewController: viewController)

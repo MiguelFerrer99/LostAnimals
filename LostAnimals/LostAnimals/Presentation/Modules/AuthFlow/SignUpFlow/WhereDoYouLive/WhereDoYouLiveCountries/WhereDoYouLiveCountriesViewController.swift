@@ -19,7 +19,7 @@ final class WhereDoYouLiveCountriesViewController: ViewController {
     
     // MARK: - Properties
     override var navBarTitle: String {
-        return "Select your country"
+        return .WhereDoYouLiveCountries.Title()
     }
     private var searchController = UISearchController(searchResultsController: nil)
     weak var delegate: WhereDoYouLiveCountriesDelegate?

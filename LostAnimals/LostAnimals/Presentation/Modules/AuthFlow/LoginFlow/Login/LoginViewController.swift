@@ -48,8 +48,8 @@ private extension LoginViewController {
     
     func setLocalizables() {
         logInTitleLabel.text = .LogIn.Title()
-        mailTextField.placeholder = .LogIn.Mail()
-        passwordTextField.placeholder = .LogIn.Password()
+        mailTextField.placeholder = .Commons.Mail()
+        passwordTextField.placeholder = .Commons.Password()
         forgotPasswordButton.setTitle(.LogIn.ForgotPassword(), for: .normal)
         logInButton.setTitle(.LogIn.LogInButton(), for: .normal)
     }

@@ -21,7 +21,7 @@ final class WhereCanWeFindYouViewController: ViewController {
     
     // MARK: - Properties
     override var navBarTitle: String {
-        return "Select your address"
+        return .WhereCanWeFindYou.Title()
     }
     private var searchController = UISearchController(searchResultsController: nil)
     weak var delegate: WhereCanWeFindYouDelegate?
@@ -53,7 +53,7 @@ extension WhereCanWeFindYouViewController {
                 if let addressString = addressString {
                     self.viewModel.didPressAddress(addressString: addressString, coordinates: userCoordinates)
                 } else {
-                    showErrorPopup(title: "Sorry, It was not possible to get the address of your location")
+                    showErrorPopup(title: .ServiceErrors.LocationAddress())
                 }
             }
         } else {

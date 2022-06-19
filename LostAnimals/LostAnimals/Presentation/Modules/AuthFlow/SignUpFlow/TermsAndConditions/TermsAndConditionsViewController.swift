@@ -14,7 +14,7 @@ final class TermsAndConditionsViewController: ViewController {
     
     // MARK: - Properties
     override var navBarTitle: String {
-        return "Terms and Conditions"
+        return .TermsAndConditions.Title()
     }
     var viewModel: TermsAndConditionsViewModel!
     

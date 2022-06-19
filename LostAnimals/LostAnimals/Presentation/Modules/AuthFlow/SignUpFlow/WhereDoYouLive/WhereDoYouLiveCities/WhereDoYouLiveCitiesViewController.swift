@@ -14,7 +14,7 @@ final class WhereDoYouLiveCitiesViewController: ViewController {
     
     // MARK: - Properties
     override var navBarTitle: String {
-        return "Select your city"
+        return .WhereDoYouLiveCities.Title()
     }
     private var searchController = UISearchController(searchResultsController: nil)
     var viewModel: WhereDoYouLiveCitiesViewModel!

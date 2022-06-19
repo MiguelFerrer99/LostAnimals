@@ -13,7 +13,7 @@ extension WhereCanWeFindYouViewController {
     func configureSearchController(_ searchController: UISearchController) {
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.delegate = self
-        searchController.searchBar.placeholder = "Search your address..."
+        searchController.searchBar.placeholder = .WhereCanWeFindYou.SearchBarPlaceholder()
         searchController.searchBar.barStyle = .black
         searchController.searchBar.searchTextField.tintColor = .customWhite
         searchController.searchBar.searchTextField.backgroundColor = .customBlack

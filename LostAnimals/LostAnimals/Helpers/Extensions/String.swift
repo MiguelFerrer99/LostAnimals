@@ -38,10 +38,6 @@ extension String {
         return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count)) != nil
     }
     
-    func maximumCharacters(maximum: Int) -> Bool {
-        return self.count <= maximum
-    }
-    
     func isValidPhoneNumber() -> Bool {
         let regex = try! NSRegularExpression(pattern: "^([0-9\\s]{1,12})$", options: .caseInsensitive)
         return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count)) != nil

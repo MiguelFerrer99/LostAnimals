@@ -15,9 +15,9 @@ enum SignUpStep: Int {
     case socialMediaDetails
 }
 enum SignUpStepLabel: String {
-    case personalDetails = "Personal details"
-    case accountDetails = "Account details"
-    case socialMediaDetails = "Social media details"
+    case personalDetails = "SignUp_PersonalDetails_Title"
+    case accountDetails = "SignUp_AccountDetails_Title"
+    case socialMediaDetails = "SignUp_SocialMediaDetails_Title"
 }
 enum WhereDoYouLiveComesFrom: String {
     case signUpPersonalDetails
@@ -79,7 +79,7 @@ extension SignUpViewModel {
             switch result {
             case .success:
                 completion()
-                showSuccessPopup(title: "Congrats, you are already user of LostAnimals! Now verify your account in your email to log in") {
+                showSuccessPopup(title: .SignUp.SocialMediaDetails.SuccessPopup()) {
                     self.router.goBack()
                 }
             case .error(let error):

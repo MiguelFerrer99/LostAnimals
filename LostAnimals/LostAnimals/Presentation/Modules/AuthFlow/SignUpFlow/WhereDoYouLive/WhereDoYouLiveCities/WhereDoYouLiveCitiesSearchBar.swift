@@ -13,7 +13,7 @@ extension WhereDoYouLiveCitiesViewController {
     func configureSearchController(_ searchController: UISearchController) {
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.delegate = self
-        searchController.searchBar.placeholder = "Search your city..."
+        searchController.searchBar.placeholder = .WhereDoYouLiveCities.SearchBarPlaceholder()
         searchController.searchBar.barStyle = .black
         searchController.searchBar.searchTextField.tintColor = .customWhite
         searchController.searchBar.searchTextField.backgroundColor = .customBlack

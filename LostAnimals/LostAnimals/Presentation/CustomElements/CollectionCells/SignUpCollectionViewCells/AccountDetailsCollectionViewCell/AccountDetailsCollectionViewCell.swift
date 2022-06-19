@@ -11,6 +11,8 @@ import UIKit
 final class AccountDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell {
     typealias T = AccountDetailsCollectionViewCellViewModel
     // MARK: - IBOutlets
+    @IBOutlet private weak var accountDetailsTextLabel: UILabel!
+    @IBOutlet private weak var passwordRequirementLabel: UILabel!
     @IBOutlet private weak var backStepButton: CustomButton!
     @IBOutlet weak var mailTextfield: CustomTextField!
     @IBOutlet weak var passwordTextfield: CustomTextField!
@@ -33,6 +35,17 @@ final class AccountDetailsCollectionViewCell: UICollectionViewCell, ViewModelCel
 private extension AccountDetailsCollectionViewCell {
     func fillUI() {
         configureTextFields()
+        setLocalizables()
+    }
+    
+    func setLocalizables() {
+        accountDetailsTextLabel.text = .SignUp.AccountDetails.Text()
+        mailTextfield.placeholder = .Commons.Mail()
+        passwordTextfield.placeholder = .Commons.Password()
+        repeatPasswordTextfield.placeholder = .Commons.ConfirmPassword()
+        passwordRequirementLabel.text = .SignUp.AccountDetails.PasswordRequirement()
+        backStepButton.setTitle(.Commons.BackButton(), for: .normal)
+        nextStepButton.setTitle(.Commons.NextButton(), for: .normal)
     }
 }
 

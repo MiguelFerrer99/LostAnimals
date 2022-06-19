@@ -6,6 +6,44 @@
   Copyright © 2022 Rudo. All rights reserved.
 */
 
+// MARK: - Commons
+"Commons_Mail" = "Mail";
+"Commons_Firstname" = "Firstname";
+"Commons_Lastname" = "Lastname";
+"Commons_Birthdate" = "Birthdate";
+"Commons_WhereDoYouLive" = "Where do you live";
+"Commons_AnimalShelterName" = "Animal shelter name";
+"Commons_WhereCanWeFindYou" = "Where can we find you";
+"Commons_Password" = "Password";
+"Commons_ConfirmPassword" = "Confirm password";
+"Commons_Phone" = "Phone";
+"Commons_HaveWhatsApp" = "I have WhatsApp";
+"Commons_OptionalInstagram" = "Instagram (optional)";
+"Commons_OptionalTwitter" = "Twitter (optional)";
+"Commons_BackButton" = "Back";
+"Commons_NextButton" = "Next";
+
+// MARK: - TextFieldErrors
+"TextFieldErrors_Empty" = "Empty";
+"TextFieldErrors_EmptyField" = "Empty field";
+"TextFieldErrors_EmailFormat" = "Invalid email format";
+"TextFieldErrors_PasswordFormat" = "Invalid password format";
+"TextFieldErrors_PasswordsDifferent" = "Passwords are not equal";
+"TextFieldErrors_InvalidFormat" = "Invalid format";
+"TextFieldErrors_OnlyLettersAndSpaces" = "Only letters and spaces are allowed";
+"TextFieldErrors_MinimumCharacters" = "Minimum %d characters";
+"TextFieldErrors_MaximumCharacters" = "Maximum %d characters";
+
+// MARK: - ServiceErrors
+"ServiceErrors_EmailAlreadyUsed" = "This email address is already in use by another account";
+"ServiceErrors_NoUserRegistered" = "There is no user registered with this email";
+"ServiceErrors_Unexpected" = "An unexpected error occured. Please, try again later";
+"ServiceErrors_VerifyAccount" = "Verify your account before log in";
+"ServiceErrors_InternetConnection" = "You don't have an internet connection";
+"ServiceErrors_InvalidMailOrPassword" = "Email or password incorrect";
+"ServiceErrors_LocationAddress" = "Sorry, It was not possible to get the address of your location";
+"ServiceErrors_Banned" = "You has been banned of Lost Animals. Please contact with the administrator to solve this situation";
+
 // MARK: - Startup
 "Startup_WelcomeTitle" = "Welcome";
 "Startup_WelcomeText" = "Log in if you already have an account or Sign up to enjoy all the features of Lost Animals";
@@ -23,13 +61,107 @@
 
 // MARK: - LogIn
 "LogIn_Title" = "Log in";
-"LogIn_Mail" = "Mail";
-"LogIn_Password" = "Password";
 "LogIn_ForgotPassword" = "Forgot your password?";
 "LogIn_LogInButton" = "Log in";
 
 // MARK: - ForgotPassword
 "ForgotPassword_Title" = "Forgot password";
-"ForgotPassword_Mail" = "Mail";
 "ForgotPassword_Text" = "We will send you an email to your mail address. Follow the instructions to recover your password";
 "ForgotPassword_RecoverPasswordButton" = "Recover password";
+"ForgotPassword_SuccessPopup" = "We have sent an email to recover your password";
+
+// MARK: - SignUp
+"SignUp_Title" = "Sign up";
+
+// MARK: - SignUp - PersonalDetails
+"SignUp_PersonalDetails_Title" = "Personal details";
+"SignUp_PersonalDetails_Text" = "Fill your personal details to let us know something about you";
+"SignUp_PersonalDetails_AnimalShelterButton" = "Are you an animal shelter?";
+"SignUp_PersonalDetails_PersonButton" = "Are you just a person?";
+
+// MARK: - SignUp - AccountDetails
+"SignUp_AccountDetails_Title" = "Account details";
+"SignUp_AccountDetails_Text" = "Fill your account details to register you in our system successfully";
+"SignUp_AccountDetails_PasswordRequirement" = "Must contain a minimum of 8 characters, including at least one lowercase letter and one number";
+
+// MARK: - SignUp - SocialMediaDetails
+"SignUp_SocialMediaDetails_Title" = "Social media details";
+"SignUp_SocialMediaDetails_Text" = "Write your social media accounts if you have. We will use them to give you the best user experience";
+"SocialMediaDetails_AcceptTermsAndConditions" = "I accept";
+"SocialMediaDetails_TermsAndConditionsButton" = "Terms and conditions";
+"SocialMediaDetails_GetStartedButton" = "Get started";
+"SocialMediaDetails_SuccessPopup" = "Congrats, you are already user of Lost Animals! Now verify your account in your email to log in";
+
+// MARK: - WhereDoYouLiveCountries
+"WhereDoYouLiveCountries_Title" = "Select your country";
+"WhereDoYouLiveCountries_SearchBarPlaceholder" = "Search your country...";
+
+// MARK: - WhereDoYouLiveCities
+"WhereDoYouLiveCities_Title" = "Select your city";
+"WhereDoYouLiveCities_SearchBarPlaceholder" = "Search your city...";
+
+// MARK: - WhereCanWeFindYou
+"WhereCanWeFindYou_Title" = "Select your address";
+"WhereCanWeFindYou_SearchBarPlaceholder" = "Search your address...";
+"WhereCanWeFindYou_CurrentLocation" = "Current location";
+
+// MARK: - TermsAndConditions
+"TermsAndConditions_Title" = "Terms and conditions";
+"TermsAndConditions_Item1Title" = "Thanks for using Lost Animals\n";
+"TermsAndConditions_Item1Description" = "For the smooth running of the community, we need you to follow the proposed Terms and Conditions of Use, which will be applicable to users from 1 March 2022.";
+"TermsAndConditions_Item2Title" = "Lost Animals Terms and Conditions of Use";
+"TermsAndConditions_Item2Description" = "These Terms and Conditions of Use establish the conditions under which users are offered access to Lost Animals websites, services and applications, which is a platform that allows users to find their lost animals in a much faster and more efficient way thanks to the use of new technologies. The use of the Service confers to the user the condition of user of the Service and implies full acceptance of these Terms and Conditions. If the User does not agree with all or part of these Terms and Conditions, he/she must refrain from installing and using the Service. By accepting these Terms and Conditions, the User represents:
+- That he/she has read, understands and understands what is set forth herein.
+- That he/she assumes all the obligations set forth herein.
+- That he/she is of legal age and has sufficient legal capacity to use the Service.
+- The acceptance of these Terms and Conditions by the Users is a prior and indispensable step to the use of the Service.
+Lost Animals reserves the right to update and/or modify the Terms and Conditions at any time and for any reason in its sole discretion. Lost Animals will provide notice of any material changes to the Terms and Conditions or to any Service or other feature of the Services. By accessing or using the Services after Lost Animals has notified the User of a modification or update, the User agrees to be bound by the modified Terms and Conditions. If the modified Terms and Conditions are not acceptable to the User, the User's sole option is to discontinue using the Services.";
+"TermsAndConditions_Item3Title" = "Service owner";
+"TermsAndConditions_Item3Description" = "The owner and proprietor of the Service is Miguel Ferrer Fornali. Email: miguelferrerfornali1999@gmail.com";
+"TermsAndConditions_Item4Title" = "Registration requirement";
+"TermsAndConditions_Item4Description" = "In order to use the Service, the User must first register and accept these Terms and Conditions and the Privacy and Cookies Policy. The data entered by the User must be accurate, current and truthful. The registered User will be responsible at all times for the custody of your password, assuming any damages that may arise from its misuse, as well as the transfer, disclosure or loss of it, and must immediately inform Lost Animals in case you have reason to believe that your password has been used in an unauthorized manner or is likely to be used in an unauthorized manner. In any case, the User is considered to be responsible for the access and/or use of the Service in relation to his account, who will be liable in any case for such access and/or use. By accepting the Terms and Conditions, the User consents that his data will become part of the LostAnimalsy file and the treatment of such data will be in accordance with the provisions of the Privacy Policy.";
+"TermsAndConditions_Item5Title" = "Rules for the use of the service";
+"TermsAndConditions_Item5Description" = "The User undertakes to use the Service in accordance with the law, morality, public order and these Terms and Conditions. Likewise, the User undertakes to make appropriate use of the Service and not to use it for illicit or criminal activities that infringe the rights of third parties or that violate any rule of the legal system. The User undertakes not to transmit, introduce, disseminate and/or make available to third parties any type of material and information that is contrary to the law, morality, public order and these Terms and Conditions. By way of example and in no way limiting or excluding, the User undertakes to:
+- Not to introduce or disseminate content or propaganda of a racist, xenophobic or pornographic nature, or that advocates terrorism, armed conflict, incites hatred or violates human rights.
+- Not to disseminate, transmit or make available to third parties any type of information, element or content that violates the fundamental rights and public freedoms recognised in the constitution and in international treaties.
+- Not to disseminate, transmit or make available to third parties any type of information, element or content that constitutes unlawful or unfair advertising.
+- Not to transmit unsolicited or unauthorised advertising, advertising material, 'junk mail', 'chain letters', 'pyramid structures', or any other form of solicitation.
+- Not to introduce or disseminate any false, misleading, deceptive, ambiguous or inaccurate information and content in a manner that misleads or is likely to mislead the recipients of the information.
+- Not to impersonate other Users of the Service.
+- Not to disseminate, transmit or make available to third parties any type of information, element or content without the authorisation of the holders of the intellectual and industrial property rights that may apply to such information, element or content.
+- Not to disseminate, transmit or make available to third parties any type of information, element or content that involves a violation of the secrecy of communications and personal data legislation.
+- Not to disseminate, transmit or make available to third parties photographs or any representation or image of minors.
+- Not to report falsely or incorrectly repeatedly.
+- To use Lost Animals services correctly.
+The User agrees to hold Lost Animals harmless against any possible claim, fine, penalty or sanction that may come forced to bear as a result of the breach by the User of any of the above rules of use, also reserving Lost Animals the right to seek compensation for damages and damages that may apply.";
+"TermsAndConditions_Item6Title" = "Exclusion of Users";
+"TermsAndConditions_Item6Description" = "Lost Animals reserves the right to prevent the use of the Service, either temporarily or permanently, to any User who violates any of the rules set forth in these Terms and Conditions, the law or morality. Lost Animals may also exclude Users and even stop providing all or part of the Service when it deems appropriate to improve the operation of the Service and/or the rest of the Users of the Service.";
+"TermsAndConditions_Item7Title" = "Exclusion of liability";
+"TermsAndConditions_Item7Description" = "Lost Animals does not own any of the pets posted through its platform and is not part of the exchange or adoption process, nor does it review or validate the pets that Users post through the Service, so Lost Animals will not be liable, either directly or indirectly, or subsidiarily, for damages of any nature arising from the use and contracting of the contents and activities of Users and/or third parties through the Service as well as the lack of legality, reliability, usefulness, truthfulness, accuracy, completeness and timeliness of the same. By way of example, and in no case limited, Lost Animals will not be liable for damages of any nature arising from:
+- The use that the Users make of the Service nor by the state, origin, possible inaccuracy, or possible falsity of the data provided by the Users nor of the products offered through the Service.
+- The contents, information, opinions and statements of any User or third parties or entities that are communicated or displayed through the Service.
+- The use that Users may make of the materials of the Service, whether prohibited or permitted, in infringement of intellectual and/or industrial property rights, confidential information, of the contents of the Service or of third parties.
+- The carrying out of acts of unfair competition and illegal advertising.
+- The possible loss of User data for reasons not attributable to the Service.
+- Access by minors to the contents included in the Service.
+- The unavailability, errors, access failures and lack of continuity of the Service.
+- Failures or incidents that may occur in communications, deletion or incomplete transmissions.
+- The non-operability or problems in the email address provided by the user.
+Lost Animals will respond solely and exclusively to the User of the Services provided by itself and the content directly originated and identified with its copyright.
+Any claim or controversy that may arise between the Users of the Service must be resolved between them, obliging Lost Animals to keep Lost Animals completely unharmed, without prejudice to which Lost Animals will make its best efforts to provide users with a prompt and satisfactory solution through its Customer Service.";
+"TermsAndConditions_Item8Title" = "Content and services linked through the Service";
+"TermsAndConditions_Item8Description" = "The Service may include technical linking devices, directories and even search tools that allow the User to access other pages and Internet portals. The User acknowledges and agrees that access to the Linked Sites is at the User's sole risk and responsibility and exonerates Lost Animals from any liability for any infringement of intellectual or industrial property rights of the owners of the Linked Sites. Likewise, the User exonerates Lost Animals from any responsibility for the technical availability of the Linked Sites, the quality, reliability, accuracy and/or veracity of the services, information, elements and/or contents that the User may access. In these cases, Lost Animals will only be responsible for the contents and services provided in the Linked Sites to the extent that it has actual knowledge of the unlawfulness and has not disabled the link with due diligence. In the event that the User considers that there is a Linked Site with illegal or inappropriate content may communicate it to Lost Animals, without in any case this communication entails the obligation to remove the corresponding link. In any case, the existence of Linked Sites should not presuppose the formalization of agreements with those responsible or owners thereof, nor the recommendation, promotion or identification of Lost Animals with the statements, content or services provided. Lost Animals does not know the contents and services of the Linked Sites and, therefore, is not responsible directly or indirectly for the damages caused by the unlawfulness, quality, outdatedness, unavailability, error and uselessness of the contents and/or services of the Linked Sites or for any other damage that is not directly attributable to Lost Animals.";
+"TermsAndConditions_Item9Title" = "Intellectual and industrial property";
+"TermsAndConditions_Item9Description" = "The industrial and intellectual property rights over the works, protected services and any content or elements with intellectual and industrial property rights that are used in the Service belong to their legitimate owners. By using the Service, the User does not acquire any intellectual or industrial property rights or any licence to use such elements. The Contents of the Service are the texts, photographs, graphics, images, icons, technology, software, databases and other audiovisual or sound contents, as well as their graphic design and source codes used in the Service. This list is for illustrative and exemplary purposes only and is not exhaustive. The text, images, graphics, sound files, animation files, video files, software and appearance of the Lost Animals website are protected by intellectual and industrial property rights. These elements may not be validly and legitimately copied or distributed for commercial use, nor may they be modified or inserted in other websites without the prior express authorization of their owners. The User declares that he/she is the exclusive owner of all the rights to the works, protected services and any other elements protected by intellectual or industrial property that he/she incorporates in the Service. The User grants Lost Animals, free of charge and exclusively, the rights of public communication, reproduction, distribution and transformation of the Contents, in all the existing exploitation modalities on the date of acceptance of these Terms and Conditions, for the whole time of validity of the rights object of cession, for the universal territorial scope.";
+"TermsAndConditions_Item10Title" = "Publication of pet search and adoption advertisements";
+"TermsAndConditions_Item10Description" = "When posting your pet search and adoption ads, the User must take into account some considerations, including the following:
+- It is not allowed to publish images or descriptions that do not correspond to the advertised pet.
+- Only one pet per ad is allowed to be advertised.
+- It is not allowed to publish advertisements with sexual images.
+- It is not allowed to publish images of minors.
+In any case, the User must take into consideration the rules of publication when publishing his/her advertisements.
+On the other hand, the User interested in adopting a pet must take into account that Lost Animals is an application that acts as a mere intermediary and does not intervene in the adoption process. Lost Animals does not own any of the pets. Lost Animals does not review or validate the veracity of the ads that the Users spread through the service, so Lost Animals will not be in any case responsible, directly or indirectly, or subsidiarily, for damages of any nature, nor will be responsible for the lack of legality, reliability, usefulness, truthfulness, accuracy, completeness and timeliness of the same.";
+"TermsAndConditions_Item11Title" = "Invalidity and ineffectiveness of clauses";
+"TermsAndConditions_Item11Description" = "If any provision of these Terms and Conditions is declared wholly or partly invalid or unenforceable, such invalidity or invalidity shall only affect that provision or that part of it which is invalid or unenforceable, and these Terms and Conditions shall otherwise remain in full force and effect, such provision or part of it being deemed not to be included.";
+"TermsAndConditions_Item12Title" = "Applicable law and competent jurisdiction";
+"TermsAndConditions_Item12Description" = "These Terms and Conditions shall be governed by and construed in accordance with Spanish law. In the event of a dispute between Lost Animals and the User, the User may bring his or her action before the Spanish courts corresponding to the domicile of Lost Animals, or before the courts of the place where the User is domiciled.";

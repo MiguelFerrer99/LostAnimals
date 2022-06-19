@@ -25,7 +25,14 @@ extension WhereDoYouLiveCountriesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CountryTableViewCell.self)
-        cell.display(summary: CountryTableViewCellSummary(countryName: viewModel.filteredCountries[indexPath.row].nameEN, dialCode: viewModel.filteredCountries[indexPath.row].dialCode, comesFrom: viewModel.comesFrom))
+        var countryName = viewModel.filteredCountries[indexPath.row].nameEN
+        if let languageCode = Locale.current.languageCode, languageCode == "es" {
+            countryName = viewModel.filteredCountries[indexPath.row].nameES
+        }
+        let summary = CountryTableViewCellSummary(countryName: countryName,
+                                                  dialCode: viewModel.filteredCountries[indexPath.row].dialCode,
+                                                  comesFrom: viewModel.comesFrom)
+        cell.display(summary: summary)
         return cell
     }
 }

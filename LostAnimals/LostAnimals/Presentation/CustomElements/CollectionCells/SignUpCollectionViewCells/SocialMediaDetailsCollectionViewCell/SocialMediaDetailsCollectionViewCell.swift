@@ -11,13 +11,16 @@ import UIKit
 final class SocialMediaDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell {
     typealias T = SocialMediaDetailsCollectionViewCellViewModel
     // MARK: - IBOutlets
+    @IBOutlet private weak var socialMediaDetailsTextLabel: UILabel!
     @IBOutlet private weak var topPrefixPlaceholder: UILabel!
     @IBOutlet private weak var middlePrefixPlaceholder: UILabel!
     @IBOutlet private weak var phonePrefixButton: UIButton!
     @IBOutlet private weak var haveWhatsAppRadioButton: UIButton!
     @IBOutlet private weak var haveWhatsAppRadioButtonImageView: UIImageView!
+    @IBOutlet private weak var haveWhatsAppLabel: UILabel!
     @IBOutlet private weak var termsAndConditionsRadioButton: UIButton!
     @IBOutlet private weak var termsAndConditionsRadioButtonImageView: UIImageView!
+    @IBOutlet private weak var acceptTermsAndConditionsLabel: UILabel!
     @IBOutlet private weak var termsAndConditionsButton: UIButton!
     @IBOutlet private weak var backStepButton: CustomButton!
     @IBOutlet weak var phonePrefixLabel: UILabel!
@@ -68,13 +71,26 @@ private extension SocialMediaDetailsCollectionViewCell {
     func fillUI() {
         configureTextFields()
         configureTermsAndConditionsButton()
+        setLocalizables()
+    }
+    
+    func setLocalizables() {
+        socialMediaDetailsTextLabel.text = .SignUp.SocialMediaDetails.Text()
+        errorPhonePrefixLabel.text = .TextFieldErrors.Empty()
+        phoneTextfield.placeholder = .Commons.Phone()
+        haveWhatsAppLabel.text = .Commons.HaveWhatsApp()
+        instagramTextfield.placeholder = .Commons.OptionalInstagram()
+        twitterTextfield.placeholder = .Commons.OptionalTwitter()
+        acceptTermsAndConditionsLabel.text = .SignUp.SocialMediaDetails.AcceptTermsAndConditions()
+        backStepButton.setTitle(.Commons.BackButton(), for: .normal)
+        getStartedButton.setTitle(.SignUp.SocialMediaDetails.GetStartedButton(), for: .normal)
     }
     
     func configureTermsAndConditionsButton() {
         let attributes: [NSAttributedString.Key: Any] = [
             .underlineStyle: NSUnderlineStyle.thick.rawValue
         ]
-        let attributedString = NSAttributedString(string: "Terms and Conditions", attributes: attributes)
+        let attributedString = NSAttributedString(string: .SignUp.SocialMediaDetails.TermsAndConditionsButton(), attributes: attributes)
         termsAndConditionsButton.setAttributedTitle(attributedString, for: .normal)
     }
     

@@ -49,16 +49,16 @@ extension AuthenticationService {
                 if authResult.user.isEmailVerified {
                     self.userService.getMe { me in
                         if let me = me { completion(.success(me)) }
-                        else { completion(.error("An unexpected error occured. Please, try again later")) }
+                        else { completion(.error(.ServiceErrors.Unexpected())) }
                     }
-                } else { completion(.error("Verify your account before log in")) }
+                } else { completion(.error(.ServiceErrors.VerifyAccount())) }
             } else if let error = error {
                 switch error.localizedDescription {
                 case FirebaseError.userNotExists.rawValue,
                     FirebaseError.emailOrPasswordIncorrect.rawValue:
-                    completion(.error("Email or password incorrect"))
+                    completion(.error(.ServiceErrors.InvalidMailOrPassword()))
                 case FirebaseError.networkError.rawValue:
-                    completion(.error("You don't have an internet connection"))
+                    completion(.error(.ServiceErrors.InternetConnection()))
                 default:
                     completion(.error(error.localizedDescription))
                 }
@@ -71,11 +71,11 @@ extension AuthenticationService {
             if let error = error {
                 switch error.localizedDescription {
                 case FirebaseError.networkError.rawValue:
-                    completion(.error("You don't have an internet connection"))
+                    completion(.error(.ServiceErrors.InternetConnection()))
                 case FirebaseError.userNotExists.rawValue:
-                    completion(.error("There is no user registered with this email"))
+                    completion(.error(.ServiceErrors.NoUserRegistered()))
                 default:
-                    completion(.error("An unexpected error occured. Please, try again later"))
+                    completion(.error(.ServiceErrors.Unexpected()))
                 }
             } else { completion(.success) }
         }
@@ -90,22 +90,22 @@ extension AuthenticationService {
                     do {
                         let userObject = try FirebaseEncoder().encode(newUserDTO)
                         self.databaseRef.child("users").child(newUser.id).setValue(userObject) { (error, _) in
-                            if error != nil { completion(.error("An unexpected error occured. Please, try again later")) }
+                            if error != nil { completion(.error(.ServiceErrors.Unexpected())) }
                             else {
                                 authResult.user.sendEmailVerification { error in
-                                    if error != nil { completion(.error("An unexpected error occured. Please, try again later")) }
+                                    if error != nil { completion(.error(.ServiceErrors.Unexpected())) }
                                     else { completion(.success) }
                                 }
                             }
                         }
-                    } catch { completion(.error("An unexpected error occured. Please, try again later")) }
-                } else { completion(.error("An unexpected error occured. Please, try again later")) }
+                    } catch { completion(.error(.ServiceErrors.Unexpected())) }
+                } else { completion(.error(.ServiceErrors.Unexpected())) }
             } else if let error = error {
                 switch error.localizedDescription {
                 case FirebaseError.emailAlreadyInUse.rawValue:
-                    completion(.error("The email address is already in use by another account"))
+                    completion(.error(.ServiceErrors.EmailAlreadyUsed()))
                 case FirebaseError.networkError.rawValue:
-                    completion(.error("You don't have an internet connection"))
+                    completion(.error(.ServiceErrors.InternetConnection()))
                 default:
                     completion(.error(error.localizedDescription))
                 }

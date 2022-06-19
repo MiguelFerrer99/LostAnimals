@@ -45,7 +45,7 @@ private extension ForgotPasswordViewController {
     
     func setLocalizables() {
         forgotPasswordTitleLabel.text = .ForgotPassword.Title()
-        mailTexfield.placeholder = .ForgotPassword.Mail()
+        mailTexfield.placeholder = .Commons.Mail()
         forgotPasswordTextLabel.text = .ForgotPassword.Text()
         forgotPasswordButton.setTitle(.ForgotPassword.RecoverPasswordButton(), for: .normal)
     }

@@ -11,6 +11,7 @@ import UIKit
 final class PersonalDetailsCollectionViewCell: UICollectionViewCell, ViewModelCell {
     typealias T = PersonalDetailsCollectionViewCellViewModel
     // MARK: - IBOutlets
+    @IBOutlet private weak var personalDetailsTextLabel: UILabel!
     @IBOutlet private weak var personalDetailsModeButton: UIButton!
     @IBOutlet weak var firstnameTextfield: CustomTextField!
     @IBOutlet weak var lastnameTextfield: CustomTextField!
@@ -45,13 +46,26 @@ extension PersonalDetailsCollectionViewCell {
 private extension PersonalDetailsCollectionViewCell {
     func fillUI() {
         configureTextFields()
+        setLocalizables()
+    }
+    
+    func setLocalizables() {
+        personalDetailsTextLabel.text = .SignUp.PersonalDetails.Text()
+        firstnameTextfield.placeholder = .Commons.Firstname()
+        lastnameTextfield.placeholder = .Commons.Lastname()
+        birthdateTexfield.placeholder = .Commons.Birthdate()
+        whereDoYouLiveTextfield.placeholder = .Commons.WhereDoYouLive()
+        animalShelterNameTextfield.placeholder = .Commons.AnimalShelterName()
+        whereCanWeFindYouTextfield.placeholder = .Commons.WhereCanWeFindYou()
+        personalDetailsModeButton.setTitle(.SignUp.PersonalDetails.AnimalShelterButton(), for: .normal)
+        nextStepButton.setTitle(.Commons.NextButton(), for: .normal)
     }
     
     func updatePersonalDetailsMode() {
         nextStepButton.alpha = 0.5
         nextStepButton.isEnabled = false
         if viewModel.isAnimalShelter {
-            personalDetailsModeButton.setTitle("Are you just a person?", for: .normal)
+            personalDetailsModeButton.setTitle(.SignUp.PersonalDetails.PersonButton(), for: .normal)
             firstnameTextfield.isHidden = true
             lastnameTextfield.isHidden = true
             birthdateTexfield.isHidden = true
@@ -61,7 +75,7 @@ private extension PersonalDetailsCollectionViewCell {
             animalShelterNameTextfield.resetTextfield()
             whereCanWeFindYouTextfield.resetTextfield()
         } else {
-            personalDetailsModeButton.setTitle("Are you an animal shelter?", for: .normal)
+            personalDetailsModeButton.setTitle(.SignUp.PersonalDetails.AnimalShelterButton(), for: .normal)
             animalShelterNameTextfield.isHidden = true
             whereCanWeFindYouTextfield.isHidden = true
             firstnameTextfield.isHidden = false

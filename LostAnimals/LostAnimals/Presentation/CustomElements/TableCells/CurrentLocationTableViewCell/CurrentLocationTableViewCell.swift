@@ -9,6 +9,9 @@
 import UIKit
 
 final class CurrentLocationTableViewCell: UITableViewCell, Reusable {
+    // MARK: - IBOutlets
+    @IBOutlet weak var currentLocationLabel: UILabel!
+    
     // MARK: - Life cycle
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -16,5 +19,6 @@ final class CurrentLocationTableViewCell: UITableViewCell, Reusable {
         let bgView = UIView()
         bgView.backgroundColor = .customWhite.withAlphaComponent(0.3)
         self.selectedBackgroundView = bgView
+        currentLocationLabel.text = .WhereCanWeFindYou.CurrentLocation()
     }
 }
