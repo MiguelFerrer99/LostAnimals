@@ -101,7 +101,7 @@ private extension ExploreViewController {
     func subscribeToNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(getPosts), name: .UpdateExplorePosts, object: nil)
     }
-    
+        
     func fillUI() {
         getUserCurrentLocation()
     }
