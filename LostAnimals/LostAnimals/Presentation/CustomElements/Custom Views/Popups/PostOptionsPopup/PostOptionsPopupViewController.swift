@@ -26,6 +26,10 @@ final class PostOptionsPopupViewController: ViewController {
     // MARK: - IBOutlets
     @IBOutlet private weak var backgroundView: UIView!
     @IBOutlet private weak var editPostButtonView: UIView!
+    @IBOutlet private weak var editPostLabel: UILabel!
+    @IBOutlet private weak var blockUserLabel: UILabel!
+    @IBOutlet private weak var sharePostLabel: UILabel!
+    @IBOutlet private weak var cancelLabel: UILabel!
     @IBOutlet weak var blockUserButtonView: UIView!
     
     // MARK: - Properties
@@ -68,6 +72,14 @@ private extension PostOptionsPopupViewController {
     func setupUI() {
         editPostButtonView.isHidden = (viewModel.comesFrom == .explore) || (viewModel.user != User.shared)
         blockUserButtonView.isHidden = viewModel.user == User.shared
+        setLocalizables()
+    }
+    
+    func setLocalizables() {
+        editPostLabel.text = .Post.EditPostTitle()
+        blockUserLabel.text = .Post.BlockUserTitle()
+        sharePostLabel.text = .Post.SharePostTitle()
+        cancelLabel.text = .Commons.Cancel()
     }
 }
 

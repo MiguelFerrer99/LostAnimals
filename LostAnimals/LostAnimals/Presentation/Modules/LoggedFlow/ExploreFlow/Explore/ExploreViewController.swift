@@ -16,7 +16,7 @@ final class ExploreViewController: ViewController {
     
     // MARK: - Properties
     override var navBarTitle: String {
-        return "Explore"
+        return .Explore.Title()
     }
     override var useLargeTitle: Bool {
         return true

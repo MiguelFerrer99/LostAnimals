@@ -345,6 +345,8 @@
                     </view>
                     <connections>
                         <outlet property="backgroundView" destination="Vju-6h-kkP" id="URp-Mx-3qT"/>
+                        <outlet property="contactTextLabel" destination="LsG-Ww-vLK" id="Rpq-Ux-VV8"/>
+                        <outlet property="contactTitleLabel" destination="dEt-DR-IoM" id="VKw-hA-TTb"/>
                         <outlet property="contactWithPopupView" destination="5P0-hR-DVP" id="OeC-lv-Ua0"/>
                         <outlet property="instagramView" destination="W9z-sT-fRm" id="8y5-k9-DpJ"/>
                         <outlet property="mailView" destination="vSp-RA-9la" id="qce-3S-Zb2"/>

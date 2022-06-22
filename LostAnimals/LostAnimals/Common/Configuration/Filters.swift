@@ -21,12 +21,12 @@ enum FilterType: Int {
 class Filters {
     // MARK: - Properties
     static var currentFilters: [FilterType: PostsFilter] = [
-        .recent: PostsFilter(filterTitle: "Recent", filterType: .recent, enabled: true),
-        .near: PostsFilter(filterTitle: "Near", filterType: .near, enabled: false),
-        .lost: PostsFilter(filterTitle: "Lost", filterType: .lost, enabled: false),
-        .found: PostsFilter(filterTitle: "Found", filterType: .found, enabled: false),
-        .adopt: PostsFilter(filterTitle: "Adopt", filterType: .adopt, enabled: false),
-        .animal: PostsFilter(filterTitle: "Animal", filterType: .animal, enabled: false)
+        .recent: PostsFilter(filterTitle: .Explore.RecentFilterTitle(), filterType: .recent, enabled: true),
+        .near: PostsFilter(filterTitle: .Explore.NearFilterTitle(), filterType: .near, enabled: false),
+        .lost: PostsFilter(filterTitle: .Explore.LostFilterTitle(), filterType: .lost, enabled: false),
+        .found: PostsFilter(filterTitle: .Explore.FoundFilterTitle(), filterType: .found, enabled: false),
+        .adopt: PostsFilter(filterTitle: .Explore.AdoptFilterTitle(), filterType: .adopt, enabled: false),
+        .animal: PostsFilter(filterTitle: .Explore.AnimalFilterTitle(), filterType: .animal, enabled: false)
     ]
     
     // MARK: - Functions
@@ -37,6 +37,6 @@ class Filters {
         currentFilters[.found]?.enabled = false
         currentFilters[.adopt]?.enabled = false
         currentFilters[.animal]?.enabled = false
-        currentFilters[.animal]?.filterTitle = "Animal"
+        currentFilters[.animal]?.filterTitle = .Explore.AnimalFilterTitle()
     }
 }

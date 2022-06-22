@@ -18,6 +18,8 @@ final class ContactWithPopupViewController: ViewController {
     @IBOutlet private weak var whatsappView: CustomView!
     @IBOutlet private weak var instagramView: CustomView!
     @IBOutlet private weak var twitterView: CustomView!
+    @IBOutlet private weak var contactTitleLabel: UILabel!
+    @IBOutlet private weak var contactTextLabel: UILabel!
     
     // MARK: - Properties
     var viewModel: ContactWithPopupViewModel!
@@ -61,6 +63,12 @@ private extension ContactWithPopupViewController {
         instagramView.isHidden = viewModel.authorSocialMedias[.instagram] == nil
         twitterView.isHidden = viewModel.authorSocialMedias[.twitter] == nil
         configureMailController(mailController: mailController)
+        setLocalizables()
+    }
+    
+    func setLocalizables() {
+        contactTitleLabel.text = .Post.ContactTitle()
+        contactTextLabel.text = .Post.ContactText()
     }
 }
 

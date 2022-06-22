@@ -11,6 +11,8 @@ import UIKit
 final class GuestPopupViewController: ViewController {
     // MARK: - IBOutlets
     @IBOutlet private weak var backgroundView: UIView!
+    @IBOutlet private weak var guestPopupTitle: UILabel!
+    @IBOutlet private weak var guestPopupButton: CustomButton!
     
     // MARK: - Properties
     var viewModel: GuestPopupViewModel!
@@ -20,6 +22,7 @@ final class GuestPopupViewController: ViewController {
         super.viewDidLoad()
         
         viewModel.viewReady()
+        setupUI()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -42,6 +45,13 @@ final class GuestPopupViewController: ViewController {
         UIView.animate(withDuration: 0.25) {
             self.backgroundView.alpha = 0
         }
+    }
+}
+
+private extension GuestPopupViewController {
+    func setupUI() {
+        guestPopupTitle.text = .Commons.GuestPopupTitle()
+        guestPopupButton.setTitle(.Commons.GoToStartup(), for: .normal)
     }
 }
 

@@ -52,6 +52,11 @@ extension String {
         case OptionalTwitter = "Commons_OptionalTwitter"
         case BackButton = "Commons_BackButton"
         case NextButton = "Commons_NextButton"
+        case NoPostsAvailable = "Commons_NoPostsAvailable"
+        case GuestPopupTitle = "Commons_GuestPopupTitle"
+        case GoToStartup = "Commons_GoToStartup"
+        case Cancel = "Commons_Cancel"
+        case SavedPostsTitle = "Commons_SavedPostsTitle"
     }
     enum TextFieldErrors: String, Localizable {
         case Empty = "TextFieldErrors_Empty"
@@ -161,5 +166,31 @@ extension String {
         case Item11Description = "TermsAndConditions_Item11Description"
         case Item12Title = "TermsAndConditions_Item12Title"
         case Item12Description = "TermsAndConditions_Item12Description"
+    }
+    enum Explore: String, Localizable {
+        case Title = "Explore_Title"
+        case RecentFilterTitle = "Explore_RecentFilterTitle"
+        case NearFilterTitle = "Explore_NearFilterTitle"
+        case LostFilterTitle = "Explore_LostFilterTitle"
+        case FoundFilterTitle = "Explore_FoundFilterTitle"
+        case AdoptFilterTitle = "Explore_AdoptFilterTitle"
+        case AnimalFilterTitle = "Explore_AnimalFilterTitle"
+    }
+    enum Post: String, Localizable {
+        case SharePostTitle = "Post_SharePostTitle"
+        case EditPostTitle = "Post_EditPostTitle"
+        case BlockUserTitle = "Post_BlockUserTitle"
+        case LostPostTypeTitle = "Post_LostPostTypeTitle"
+        case FoundPostTypeTitle = "Post_FoundPostTypeTitle"
+        case ToAdoptPostTypeTitle = "Post_ToAdoptPostTypeTitle"
+        case NameTitle = "Post_NameTitle"
+        case BreedTitle = "Post_BreedTitle"
+        case LastTimeSeenTitle = "Post_LastTimeSeenTitle"
+        case LocationTitle = "Post_LocationTitle"
+        case DescriptionTitle = "Post_DescriptionTitle"
+        case AuthorTitle = "Post_AuthorTitle"
+        case ContactWithTitle = "Post_ContactWithTitle"
+        case ContactTitle = "Post_ContactTitle"
+        case ContactText = "Post_ContactText"
     }
 }

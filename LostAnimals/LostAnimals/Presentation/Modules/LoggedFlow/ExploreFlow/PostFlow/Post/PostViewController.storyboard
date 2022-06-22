@@ -33,10 +33,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xCg-vx-Fil">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="2225"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="2237"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="MnO-2G-3ZO">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="2205"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="2217"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jWu-yv-TYG">
                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
@@ -180,10 +180,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wq4-UO-xmj">
-                                                        <rect key="frame" x="0.0" y="270" width="320" height="1935"/>
+                                                        <rect key="frame" x="0.0" y="270" width="320" height="1947"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="aHp-7N-79h">
-                                                                <rect key="frame" x="20" y="0.0" width="280" height="1935"/>
+                                                                <rect key="frame" x="20" y="0.0" width="280" height="1947"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="BpK-pO-xMh">
                                                                         <rect key="frame" x="0.0" y="0.0" width="280" height="40"/>
@@ -462,22 +462,22 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aiN-Va-WFG" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="340" width="280" height="1360"/>
+                                                                        <rect key="frame" x="0.0" y="340" width="280" height="1372"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Kl5-YG-D6Y">
-                                                                                <rect key="frame" x="0.0" y="10" width="280" height="1340"/>
+                                                                                <rect key="frame" x="0.0" y="10" width="280" height="1352"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0y-2O-nnC">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="22"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="19"/>
                                                                                         <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="16"/>
                                                                                         <color key="textColor" name="CustomWhite"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BYa-oH-txj">
-                                                                                        <rect key="frame" x="0.0" y="22" width="280" height="1318"/>
+                                                                                        <rect key="frame" x="0.0" y="19" width="280" height="1333"/>
                                                                                         <subviews>
                                                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.59999999999999998" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Description" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X59-dC-TiR">
-                                                                                                <rect key="frame" x="15" y="0.0" width="250" height="1318"/>
+                                                                                                <rect key="frame" x="15" y="0.0" width="250" height="1333"/>
                                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <color key="tintColor" name="CustomWhite"/>
                                                                                                 <color key="textColor" name="CustomWhite"/>
@@ -514,7 +514,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sn3-pS-yhW" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="1720" width="280" height="145"/>
+                                                                        <rect key="frame" x="0.0" y="1732" width="280" height="145"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="yez-Ry-JUG">
                                                                                 <rect key="frame" x="0.0" y="10" width="280" height="125"/>
@@ -651,7 +651,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdL-xC-82Y" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="1885" width="280" height="50"/>
+                                                                        <rect key="frame" x="0.0" y="1897" width="280" height="50"/>
                                                                         <color key="backgroundColor" name="CustomWhite"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="50" id="j1E-pi-tvo"/>
@@ -731,16 +731,22 @@
                         <outlet property="authorAgeLabel" destination="DRL-zd-z1f" id="BYO-hd-1yu"/>
                         <outlet property="authorButton" destination="47W-7X-qaX" id="kCe-dG-KEz"/>
                         <outlet property="authorInfoStackView" destination="GBk-ua-U9l" id="G89-2g-k93"/>
+                        <outlet property="authorLabel" destination="2Rr-dv-Ml5" id="Ftl-om-AO0"/>
                         <outlet property="authorNameLabel" destination="P6f-SG-5Gc" id="GpF-dw-bLQ"/>
                         <outlet property="authorPhotoImageView" destination="aOH-aG-1fo" id="soL-Ds-tbp"/>
                         <outlet property="authorView" destination="sn3-pS-yhW" id="k5I-cm-6xm"/>
+                        <outlet property="breedLabel" destination="19V-o9-S4i" id="5FE-QX-F9s"/>
                         <outlet property="contactWithAuthorButton" destination="wdL-xC-82Y" id="pMj-gh-cYa"/>
+                        <outlet property="descriptionLabel" destination="Y0y-2O-nnC" id="0Lt-WY-GLR"/>
                         <outlet property="descriptionTextView" destination="X59-dC-TiR" id="gJo-iR-RHM"/>
                         <outlet property="descriptionView" destination="aiN-Va-WFG" id="wpo-2e-Yt2"/>
                         <outlet property="lastTimeSeenAndLocationStackView" destination="mUO-dM-QkR" id="vP9-iL-eTa"/>
-                        <outlet property="lastTimeSeenLabel" destination="yny-it-gTX" id="Ulr-o7-6oh"/>
+                        <outlet property="lastTimeSeenLabel" destination="yny-it-gTX" id="VP7-dc-wdN"/>
+                        <outlet property="lastTimeSeenTitleLabel" destination="JMQ-lt-CAl" id="2EH-6w-6sd"/>
                         <outlet property="loadingAuthorInfoView" destination="ElV-4K-rTL" id="hR8-oj-9DC"/>
-                        <outlet property="locationLabel" destination="iJ6-OI-mwx" id="7AR-N5-Zdq"/>
+                        <outlet property="locationLabel" destination="iJ6-OI-mwx" id="H46-SV-pcU"/>
+                        <outlet property="locationTitleLabel" destination="nDk-lX-g7O" id="s1v-XQ-HIv"/>
+                        <outlet property="nameLabel" destination="hb1-C7-giT" id="xCO-6h-INL"/>
                         <outlet property="optionsButtonView" destination="XaK-Pw-F4c" id="il6-3V-NC7"/>
                         <outlet property="postImagesCollectionView" destination="evv-mb-LHg" id="F8D-F9-whC"/>
                         <outlet property="postImagesPageControl" destination="aK3-BS-ZKO" id="vMN-iX-aWM"/>
@@ -763,7 +769,7 @@
             <size key="intrinsicContentSize" width="120" height="120"/>
         </designable>
         <designable name="wdL-xC-82Y">
-            <size key="intrinsicContentSize" width="152" height="34"/>
+            <size key="intrinsicContentSize" width="144" height="31"/>
         </designable>
     </designables>
     <resources>

@@ -258,7 +258,11 @@
                     <connections>
                         <outlet property="backgroundView" destination="Opd-w4-trW" id="Os9-L5-9qz"/>
                         <outlet property="blockUserButtonView" destination="Atz-nX-dXd" id="Jiu-8a-hsD"/>
+                        <outlet property="blockUserLabel" destination="1ON-jz-0cM" id="mko-yl-4hc"/>
+                        <outlet property="cancelLabel" destination="eVf-6G-fTB" id="LfX-w2-AeW"/>
                         <outlet property="editPostButtonView" destination="0qa-Pq-M2p" id="U1i-yo-eTt"/>
+                        <outlet property="editPostLabel" destination="4MY-tZ-xtS" id="ztn-8c-8s5"/>
+                        <outlet property="sharePostLabel" destination="pa0-J7-bC1" id="qu8-HD-VDj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

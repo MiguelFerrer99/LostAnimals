@@ -22,6 +22,11 @@
 "Commons_OptionalTwitter" = "Twitter (opcional)";
 "Commons_BackButton" = "Atrás";
 "Commons_NextButton" = "Siguiente";
+"Commons_NoPostsAvailable" = "No hay posts disponibles";
+"Commons_GuestPopupTitle" = "Regístrate para desbloquear todas las ventajas de Lost Animals!";
+"Commons_GoToStartup" = "Ir al Inicio";
+"Commons_Cancel" = "Cancelar";
+"Commons_SavedPostsTitle" = "Mis posts guardados";
 
 // MARK: - TextFieldErrors
 "TextFieldErrors_Empty" = "Vacío";
@@ -104,6 +109,32 @@
 "WhereCanWeFindYou_Title" = "Selecciona tu dirección";
 "WhereCanWeFindYou_SearchBarPlaceholder" = "Busca tu dirección...";
 "WhereCanWeFindYou_CurrentLocation" = "Ubicación actual";
+
+// MARK: - Explore
+"Explore_Title" = "Explorar";
+"Explore_RecentFilterTitle" = "Reciente";
+"Explore_NearFilterTitle" = "Cercano";
+"Explore_LostFilterTitle" = "Perdido";
+"Explore_FoundFilterTitle" = "Encontrado";
+"Explore_AdoptFilterTitle" = "Adoptar";
+"Explore_AnimalFilterTitle" = "Animal";
+
+// MARK: - Post
+"Post_SharePostTitle" = "Compartir post";
+"Post_EditPostTitle" = "Editar post";
+"Post_BlockUserTitle" = "Bloquear usuario";
+"Post_LostPostTypeTitle" = "Animal perdido";
+"Post_FoundPostTypeTitle" = "Animal encontrado";
+"Post_ToAdoptPostTypeTitle" = "Animal para adoptar";
+"Post_NameTitle" = "Nombre";
+"Post_BreedTitle" = "Raza";
+"Post_LastTimeSeenTitle" = "Última vez visto";
+"Post_LocationTitle" = "Ubicación";
+"Post_DescriptionTitle" = "Descripción";
+"Post_AuthorTitle" = "Autor";
+"Post_ContactWithTitle" = "Contactar con %@";
+"Post_ContactTitle" = "Contactar";
+"Post_ContactText" = "Estas son las opciones que tienes para contactar. Elige una";
 
 // MARK: - TermsAndConditions
 "TermsAndConditions_Title" = "Términos y condiciones";

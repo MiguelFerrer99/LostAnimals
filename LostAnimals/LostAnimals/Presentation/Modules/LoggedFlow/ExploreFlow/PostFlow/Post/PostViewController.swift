@@ -42,6 +42,12 @@ final class PostViewController: ViewController, UIGestureRecognizerDelegate {
     @IBOutlet private weak var authorAddressLabel: UILabel!
     @IBOutlet private weak var contactWithAuthorButton: CustomButton!
     @IBOutlet private var savePostButtonViewConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var breedLabel: UILabel!
+    @IBOutlet private weak var lastTimeSeenTitleLabel: UILabel!
+    @IBOutlet private weak var locationTitleLabel: UILabel!
+    @IBOutlet private weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var authorLabel: UILabel!
     @IBOutlet weak var postImagesCollectionView: UICollectionView!
     @IBOutlet weak var postImagesPageControl: UIPageControl!
     
@@ -118,21 +124,31 @@ private extension PostViewController {
     }
     
     func fillUI() {
+        setLocalizables()
         fillPostUI()
         fillPostImages()
         getAuthorInfo()
+    }
+    
+    func setLocalizables() {
+        nameLabel.text = .Post.NameTitle()
+        breedLabel.text = .Post.BreedTitle()
+        lastTimeSeenTitleLabel.text = .Post.LastTimeSeenTitle()
+        locationTitleLabel.text = .Post.LocationTitle()
+        descriptionLabel.text = .Post.DescriptionTitle()
+        authorLabel.text = .Post.AuthorTitle()
     }
     
     func fillPostUI() {
         postTypeImageView.image = UIImage(named: viewModel.post.animalType.rawValue)
         switch viewModel.post.postType {
         case .lost:
-            postTypeLabel.text = "Lost animal"
+            postTypeLabel.text = .Post.LostPostTypeTitle()
         case .found:
-            postTypeLabel.text = "Found animal"
+            postTypeLabel.text = .Post.FoundPostTypeTitle()
             animalNameView.isHidden = true
         case .adopt:
-            postTypeLabel.text = "To adopt animal"
+            postTypeLabel.text = .Post.ToAdoptPostTypeTitle()
             lastTimeSeenAndLocationStackView.isHidden = true
         }
         animalNameLabel.text = viewModel.post.animalName
@@ -167,7 +183,7 @@ private extension PostViewController {
         else { authorAgeLabel.isHidden = true }
         updateAuthorUI()
         contactWithAuthorButton.hideLoading {
-            self.contactWithAuthorButton.setTitle("Contact with \(user.firstname)", for: .normal)
+            self.contactWithAuthorButton.setTitle(.Post.ContactWithTitle.localized(with: user.firstname), for: .normal)
         }
         if let userURLImage = user.userURLImage {
             userURLImage.getURLImage { image in

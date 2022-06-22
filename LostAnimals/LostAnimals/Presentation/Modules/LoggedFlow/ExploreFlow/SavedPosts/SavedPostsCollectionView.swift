@@ -45,7 +45,7 @@ extension SavedPostsViewController: UICollectionViewDataSource {
             cell.display(summary)
             return cell
         } else if viewModel.savedPosts.isEmpty {
-            let summary = EmptyCollectionViewCellSummary(emptyTitle: "There are not available posts", emptyImage: UIImage(named: "Other") ?? UIImage())
+            let summary = EmptyCollectionViewCellSummary(emptyTitle: .Commons.NoPostsAvailable(), emptyImage: UIImage(named: "Other") ?? UIImage())
             let cell = collectionView.dequeue(EmptyCollectionViewCell.self, for: indexPath)
             cell.display(summary: summary)
             return cell

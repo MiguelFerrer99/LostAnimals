@@ -14,7 +14,7 @@ final class SavedPostsViewController: ViewController, UIGestureRecognizerDelegat
     
     // MARK: - Properties
     override var navBarTitle: String {
-        return "My saved posts"
+        return .Commons.SavedPostsTitle()
     }
     override var navBarLeftButtons: [UIBarButtonItem] {
         let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"),
