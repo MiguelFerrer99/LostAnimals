@@ -105,7 +105,7 @@ extension ExploreViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == filtersCollectionView {
             let isLast = indexPath.item == 0 || indexPath.item == Filters.currentFilters.count - 1
-            return CGSize(width: isLast ? 150 : 140, height: collectionView.frame.height)
+            return CGSize(width: isLast ? 130 : 120, height: collectionView.frame.height)
         } else {
             let collectionViewRealHeight = collectionView.frame.height - currentBarsHeight
             if viewModel.isLoading || viewModel.posts.isEmpty {
