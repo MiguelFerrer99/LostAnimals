@@ -25,7 +25,14 @@ final class EditPersonalDetailsViewController: ViewController, UIGestureRecogniz
     
     // MARK: - Properties
     override var navBarTitle: String {
-        return "Edit personal details"
+        return .ProfileSettings.EditPersonalDetials()
+    }
+    override var navBarLeftButtons: [UIBarButtonItem] {
+        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"),
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(goBack))
+        return [backButton]
     }
     var viewModel: EditPersonalDetailsViewModel!
     weak var delegate: EditPersonalDetailsDelegate?
@@ -56,6 +63,7 @@ private extension EditPersonalDetailsViewController {
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         fillUI()
         configureTextFields()
+        setLocalizables()
     }
     
     func fillUI() {
@@ -76,6 +84,16 @@ private extension EditPersonalDetailsViewController {
         }
     }
     
+    func setLocalizables() {
+        firstnameTextfield.placeholder = .Commons.Firstname()
+        lastnameTextfield.placeholder = .Commons.Lastname()
+        birthdateTextfield.placeholder = .Commons.Birthdate()
+        whereDoYouLiveTextfield.placeholder = .Commons.WhereDoYouLive()
+        animalShelterNameTextfield.placeholder = .Commons.AnimalName()
+        whereCanWeFindYouTextfield.placeholder = .Commons.WhereCanWeFindYou()
+        saveChangesButton.setTitle(.Commons.SaveChanges(), for: .normal)
+    }
+    
     func updateUserInteraction() {
         navigationController?.navigationBar.isUserInteractionEnabled = saveChangesButton.isEnabled
         navigationController?.interactivePopGestureRecognizer?.isEnabled = saveChangesButton.isEnabled
@@ -85,6 +103,10 @@ private extension EditPersonalDetailsViewController {
         whereDoYouLiveTextfield.isUserInteractionEnabled = saveChangesButton.isEnabled
         animalShelterNameTextfield.isUserInteractionEnabled = saveChangesButton.isEnabled
         whereCanWeFindYouTextfield.isUserInteractionEnabled = saveChangesButton.isEnabled
+    }
+    
+    @objc func goBack() {
+        viewModel.goBack()
     }
 }
 

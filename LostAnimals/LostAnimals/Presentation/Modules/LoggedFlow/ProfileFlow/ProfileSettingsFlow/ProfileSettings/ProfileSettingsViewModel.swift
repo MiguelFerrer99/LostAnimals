@@ -106,7 +106,7 @@ extension ProfileSettingsViewModel {
     }
     
     func didPressedDeleteAccountButton(yesButtonPressed: @escaping (() -> ()), completion: @escaping (() -> ())) {
-        showConfirmationPopup(title: "Are you sure you want to delete your account?") {
+        showConfirmationPopup(title: .ProfileSettings.AreYouSureDeleteAccount()) {
             yesButtonPressed()
             self.userService.deleteAccount() { result in
                 completion()
@@ -122,7 +122,7 @@ extension ProfileSettingsViewModel {
     }
     
     func didPressedLogoutButton(yesButtonPressed: @escaping (() -> ()), completion: @escaping (() -> ())) {
-        showConfirmationPopup(title: "Are you sure you want to logout?") {
+        showConfirmationPopup(title: .ProfileSettings.AreYouSureLogOut()) {
             yesButtonPressed()
             self.userService.logOut { result in
                 completion()

@@ -70,6 +70,12 @@ extension EditPersonalDetailsViewModel {
         return haveErrors
     }
     
+    func goBack() {
+        showConfirmationPopup(title: .NewPostGeneric.AreYouSureExit()) {
+            self.router.goBack()
+        }
+    }
+    
     func didPressedWhereDoYouLiveButton() {
         self.router.goToWhereDoYouLive()
     }
@@ -85,7 +91,7 @@ extension EditPersonalDetailsViewModel {
                 switch result {
                 case .success:
                     completion()
-                    showSuccessPopup(title: "The changes has been saved successfully") {
+                    showSuccessPopup(title: .Commons.ChangesSaved()) {
                         self.router.goBack()
                     }
                 case .error(let error):
@@ -101,7 +107,7 @@ extension EditPersonalDetailsViewModel {
                 switch result {
                 case .success:
                     completion()
-                    showSuccessPopup(title: "The changes has been saved successfully") {
+                    showSuccessPopup(title: .Commons.ChangesSaved()) {
                         self.router.goBack()
                     }
                 case .error(let error):

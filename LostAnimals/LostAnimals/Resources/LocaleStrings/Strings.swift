@@ -80,6 +80,8 @@ extension String {
         case AnimalTypeSnake = "Commons_AnimalTypeSnake"
         case AnimalTypeRabbit = "Commons_AnimalTypeRabbit"
         case AnimalTypeOther = "Commons_AnimalTypeOther"
+        case SaveChanges = "Commons_SaveChanges"
+        case ChangesSaved = "Commons_ChangesSaved"
     }
     enum TextFieldErrors: String, Localizable {
         case Empty = "TextFieldErrors_Empty"
@@ -195,6 +197,11 @@ extension String {
         case ContactTitle = "Post_ContactTitle"
         case ContactText = "Post_ContactText"
     }
+    enum EditPost: String, Localizable {
+        case Title = "EditPost_Title"
+        case DeletePost = "EditPost_DeletePost"
+        case PostDeleted = "EditPost_PostDeleted"
+    }
     enum Location: String, Localizable {
         case Title = "Location_Title"
         case HowToGo = "Location_HowToGo"
@@ -223,6 +230,18 @@ extension String {
         case UserBlocked = "Profile_UserBlocked"
         case AreYouSureUnblock = "Profile_AreYouSureUnblock"
         case AreYouSureBlock = "Profile_AreYouSureBlock"
+    }
+    enum ProfileSettings: String, Localizable {
+        case EditPersonalDetials = "ProfileSettings_EditPersonalDetials"
+        case EditSocialMediaDetails = "ProfileSettings_EditSocialMediaDetails"
+        case ChangePassword = "ProfileSettings_ChangePassword"
+        case BlockedUsers = "ProfileSettings_BlockedUsers"
+        case TermsAndConditions = "ProfileSettings_TermsAndConditions"
+        case DeleteAccount = "ProfileSettings_DeleteAccount"
+        case LogOut = "ProfileSettings_LogOut"
+        case AreYouSureDeleteAccount = "ProfileSettings_AreYouSureDeleteAccount"
+        case AreYouSureLogOut = "ProfileSettings_AreYouSureLogOut"
+        case UnblockUserButton = "ProfileSettings_UnblockUserButton"
     }
     enum TermsAndConditions: String, Localizable {
         case Title = "TermsAndConditions_Title"

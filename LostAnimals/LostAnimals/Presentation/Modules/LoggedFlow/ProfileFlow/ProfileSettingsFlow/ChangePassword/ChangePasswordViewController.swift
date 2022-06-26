@@ -10,13 +10,21 @@ import UIKit
 
 final class ChangePasswordViewController: ViewController, UIGestureRecognizerDelegate {
     // MARK: - IBOutlets
+    @IBOutlet private weak var passwordTextLabel: UILabel!
     @IBOutlet weak var passwordTextfield: CustomTextField!
     @IBOutlet weak var confirmPasswordTextfield: CustomTextField!
     @IBOutlet weak var saveChangesButton: CustomButton!
     
     // MARK: - Properties
     override var navBarTitle: String {
-        return "Change password"
+        return .ProfileSettings.ChangePassword()
+    }
+    override var navBarLeftButtons: [UIBarButtonItem] {
+        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"),
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(goBack))
+        return [backButton]
     }
     var viewModel: ChangePasswordViewModel!
     
@@ -40,6 +48,14 @@ private extension ChangePasswordViewController {
     func setupUI() {
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         configureTextFields()
+        setLocalizables()
+    }
+    
+    func setLocalizables() {
+        passwordTextfield.placeholder = .Commons.Password()
+        confirmPasswordTextfield.placeholder = .Commons.ConfirmPassword()
+        passwordTextLabel.text = .SignUp.AccountDetails.PasswordRequirement()
+        saveChangesButton.setTitle(.Commons.SaveChanges(), for: .normal)
     }
     
     func updateUserInteraction() {
@@ -47,6 +63,10 @@ private extension ChangePasswordViewController {
         navigationController?.interactivePopGestureRecognizer?.isEnabled = saveChangesButton.isEnabled
         passwordTextfield.isUserInteractionEnabled = saveChangesButton.isEnabled
         confirmPasswordTextfield.isUserInteractionEnabled = saveChangesButton.isEnabled
+    }
+    
+    @objc func goBack() {
+        viewModel.goBack()
     }
 }
 

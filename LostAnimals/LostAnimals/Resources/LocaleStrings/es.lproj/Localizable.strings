@@ -50,6 +50,8 @@
 "Commons_AnimalTypeSnake" = "Serpiente";
 "Commons_AnimalTypeRabbit" = "Conejo";
 "Commons_AnimalTypeOther" = "Otro";
+"Commons_SaveChanges" = "Guardar cambios";
+"Commons_ChangesSaved" = "Los cambios se han guardado correctamente";
 
 // MARK: - TextFieldErrors
 "TextFieldErrors_Empty" = "Vacío";
@@ -165,6 +167,11 @@
 "Post_ContactTitle" = "Contactar";
 "Post_ContactText" = "Estas son las opciones que tienes para contactar, elige una";
 
+// MARK: - Edit post
+"EditPost_Title" = "Editar post";
+"EditPost_DeletePost" = "Eliminar post";
+"EditPost_PostDeleted" = "El post ha sido eliminado correctamente";
+
 // MARK: - Location
 "Location_Title" = "Ubicación";
 "Location_HowToGo" = "¿Cómo ir?";
@@ -193,6 +200,18 @@
 "Profile_UserBlocked" = "El usuario ha sido bloqueado correctamente";
 "Profile_AreYouSureUnblock" = "¿Estas seguro/a que quieres desbloquear a %@?";
 "Profile_AreYouSureBlock" = "¿Estas seguro/a que quieres bloquear a %@?";
+
+// MARK: - ProfileSettings
+"ProfileSettings_EditPersonalDetials" = "Editar detalles personales";
+"ProfileSettings_EditSocialMediaDetails" = "Editar redes sociales";
+"ProfileSettings_ChangePassword" = "Cambiar contraseña";
+"ProfileSettings_BlockedUsers" = "Usuarios bloqueados";
+"ProfileSettings_TermsAndConditions" = "Términos y condiciones";
+"ProfileSettings_DeleteAccount" = "Eliminar cuenta";
+"ProfileSettings_LogOut" = "Cerrar sesión";
+"ProfileSettings_AreYouSureDeleteAccount" = "¿Estas seguro de que quieres eliminar tu cuenta?";
+"ProfileSettings_AreYouSureLogOut" = "¿Estas seguro de que quieres cerrar sesión?";
+"ProfileSettings_UnblockUserButton" = "Desbloquear";
 
 // MARK: - TermsAndConditions
 "TermsAndConditions_Title" = "Términos y condiciones";

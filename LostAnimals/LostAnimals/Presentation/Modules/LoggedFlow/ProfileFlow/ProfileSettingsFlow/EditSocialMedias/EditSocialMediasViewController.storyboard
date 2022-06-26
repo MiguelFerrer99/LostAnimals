@@ -267,6 +267,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="haveWhatsAppLabel" destination="1H5-Jo-8C7" id="jeY-We-5vf"/>
                         <outlet property="haveWhatsappButton" destination="iOj-b3-qVg" id="jnM-bY-Sda"/>
                         <outlet property="haveWhatsappButtonImageView" destination="RcI-aW-9a7" id="3Tc-Wg-Osv"/>
                         <outlet property="instagramTextfield" destination="BJH-IM-qRK" id="TuY-Ty-adl"/>

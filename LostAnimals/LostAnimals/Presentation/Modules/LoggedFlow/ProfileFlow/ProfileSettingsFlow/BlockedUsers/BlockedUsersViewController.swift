@@ -19,7 +19,7 @@ final class BlockedUsersViewController: ViewController, UIGestureRecognizerDeleg
     
     // MARK: - Properties
     override var navBarTitle: String {
-        return "Blocked users"
+        return .ProfileSettings.BlockedUsers()
     }
     var viewModel: BlockedUsersViewModel!
     weak var delegate: BlockedUsersDelegate?

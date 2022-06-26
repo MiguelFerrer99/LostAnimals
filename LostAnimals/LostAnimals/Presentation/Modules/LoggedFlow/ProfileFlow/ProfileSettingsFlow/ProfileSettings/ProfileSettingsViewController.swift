@@ -34,6 +34,11 @@ final class ProfileSettingsViewController: ViewController, UIGestureRecognizerDe
     @IBOutlet private weak var termsAndConditionsButton: UIButton!
     @IBOutlet private weak var deleteAccountButton: UIButton!
     @IBOutlet private weak var logOutButton: UIButton!
+    @IBOutlet private weak var editPersonalDetailsLabel: UILabel!
+    @IBOutlet private weak var editSocialMediaDetailsLabel: UILabel!
+    @IBOutlet private weak var changePasswordLabel: UILabel!
+    @IBOutlet private weak var blockedUsersLabel: UILabel!
+    @IBOutlet private weak var termsAndConditionsLabel: UILabel!
     
     // MARK: - Properties
     override var hideNavigationBar: Bool {
@@ -121,6 +126,17 @@ private extension ProfileSettingsViewController {
     func setupUI() {
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         configureImagePickerController()
+        setLocalizables()
+    }
+    
+    func setLocalizables() {
+        editPersonalDetailsLabel.text = .ProfileSettings.EditPersonalDetials()
+        editSocialMediaDetailsLabel.text = .ProfileSettings.EditSocialMediaDetails()
+        changePasswordLabel.text = .ProfileSettings.ChangePassword()
+        blockedUsersLabel.text = .ProfileSettings.BlockedUsers()
+        termsAndConditionsLabel.text = .ProfileSettings.TermsAndConditions()
+        deleteAccountButton.setTitle(.ProfileSettings.DeleteAccount(), for: .normal)
+        logOutButton.setTitle(.ProfileSettings.LogOut(), for: .normal)
     }
     
     func fillUI() {

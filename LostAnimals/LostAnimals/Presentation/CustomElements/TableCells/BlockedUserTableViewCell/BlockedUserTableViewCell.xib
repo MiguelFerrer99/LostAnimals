@@ -107,6 +107,9 @@
         <designable name="CTu-t8-tAT">
             <size key="intrinsicContentSize" width="54" height="32"/>
         </designable>
+        <designable name="grp-JX-76J">
+            <size key="intrinsicContentSize" width="120" height="120"/>
+        </designable>
     </designables>
     <resources>
         <image name="DefaultUserImage" width="120" height="120"/>

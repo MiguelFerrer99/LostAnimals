@@ -19,6 +19,7 @@ final class EditSocialMediasViewController: ViewController, UIGestureRecognizerD
     @IBOutlet private weak var phonePrefixButton: UIButton!
     @IBOutlet private weak var haveWhatsappButton: UIButton!
     @IBOutlet private weak var haveWhatsappButtonImageView: UIImageView!
+    @IBOutlet private weak var haveWhatsAppLabel: UILabel!
     @IBOutlet weak var phoneNumberTextfield: CustomTextField!
     @IBOutlet weak var instagramTextfield: CustomTextField!
     @IBOutlet weak var twitterTextfield: CustomTextField!
@@ -26,7 +27,14 @@ final class EditSocialMediasViewController: ViewController, UIGestureRecognizerD
     
     // MARK: - Properties
     override var navBarTitle: String {
-        return "Edit social medias"
+        return .ProfileSettings.EditSocialMediaDetails()
+    }
+    override var navBarLeftButtons: [UIBarButtonItem] {
+        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"),
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(goBack))
+        return [backButton]
     }
     var viewModel: EditSocialMediasViewModel!
     weak var delegate: EditSocialMediasDelegate?
@@ -62,6 +70,7 @@ private extension EditSocialMediasViewController {
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         fillUI()
         configureTextFields()
+        setLocalizables()
     }
     
     func fillUI() {
@@ -70,6 +79,14 @@ private extension EditSocialMediasViewController {
         haveWhatsappButtonImageView.image = UIImage(systemName: viewModel.willHaveWhatsAppSelected ? "checkmark.circle.fill" : "circle")
         if let instagram = viewModel.me.socialMedias[.instagram] { instagramTextfield.textField.text = instagram }
         if let twitter = viewModel.me.socialMedias[.twitter] { twitterTextfield.textField.text = twitter }
+    }
+    
+    func setLocalizables() {
+        phoneNumberTextfield.placeholder = .Commons.Phone()
+        haveWhatsAppLabel.text = .Commons.HaveWhatsApp()
+        instagramTextfield.placeholder = .Commons.OptionalInstagram()
+        twitterTextfield.placeholder = .Commons.OptionalTwitter()
+        saveChangesButton.setTitle(.Commons.SaveChanges(), for: .normal)
     }
     
     func toggleHaveWhatsAppButton() {
@@ -86,6 +103,10 @@ private extension EditSocialMediasViewController {
         haveWhatsappButton.isUserInteractionEnabled = saveChangesButton.isEnabled
         instagramTextfield.isUserInteractionEnabled = saveChangesButton.isEnabled
         twitterTextfield.isUserInteractionEnabled = saveChangesButton.isEnabled
+    }
+    
+    @objc func goBack() {
+        viewModel.goBack()
     }
 }
 

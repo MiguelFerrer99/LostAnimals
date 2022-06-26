@@ -100,7 +100,7 @@ extension EditPostViewModel {
     }
     
     func goBack() {
-        showConfirmationPopup(title: "Are you sure you want to exit?") {
+        showConfirmationPopup(title: .NewPostGeneric.AreYouSureExit()) {
             self.router.goBack()
         }
     }
@@ -126,7 +126,7 @@ extension EditPostViewModel {
                 NotificationCenter.default.post(name: .UpdateExplorePosts, object: nil)
                 NotificationCenter.default.post(name: .UpdateSavedPosts, object: nil)
                 completion()
-                showSuccessPopup(title: "The post has been removed sucessfully") {
+                showSuccessPopup(title: .EditPost.PostDeleted()) {
                     self.router.goBack2Times()
                 }
             case .error(let error):
@@ -149,7 +149,7 @@ extension EditPostViewModel {
                         NotificationCenter.default.post(name: .UpdateExplorePosts, object: nil)
                         NotificationCenter.default.post(name: .UpdateSavedPosts, object: nil)
                         completion()
-                        showSuccessPopup(title: "The changes has been saved successfully") {
+                        showSuccessPopup(title: .Commons.ChangesSaved()) {
                             self.router.goBack2Times()
                         }
                     case .error(let error):

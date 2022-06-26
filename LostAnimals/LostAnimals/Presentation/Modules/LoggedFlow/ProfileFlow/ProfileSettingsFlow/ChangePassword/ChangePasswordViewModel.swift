@@ -46,12 +46,18 @@ extension ChangePasswordViewModel {
         return haveErrors
     }
     
+    func goBack() {
+        showConfirmationPopup(title: .NewPostGeneric.AreYouSureExit()) {
+            self.router.goBack()
+        }
+    }
+    
     func didPressedSaveChangesButton(newPassword: String, completion: @escaping (() -> Void)) {
         userService.changePassword(newPassword: newPassword) { result in
             switch result {
             case .success:
                 completion()
-                showSuccessPopup(title: "The password has been changed successfully") {
+                showSuccessPopup(title: .Commons.ChangesSaved()) {
                     self.router.goBack()
                 }
             case .error(let error):

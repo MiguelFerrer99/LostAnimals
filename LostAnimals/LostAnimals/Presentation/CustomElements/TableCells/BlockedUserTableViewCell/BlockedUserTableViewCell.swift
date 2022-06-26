@@ -26,6 +26,15 @@ final class BlockedUserTableViewCell: UITableViewCell, Reusable {
     // MARK: - Life cycle
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        setLocalizables()
+    }
+}
+
+// MARK: - Private functions
+private extension BlockedUserTableViewCell {
+    func setLocalizables() {
+        unblockButton.setTitle(.ProfileSettings.UnblockUserButton(), for: .normal)
     }
 }
 

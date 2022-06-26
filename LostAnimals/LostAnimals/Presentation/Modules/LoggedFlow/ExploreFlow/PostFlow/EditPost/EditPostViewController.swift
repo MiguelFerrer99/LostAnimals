@@ -28,6 +28,8 @@ final class EditPostViewController: ViewController {
     @IBOutlet private weak var selectPhoto7Button: UIButton!
     @IBOutlet private weak var selectPhoto8Button: UIButton!
     @IBOutlet private weak var deletePostButton: CustomButton!
+    @IBOutlet private weak var descriptionOptionalLabel: UILabel!
+    @IBOutlet private weak var mustSelectPhotoLabel: UILabel!
     @IBOutlet weak var nameTextfield: CustomTextField!
     @IBOutlet weak var animalTextfield: CustomTextField!
     @IBOutlet weak var breedTextfield: CustomTextField!
@@ -39,7 +41,7 @@ final class EditPostViewController: ViewController {
     
     // MARK: - Properties
     override var navBarTitle: String {
-        return "Edit post"
+        return .EditPost.Title()
     }
     override var navBarLeftButtons: [UIBarButtonItem] {
         let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"),
@@ -93,17 +95,18 @@ private extension EditPostViewController {
         configureImagePickerController()
         fillUI()
         configureTextfields()
+        setLocalizables()
     }
     
     func fillUI() {
         switch viewModel.post.postType {
         case .lost:
-            postTypeLabel.text = "Lost animal"
+            postTypeLabel.text = .Post.LostPostTypeTitle()
         case .found:
-            postTypeLabel.text = "Found animal"
+            postTypeLabel.text = .Post.FoundPostTypeTitle()
             nameTextfield.isHidden = true
         case .adopt:
-            postTypeLabel.text = "To adopt animal"
+            postTypeLabel.text = .Post.ToAdoptPostTypeTitle()
             lastTimeSeenTextfield.isHidden = true
             locationTextfield.isHidden = true
         }
@@ -119,6 +122,18 @@ private extension EditPostViewController {
         descriptionCharactersCounterLabel.text = "\(descriptionTextview.text.count)/300"
         lastTimeSeenTextfield.textField.text = viewModel.post.lastTimeSeen
         locationTextfield.textField.text = viewModel.currentLocation.address
+    }
+    
+    func setLocalizables() {
+        nameTextfield.placeholder = .Commons.AnimalName()
+        animalTextfield.placeholder = .Commons.Animal()
+        breedTextfield.placeholder = .Commons.AnimalBreed()
+        lastTimeSeenTextfield.placeholder = .Commons.AnimalLastTimeSeen()
+        locationTextfield.placeholder = .Commons.AnimalLocation()
+        descriptionOptionalLabel.text = .Commons.AnimalDescription()
+        mustSelectPhotoLabel.text = .NewPostGeneric.MustSelectPhoto()
+        deletePostButton.setTitle(.EditPost.DeletePost(), for: .normal)
+        saveChangesButton.setTitle(.Commons.SaveChanges(), for: .normal)
     }
     
     @objc func goBack() {

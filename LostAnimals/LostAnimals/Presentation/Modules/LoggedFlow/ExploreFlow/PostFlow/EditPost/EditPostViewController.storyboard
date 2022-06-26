@@ -493,7 +493,7 @@
                                                             <constraint firstAttribute="height" constant="80" id="JDx-xm-VKG"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Breed"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Breed (optional)"/>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="capitalizeFirstLetter" value="YES"/>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="hideContent" value="NO"/>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="whiteTheme" value="NO"/>
@@ -556,7 +556,7 @@
                                                                             <constraint firstAttribute="width" constant="20" id="DJw-MY-qly"/>
                                                                         </constraints>
                                                                     </view>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNU-pE-K4g">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description (optional)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNU-pE-K4g">
                                                                         <rect key="frame" x="20" y="0.0" width="354" height="35"/>
                                                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
                                                                         <color key="textColor" systemColor="systemGray2Color"/>
@@ -714,9 +714,11 @@
                         <outlet property="breedTextfield" destination="WJK-6z-zNb" id="tJa-xs-faa"/>
                         <outlet property="deletePostButton" destination="D5c-zU-faL" id="04q-B9-avH"/>
                         <outlet property="descriptionCharactersCounterLabel" destination="Za1-aq-iCL" id="ec5-Yg-1Nu"/>
+                        <outlet property="descriptionOptionalLabel" destination="mNU-pE-K4g" id="G21-00-cyS"/>
                         <outlet property="descriptionTextview" destination="I6m-so-Scg" id="fRt-Lr-6al"/>
                         <outlet property="lastTimeSeenTextfield" destination="6aE-zP-tLV" id="0Bw-Fz-Yg6"/>
                         <outlet property="locationTextfield" destination="nwB-Wc-qQW" id="4O8-6O-mzp"/>
+                        <outlet property="mustSelectPhotoLabel" destination="ZKB-K7-I9C" id="iuN-pm-IVI"/>
                         <outlet property="nameTextfield" destination="htB-lE-P84" id="Hio-Zh-sPP"/>
                         <outlet property="postTypeLabel" destination="AqB-OS-Qyi" id="n87-Mq-tzg"/>
                         <outlet property="saveChangesButton" destination="Dkq-iE-RJE" id="pSC-Uj-0tQ"/>
