@@ -10,7 +10,7 @@ import UIKit
 
 // MARK: - Protocols
 protocol AnimalFilterPopupDelegate: AnyObject {
-    func animalFilterApplied()
+    func animalFilterApplied(animalTypeName: String)
 }
 
 final class AnimalFilterPopupViewController: ViewController {
@@ -43,11 +43,6 @@ extension AnimalFilterPopupViewController {
     func enableApplyFilterButton() {
         applyFilterButton.alpha = 1
         applyFilterButton.isEnabled = true
-    }
-    
-    func disableApplyFilterButton() {
-        applyFilterButton.alpha = 0.5
-        applyFilterButton.isEnabled = false
     }
 }
 
@@ -93,7 +88,6 @@ private extension AnimalFilterPopupViewController {
 private extension AnimalFilterPopupViewController {
     @IBAction func applyFilterButtonPressed(_ sender: CustomButton) {
         viewModel.didPressApplyFilterButton()
-        delegate?.animalFilterApplied()
     }
     
     @IBAction func dismissButtonPressed(_ sender: Any) {

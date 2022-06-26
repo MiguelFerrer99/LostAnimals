@@ -38,7 +38,7 @@ final class ProfileViewController: ViewController, UIGestureRecognizerDelegate {
     
     // MARK: - Properties
     override var navBarTitle: String {
-        return viewModel.isMyProfile ? .Profile.WelcomeBack() : "\(viewModel.user.firstname) \(viewModel.user.lastname)"
+        return viewModel.isMyProfile ? .Profile.Title() : "\(viewModel.user.firstname) \(viewModel.user.lastname)"
     }
     override var hideBackButton: Bool {
         return viewModel.isMyProfile

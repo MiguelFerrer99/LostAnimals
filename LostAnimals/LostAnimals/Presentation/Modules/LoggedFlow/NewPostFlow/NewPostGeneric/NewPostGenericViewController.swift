@@ -70,7 +70,17 @@ final class NewPostGenericViewController: ViewController {
 // MARK: - Functions
 extension NewPostGenericViewController {
     func fillAnimal(animalType: AnimalType) {
-        animalTextfield.textField.text = animalType.rawValue
+        var animalTypeName: String = .Commons.AnimalTypeOther()
+        switch animalType {
+        case .dog:    animalTypeName = .Commons.AnimalTypeDog()
+        case .bird:   animalTypeName = .Commons.AnimalTypeBird()
+        case .cat:    animalTypeName = .Commons.AnimalTypeCat()
+        case .turtle: animalTypeName = .Commons.AnimalTypeTurtle()
+        case .snake:  animalTypeName = .Commons.AnimalTypeSnake()
+        case .rabbit: animalTypeName = .Commons.AnimalTypeRabbit()
+        case .other:  animalTypeName = .Commons.AnimalTypeOther()
+        }
+        animalTextfield.textField.text = animalTypeName
         animalTextfield.didFinishSelectContentFromOtherVC()
         viewModel.selectedAnimalType = animalType
     }

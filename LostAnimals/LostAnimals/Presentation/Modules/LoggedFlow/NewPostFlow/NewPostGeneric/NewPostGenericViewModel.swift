@@ -10,9 +10,9 @@ import UIKit
 
 // MARK: - Enums
 enum PostType: String {
-    case lost = "Explore_LostFilterTitle"
-    case found = "Explore_FoundFilterTitle"
-    case adopt = "Explore_AdoptFilterTitle"
+    case lost = "Lost"
+    case found = "Found"
+    case adopt = "Adopt"
     
     func toDTO() -> String {
         self.rawValue.lowercased()

@@ -15,7 +15,7 @@ extension ExploreViewController: GoToMyProfileFromPostDelegate {
 
 // MARK: - AnimalFilterPopupDelegate
 extension ExploreViewController: AnimalFilterPopupDelegate {
-    func animalFilterApplied() {
-        selectAnimalFilterCell()
+    func animalFilterApplied(animalTypeName: String) {
+        selectAnimalFilterCell(animalTypeName: animalTypeName)
     }
 }

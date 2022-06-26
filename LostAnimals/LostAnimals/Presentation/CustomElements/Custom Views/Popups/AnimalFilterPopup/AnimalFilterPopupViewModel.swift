@@ -38,8 +38,19 @@ extension AnimalFilterPopupViewModel {
         Filters.resetFilters()
         Filters.currentFilters[.animal]?.enabled = true
         Filters.currentFilters[.animal]?.animalFiltered = selectedAnimalType
-        Filters.currentFilters[.animal]?.filterTitle = selectedAnimalType?.rawValue ?? "Animal"
-        self.router.dismissAnimalFilterPopup()
+        var animalFilterName: String = .Explore.AnimalFilterTitle()
+        switch selectedAnimalType {
+        case .dog:    animalFilterName = .Commons.AnimalTypeDog()
+        case .cat:    animalFilterName = .Commons.AnimalTypeCat()
+        case .bird:   animalFilterName = .Commons.AnimalTypeBird()
+        case .rabbit: animalFilterName = .Commons.AnimalTypeRabbit()
+        case .snake:  animalFilterName = .Commons.AnimalTypeSnake()
+        case .turtle: animalFilterName = .Commons.AnimalTypeTurtle()
+        case .other:  animalFilterName = .Commons.AnimalTypeOther()
+        default:      animalFilterName = .Explore.AnimalFilterTitle()
+        }
+        Filters.currentFilters[.animal]?.filterTitle = animalFilterName
+        self.router.applyFilterAndDismissAnimalFilterPopup(animalTypeName: animalFilterName)
     }
     
     func didPressDismissButton() {

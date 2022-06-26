@@ -79,11 +79,11 @@ extension ExploreViewController {
         getPosts()
     }
     
-    func selectAnimalFilterCell() {
+    func selectAnimalFilterCell(animalTypeName: String) {
         let indexPath = IndexPath(item: FilterType.animal.rawValue, section: 0)
         filtersCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
         if let animalFilterCell = filtersCollectionView.cellForItem(at: indexPath) as? ExplorePostsFilterCollectionViewCell {
-            animalFilterCell.setFilterTitle(Filters.currentFilters[.animal]?.animalFiltered?.rawValue ?? "Animal")
+            animalFilterCell.setFilterTitle(animalTypeName)
         }
         getPosts()
     }

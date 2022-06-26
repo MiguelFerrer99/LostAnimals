@@ -20,6 +20,11 @@ final class AnimalFilterPopupRouter {
 
 // MARK: - Functions
 extension AnimalFilterPopupRouter {
+    func applyFilterAndDismissAnimalFilterPopup(animalTypeName: String) {
+        self.viewController?.delegate?.animalFilterApplied(animalTypeName: animalTypeName)
+        self.viewController?.dismissCurrentView(completion: nil)
+    }
+    
     func dismissAnimalFilterPopup() {
         self.viewController?.dismissCurrentView(completion: nil)
     }
