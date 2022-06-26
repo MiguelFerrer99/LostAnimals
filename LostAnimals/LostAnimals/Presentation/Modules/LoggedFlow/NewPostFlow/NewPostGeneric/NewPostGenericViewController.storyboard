@@ -692,9 +692,11 @@
                         <outlet property="animalTextfield" destination="Odk-9P-JAG" id="UJQ-9O-2m3"/>
                         <outlet property="breedTextfield" destination="u3s-op-BJQ" id="kyE-Oo-1ey"/>
                         <outlet property="descriptionCharactersCounterLabel" destination="63N-vT-h4F" id="MOs-tO-qbv"/>
+                        <outlet property="descriptionOptionalLabel" destination="FiN-Zi-93B" id="2oc-4e-uEt"/>
                         <outlet property="descriptionTextview" destination="0AE-xI-axA" id="wV1-vh-wEC"/>
                         <outlet property="lastTimeSeenTextfield" destination="31u-Fn-2JT" id="VG3-Sq-4tO"/>
                         <outlet property="locationTextfield" destination="2TV-8q-wcR" id="qIV-VY-DSd"/>
+                        <outlet property="mustSelectPhotoLabel" destination="6bB-cN-aBJ" id="7NJ-ik-fDC"/>
                         <outlet property="nameTextfield" destination="U6A-pA-u1Z" id="6ED-dL-9xu"/>
                         <outlet property="postTypeLabel" destination="AyZ-JB-hSr" id="AVy-2d-TKV"/>
                         <outlet property="publishPostButton" destination="mji-2T-hT1" id="UWc-Mz-anf"/>

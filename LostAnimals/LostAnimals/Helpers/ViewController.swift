@@ -69,6 +69,11 @@ class ViewController: UIViewController {
         UINavigationBar.appearance().tintColor = navigationTintColor
         UINavigationBar.appearance().barTintColor = navigationBarTintColor
         
+        navigationController?.setNavigationBarHidden(hideNavigationBar, animated: true)
+        if useLargeTitle { navigationController?.navigationBar.prefersLargeTitles = true }
+        navigationItem.largeTitleDisplayMode = useLargeTitle ? .always : .never
+        navigationController?.navigationBar.sizeToFit()
+        
         subscribeToNotifications()
     }
     

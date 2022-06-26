@@ -57,6 +57,29 @@ extension String {
         case GoToStartup = "Commons_GoToStartup"
         case Cancel = "Commons_Cancel"
         case SavedPostsTitle = "Commons_SavedPostsTitle"
+        case NotSpecifiedMale = "Commons_NotSpecifiedMale"
+        case NotSpecifiedFemale = "Commons_NotSpecifiedFemale"
+        case MailSent = "Commons_MailSent"
+        case AnimalName = "Commons_AnimalName"
+        case Animal = "Commons_Animal"
+        case AnimalBreed = "Commons_AnimalBreed"
+        case AnimalLastTimeSeen = "Commons_AnimalLastTimeSeen"
+        case AnimalLocation = "Commons_AnimalLocation"
+        case AnimalDescription = "Commons_AnimalDescription"
+        case RemovePhoto = "Commons_RemovePhoto"
+        case ChooseFromLibrary = "Commons_ChooseFromLibrary"
+        case TakePhoto = "Commons_TakePhoto"
+        case Yes = "Commons_Yes"
+        case No = "Commons_No"
+        case SelectAnimalYouWant = "Commons_SelectAnimalYouWant"
+        case ApplyFilter = "Commons_ApplyFilter"
+        case AnimalTypeDog = "Commons_AnimalTypeDog"
+        case AnimalTypeBird = "Commons_AnimalTypeBird"
+        case AnimalTypeCat = "Commons_AnimalTypeCat"
+        case AnimalTypeTurtle = "Commons_AnimalTypeTurtle"
+        case AnimalTypeSnake = "Commons_AnimalTypeSnake"
+        case AnimalTypeRabbit = "Commons_AnimalTypeRabbit"
+        case AnimalTypeOther = "Commons_AnimalTypeOther"
     }
     enum TextFieldErrors: String, Localizable {
         case Empty = "TextFieldErrors_Empty"
@@ -78,6 +101,12 @@ extension String {
         case InvalidMailOrPassword = "ServiceErrors_InvalidMailOrPassword"
         case LocationAddress = "ServiceErrors_LocationAddress"
         case Banned = "ServiceErrors_Banned"
+        case OpenMail = "ServiceErrors_OpenMail"
+        case SendMail = "ServiceErrors_SendMail"
+        case OpenPhone = "ServiceErrors_OpenPhone"
+        case OpenWhatsapp = "ServiceErrors_OpenWhatsapp"
+        case OpenInstagram = "ServiceErrors_OpenInstagram"
+        case OpenTwitter = "ServiceErrors_OpenTwitter"
     }
     enum Startup: String, Localizable {
         case WelcomeTitle = "Startup_WelcomeTitle"
@@ -140,6 +169,61 @@ extension String {
         case SearchBarPlaceholder = "WhereCanWeFindYou_SearchBarPlaceholder"
         case CurrentLocation = "WhereCanWeFindYou_CurrentLocation"
     }
+    enum Explore: String, Localizable {
+        case Title = "Explore_Title"
+        case RecentFilterTitle = "Explore_RecentFilterTitle"
+        case NearFilterTitle = "Explore_NearFilterTitle"
+        case LostFilterTitle = "Explore_LostFilterTitle"
+        case FoundFilterTitle = "Explore_FoundFilterTitle"
+        case AdoptFilterTitle = "Explore_AdoptFilterTitle"
+        case AnimalFilterTitle = "Explore_AnimalFilterTitle"
+    }
+    enum Post: String, Localizable {
+        case SharePostTitle = "Post_SharePostTitle"
+        case EditPostTitle = "Post_EditPostTitle"
+        case BlockUserTitle = "Post_BlockUserTitle"
+        case LostPostTypeTitle = "Post_LostPostTypeTitle"
+        case FoundPostTypeTitle = "Post_FoundPostTypeTitle"
+        case ToAdoptPostTypeTitle = "Post_ToAdoptPostTypeTitle"
+        case NameTitle = "Post_NameTitle"
+        case BreedTitle = "Post_BreedTitle"
+        case LastTimeSeenTitle = "Post_LastTimeSeenTitle"
+        case LocationTitle = "Post_LocationTitle"
+        case DescriptionTitle = "Post_DescriptionTitle"
+        case AuthorTitle = "Post_AuthorTitle"
+        case ContactWithTitle = "Post_ContactWithTitle"
+        case ContactTitle = "Post_ContactTitle"
+        case ContactText = "Post_ContactText"
+    }
+    enum Location: String, Localizable {
+        case Title = "Location_Title"
+        case HowToGo = "Location_HowToGo"
+        case FoundAnimal = "Location_FoundAnimal"
+    }
+    enum NewPost: String, Localizable {
+        case Title = "NewPost_Title"
+        case Text = "NewPost_Text"
+    }
+    enum NewPostGeneric: String, Localizable {
+        case Title = "NewPostGeneric_Title"
+        case MustSelectPhoto = "NewPostGeneric_MustSelectPhoto"
+        case PublishPostButton = "NewPostGeneric_PublishPostButton"
+        case AreYouSureExit = "NewPostGeneric_AreYouSureExit"
+        case PostPublished = "NewPostGeneric_PostPublished"
+    }
+    enum Profile: String, Localizable {
+        case Title = "Profile_Title"
+        case WelcomeBack = "Profile_WelcomeBack"
+        case YeardOld = "Profile_YeardOld"
+        case Posts = "Profile_Posts"
+        case MyPosts = "Profile_MyPosts"
+        case MySavedPosts = "Profile_MySavedPosts"
+        case SocialMedias = "Profile_SocialMedias"
+        case BlockedByYou = "Profile_BlockedByYou"
+        case UserBlocked = "Profile_UserBlocked"
+        case AreYouSureUnblock = "Profile_AreYouSureUnblock"
+        case AreYouSureBlock = "Profile_AreYouSureBlock"
+    }
     enum TermsAndConditions: String, Localizable {
         case Title = "TermsAndConditions_Title"
         case Item1Title = "TermsAndConditions_Item1Title"
@@ -166,31 +250,5 @@ extension String {
         case Item11Description = "TermsAndConditions_Item11Description"
         case Item12Title = "TermsAndConditions_Item12Title"
         case Item12Description = "TermsAndConditions_Item12Description"
-    }
-    enum Explore: String, Localizable {
-        case Title = "Explore_Title"
-        case RecentFilterTitle = "Explore_RecentFilterTitle"
-        case NearFilterTitle = "Explore_NearFilterTitle"
-        case LostFilterTitle = "Explore_LostFilterTitle"
-        case FoundFilterTitle = "Explore_FoundFilterTitle"
-        case AdoptFilterTitle = "Explore_AdoptFilterTitle"
-        case AnimalFilterTitle = "Explore_AnimalFilterTitle"
-    }
-    enum Post: String, Localizable {
-        case SharePostTitle = "Post_SharePostTitle"
-        case EditPostTitle = "Post_EditPostTitle"
-        case BlockUserTitle = "Post_BlockUserTitle"
-        case LostPostTypeTitle = "Post_LostPostTypeTitle"
-        case FoundPostTypeTitle = "Post_FoundPostTypeTitle"
-        case ToAdoptPostTypeTitle = "Post_ToAdoptPostTypeTitle"
-        case NameTitle = "Post_NameTitle"
-        case BreedTitle = "Post_BreedTitle"
-        case LastTimeSeenTitle = "Post_LastTimeSeenTitle"
-        case LocationTitle = "Post_LocationTitle"
-        case DescriptionTitle = "Post_DescriptionTitle"
-        case AuthorTitle = "Post_AuthorTitle"
-        case ContactWithTitle = "Post_ContactWithTitle"
-        case ContactTitle = "Post_ContactTitle"
-        case ContactText = "Post_ContactText"
     }
 }

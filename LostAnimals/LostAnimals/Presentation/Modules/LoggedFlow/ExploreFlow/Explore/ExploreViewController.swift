@@ -19,7 +19,7 @@ final class ExploreViewController: ViewController {
         return .Explore.Title()
     }
     override var useLargeTitle: Bool {
-        return true
+        return false
     }
     override var hideBackButton: Bool {
         return true

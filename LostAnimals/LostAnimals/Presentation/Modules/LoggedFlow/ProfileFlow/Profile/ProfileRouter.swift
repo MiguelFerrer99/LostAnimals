@@ -59,7 +59,7 @@ extension ProfileRouter {
             if let numberURL = URL(string: "tel://" + fullPhoneNumber), UIApplication.shared.canOpenURL(numberURL) {
                 UIApplication.shared.open(numberURL)
             } else {
-                showErrorPopup(title: "Error opening Phone. Please, try again later", action: nil)
+                showErrorPopup(title: .ServiceErrors.OpenPhone(), action: nil)
             }
         }
     }
@@ -71,7 +71,7 @@ extension ProfileRouter {
             } else if let appStoreURL = URL(string: "itms-apps://itunes.apple.com/app/apple-store/id310633997?mt=8"), UIApplication.shared.canOpenURL(appStoreURL) {
                 UIApplication.shared.open(appStoreURL)
             } else {
-                showErrorPopup(title: "Error opening WhatsApp. Please, try again later", action: nil)
+                showErrorPopup(title: .ServiceErrors.OpenWhatsapp(), action: nil)
             }
         }
     }
@@ -83,7 +83,7 @@ extension ProfileRouter {
             } else if let webURL = URL(string: "https://instagram.com/\(instagram)"), UIApplication.shared.canOpenURL(webURL) {
                 UIApplication.shared.open(webURL)
             } else {
-                showErrorPopup(title: "Error opening instagram profile. Please, try again later", action: nil)
+                showErrorPopup(title: .ServiceErrors.OpenInstagram(), action: nil)
             }
         }
     }
@@ -95,7 +95,7 @@ extension ProfileRouter {
             } else if let webURL = URL(string: "https://twitter.com/\(twitter)"), UIApplication.shared.canOpenURL(webURL) {
                 UIApplication.shared.open(webURL)
             } else {
-                showErrorPopup(title: "Error opening twitter profile. Please, try again later", action: nil)
+                showErrorPopup(title: .ServiceErrors.OpenTwitter(), action: nil)
             }
         }
     }

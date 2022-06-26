@@ -103,32 +103,36 @@ extension ProfileViewModel {
     }
     
     func didPressBlockUserButton(isBlocked: @escaping ((Bool) -> ())) {
-        let isUserBlocked = User.shared?.blockedUsers.contains(user.id) ?? false
-        let userFullName = user.lastname.isEmpty ? user.firstname : user.firstname + user.lastname
-        if isUserBlocked {
-            showConfirmationPopup(title: "Are you sure you want to unblock \(userFullName)?") {
-                self.userService.unblockUser(userID: self.user.id) { result in
-                    switch result {
-                    case .success:
-                        self.reloadPosts()
-                        isBlocked(false)
-                    case .error(let error):
-                        showErrorPopup(title: error)
+        if Cache.get(boolFor: .logged) {
+            let isUserBlocked = User.shared?.blockedUsers.contains(user.id) ?? false
+            let userFullName = user.lastname.isEmpty ? user.firstname : user.firstname + user.lastname
+            if isUserBlocked {
+                showConfirmationPopup(title: .Profile.AreYouSureUnblock.localized(with: userFullName)) {
+                    self.userService.unblockUser(userID: self.user.id) { result in
+                        switch result {
+                        case .success:
+                            self.reloadPosts()
+                            isBlocked(false)
+                        case .error(let error):
+                            showErrorPopup(title: error)
+                        }
+                    }
+                }
+            } else {
+                showConfirmationPopup(title: .Profile.AreYouSureBlock.localized(with: userFullName)) {
+                    self.userService.blockUser(userID: self.user.id) { result in
+                        switch result {
+                        case .success:
+                            self.reloadPosts()
+                            isBlocked(true)
+                        case .error(let error):
+                            showErrorPopup(title: error)
+                        }
                     }
                 }
             }
         } else {
-            showConfirmationPopup(title: "Are you sure you want to block \(userFullName)?") {
-                self.userService.blockUser(userID: self.user.id) { result in
-                    switch result {
-                    case .success:
-                        self.reloadPosts()
-                        isBlocked(true)
-                    case .error(let error):
-                        showErrorPopup(title: error)
-                    }
-                }
-            }
+            showGuestPopup()
         }
     }
     

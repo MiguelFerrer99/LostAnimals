@@ -35,9 +35,9 @@ extension PostService {
             if let error = error {
                 switch error.localizedDescription {
                 case FirebaseError.networkError.rawValue:
-                    completion(.error("You don't have an internet connection"))
+                    completion(.error(.ServiceErrors.InternetConnection()))
                 default:
-                    completion(.error("An unexpected error occured. Please, try again later"))
+                    completion(.error(.ServiceErrors.Unexpected()))
                 }
             } else if let snapshotValue = snapshot.value as? [String: Any] {
                 do {
@@ -58,7 +58,7 @@ extension PostService {
                         posts.sort { ($0.distanceToUserLocation ?? 0) > ($1.distanceToUserLocation ?? 0) }
                     }
                     completion(.success(posts))
-                } catch { completion(.error("An unexpected error occured. Please, try again later")) }
+                } catch { completion(.error(.ServiceErrors.Unexpected())) }
             } else { completion(.success([])) }
         }
     }
@@ -68,9 +68,9 @@ extension PostService {
             if let error = error {
                 switch error.localizedDescription {
                 case FirebaseError.networkError.rawValue:
-                    completion(.error("You don't have an internet connection"))
+                    completion(.error(.ServiceErrors.InternetConnection()))
                 default:
-                    completion(.error("An unexpected error occured. Please, try again later"))
+                    completion(.error(.ServiceErrors.Unexpected()))
                 }
             } else if let snapshotValue = snapshot.value as? [String: Any] {
                 do {
@@ -79,7 +79,7 @@ extension PostService {
                     posts = posts.filter { !(User.shared?.blockedUsers.contains($0.userID) ?? false) }
                     posts = posts.filter { User.shared?.savedPosts.contains($0.id) ?? false }
                     completion(.success(posts))
-                } catch { completion(.error("An unexpected error occured. Please, try again later")) }
+                } catch { completion(.error(.ServiceErrors.Unexpected())) }
             } else { completion(.success([])) }
         }
     }
@@ -89,9 +89,9 @@ extension PostService {
             if let error = error {
                 switch error.localizedDescription {
                 case FirebaseError.networkError.rawValue:
-                    completion(.error("You don't have an internet connection"))
+                    completion(.error(.ServiceErrors.InternetConnection()))
                 default:
-                    completion(.error("An unexpected error occured. Please, try again later"))
+                    completion(.error(.ServiceErrors.Unexpected()))
                 }
             } else if let snapshotValue = snapshot.value as? [String: Any] {
                 do {
@@ -100,7 +100,7 @@ extension PostService {
                     posts = posts.filter { User.shared?.id == $0.userID }
                     posts.sort { $0.createdAt > $1.createdAt }
                     completion(.success(posts))
-                } catch { completion(.error("An unexpected error occured. Please, try again later")) }
+                } catch { completion(.error(.ServiceErrors.Unexpected())) }
             } else { completion(.success([])) }
         }
     }
@@ -109,7 +109,7 @@ extension PostService {
         self.uploadPostImagesAndGetURLs(postID: post.id, images: images) { urlImages in
             do {
                 if urlImages.isEmpty {
-                    completion(.error("An unexpected error occured. Please, try again later"))
+                    completion(.error(.ServiceErrors.Unexpected()))
                 } else {
                     var newPost = post
                     if let urlImage1 = urlImages[safe: 0] { newPost.urlImage1 = urlImage1 }
@@ -126,15 +126,15 @@ extension PostService {
                         if let error = error {
                             switch error.localizedDescription {
                             case FirebaseError.networkError.rawValue:
-                                completion(.error("You don't have an internet connection"))
+                                completion(.error(.ServiceErrors.InternetConnection()))
                             default:
-                                completion(.error("An unexpected error occured. Please, try again later"))
+                                completion(.error(.ServiceErrors.Unexpected()))
                             }
                         } else { completion(.success) }
                     }
                 }
             } catch {
-                completion(.error("An unexpected error occured. Please, try again later"))
+                completion(.error(.ServiceErrors.Unexpected()))
             }
         }
     }

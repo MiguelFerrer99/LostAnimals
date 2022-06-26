@@ -52,7 +52,13 @@ final class ConfirmationPopupViewController: ViewController {
 // MARK: - Private functions
 private extension ConfirmationPopupViewController {
     func setupUI() {
+        setLocalizables()
         fillUI()
+    }
+    
+    func setLocalizables() {
+        noButton.setTitle(.Commons.No(), for: .normal)
+        yesButton.setTitle(.Commons.Yes(), for: .normal)
     }
     
     func fillUI() {

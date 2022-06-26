@@ -34,7 +34,8 @@ extension AnimalTypesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let animalType = Constants.animalTypes[indexPath.row]
-        let summary = AnimalTypeTableViewCellSummary(animalTypeTitle: animalType.rawValue, animalTypeImage: UIImage(named: animalType.rawValue) ?? UIImage())
+        let animalTypeName = Constants.animalTypesNames[indexPath.row]
+        let summary = AnimalTypeTableViewCellSummary(animalTypeTitle: animalTypeName, animalTypeImage: UIImage(named: animalType.rawValue) ?? UIImage())
         let cell = tableView.dequeue(AnimalTypeTableViewCell.self)
         cell.display(summary: summary)
         return cell

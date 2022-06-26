@@ -24,6 +24,10 @@ final class SelectPhotoPopupViewController: ViewController {
     // MARK: - IBOutlets
     @IBOutlet private weak var backgroundView: UIView!
     @IBOutlet private weak var removePhotoOptionView: UIView!
+    @IBOutlet private weak var removePhotoOptionLabel: UILabel!
+    @IBOutlet private weak var chooseFromLibraryOptionLabel: UILabel!
+    @IBOutlet private weak var takePhotoOptionLabel: UILabel!
+    @IBOutlet private weak var cancelOptionLabel: UILabel!
     
     // MARK: - Properties
     weak var delegate: ActionAfterSelectPhotoDelegate?
@@ -63,7 +67,15 @@ final class SelectPhotoPopupViewController: ViewController {
 // MARK: - Functions
 private extension SelectPhotoPopupViewController {
     func setupUI() {
+        setLocalizables()
         removePhotoOptionView.isHidden = !viewModel.showRemoveOption
+    }
+    
+    func setLocalizables() {
+        removePhotoOptionLabel.text = .Commons.RemovePhoto()
+        chooseFromLibraryOptionLabel.text = .Commons.ChooseFromLibrary()
+        takePhotoOptionLabel.text = .Commons.TakePhoto()
+        cancelOptionLabel.text = .Commons.Cancel()
     }
 }
 

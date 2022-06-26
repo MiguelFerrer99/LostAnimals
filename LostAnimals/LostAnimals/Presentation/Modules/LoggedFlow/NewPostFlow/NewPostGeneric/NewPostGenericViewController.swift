@@ -27,6 +27,8 @@ final class NewPostGenericViewController: ViewController {
     @IBOutlet private weak var selectPhoto6Button: UIButton!
     @IBOutlet private weak var selectPhoto7Button: UIButton!
     @IBOutlet private weak var selectPhoto8Button: UIButton!
+    @IBOutlet private weak var mustSelectPhotoLabel: UILabel!
+    @IBOutlet private weak var descriptionOptionalLabel: UILabel!
     @IBOutlet weak var descriptionTextview: UITextView!
     @IBOutlet weak var descriptionCharactersCounterLabel: UILabel!
     @IBOutlet weak var nameTextfield: CustomTextField!
@@ -38,7 +40,7 @@ final class NewPostGenericViewController: ViewController {
     
     // MARK: - Properties
     override var navBarTitle: String {
-        return "New post"
+        return .NewPostGeneric.Title()
     }
     override var navBarLeftButtons: [UIBarButtonItem] {
         let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"),
@@ -101,18 +103,30 @@ private extension NewPostGenericViewController {
     }
     
     func fillUI() {
+        setLocalizables()
         switch viewModel.postType {
         case .lost:
-            postTypeLabel.text = "Lost animal"
+            postTypeLabel.text = .Post.LostPostTypeTitle()
         case .found:
-            postTypeLabel.text = "Found animal"
+            postTypeLabel.text = .Post.FoundPostTypeTitle()
             nameTextfield.isHidden = true
         case .adopt:
-            postTypeLabel.text = "To adopt animal"
+            postTypeLabel.text = .Post.ToAdoptPostTypeTitle()
             lastTimeSeenTextfield.isHidden = true
             locationTextfield.isHidden = true
             if let me = User.shared { viewModel.newPostLocation = me.location }
         }
+    }
+    
+    func setLocalizables() { 
+        mustSelectPhotoLabel.text = .NewPostGeneric.MustSelectPhoto()
+        nameTextfield.placeholder = .Commons.AnimalName()
+        animalTextfield.placeholder = .Commons.Animal()
+        breedTextfield.placeholder = .Commons.AnimalBreed()
+        lastTimeSeenTextfield.placeholder = .Commons.AnimalLastTimeSeen()
+        locationTextfield.placeholder = .Commons.AnimalLocation()
+        descriptionOptionalLabel.text = .Commons.AnimalDescription()
+        publishPostButton.setTitle(.NewPostGeneric.PublishPostButton(), for: .normal)
     }
     
     func updateUserInteraction() {
@@ -137,9 +151,9 @@ private extension NewPostGenericViewController {
         guard let selectedAnimalType = viewModel.selectedAnimalType, let me = User.shared else { return nil }
         let newPost = Post(id: UUID().uuidString,
                            postType: viewModel.postType,
-                           animalName: nameTextfield.value.isEmpty ? "Not specified" : nameTextfield.value,
+                           animalName: nameTextfield.value.isEmpty ? .Commons.NotSpecifiedMale() : nameTextfield.value,
                            animalType: selectedAnimalType,
-                           animalBreed: breedTextfield.value.isEmpty ? "Not specified" : breedTextfield.value,
+                           animalBreed: breedTextfield.value.isEmpty ? .Commons.NotSpecifiedFemale() : breedTextfield.value,
                            urlImage1: nil,
                            urlImage2: nil,
                            urlImage3: nil,
@@ -150,7 +164,7 @@ private extension NewPostGenericViewController {
                            urlImage8: nil,
                            lastTimeSeen: lastTimeSeenTextfield.value,
                            location: viewModel.newPostLocation,
-                           description: descriptionTextview.text.isEmpty ? "Not specified" : descriptionTextview.text,
+                           description: descriptionTextview.text.isEmpty ? .Commons.NotSpecifiedFemale() : descriptionTextview.text,
                            userID: me.id,
                            createdAt: Date())
         return newPost

@@ -40,7 +40,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="DhO-Go-0HX">
                                         <rect key="frame" x="40" y="20" width="334" height="329"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="New Post" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jdm-99-jod">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="New post" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jdm-99-jod">
                                                 <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="GJl-ia-Gxg"/>
@@ -87,7 +87,7 @@
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="30" id="3zI-06-9m8"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="18"/>
+                                                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="16"/>
                                                                         <color key="textColor" name="CustomWhite"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -141,7 +141,7 @@
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="30" id="uOC-gq-Zll"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="18"/>
+                                                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="16"/>
                                                                         <color key="textColor" name="CustomWhite"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -189,12 +189,12 @@
                                                                             <constraint firstAttribute="trailing" secondItem="OEv-I8-qdB" secondAttribute="trailing" constant="15" id="sAP-Go-chl"/>
                                                                         </constraints>
                                                                     </view>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To adopt" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tao-Mr-MGY">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adopt" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tao-Mr-MGY">
                                                                         <rect key="frame" x="0.0" y="159" width="111.5" height="30"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="30" id="gcT-la-Dmo"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="18"/>
+                                                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="16"/>
                                                                         <color key="textColor" name="CustomWhite"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -268,6 +268,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="adoptOptionLabel" destination="Tao-Mr-MGY" id="9RQ-8r-Lws"/>
+                        <outlet property="foundOptionLabel" destination="iSJ-CN-TUh" id="Cn7-je-kRf"/>
+                        <outlet property="lostOptionLabel" destination="8g2-EQ-tpr" id="bUp-Ab-sOT"/>
+                        <outlet property="newPostTextLabel" destination="Yyz-hg-lqb" id="hES-eM-00d"/>
+                        <outlet property="newPostTitleLabel" destination="Jdm-99-jod" id="W64-Ab-re6"/>
                         <outlet property="newPostView" destination="MmP-sW-02B" id="Cwt-kO-mwU"/>
                     </connections>
                 </viewController>

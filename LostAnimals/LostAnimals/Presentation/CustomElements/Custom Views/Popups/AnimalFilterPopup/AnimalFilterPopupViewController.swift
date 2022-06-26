@@ -15,6 +15,7 @@ protocol AnimalFilterPopupDelegate: AnyObject {
 
 final class AnimalFilterPopupViewController: ViewController {
     // MARK: - IBOutlets
+    @IBOutlet private weak var selectAnimalLabel: UILabel!
     @IBOutlet private weak var animalsFilterTableView: UITableView!
     @IBOutlet private weak var applyFilterButton: CustomButton!
     
@@ -54,7 +55,13 @@ extension AnimalFilterPopupViewController {
 private extension AnimalFilterPopupViewController {
     func setupUI() {
         configureTableView(animalsFilterTableView)
+        setLocalizables()
         fillUI()
+    }
+    
+    func setLocalizables() {
+        selectAnimalLabel.text = .Commons.SelectAnimalYouWant()
+        applyFilterButton.setTitle(.Commons.ApplyFilter(), for: .normal)
     }
     
     func fillUI() {

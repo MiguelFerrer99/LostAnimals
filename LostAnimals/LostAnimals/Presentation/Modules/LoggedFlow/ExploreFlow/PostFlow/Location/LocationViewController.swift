@@ -15,11 +15,11 @@ final class LocationViewController: ViewController {
     
     // MARK: - Properties
     override var navBarTitle: String {
-        return "Location"
+        return .Location.Title()
     }
     override var navBarRightButtons: [UIBarButtonItem] {
         let howToGo = UIButton()
-        let attributedString = NSAttributedString(string: "How to go?", attributes: [.foregroundColor: UIColor.customBlack])
+        let attributedString = NSAttributedString(string: .Location.HowToGo(), attributes: [.foregroundColor: UIColor.customBlack])
         howToGo.setAttributedTitle(attributedString, for: .normal)
         howToGo.addTarget(self, action: #selector(howToGoButtonPressed), for: .touchUpInside)
         return [UIBarButtonItem(customView: howToGo)]

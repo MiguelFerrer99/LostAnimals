@@ -10,7 +10,12 @@ import UIKit
 
 final class NewPostViewController: ViewController {
     // MARK: - IBOutlets
-    @IBOutlet weak var newPostView: CustomView!
+    @IBOutlet private weak var newPostView: CustomView!
+    @IBOutlet private weak var newPostTitleLabel: UILabel!
+    @IBOutlet private weak var newPostTextLabel: UILabel!
+    @IBOutlet private weak var lostOptionLabel: UILabel!
+    @IBOutlet private weak var foundOptionLabel: UILabel!
+    @IBOutlet private weak var adoptOptionLabel: UILabel!
     
     // MARK: - Properties
     override var hideNavigationBar: Bool {
@@ -37,6 +42,15 @@ final class NewPostViewController: ViewController {
 private extension NewPostViewController {
     func setupUI() {
         newPostView.layer.maskedCorners =  [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        setLocalizables()
+    }
+    
+    func setLocalizables() {
+        newPostTitleLabel.text = .NewPost.Title()
+        newPostTextLabel.text = .NewPost.Text()
+        lostOptionLabel.text = .Explore.LostFilterTitle()
+        foundOptionLabel.text = .Explore.FoundFilterTitle()
+        adoptOptionLabel.text = .Explore.AdoptFilterTitle()
     }
 }
 

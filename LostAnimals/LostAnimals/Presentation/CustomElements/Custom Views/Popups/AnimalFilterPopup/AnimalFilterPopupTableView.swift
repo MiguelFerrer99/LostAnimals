@@ -41,7 +41,8 @@ extension AnimalFilterPopupViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let animalType = Constants.animalTypes[indexPath.row]
-        let summary = AnimalFilterTableViewCellSummary(animalTypeTitle: animalType.rawValue, animalTypeImage: UIImage(named: "\(animalType.rawValue)White") ?? UIImage())
+        let animalTypeName = Constants.animalTypesNames[indexPath.row]
+        let summary = AnimalFilterTableViewCellSummary(animalTypeTitle: animalTypeName, animalTypeImage: UIImage(named: "\(animalType.rawValue)White") ?? UIImage())
         let cell = tableView.dequeue(AnimalFilterTableViewCell.self)
         cell.display(summary: summary)
         return cell

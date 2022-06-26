@@ -23,7 +23,7 @@ extension LocationViewController {
         } else if let animalName = viewModel.animalName {
             annotation.title = animalName
         } else {
-            annotation.title = "Found animal"
+            annotation.title = .Location.FoundAnimal()
         }
         annotation.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
         mapView.addAnnotation(annotation)

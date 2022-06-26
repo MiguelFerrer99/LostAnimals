@@ -19,7 +19,7 @@ struct Constants {
                                 birthdate: Date().toString(withFormat: DateFormat.dayMonthYearOther),
                                 userURLImage: nil,
                                 headerURLImage: nil,
-                                location: Location(address: "Not specified", coordinates: nil),
+                                location: Location(address: .Commons.NotSpecifiedFemale(), coordinates: nil),
                                 socialMedias: [:],
                                 banned: false,
                                 blockedUsers: [],
@@ -60,5 +60,15 @@ struct Constants {
         .snake,
         .rabbit,
         .other
+    ]
+    
+    static let animalTypesNames: [String] = [
+        .Commons.AnimalTypeDog(),
+        .Commons.AnimalTypeBird(),
+        .Commons.AnimalTypeCat(),
+        .Commons.AnimalTypeTurtle(),
+        .Commons.AnimalTypeSnake(),
+        .Commons.AnimalTypeRabbit(),
+        .Commons.AnimalTypeOther()
     ]
 }

@@ -80,7 +80,7 @@ extension ExploreViewController: UICollectionViewDataSource {
                 cell.display(summary)
                 return cell
             } else if viewModel.posts.isEmpty {
-                let summary = EmptyCollectionViewCellSummary(emptyTitle: "There are not available posts", emptyImage: UIImage(named: "Other") ?? UIImage())
+                let summary = EmptyCollectionViewCellSummary(emptyTitle: .Commons.NoPostsAvailable(), emptyImage: UIImage(named: "Other") ?? UIImage())
                 let cell = collectionView.dequeue(EmptyCollectionViewCell.self, for: indexPath)
                 cell.display(summary: summary)
                 return cell
@@ -111,7 +111,7 @@ extension ExploreViewController: UICollectionViewDelegateFlowLayout {
             if viewModel.isLoading || viewModel.posts.isEmpty {
                 return CGSize(width: collectionView.frame.width, height: collectionViewRealHeight)
             }
-            else { return CGSize(width: collectionView.frame.width / 2, height: collectionView.frame.height / 1.8) }
+            else { return CGSize(width: collectionView.frame.width / 2, height: collectionView.frame.height / 2) }
         }
     }
 }

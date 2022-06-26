@@ -102,7 +102,7 @@ private extension PersonalDetailsCollectionViewCell {
                                                  firstname: viewModel.isAnimalShelter ? animalShelterNameTextfield.value : firstnameTextfield.value,
                                                  lastname: viewModel.isAnimalShelter ? "" : lastnameTextfield.value,
                                                  birthdate: viewModel.isAnimalShelter ? nil : birthdateTexfield.value,
-                                                 location: viewModel.location ?? Location(address: "Not specified", coordinates: nil))
+                                                 location: viewModel.location ?? Location(address: .Commons.NotSpecifiedFemale(), coordinates: nil))
         signUpStepsDelegate?.moveToNextSignUpStep()
     }
 }

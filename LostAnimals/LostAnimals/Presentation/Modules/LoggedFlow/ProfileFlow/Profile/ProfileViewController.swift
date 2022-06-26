@@ -38,7 +38,7 @@ final class ProfileViewController: ViewController, UIGestureRecognizerDelegate {
     
     // MARK: - Properties
     override var navBarTitle: String {
-        return viewModel.isMyProfile ? "My profile" : "\(viewModel.user.firstname) \(viewModel.user.lastname)"
+        return viewModel.isMyProfile ? .Profile.WelcomeBack() : "\(viewModel.user.firstname) \(viewModel.user.lastname)"
     }
     override var hideBackButton: Bool {
         return viewModel.isMyProfile
@@ -90,9 +90,9 @@ extension ProfileViewController {
         guard let me = User.shared else { return }
         viewModel.user = me
         viewModel.isMyProfile = (me == viewModel.user)
-        welcomeBackLabel.text = "Welcome back, \(viewModel.user.firstname)"
+        welcomeBackLabel.text = .Profile.WelcomeBack.localized(with: viewModel.user.firstname)
         basicInfoViewFirstLabel.isHidden = viewModel.user.animalShelter
-        if let age = viewModel.getAge() { basicInfoViewFirstLabel.text = "\(age) years old" }
+        if let age = viewModel.getAge() { basicInfoViewFirstLabel.text = .Profile.YeardOld.localized(with: age) }
         basicInfoViewSecondLabel.text = viewModel.user.location.address
     }
     
@@ -144,13 +144,13 @@ private extension ProfileViewController {
         blockUserButtonView.isHidden = viewModel.isMyProfile
         settingsButtonView.isHidden = !viewModel.isMyProfile
         animalShelterImageView.isHidden = !viewModel.user.animalShelter
-        welcomeBackLabel.text = viewModel.isMyProfile ? "Welcome back, \(viewModel.user.firstname)" : "\(viewModel.user.firstname) \(viewModel.user.lastname)"
+        welcomeBackLabel.text = viewModel.isMyProfile ? .Profile.WelcomeBack.localized(with: viewModel.user.firstname) : "\(viewModel.user.firstname) \(viewModel.user.lastname)"
         basicInfoView.isHidden = viewModel.isMyProfile
         basicInfoViewFirstLabel.isHidden = viewModel.user.animalShelter
-        if let age = viewModel.getAge() { basicInfoViewFirstLabel.text = "\(age) years old" }
+        if let age = viewModel.getAge() { basicInfoViewFirstLabel.text = .Profile.YeardOld.localized(with: age) }
         basicInfoViewSecondLabel.text = viewModel.user.location.address
-        firstCollectionHeaderLabel.text = viewModel.isMyProfile ? "My posts" : "Posts"
-        secondCollectionHeaderLabel.text = viewModel.isMyProfile ? "My saved posts" : "Social medias"
+        firstCollectionHeaderLabel.text = viewModel.isMyProfile ? .Profile.MyPosts() : .Profile.Posts()
+        secondCollectionHeaderLabel.text = viewModel.isMyProfile ? .Profile.MySavedPosts() : .Profile.SocialMedias()
         secondCollectionHeaderImageView.isHidden = !viewModel.isMyProfile
     }
     
@@ -236,7 +236,7 @@ private extension ProfileViewController {
     }
     
     func updateBlockedUserUI() {
-        blockedUserLabel.text = "\(viewModel.user.firstname) has been blocked by you"
+        blockedUserLabel.text = .Profile.BlockedByYou.localized(with: viewModel.user.firstname)
         let isUserBlocked = User.shared?.blockedUsers.contains(viewModel.user.id) ?? false
         if isUserBlocked {
             blockUserButtonImageView.image = UIImage(named: "UnblockUserWhite")
@@ -270,7 +270,7 @@ private extension ProfileViewController {
     @objc func blockOrUnblockUser() {
         viewModel.didPressBlockUserButton { isBlocked in
             self.updateBlockedUserUI(isBlocked: isBlocked)
-            if isBlocked { showSuccessPopup(title: "The user has been blocked successfully") }
+            if isBlocked { showSuccessPopup(title: .Profile.UserBlocked()) }
         }
     }
     

@@ -27,6 +27,29 @@
 "Commons_GoToStartup" = "Ir al Inicio";
 "Commons_Cancel" = "Cancelar";
 "Commons_SavedPostsTitle" = "Mis posts guardados";
+"Commons_NotSpecifiedMale" = "No especificado";
+"Commons_NotSpecifiedFemale" = "No especificada";
+"Commons_MailSent" = "El email ha sido enviado correctamente";
+"Commons_AnimalName" = "Nombre";
+"Commons_Animal" = "Animal";
+"Commons_AnimalBreed" = "Raza (opcional)";
+"Commons_AnimalLastTimeSeen" = "Última vez visto";
+"Commons_AnimalLocation" = "Ubicación";
+"Commons_AnimalDescription" = "Descripción (opcional)";
+"Commons_RemovePhoto" = "Eliminar foto";
+"Commons_ChooseFromLibrary" = "Elegir de la galería";
+"Commons_TakePhoto" = "Tomar foto";
+"Commons_Yes" = "Sí";
+"Commons_No" = "No";
+"Commons_SelectAnimalYouWant" = "Selecciona el animal que quieras";
+"Commons_ApplyFilter" = "Aplicar filtro";
+"Commons_AnimalTypeDog" = "Perro";
+"Commons_AnimalTypeBird" = "Pájaro";
+"Commons_AnimalTypeCat" = "Gato";
+"Commons_AnimalTypeTurtle" = "Tortuga";
+"Commons_AnimalTypeSnake" = "Serpiente";
+"Commons_AnimalTypeRabbit" = "Conejo";
+"Commons_AnimalTypeOther" = "Otro";
 
 // MARK: - TextFieldErrors
 "TextFieldErrors_Empty" = "Vacío";
@@ -48,6 +71,12 @@
 "ServiceErrors_InvalidMailOrPassword" = "Email o contraseña incorrectos";
 "ServiceErrors_LocationAddress" = "Lo siento, no fue posible obtener la dirección de tu localización";
 "ServiceErrors_Banned" = "Has sido baneado de Lost Animals. Por favor contacta con el administrador para solucionar esta situación";
+"ServiceErrors_OpenMail" = "Error abriendo Mail. Por favor, inténtalo más tarde";
+"ServiceErrors_SendMail" = "Error enviando email. Por favor, inténtalo más tarde";
+"ServiceErrors_OpenPhone" = "Error abriendo teléfono. Por favor, inténtalo más tarde";
+"ServiceErrors_OpenWhatsapp" = "Error abriendo WhatsApp. Por favor, inténtalo más tarde";
+"ServiceErrors_OpenInstagram" = "Error abriendo el perfil de Instagram. Por favor, inténtalo más tarde";
+"ServiceErrors_OpenTwitter" = "Error abriendo el perfil de Twitter. Por favor, inténtalo más tarde";
 
 // MARK: - Startup
 "Startup_WelcomeTitle" = "Bienvenido";
@@ -134,7 +163,36 @@
 "Post_AuthorTitle" = "Autor";
 "Post_ContactWithTitle" = "Contactar con %@";
 "Post_ContactTitle" = "Contactar";
-"Post_ContactText" = "Estas son las opciones que tienes para contactar. Elige una";
+"Post_ContactText" = "Estas son las opciones que tienes para contactar, elige una";
+
+// MARK: - Location
+"Location_Title" = "Ubicación";
+"Location_HowToGo" = "¿Cómo ir?";
+"Location_FoundAnimal" = "Animal encontrado";
+
+// MARK: - NewPost
+"NewPost_Title" = "Nuevo post";
+"NewPost_Text" = "Elige el tipo de post que quieres publicar";
+
+// MARK: - NewPostGeneric
+"NewPostGeneric_Title" = "Nuevo post";
+"NewPostGeneric_MustSelectPhoto" = "Debes seleccionar al menos una foto";
+"NewPostGeneric_PublishPostButton" = "Publicar post";
+"NewPostGeneric_AreYouSureExit" = "¿Estas seguro de que quieres salir?";
+"NewPostGeneric_PostPublished" = "El post ha sido publicado correctamente";
+
+// MARK: - Profile
+"Profile_Title" = "Mi perfil";
+"Profile_WelcomeBack" = "Bienvenido de nuevo, %@";
+"Profile_YeardOld" = "%d años";
+"Profile_Posts" = "Posts";
+"Profile_MyPosts" = "Mis posts";
+"Profile_MySavedPosts" = "Mis posts guardados";
+"Profile_SocialMedias" = "Redes sociales";
+"Profile_BlockedByYou" = "%@ ha sido bloqueado por ti";
+"Profile_UserBlocked" = "El usuario ha sido bloqueado correctamente";
+"Profile_AreYouSureUnblock" = "¿Estas seguro/a que quieres desbloquear a %@?";
+"Profile_AreYouSureBlock" = "¿Estas seguro/a que quieres bloquear a %@?";
 
 // MARK: - TermsAndConditions
 "TermsAndConditions_Title" = "Términos y condiciones";

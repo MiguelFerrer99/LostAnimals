@@ -82,10 +82,10 @@ extension EditPostViewModel {
         var newPost = post
         newPost.animalName = (newEditPostInfo[.animalName]?.isEmpty ?? true) ? nil : newEditPostInfo[.animalName]
         newPost.animalType = AnimalType(rawValue: newEditPostInfo[.animalType] ?? "") ?? .other
-        newPost.animalBreed = newEditPostInfo[.animalBreed] ?? "Not specified"
+        newPost.animalBreed = newEditPostInfo[.animalBreed] ?? .Commons.NotSpecifiedFemale()
         newPost.lastTimeSeen = newEditPostInfo[.lastTimeSeen] ?? Date().toString(withFormat: DateFormat.dayMonthYearHourOther)
         newPost.location = newLocation
-        newPost.description = newEditPostInfo[.description] ?? "Not specified"
+        newPost.description = newEditPostInfo[.description] ?? .Commons.NotSpecifiedFemale()
         return newPost
     }
     

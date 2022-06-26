@@ -27,6 +27,29 @@
 "Commons_GoToStartup" = "Go to Startup";
 "Commons_Cancel" = "Cancel";
 "Commons_SavedPostsTitle" = "My saved posts";
+"Commons_NotSpecifiedMale" = "Not specified";
+"Commons_NotSpecifiedFemale" = "Not specified";
+"Commons_MailSent" = "The mail has been sent successfully";
+"Commons_AnimalName" = "Name";
+"Commons_Animal" = "Animal";
+"Commons_AnimalBreed" = "Breed (optional)";
+"Commons_AnimalLastTimeSeen" = "Last time seen";
+"Commons_AnimalLocation" = "Location";
+"Commons_AnimalDescription" = "Description (optional)";
+"Commons_RemovePhoto" = "Remove photo";
+"Commons_ChooseFromLibrary" = "Choose from library";
+"Commons_TakePhoto" = "Take a photo";
+"Commons_Yes" = "Yes";
+"Commons_No" = "No";
+"Commons_SelectAnimalYouWant" = "Select the animal you want";
+"Commons_ApplyFilter" = "Apply filter";
+"Commons_AnimalTypeDog" = "Dog";
+"Commons_AnimalTypeBird" = "Bird";
+"Commons_AnimalTypeCat" = "Cat";
+"Commons_AnimalTypeTurtle" = "Turtle";
+"Commons_AnimalTypeSnake" = "Snake";
+"Commons_AnimalTypeRabbit" = "Rabbit";
+"Commons_AnimalTypeOther" = "Other";
 
 // MARK: - TextFieldErrors
 "TextFieldErrors_Empty" = "Empty";
@@ -48,6 +71,12 @@
 "ServiceErrors_InvalidMailOrPassword" = "Email or password incorrect";
 "ServiceErrors_LocationAddress" = "Sorry, It was not possible to get the address of your location";
 "ServiceErrors_Banned" = "You has been banned of Lost Animals. Please contact with the administrator to solve this situation";
+"ServiceErrors_OpenMail" = "Error opening Mail. Please, try again later";
+"ServiceErrors_SendMail" = "Error sending mail. Please, try again later";
+"ServiceErrors_OpenPhone" = "Error opening Phone. Please, try again later";
+"ServiceErrors_OpenWhatsapp" = "Error opening WhatsApp. Please, try again later";
+"ServiceErrors_OpenInstagram" = "Error opening Instagram profile. Please, try again later";
+"ServiceErrors_OpenTwitter" = "Error opening Twitter profile. Please, try again later";
 
 // MARK: - Startup
 "Startup_WelcomeTitle" = "Welcome";
@@ -134,7 +163,36 @@
 "Post_AuthorTitle" = "Author";
 "Post_ContactWithTitle" = "Contact with %@";
 "Post_ContactTitle" = "Contact";
-"Post_ContactText" = "These are the options you have to contact. Choose one";
+"Post_ContactText" = "These are the options you have to contact, choose one";
+
+// MARK: - Location
+"Location_Title" = "Location";
+"Location_HowToGo" = "How to go";
+"Location_FoundAnimal" = "Found animal";
+
+// MARK: - NewPost
+"NewPost_Title" = "New post";
+"NewPost_Text" = "Choose the type of post you want to publish";
+
+// MARK: - NewPostGeneric
+"NewPostGeneric_Title" = "New post";
+"NewPostGeneric_MustSelectPhoto" = "You must select at least one photo";
+"NewPostGeneric_PublishPostButton" = "Publish post";
+"NewPostGeneric_AreYouSureExit" = "Are you sure you want to exit?";
+"NewPostGeneric_PostPublished" = "The post has been published successfully";
+
+// MARK: - Profile
+"Profile_Title" = "My profile";
+"Profile_WelcomeBack" = "Welcome back, %@";
+"Profile_YeardOld" = "%d years old";
+"Profile_Posts" = "Posts";
+"Profile_MyPosts" = "My posts";
+"Profile_MySavedPosts" = "My saved posts";
+"Profile_SocialMedias" = "Social medias";
+"Profile_BlockedByYou" = "%@ has been blocked by you";
+"Profile_UserBlocked" = "The user has been blocked successfully";
+"Profile_AreYouSureUnblock" = "Are you sure you want to unblock %@?";
+"Profile_AreYouSureBlock" = "Are you sure you want to block %@?";
 
 // MARK: - TermsAndConditions
 "TermsAndConditions_Title" = "Terms and conditions";

@@ -10,9 +10,9 @@ import UIKit
 
 // MARK: - Enums
 enum PostType: String {
-    case lost = "Lost"
-    case found = "Found"
-    case adopt = "Adopt"
+    case lost = "Explore_LostFilterTitle"
+    case found = "Explore_FoundFilterTitle"
+    case adopt = "Explore_AdoptFilterTitle"
     
     func toDTO() -> String {
         self.rawValue.lowercased()
@@ -27,7 +27,7 @@ final class NewPostGenericViewModel {
     let postType: PostType
     var selectPhotoImageViews: [UIImageView] = []
     var selectedIndexImageView = 0
-    var newPostLocation = Location(address: "Not specified", coordinates: nil)
+    var newPostLocation = Location(address: .Commons.NotSpecifiedFemale(), coordinates: nil)
     var selectedAnimalType: AnimalType? = nil
     
     // MARK: - Services
@@ -86,7 +86,7 @@ extension NewPostGenericViewModel {
     }
     
     func goBack() {
-        showConfirmationPopup(title: "Are you sure you want to exit?") {
+        showConfirmationPopup(title: .NewPostGeneric.AreYouSureExit()) {
             self.router.goBack()
         }
     }
@@ -110,7 +110,7 @@ extension NewPostGenericViewModel {
                 switch result {
                 case .success:
                     self.reloadPosts()
-                    showSuccessPopup(title: "The post has been published successfully") {
+                    showSuccessPopup(title: .NewPostGeneric.PostPublished()) {
                         self.router.goBackToTabBar()
                     }
                     completion()
@@ -120,7 +120,7 @@ extension NewPostGenericViewModel {
                 }
             }
         } else {
-            showErrorPopup(title: "An unexpected error occured. Please, try again later")
+            showErrorPopup(title: .ServiceErrors.Unexpected())
             completion()
         }
     }

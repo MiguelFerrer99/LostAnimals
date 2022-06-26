@@ -60,6 +60,7 @@ final class ContactWithPopupViewController: ViewController {
 private extension ContactWithPopupViewController {
     func setupUI() {
         contactWithPopupView.layer.maskedCorners =  [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        whatsappView.isHidden = viewModel.authorSocialMedias[.whatsapp] == nil
         instagramView.isHidden = viewModel.authorSocialMedias[.instagram] == nil
         twitterView.isHidden = viewModel.authorSocialMedias[.twitter] == nil
         configureMailController(mailController: mailController)
