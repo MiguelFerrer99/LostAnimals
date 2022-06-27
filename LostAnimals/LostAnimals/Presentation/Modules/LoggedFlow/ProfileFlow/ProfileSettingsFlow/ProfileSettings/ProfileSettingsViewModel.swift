@@ -105,18 +105,10 @@ extension ProfileSettingsViewModel {
         self.router.goToTermsAndConditions()
     }
     
-    func didPressedDeleteAccountButton(yesButtonPressed: @escaping (() -> ()), completion: @escaping (() -> ())) {
+    func didPressedDeleteAccountButton() {
         showConfirmationPopup(title: .ProfileSettings.AreYouSureDeleteAccount()) {
-            yesButtonPressed()
-            self.userService.deleteAccount() { result in
-                completion()
-                switch result {
-                case .success:
-                    Cache.logOut()
-                    self.router.changeRootToStartup()
-                case .error(let error):
-                    showErrorPopup(title: error)
-                }
+            showConfirmPasswordPopup {
+                self.router.changeRootToStartup()
             }
         }
     }

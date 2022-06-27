@@ -92,3 +92,12 @@ func showConfirmationPopup(title: String, yesAction: (() -> Void)? = nil) {
         topMostController?.present(viewController: viewController)
     }
 }
+
+func showConfirmPasswordPopup(completion: @escaping () -> ()) {
+    DispatchQueue.main.async {
+        let topMostController = topMostController()
+        if topMostController is UIAlertController { return }
+        let viewController = Container.shared.confirmPasswordPopupBuilder().build(completion: completion)
+        topMostController?.present(viewController: viewController)
+    }
+}

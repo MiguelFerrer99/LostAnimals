@@ -214,11 +214,7 @@ private extension ProfileSettingsViewController {
     }
     
     @IBAction func deleteAccountButtonPressed(_ sender: UIButton) {
-        viewModel.didPressedDeleteAccountButton {
-            self.showLoading()
-        } completion: {
-            self.hideLoading()
-        }
+        viewModel.didPressedDeleteAccountButton()
     }
     
     @IBAction func logoutButtonPressed(_ sender: UIButton) {

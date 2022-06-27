@@ -96,6 +96,12 @@
 		413987152738052C00C243F4 /* StartupViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 413987142738052C00C243F4 /* StartupViewController.storyboard */; };
 		413E151928316DE90015453D /* LoadingCollectionViewCellSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413E151828316DE90015453D /* LoadingCollectionViewCellSummary.swift */; };
 		413E151B2831C5550015453D /* ExploreProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413E151A2831C5550015453D /* ExploreProtocols.swift */; };
+		413EDED5286A31E800BCB181 /* ConfirmPasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EDED0286A31E800BCB181 /* ConfirmPasswordRouter.swift */; };
+		413EDED6286A31E800BCB181 /* ConfirmPasswordViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 413EDED1286A31E800BCB181 /* ConfirmPasswordViewController.storyboard */; };
+		413EDED7286A31E800BCB181 /* ConfirmPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EDED2286A31E800BCB181 /* ConfirmPasswordViewController.swift */; };
+		413EDED8286A31E800BCB181 /* ConfirmPasswordBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EDED3286A31E800BCB181 /* ConfirmPasswordBuilder.swift */; };
+		413EDED9286A31E800BCB181 /* ConfirmPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EDED4286A31E800BCB181 /* ConfirmPasswordViewModel.swift */; };
+		413EDEDB286A386400BCB181 /* ConfirmPasswordTextfields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413EDEDA286A386400BCB181 /* ConfirmPasswordTextfields.swift */; };
 		414903B727EF796F0037EE4E /* ProfileScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414903B627EF796F0037EE4E /* ProfileScrollView.swift */; };
 		415476BF27849A0300BD684F /* EditPostTextfields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415476BE27849A0300BD684F /* EditPostTextfields.swift */; };
 		415AF1EE285A71D100DBE7DD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 415AF1F0285A71D100DBE7DD /* Localizable.strings */; };
@@ -460,6 +466,12 @@
 		413987142738052C00C243F4 /* StartupViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartupViewController.storyboard; sourceTree = "<group>"; };
 		413E151828316DE90015453D /* LoadingCollectionViewCellSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCollectionViewCellSummary.swift; sourceTree = "<group>"; };
 		413E151A2831C5550015453D /* ExploreProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreProtocols.swift; sourceTree = "<group>"; };
+		413EDED0286A31E800BCB181 /* ConfirmPasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPasswordRouter.swift; sourceTree = "<group>"; };
+		413EDED1286A31E800BCB181 /* ConfirmPasswordViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConfirmPasswordViewController.storyboard; sourceTree = "<group>"; };
+		413EDED2286A31E800BCB181 /* ConfirmPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPasswordViewController.swift; sourceTree = "<group>"; };
+		413EDED3286A31E800BCB181 /* ConfirmPasswordBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPasswordBuilder.swift; sourceTree = "<group>"; };
+		413EDED4286A31E800BCB181 /* ConfirmPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPasswordViewModel.swift; sourceTree = "<group>"; };
+		413EDEDA286A386400BCB181 /* ConfirmPasswordTextfields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPasswordTextfields.swift; sourceTree = "<group>"; };
 		414903B627EF796F0037EE4E /* ProfileScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScrollView.swift; sourceTree = "<group>"; };
 		415476BE27849A0300BD684F /* EditPostTextfields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostTextfields.swift; sourceTree = "<group>"; };
 		415AF1EF285A71D100DBE7DD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -819,8 +831,9 @@
 		4100A0F42783AE4B0049EEF0 /* Popups */ = {
 			isa = PBXGroup;
 			children = (
-				41FEE1E72788D74600F11449 /* ContactWithPopup */,
 				41CD10E52782181800257B2B /* AnimalFilterPopup */,
+				413EDECF286A31B800BCB181 /* ConfirmPasswordPopup */,
+				41FEE1E72788D74600F11449 /* ContactWithPopup */,
 				4163B2682787754B00C83245 /* GenericPopups */,
 				4100A0F32783AE440049EEF0 /* PostOptionsPopup */,
 				41EC16B72786783400096B7A /* SelectPhotoPopup */,
@@ -1023,6 +1036,19 @@
 				4139870D2737FA3500C243F4 /* StartupViewModel.swift */,
 			);
 			path = Startup;
+			sourceTree = "<group>";
+		};
+		413EDECF286A31B800BCB181 /* ConfirmPasswordPopup */ = {
+			isa = PBXGroup;
+			children = (
+				413EDED1286A31E800BCB181 /* ConfirmPasswordViewController.storyboard */,
+				413EDED0286A31E800BCB181 /* ConfirmPasswordRouter.swift */,
+				413EDED2286A31E800BCB181 /* ConfirmPasswordViewController.swift */,
+				413EDED3286A31E800BCB181 /* ConfirmPasswordBuilder.swift */,
+				413EDED4286A31E800BCB181 /* ConfirmPasswordViewModel.swift */,
+				413EDEDA286A386400BCB181 /* ConfirmPasswordTextfields.swift */,
+			);
+			path = ConfirmPasswordPopup;
 			sourceTree = "<group>";
 		};
 		414096402794A79100E6A781 /* NewPostFlow */ = {
@@ -1886,6 +1912,7 @@
 				4187195C275BFA6D00C993BC /* Nunito-Black.ttf in Resources */,
 				4187195D275BFA6D00C993BC /* Nunito-BlackItalic.ttf in Resources */,
 				4187195E275BFA6D00C993BC /* Nunito-Bold.ttf in Resources */,
+				413EDED6286A31E800BCB181 /* ConfirmPasswordViewController.storyboard in Resources */,
 				41F820CC276FD8510046B0EA /* WhereCanWeFindYouViewController.storyboard in Resources */,
 				4160E718277BA60900C7066F /* OnboardingCollectionViewCell.xib in Resources */,
 				4187195F275BFA6D00C993BC /* Nunito-BoldItalic.ttf in Resources */,
@@ -1994,6 +2021,7 @@
 				41EC16CC2786890600096B7A /* ErrorPopupViewModel.swift in Sources */,
 				4160E70E277B9E9B00C7066F /* OnboardingBuilder.swift in Sources */,
 				41BFE177276618E400AC5570 /* CityTableViewCellSummary.swift in Sources */,
+				413EDED5286A31E800BCB181 /* ConfirmPasswordRouter.swift in Sources */,
 				411C7F6F274BA8FE00C9710A /* LoginBuilder.swift in Sources */,
 				418B637627AEB83C00F7DC4B /* ChangePasswordViewModel.swift in Sources */,
 				41A7CF5C27F080EE002BFD6F /* FakeSplashRouter.swift in Sources */,
@@ -2036,6 +2064,7 @@
 				41FEE1E32788B68000F11449 /* LocationBuilder.swift in Sources */,
 				41A2273A2856396F006B2971 /* UIView.swift in Sources */,
 				41EC16D327868C2900096B7A /* SuccessPopupRouter.swift in Sources */,
+				413EDED8286A31E800BCB181 /* ConfirmPasswordBuilder.swift in Sources */,
 				41CDA4322780E0D60009AB55 /* Post.swift in Sources */,
 				4119F6D127958A9A006B665A /* NewPostGenericViewModel.swift in Sources */,
 				418C4141275A5E310099BC5B /* ForgotPasswordViewController.swift in Sources */,
@@ -2067,6 +2096,7 @@
 				4160E717277BA60900C7066F /* OnboardingCollectionViewCell.swift in Sources */,
 				CCB0202B26A6EE3400214CB9 /* SceneDelegate.swift in Sources */,
 				41F2DA7C278B8DF600E582E8 /* Coordinates.swift in Sources */,
+				413EDEDB286A386400BCB181 /* ConfirmPasswordTextfields.swift in Sources */,
 				410FE6812770C4E200A390A3 /* AddressTableViewCellSummary.swift in Sources */,
 				CCB0207826A6F12000214CB9 /* Array.swift in Sources */,
 				4119F6CF27958A9A006B665A /* NewPostGenericViewController.swift in Sources */,
@@ -2099,6 +2129,7 @@
 				413987112737FA3500C243F4 /* StartupViewModel.swift in Sources */,
 				4105456C27A06E0E00527D64 /* ProfileSettingsViewModel.swift in Sources */,
 				4119185627AC2CFF00F9D68A /* BlockedUserTableViewCellSummary.swift in Sources */,
+				413EDED9286A31E800BCB181 /* ConfirmPasswordViewModel.swift in Sources */,
 				41A7CF6027F080EE002BFD6F /* FakeSplashViewModel.swift in Sources */,
 				41742222277C815600915233 /* ExploreRouter.swift in Sources */,
 				4119183A27ABFAF100F9D68A /* ProfilePostsViewController.swift in Sources */,
@@ -2184,6 +2215,7 @@
 				4119F6D027958A9A006B665A /* NewPostGenericBuilder.swift in Sources */,
 				4119185327AC2CCD00F9D68A /* BlockedUserTableViewCell.swift in Sources */,
 				417B8622277D27380051B8CF /* ProfileBuilder.swift in Sources */,
+				413EDED7286A31E800BCB181 /* ConfirmPasswordViewController.swift in Sources */,
 				41B9CE71277F421300966509 /* PostCollectionViewCell.swift in Sources */,
 				41EC16C0278678CE00096B7A /* SelectPhotoPopupBuilder.swift in Sources */,
 				41BFE174276618C900AC5570 /* CityTableViewCell.swift in Sources */,

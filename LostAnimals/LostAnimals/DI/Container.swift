@@ -33,6 +33,10 @@ extension Container {
         ConfirmationPopupBuilder()
     }
     
+    func confirmPasswordPopupBuilder() -> ConfirmPasswordBuilder {
+        ConfirmPasswordBuilder()
+    }
+    
     func contactWithPopupBuilder() -> ContactWithPopupBuilder {
         ContactWithPopupBuilder()
     }
