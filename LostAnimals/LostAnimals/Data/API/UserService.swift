@@ -21,6 +21,9 @@ final class UserService {
     let databaseRef: DatabaseReference
     let storageRef: StorageReference
     
+    // MARK: - Services
+    let postService = PostService()
+    
     // MARK: - Init
     init() {
         databaseRef = Database.database().reference()
@@ -122,6 +125,18 @@ extension UserService {
         } else { completion(.error(.ServiceErrors.Unexpected())) }
     }
     
+    func deleteMyPosts() {
+        var myPosts = [Post]()
+        self.getPosts { postsResult in
+            switch postsResult {
+            case .success(let posts):
+                myPosts = posts.filter { User.shared?.id == $0.userID }
+                myPosts.forEach { self.deletePost(post: $0) { _ in } }
+            case .error: return
+            }
+        }
+    }
+    
     func deleteAccount(completion: @escaping (GenericResult) -> Void) {
         guard let me = Auth.auth().currentUser else { return }
         me.delete { error in
@@ -144,6 +159,7 @@ extension UserService {
                     } else {
                         self.storageRef.child("users").child(me.uid).child("user_image.png").delete()
                         self.storageRef.child("users").child(me.uid).child("header_image.png").delete()
+                        self.deleteMyPosts()
                         completion(.success)
                     }
                 }
