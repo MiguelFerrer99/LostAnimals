@@ -80,12 +80,12 @@ extension EditPostViewModel {
     
     func getModifiedPost() -> Post {
         var newPost = post
-        newPost.animalName = (newEditPostInfo[.animalName]?.isEmpty ?? true) ? nil : newEditPostInfo[.animalName]
+        newPost.animalName = (newEditPostInfo[.animalName] ?? "").isEmpty ? nil : newEditPostInfo[.animalName]
         newPost.animalType = AnimalType(rawValue: newEditPostInfo[.animalType] ?? "") ?? .other
-        newPost.animalBreed = newEditPostInfo[.animalBreed] ?? .Commons.NotSpecifiedFemale()
+        newPost.animalBreed = (newEditPostInfo[.animalBreed] ?? "").isEmpty ? nil : newEditPostInfo[.animalBreed]
         newPost.lastTimeSeen = newEditPostInfo[.lastTimeSeen] ?? Date().toString(withFormat: DateFormat.dayMonthYearHourOther)
         newPost.location = newLocation
-        newPost.description = newEditPostInfo[.description] ?? .Commons.NotSpecifiedFemale()
+        newPost.description = (newEditPostInfo[.description] ?? "").isEmpty ? nil : newEditPostInfo[.description]
         return newPost
     }
     

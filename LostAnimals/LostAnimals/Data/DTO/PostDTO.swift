@@ -17,11 +17,11 @@ struct PostDTO: Codable {
     let post_type: String
     let animal_name: String?
     let animal_type: String
-    let animal_breed: String
+    let animal_breed: String?
     let url_image1, url_image2, url_image3, url_image4, url_image5, url_image6, url_image7, url_image8: String?
     let last_time_seen: String
     let location: Location
-    let description: String
+    let description: String?
     let user_id: String
     let created_at: String
     
@@ -49,7 +49,6 @@ struct PostDTO: Codable {
                         description: description,
                         userID: user_id,
                         createdAt: created_at.toDate(withFormat: DateFormat.dayMonthYearHourOther))
-        
         return post
     }
 }

@@ -151,11 +151,11 @@ private extension PostViewController {
             postTypeLabel.text = .Post.ToAdoptPostTypeTitle()
             lastTimeSeenAndLocationStackView.isHidden = true
         }
-        animalNameLabel.text = viewModel.post.animalName
-        animalBreedLabel.text = viewModel.post.animalBreed
+        animalNameLabel.text = viewModel.post.animalName ?? .Commons.NotSpecifiedMale()
+        animalBreedLabel.text = viewModel.post.animalBreed ?? .Commons.NotSpecifiedFemale()
         lastTimeSeenLabel.text = viewModel.post.lastTimeSeen
         locationLabel.text = viewModel.post.location.address
-        descriptionTextView.text = viewModel.post.description
+        descriptionTextView.text = viewModel.post.description ?? .Commons.NotSpecifiedFemale()
         updateSavedPostUI()
     }
     

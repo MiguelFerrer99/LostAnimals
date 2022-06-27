@@ -30,11 +30,11 @@ struct Post {
     let postType: PostType
     var animalName: String?
     var animalType: AnimalType
-    var animalBreed: String
+    var animalBreed: String?
     var urlImage1, urlImage2, urlImage3, urlImage4, urlImage5, urlImage6, urlImage7, urlImage8: String?
     var lastTimeSeen: String
     var location: Location
-    var description: String
+    var description: String?
     let userID: String
     let createdAt: Date
     var distanceToUserLocation: Double? {

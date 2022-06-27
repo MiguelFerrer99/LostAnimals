@@ -30,7 +30,7 @@ extension PostCollectionViewCell {
         postTypeImageView.image = UIImage(named: summary.postType.rawValue)
         postTypeWhiteImageView.image = UIImage(named: "\(summary.postType.rawValue)White")
         animalTypeWhiteImageView.image = UIImage(named: "\(summary.animalType.rawValue)White")
-        animalNameLabel.text = summary.animalName
+        animalNameLabel.text = summary.animalName ?? .Commons.NotSpecifiedMale()
         getPostImage(from: summary.postURLImage)
         
         leadingConstraint.constant = summary.leadingPadding

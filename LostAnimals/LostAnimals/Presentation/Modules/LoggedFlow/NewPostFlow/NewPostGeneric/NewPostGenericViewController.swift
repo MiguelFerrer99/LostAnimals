@@ -161,9 +161,9 @@ private extension NewPostGenericViewController {
         guard let selectedAnimalType = viewModel.selectedAnimalType, let me = User.shared else { return nil }
         let newPost = Post(id: UUID().uuidString,
                            postType: viewModel.postType,
-                           animalName: nameTextfield.value.isEmpty ? .Commons.NotSpecifiedMale() : nameTextfield.value,
+                           animalName: nameTextfield.value.isEmpty ? nil : nameTextfield.value,
                            animalType: selectedAnimalType,
-                           animalBreed: breedTextfield.value.isEmpty ? .Commons.NotSpecifiedFemale() : breedTextfield.value,
+                           animalBreed: breedTextfield.value.isEmpty ? nil : breedTextfield.value,
                            urlImage1: nil,
                            urlImage2: nil,
                            urlImage3: nil,
@@ -174,7 +174,7 @@ private extension NewPostGenericViewController {
                            urlImage8: nil,
                            lastTimeSeen: lastTimeSeenTextfield.value,
                            location: viewModel.newPostLocation,
-                           description: descriptionTextview.text.isEmpty ? .Commons.NotSpecifiedFemale() : descriptionTextview.text,
+                           description: descriptionTextview.text.isEmpty ? nil : descriptionTextview.text,
                            userID: me.id,
                            createdAt: Date())
         return newPost
