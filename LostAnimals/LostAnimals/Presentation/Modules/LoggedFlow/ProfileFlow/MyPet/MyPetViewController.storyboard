@@ -550,11 +550,26 @@
                                                         <color key="textColor" name="CustomBlack"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j0w-f1-I0K">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jJn-z1-wJl">
                                                         <rect key="frame" x="0.0" y="774.5" width="374" height="20"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="20" id="uqs-cv-zdA"/>
+                                                            <constraint firstAttribute="height" constant="20" id="jzk-az-IeH"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAS-E5-ZiP">
+                                                        <rect key="frame" x="0.0" y="804.5" width="374" height="0.0"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Have you lost your pet?">
+                                                            <color key="titleColor" name="CustomBlack"/>
+                                                        </state>
+                                                    </button>
+                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hx4-rF-JSK">
+                                                        <rect key="frame" x="0.0" y="804.5" width="374" height="20"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="7ZK-mM-yfR"/>
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="d5t-it-bEu">
@@ -578,6 +593,7 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
+                                                                    <action selector="lostYourPetButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="56i-8l-xyo"/>
                                                                     <action selector="removePetDataButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="3I7-js-rZk"/>
                                                                 </connections>
                                                             </button>
@@ -656,6 +672,8 @@
                         <outlet property="descriptionCharactersCounterLabel" destination="pZs-Ut-iNv" id="K0h-42-MPJ"/>
                         <outlet property="descriptionTextView" destination="G09-OV-v3A" id="gIn-yH-zhm"/>
                         <outlet property="descriptionTitleLabel" destination="Xez-iG-yRZ" id="Sma-q6-CxU"/>
+                        <outlet property="haveYouLostYourPetButton" destination="lAS-E5-ZiP" id="AkW-Gg-AAS"/>
+                        <outlet property="lostYourPetBottomView" destination="Hx4-rF-JSK" id="hke-Vd-SVZ"/>
                         <outlet property="mustSelectOnePhotoLabel" destination="E1d-ND-YIG" id="pZd-Zg-eSc"/>
                         <outlet property="removePetDataButton" destination="gO8-XT-u2E" id="Ins-vf-XYT"/>
                         <outlet property="saveChangesButton" destination="P5m-8K-iiw" id="Sye-gl-KeH"/>

@@ -25,6 +25,7 @@ final class NewPostGenericViewModel {
     var numberOfTextFields = 0
     var editedTextFields = [CustomTextField]()
     let postType: PostType
+    let postToLoad: Post?
     var selectPhotoImageViews: [UIImageView] = []
     var selectedIndexImageView = 0
     var newPostLocation = Location(address: .Commons.NotSpecifiedFemale(), coordinates: nil)
@@ -34,9 +35,10 @@ final class NewPostGenericViewModel {
     let postService = PostService()
     
     // MARK: - Init
-    required init(router: NewPostGenericRouter, postType: PostType) {
+    required init(router: NewPostGenericRouter, postType: PostType, postToLoad: Post? = nil) {
         self.router = router
         self.postType = postType
+        self.postToLoad = postToLoad
         switch postType {
         case .lost:
             numberOfTextFields = 4

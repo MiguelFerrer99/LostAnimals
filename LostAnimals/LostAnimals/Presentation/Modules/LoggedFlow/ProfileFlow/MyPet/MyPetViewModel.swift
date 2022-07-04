@@ -143,6 +143,29 @@ extension MyPetViewModel {
         self.router.goToAnimalTypes(comesFrom: .newPost)
     }
     
+    func didPressLostYourPetButton() {
+        guard let myPet = myPet, let me = User.shared else { return }
+        let postToLoad = Post(id: "",
+                              postType: .lost,
+                              animalName: myPet.name,
+                              animalType: myPet.type,
+                              animalBreed: myPet.breed,
+                              urlImage1: myPet.urlImage1,
+                              urlImage2: myPet.urlImage2,
+                              urlImage3: myPet.urlImage3,
+                              urlImage4: myPet.urlImage4,
+                              urlImage5: myPet.urlImage5,
+                              urlImage6: myPet.urlImage6,
+                              urlImage7: myPet.urlImage7,
+                              urlImage8: myPet.urlImage8,
+                              lastTimeSeen: "",
+                              location: Location(address: "", coordinates: nil),
+                              description: myPet.description,
+                              userID: me.id,
+                              createdAt: Date())
+        self.router.dismissAndGoToNewLostPost(postToLoad: postToLoad)
+    }
+    
     func didPressRemoveMyPetDataButton(finishedOK: @escaping (() -> Void), finishedKO: @escaping (() -> Void)) {
         guard let myPet = myPet else { return }
         userService.deleteMyPet(pet: myPet) { result in

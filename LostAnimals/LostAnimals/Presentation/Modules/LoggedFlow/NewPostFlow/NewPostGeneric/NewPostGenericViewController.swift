@@ -126,6 +126,11 @@ private extension NewPostGenericViewController {
             locationTextfield.isHidden = true
             if let me = User.shared { viewModel.newPostLocation = me.location }
         }
+        manageComingMyPet()
+    }
+    
+    func manageComingMyPet() {
+        // TODO: - Fill UI
     }
     
     func setLocalizables() { 

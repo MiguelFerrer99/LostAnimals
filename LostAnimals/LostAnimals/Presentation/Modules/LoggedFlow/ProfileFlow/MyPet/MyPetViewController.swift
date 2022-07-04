@@ -33,6 +33,8 @@ final class MyPetViewController: ViewController {
     @IBOutlet private weak var selectPhoto8Button: UIButton!
     @IBOutlet private weak var mustSelectOnePhotoLabel: UILabel!
     @IBOutlet private weak var descriptionTitleLabel: UILabel!
+    @IBOutlet private weak var haveYouLostYourPetButton: UIButton!
+    @IBOutlet private weak var lostYourPetBottomView: UIView!
     @IBOutlet weak var descriptionCharactersCounterLabel: UILabel!
     @IBOutlet weak var animalNameTextfield: CustomTextField!
     @IBOutlet weak var animalTypeTextfield: CustomTextField!
@@ -122,6 +124,8 @@ private extension MyPetViewController {
     
     func fillUI(_ myPet: Pet) {
         fillMyPetImages()
+        haveYouLostYourPetButton.isHidden = false
+        lostYourPetBottomView.isHidden = false
         removePetDataButton.isHidden = false
         animalNameTextfield.textField.text = myPet.name
         switch myPet.type {
@@ -161,6 +165,7 @@ private extension MyPetViewController {
         animalTypeTextfield.placeholder = .Commons.Animal()
         animalBreedTextfield.placeholder = .Commons.AnimalBreed()
         descriptionTitleLabel.text = .Commons.AnimalDescription()
+        haveYouLostYourPetButton.setTitle(.Commons.HaveYouLostYourPet(), for: .normal)
         removePetDataButton.setTitle(.Commons.RemovePetData(), for: .normal)
         saveChangesButton.setTitle(.Commons.SaveChanges(), for: .normal)
     }
@@ -246,6 +251,10 @@ private extension MyPetViewController {
     @IBAction func selectPhoto8ButtonPressed(_ sender: UIButton) {
         viewModel.selectedIndexImageView = 7
         viewModel.didPressSelectPhotoButton()
+    }
+    
+    @IBAction func lostYourPetButtonPressed(_ sender: UIButton) {
+        viewModel.didPressLostYourPetButton()
     }
     
     @IBAction func removePetDataButtonPressed(_ sender: CustomButton) {

@@ -86,6 +86,7 @@ extension String {
         case AreYouSureRemovePetData = "Commons_AreYouSureRemovePetData"
         case PetDataRemoved = "Commons_PetDataRemoved"
         case AreYouSureDeletePost = "Commons_AreYouSureDeletePost"
+        case HaveYouLostYourPet = "Commons_HaveYouLostYourPet"
     }
     enum TextFieldErrors: String, Localizable {
         case Empty = "TextFieldErrors_Empty"
