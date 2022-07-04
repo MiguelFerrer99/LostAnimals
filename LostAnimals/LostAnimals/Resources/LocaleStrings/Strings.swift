@@ -82,6 +82,8 @@ extension String {
         case AnimalTypeOther = "Commons_AnimalTypeOther"
         case SaveChanges = "Commons_SaveChanges"
         case ChangesSaved = "Commons_ChangesSaved"
+        case RemovePetData = "Commons_RemovePetData"
+        case AreYouSureRemovePetData = "Commons_AreYouSureRemovePetData"
     }
     enum TextFieldErrors: String, Localizable {
         case Empty = "TextFieldErrors_Empty"
@@ -230,6 +232,7 @@ extension String {
         case UserBlocked = "Profile_UserBlocked"
         case AreYouSureUnblock = "Profile_AreYouSureUnblock"
         case AreYouSureBlock = "Profile_AreYouSureBlock"
+        case MyPet = "Profile_MyPet"
     }
     enum ProfileSettings: String, Localizable {
         case EditPersonalDetials = "ProfileSettings_EditPersonalDetials"

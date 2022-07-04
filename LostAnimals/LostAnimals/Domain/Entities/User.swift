@@ -35,6 +35,7 @@ struct User: Equatable {
     var banned: Bool
     let blockedUsers: [String]
     let savedPosts: [String]
+    let pet: Pet?
     
     // MARK: - Functions
     static func == (lhs: User, rhs: User) -> Bool {
@@ -64,7 +65,8 @@ struct User: Equatable {
                               social_medias: socialMedias,
                               banned: banned,
                               blocked_users: blockedUsers,
-                              saved_posts: savedPosts)
+                              saved_posts: savedPosts,
+                              pet: pet?.map())
         return userDTO
     }
 }

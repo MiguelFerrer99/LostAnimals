@@ -190,4 +190,8 @@ extension ProfileViewModel {
     func didPressUserImage(userImage: UIImage) {
         self.router.goToPostImages(image: userImage)
     }
+    
+    func didPressMyPet() {
+        self.router.goToMyPet(myPet: user.pet)
+    }
 }

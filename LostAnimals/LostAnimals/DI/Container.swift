@@ -81,6 +81,10 @@ extension Container {
         LoginBuilder()
     }
     
+    func myPetBuilder() -> MyPetBuilder {
+        MyPetBuilder()
+    }
+    
     func newPostBuilder() -> NewPostBuilder {
         NewPostBuilder()
     }

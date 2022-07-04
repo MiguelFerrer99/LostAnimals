@@ -507,14 +507,86 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="eVT-vZ-fH8"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="EhA-3n-KS5"/>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j7s-w8-9Sb" customClass="CustomView" customModule="LostAnimals" customModuleProvider="target">
+                                <rect key="frame" x="292.5" y="792" width="101.5" height="50"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pQ6-UT-W0T">
+                                        <rect key="frame" x="0.0" y="5" width="91.5" height="40"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FOV-ez-FW8">
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DogWhite" translatesAutoresizingMaskIntoConstraints="NO" id="Hxa-Ge-8bh">
+                                                        <rect key="frame" x="10" y="10" width="20" height="20"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="FOV-ez-FW8" secondAttribute="height" multiplier="1:1" id="Bnn-uB-31a"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Hxa-Ge-8bh" secondAttribute="bottom" constant="10" id="agu-fl-5aN"/>
+                                                    <constraint firstItem="Hxa-Ge-8bh" firstAttribute="leading" secondItem="FOV-ez-FW8" secondAttribute="leading" constant="10" id="bUL-I9-0dL"/>
+                                                    <constraint firstItem="Hxa-Ge-8bh" firstAttribute="top" secondItem="FOV-ez-FW8" secondAttribute="top" constant="10" id="eoj-xM-IPb"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Hxa-Ge-8bh" secondAttribute="trailing" constant="10" id="pPI-jc-zPI"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My pet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="xxC-fw-FFZ">
+                                                <rect key="frame" x="40" y="0.0" width="51.5" height="40"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="16"/>
+                                                <color key="textColor" name="CustomWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QV8-ud-DE0">
+                                        <rect key="frame" x="0.0" y="0.0" width="101.5" height="50"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <connections>
+                                            <action selector="floatingButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="yLH-fn-7V4"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="CustomBlack"/>
+                                <constraints>
+                                    <constraint firstItem="pQ6-UT-W0T" firstAttribute="top" secondItem="j7s-w8-9Sb" secondAttribute="top" constant="5" id="AeQ-9c-LHU"/>
+                                    <constraint firstAttribute="trailing" secondItem="pQ6-UT-W0T" secondAttribute="trailing" constant="10" id="N2H-gg-T4d"/>
+                                    <constraint firstItem="QV8-ud-DE0" firstAttribute="leading" secondItem="j7s-w8-9Sb" secondAttribute="leading" id="Qxe-6n-uLl"/>
+                                    <constraint firstAttribute="height" constant="50" id="SLw-IT-2Z3"/>
+                                    <constraint firstAttribute="trailing" secondItem="QV8-ud-DE0" secondAttribute="trailing" id="SiO-yp-O49"/>
+                                    <constraint firstItem="QV8-ud-DE0" firstAttribute="top" secondItem="j7s-w8-9Sb" secondAttribute="top" id="WNO-HN-iNO"/>
+                                    <constraint firstItem="pQ6-UT-W0T" firstAttribute="leading" secondItem="j7s-w8-9Sb" secondAttribute="leading" id="aaB-s9-y9n"/>
+                                    <constraint firstAttribute="bottom" secondItem="QV8-ud-DE0" secondAttribute="bottom" id="fcS-Nd-16u"/>
+                                    <constraint firstAttribute="bottom" secondItem="pQ6-UT-W0T" secondAttribute="bottom" constant="5" id="mha-bT-teK"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fullRound" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" name="CustomBlack"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="CustomGreen"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="j7s-w8-9Sb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="HgS-xi-dJp"/>
                             <constraint firstItem="xOm-QI-q4Z" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="RXf-mb-AtP"/>
                             <constraint firstItem="xOm-QI-q4Z" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="XS1-jd-RFg"/>
                             <constraint firstItem="irm-4F-XJr" firstAttribute="height" secondItem="vDu-zF-Fre" secondAttribute="height" multiplier="0.35" id="ZXg-zz-zf7"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="j7s-w8-9Sb" secondAttribute="trailing" constant="20" id="dWl-1t-BOD"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="j7s-w8-9Sb" secondAttribute="bottom" constant="20" id="eIh-Gs-E1g"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xOm-QI-q4Z" secondAttribute="trailing" id="vcp-Jx-AKU"/>
                             <constraint firstAttribute="bottom" secondItem="xOm-QI-q4Z" secondAttribute="bottom" id="wvT-Dp-MrK"/>
                         </constraints>
@@ -532,6 +604,8 @@
                         <outlet property="firstCollectionHeaderLabel" destination="ZuQ-sa-e1b" id="KJN-Ja-IPc"/>
                         <outlet property="firstCollectionView" destination="Gkn-wO-bCI" id="1rg-8f-AH6"/>
                         <outlet property="firstStackView" destination="f0c-86-xBM" id="jAs-Zw-NoA"/>
+                        <outlet property="floatingButton" destination="j7s-w8-9Sb" id="ZiH-L8-d18"/>
+                        <outlet property="floatingButtonLabel" destination="xxC-fw-FFZ" id="qmw-6z-qeH"/>
                         <outlet property="headerImageView" destination="UE6-hy-l66" id="GKi-Y0-F36"/>
                         <outlet property="loadingIndicator" destination="BHN-QY-moH" id="P3a-YK-HDu"/>
                         <outlet property="loadingStackView" destination="ce6-wT-hXl" id="qjT-eQ-7wC"/>
@@ -569,9 +643,10 @@
     <resources>
         <image name="AnimalShelter" width="45.5" height="43.5"/>
         <image name="BlockUserWhite" width="381" height="381"/>
-        <image name="CustomBackButton" width="512" height="512"/>
+        <image name="CustomBackButton" width="256" height="256"/>
         <image name="DefaultHeaderImage" width="413.5" height="283"/>
         <image name="DefaultUserImage" width="120" height="120"/>
+        <image name="DogWhite" width="47" height="46"/>
         <image name="ProfileSettingsWhite" width="350" height="350"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <namedColor name="CustomBlack">

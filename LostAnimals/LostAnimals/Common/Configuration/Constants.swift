@@ -23,7 +23,8 @@ struct Constants {
                                 socialMedias: [:],
                                 banned: false,
                                 blockedUsers: [],
-                                savedPosts: [])
+                                savedPosts: [],
+                                pet: nil)
     
     static let onboardingStepsInfo = [
         OnboardingStepInfo(title: .Onboarding.Item1Title(),

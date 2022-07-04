@@ -52,6 +52,8 @@
 "Commons_AnimalTypeOther" = "Other";
 "Commons_SaveChanges" = "Save changes";
 "Commons_ChangesSaved" = "The changes has been saved successfully";
+"Commons_RemovePetData" = "Remove my pet data";
+"Commons_AreYouSureRemovePetData" = "Are you sure you want to remove your pet data?";
 
 // MARK: - TextFieldErrors
 "TextFieldErrors_Empty" = "Empty";
@@ -200,6 +202,7 @@
 "Profile_UserBlocked" = "The user has been blocked successfully";
 "Profile_AreYouSureUnblock" = "Are you sure you want to unblock %@?";
 "Profile_AreYouSureBlock" = "Are you sure you want to block %@?";
+"Profile_MyPet" = "My pet";
 
 // MARK: - ProfileSettings
 "ProfileSettings_EditPersonalDetials" = "Edit personal details";

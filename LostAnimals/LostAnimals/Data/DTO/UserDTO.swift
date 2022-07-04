@@ -30,6 +30,7 @@ struct UserDTO: Codable {
     let banned: Bool
     let blocked_users: [String]?
     let saved_posts: [String]?
+    let pet: PetDTO?
     
     // MARK: - Functions
     func map() -> User {
@@ -54,7 +55,8 @@ struct UserDTO: Codable {
                         socialMedias: socialMedias,
                         banned: banned,
                         blockedUsers: blocked_users ?? [],
-                        savedPosts: saved_posts ?? [])
+                        savedPosts: saved_posts ?? [],
+                        pet: pet?.map())
         return user
     }
 }

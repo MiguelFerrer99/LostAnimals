@@ -144,8 +144,18 @@ private extension EditPostViewController {
 // MARK: - Functions
 extension EditPostViewController {
     func fillAnimal(animalType: AnimalType) {
-        viewModel.newEditPostInfo[.animalType] = animalType.rawValue
-        animalTextfield.textField.text = animalType.rawValue
+        var animalTypeName: String = .Commons.AnimalTypeOther()
+        switch animalType {
+        case .dog:    animalTypeName = .Commons.AnimalTypeDog()
+        case .bird:   animalTypeName = .Commons.AnimalTypeBird()
+        case .cat:    animalTypeName = .Commons.AnimalTypeCat()
+        case .turtle: animalTypeName = .Commons.AnimalTypeTurtle()
+        case .snake:  animalTypeName = .Commons.AnimalTypeSnake()
+        case .rabbit: animalTypeName = .Commons.AnimalTypeRabbit()
+        case .other:  animalTypeName = .Commons.AnimalTypeOther()
+        }
+        viewModel.newEditPostInfo[.animalType] = animalTypeName
+        animalTextfield.textField.text = animalTypeName
         animalTextfield.didFinishSelectContentFromOtherVC()
     }
     

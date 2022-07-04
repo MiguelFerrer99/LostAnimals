@@ -109,6 +109,7 @@ extension NewPostGenericViewController: CustomTextFieldDelegate {
         nameTextfield.textField.endEditing(true)
         breedTextfield.textField.endEditing(true)
         lastTimeSeenTextfield.textField.endEditing(true)
+        descriptionTextview.endEditing(true)
         textFieldDidBeginEditing(customTextField)
         viewModel.didPressAnimalTypeButton()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {

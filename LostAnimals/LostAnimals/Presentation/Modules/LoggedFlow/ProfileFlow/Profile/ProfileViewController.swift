@@ -29,10 +29,13 @@ final class ProfileViewController: ViewController, UIGestureRecognizerDelegate {
     @IBOutlet private weak var secondStackView: UIStackView!
     @IBOutlet private weak var secondCollectionHeaderLabel: UILabel!
     @IBOutlet private weak var secondCollectionHeaderImageView: UIImageView!
+    @IBOutlet private weak var emptyView: UIView!
     @IBOutlet private weak var blockedUserView: UIView!
     @IBOutlet private weak var blockedUserLabel: UILabel!
     @IBOutlet private weak var loadingStackView: UIStackView!
     @IBOutlet private weak var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var floatingButton: CustomView!
+    @IBOutlet private weak var floatingButtonLabel: UILabel!
     @IBOutlet weak var firstCollectionView: UICollectionView!
     @IBOutlet weak var secondCollectionView: UICollectionView!
     
@@ -152,6 +155,8 @@ private extension ProfileViewController {
         firstCollectionHeaderLabel.text = viewModel.isMyProfile ? .Profile.MyPosts() : .Profile.Posts()
         secondCollectionHeaderLabel.text = viewModel.isMyProfile ? .Profile.MySavedPosts() : .Profile.SocialMedias()
         secondCollectionHeaderImageView.isHidden = !viewModel.isMyProfile
+        floatingButtonLabel.text = .Profile.MyPet()
+        floatingButton.isHidden = !viewModel.isMyProfile
     }
     
     func fillUserImagesUI() {
@@ -323,5 +328,9 @@ private extension ProfileViewController {
     
     @IBAction func secondCollectionHeaderButtonPressed(_ sender: UIButton) {
         viewModel.didPressSecondCollectionHeaderButton()
+    }
+    
+    @IBAction func floatingButtonPressed(_ sender: UIButton) {
+        viewModel.didPressMyPet()
     }
 }
