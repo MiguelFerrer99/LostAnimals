@@ -104,6 +104,12 @@ extension ProfileViewController {
         viewModel.user = me
         viewModel.isMyProfile = (me == viewModel.user)
     }
+    
+    func reloadMyPet() {
+        guard let me = User.shared else { return }
+        viewModel.user = me
+        viewModel.isMyProfile = (me == viewModel.user)
+    }
 }
 
 // MARK: - Private functions

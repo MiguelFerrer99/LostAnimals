@@ -219,9 +219,11 @@ private extension EditPostViewController {
     }
 
     @IBAction func deletePostButtonPressed(_ sender: CustomButton) {
-        deletePostButton.showLoading { self.updateUserInteraction() }
-        viewModel.didPressDeletePostButton {
-            self.deletePostButton.hideLoading { self.updateUserInteraction() }
+        showConfirmationPopup(title: .Commons.AreYouSureDeletePost()) {
+            self.deletePostButton.showLoading { self.updateUserInteraction() }
+            self.viewModel.didPressDeletePostButton {
+                self.deletePostButton.hideLoading { self.updateUserInteraction() }
+            }
         }
     }
 

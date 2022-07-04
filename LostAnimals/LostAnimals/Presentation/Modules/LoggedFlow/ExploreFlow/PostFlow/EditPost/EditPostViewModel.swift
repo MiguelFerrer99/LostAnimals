@@ -137,25 +137,17 @@ extension EditPostViewModel {
     }
     
     func didPressSaveChangesButton(completion: @escaping (() -> Void)) {
-        userService.deletePost(post: post) { deleteResult in
-            switch deleteResult {
+        let modifiedPost = self.getModifiedPost()
+        let modifiedImages = self.getModifiedImages()
+        self.postService.uploadPost(post: modifiedPost, images: modifiedImages) { uploadResult in
+            switch uploadResult {
             case .success:
-                let modifiedPost = self.getModifiedPost()
-                let modifiedImages = self.getModifiedImages()
-                self.postService.uploadPost(post: modifiedPost, images: modifiedImages) { uploadResult in
-                    switch uploadResult {
-                    case .success:
-                        NotificationCenter.default.post(name: .UpdateMyPosts, object: nil)
-                        NotificationCenter.default.post(name: .UpdateExplorePosts, object: nil)
-                        NotificationCenter.default.post(name: .UpdateSavedPosts, object: nil)
-                        completion()
-                        showSuccessPopup(title: .Commons.ChangesSaved()) {
-                            self.router.goBack2Times()
-                        }
-                    case .error(let error):
-                        completion()
-                        showErrorPopup(title: error)
-                    }
+                NotificationCenter.default.post(name: .UpdateMyPosts, object: nil)
+                NotificationCenter.default.post(name: .UpdateExplorePosts, object: nil)
+                NotificationCenter.default.post(name: .UpdateSavedPosts, object: nil)
+                completion()
+                showSuccessPopup(title: .Commons.ChangesSaved()) {
+                    self.router.goBack2Times()
                 }
             case .error(let error):
                 completion()

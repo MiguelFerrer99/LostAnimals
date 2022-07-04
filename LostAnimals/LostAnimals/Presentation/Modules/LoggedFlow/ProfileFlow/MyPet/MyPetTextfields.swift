@@ -32,6 +32,8 @@ extension MyPetViewController {
         animalBreedTextfield.textField.autocapitalizationType = .sentences
         animalBreedTextfield.textField.returnKeyType          = .next
         if viewModel.myPet != nil { animalBreedTextfield.initEditableTextfield() }
+        
+        if viewModel.myPet != nil { viewModel.editedTextFields = [animalNameTextfield, animalTypeTextfield] }
     }
     
     func configureTextView() {

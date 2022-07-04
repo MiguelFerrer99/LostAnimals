@@ -108,9 +108,8 @@ extension PostService {
     func uploadPost(post: Post, images: [UIImage?], completion: @escaping (GenericResult) -> Void) {
         self.uploadPostImagesAndGetURLs(postID: post.id, images: images) { urlImages in
             do {
-                if urlImages.isEmpty {
-                    completion(.error(.ServiceErrors.Unexpected()))
-                } else {
+                if urlImages.isEmpty { completion(.error(.ServiceErrors.Unexpected())) }
+                else {
                     var newPost = post
                     if let urlImage1 = urlImages[safe: 0] { newPost.urlImage1 = urlImage1 }
                     if let urlImage2 = urlImages[safe: 1] { newPost.urlImage2 = urlImage2 }
@@ -133,9 +132,7 @@ extension PostService {
                         } else { completion(.success) }
                     }
                 }
-            } catch {
-                completion(.error(.ServiceErrors.Unexpected()))
-            }
+            } catch { completion(.error(.ServiceErrors.Unexpected())) }
         }
     }
 }

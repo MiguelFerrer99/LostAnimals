@@ -10,7 +10,7 @@ import UIKit
 
 struct Pet {
     // MARK: - Properties
-    let urlImage1, urlImage2, urlImage3, urlImage4, urlImage5, urlImage6, urlImage7, urlImage8: String?
+    var urlImage1, urlImage2, urlImage3, urlImage4, urlImage5, urlImage6, urlImage7, urlImage8: String?
     let name: String
     let type: AnimalType
     let breed: String?

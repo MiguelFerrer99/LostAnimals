@@ -123,9 +123,11 @@ extension ProfileRouter {
     
     func goToMyPet(myPet: Pet?) {
         DispatchQueue.main.async {
-            let viewController = Container.shared.myPetBuilder().build(myPet: myPet).embeddedInNavigation()
-            viewController.modalPresentationStyle = .overFullScreen
-            self.viewController?.present(viewController: viewController)
+            let viewController = Container.shared.myPetBuilder().build(myPet: myPet)
+            viewController.delegate = self.viewController
+            let nav = viewController.embeddedInNavigation()
+            nav.modalPresentationStyle = .overFullScreen
+            self.viewController?.present(viewController: nav)
         }
     }
 }

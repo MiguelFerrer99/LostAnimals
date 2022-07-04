@@ -18,6 +18,8 @@ extension ProfileViewController {
 // MARK: - UIScrollViewDelegate
 extension ProfileViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        self.navigationController?.setNavigationBarHidden(shouldHideNavigationBar, animated: true)
+        DispatchQueue.main.async {
+            self.navigationController?.setNavigationBarHidden(self.shouldHideNavigationBar, animated: true)
+        }
     }
 }

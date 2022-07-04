@@ -20,6 +20,7 @@ final class MyPetViewModel {
     // MARK: - Properties
     private let router: MyPetRouter
     let myPet: Pet?
+    var postImages: [UIImage] = []
     var numberOfTextFields = 2
     var editedTextFields = [CustomTextField]()
     var selectPhotoImageViews: [UIImageView] = []
@@ -27,6 +28,9 @@ final class MyPetViewModel {
     var currentPetValues: [MyPetField: String] = [:]
     var newPetValues: [MyPetField: String] = [:]
     var imagesModified = false
+    
+    // MARK: - Services
+    let userService = UserService()
     
     // MARK: - Init
     required init(router: MyPetRouter, myPet: Pet?) {
@@ -63,6 +67,58 @@ extension MyPetViewModel {
         return haveErrors
     }
     
+    func getImagesFromURLImages(completion: @escaping (() -> ())) {
+        guard let myPet = myPet else { return }
+        if let petURLImage1 = myPet.urlImage1 {
+            petURLImage1.getURLImage(completion: { image1 in
+                if let image1 = image1 { self.postImages.append(image1) }
+                
+                if let petURLImage2 = myPet.urlImage2 {
+                    petURLImage2.getURLImage(completion: { image2 in
+                        if let image2 = image2 { self.postImages.append(image2) }
+                        
+                        if let petURLImage3 = myPet.urlImage3 {
+                            petURLImage3.getURLImage(completion: { image3 in
+                                if let image3 = image3 { self.postImages.append(image3) }
+                                
+                                if let petURLImage4 = myPet.urlImage4 {
+                                    petURLImage4.getURLImage(completion: { image4 in
+                                        if let image4 = image4 { self.postImages.append(image4) }
+                                        
+                                        if let petURLImage5 = myPet.urlImage5 {
+                                            petURLImage5.getURLImage(completion: { image5 in
+                                                if let image5 = image5 { self.postImages.append(image5) }
+                                                
+                                                if let petURLImage6 = myPet.urlImage6 {
+                                                    petURLImage6.getURLImage(completion: { image6 in
+                                                        if let image6 = image6 { self.postImages.append(image6) }
+                                                        
+                                                        if let petURLImage7 = myPet.urlImage7 {
+                                                            petURLImage7.getURLImage(completion: { image7 in
+                                                                if let image7 = image7 { self.postImages.append(image7) }
+                                                                
+                                                                if let petURLImage8 = myPet.urlImage8 {
+                                                                    petURLImage8.getURLImage(completion: { image8 in
+                                                                        if let image8 = image8 { self.postImages.append(image8) }
+                                                                        completion()
+                                                                    })
+                                                                } else { completion() }
+                                                            })
+                                                        } else { completion() }
+                                                    })
+                                                } else { completion() }
+                                            })
+                                        } else { completion() }
+                                    })
+                                } else { completion() }
+                            })
+                        } else { completion() }
+                    })
+                } else { completion() }
+            })
+        } else { completion() }
+    }
+    
     func getImagesFromImageViews() -> [UIImage?] {
         var images: [UIImage] = []
         selectPhotoImageViews.forEach { imageView in
@@ -87,30 +143,31 @@ extension MyPetViewModel {
         self.router.goToAnimalTypes(comesFrom: .newPost)
     }
     
-    func didPressRemoveMyPetDataButton(completion: @escaping (() -> Void)) {
-        // TODO: - Call deleteMyPet API call
-        completion()
-        self.router.goBack()
+    func didPressRemoveMyPetDataButton(finishedOK: @escaping (() -> Void), finishedKO: @escaping (() -> Void)) {
+        guard let myPet = myPet else { return }
+        userService.deleteMyPet(pet: myPet) { result in
+            switch result {
+            case .success: finishedOK()
+            case .error(let error):
+                finishedKO()
+                showErrorPopup(title: error)
+            }
+        }
     }
     
-    func didPressSaveChangesButton(myPet: Pet?, completion: @escaping (() -> Void)) {
+    func didPressSaveChangesButton(myPet: Pet?, finishedOK: @escaping (() -> Void), finishedKO: @escaping (() -> Void)) {
         if let myPet = myPet {
-            /*self.postService.uploadPost(post: newPost, images: getImagesFromImageViews()) { result in
+            self.userService.addMyPet(myPet: myPet, images: getImagesFromImageViews()) { result in
                 switch result {
-                case .success:
-                    self.reloadPosts()
-                    showSuccessPopup(title: .NewPostGeneric.PostPublished()) {
-                        self.router.goBackToTabBar()
-                    }
-                    completion()
+                case .success: finishedOK()
                 case .error(let error):
+                    finishedKO()
                     showErrorPopup(title: error)
-                    completion()
                 }
-            }*/
+            }
         } else {
+            finishedKO()
             showErrorPopup(title: .ServiceErrors.Unexpected())
-            completion()
         }
     }
 }

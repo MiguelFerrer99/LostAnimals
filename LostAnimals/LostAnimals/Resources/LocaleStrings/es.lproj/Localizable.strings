@@ -54,6 +54,8 @@
 "Commons_ChangesSaved" = "Los cambios se han guardado correctamente";
 "Commons_RemovePetData" = "Borrar datos de mi mascota";
 "Commons_AreYouSureRemovePetData" = "¿Estás seguro que quieres borrar los datos de tu mascota?";
+"Commons_PetDataRemoved" = "Los datos de tu mascota han sido borrados correctamente";
+"Commons_AreYouSureDeletePost" = "¿Estás seguro que quieres eliminar este post";
 
 // MARK: - TextFieldErrors
 "TextFieldErrors_Empty" = "Vacío";

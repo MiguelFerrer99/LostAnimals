@@ -8,6 +8,11 @@
 
 import UIKit
 
+// MARK: - Protocols
+protocol MyPetDelegate: AnyObject {
+    func updateMyPet()
+}
+
 final class MyPetViewController: ViewController {
     // MARK: - IBOutlets
     @IBOutlet private weak var selectPhoto1ImageView: CustomImageView!
@@ -52,6 +57,7 @@ final class MyPetViewController: ViewController {
     }
     var viewModel: MyPetViewModel!
     let imagePickerController = UIImagePickerController()
+    var delegate: MyPetDelegate?
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -115,6 +121,7 @@ private extension MyPetViewController {
     }
     
     func fillUI(_ myPet: Pet) {
+        fillMyPetImages()
         removePetDataButton.isHidden = false
         animalNameTextfield.textField.text = myPet.name
         switch myPet.type {
@@ -135,6 +142,16 @@ private extension MyPetViewController {
             descriptionTextView.text = description
         } else {
             descriptionTextView.text = .Commons.NotSpecifiedFemale()
+        }
+    }
+    
+    func fillMyPetImages() {
+        viewModel.getImagesFromURLImages {
+            for index in 0..<self.viewModel.postImages.count {
+                DispatchQueue.main.async {
+                    self.viewModel.selectPhotoImageViews[index].image = self.viewModel.postImages[index]
+                }
+            }
         }
     }
     
@@ -235,19 +252,27 @@ private extension MyPetViewController {
         showConfirmationPopup(title: .Commons.AreYouSureRemovePetData()) {
             self.removePetDataButton.showLoading { self.updateUserInteraction() }
             self.viewModel.didPressRemoveMyPetDataButton {
-                self.removePetDataButton.hideLoading {
-                    self.updateUserInteraction()
+                self.delegate?.updateMyPet()
+                self.removePetDataButton.hideLoading { self.updateUserInteraction() }
+                showSuccessPopup(title: .Commons.PetDataRemoved()) {
+                    self.viewModel.dismiss()
                 }
+            } finishedKO: {
+                self.removePetDataButton.hideLoading { self.updateUserInteraction() }
             }
         }
     }
     
     @IBAction func saveChangesButtonPressed(_ sender: CustomButton) {
         saveChangesButton.showLoading { self.updateUserInteraction() }
-        viewModel.didPressSaveChangesButton(myPet: buildMyPet(), completion: {
-            self.saveChangesButton.hideLoading {
-                self.updateUserInteraction()
+        viewModel.didPressSaveChangesButton(myPet: buildMyPet()) {
+            self.delegate?.updateMyPet()
+            self.saveChangesButton.hideLoading { self.updateUserInteraction() }
+            showSuccessPopup(title: .Commons.ChangesSaved()) {
+                self.viewModel.dismiss()
             }
-        })
+        } finishedKO: {
+            self.saveChangesButton.hideLoading { self.updateUserInteraction() }
+        }
     }
 }

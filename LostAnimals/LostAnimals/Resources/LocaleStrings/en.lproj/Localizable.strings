@@ -54,6 +54,8 @@
 "Commons_ChangesSaved" = "The changes has been saved successfully";
 "Commons_RemovePetData" = "Remove my pet data";
 "Commons_AreYouSureRemovePetData" = "Are you sure you want to remove your pet data?";
+"Commons_PetDataRemoved" = "Your pet data has been removed successfully";
+"Commons_AreYouSureDeletePost" = "Are you sure you want to delete this post?";
 
 // MARK: - TextFieldErrors
 "TextFieldErrors_Empty" = "Empty";

@@ -26,3 +26,10 @@ extension ProfileViewController: ProfileSettingsDelegate {
         reloadSocialMedias()
     }
 }
+
+// MARK: - MyPetDelegate
+extension ProfileViewController: MyPetDelegate {
+    func updateMyPet() {
+        reloadMyPet()
+    }
+}
