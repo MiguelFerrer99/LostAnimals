@@ -43,11 +43,23 @@ final class NewPostGenericViewController: ViewController {
         return .NewPostGeneric.Title()
     }
     override var navBarLeftButtons: [UIBarButtonItem] {
-        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"),
-                                         style: .plain,
-                                         target: self,
-                                         action: #selector(goBack))
-        return [backButton]
+        if viewModel.postToLoad != nil { return [] }
+        else {
+            let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"),
+                                             style: .plain,
+                                             target: self,
+                                             action: #selector(goBack))
+            return [backButton]
+        }
+    }
+    override var navBarRightButtons: [UIBarButtonItem] {
+        if viewModel.postToLoad != nil {
+            let closeButton = UIBarButtonItem(image: UIImage(systemName: "xmark"),
+                                              style: .plain,
+                                              target: self,
+                                              action: #selector(close))
+            return [closeButton]
+        } else { return [] }
     }
     var viewModel: NewPostGenericViewModel!
     let imagePickerController = UIImagePickerController()
@@ -106,10 +118,15 @@ private extension NewPostGenericViewController {
     func setupUI() {
         viewModel.selectPhotoImageViews = [selectPhoto1ImageView, selectPhoto2ImageView, selectPhoto3ImageView, selectPhoto4ImageView,
                                            selectPhoto5ImageView, selectPhoto6ImageView, selectPhoto7ImageView, selectPhoto8ImageView]
-        configureTextfields()
         configureTextView()
         configureImagePickerController()
-        fillUI()
+        if viewModel.postToLoad != nil {
+            fillUI()
+            configureTextfields()
+        } else {
+            configureTextfields()
+            fillUI()
+        }
     }
     
     func fillUI() {
@@ -126,11 +143,36 @@ private extension NewPostGenericViewController {
             locationTextfield.isHidden = true
             if let me = User.shared { viewModel.newPostLocation = me.location }
         }
-        manageComingMyPet()
+        if let postToLoad = viewModel.postToLoad { manageComingMyPet(postToLoad) }
     }
     
-    func manageComingMyPet() {
-        // TODO: - Fill UI
+    func manageComingMyPet(_ postToLoad: Post) {
+        fillMyPetImages()
+        nameTextfield.textField.text = postToLoad.animalName ?? ""
+        var animalTypeString: String = .Commons.AnimalTypeOther()
+        switch postToLoad.animalType {
+        case .dog:    animalTypeString = .Commons.AnimalTypeDog()
+        case .cat:    animalTypeString = .Commons.AnimalTypeCat()
+        case .bird:   animalTypeString = .Commons.AnimalTypeBird()
+        case .turtle: animalTypeString = .Commons.AnimalTypeTurtle()
+        case .snake:  animalTypeString = .Commons.AnimalTypeSnake()
+        case .rabbit: animalTypeString = .Commons.AnimalTypeRabbit()
+        case .other:  animalTypeString = .Commons.AnimalTypeOther()
+        }
+        animalTextfield.textField.text = animalTypeString
+        breedTextfield.textField.text = postToLoad.animalBreed
+        descriptionTextview.text = postToLoad.description
+        descriptionCharactersCounterLabel.text = "\(postToLoad.description?.count ?? 0)/300"
+    }
+    
+    func fillMyPetImages() {
+        viewModel.getImagesFromURLImages {
+            for index in 0..<self.viewModel.postImages.count {
+                DispatchQueue.main.async {
+                    self.viewModel.selectPhotoImageViews[index].image = self.viewModel.postImages[index]
+                }
+            }
+        }
     }
     
     func setLocalizables() { 
@@ -189,6 +231,10 @@ private extension NewPostGenericViewController {
     @objc func goBack() {
         viewModel.goBack()
     }
+    
+    @objc func close() {
+        viewModel.close()
+    }
 }
 
 // MARK: - IBActions
@@ -234,13 +280,9 @@ private extension NewPostGenericViewController {
     }
     
     @IBAction func publishPostButtonPressed(_ sender: CustomButton) {
-        publishPostButton.showLoading {
-            self.updateUserInteraction()
-        }
+        publishPostButton.showLoading { self.updateUserInteraction() }
         viewModel.didPressPublishPostButton(newPost: buildNewPost()) {
-            self.publishPostButton.hideLoading {
-                self.updateUserInteraction()
-            }
+            self.publishPostButton.hideLoading { self.updateUserInteraction() }
         }
     }
 }

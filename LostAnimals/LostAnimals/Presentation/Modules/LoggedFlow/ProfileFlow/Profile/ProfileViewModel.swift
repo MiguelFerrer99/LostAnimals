@@ -194,4 +194,8 @@ extension ProfileViewModel {
     func didPressMyPet() {
         self.router.goToMyPet(myPet: user.pet)
     }
+    
+    func openNewPost(postToLoad: Post) {
+        self.router.openNewPost(postToLoad: postToLoad)
+    }
 }

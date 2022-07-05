@@ -35,6 +35,13 @@ extension NewPostGenericViewController {
         
         locationTextfield.delegate = self
         locationTextfield.addErrorsToCheck([TextFieldErrorEmptyValue()])
+        
+        if viewModel.postToLoad != nil {
+            nameTextfield.initEditableTextfield()
+            animalTextfield.initEditableTextfield()
+            breedTextfield.initEditableTextfield()
+            viewModel.editedTextFields = [nameTextfield, animalTextfield, breedTextfield]
+        }
     }
     
     func configureTextView() {

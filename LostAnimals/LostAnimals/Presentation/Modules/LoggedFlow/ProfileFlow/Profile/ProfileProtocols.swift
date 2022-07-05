@@ -32,4 +32,8 @@ extension ProfileViewController: MyPetDelegate {
     func updateMyPet() {
         reloadMyPet()
     }
+    
+    func openNewPost(postToLoad: Post) {
+        viewModel.openNewPost(postToLoad: postToLoad)
+    }
 }

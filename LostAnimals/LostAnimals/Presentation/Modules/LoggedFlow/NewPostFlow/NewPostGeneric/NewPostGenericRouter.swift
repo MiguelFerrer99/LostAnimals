@@ -24,6 +24,10 @@ extension NewPostGenericRouter {
         self.viewController?.pop()
     }
     
+    func close() {
+        self.viewController?.dismissCurrentView()
+    }
+    
     func goBackToTabBar() {
         self.viewController?.dismissCurrentView(completion: nil)
     }

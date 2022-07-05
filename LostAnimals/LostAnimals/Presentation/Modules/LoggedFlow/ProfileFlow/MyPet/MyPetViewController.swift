@@ -11,6 +11,7 @@ import UIKit
 // MARK: - Protocols
 protocol MyPetDelegate: AnyObject {
     func updateMyPet()
+    func openNewPost(postToLoad: Post)
 }
 
 final class MyPetViewController: ViewController {
@@ -34,7 +35,6 @@ final class MyPetViewController: ViewController {
     @IBOutlet private weak var mustSelectOnePhotoLabel: UILabel!
     @IBOutlet private weak var descriptionTitleLabel: UILabel!
     @IBOutlet private weak var haveYouLostYourPetButton: UIButton!
-    @IBOutlet private weak var lostYourPetBottomView: UIView!
     @IBOutlet weak var descriptionCharactersCounterLabel: UILabel!
     @IBOutlet weak var animalNameTextfield: CustomTextField!
     @IBOutlet weak var animalTypeTextfield: CustomTextField!
@@ -125,7 +125,6 @@ private extension MyPetViewController {
     func fillUI(_ myPet: Pet) {
         fillMyPetImages()
         haveYouLostYourPetButton.isHidden = false
-        lostYourPetBottomView.isHidden = false
         removePetDataButton.isHidden = false
         animalNameTextfield.textField.text = myPet.name
         switch myPet.type {
@@ -144,6 +143,7 @@ private extension MyPetViewController {
         }
         if let description = myPet.description {
             descriptionTextView.text = description
+            descriptionCharactersCounterLabel.text = "\(description.count)/300"
         } else {
             descriptionTextView.text = .Commons.NotSpecifiedFemale()
         }

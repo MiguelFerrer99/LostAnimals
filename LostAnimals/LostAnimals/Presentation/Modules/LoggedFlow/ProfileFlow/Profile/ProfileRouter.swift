@@ -130,4 +130,12 @@ extension ProfileRouter {
             self.viewController?.present(viewController: nav)
         }
     }
+    
+    func openNewPost(postToLoad: Post) {
+        let viewController = Container.shared.newPostGenericBuilder().build(postType: .lost, postToLoad: postToLoad)
+        let nav = viewController.embeddedInNavigation()
+        nav.modalPresentationStyle = .overCurrentContext
+        nav.hidesBottomBarWhenPushed = true
+        self.viewController?.tabBarController?.present(viewController: nav)
+    }
 }

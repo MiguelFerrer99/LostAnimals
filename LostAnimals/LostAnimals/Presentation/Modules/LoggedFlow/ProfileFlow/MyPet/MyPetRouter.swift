@@ -43,10 +43,7 @@ extension MyPetRouter {
     func dismissAndGoToNewLostPost(postToLoad: Post) {
         DispatchQueue.main.async {
             self.viewController?.dismissCurrentView(completion: {
-                let viewController = Container.shared.newPostGenericBuilder().build(postType: .lost, postToLoad: postToLoad)
-                let nav = viewController.embeddedInNavigation()
-                nav.modalPresentationStyle = .overCurrentContext
-                self.viewController?.present(viewController: nav, completion: nil)
+                self.viewController?.delegate?.openNewPost(postToLoad: postToLoad)
             })
         }
     }
