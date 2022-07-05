@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -75,6 +75,7 @@
                                         <constraint firstItem="c1L-wV-cau" firstAttribute="top" secondItem="vcz-hp-0Gu" secondAttribute="top" constant="8" id="72B-2v-oTO"/>
                                         <constraint firstItem="qks-Sh-gJe" firstAttribute="leading" secondItem="vcz-hp-0Gu" secondAttribute="leading" constant="20" id="Dti-Ik-r2O"/>
                                         <constraint firstItem="c1L-wV-cau" firstAttribute="leading" secondItem="vcz-hp-0Gu" secondAttribute="leading" constant="20" id="NR4-BD-N7F"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="c1L-wV-cau" secondAttribute="trailing" constant="20" id="XiX-NR-WGC"/>
                                         <constraint firstAttribute="bottom" secondItem="qks-Sh-gJe" secondAttribute="bottom" id="ZQ8-o5-Pl9"/>
                                         <constraint firstAttribute="trailing" secondItem="qks-Sh-gJe" secondAttribute="trailing" constant="20" id="l7Z-Em-XG3"/>
                                     </constraints>

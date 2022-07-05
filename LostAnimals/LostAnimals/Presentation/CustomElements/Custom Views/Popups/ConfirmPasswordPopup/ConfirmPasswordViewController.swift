@@ -11,6 +11,7 @@ import UIKit
 final class ConfirmPasswordViewController: ViewController {
     // MARK: - IBOutlets
     @IBOutlet private weak var backgroundView: UIView!
+    @IBOutlet private weak var containerView: CustomView!
     @IBOutlet private weak var confirmPasswordTItleLabel: UILabel!
     @IBOutlet weak var backgroundButton: UIButton!
     @IBOutlet weak var deleteAccountButton: CustomButton!
@@ -56,6 +57,7 @@ final class ConfirmPasswordViewController: ViewController {
 // MARK: - Private functions
 private extension ConfirmPasswordViewController {
     func setupUI() {
+        containerView.layer.maskedCorners =  [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         configureTextfields()
         setLocalizables()
     }

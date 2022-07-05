@@ -108,6 +108,7 @@ extension ProfileSettingsViewModel {
     func didPressedDeleteAccountButton() {
         showConfirmationPopup(title: .ProfileSettings.AreYouSureDeleteAccount()) {
             showConfirmPasswordPopup {
+                Cache.logOut()
                 self.router.changeRootToStartup()
             }
         }
