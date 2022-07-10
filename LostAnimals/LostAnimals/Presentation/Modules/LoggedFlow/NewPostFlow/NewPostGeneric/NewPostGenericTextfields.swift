@@ -40,7 +40,9 @@ extension NewPostGenericViewController {
             nameTextfield.initEditableTextfield()
             animalTextfield.initEditableTextfield()
             breedTextfield.initEditableTextfield()
-            viewModel.editedTextFields = [nameTextfield, animalTextfield, breedTextfield]
+            lastTimeSeenTextfield.initEditableTextfield()
+            locationTextfield.initEditableTextfield()
+            viewModel.editedTextFields = [nameTextfield, animalTextfield, lastTimeSeenTextfield, locationTextfield]
         }
     }
     

@@ -48,6 +48,7 @@ final class NewPostGenericViewModel {
         case .adopt:
             numberOfTextFields = 2
         }
+        if let postToLoad = postToLoad { selectedAnimalType = postToLoad.animalType }
     }
 }
 
