@@ -1071,13 +1071,13 @@
 			path = ConfirmPasswordPopup;
 			sourceTree = "<group>";
 		};
-		414096402794A79100E6A781 /* NewPostFlow */ = {
+		414096402794A79100E6A781 /* NewPostScenes */ = {
 			isa = PBXGroup;
 			children = (
 				417B85F7277D08FA0051B8CF /* NewPost */,
 				414096412794A7E600E6A781 /* NewPostGeneric */,
 			);
-			path = NewPostFlow;
+			path = NewPostScenes;
 			sourceTree = "<group>";
 		};
 		414096412794A7E600E6A781 /* NewPostGeneric */ = {
@@ -1095,80 +1095,80 @@
 			path = NewPostGeneric;
 			sourceTree = "<group>";
 		};
-		414096432794A83A00E6A781 /* AuthFlow */ = {
+		414096432794A83A00E6A781 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
 				41A7CF5627F080CC002BFD6F /* FakeSplash */,
-				414096442794A89D00E6A781 /* LoginFlow */,
-				4160E707277B9E8400C7066F /* Onboarding */,
-				414096452794A8AE00E6A781 /* SignUpFlow */,
 				413987092737FA2600C243F4 /* Startup */,
+				4160E707277B9E8400C7066F /* Onboarding */,
+				414096442794A89D00E6A781 /* LoginScenes */,
+				414096452794A8AE00E6A781 /* SignUpScenes */,
 			);
-			path = AuthFlow;
+			path = Auth;
 			sourceTree = "<group>";
 		};
-		414096442794A89D00E6A781 /* LoginFlow */ = {
+		414096442794A89D00E6A781 /* LoginScenes */ = {
 			isa = PBXGroup;
 			children = (
 				418C413B275A5D000099BC5B /* ForgotPassword */,
 				411C7F68274BA8CB00C9710A /* Login */,
 			);
-			path = LoginFlow;
+			path = LoginScenes;
 			sourceTree = "<group>";
 		};
-		414096452794A8AE00E6A781 /* SignUpFlow */ = {
+		414096452794A8AE00E6A781 /* SignUpScenes */ = {
 			isa = PBXGroup;
 			children = (
 				41B75621275EE4B000C00E03 /* SignUp */,
-				4160E6FC277B998100C7066F /* TermsAndConditions */,
-				41F820C2276FD8100046B0EA /* WhereCanWeFindYou */,
 				415E596B2763E784009A013E /* WhereDoYouLive */,
+				41F820C2276FD8100046B0EA /* WhereCanWeFindYou */,
+				4160E6FC277B998100C7066F /* TermsAndConditions */,
 			);
-			path = SignUpFlow;
+			path = SignUpScenes;
 			sourceTree = "<group>";
 		};
-		414096462794A8F700E6A781 /* LoggedFlow */ = {
+		414096462794A8F700E6A781 /* Logged */ = {
 			isa = PBXGroup;
 			children = (
-				414096482794AA0300E6A781 /* ExploreFlow */,
-				414096402794A79100E6A781 /* NewPostFlow */,
-				414096492794AA3C00E6A781 /* ProfileFlow */,
+				414096482794AA0300E6A781 /* ExploreScenes */,
+				414096402794A79100E6A781 /* NewPostScenes */,
+				414096492794AA3C00E6A781 /* ProfileScenes */,
 				418E2335277CAFA0008BB92E /* TabBar */,
 			);
-			path = LoggedFlow;
+			path = Logged;
 			sourceTree = "<group>";
 		};
-		414096472794A93F00E6A781 /* PostFlow */ = {
+		414096472794A93F00E6A781 /* PostScenes */ = {
 			isa = PBXGroup;
 			children = (
-				41EC169C2785E07A00096B7A /* AnimalTypes */,
-				4100A10A27848E090049EEF0 /* EditPost */,
-				41FEE1DA2788B66600F11449 /* Location */,
 				4100A0E7278371FF0049EEF0 /* Post */,
 				411EF7C42788E09B00725B73 /* PostImages */,
+				41EC169C2785E07A00096B7A /* AnimalTypes */,
+				41FEE1DA2788B66600F11449 /* Location */,
+				4100A10A27848E090049EEF0 /* EditPost */,
 			);
-			path = PostFlow;
+			path = PostScenes;
 			sourceTree = "<group>";
 		};
-		414096482794AA0300E6A781 /* ExploreFlow */ = {
+		414096482794AA0300E6A781 /* ExploreScenes */ = {
 			isa = PBXGroup;
 			children = (
 				4174221D277C813C00915233 /* Explore */,
-				414096472794A93F00E6A781 /* PostFlow */,
+				414096472794A93F00E6A781 /* PostScenes */,
 				41CD111C27835C0200257B2B /* SavedPosts */,
 			);
-			path = ExploreFlow;
+			path = ExploreScenes;
 			sourceTree = "<group>";
 		};
-		414096492794AA3C00E6A781 /* ProfileFlow */ = {
+		414096492794AA3C00E6A781 /* ProfileScenes */ = {
 			isa = PBXGroup;
 			children = (
-				4194A6872871C33700535810 /* MyPet */,
 				417B8619277D27180051B8CF /* Profile */,
+				4194A6872871C33700535810 /* MyPet */,
 				41605C8627ABF8F3004E2F4C /* ProfilePosts */,
 				418B636B27AEB81300F7DC4B /* ProfileSettingsFlow */,
 			);
-			path = ProfileFlow;
+			path = ProfileScenes;
 			sourceTree = "<group>";
 		};
 		415AF1EB285A710400DBE7DD /* LocaleStrings */ = {
@@ -1332,8 +1332,8 @@
 		41868B94272C072500F389AB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				414096432794A83A00E6A781 /* AuthFlow */,
-				414096462794A8F700E6A781 /* LoggedFlow */,
+				414096432794A83A00E6A781 /* Auth */,
+				414096462794A8F700E6A781 /* Logged */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
