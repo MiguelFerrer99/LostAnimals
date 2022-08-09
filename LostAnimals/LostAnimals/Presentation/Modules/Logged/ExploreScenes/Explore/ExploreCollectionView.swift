@@ -28,7 +28,8 @@ extension ExploreViewController {
 extension ExploreViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         if collectionView == filtersCollectionView {
-            let filterType = FilterType(rawValue: indexPath.item) ?? .recent
+            let index = Filters.currentFilters.count == 5 ? indexPath.item + 1 : indexPath.item
+            let filterType = FilterType(rawValue: index) ?? .recent
             if viewModel.isLoading { return false }
             else if filterType == .animal {
                 let loadData = collectionView.indexPathsForSelectedItems?.contains(indexPath) ?? false
@@ -42,7 +43,8 @@ extension ExploreViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == filtersCollectionView {
-            setNewFilter(indexPath.item)
+            let index = (Filters.currentFilters.count == 5 && indexPath.item == 4) ? 5 : indexPath.item
+            setNewFilter(index)
         } else {
             let post = viewModel.posts[indexPath.item]
             viewModel.didPressPost(post: post)

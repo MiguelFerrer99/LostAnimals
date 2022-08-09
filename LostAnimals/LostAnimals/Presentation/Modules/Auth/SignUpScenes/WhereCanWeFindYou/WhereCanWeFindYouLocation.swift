@@ -19,6 +19,8 @@ extension WhereCanWeFindYouViewController {
         if #available(iOS 14.0, *) {
             switch locationManager.authorizationStatus {
             case .authorized, .authorizedAlways, .authorizedWhenInUse:
+                viewModel.loadingLocation = true
+                addressTableView.reloadData()
                 locationManager.requestLocation()
             case .notDetermined:
                 locationManager.requestWhenInUseAuthorization()
@@ -28,6 +30,8 @@ extension WhereCanWeFindYouViewController {
         } else {
             switch CLLocationManager.authorizationStatus() {
             case .authorized, .authorizedAlways, .authorizedWhenInUse:
+                viewModel.loadingLocation = true
+                addressTableView.reloadData()
                 locationManager.requestLocation()
             case .notDetermined:
                 locationManager.requestWhenInUseAuthorization()

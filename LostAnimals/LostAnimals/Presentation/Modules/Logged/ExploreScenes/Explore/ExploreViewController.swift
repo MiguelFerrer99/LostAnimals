@@ -69,7 +69,8 @@ extension ExploreViewController {
     }
     
     func setNewFilter(_ index: Int) {
-        let indexPath = IndexPath(item: FilterType.animal.rawValue, section: 0)
+        let item = Filters.currentFilters.count == 5 ? 4 : 5
+        let indexPath = IndexPath(item: item, section: 0)
         if let animalFilterCell = filtersCollectionView.cellForItem(at: indexPath) as? ExplorePostsFilterCollectionViewCell {
             animalFilterCell.setFilterTitle("Animal")
         }
@@ -80,7 +81,8 @@ extension ExploreViewController {
     }
     
     func selectAnimalFilterCell(animalTypeName: String) {
-        let indexPath = IndexPath(item: FilterType.animal.rawValue, section: 0)
+        let item = Filters.currentFilters.count == 5 ? 4 : 5
+        let indexPath = IndexPath(item: item, section: 0)
         filtersCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
         if let animalFilterCell = filtersCollectionView.cellForItem(at: indexPath) as? ExplorePostsFilterCollectionViewCell {
             animalFilterCell.setFilterTitle(animalTypeName)
