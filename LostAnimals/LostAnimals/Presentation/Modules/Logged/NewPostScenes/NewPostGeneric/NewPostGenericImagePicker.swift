@@ -25,6 +25,7 @@ extension NewPostGenericViewController: UIImagePickerControllerDelegate, UINavig
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             viewModel.selectPhotoImageViews[viewModel.selectedIndexImageView].image = pickedImage
+            viewModel.photosSelected[viewModel.selectedIndexImageView] = true
             checkAllContentsAreOk()
             picker.dismiss(animated: true, completion: nil)
         }

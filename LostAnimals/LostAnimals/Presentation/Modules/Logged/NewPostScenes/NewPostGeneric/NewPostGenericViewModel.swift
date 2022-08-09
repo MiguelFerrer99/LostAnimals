@@ -31,6 +31,7 @@ final class NewPostGenericViewModel {
     var selectedIndexImageView = 0
     var newPostLocation = Location(address: .Commons.NotSpecifiedFemale(), coordinates: nil)
     var selectedAnimalType: AnimalType? = nil
+    var photosSelected = [Bool]()
     
     // MARK: - Services
     let postService = PostService()

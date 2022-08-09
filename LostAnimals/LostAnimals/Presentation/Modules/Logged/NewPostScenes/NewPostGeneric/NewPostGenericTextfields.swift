@@ -67,10 +67,7 @@ extension NewPostGenericViewController {
     
     func checkAllContentsAreOk() {
         let haveErrors = viewModel.textFieldsHaveErrors()
-        let hasAtLeastOnePhoto = viewModel.selectPhotoImageViews.contains(where: {
-            guard let image = $0.image else { return false }
-            return !image.isEqualTo(image: UIImage(named: "SelectPhotoPlaceholder"))
-        })
+        let hasAtLeastOnePhoto = viewModel.photosSelected.contains(true)
         let canMoveToNextStep = !haveErrors && hasAtLeastOnePhoto && viewModel.editedTextFields.count >= viewModel.numberOfTextFields
         publishPostButton.alpha = canMoveToNextStep ? 1 : 0.5
         publishPostButton.isEnabled = canMoveToNextStep
@@ -78,7 +75,7 @@ extension NewPostGenericViewController {
 }
 
 // MARK: - Private functions
-extension NewPostGenericViewController {
+private extension NewPostGenericViewController {
     func convertAddressToLocation(address: String) {
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(address) { placemarks, error in
