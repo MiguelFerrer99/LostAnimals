@@ -326,7 +326,7 @@
                                                             <constraint firstAttribute="trailing" secondItem="goH-bO-P57" secondAttribute="trailing" constant="20" id="wah-Yd-6dm"/>
                                                         </constraints>
                                                     </view>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Lrx-wC-bO3">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Lrx-wC-bO3">
                                                         <rect key="frame" x="0.0" y="399.5" width="414" height="80"/>
                                                         <subviews>
                                                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="f0c-86-xBM">
@@ -459,6 +459,12 @@
                                                                         <color key="color" name="CustomBlack"/>
                                                                     </activityIndicatorView>
                                                                 </subviews>
+                                                            </stackView>
+                                                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="X0I-SR-oXM">
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="70" id="jLB-XT-jFt"/>
+                                                                </constraints>
                                                             </stackView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -601,6 +607,7 @@
                         <outlet property="blockUserButtonView" destination="V0D-7e-vJu" id="Ogj-bz-iPx"/>
                         <outlet property="blockedUserLabel" destination="dhd-3T-zC3" id="6Ma-NW-4X7"/>
                         <outlet property="blockedUserView" destination="gOe-Pf-zSz" id="omu-m9-kSm"/>
+                        <outlet property="emptyView" destination="X0I-SR-oXM" id="V8Y-kl-to0"/>
                         <outlet property="firstCollectionHeaderLabel" destination="ZuQ-sa-e1b" id="KJN-Ja-IPc"/>
                         <outlet property="firstCollectionView" destination="Gkn-wO-bCI" id="1rg-8f-AH6"/>
                         <outlet property="firstStackView" destination="f0c-86-xBM" id="jAs-Zw-NoA"/>

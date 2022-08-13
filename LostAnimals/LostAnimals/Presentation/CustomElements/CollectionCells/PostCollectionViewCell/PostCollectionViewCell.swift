@@ -10,8 +10,7 @@ import UIKit
 
 final class PostCollectionViewCell: UICollectionViewCell, Reusable {
     // MARK: - IBOutlets
-    @IBOutlet private weak var postTypeImageView: UIImageView!
-    @IBOutlet private weak var postTypeWhiteImageView: UIImageView!
+    @IBOutlet private weak var postTypeLabel: UILabel!
     @IBOutlet private weak var animalTypeWhiteImageView: UIImageView!
     @IBOutlet private weak var animalNameLabel: UILabel!
     @IBOutlet private weak var postImageView: UIImageView!
@@ -19,6 +18,13 @@ final class PostCollectionViewCell: UICollectionViewCell, Reusable {
     @IBOutlet private weak var trailingConstraint: NSLayoutConstraint!
     
     // MARK: - Life cycle
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        postTypeLabel.layer.masksToBounds = true
+        postTypeLabel.layer.cornerRadius = postTypeLabel.frame.width / 2
+    }
+    
     override func prepareForReuse() {
         postImageView.image = UIImage(named: "DefaultHeaderImage")
     }
@@ -27,9 +33,15 @@ final class PostCollectionViewCell: UICollectionViewCell, Reusable {
 // MARK: - Functions
 extension PostCollectionViewCell {
     func display(summary: PostCollectionViewCellSummary) {
-        postTypeImageView.image = UIImage(named: summary.postType.rawValue)
-        postTypeWhiteImageView.image = UIImage(named: "\(summary.postType.rawValue)White")
+        var postTypeLabelText = ""
+        switch summary.postType {
+        case .lost:  postTypeLabelText = .Post.PostTypeLost()
+        case .found: postTypeLabelText = .Post.PostTypeFound()
+        case .adopt: postTypeLabelText = .Post.PostTypeAdopt()
+        }
+        postTypeLabel.text = postTypeLabelText
         animalTypeWhiteImageView.image = UIImage(named: "\(summary.animalType.rawValue)White")
+        animalNameLabel.isHidden = summary.postType == .found
         animalNameLabel.text = summary.animalName ?? .Commons.NotSpecifiedMale()
         getPostImage(from: summary.postURLImage)
         

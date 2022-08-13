@@ -292,11 +292,13 @@ private extension ProfileViewController {
     func hideLoading() {
         self.loadingStackView.isHidden = true
         self.loadingIndicator.stopAnimating()
+        self.emptyView.isHidden = false
     }
     
     func showLoading() {
         self.loadingIndicator.startAnimating()
         self.loadingStackView.isHidden = false
+        self.emptyView.isHidden = true
     }
 }
 

@@ -55,7 +55,7 @@ extension PostService {
                     } else if Filters.currentFilters[.recent]?.enabled ?? false {
                         posts.sort { $0.createdAt > $1.createdAt }
                     } else if Filters.currentFilters[.near]?.enabled ?? false {
-                        posts.sort { ($0.distanceToUserLocation ?? 0) > ($1.distanceToUserLocation ?? 0) }
+                        posts.sort { ($0.distanceToUserLocation ?? 0) < ($1.distanceToUserLocation ?? 0) }
                     }
                     completion(.success(posts))
                 } catch { completion(.error(.ServiceErrors.Unexpected())) }
@@ -98,6 +98,27 @@ extension PostService {
                     let postsDTO = try FirebaseDecoder().decode([PostDTO].self, from: Array(snapshotValue.values))
                     var posts = postsDTO.compactMap { $0.map() }
                     posts = posts.filter { User.shared?.id == $0.userID }
+                    posts.sort { $0.createdAt > $1.createdAt }
+                    completion(.success(posts))
+                } catch { completion(.error(.ServiceErrors.Unexpected())) }
+            } else { completion(.success([])) }
+        }
+    }
+    
+    func getUserPosts(userID: String, completion: @escaping (GetPostsResult) -> Void) {
+        databaseRef.child("posts").getData { (error, snapshot) in
+            if let error = error {
+                switch error.localizedDescription {
+                case FirebaseError.networkError.rawValue:
+                    completion(.error(.ServiceErrors.InternetConnection()))
+                default:
+                    completion(.error(.ServiceErrors.Unexpected()))
+                }
+            } else if let snapshotValue = snapshot.value as? [String: Any] {
+                do {
+                    let postsDTO = try FirebaseDecoder().decode([PostDTO].self, from: Array(snapshotValue.values))
+                    var posts = postsDTO.compactMap { $0.map() }
+                    posts = posts.filter { userID == $0.userID }
                     posts.sort { $0.createdAt > $1.createdAt }
                     completion(.success(posts))
                 } catch { completion(.error(.ServiceErrors.Unexpected())) }

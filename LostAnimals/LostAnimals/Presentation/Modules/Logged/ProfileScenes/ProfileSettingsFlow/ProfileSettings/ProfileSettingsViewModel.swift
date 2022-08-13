@@ -24,6 +24,8 @@ final class ProfileSettingsViewModel {
     let profileImages: ProfileImages
     var selectedImageView: ProfileSettingsImageType = .user
     var userIsModified = false
+    var headerImageSelected = false
+    var userImageSelected = false
     
     // MARK: - Services
     let userService = UserService()
@@ -33,6 +35,12 @@ final class ProfileSettingsViewModel {
         self.router = router
         self.me = me
         self.profileImages = images
+        if let headerImage = images.headerImage, !headerImage.isEqualTo(image: UIImage(named: "DefaultHeaderImage")) {
+            headerImageSelected = true
+        }
+        if let userImage = images.userImage, !userImage.isEqualTo(image: UIImage(named: "DefaultUserImage")) {
+            userImageSelected = true
+        }
     }
 }
 
@@ -55,12 +63,12 @@ extension ProfileSettingsViewModel {
     
     func didPressedChangeHeaderImageButton(headerImage: UIImage) {
         selectedImageView = .header
-        self.router.goToSelectPhotoPopup(showRemoveOption: !headerImage.isEqualTo(image: UIImage(named: "DefaultHeaderImage")))
+        self.router.goToSelectPhotoPopup(showRemoveOption: headerImageSelected)
     }
     
     func didPressedChangeProfileImageButton(profileImage: UIImage) {
         selectedImageView = .user
-        self.router.goToSelectPhotoPopup(showRemoveOption: !profileImage.isEqualTo(image: UIImage(named: "DefaultUserImage")))
+        self.router.goToSelectPhotoPopup(showRemoveOption: userImageSelected)
     }
     
     func didPressedRemovePhoto(completion: @escaping ((GenericResult) -> ())) {

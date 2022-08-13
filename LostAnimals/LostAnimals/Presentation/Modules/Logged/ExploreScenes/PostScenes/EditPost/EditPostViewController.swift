@@ -89,8 +89,17 @@ private extension EditPostViewController {
     }
     
     func setupUI() {
-        viewModel.selectPhotoImageViews = [selectPhoto1ImageView, selectPhoto2ImageView, selectPhoto3ImageView, selectPhoto4ImageView,
-                                           selectPhoto5ImageView, selectPhoto6ImageView, selectPhoto7ImageView, selectPhoto8ImageView]
+        viewModel.selectPhotoImageViews = [
+            selectPhoto1ImageView,
+            selectPhoto2ImageView,
+            selectPhoto3ImageView,
+            selectPhoto4ImageView,
+            selectPhoto5ImageView,
+            selectPhoto6ImageView,
+            selectPhoto7ImageView,
+            selectPhoto8ImageView
+        ]
+        for _ in 0..<8 { viewModel.photosSelected.append(false) }
         configureTextView()
         configureImagePickerController()
         fillUI()
@@ -113,6 +122,7 @@ private extension EditPostViewController {
         
         for index in 0..<viewModel.postImages.count {
             viewModel.selectPhotoImageViews[index].image = viewModel.postImages[index]
+            viewModel.photosSelected[index] = !viewModel.postImages[index].isEqualTo(image: UIImage(named: "SelectPhotoPlaceholder"))
         }
         
         nameTextfield.textField.text = viewModel.post.animalName
@@ -162,6 +172,7 @@ extension EditPostViewController {
     func removePhoto() {
         viewModel.imagesModified = true
         viewModel.selectPhotoImageViews[viewModel.selectedIndexImageView].image = UIImage(named: "SelectPhotoPlaceholder")
+        viewModel.photosSelected[viewModel.selectedIndexImageView] = false
         checkAllContentsAreOk()
     }
     

@@ -29,7 +29,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="s77-ME-NOX">
                                 <rect key="frame" x="2" y="90.5" width="256" height="180.5"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="NotAvailablePosts" translatesAutoresizingMaskIntoConstraints="NO" id="LQs-Wa-iRE">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Other" translatesAutoresizingMaskIntoConstraints="NO" id="LQs-Wa-iRE">
                                         <rect key="frame" x="0.0" y="0.0" width="256" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="Z0X-FT-NBh"/>
@@ -72,7 +72,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="NotAvailablePosts" width="256" height="256"/>
+        <image name="Other" width="256" height="256"/>
         <namedColor name="CustomBlack">
             <color red="0.24705882352941178" green="0.24705882352941178" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

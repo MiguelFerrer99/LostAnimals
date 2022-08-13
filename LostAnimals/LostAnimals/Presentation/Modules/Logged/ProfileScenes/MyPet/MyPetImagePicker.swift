@@ -26,6 +26,7 @@ extension MyPetViewController: UIImagePickerControllerDelegate, UINavigationCont
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             viewModel.imagesModified = true
             viewModel.selectPhotoImageViews[viewModel.selectedIndexImageView].image = pickedImage
+            viewModel.photosSelected[viewModel.selectedIndexImageView] = true
             checkAllContentsAreOk()
             picker.dismiss(animated: true, completion: nil)
         }

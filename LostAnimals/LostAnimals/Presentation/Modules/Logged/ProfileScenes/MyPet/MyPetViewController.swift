@@ -96,6 +96,7 @@ extension MyPetViewController {
     
     func removePhoto() {
         viewModel.selectPhotoImageViews[viewModel.selectedIndexImageView].image = UIImage(named: "SelectPhotoPlaceholder")
+        viewModel.photosSelected[viewModel.selectedIndexImageView] = false
         checkAllContentsAreOk()
     }
     
@@ -113,8 +114,17 @@ extension MyPetViewController {
 // MARK: - Private functions
 private extension MyPetViewController {
     func setupUI() {
-        viewModel.selectPhotoImageViews = [selectPhoto1ImageView, selectPhoto2ImageView, selectPhoto3ImageView, selectPhoto4ImageView,
-                                           selectPhoto5ImageView, selectPhoto6ImageView, selectPhoto7ImageView, selectPhoto8ImageView]
+        viewModel.selectPhotoImageViews = [
+            selectPhoto1ImageView,
+            selectPhoto2ImageView,
+            selectPhoto3ImageView,
+            selectPhoto4ImageView,
+            selectPhoto5ImageView,
+            selectPhoto6ImageView,
+            selectPhoto7ImageView,
+            selectPhoto8ImageView
+        ]
+        for _ in 0..<8 { viewModel.photosSelected.append(false) }
         if let myPet = viewModel.myPet { fillUI(myPet) }
         configureTextfields()
         configureTextView()

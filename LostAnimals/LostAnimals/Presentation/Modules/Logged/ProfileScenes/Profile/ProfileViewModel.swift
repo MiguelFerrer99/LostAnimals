@@ -62,7 +62,7 @@ extension ProfileViewModel {
                 }
             }
         } else {
-            postService.getPosts { result in
+            postService.getUserPosts(userID: user.id) { result in
                 switch result {
                 case .success(let posts):
                     self.posts = posts

@@ -171,6 +171,9 @@
 "Post_ContactWithTitle" = "Contact with %@";
 "Post_ContactTitle" = "Contact";
 "Post_ContactText" = "These are the options you have to contact, choose one";
+"Post_PostTypeLost" = "L";
+"Post_PostTypeFound" = "F";
+"Post_PostTypeAdopt" = "A";
 
 // MARK: - Edit post
 "EditPost_Title" = "Edit post";

@@ -201,6 +201,9 @@ extension String {
         case ContactWithTitle = "Post_ContactWithTitle"
         case ContactTitle = "Post_ContactTitle"
         case ContactText = "Post_ContactText"
+        case PostTypeLost = "Post_PostTypeLost"
+        case PostTypeFound = "Post_PostTypeFound"
+        case PostTypeAdopt = "Post_PostTypeAdopt"
     }
     enum EditPost: String, Localizable {
         case Title = "EditPost_Title"

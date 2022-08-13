@@ -30,6 +30,7 @@ final class EditPostViewModel {
     let postImages: [UIImage]
     var currentEditPostInfo: [EditPostInfo: String] = [:]
     var newEditPostInfo: [EditPostInfo: String] = [:]
+    var photosSelected = [Bool]()
     var imagesModified = false
     
     // MARK: - Services
@@ -91,8 +92,8 @@ extension EditPostViewModel {
     
     func getModifiedImages() -> [UIImage] {
         var modifiedImages: [UIImage] = []
-        for imageView in selectPhotoImageViews {
-            if let image = imageView.image, !image.isEqualTo(image: UIImage(named: "SelectPhotoPlaceholder")) {
+        for (index, imageView) in selectPhotoImageViews.enumerated() {
+            if let image = imageView.image, photosSelected[index] {
                 modifiedImages.append(image)
             }
         }
@@ -106,8 +107,7 @@ extension EditPostViewModel {
     }
     
     func didPressSelectPhotoButton() {
-        guard let selectPhotoImageView = selectPhotoImageViews[selectedIndexImageView].image else { return }
-        self.router.goToSelectPhotoPopup(showRemoveOption: !selectPhotoImageView.isEqualTo(image: UIImage(named: "SelectPhotoPlaceholder")))
+        self.router.goToSelectPhotoPopup(showRemoveOption: photosSelected[selectedIndexImageView])
     }
     
     func didPressAnimalTypeButton() {

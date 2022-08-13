@@ -85,9 +85,11 @@ extension ProfileSettingsViewController {
                 case .user:
                     self.delegate?.updateUserImage()
                     self.userImageView.image = UIImage(named: "DefaultUserImage")
+                    self.viewModel.userImageSelected = false
                 case .header:
                     self.delegate?.updateHeaderImage()
                     self.headerImageView.image = UIImage(named: "DefaultHeaderImage")
+                    self.viewModel.headerImageSelected = false
                 }
                 self.hideLoading()
             case .error: self.hideLoading()
@@ -104,9 +106,11 @@ extension ProfileSettingsViewController {
                 case .user:
                     self.delegate?.updateUserImage()
                     self.userImageView.image = image
+                    self.viewModel.userImageSelected = true
                 case .header:
                     self.delegate?.updateHeaderImage()
                     self.headerImageView.image = image
+                    self.viewModel.headerImageSelected = true
                 }
                 self.hideLoading()
             case .error: self.hideLoading()

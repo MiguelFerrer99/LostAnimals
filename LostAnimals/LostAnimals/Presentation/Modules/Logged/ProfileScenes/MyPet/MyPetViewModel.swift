@@ -27,6 +27,7 @@ final class MyPetViewModel {
     var selectedIndexImageView = 0
     var currentPetValues: [MyPetField: String] = [:]
     var newPetValues: [MyPetField: String] = [:]
+    var photosSelected = [Bool]()
     var imagesModified = false
     
     // MARK: - Services
@@ -121,9 +122,9 @@ extension MyPetViewModel {
     
     func getImagesFromImageViews() -> [UIImage?] {
         var images: [UIImage] = []
-        selectPhotoImageViews.forEach { imageView in
+        selectPhotoImageViews.enumerated().forEach { (index, imageView) in
             imageView.transform.rotated(by: .pi / 2)
-            if let image = imageView.image, !image.isEqualTo(image: UIImage(named: "SelectPhotoPlaceholder")) {
+            if let image = imageView.image, photosSelected[index] {
                 images.append(image)
             }
         }
@@ -135,8 +136,7 @@ extension MyPetViewModel {
     }
     
     func didPressSelectPhotoButton() {
-        guard let selectPhotoImageView = selectPhotoImageViews[selectedIndexImageView].image else { return }
-        self.router.goToSelectPhotoPopup(showRemoveOption: !selectPhotoImageView.isEqualTo(image: UIImage(named: "SelectPhotoPlaceholder")))
+        self.router.goToSelectPhotoPopup(showRemoveOption: photosSelected[selectedIndexImageView])
     }
     
     func didPressAnimalTypeButton() {

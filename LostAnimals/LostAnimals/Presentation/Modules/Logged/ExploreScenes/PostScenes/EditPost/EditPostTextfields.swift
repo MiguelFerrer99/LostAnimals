@@ -70,10 +70,7 @@ extension EditPostViewController {
     
     func checkAllContentsAreOk() {
         let haveErrors = viewModel.textFieldsHaveErrors()
-        let hasAtLeastOnePhoto = viewModel.selectPhotoImageViews.contains(where: {
-            guard let image = $0.image else { return false }
-            return !image.isEqualTo(image: UIImage(named: "SelectPhotoPlaceholder"))
-        })
+        let hasAtLeastOnePhoto = viewModel.photosSelected.contains(true)
         let currentAndNewInfoAreDifferent = viewModel.currentEditPostInfo != viewModel.newEditPostInfo || viewModel.currentLocation != viewModel.newLocation || viewModel.imagesModified
         let canSaveChanges = !haveErrors && hasAtLeastOnePhoto && currentAndNewInfoAreDifferent && viewModel.numberOfTextFields <= viewModel.editedTextFields.count
         saveChangesButton.alpha = canSaveChanges ? 1 : 0.5
