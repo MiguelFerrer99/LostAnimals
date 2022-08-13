@@ -24,6 +24,12 @@ extension ProfileRouter {
         self.viewController?.pop()
     }
     
+    func goBackTwoTimes() {
+        guard let viewControllers = self.viewController?.navigationController?.viewControllers else { return }
+        let backTwoTimesViewController = viewControllers[viewControllers.count - 3]
+        self.viewController?.navigationController?.popToViewController(backTwoTimesViewController, animated: true)
+    }
+    
     func goToProfileSettings(profileImages: ProfileImages) {
         DispatchQueue.main.async {
             guard let me = User.shared else { return }

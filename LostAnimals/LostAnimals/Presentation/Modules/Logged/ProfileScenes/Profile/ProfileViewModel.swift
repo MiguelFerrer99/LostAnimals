@@ -140,6 +140,10 @@ extension ProfileViewModel {
         self.router.goBack()
     }
     
+    func backTwoTimes() {
+        self.router.goBackTwoTimes()
+    }
+    
     func didPressSettingsButton() {
         self.router.goToProfileSettings(profileImages: (userImage, headerImage))
     }

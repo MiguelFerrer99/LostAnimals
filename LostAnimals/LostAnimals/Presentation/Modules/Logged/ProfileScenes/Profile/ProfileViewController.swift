@@ -239,10 +239,11 @@ private extension ProfileViewController {
         UIView.animate(withDuration: 0.25) {
             self.blockUserBarButtonItem.image = UIImage(named: isBlocked ? "UnblockUser" : "BlockUser")
             self.blockUserButtonImageView.image = UIImage(named: isBlocked ? "UnblockUserWhite" : "BlockUserWhite")
-            self.basicInfoView.isHidden = isBlocked
+            self.basicInfoView.isHidden = false
             self.firstStackView.isHidden = isBlocked
             self.secondStackView.isHidden = isBlocked
             self.blockedUserView.isHidden = !isBlocked
+            self.emptyView.isHidden = true
         }
     }
     
@@ -250,10 +251,18 @@ private extension ProfileViewController {
         blockedUserLabel.text = .Profile.BlockedByYou.localized(with: viewModel.user.firstname)
         let isUserBlocked = User.shared?.blockedUsers.contains(viewModel.user.id) ?? false
         if isUserBlocked {
+            blockUserBarButtonItem.image = UIImage(named: "UnblockUser")
             blockUserButtonImageView.image = UIImage(named: "UnblockUserWhite")
-        } else {
-            blockUserButtonImageView.image = UIImage(named: "BlockUserWhite")
+            blockedUserView.isHidden = false
             basicInfoView.isHidden = false
+            emptyView.isHidden = true
+            hideLoading()
+        } else {
+            blockUserBarButtonItem.image = UIImage(named: "BlockUser")
+            blockUserButtonImageView.image = UIImage(named: "BlockUserWhite")
+            blockedUserView.isHidden = true
+            basicInfoView.isHidden = false
+            emptyView.isHidden = true
             fillPostsInfoUI()
         }
     }
@@ -281,7 +290,11 @@ private extension ProfileViewController {
     @objc func blockOrUnblockUser() {
         viewModel.didPressBlockUserButton { isBlocked in
             self.updateBlockedUserUI(isBlocked: isBlocked)
-            if isBlocked { showSuccessPopup(title: .Profile.UserBlocked()) }
+            if isBlocked {
+                showSuccessPopup(title: .Profile.UserBlocked()) {
+                    self.viewModel.backTwoTimes()
+                }
+            }
         }
     }
     
