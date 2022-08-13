@@ -155,6 +155,7 @@ private extension ProfileSettingsViewController {
     }
     
     func updateUserInteraction() {
+        navigationController?.navigationBar.isUserInteractionEnabled = loadingView.isHidden
         navigationController?.interactivePopGestureRecognizer?.isEnabled = loadingView.isHidden
         backButton.isUserInteractionEnabled = loadingView.isHidden
         editHeaderImageButton.isUserInteractionEnabled = loadingView.isHidden

@@ -232,7 +232,7 @@ extension PostViewModel {
     }
     
     func showSuccessPopupFromPostOptionsPopup(action: (() -> Void)? = nil) {
-        showSuccessPopup(title: "The user has been blocked successfully", action: action)
+        showSuccessPopup(title: .Profile.UserBlocked(), action: action)
     }
     
     func showErrorPopupFromPostOptionsPopup(error: String) {

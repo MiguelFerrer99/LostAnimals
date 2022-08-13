@@ -60,6 +60,12 @@ extension WhereCanWeFindYouViewController {
             addressTableView.reloadData()
         }
     }
+    
+    func updateUserInteraction(_ newValue: Bool) {
+        navigationController?.navigationBar.isUserInteractionEnabled = newValue
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = newValue
+        navigationController?.navigationItem.searchController?.searchBar.isUserInteractionEnabled = newValue
+    }
 }
 
 // MARK: - Functions

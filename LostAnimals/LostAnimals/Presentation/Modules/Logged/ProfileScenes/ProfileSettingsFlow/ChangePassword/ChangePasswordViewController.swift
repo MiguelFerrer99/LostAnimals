@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ChangePasswordViewController: ViewController, UIGestureRecognizerDelegate {
+final class ChangePasswordViewController: ViewController {
     // MARK: - IBOutlets
     @IBOutlet private weak var passwordTextLabel: UILabel!
     @IBOutlet weak var passwordTextfield: CustomTextField!
@@ -46,7 +46,6 @@ final class ChangePasswordViewController: ViewController, UIGestureRecognizerDel
 // MARK: - Private functions
 private extension ChangePasswordViewController {
     func setupUI() {
-        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         configureTextFields()
         setLocalizables()
     }
@@ -60,7 +59,6 @@ private extension ChangePasswordViewController {
     
     func updateUserInteraction() {
         navigationController?.navigationBar.isUserInteractionEnabled = saveChangesButton.isEnabled
-        navigationController?.interactivePopGestureRecognizer?.isEnabled = saveChangesButton.isEnabled
         passwordTextfield.isUserInteractionEnabled = saveChangesButton.isEnabled
         confirmPasswordTextfield.isUserInteractionEnabled = saveChangesButton.isEnabled
     }

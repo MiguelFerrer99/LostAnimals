@@ -20,6 +20,7 @@ extension WhereCanWeFindYouViewController {
             switch locationManager.authorizationStatus {
             case .authorized, .authorizedAlways, .authorizedWhenInUse:
                 viewModel.loadingLocation = true
+                updateUserInteraction(false)
                 addressTableView.reloadData()
                 locationManager.requestLocation()
             case .notDetermined:
@@ -31,6 +32,7 @@ extension WhereCanWeFindYouViewController {
             switch CLLocationManager.authorizationStatus() {
             case .authorized, .authorizedAlways, .authorizedWhenInUse:
                 viewModel.loadingLocation = true
+                updateUserInteraction(false)
                 addressTableView.reloadData()
                 locationManager.requestLocation()
             case .notDetermined:
@@ -61,6 +63,7 @@ extension WhereCanWeFindYouViewController: CLLocationManagerDelegate {
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         if !viewModel.locationConfigured {
             viewModel.locationConfigured = true
+            updateUserInteraction(true)
         } else {
             if #available(iOS 14.0, *) {
                 switch manager.authorizationStatus {

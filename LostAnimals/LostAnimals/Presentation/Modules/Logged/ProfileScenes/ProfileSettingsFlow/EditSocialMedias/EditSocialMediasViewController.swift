@@ -13,7 +13,7 @@ protocol EditSocialMediasDelegate: AnyObject {
     func updateSocialMedias()
 }
 
-final class EditSocialMediasViewController: ViewController, UIGestureRecognizerDelegate {
+final class EditSocialMediasViewController: ViewController {
     // MARK: - IBOutlets
     @IBOutlet private weak var phonePrefixLabel: UILabel!
     @IBOutlet private weak var phonePrefixButton: UIButton!
@@ -67,7 +67,6 @@ extension EditSocialMediasViewController {
 // MARK: - Private functions
 private extension EditSocialMediasViewController {
     func setupUI() {
-        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         fillUI()
         configureTextFields()
         setLocalizables()
@@ -97,7 +96,6 @@ private extension EditSocialMediasViewController {
     
     func updateUserInteraction() {
         navigationController?.navigationBar.isUserInteractionEnabled = saveChangesButton.isEnabled
-        navigationController?.interactivePopGestureRecognizer?.isEnabled = saveChangesButton.isEnabled
         phonePrefixButton.isUserInteractionEnabled = saveChangesButton.isEnabled
         phoneNumberTextfield.isUserInteractionEnabled = saveChangesButton.isEnabled
         haveWhatsappButton.isUserInteractionEnabled = saveChangesButton.isEnabled

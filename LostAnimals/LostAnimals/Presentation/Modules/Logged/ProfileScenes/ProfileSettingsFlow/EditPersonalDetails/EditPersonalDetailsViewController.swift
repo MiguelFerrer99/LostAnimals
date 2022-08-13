@@ -13,7 +13,7 @@ protocol EditPersonalDetailsDelegate: AnyObject {
     func updatePersonalDetails()
 }
 
-final class EditPersonalDetailsViewController: ViewController, UIGestureRecognizerDelegate {
+final class EditPersonalDetailsViewController: ViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var animalShelterNameTextfield: CustomTextField!
     @IBOutlet weak var firstnameTextfield: CustomTextField!
@@ -60,7 +60,6 @@ private extension EditPersonalDetailsViewController {
     }
     
     func setupUI() {
-        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         fillUI()
         configureTextFields()
         setLocalizables()
@@ -96,7 +95,6 @@ private extension EditPersonalDetailsViewController {
     
     func updateUserInteraction() {
         navigationController?.navigationBar.isUserInteractionEnabled = saveChangesButton.isEnabled
-        navigationController?.interactivePopGestureRecognizer?.isEnabled = saveChangesButton.isEnabled
         firstnameTextfield.isUserInteractionEnabled = saveChangesButton.isEnabled
         lastnameTextfield.isUserInteractionEnabled = saveChangesButton.isEnabled
         birthdateTextfield.isUserInteractionEnabled = saveChangesButton.isEnabled

@@ -43,16 +43,16 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfq-EZ-gTN">
-                                <rect key="frame" x="80" y="15" width="160" height="22"/>
+                                <rect key="frame" x="80" y="15" width="120" height="22"/>
                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="16"/>
                                 <color key="textColor" name="CustomBlack"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTu-t8-tAT" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
-                                <rect key="frame" x="260" y="11" width="80" height="30"/>
+                                <rect key="frame" x="220" y="11" width="120" height="30"/>
                                 <color key="backgroundColor" name="CustomRed"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="kx2-yl-Qhu"/>
+                                    <constraint firstAttribute="width" constant="120" id="kx2-yl-Qhu"/>
                                     <constraint firstAttribute="height" constant="30" id="t5k-5F-aQ8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="14"/>
