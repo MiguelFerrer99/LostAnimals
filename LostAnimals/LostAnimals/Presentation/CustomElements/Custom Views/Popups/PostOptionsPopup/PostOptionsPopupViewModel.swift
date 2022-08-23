@@ -109,15 +109,15 @@ extension PostOptionsPopupViewModel {
         // Setup variables
         switch post.postType {
         case .lost:
-            bgImage = UIImage(named: "LostAnimalImageToShare")
+            bgImage = UIImage(named: isInSpanish() ? "LostAnimalImageToShare_es" : "LostAnimalImageToShare_en")
             firstText = post.location.address
             secondText = post.lastTimeSeen
         case .found:
-            bgImage = UIImage(named: "FoundAnimalImageToShare")
+            bgImage = UIImage(named: isInSpanish() ? "FoundAnimalImageToShare_es" : "FoundAnimalImageToShare_en")
             firstText = post.location.address
             secondText = post.lastTimeSeen
         case .adopt:
-            bgImage = UIImage(named: "ToAdoptAnimalImageToShare")
+            bgImage = UIImage(named: isInSpanish() ? "ToAdoptAnimalImageToShare_es" : "ToAdoptAnimalImageToShare_en")
             firstText = user.firstname
             secondText = user.location.address
         }
@@ -155,7 +155,7 @@ extension PostOptionsPopupViewModel {
         // Lost in
         guard let returnedImage4 = firstText.drawTextIn(bgImage: returnedImage3,
                                                         position: CGRect(x: (returnedImage3.size.width - returnedImage3.size.width/1.5) / 2,
-                                                                         y: returnedImage3.size.height/1.66,
+                                                                         y: returnedImage3.size.height/1.68,
                                                                          width: returnedImage3.size.width/1.5,
                                                                          height: returnedImage3.size.height),
                                                         textAttributes: otherTextAttributes)

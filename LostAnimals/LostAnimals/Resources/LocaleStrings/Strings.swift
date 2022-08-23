@@ -8,6 +8,16 @@
 
 import UIKit
 
+func isInSpanish() -> Bool {
+    guard let preferredLanguage = Locale.preferredLanguages.first else { return false }
+    return preferredLanguage.prefix(2) == "es"
+}
+
+func isInEnglish() -> Bool {
+    guard let preferredLanguage = Locale.preferredLanguages.first else { return false }
+    return preferredLanguage.prefix(2) == "en"
+}
+
 protocol Localizable: CustomStringConvertible {
     var rawValue: String { get }
 }
