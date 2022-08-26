@@ -66,6 +66,7 @@ private extension ConfirmationPopupViewController {
     }
     
     func updateUserInteraction() {
+        tabBarController?.tabBar.isUserInteractionEnabled = yesButton.isEnabled
         noButton.isUserInteractionEnabled = yesButton.isEnabled
         yesButton.isUserInteractionEnabled = yesButton.isEnabled
     }

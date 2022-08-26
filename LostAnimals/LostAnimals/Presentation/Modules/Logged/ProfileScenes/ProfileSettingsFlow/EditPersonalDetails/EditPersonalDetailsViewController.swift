@@ -94,6 +94,7 @@ private extension EditPersonalDetailsViewController {
     }
     
     func updateUserInteraction() {
+        tabBarController?.tabBar.isUserInteractionEnabled = saveChangesButton.isEnabled
         navigationController?.navigationBar.isUserInteractionEnabled = saveChangesButton.isEnabled
         firstnameTextfield.isUserInteractionEnabled = saveChangesButton.isEnabled
         lastnameTextfield.isUserInteractionEnabled = saveChangesButton.isEnabled

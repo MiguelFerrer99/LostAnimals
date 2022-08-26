@@ -71,6 +71,7 @@ final class EditPostViewController: ViewController {
 // MARK: - Private functions
 private extension EditPostViewController {
     func updateUserInteraction() {
+        tabBarController?.tabBar.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
         navigationController?.navigationBar.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
         nameTextfield.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
         animalTextfield.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
@@ -78,14 +79,7 @@ private extension EditPostViewController {
         lastTimeSeenTextfield.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
         locationTextfield.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
         descriptionTextview.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
-        selectPhoto1Button.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
-        selectPhoto2Button.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
-        selectPhoto3Button.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
-        selectPhoto4Button.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
-        selectPhoto5Button.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
-        selectPhoto6Button.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
-        selectPhoto7Button.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
-        selectPhoto8Button.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
+        viewModel.selectPhotoButtons.forEach { $0.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled }
     }
     
     func setupUI() {
@@ -100,6 +94,16 @@ private extension EditPostViewController {
             selectPhoto8ImageView
         ]
         for _ in 0..<8 { viewModel.photosSelected.append(false) }
+        viewModel.selectPhotoButtons = [
+            selectPhoto1Button,
+            selectPhoto2Button,
+            selectPhoto3Button,
+            selectPhoto4Button,
+            selectPhoto5Button,
+            selectPhoto6Button,
+            selectPhoto7Button,
+            selectPhoto8Button
+        ]
         configureTextView()
         configureImagePickerController()
         fillUI()

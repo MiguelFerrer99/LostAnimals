@@ -6,7 +6,7 @@
 //  Copyright © 2022 Rudo. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 // MARK: - ProfileSettingsDelegate
 extension ProfileViewController: ProfileSettingsDelegate {
@@ -33,7 +33,7 @@ extension ProfileViewController: MyPetDelegate {
         reloadMyPet()
     }
     
-    func openNewPost(postToLoad: Post) {
-        viewModel.openNewPost(postToLoad: postToLoad)
+    func openNewPost(postToLoad: Post, imagesToLoad: [UIImage]) {
+        viewModel.openNewPost(postToLoad: postToLoad, imagesToLoad: imagesToLoad)
     }
 }

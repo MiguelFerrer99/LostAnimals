@@ -24,6 +24,8 @@ final class MyPetViewModel {
     var numberOfTextFields = 2
     var editedTextFields = [CustomTextField]()
     var selectPhotoImageViews: [UIImageView] = []
+    var selectPhotoButtons: [UIButton] = []
+    var loadingIndicators: [UIActivityIndicatorView] = []
     var selectedIndexImageView = 0
     var currentPetValues: [MyPetField: String] = [:]
     var newPetValues: [MyPetField: String] = [:]
@@ -51,6 +53,7 @@ final class MyPetViewModel {
 extension MyPetViewModel {
     func viewReady() {
         // Called when view is loaded and ready
+        showImagesLoadingIndicators()
     }
     
     func viewDidAppear() {
@@ -68,11 +71,55 @@ extension MyPetViewModel {
         return haveErrors
     }
     
+    func showImagesLoadingIndicators() {
+        if myPet?.urlImage1 != nil {
+            loadingIndicators[0].startAnimating()
+            loadingIndicators[0].isHidden = false
+            
+            if myPet?.urlImage2 != nil {
+                loadingIndicators[1].startAnimating()
+                loadingIndicators[1].isHidden = false
+                
+                if myPet?.urlImage3 != nil {
+                    loadingIndicators[2].startAnimating()
+                    loadingIndicators[2].isHidden = false
+                    
+                    if myPet?.urlImage4 != nil {
+                        loadingIndicators[3].startAnimating()
+                        loadingIndicators[3].isHidden = false
+                        
+                        if myPet?.urlImage5 != nil {
+                            loadingIndicators[4].startAnimating()
+                            loadingIndicators[4].isHidden = false
+                            
+                            if myPet?.urlImage6 != nil {
+                                loadingIndicators[5].startAnimating()
+                                loadingIndicators[5].isHidden = false
+                                
+                                if myPet?.urlImage7 != nil {
+                                    loadingIndicators[6].startAnimating()
+                                    loadingIndicators[6].isHidden = false
+                                    
+                                    if myPet?.urlImage8 != nil {
+                                        loadingIndicators[7].startAnimating()
+                                        loadingIndicators[7].isHidden = false
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     func getImagesFromURLImages(completion: @escaping (() -> ())) {
         guard let myPet = myPet else { return }
         if let petURLImage1 = myPet.urlImage1 {
             petURLImage1.getURLImage(completion: { image1 in
-                if let image1 = image1 { self.postImages.append(image1) }
+                if let image1 = image1 {
+                    self.postImages.append(image1)
+                }
                 
                 if let petURLImage2 = myPet.urlImage2 {
                     petURLImage2.getURLImage(completion: { image2 in
@@ -163,7 +210,7 @@ extension MyPetViewModel {
                               description: myPet.description,
                               userID: me.id,
                               createdAt: Date())
-        self.router.dismissAndGoToNewLostPost(postToLoad: postToLoad)
+        self.router.dismissAndGoToNewLostPost(postToLoad: postToLoad, imagesToLoad: postImages)
     }
     
     func didPressRemoveMyPetDataButton(finishedOK: @escaping (() -> Void), finishedKO: @escaping (() -> Void)) {

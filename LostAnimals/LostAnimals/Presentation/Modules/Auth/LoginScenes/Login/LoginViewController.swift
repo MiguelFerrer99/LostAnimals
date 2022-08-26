@@ -55,6 +55,7 @@ private extension LoginViewController {
     }
     
     func updateUserInteraction() {
+        tabBarController?.tabBar.isUserInteractionEnabled = logInButton.isEnabled
         navigationController?.navigationBar.isUserInteractionEnabled = logInButton.isEnabled
         navigationController?.interactivePopGestureRecognizer?.isEnabled = logInButton.isEnabled
         mailTextField.isUserInteractionEnabled = logInButton.isEnabled

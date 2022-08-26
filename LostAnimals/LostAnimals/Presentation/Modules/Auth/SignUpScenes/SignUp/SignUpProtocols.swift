@@ -32,6 +32,7 @@ extension SignUpViewController: SignUpStepsDelegate {
     }
     
     func updateSignUpUserInteraction(isUserInteractionEnabled: Bool) {
+        tabBarController?.tabBar.isUserInteractionEnabled = isUserInteractionEnabled
         navigationController?.navigationBar.isUserInteractionEnabled = isUserInteractionEnabled
         navigationController?.interactivePopGestureRecognizer?.isEnabled = isUserInteractionEnabled
     }

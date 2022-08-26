@@ -26,8 +26,9 @@ final class NewPostGenericViewModel {
     var editedTextFields = [CustomTextField]()
     let postType: PostType
     let postToLoad: Post?
-    var postImages: [UIImage] = []
+    let imagesToLoad: [UIImage]?
     var selectPhotoImageViews: [UIImageView] = []
+    var selectPhotoButtons: [UIButton] = []
     var selectedIndexImageView = 0
     var newPostLocation = Location(address: .Commons.NotSpecifiedFemale(), coordinates: nil)
     var selectedAnimalType: AnimalType? = nil
@@ -37,10 +38,11 @@ final class NewPostGenericViewModel {
     let postService = PostService()
     
     // MARK: - Init
-    required init(router: NewPostGenericRouter, postType: PostType, postToLoad: Post? = nil) {
+    required init(router: NewPostGenericRouter, postType: PostType, postToLoad: Post? = nil, imagesToLoad: [UIImage]? = nil) {
         self.router = router
         self.postType = postType
         self.postToLoad = postToLoad
+        self.imagesToLoad = imagesToLoad
         switch postType {
         case .lost:
             numberOfTextFields = 4
@@ -72,58 +74,6 @@ extension NewPostGenericViewModel {
             if editedTextField.hasError && !haveErrors { haveErrors = true }
         }
         return haveErrors
-    }
-    
-    func getImagesFromURLImages(completion: @escaping (() -> ())) {
-        guard let postToLoad = postToLoad else { return }
-        if let postURLImage1 = postToLoad.urlImage1 {
-            postURLImage1.getURLImage(completion: { image1 in
-                if let image1 = image1 { self.postImages.append(image1) }
-                
-                if let postURLImage2 = postToLoad.urlImage2 {
-                    postURLImage2.getURLImage(completion: { image2 in
-                        if let image2 = image2 { self.postImages.append(image2) }
-                        
-                        if let postURLImage3 = postToLoad.urlImage3 {
-                            postURLImage3.getURLImage(completion: { image3 in
-                                if let image3 = image3 { self.postImages.append(image3) }
-                                
-                                if let postURLImage4 = postToLoad.urlImage4 {
-                                    postURLImage4.getURLImage(completion: { image4 in
-                                        if let image4 = image4 { self.postImages.append(image4) }
-                                        
-                                        if let postURLImage5 = postToLoad.urlImage5 {
-                                            postURLImage5.getURLImage(completion: { image5 in
-                                                if let image5 = image5 { self.postImages.append(image5) }
-                                                
-                                                if let postURLImage6 = postToLoad.urlImage6 {
-                                                    postURLImage6.getURLImage(completion: { image6 in
-                                                        if let image6 = image6 { self.postImages.append(image6) }
-                                                        
-                                                        if let postURLImage7 = postToLoad.urlImage7 {
-                                                            postURLImage7.getURLImage(completion: { image7 in
-                                                                if let image7 = image7 { self.postImages.append(image7) }
-                                                                
-                                                                if let postURLImage8 = postToLoad.urlImage8 {
-                                                                    postURLImage8.getURLImage(completion: { image8 in
-                                                                        if let image8 = image8 { self.postImages.append(image8) }
-                                                                        completion()
-                                                                    })
-                                                                } else { completion() }
-                                                            })
-                                                        } else { completion() }
-                                                    })
-                                                } else { completion() }
-                                            })
-                                        } else { completion() }
-                                    })
-                                } else { completion() }
-                            })
-                        } else { completion() }
-                    })
-                } else { completion() }
-            })
-        } else { completion() }
     }
     
     func getImagesFromImageViews() -> [UIImage?] {

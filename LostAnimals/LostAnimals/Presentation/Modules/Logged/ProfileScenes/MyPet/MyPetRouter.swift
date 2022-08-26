@@ -40,10 +40,10 @@ extension MyPetRouter {
         }
     }
     
-    func dismissAndGoToNewLostPost(postToLoad: Post) {
+    func dismissAndGoToNewLostPost(postToLoad: Post, imagesToLoad: [UIImage]) {
         DispatchQueue.main.async {
             self.viewController?.dismissCurrentView(completion: {
-                self.viewController?.delegate?.openNewPost(postToLoad: postToLoad)
+                self.viewController?.delegate?.openNewPost(postToLoad: postToLoad, imagesToLoad: imagesToLoad)
             })
         }
     }

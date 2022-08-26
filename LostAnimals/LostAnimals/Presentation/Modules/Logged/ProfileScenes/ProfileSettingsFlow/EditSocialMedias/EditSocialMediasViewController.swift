@@ -95,6 +95,7 @@ private extension EditSocialMediasViewController {
     }
     
     func updateUserInteraction() {
+        tabBarController?.tabBar.isUserInteractionEnabled = saveChangesButton.isEnabled
         navigationController?.navigationBar.isUserInteractionEnabled = saveChangesButton.isEnabled
         phonePrefixButton.isUserInteractionEnabled = saveChangesButton.isEnabled
         phoneNumberTextfield.isUserInteractionEnabled = saveChangesButton.isEnabled

@@ -11,7 +11,7 @@ import UIKit
 // MARK: - Protocols
 protocol MyPetDelegate: AnyObject {
     func updateMyPet()
-    func openNewPost(postToLoad: Post)
+    func openNewPost(postToLoad: Post, imagesToLoad: [UIImage])
 }
 
 final class MyPetViewController: ViewController {
@@ -24,6 +24,14 @@ final class MyPetViewController: ViewController {
     @IBOutlet private weak var selectPhoto6ImageView: CustomImageView!
     @IBOutlet private weak var selectPhoto7ImageView: CustomImageView!
     @IBOutlet private weak var selectPhoto8ImageView: CustomImageView!
+    @IBOutlet private weak var loadingIndicator1: UIActivityIndicatorView!
+    @IBOutlet private weak var loadingIndicator2: UIActivityIndicatorView!
+    @IBOutlet private weak var loadingIndicator3: UIActivityIndicatorView!
+    @IBOutlet private weak var loadingIndicator4: UIActivityIndicatorView!
+    @IBOutlet private weak var loadingIndicator5: UIActivityIndicatorView!
+    @IBOutlet private weak var loadingIndicator6: UIActivityIndicatorView!
+    @IBOutlet private weak var loadingIndicator7: UIActivityIndicatorView!
+    @IBOutlet private weak var loadingIndicator8: UIActivityIndicatorView!
     @IBOutlet private weak var selectPhoto1Button: UIButton!
     @IBOutlet private weak var selectPhoto2Button: UIButton!
     @IBOutlet private weak var selectPhoto3Button: UIButton!
@@ -125,6 +133,27 @@ private extension MyPetViewController {
             selectPhoto8ImageView
         ]
         for _ in 0..<8 { viewModel.photosSelected.append(false) }
+        viewModel.selectPhotoButtons = [
+            selectPhoto1Button,
+            selectPhoto2Button,
+            selectPhoto3Button,
+            selectPhoto4Button,
+            selectPhoto5Button,
+            selectPhoto6Button,
+            selectPhoto7Button,
+            selectPhoto8Button
+        ]
+        if viewModel.myPet != nil { viewModel.selectPhotoButtons.forEach { $0.isEnabled = false } }
+        viewModel.loadingIndicators = [
+            loadingIndicator1,
+            loadingIndicator2,
+            loadingIndicator3,
+            loadingIndicator4,
+            loadingIndicator5,
+            loadingIndicator6,
+            loadingIndicator7,
+            loadingIndicator8
+        ]
         if let myPet = viewModel.myPet { fillUI(myPet) }
         configureTextfields()
         configureTextView()
@@ -163,7 +192,15 @@ private extension MyPetViewController {
         viewModel.getImagesFromURLImages {
             for index in 0..<self.viewModel.postImages.count {
                 DispatchQueue.main.async {
+                    self.viewModel.photosSelected[index] = true
+                    self.viewModel.selectPhotoButtons[index].isEnabled = true
+                    self.viewModel.loadingIndicators[index].stopAnimating()
                     self.viewModel.selectPhotoImageViews[index].image = self.viewModel.postImages[index]
+                    if index == self.viewModel.postImages.count - 1 {
+                        self.viewModel.selectPhotoButtons.forEach { $0.isEnabled = true }
+                        self.haveYouLostYourPetButton.isEnabled = true
+                        self.haveYouLostYourPetButton.alpha = 1
+                    }
                 }
             }
         }
@@ -181,19 +218,14 @@ private extension MyPetViewController {
     }
     
     func updateUserInteraction() {
-        navigationController?.navigationBar.isUserInteractionEnabled = saveChangesButton.isEnabled
-        animalNameTextfield.isUserInteractionEnabled = saveChangesButton.isEnabled
-        animalTypeTextfield.isUserInteractionEnabled = saveChangesButton.isEnabled
-        animalBreedTextfield.isUserInteractionEnabled = saveChangesButton.isEnabled
-        descriptionTextView.isUserInteractionEnabled = saveChangesButton.isEnabled
-        selectPhoto1Button.isUserInteractionEnabled = saveChangesButton.isEnabled
-        selectPhoto2Button.isUserInteractionEnabled = saveChangesButton.isEnabled
-        selectPhoto3Button.isUserInteractionEnabled = saveChangesButton.isEnabled
-        selectPhoto4Button.isUserInteractionEnabled = saveChangesButton.isEnabled
-        selectPhoto5Button.isUserInteractionEnabled = saveChangesButton.isEnabled
-        selectPhoto6Button.isUserInteractionEnabled = saveChangesButton.isEnabled
-        selectPhoto7Button.isUserInteractionEnabled = saveChangesButton.isEnabled
-        selectPhoto8Button.isUserInteractionEnabled = saveChangesButton.isEnabled
+        tabBarController?.tabBar.isUserInteractionEnabled = saveChangesButton.isEnabled || removePetDataButton.isEnabled
+        navigationController?.navigationBar.isUserInteractionEnabled = saveChangesButton.isEnabled || removePetDataButton.isEnabled
+        animalNameTextfield.isUserInteractionEnabled = saveChangesButton.isEnabled || removePetDataButton.isEnabled
+        animalTypeTextfield.isUserInteractionEnabled = saveChangesButton.isEnabled || removePetDataButton.isEnabled
+        animalBreedTextfield.isUserInteractionEnabled = saveChangesButton.isEnabled || removePetDataButton.isEnabled
+        descriptionTextView.isUserInteractionEnabled = saveChangesButton.isEnabled || removePetDataButton.isEnabled
+        haveYouLostYourPetButton.isUserInteractionEnabled = saveChangesButton.isEnabled || removePetDataButton.isEnabled
+        viewModel.selectPhotoButtons.forEach { $0.isUserInteractionEnabled = saveChangesButton.isEnabled || removePetDataButton.isEnabled }
     }
     
     func buildMyPet() -> Pet? {

@@ -51,6 +51,7 @@ private extension ForgotPasswordViewController {
     }
     
     func updateUserInteraction() {
+        tabBarController?.tabBar.isUserInteractionEnabled = forgotPasswordButton.isEnabled
         navigationController?.navigationBar.isUserInteractionEnabled = forgotPasswordButton.isEnabled
         navigationController?.interactivePopGestureRecognizer?.isEnabled = forgotPasswordButton.isEnabled
         mailTexfield.isUserInteractionEnabled = forgotPasswordButton.isEnabled

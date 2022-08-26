@@ -137,8 +137,8 @@ extension ProfileRouter {
         }
     }
     
-    func openNewPost(postToLoad: Post) {
-        let viewController = Container.shared.newPostGenericBuilder().build(postType: .lost, postToLoad: postToLoad)
+    func openNewPost(postToLoad: Post, imagesToLoad: [UIImage]) {
+        let viewController = Container.shared.newPostGenericBuilder().build(postType: .lost, postToLoad: postToLoad, imagesToLoad: imagesToLoad)
         let nav = viewController.embeddedInNavigation()
         nav.modalPresentationStyle = .overCurrentContext
         nav.hidesBottomBarWhenPushed = true

@@ -23,6 +23,7 @@ final class EditPostViewModel {
     var numberOfTextFields = 0
     var editedTextFields = [CustomTextField]()
     var selectPhotoImageViews: [UIImageView] = []
+    var selectPhotoButtons: [UIButton] = []
     var selectedIndexImageView = 0
     var currentLocation: Location
     var newLocation: Location

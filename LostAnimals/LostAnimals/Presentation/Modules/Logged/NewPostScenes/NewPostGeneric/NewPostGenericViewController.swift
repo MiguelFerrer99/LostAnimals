@@ -128,6 +128,17 @@ private extension NewPostGenericViewController {
             selectPhoto8ImageView
         ]
         for _ in 0..<8 { viewModel.photosSelected.append(false) }
+        viewModel.selectPhotoButtons = [
+            selectPhoto1Button,
+            selectPhoto2Button,
+            selectPhoto3Button,
+            selectPhoto4Button,
+            selectPhoto5Button,
+            selectPhoto6Button,
+            selectPhoto7Button,
+            selectPhoto8Button
+        ]
+        if viewModel.postToLoad != nil { viewModel.selectPhotoButtons.forEach { $0.isEnabled = false } }
         configureTextView()
         configureImagePickerController()
         if viewModel.postToLoad != nil {
@@ -153,7 +164,7 @@ private extension NewPostGenericViewController {
             locationTextfield.isHidden = true
             if let me = User.shared { viewModel.newPostLocation = me.location }
         }
-        if let postToLoad = viewModel.postToLoad { manageComingMyPet(postToLoad) }
+        if let postToLoad = viewModel.postToLoad, viewModel.imagesToLoad != nil { manageComingMyPet(postToLoad) }
     }
     
     func manageComingMyPet(_ postToLoad: Post) {
@@ -176,10 +187,14 @@ private extension NewPostGenericViewController {
     }
     
     func fillMyPetImages() {
-        viewModel.getImagesFromURLImages {
-            for index in 0..<self.viewModel.postImages.count {
-                DispatchQueue.main.async {
-                    self.viewModel.selectPhotoImageViews[index].image = self.viewModel.postImages[index]
+        guard let imagesToLoad = viewModel.imagesToLoad else { return }
+        imagesToLoad.enumerated().forEach { (index, imageToLoad) in
+            DispatchQueue.main.async {
+                self.viewModel.photosSelected[index] = true
+                self.viewModel.selectPhotoButtons[index].isEnabled = true
+                self.viewModel.selectPhotoImageViews[index].image = imageToLoad
+                if index == imagesToLoad.count - 1 {
+                    self.viewModel.selectPhotoButtons.forEach { $0.isEnabled = true }
                 }
             }
         }
@@ -197,6 +212,7 @@ private extension NewPostGenericViewController {
     }
     
     func updateUserInteraction() {
+        tabBarController?.tabBar.isUserInteractionEnabled = publishPostButton.isEnabled
         navigationController?.navigationBar.isUserInteractionEnabled = publishPostButton.isEnabled
         nameTextfield.isUserInteractionEnabled = publishPostButton.isEnabled
         animalTextfield.isUserInteractionEnabled = publishPostButton.isEnabled
@@ -204,14 +220,7 @@ private extension NewPostGenericViewController {
         lastTimeSeenTextfield.isUserInteractionEnabled = publishPostButton.isEnabled
         locationTextfield.isUserInteractionEnabled = publishPostButton.isEnabled
         descriptionTextview.isUserInteractionEnabled = publishPostButton.isEnabled
-        selectPhoto1Button.isUserInteractionEnabled = publishPostButton.isEnabled
-        selectPhoto2Button.isUserInteractionEnabled = publishPostButton.isEnabled
-        selectPhoto3Button.isUserInteractionEnabled = publishPostButton.isEnabled
-        selectPhoto4Button.isUserInteractionEnabled = publishPostButton.isEnabled
-        selectPhoto5Button.isUserInteractionEnabled = publishPostButton.isEnabled
-        selectPhoto6Button.isUserInteractionEnabled = publishPostButton.isEnabled
-        selectPhoto7Button.isUserInteractionEnabled = publishPostButton.isEnabled
-        selectPhoto8Button.isUserInteractionEnabled = publishPostButton.isEnabled
+        viewModel.selectPhotoButtons.forEach { $0.isUserInteractionEnabled = publishPostButton.isEnabled }
     }
     
     func buildNewPost() -> Post? {
@@ -236,7 +245,6 @@ private extension NewPostGenericViewController {
                            createdAt: Date())
         return newPost
     }
-    
     
     @objc func goBack() {
         viewModel.goBack()

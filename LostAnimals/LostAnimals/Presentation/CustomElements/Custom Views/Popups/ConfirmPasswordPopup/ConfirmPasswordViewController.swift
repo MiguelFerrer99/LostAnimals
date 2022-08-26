@@ -69,7 +69,8 @@ private extension ConfirmPasswordViewController {
     }
     
     func updateUserInteraction() {
-        self.backgroundButton.isUserInteractionEnabled = deleteAccountButton.isEnabled
+        tabBarController?.tabBar.isUserInteractionEnabled = deleteAccountButton.isEnabled
+        backgroundButton.isUserInteractionEnabled = deleteAccountButton.isEnabled
     }
     
     func showLoading() {

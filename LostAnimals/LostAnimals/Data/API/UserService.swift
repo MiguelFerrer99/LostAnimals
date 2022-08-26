@@ -643,7 +643,7 @@ extension UserService {
                                                                                                                             completion(.error(error))
                                                                                                                         }
                                                                                                                     }
-                                                                                                                }
+                                                                                                                } else { completion(.success) }
                                                                                                             }
                                                                                                         }
                                                                                                     } else { completion(.success) }

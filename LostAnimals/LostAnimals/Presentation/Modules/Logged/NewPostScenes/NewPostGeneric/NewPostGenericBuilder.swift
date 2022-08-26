@@ -12,10 +12,10 @@ final class NewPostGenericBuilder {}
 
 // MARK: - Functions
 extension NewPostGenericBuilder {
-    func build(postType: PostType, postToLoad: Post? = nil) -> NewPostGenericViewController {
+    func build(postType: PostType, postToLoad: Post? = nil, imagesToLoad: [UIImage]? = nil) -> NewPostGenericViewController {
         let viewController = UIViewController.instantiate(viewController: NewPostGenericViewController.self)
         let router = NewPostGenericRouter(viewController: viewController)
-        let viewModel = NewPostGenericViewModel(router: router, postType: postType, postToLoad: postToLoad)
+        let viewModel = NewPostGenericViewModel(router: router, postType: postType, postToLoad: postToLoad, imagesToLoad: imagesToLoad)
         viewController.viewModel = viewModel
         return viewController
     }

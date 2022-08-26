@@ -58,6 +58,7 @@ private extension ChangePasswordViewController {
     }
     
     func updateUserInteraction() {
+        tabBarController?.tabBar.isUserInteractionEnabled = saveChangesButton.isEnabled
         navigationController?.navigationBar.isUserInteractionEnabled = saveChangesButton.isEnabled
         passwordTextfield.isUserInteractionEnabled = saveChangesButton.isEnabled
         confirmPasswordTextfield.isUserInteractionEnabled = saveChangesButton.isEnabled

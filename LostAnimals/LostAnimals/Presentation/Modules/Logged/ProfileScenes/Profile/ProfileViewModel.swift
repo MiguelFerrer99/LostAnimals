@@ -199,7 +199,7 @@ extension ProfileViewModel {
         self.router.goToMyPet(myPet: user.pet)
     }
     
-    func openNewPost(postToLoad: Post) {
-        self.router.openNewPost(postToLoad: postToLoad)
+    func openNewPost(postToLoad: Post, imagesToLoad: [UIImage]) {
+        self.router.openNewPost(postToLoad: postToLoad, imagesToLoad: imagesToLoad)
     }
 }
