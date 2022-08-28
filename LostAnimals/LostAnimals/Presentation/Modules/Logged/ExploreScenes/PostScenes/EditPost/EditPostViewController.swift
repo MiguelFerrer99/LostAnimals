@@ -71,15 +71,17 @@ final class EditPostViewController: ViewController {
 // MARK: - Private functions
 private extension EditPostViewController {
     func updateUserInteraction() {
-        tabBarController?.tabBar.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
-        navigationController?.navigationBar.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
-        nameTextfield.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
-        animalTextfield.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
-        breedTextfield.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
-        lastTimeSeenTextfield.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
-        locationTextfield.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
-        descriptionTextview.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled
-        viewModel.selectPhotoButtons.forEach { $0.isUserInteractionEnabled = deletePostButton.isEnabled || saveChangesButton.isEnabled }
+        tabBarController?.tabBar.isUserInteractionEnabled = deletePostButton.isEnabled && saveChangesButton.isEnabled
+        navigationController?.navigationBar.isUserInteractionEnabled = deletePostButton.isEnabled && saveChangesButton.isEnabled
+        deletePostButton.isUserInteractionEnabled = deletePostButton.isEnabled && saveChangesButton.isEnabled
+        saveChangesButton.isUserInteractionEnabled = deletePostButton.isEnabled && saveChangesButton.isEnabled
+        nameTextfield.isUserInteractionEnabled = deletePostButton.isEnabled && saveChangesButton.isEnabled
+        animalTextfield.isUserInteractionEnabled = deletePostButton.isEnabled && saveChangesButton.isEnabled
+        breedTextfield.isUserInteractionEnabled = deletePostButton.isEnabled && saveChangesButton.isEnabled
+        lastTimeSeenTextfield.isUserInteractionEnabled = deletePostButton.isEnabled && saveChangesButton.isEnabled
+        locationTextfield.isUserInteractionEnabled = deletePostButton.isEnabled && saveChangesButton.isEnabled
+        descriptionTextview.isUserInteractionEnabled = deletePostButton.isEnabled && saveChangesButton.isEnabled
+        viewModel.selectPhotoButtons.forEach { $0.isUserInteractionEnabled = deletePostButton.isEnabled && saveChangesButton.isEnabled }
     }
     
     func setupUI() {
@@ -130,7 +132,17 @@ private extension EditPostViewController {
         }
         
         nameTextfield.textField.text = viewModel.post.animalName
-        animalTextfield.textField.text = viewModel.post.animalType.rawValue
+        var animalTypeText = ""
+        switch viewModel.post.animalType {
+        case .dog:    animalTypeText = .Commons.AnimalTypeDog()
+        case .cat:    animalTypeText = .Commons.AnimalTypeCat()
+        case .bird:   animalTypeText = .Commons.AnimalTypeBird()
+        case .rabbit: animalTypeText = .Commons.AnimalTypeRabbit()
+        case .snake:  animalTypeText = .Commons.AnimalTypeSnake()
+        case .turtle: animalTypeText = .Commons.AnimalTypeTurtle()
+        case .other:  animalTypeText = .Commons.AnimalTypeOther()
+        }
+        animalTextfield.textField.text = animalTypeText
         breedTextfield.textField.text = viewModel.post.animalBreed
         descriptionTextview.text = viewModel.post.description
         descriptionCharactersCounterLabel.text = "\(descriptionTextview.text.count)/300"
@@ -168,7 +180,7 @@ extension EditPostViewController {
         case .rabbit: animalTypeName = .Commons.AnimalTypeRabbit()
         case .other:  animalTypeName = .Commons.AnimalTypeOther()
         }
-        viewModel.newEditPostInfo[.animalType] = animalTypeName
+        viewModel.newEditPostInfo[.animalType] = animalType.rawValue
         animalTextfield.textField.text = animalTypeName
         animalTextfield.didFinishSelectContentFromOtherVC()
     }
@@ -235,17 +247,29 @@ private extension EditPostViewController {
 
     @IBAction func deletePostButtonPressed(_ sender: CustomButton) {
         showConfirmationPopup(title: .Commons.AreYouSureDeletePost()) {
-            self.deletePostButton.showLoading { self.updateUserInteraction() }
+            self.deletePostButton.showLoading {
+                self.saveChangesButton.isEnabled = false
+                self.updateUserInteraction()
+            }
             self.viewModel.didPressDeletePostButton {
-                self.deletePostButton.hideLoading { self.updateUserInteraction() }
+                self.deletePostButton.hideLoading {
+                    self.saveChangesButton.isEnabled = true
+                    self.updateUserInteraction()
+                }
             }
         }
     }
 
     @IBAction func saveChangesButtonPressed(_ sender: CustomButton) {
-        saveChangesButton.showLoading { self.updateUserInteraction() }
+        saveChangesButton.showLoading {
+            self.deletePostButton.isEnabled = false
+            self.updateUserInteraction()
+        }
         viewModel.didPressSaveChangesButton() {
-            self.saveChangesButton.hideLoading { self.updateUserInteraction() }
+            self.saveChangesButton.hideLoading {
+                self.deletePostButton.isEnabled = true
+                self.updateUserInteraction()
+            }
         }
     }
 }

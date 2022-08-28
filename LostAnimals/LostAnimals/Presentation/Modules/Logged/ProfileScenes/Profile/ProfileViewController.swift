@@ -8,6 +8,7 @@
 
 import UIKit
 import MessageUI
+import Foundation
 
 final class ProfileViewController: ViewController, UIGestureRecognizerDelegate {
     // MARK: - IBOutlets
@@ -270,20 +271,24 @@ private extension ProfileViewController {
     @objc func updateSavedPosts() {
         showLoading()
         viewModel.getSavedPosts {
-            self.secondCollectionView.reloadData()
-            self.secondCollectionHeaderLabel.isHidden = self.viewModel.savedPosts.isEmpty
-            self.secondStackView.isHidden = self.viewModel.savedPosts.isEmpty
-            self.hideLoading()
+            DispatchQueue.main.async {
+                self.secondCollectionView.reloadData()
+                self.secondCollectionHeaderLabel.isHidden = self.viewModel.savedPosts.isEmpty
+                self.secondStackView.isHidden = self.viewModel.savedPosts.isEmpty
+                self.hideLoading()
+            }
         }
     }
     
     @objc func updateMyPosts() {
         showLoading()
         viewModel.getPosts {
-            self.firstCollectionView.reloadData()
-            self.firstCollectionHeaderLabel.isHidden = self.viewModel.posts.isEmpty
-            self.firstStackView.isHidden = self.viewModel.posts.isEmpty
-            self.hideLoading()
+            DispatchQueue.main.async {
+                self.firstCollectionView.reloadData()
+                self.firstCollectionHeaderLabel.isHidden = self.viewModel.posts.isEmpty
+                self.firstStackView.isHidden = self.viewModel.posts.isEmpty
+                self.hideLoading()
+            }
         }
     }
     

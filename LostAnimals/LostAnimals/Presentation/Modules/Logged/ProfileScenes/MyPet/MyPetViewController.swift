@@ -218,14 +218,16 @@ private extension MyPetViewController {
     }
     
     func updateUserInteraction() {
-        tabBarController?.tabBar.isUserInteractionEnabled = saveChangesButton.isEnabled || removePetDataButton.isEnabled
-        navigationController?.navigationBar.isUserInteractionEnabled = saveChangesButton.isEnabled || removePetDataButton.isEnabled
-        animalNameTextfield.isUserInteractionEnabled = saveChangesButton.isEnabled || removePetDataButton.isEnabled
-        animalTypeTextfield.isUserInteractionEnabled = saveChangesButton.isEnabled || removePetDataButton.isEnabled
-        animalBreedTextfield.isUserInteractionEnabled = saveChangesButton.isEnabled || removePetDataButton.isEnabled
-        descriptionTextView.isUserInteractionEnabled = saveChangesButton.isEnabled || removePetDataButton.isEnabled
-        haveYouLostYourPetButton.isUserInteractionEnabled = saveChangesButton.isEnabled || removePetDataButton.isEnabled
-        viewModel.selectPhotoButtons.forEach { $0.isUserInteractionEnabled = saveChangesButton.isEnabled || removePetDataButton.isEnabled }
+        tabBarController?.tabBar.isUserInteractionEnabled = saveChangesButton.isEnabled && removePetDataButton.isEnabled
+        navigationController?.navigationBar.isUserInteractionEnabled = saveChangesButton.isEnabled && removePetDataButton.isEnabled
+        saveChangesButton.isEnabled = removePetDataButton.isEnabled
+        removePetDataButton.isEnabled = saveChangesButton.isEnabled
+        animalNameTextfield.isUserInteractionEnabled = saveChangesButton.isEnabled && removePetDataButton.isEnabled
+        animalTypeTextfield.isUserInteractionEnabled = saveChangesButton.isEnabled && removePetDataButton.isEnabled
+        animalBreedTextfield.isUserInteractionEnabled = saveChangesButton.isEnabled && removePetDataButton.isEnabled
+        descriptionTextView.isUserInteractionEnabled = saveChangesButton.isEnabled && removePetDataButton.isEnabled
+        haveYouLostYourPetButton.isUserInteractionEnabled = saveChangesButton.isEnabled && removePetDataButton.isEnabled
+        viewModel.selectPhotoButtons.forEach { $0.isUserInteractionEnabled = saveChangesButton.isEnabled && removePetDataButton.isEnabled }
     }
     
     func buildMyPet() -> Pet? {
@@ -301,29 +303,47 @@ private extension MyPetViewController {
     
     @IBAction func removePetDataButtonPressed(_ sender: CustomButton) {
         showConfirmationPopup(title: .Commons.AreYouSureRemovePetData()) {
-            self.removePetDataButton.showLoading { self.updateUserInteraction() }
+            self.removePetDataButton.showLoading {
+                self.saveChangesButton.isEnabled = false
+                self.updateUserInteraction()
+            }
             self.viewModel.didPressRemoveMyPetDataButton {
                 self.delegate?.updateMyPet()
-                self.removePetDataButton.hideLoading { self.updateUserInteraction() }
+                self.removePetDataButton.hideLoading {
+                    self.saveChangesButton.isEnabled = true
+                    self.updateUserInteraction()
+                }
                 showSuccessPopup(title: .Commons.PetDataRemoved()) {
                     self.viewModel.dismiss()
                 }
             } finishedKO: {
-                self.removePetDataButton.hideLoading { self.updateUserInteraction() }
+                self.removePetDataButton.hideLoading {
+                    self.saveChangesButton.isEnabled = true
+                    self.updateUserInteraction()
+                }
             }
         }
     }
     
     @IBAction func saveChangesButtonPressed(_ sender: CustomButton) {
-        saveChangesButton.showLoading { self.updateUserInteraction() }
+        saveChangesButton.showLoading {
+            self.removePetDataButton.isEnabled = false
+            self.updateUserInteraction()
+        }
         viewModel.didPressSaveChangesButton(myPet: buildMyPet()) {
             self.delegate?.updateMyPet()
-            self.saveChangesButton.hideLoading { self.updateUserInteraction() }
+            self.saveChangesButton.hideLoading {
+                self.removePetDataButton.isEnabled = true
+                self.updateUserInteraction()
+            }
             showSuccessPopup(title: .Commons.ChangesSaved()) {
                 self.viewModel.dismiss()
             }
         } finishedKO: {
-            self.saveChangesButton.hideLoading { self.updateUserInteraction() }
+            self.saveChangesButton.hideLoading {
+                self.removePetDataButton.isEnabled = true
+                self.updateUserInteraction()
+            }
         }
     }
 }
