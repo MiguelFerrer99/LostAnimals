@@ -116,6 +116,7 @@ extension String {
         case VerifyAccount = "ServiceErrors_VerifyAccount"
         case InternetConnection = "ServiceErrors_InternetConnection"
         case InvalidMailOrPassword = "ServiceErrors_InvalidMailOrPassword"
+        case FailedManyTimes = "ServiceErrors_FailedManyTimes"
         case LocationAddress = "ServiceErrors_LocationAddress"
         case Banned = "ServiceErrors_Banned"
         case OpenMail = "ServiceErrors_OpenMail"

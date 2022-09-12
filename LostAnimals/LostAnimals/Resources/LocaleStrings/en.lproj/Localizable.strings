@@ -76,6 +76,7 @@
 "ServiceErrors_VerifyAccount" = "Verify your account before log in";
 "ServiceErrors_InternetConnection" = "You don't have an internet connection";
 "ServiceErrors_InvalidMailOrPassword" = "Email or password incorrect";
+"ServiceErrors_FailedManyTimes" = "Access to this account has been temporarily disabled due to many failed login attempts. You can restore it with forgot password option or you can try log in later.";
 "ServiceErrors_LocationAddress" = "Sorry, It was not possible to get the address of your location";
 "ServiceErrors_Banned" = "You has been banned of Lost Animals. Please contact with the administrator to solve this situation";
 "ServiceErrors_OpenMail" = "Error opening Mail. Please, try again later";

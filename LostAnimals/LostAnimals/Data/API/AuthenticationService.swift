@@ -25,6 +25,7 @@ enum FirebaseError: String {
     case userNotExists = "There is no user record corresponding to this identifier. The user may have been deleted."
     case emailAlreadyInUse = "The email address is already in use by another account."
     case networkError = "Network error (such as timeout, interrupted connection or unreachable host) has occurred."
+    case failedManyTimes = "Access to this account has been temporarily disabled due to many failed login attempts. You can immediately restore it by resetting your password or you can try again later."
 }
 
 final class AuthenticationService {
@@ -59,6 +60,8 @@ extension AuthenticationService {
                     completion(.error(.ServiceErrors.InvalidMailOrPassword()))
                 case FirebaseError.networkError.rawValue:
                     completion(.error(.ServiceErrors.InternetConnection()))
+                case FirebaseError.failedManyTimes.rawValue:
+                    completion(.error(.ServiceErrors.FailedManyTimes()))
                 default:
                     completion(.error(error.localizedDescription))
                 }

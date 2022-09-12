@@ -76,6 +76,7 @@
 "ServiceErrors_VerifyAccount" = "Verifica tu cuenta antes de iniciar sesión";
 "ServiceErrors_InternetConnection" = "No tienes conexión a internet";
 "ServiceErrors_InvalidMailOrPassword" = "Email o contraseña incorrectos";
+"ServiceErrors_FailedManyTimes" = "El acceso a esta cuenta ha sido deshabilitado temporalmente debido a muchos intentos de inicio de sesión fallidos. Puedes recuperarlo mediante la opción de olvidar contraseña o intentar iniciar sesión más tarde.";
 "ServiceErrors_LocationAddress" = "Lo siento, no fue posible obtener la dirección de tu localización";
 "ServiceErrors_Banned" = "Has sido baneado de Lost Animals. Por favor contacta con el administrador para solucionar esta situación";
 "ServiceErrors_OpenMail" = "Error abriendo Mail. Por favor, inténtalo más tarde";
