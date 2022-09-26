@@ -43,7 +43,8 @@ extension ExploreViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == filtersCollectionView {
-            let index = (Filters.currentFilters.count == 5 && indexPath.item == 4) ? 5 : indexPath.item
+            let existsNearFilter = Filters.currentFilters.contains { $0.value.filterType == .near }
+            let index = (!existsNearFilter && indexPath.item >= 1) ? (indexPath.item + 1) : indexPath.item
             setNewFilter(index)
         } else {
             let post = viewModel.posts[indexPath.item]
